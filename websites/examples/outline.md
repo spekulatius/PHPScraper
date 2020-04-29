@@ -16,10 +16,8 @@ The outline of the content allows you build an index of the document. The follow
 ```php
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/content/outline.html');
 /**
- * this page contains:
+ * Navigate to the test page. This page contains:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -36,9 +34,9 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
  * <h3>Example 3</h3>
  * <p>Here would be another example.</p>
  */
+$web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 
-// Get the content outline
 $outline = $web->outline;
 /**
  * $outline now contains:
@@ -71,10 +69,8 @@ The following method works in a similar manner as `outline`, but it does include
 ```php
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/content/outline.html');
 /**
- * this page contains:
+ * Navigate to the test page. This page contains:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -91,9 +87,9 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
  * <h3>Example 3</h3>
  * <p>Here would be another example.</p>
  */
+$web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 
-// Get the content outline
 $outline = $web->outline;
 /**
  * $outline now contains:
@@ -131,6 +127,5 @@ $outline = $web->outline;
  *      "content" => "Here would be another example."
  *    ]
  * ]
- */
  */
 ```

@@ -5,7 +5,7 @@ While PHPScraper is mostly intended to parse websites and collect information yo
 
 ## Navigation using URLs
 
-You can navigate to any URL. These URLs are usually coming from the [parsed links](examples/scrape-links).
+You can navigate to any URL. These URLs are usually coming from the [parsed links](/examples/scrape-links).
 
 ```PHP
 $web = new \spekulatius\phpscraper();

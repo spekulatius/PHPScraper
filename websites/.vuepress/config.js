@@ -13,7 +13,7 @@ module.exports = {
   ],
   themeConfig: {
     repo: 'spekulatius/phpscraper',
-    docsDir: '',
+    docsDir: 'websites',
     editLinks: true,
     lastConfig: 'Last updated',
     serviceWorker: {
@@ -27,6 +27,7 @@ module.exports = {
         children: [
           'examples/scrape-website-title',
           'examples/scrape-header-tags',
+          'examples/scrape-meta-tags',
           'examples/scrape-social-media-meta-tags',
         ],
       },

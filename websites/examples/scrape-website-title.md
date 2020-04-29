@@ -39,9 +39,7 @@ $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 var_dump($web->title);
 ```
 
-::: tip Default behaviour if nothing is found
-This is the default behaviour: If a tag wasn't found because it's missing in the source HTML, `null` will be returned. If an iteratable item is empty (e.g. scraping images from a page without images), an empty array will be returned.
-:::
+Note: This is the default behaviour: If a tag wasn't found because it's missing in the source HTML, `null` will be returned. If an iteratable item is empty (e.g. scraping images from a page without images), an empty array will be returned.
 
 
 ## Special Characters
@@ -51,17 +49,14 @@ Load a website title with German Umlaute
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
-
 /**
- * Contains:
+ * Navigate to the test page. It contains:
  *
  * <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
+$web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
-// Fetch the title. This should return:
-// "A page with plenty of German umlaute everywhere (ä ü ö)"
+// Print the title: "A page with plenty of German umlaute everywhere (ä ü ö)"
 echo $web->title;
 ```
 
@@ -75,16 +70,15 @@ HTML Entities should be solve
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
-
 /**
- * Contains:
+ * Navigate to the test page. Contains:
  *
  * <title>Cat &amp; Mouse</title>
  */
+$web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
-// Fetch the title. This should return:
-// "Cat & Mouse'"
+// Print the title: "Cat & Mouse'"
 echo $web->title;
 ```
+
+Side note: Entities and special characters have been considered throughout the library, if you find a place where these don't work as expected raise an issue please.

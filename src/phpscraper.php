@@ -297,6 +297,22 @@ class core
     }
 
     /**
+     * get the header collected as an array
+     *
+     * @return array
+     */
+    public function headers()
+    {
+        return [
+            $this->charset(),
+            $this->contentType(),
+            $this->viewport(),
+            $this->canonical(),
+            $this->csrfToken(),
+        ];
+    }
+
+    /**
      * get the author
      *
      * @return string
@@ -347,17 +363,13 @@ class core
     }
 
     /**
-     * get the meta collected as one array
+     * get the meta collected as an array
      *
      * @return array
      */
-    public function meta()
+    public function metaTags()
     {
         return [
-            $this->charset(),
-            $this->contentType(),
-            $this->viewport(),
-            $this->csrfToken(),
             $this->author(),
             $this->image(),
             $this->keywords(),
@@ -366,7 +378,7 @@ class core
     }
 
     /**
-     * gets the open graph attributes as one array
+     * gets the open graph attributes as an array
      *
      * @return array
      */
@@ -386,7 +398,7 @@ class core
     }
 
     /**
-     * gets the open graph attributes as one array
+     * gets the open graph attributes as an array
      *
      * @return array
      */
@@ -403,23 +415,6 @@ class core
         }
 
         return $result;
-    }
-
-    /**
-     * get all <h1> tags (should be usually only one)
-     *
-     * @return array
-     */
-    public function headings()
-    {
-        return [
-            $this->h1(),
-            $this->h2(),
-            $this->h3(),
-            $this->h4(),
-            $this->h5(),
-            $this->h6(),
-        ];
     }
 
     /**
@@ -480,6 +475,23 @@ class core
     public function h6()
     {
         return $this->filterExtractAttributes('//h6', ['_text']);
+    }
+
+    /**
+     * get all heading tags
+     *
+     * @return array
+     */
+    public function headings()
+    {
+        return [
+            $this->h1(),
+            $this->h2(),
+            $this->h3(),
+            $this->h4(),
+            $this->h5(),
+            $this->h6(),
+        ];
     }
 
     /**

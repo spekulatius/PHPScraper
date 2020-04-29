@@ -5,7 +5,17 @@ An *oppinated* web-access library for PHP
 
 Accessing the web from PHP can done easier. This is an oppinated wrapper around some great libraries.
 
-Check the examples to get an idea.
+The examples tell the story much better. Have a look!
+
+
+Sponsors
+--------
+
+This project is sponsored by:
+
+<a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
+
+Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
 
 
 Idea

@@ -6,6 +6,7 @@ Heading can be useful to get an idea of the content on a website. The following 
  - All headings of a particular level (e.g. `<h3>`)
  - All headings on a page
 
+
 ## Scrape Single Heading
 
 Scraping a single heading is easy and be done following this example:
@@ -13,43 +14,43 @@ Scraping a single heading is easy and be done following this example:
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page. It contains: <title>We are testing here!</title>
+/**
+ * Navigate to the test page. It contains:
+ *
+ * <title>We are testing here!</title>
+ */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
-// Get the H1 heading
+// Print the H1 heading
 echo $web->h1[0];          // "We are testing here!"
 ```
 
-::: Tip Website Title
-Please note, the <a href="examples/scrape-website-title">website title</a> and heading 1 (`<h1>`) can be different. Make sure you receive the correct one.
-:::
+Please note, the [website title](/examples/scrape-website-title) and heading 1 (`<h1>`) can be different. Make sure you receive the correct one.
 
-## Headings by Levels
+
+## Headings by Level
 
 There might be cases, in which you would like to retrieve all headings of a particular level. The example below shows you how to do so:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/content/online.html');
 /**
- * Contains:
+ * Navigate to the test page. It contains:
  *
  * <h3>Example 1</h3>
  * <p>Here would be an example.</p>
-
+ *
  * <h3>Example 2</h3>
  * <p>Here would be the second example.</p>
-
+ *
  * <h3>Example 3</h3>
  * <p>Here would be another example.</p>
  */
+$web->go('https://test-pages.phpscraper.de/content/online.html');
 
-// Get the h3 headings
-$secondaryHeadings = $web->h3;
 /**
- * $secondaryHeadings contains now:
+ * Get the h3 headings:
  *
  * [
  *    'Example 1',
@@ -57,11 +58,10 @@ $secondaryHeadings = $web->h3;
  *    'Example 3'
  * ]
  */
+$secondaryHeadings = $web->h3;
 ```
 
-::: Tip No Headings
 If not headings are found, the array is left empty.
-:::
 
 ## All Headings on a Page
 
@@ -71,10 +71,8 @@ To access all headings on a page, you can do so by accessing the different level
 ```php
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/content/online.html');
 /**
- * This page contains:
+ * Navigate to the test page. This page contains:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -91,9 +89,9 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  * <h3>Example 3</h3>
  * <p>Here would be another example.</p>
  */
+$web->go('https://test-pages.phpscraper.de/content/online.html');
 
 
-// Get a list of all headings
 $headings = $web->headings;
 /**
  * $headings contains now:

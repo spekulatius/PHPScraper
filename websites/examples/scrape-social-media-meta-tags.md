@@ -10,11 +10,8 @@ Fetching open-graph data can be done:
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/og/example.html');
-
 /**
- * Page contains:
+ * Navigate to the test page. Page contains:
  *
  * <!-- open graph example -->
  * <meta property="og:site_name" content="Lorem ipsum" />
@@ -26,6 +23,7 @@ $web->go('https://test-pages.phpscraper.de/og/example.html');
  *
  * @see https://test-pages.phpscraper.de/og/example.html
  */
+$web->go('https://test-pages.phpscraper.de/og/example.html');
 
 // Should print 'Lorem Ipsum'
 echo $web->openGraph['og:title'];
@@ -55,16 +53,13 @@ If not data was found, the array will be returned empty.
 
 ## Twitter Card
 
-Loading a Twitter Card follows a simliar approach:
+Parsing the Twitter Card works simliar:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/twittercard/example.html');
-
 /**
- * The page contains the following Twitter card:
+ * Navigate to the test page. The page contains the following Twitter Card:
  *
  * <!-- Twitter card -->
  * <meta name="twitter:card" content="summary_large_image" />
@@ -75,6 +70,7 @@ $web->go('https://test-pages.phpscraper.de/twittercard/example.html');
  *
  * @see https://test-pages.phpscraper.de/twittercard/example.html
  */
+$web->go('https://test-pages.phpscraper.de/twittercard/example.html');
 
 // Should print out 'summary_large_image'
 echo $web->twitterCard['twitter:card']);
