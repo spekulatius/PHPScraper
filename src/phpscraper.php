@@ -211,7 +211,7 @@ class core
      *
      * Any suggestions what is missing? Send a PR :)
      *
-     * @see https://phpscraper.de/contrib
+     * @see https://phpscraper.de/contributing
      */
 
     /**
@@ -254,6 +254,16 @@ class core
     public function contentType()
     {
         return $this->filterFirstExtractAttribute('//meta[@http-equiv="Content-type"]', ['content']);
+    }
+
+    /**
+     * get the canonical
+     *
+     * @return string
+     */
+    public function canonical()
+    {
+        return $this->filterFirstExtractAttribute('//link[@rel="canonical"]', ['href']);
     }
 
     /**

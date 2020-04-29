@@ -17,7 +17,7 @@ final class MetaViewportTest extends TestCase
         // Attempt to check Google
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
-        // null if there aren't any keywords set.
+        // null if there isn't a viewport set.
         $this->assertSame(null, $web->viewportString);
 
         // empty array if there aren't any viewports set.
