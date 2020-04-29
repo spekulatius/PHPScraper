@@ -1,0 +1,41 @@
+{
+    "name": "spekulatius/phpscraper",
+    "description": "An oppinionated web to access the web. See tests/ for examples.",
+    "keywords": [
+        "PHP scraper",
+        "PHP scraping",
+        "web scraping",
+        "PHP library",
+        "web-access"
+    ],
+    "homepage": "https://phpscraper.de",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Thaleikis",
+            "homepage": "https://peterthaleikis.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "fabpot/goutte": "^4.0",
+        "symfony/dom-crawler": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "spekulatius\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always"
+    }
+}

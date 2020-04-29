@@ -1,0 +1,154 @@
+<?php
+
+namespace Tests;
+
+use spekulatius;
+use PHPUnit\Framework\TestCase;
+
+final class OutlineTest extends TestCase
+{
+    /**
+     * @test
+     */
+    public function outlineTest()
+    {
+        $web = new \spekulatius\phpscraper();
+
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/content/outline.html');
+
+        /**
+         * this page contains:
+         *
+         * <h1>We are testing here!</h1>
+         * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
+         *
+         * <h2>Examples</h2>
+         * <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
+         *
+         * <h3>Example 1</h3>
+         * <p>Here would be an example.</p>
+         *
+         * <h3>Example 2</h3>
+         * <p>Here would be the second example.</p>
+         *
+         * <h3>Example 3</h3>
+         * <p>Here would be another example.</p>
+         */
+
+
+        // Get the content outline
+        $outline = $web->outline;
+        /**
+         * $outline now contains:
+         *
+         * [
+         *    [
+         *      "tag" => "h1",
+         *      "content" =>  "We are testing here!"
+         *    ], [
+         *      "tag" => "h2",
+         *      "content" => "Examples"
+         *    ], [
+         *      "tag" => "h3",
+         *      "content" => "Example 1"
+         *    ], [
+         *      "tag" => "h3",
+         *      "content" => "Example 2"
+         *    ], [
+         *      "tag" => "h3",
+         *      "content" => "Example 3"
+         *    ]
+         * ]
+         */
+    }
+    /**
+     * @test
+     */
+    public function outlineWithParagraphsTest()
+    {
+        $web = new \spekulatius\phpscraper();
+
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/content/outline.html');
+
+        /**
+         * this page contains:
+         *
+         * <h1>We are testing here!</h1>
+         * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
+         *
+         * <h2>Examples</h2>
+         * <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
+         *
+         * <h3>Example 1</h3>
+         * <p>Here would be an example.</p>
+         *
+         * <h3>Example 2</h3>
+         * <p>Here would be the second example.</p>
+         *
+         * <h3>Example 3</h3>
+         * <p>Here would be another example.</p>
+         */
+
+
+        // Get the content outline
+        $outline = $web->outline;
+        /**
+         * $outline now contains:
+         *
+         * [
+         *    [
+         *      "tag" => "h1",
+         *      "content" =>  "We are testing here!"
+         *    ], [
+         *      "tag" => "p",
+         *      "content" => "This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example."
+         *    ], [
+         *      "tag" => "h2",
+         *      "content" => "Examples"
+         *    ], [
+         *      "tag" => "p",
+         *      "content" => "There are numerous examples on the website. Please check them out to get more context on how scraping works."
+         *    ], [
+         *      "tag" => "h3",
+         *      "content" => "Example 1"
+         *    ], [
+         *      "tag" => "p",
+         *      "content" => "Here would be an example."
+         *    ], [
+         *      "tag" => "h3",
+         *      "content" => "Example 2"
+         *    ], [
+         *      "tag" => "p",
+         *      "content" => "Here would be the second example."
+         *    ], [
+         *      "tag" => "h3",
+         *      "content" => "Example 3"
+         *    ], [
+         *      "tag" => "p",
+         *      "content" => "Here would be another example."
+         *    ]
+         * ]
+         */
+    }
+}
+
+
+
+
+
+// <h1>We are testing here!</h1>
+// <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
+
+// <h2>Examples</h2>
+// <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
+
+// <h3>Example 1</h3>
+// <p>Here would be an example.</p>
+
+// <h3>Example 2</h3>
+// <p>Here would be the second example.</p>
+
+// <h3>Example 3</h3>
+// <p>Here would be another example.</p>

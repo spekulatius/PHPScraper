@@ -1,0 +1,19 @@
+machine:
+  pre:
+    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.3.0
+  timezone:
+    Europe/London
+  php:
+    version: 7.3.0
+
+dependencies:
+  pre:
+    - rm /opt/circleci/php/$(phpenv global)/etc/conf.d/xdebug.ini
+  override:
+    - composer install
+
+test:
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+    - vendor/bin/phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
+
