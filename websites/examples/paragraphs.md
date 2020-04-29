@@ -58,4 +58,4 @@ $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 echo $web->paragraphs[0];
 ```
 
-Empty p-tags would lead to empty entries in the returned array. To avoid this you can call `$web->cleanedParagraphs` instead. This will filter empty paragraphs and only return those with content. To access the first paragraph with content use `$web->cleanedParagraphs[0]`.
+Empty p-tags would lead to empty entries in the returned array. To avoid this you can call `$web->cleanParagraphs` instead. This will filter empty paragraphs and only return those with content. To access the first paragraph with content use `$web->cleanParagraphs[0]`.

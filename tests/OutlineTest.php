@@ -14,11 +14,8 @@ final class OutlineTest extends TestCase
     {
         $web = new \spekulatius\phpscraper();
 
-        // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/content/outline.html');
-
         /**
-         * this page contains:
+         * Navigate to the test page. This page contains:
          *
          * <h1>We are testing here!</h1>
          * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -35,6 +32,7 @@ final class OutlineTest extends TestCase
          * <h3>Example 3</h3>
          * <p>Here would be another example.</p>
          */
+        $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 
         // Get the content outline
@@ -62,6 +60,7 @@ final class OutlineTest extends TestCase
          * ]
          */
     }
+
     /**
      * @test
      */
@@ -69,11 +68,8 @@ final class OutlineTest extends TestCase
     {
         $web = new \spekulatius\phpscraper();
 
-        // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/content/outline.html');
-
         /**
-         * this page contains:
+         * Navigate to the test page. This page contains:
          *
          * <h1>We are testing here!</h1>
          * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -89,11 +85,15 @@ final class OutlineTest extends TestCase
          *
          * <h3>Example 3</h3>
          * <p>Here would be another example.</p>
+         *
+         * <!-- an empty paragraph to check if it gets filtered out correctly -->
+         * <p></p>
          */
+        $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 
         // Get the content outline
-        $outline = $web->outline;
+        $outline = $web->outlineWithParagraphs;
         /**
          * $outline now contains:
          *
@@ -128,27 +128,11 @@ final class OutlineTest extends TestCase
          *    ], [
          *      "tag" => "p",
          *      "content" => "Here would be another example."
+         *    ], [
+         *      "tag" => "p",
+         *      "content" => ""
          *    ]
          * ]
          */
     }
 }
-
-
-
-
-
-// <h1>We are testing here!</h1>
-// <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
-
-// <h2>Examples</h2>
-// <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
-
-// <h3>Example 1</h3>
-// <p>Here would be an example.</p>
-
-// <h3>Example 2</h3>
-// <p>Here would be the second example.</p>
-
-// <h3>Example 3</h3>
-// <p>Here would be another example.</p>

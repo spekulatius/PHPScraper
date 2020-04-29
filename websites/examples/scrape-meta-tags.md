@@ -73,10 +73,10 @@ If you would like to access all meta properties you can use the `metaTags`-metho
 public function metaTags()
 {
     return [
-        $this->author(),
-        $this->image(),
-        $this->keywords(),
-        $this->description(),
+        'author' => $this->author(),
+        'image' => $this->image(),
+        'keywords' => $this->keywords(),
+        'description' => $this->description(),
     ];
 }
 ```

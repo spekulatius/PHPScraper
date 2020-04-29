@@ -304,11 +304,11 @@ class core
     public function headers()
     {
         return [
-            $this->charset(),
-            $this->contentType(),
-            $this->viewport(),
-            $this->canonical(),
-            $this->csrfToken(),
+            'charset' => $this->charset(),
+            'contentType' => $this->contentType(),
+            'viewport' => $this->viewport(),
+            'canonical' => $this->canonical(),
+            'csrfToken' => $this->csrfToken(),
         ];
     }
 
@@ -370,10 +370,10 @@ class core
     public function metaTags()
     {
         return [
-            $this->author(),
-            $this->image(),
-            $this->keywords(),
-            $this->description(),
+            'author' => $this->author(),
+            'image' => $this->image(),
+            'keywords' => $this->keywords(),
+            'description' => $this->description(),
         ];
     }
 
@@ -505,6 +505,19 @@ class core
     }
 
     /**
+     * get the paragraphs of the page excluding empty paragraphs.
+     *
+     * @return array
+     */
+    public function cleanParagraphs()
+    {
+        return array_filter(
+            $this->paragraphs(),
+            function($paragraph) { return ($paragraph != ''); }
+        );
+    }
+
+    /**
      * parses the content outline of the web-page
      *
      * @return array
@@ -531,6 +544,24 @@ class core
 
         foreach ($result as $index => $array) {
             $result[$index] = array_combine(['tag', 'content'], $array);
+        }
+
+        return $result;
+    }
+
+    /**
+     * parses the content outline of the web-page
+     *
+     * @return array
+     */
+    public function cleanOutlineWithParagraphs()
+    {
+        $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
+
+        foreach ($result as $index => $array) {
+            if ($array[1] !== '') {
+                $result[$index] = array_combine(['tag', 'content'], $array);
+            }
         }
 
         return $result;

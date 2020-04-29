@@ -136,11 +136,11 @@ If you want to access all of the above mentioned methods you use the `headers`-m
 public function headers()
 {
     return [
-        $this->charset(),
-        $this->contentType(),
-        $this->viewport(),
-        $this->canonical(),
-        $this->csrfToken(),
+        'charset' => $this->charset(),
+        'contentType' => $this->contentType(),
+        'viewport' => $this->viewport(),
+        'canonical' => $this->canonical(),
+        'csrfToken' => $this->csrfToken(),
     ];
 }
 ```
