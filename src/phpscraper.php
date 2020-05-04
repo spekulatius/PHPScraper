@@ -70,13 +70,6 @@ class core
     protected $current_page = null;
 
     /**
-     * holds the current url
-     *
-     * @var string
-     */
-    protected $current_url = null;
-
-    /**
      * constructor
      */
     public function __construct()
@@ -101,9 +94,9 @@ class core
      *
      * @return string $url
      */
-    public function currentUrl()
+    public function currentURL()
     {
-        return $this->current_url;
+        return $this->current_page->getUri();
     }
 
     /**
@@ -113,7 +106,6 @@ class core
      */
     public function go(string $url)
     {
-        $this->current_url = $url;
         $this->current_page = $this->client->request('GET', $url);
     }
 
@@ -598,7 +590,7 @@ class core
         $result = [];
         foreach ($links as $link) {
             // generate the proper uri using the Symfony's link class
-            $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->current_url);
+            $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentURL());
 
             // collect commonly interesting attributes and URL
             $entry = [
@@ -652,7 +644,7 @@ class core
         $result = [];
         foreach ($images as $image) {
             // generate the proper uri using the Symfony's image class
-            $imageObj = new \Symfony\Component\DomCrawler\Image($image, $this->current_url);
+            $imageObj = new \Symfony\Component\DomCrawler\Image($image, $this->currentURL());
 
             // collect commonly interesting attributes and URL
             $result[] = [
@@ -686,9 +678,6 @@ class core
 
             // click the link and store the DOMCrawler object
             $this->current_page = $this->client->click($link);
-
-            // Store the updated url
-            $this->current_url = $link->getUri();
 
             return true;
         }

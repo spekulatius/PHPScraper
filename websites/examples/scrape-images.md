@@ -29,7 +29,10 @@ if (count($images) > 0) {
      *     'https://test-pages.phpscraper.de/assets/cat.jpg',
      * ]
      *
-     * Note: Double because it's twice the same image - once with a relative path and once with an absolute path. The relative paths are resolved to absolute paths by default.
+     * Note:
+     * Double because it's twice the same image:
+     * Once with a relative path and once with an absolute path.
+     * The relative paths are resolved to absolute paths by default.
      */
 }
 ```

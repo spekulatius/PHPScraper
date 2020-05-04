@@ -64,7 +64,7 @@ final class NavigationTest extends TestCase
 
         // Check the title
         // @todo: confirm issue
-        // $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
+        // $this->assertSame('https://peterthaleikis.com/', $web->currentURL);
     }
 
     /**
@@ -85,7 +85,7 @@ final class NavigationTest extends TestCase
 
         // Check the title
         // @todo: confirm issue
-        // $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
+        // $this->assertSame('https://peterthaleikis.com/', $web->currentURL);
     }
 
     /**
@@ -105,6 +105,6 @@ final class NavigationTest extends TestCase
         $web->clickLink('https://peterthaleikis.com/');
 
         // Check the title
-        $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
+        $this->assertSame('https://peterthaleikis.com/', $web->currentURL);
     }
 }
