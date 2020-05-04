@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use spekulatius;
 use PHPUnit\Framework\TestCase;
 
 final class OpenGraphTest extends TestCase

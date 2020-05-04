@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use spekulatius;
 use PHPUnit\Framework\TestCase;
 
 final class MetaImageTest extends TestCase
@@ -49,19 +48,19 @@ final class MetaImageTest extends TestCase
         $this->assertSame("https://test-pages.phpscraper.de/assets/cat.jpg", $web->image);
     }
 
-    /**
-     * @test
-     */
-    public function testRelativePath()
-    {
-        $web = new \spekulatius\phpscraper();
+    // /**
+    //  * @test
+    //  */
+    // public function testRelativePath()
+    // {
+    //     $web = new \spekulatius\phpscraper();
 
-        // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
+    //     // Navigate to the test page.
+    //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
 
-        // Check the relative image path
-        // $this->assertSame("https://test-pages.phpscraper.de/assets/cat.jpg", $web->image);
-    }
+    //     // Check the relative image path
+    //     $this->assertSame("https://test-pages.phpscraper.de/assets/cat.jpg", $web->image);
+    // }
 
     // /**
     //  * @test
