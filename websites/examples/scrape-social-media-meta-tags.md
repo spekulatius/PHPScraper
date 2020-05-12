@@ -94,4 +94,4 @@ $data = $web->twitterCard;
  */
 ```
 
-In similar fashion to Open Graph, the array will be empty if not Twitter Card tags have been found.
+In similar fashion to Open Graph, the array will be empty if no Twitter Card tags have been found.

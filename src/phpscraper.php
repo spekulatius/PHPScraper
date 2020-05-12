@@ -224,7 +224,7 @@ class core
     public function charset()
     {
         // a bit more complex, as I didn't get the XPath working proper...
-        $filteredList = array_filter(
+        $filteredList = array_values(array_filter(
             // 1. Get all attributes "charset"
             $this->filter('//meta')->extract(['charset']),
 
@@ -233,7 +233,7 @@ class core
                 return $charset == '';
             },
             ARRAY_FILTER_USE_KEY
-        );
+        ));
 
         return count($filteredList) == 0 ? null : $filteredList[0];
     }
@@ -503,10 +503,10 @@ class core
      */
     public function cleanParagraphs()
     {
-        return array_filter(
+        return array_values(array_filter(
             $this->paragraphs(),
             function($paragraph) { return ($paragraph != ''); }
-        );
+        ));
     }
 
     /**
@@ -560,7 +560,7 @@ class core
     }
 
     /**
-     * get all links on the page with absolute URLs
+     * get all links on the page as absolute URLs
      *
      * @return array
      */
@@ -575,6 +575,37 @@ class core
         }
 
         return $result;
+    }
+
+    /**
+     * get all internal links on the page as absolute URLs
+     *
+     * @return array
+     */
+    public function internalLinks()
+    {
+        // get the current host - to compare against for internal links
+        $host = parse_url($this->currentURL(), PHP_URL_HOST);
+
+        // filter the array
+        return array_values(array_filter(
+            $this->links(),
+            function($link) use (&$host) { return ($host === parse_url($link, PHP_URL_HOST)); }
+        ));
+    }
+
+    /**
+     * get all internal links on the page as absolute URLs
+     *
+     * @return array
+     */
+    public function externalLinks()
+    {
+        // diff the array
+        return array_diff(
+            $this->links(),
+            $this->internalLinks()
+        );
     }
 
     /**

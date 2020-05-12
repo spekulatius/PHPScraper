@@ -246,4 +246,38 @@ final class LinkTest extends TestCase
             ]
         ], $web->linksWithDetails);
     }
+
+    /**
+     * @test
+     */
+    public function testInternalLinks()
+    {
+        $web = new \spekulatius\phpscraper();
+
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/links/base-href.html');
+
+        // Check the complex links list
+        $this->assertSame(
+            ['https://test-pages.phpscraper.de/assets/cat.jpg'],
+            $web->internalLinks
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function testExternalLinks()
+    {
+        $web = new \spekulatius\phpscraper();
+
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/links/base-href.html');
+
+        // Check the complex links list
+        $this->assertSame(
+            ['https://placekitten.com/408/287'],
+            $web->externalLinks
+        );
+    }
 }

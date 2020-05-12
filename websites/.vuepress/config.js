@@ -9,7 +9,7 @@ module.exports = {
         serviceWorker: true,
         updatePopup: true
       }
-  ]
+    ]
   ],
   themeConfig: {
     repo: 'spekulatius/phpscraper',
