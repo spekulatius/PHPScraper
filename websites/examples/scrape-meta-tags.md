@@ -7,9 +7,9 @@ Access the meta information follows a similar pattern as the previously shown [h
 
 The following example shows the extraction of three attributes:
 
- - the Meta Author,
- - the Meta Description and
- - the Meta Image URL
+- the Meta Author,
+- the Meta Description and
+- the Meta Image URL
 
 ```php
 $web = new \spekulatius\phpscraper();

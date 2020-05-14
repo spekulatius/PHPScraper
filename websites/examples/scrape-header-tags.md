@@ -65,7 +65,7 @@ echo $web->viewportString;
 ```
 
 
-## Canonical
+## Canonical URL
 
 The canonical URL, if given, can be access as shown in the example below:
 
@@ -83,7 +83,9 @@ $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 echo $web->canonical;       // "https://test-pages.phpscraper.de/navigation/2.html"
 ```
 
+::: tip
 If no canonical link is set, the method returns `null`.
+:::
 
 
 ## Content Type
@@ -122,6 +124,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 // Get the csrfToken
 echo $web->csrfToken;     // "token"
 ```
+
 
 ## Combined Header Tags
 

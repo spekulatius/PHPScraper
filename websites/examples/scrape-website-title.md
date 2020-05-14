@@ -1,6 +1,6 @@
 # Scraping a Website Title
 
-Scraping the title from a website is simple. See the following examples to see how it works.
+Scraping the title from a website is simple. The following examples show how it works using PHPScraper.
 
 
 ## Simple Example

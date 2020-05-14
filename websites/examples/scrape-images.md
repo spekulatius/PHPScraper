@@ -1,9 +1,9 @@
 # Scraping Images
 
-Scraping the images from a website follows similar an similar approach as the other examples. Images can be parsed with details such as tag attributes or only as an URL list.
+Scraping the images from a website follows an similar approach as the other examples. Images can be parsed with details such as tag attributes or only as an URL list.
 
 
-## Scarping Image URLs
+## Scraping Image URLs
 
 The following example parses a web-page for images and returns absolute URLs as an array.
 
@@ -37,10 +37,12 @@ if (count($images) > 0) {
 }
 ```
 
+::: tip
 If no images are found, the array remains empty.
+:::
 
 
-## Scarping Images with Details
+## Scraping Images with Details
 
 If you are in need for more details the following requests allows you to access attributes of the image tag:
 
