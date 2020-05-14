@@ -25,7 +25,9 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 echo $web->h1[0];          // "We are testing here!"
 ```
 
-Please note, the [website title](/examples/scrape-website-title) and heading 1 (`<h1>`) can be different. Make sure you receive the correct one.
+::: tip
+The [website title](/examples/scrape-website-title) and heading 1 (`<h1>`) can be different. Make sure you retrieve the correct one.
+:::
 
 
 ## Headings by Level
@@ -62,6 +64,7 @@ $secondaryHeadings = $web->h3;
 ```
 
 If not headings are found, the array is left empty.
+
 
 ## All Headings on a Page
 

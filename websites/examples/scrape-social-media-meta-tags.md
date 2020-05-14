@@ -48,7 +48,9 @@ $data = $web->openGraph;
  */
 ```
 
+::: tip
 If not data was found, the array will be returned empty.
+:::
 
 
 ## Twitter Card
