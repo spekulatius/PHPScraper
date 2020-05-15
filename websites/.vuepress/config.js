@@ -2,15 +2,19 @@ module.exports = {
   dest: 'dist/',
   title: 'PHP Scraper - An oppinated web-scraper library for PHP',
   description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
+
+  plugins: {
+    'minimal-analytics': { ga: 'UA-85277681-13' },
+    'sitemap': { hostname: 'https://phpscraper.de/', changefreq: 'monthly' },
+    'seo': {},
+
+    '@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: true
+    }
+  },
   serviceWorker: true,
-  plugins: [
-    [
-      '@vuepress/pwa', {
-        serviceWorker: true,
-        updatePopup: true
-      }
-    ]
-  ],
+
   themeConfig: {
     repo: 'spekulatius/phpscraper',
     docsDir: 'websites',
@@ -50,6 +54,6 @@ module.exports = {
           'examples/more-examples',
         ],
       },
-    ],
-  },
+    ]
+  }
 };

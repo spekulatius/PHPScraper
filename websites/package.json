@@ -4,6 +4,9 @@
     "build": "vuepress build"
   },
   "dependencies": {
-    "vuepress": "^1.4.1"
+    "vuepress": "^1.4.1",
+    "vuepress-plugin-minimal-analytics": "^0.1.4",
+    "vuepress-plugin-seo": "^0.1.2",
+    "vuepress-plugin-sitemap": "^2.3.1"
   }
 }
