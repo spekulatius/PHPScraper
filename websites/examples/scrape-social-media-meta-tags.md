@@ -1,3 +1,7 @@
+---
+image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+---
+
 # Scraping Social Media Meta Tags
 
 Scraping social media sharing tags from a website can be done using the following methods. The exact result set depends on the provided tags. All tags included, as along as these are in the prefixed namespace (e.g. `twitter:` for Twitter Cards).

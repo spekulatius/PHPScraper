@@ -1,3 +1,7 @@
+---
+image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+---
+
 # Scraping Images
 
 Scraping the images from a website follows an similar approach as the other examples. Images can be parsed with details such as tag attributes or only as an URL list.

@@ -10,12 +10,13 @@ module.exports = {
 
     '@vuepress/pwa': {
       serviceWorker: true,
-      updatePopup: true
+      updatePopup: false
     }
   },
   serviceWorker: true,
 
   themeConfig: {
+    domain: 'https://phpscraper.de',
     repo: 'spekulatius/phpscraper',
     docsDir: 'websites',
     editLinks: true,

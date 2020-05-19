@@ -1,3 +1,7 @@
+---
+image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Website%20Title&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+---
+
 # Scraping a Website Title
 
 Scraping the title from a website is simple. The following examples show how it works using PHPScraper.

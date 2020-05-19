@@ -1,3 +1,7 @@
+---
+image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+---
+
 # Scraping Meta Tags
 
 Access the meta information follows a similar pattern as the previously shown [header tags](/examples/scrape-header-tags). Below is a set of examples:
