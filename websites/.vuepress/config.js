@@ -8,7 +8,7 @@ module.exports = {
     'sitemap': { hostname: 'https://phpscraper.de/', changefreq: 'monthly' },
     'seo': {},
 
-    '@vuepress/pwa', {
+    '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: true
     }
@@ -51,7 +51,8 @@ module.exports = {
         title: 'Support and More',
         collapsable: true,
         children: [
-          'examples/more-examples',
+          'support/more-examples',
+          'support/support',
         ],
       },
     ]

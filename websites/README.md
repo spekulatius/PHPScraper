@@ -29,9 +29,63 @@ Examples
 
 Here are some examples what the library can do at this point:
 
-`// @TODO paste examples...`
+### Scrape Meta Information:
 
-More example code can be found in the sidebar.
+```php
+$web = new \spekulatius\phpscraper();
+
+/**
+ * Navigate to the test page. It contains:
+ *
+ * <meta name="author" content="Lorem ipsum" />
+ * <meta name="keywords" content="Lorem,ipsum,dolor" />
+ * <meta name="description" content="Lorem ipsum dolor etc." />
+ * <meta name="image" content="https://test-pages.phpscraper.de/assets/cat.jpg" />
+ */
+$web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
+
+// Get the information:
+echo $web->author;          // "Lorem ipsum"
+echo $web->description;     // "Lorem ipsum dolor etc."
+echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
+```
+
+Most other information can be accessed directly - either as string or an array.
+
+
+### Scrape Content, such as Images:
+
+```PHP
+$web = new \spekulatius\phpscraper();
+
+/**
+ * Navigate to the test page. This page contains two images:
+ *
+ * <img src="https://test-pages.phpscraper.de/assets/cat.jpg" alt="absolute path">
+ * <img src="/assets/cat.jpg" alt="relative path">
+ */
+$web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
+
+var_dump($web->imagesWithDetails);
+/**
+ * [
+ *     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+ *     'alt' => 'absolute path',
+ *     'width' => null,
+ *     'height' => null,
+ * ],
+ * [
+ *     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+ *     'alt' => 'relative path',
+ *     'width' => null,
+ *     'height' => null,
+ * ]
+ */
+```
+
+Some information *optionally* is returned as an array with details. For this example, a simple list of images is avaiable using `$web->images` too.
+
+More example code can be found in the sidebar or the tests.
 
 
 Installation
