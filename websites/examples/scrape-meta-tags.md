@@ -107,4 +107,4 @@ var_dump($web->metaTags);
 
 ## Missing Meta Tags
 
-If you are in need to access other meta property you can consider [contributing](contributing) to the package or submit an [issue on GitHub](https://github.com/spekulatius/phpscraper/issues).
+If you are in need to access other meta property you can consider [contributing](/contributing) to the package or submit an [issue on GitHub](https://github.com/spekulatius/phpscraper/issues).
