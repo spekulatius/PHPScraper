@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_imag
 
 # Scraping Social Media Meta Tags
 
-Scraping social media sharing tags from a website can be done using the following methods. The exact result set depends on the provided tags. All tags included, as along as these are in the prefixed namespace (e.g. `twitter:` for Twitter Cards).
+Scraping social media sharing tags from a website can be done using the following methods. The exact result set depends on the provided tags. All tags are included, as long as these are in the prefixed namespace (e.g. `twitter:` for Twitter Cards).
 
 
 ## Open-Graph (OG) Data
@@ -59,7 +59,7 @@ If not data was found, the array will be returned empty.
 
 ## Twitter Card
 
-Parsing the Twitter Card works simliar:
+Parsing the Twitter Card works similarly:
 
 ```PHP
 $web = new \spekulatius\phpscraper();

@@ -71,7 +71,7 @@ $outline = $web->outline;
 
 ## Export the Outline with Paragraphs
 
-The following method works in a similar manner as `outline`, but it does include any paragraphs as part of the returned array:
+The following method works in a similar manner as `outline`, but it also includes any paragraphs as part of the returned array:
 
 ```php
 $web = new \spekulatius\phpscraper();

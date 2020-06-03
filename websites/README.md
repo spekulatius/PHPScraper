@@ -1,13 +1,13 @@
 ---
-image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20oppinated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-An *oppinated* web-access library for PHP
+An *opinionated* web-access library for PHP
 ===================================================
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
-Accessing the web from PHP can done easier. This is an oppinated wrapper around some great libraries.
+Accessing the web from PHP can done easier. This is an opinionated wrapper around some great libraries.
 
 The examples tell the story much better. Have a look!
 
@@ -31,7 +31,7 @@ Access websites and collecting basic information of the web is too complex. This
 Examples
 --------
 
-Here are some examples what the library can do at this point:
+Here are some examples of what the library can do at this point:
 
 ### Scrape Meta Information:
 
@@ -105,7 +105,7 @@ This automatically ensures the package is loaded. You can now use any of the abo
 Contributing
 ------------
 
-Awesome, if you like contribute please check the [guidelines](/contributing) before getting started.
+Awesome, if you would like contribute please check the [guidelines](/contributing) before getting started.
 
 
 Tests
@@ -113,4 +113,4 @@ Tests
 
 The code is roughly covered with end-to-end tests. For this, simple web-pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
 
-This being said, there are probably edge cases which aren't working and more cause trouble. If you find one, please raise a bug on GitHub.
+This being said, there are probably edge cases which aren't working and may cause trouble. If you find one, please raise a bug on GitHub.

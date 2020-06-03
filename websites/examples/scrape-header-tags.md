@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_imag
 
 # Scrape Header Tags
 
-The header tags often contain useful information about a web-page and how it fits into the overall structure of the website it is part of. The following examples shows how to access particular pieces of information from the `<head>` and collections around these.
+The header tags often contain useful information about a web-page and how it fits into the overall structure of the website it is part of. The following examples show how to access particular pieces of information from the `<head>` and collections around these.
 
 
 ## Charset
@@ -71,7 +71,7 @@ echo $web->viewportString;
 
 ## Canonical URL
 
-The canonical URL, if given, can be access as shown in the example below:
+The canonical URL, if given, can be accessed as shown in the example below:
 
 ```php
 $web = new \spekulatius\phpscraper();

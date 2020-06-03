@@ -9,7 +9,7 @@ Scraping the title from a website is simple. The following examples show how it 
 
 ## Simple Example
 
-Very simple example on how to scrape the title of an website:
+Very simple example of how to scrape the title of a website:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -69,7 +69,7 @@ It should work in similar manner with any UTF-8 characters.
 
 ## HTML Entities
 
-HTML Entities should be solve
+HTML Entities should be resolved
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -85,4 +85,4 @@ $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 echo $web->title;
 ```
 
-Side note: Entities and special characters have been considered throughout the library, if you find a place where these don't work as expected raise an issue please.
+Side note: Entities and special characters have been considered throughout the library. If you find a place where these don't work as expected, please raise an issue.

@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https
 
 # Scraping Images
 
-Scraping the images from a website follows an similar approach as the other examples. Images can be parsed with details such as tag attributes or only as an URL list.
+Scraping the images from a website follows a similar approach as the other examples. Images can be parsed with details such as tag attributes or only as an URL list.
 
 
 ## Scraping Image URLs
@@ -48,7 +48,7 @@ If no images are found, the array remains empty.
 
 ## Scraping Images with Details
 
-If you are in need for more details the following requests allows you to access attributes of the image tag:
+If you are in need of more details the following requests allows you to access attributes of the image tag:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -74,6 +74,6 @@ var_dump($web->imagesWithDetails);
 
 ## Scraping Attributes: Alt, Width and Height
 
-The attributes for `alt`, `width` and `height` are included by in the detailed data set.
+The attributes for `alt`, `width` and `height` are included in the detailed data set.
 
-If you are requiring more data, you will either need to extend the library or submit an issue for consideration.
+If you require more data, you will either need to extend the library or submit an issue for consideration.

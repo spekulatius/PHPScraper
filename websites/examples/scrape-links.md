@@ -56,7 +56,7 @@ If the page shouldn't contain any links, an empty array is returned.
 
 ## Links with Details
 
-If you are in need for more details you can access these in a similar way as on the images. Below an example to access the detailed data of the first link on the page:
+If you are in need of more details you can access these in a similar way as on the images. Below is an example to access the detailed data of the first link on the page:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -88,4 +88,4 @@ $firstLink = $web->linksWithDetails[0];
  */
 ```
 
-If you are requiring more data, you will either need to extend the library or submit an issue for consideration.
+If you require more data, you will either need to extend the library or submit an issue for consideration.

@@ -67,7 +67,7 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $secondaryHeadings = $web->h3;
 ```
 
-If not headings are found, the array is left empty.
+If no headings are found, the array is left empty.
 
 
 ## All Headings on a Page

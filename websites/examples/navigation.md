@@ -4,12 +4,12 @@ image: https://api.imageee.com/bold?text=PHP:%20Navigate%20while%20Scraping&bg_i
 
 # Navigation
 
-While PHPScraper is mostly intended to parse websites and collect information you can also use it to navigate websites. Below are examples for ways to *surf* around a website.
+While PHPScraper is mostly intended to parse websites and collect information, you can also use it to navigate websites. Below are examples of ways to *surf* around a website.
 
 
 ## Navigation using URLs
 
-You can navigate to any URL. These URLs are usually coming from the [parsed links](/examples/scrape-links).
+You can navigate to any URL. These URLs usually come from the [parsed links](/examples/scrape-links).
 
 ```PHP
 $web = new \spekulatius\phpscraper();
