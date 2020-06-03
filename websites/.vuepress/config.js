@@ -11,7 +11,8 @@ module.exports = {
     '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: false
-    }
+    },
+    '@vuepress/plugin-back-to-top': {}
   },
   serviceWorker: true,
 
