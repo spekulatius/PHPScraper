@@ -3,7 +3,7 @@ image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated
 ---
 
 An *opinionated* web-access library for PHP
-===================================================
+===========================================
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
@@ -97,7 +97,7 @@ Installation
 
 As usual, done via composer:
 
-`composer install spekulatius/phpscraper`
+`composer require spekulatius/phpscraper`
 
 This automatically ensures the package is loaded. You can now use any of the above noted examples.
 

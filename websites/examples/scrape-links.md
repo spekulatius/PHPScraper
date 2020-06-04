@@ -89,3 +89,31 @@ $firstLink = $web->linksWithDetails[0];
 ```
 
 If you require more data, you will either need to extend the library or submit an issue for consideration.
+
+
+## Internal Links and External Links
+
+PHPScraper allows to return only internal or external links. The following demonstrates both:
+
+```php
+$web = new \spekulatius\phpscraper();
+
+// Navigate to the test page.
+$web->go('https://test-pages.phpscraper.de/links/base-href.html');
+
+// Get the list of internal links (in the example an image is linked)
+var_dump($web->internalLinks);
+/**
+ * [
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg'
+ * ]
+ */
+
+// Get the list of external links
+var_dump($web->externalLinks);
+/**
+ * [
+ *     'https://placekitten.com/408/287'
+ * ]
+ */
+```

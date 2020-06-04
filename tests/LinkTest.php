@@ -257,7 +257,7 @@ final class LinkTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
-        // Check the complex links list
+        // Check the external links list
         $this->assertSame(
             ['https://test-pages.phpscraper.de/assets/cat.jpg'],
             $web->internalLinks
@@ -274,7 +274,7 @@ final class LinkTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
-        // Check the complex links list
+        // Check the external links list
         $this->assertSame(
             ['https://placekitten.com/408/287'],
             $web->externalLinks
