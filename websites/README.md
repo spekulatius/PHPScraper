@@ -97,7 +97,9 @@ Installation
 
 As usual, done via composer:
 
-`composer require spekulatius/phpscraper`
+```bash
+composer require spekulatius/phpscraper
+```
 
 This automatically ensures the package is loaded. You can now use any of the above noted examples.
 

@@ -9,6 +9,7 @@
     "vuepress": "^1.4.1",
     "vuepress-plugin-minimal-analytics": "^0.1.4",
     "vuepress-plugin-seo": "^0.1.2",
-    "vuepress-plugin-sitemap": "^2.3.1"
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-web-monetization": "^0.0.1"
   }
 }

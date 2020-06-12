@@ -7705,6 +7705,11 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
+vuepress-plugin-web-monetization@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-web-monetization/-/vuepress-plugin-web-monetization-0.0.1.tgz#986a514a28c1efce66ec9c680a9d2aae407c49ed"
+  integrity sha512-xZzwXPkSY4zzHa7LogvUG+Dpgn9FCCk2vxJyFjmoHNDT+43fZZZmzuQX3LtO9wYBR7W5hR3PPM2TdYSmYR1yCA==
+
 vuepress@^1.4.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.5.0.tgz#690ed2b190844c2e53665df1e211a5fb107a8de7"
