@@ -7,6 +7,7 @@ module.exports = {
     'seo': {},
     'web-monetization': { address: '$ilp.uphold.com/DrRw6MnEEqBB' },
     'minimal-analytics': { ga: 'UA-85277681-13' },
+    'canonical': { baseURL: 'https://phpscraper.de' },
     'sitemap': { hostname: 'https://phpscraper.de/', changefreq: 'monthly' },
 
     '@vuepress/pwa': {
