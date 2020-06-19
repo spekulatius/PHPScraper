@@ -257,9 +257,35 @@ final class LinkTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
-        // Check the external links list
+        // Check the internal links list
         $this->assertSame(
             ['https://test-pages.phpscraper.de/assets/cat.jpg'],
+            $web->internalLinks
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function testSubdomainLinks()
+    {
+        $web = new \spekulatius\phpscraper();
+
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
+
+        // Check the sub domain links
+        $this->assertSame(
+            ['https://test-pages.phpscraper.de'],
+            $web->subdomainLinks
+        );
+
+        // Check the internal links list
+        $this->assertSame(
+            [
+                'https://phpscraper.de',
+                'https://test-pages.phpscraper.de',
+            ],
             $web->internalLinks
         );
     }

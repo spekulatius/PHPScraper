@@ -4,7 +4,13 @@
 namespace spekulatius;
 
 // Libs used.
+// https://github.com/FriendsOfPHP/Goutte
 use Goutte\Client;
+
+// https://github.com/jeremykendall/php-domain-parser
+use Pdp\Cache;
+use Pdp\CurlHttpClient;
+use Pdp\Manager;
 
 class phpscraper
 {
@@ -578,24 +584,36 @@ class core
     }
 
     /**
-     * get all internal links on the page as absolute URLs
+     * get all internal links (same root or sub-domain) on the page as absolute URLs
      *
      * @return array
      */
     public function internalLinks()
     {
         // get the current host - to compare against for internal links
-        $host = parse_url($this->currentURL(), PHP_URL_HOST);
+        $manager = new Manager(new Cache(), new CurlHttpClient());
+        $rules = $manager->getRules();
+
+        $root_domain = $rules
+            ->resolve(parse_url($this->currentURL(), PHP_URL_HOST))
+            ->getRegistrableDomain();
+
 
         // filter the array
         return array_values(array_filter(
             $this->links(),
-            function($link) use (&$host) { return ($host === parse_url($link, PHP_URL_HOST)); }
+            function($link) use (&$root_domain, &$rules) {
+                $link_root_domain = $rules
+                    ->resolve(parse_url($link, PHP_URL_HOST))
+                    ->getRegistrableDomain();
+
+                return ($root_domain === $link_root_domain);
+            }
         ));
     }
 
     /**
-     * get all internal links on the page as absolute URLs
+     * get all external links on the page as absolute URLs
      *
      * @return array
      */
@@ -606,6 +624,29 @@ class core
             $this->links(),
             $this->internalLinks()
         );
+    }
+
+    /**
+     * get all links within the same sub-domain on the page as absolute URLs
+     *
+     * E.g.
+     * www.example.com with a link to www.example.com/test would be found
+     * www.example.com with a link to example.com/test would not be found
+     *
+     * @see internalLinks() and externalLinks() for more details
+     *
+     * @return array
+     */
+    public function subdomainLinks()
+    {
+        // get the current host - to compare against for internal links
+        $host = parse_url($this->currentURL(), PHP_URL_HOST);
+
+        // filter the array
+        return array_values(array_filter(
+            $this->links(),
+            function($link) use (&$host) { return ($host === parse_url($link, PHP_URL_HOST)); }
+        ));
     }
 
     /**
