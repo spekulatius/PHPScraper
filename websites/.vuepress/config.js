@@ -46,6 +46,7 @@ module.exports = {
           'examples/headings',
           'examples/paragraphs',
           'examples/outline',
+          'examples/extract-keywords',
           'examples/scrape-images',
           'examples/scrape-links',
           'examples/navigation',

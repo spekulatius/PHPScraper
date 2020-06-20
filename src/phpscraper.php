@@ -12,6 +12,9 @@ use Pdp\Cache;
 use Pdp\CurlHttpClient;
 use Pdp\Manager;
 
+// https://github.com/Donatello-za/rake-php-plus
+use DonatelloZa\RakePlus\RakePlus;
+
 class phpscraper
 {
     /**
@@ -563,6 +566,59 @@ class core
         }
 
         return $result;
+    }
+
+    /**
+     * gets a set of keywords based on the rake approach.
+     *
+     * Uses:
+     *  - Title
+     *  - Headings
+     *  - Paragraphs/Content
+     *  - Link anchors and Titles
+     *  - Alt Texts of Images
+     *  - Meta Title, Description and Keywords
+     *
+     * @see https://github.com/Donatello-za/rake-php-plus
+     * @see https://phpscraper.de/examples/keywords.html
+     *
+     * @param string $locale (default: 'en_US')
+     * @return array
+     */
+    public function contentKeywords($locale = 'en_US')
+    {
+        // Collect content strings
+        $content = array_merge(
+            // website title
+            [$this->title()],
+
+            // paragraphs
+            $this->paragraphs(),
+
+            // various meta tags
+            [
+                $this->author(),
+                $this->description(),
+                join(' ', $this->keywords()),
+            ]
+        );
+
+        // Add headings
+        foreach ($this->headings() as $headings) {
+            $content += array_values($headings);
+        }
+
+        // Add image alt texts in
+        foreach ($this->linksWithDetails() as $link) {
+            $content[] = $link['text'];
+            $content[] = $link['title'];
+        }
+        foreach ($this->imagesWithDetails() as $image) {
+            $content[] = $image['alt'];
+        }
+
+        // Extract the keyword phrases and return a sorted array
+        return RakePlus::create(join(' ', $content), $locale)->sort('asc')->get();
     }
 
     /**
