@@ -91,7 +91,7 @@ class core
         // make ourselves known
         $this->client->setServerParameter(
             'HTTP_USER_AGENT',
-            'PHP Scraper/0.x (https://phpscraper.de)'
+            'Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)'
         );
     }
 
