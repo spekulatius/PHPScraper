@@ -1,6 +1,6 @@
 # [PHP Scraper](https://phpscraper.de)
 
-An oppinated & limited way to access the web using PHP. This is an extension to provide an alternative interface to [Guotte](https://github.com/FriendsOfPHP/Goutte). The [examples](https://phpscraper.de/) tell the story much better. Have a look!
+An oppinated & limited way to access the web using PHP. This is an extension to provide an alternative interface to [Goutte](https://github.com/FriendsOfPHP/Goutte). The [examples](https://phpscraper.de/) tell the story much better. Have a look!
 
 
 # Sponsors
