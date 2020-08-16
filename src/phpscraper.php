@@ -569,7 +569,8 @@ class core
     }
 
     /**
-     * gets a set of keywords based on the rake approach.
+     * Internal method to prepare the content for keyword analysis
+     *  done in the called methods for the rake analysis
      *
      * Uses:
      *  - Title
@@ -580,12 +581,11 @@ class core
      *  - Meta Title, Description and Keywords
      *
      * @see https://github.com/Donatello-za/rake-php-plus
-     * @see https://phpscraper.de/examples/keywords.html
+     * @see https://phpscraper.de/examples/extract-keywords.html
      *
-     * @param string $locale (default: 'en_US')
      * @return array
      */
-    public function contentKeywords($locale = 'en_US')
+    protected function prepContent()
     {
         // Collect content strings
         $content = array_merge(
@@ -617,8 +617,57 @@ class core
             $content[] = $image['alt'];
         }
 
+        return $content;
+    }
+
+    /**
+     * gets a set of keywords based on the rake approach.
+     *
+     * Uses:
+     *  - Title
+     *  - Headings
+     *  - Paragraphs/Content
+     *  - Link anchors and Titles
+     *  - Alt Texts of Images
+     *  - Meta Title, Description and Keywords
+     *
+     * @see https://github.com/Donatello-za/rake-php-plus
+     * @see https://phpscraper.de/examples/extract-keywords.html
+     *
+     * @param string $locale (default: 'en_US')
+     * @return array
+     */
+    public function contentKeywords($locale = 'en_US')
+    {
         // Extract the keyword phrases and return a sorted array
-        return RakePlus::create(join(' ', $content), $locale)->sort('asc')->get();
+        return RakePlus::create(join(' ', $this->prepContent()), $locale)
+            ->sort('asc')
+            ->get();
+    }
+
+    /**
+     * gets a set of keywords with scores based on the rake approach
+     *
+     * Uses:
+     *  - Title
+     *  - Headings
+     *  - Paragraphs/Content
+     *  - Link anchors and Titles
+     *  - Alt Texts of Images
+     *  - Meta Title, Description and Keywords
+     *
+     * @see https://github.com/Donatello-za/rake-php-plus
+     * @see https://phpscraper.de/examples/extract-keywords.html
+     *
+     * @param string $locale (default: 'en_US')
+     * @return array
+     */
+    public function contentKeywordsWithScores($locale = 'en_US')
+    {
+        // Extract the keyword phrases and return a sorted array
+        return RakePlus::create(join(' ', $this->prepContent()), $locale)
+            ->sortByScore('desc')
+            ->scores();
     }
 
     /**
