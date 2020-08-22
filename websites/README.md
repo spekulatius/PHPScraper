@@ -12,20 +12,20 @@ Accessing the web from PHP can done easier. This is an opinionated wrapper aroun
 The examples tell the story much better. Have a look!
 
 
-Sponsors
---------
+The Idea 💡️
+----------
+
+Access websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need.
+
+
+Supporters 💪️
+-------------
 
 This project is sponsored by:
 
 <a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
 
 Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
-
-
-Idea
-----
-
-Access websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need.
 
 
 Examples
