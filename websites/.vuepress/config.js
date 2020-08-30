@@ -7,6 +7,7 @@ module.exports = {
     'seo': {},
     'web-monetization': { address: '$ilp.uphold.com/DrRw6MnEEqBB' },
     'minimal-analytics': { ga: 'UA-85277681-13' },
+    'umami': { trackerUrl: 'https://u.peterthaleikis.com', siteId: '30674ebd-168d-456b-a172-549b42e48a66' },
     'canonical': { baseURL: 'https://phpscraper.de' },
     'sitemap': { hostname: 'https://phpscraper.de/', changefreq: 'monthly' },
 
