@@ -63,6 +63,10 @@ $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 echo $web->keywordString;   // "one, two, three"
 ```
 
+::: tip
+This refers only to the keywords in the "keyword" meta-tag. You can also [extract the content keywords](/examples/extract-keywords)) using PHPScraper.
+:::
+
 
 ## Combined Meta Tags
 

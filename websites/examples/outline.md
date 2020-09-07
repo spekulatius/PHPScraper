@@ -12,7 +12,7 @@ While you might want to only access the [`headings`](/examples/headings) to proc
 
  - `cleanOutlineWithParagraphs` works similar as `outlineWithParagraphs` does, the difference any empty HTML tags are removed.
 
-The following examples should help to understand the functionality better.
+The following examples should help to understand the functionality better. There are dedicated methods for [keyword extraction](/examples/extract-keywords) available.
 
 
 ## Export the Outline
