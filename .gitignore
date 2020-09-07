@@ -3,3 +3,4 @@ vendor
 .php_cs.cache
 .phpunit.result.cache
 composer.lock
+yarn-error.log

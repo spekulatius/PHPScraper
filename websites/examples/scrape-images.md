@@ -71,6 +71,10 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
+::: tip
+The `alt` text (with the [keywords of the content](/examples/extract-keywords)) is used by search engines for image-based searches.
+:::
+
 
 ## Scraping Attributes: Alt, Width and Height
 

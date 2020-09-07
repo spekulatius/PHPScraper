@@ -85,4 +85,6 @@ $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 echo $web->title;
 ```
 
-Side note: Entities and special characters have been considered throughout the library. If you find a place where these don't work as expected, please raise an issue.
+::: tip
+Entities and special characters have been considered throughout the library. If you find a place where these don't work as expected, please raise an [issue](https://github.com/spekulatius/PHPScraper/issues).
+:::
