@@ -31,6 +31,13 @@ module.exports = {
     smoothScroll: true,
     sidebar: [
       {
+        title: 'Basics',
+        collapsable: false,
+        children: [
+          'basics/installation',
+        ],
+      },
+      {
         title: 'Header',
         collapsable: false,
         children: [
