@@ -216,7 +216,7 @@ class core
      */
 
     /**
-     * get the title
+     * Get the title
      *
      * @return string
      */
@@ -226,7 +226,7 @@ class core
     }
 
     /**
-     * get the charset
+     * Get the charset
      *
      * @return string
      */
@@ -248,7 +248,7 @@ class core
     }
 
     /**
-     * get the content-type
+     * Get the content-type
      *
      * @return string
      */
@@ -258,7 +258,7 @@ class core
     }
 
     /**
-     * get the canonical
+     * Get the canonical
      *
      * @return string
      */
@@ -268,7 +268,7 @@ class core
     }
 
     /**
-     * get the viewport as a string
+     * Get the viewport as a string
      *
      * @return string
      */
@@ -278,7 +278,7 @@ class core
     }
 
     /**
-     * get the viewport as an array
+     * Get the viewport as an array
      *
      * @return array
      */
@@ -288,7 +288,7 @@ class core
     }
 
     /**
-     * get the csrfToken
+     * Get the csrfToken
      *
      * @return string
      */
@@ -298,7 +298,7 @@ class core
     }
 
     /**
-     * get the header collected as an array
+     * Get the header collected as an array
      *
      * @return array
      */
@@ -314,7 +314,7 @@ class core
     }
 
     /**
-     * get the author
+     * Get the author
      *
      * @return string
      */
@@ -324,7 +324,7 @@ class core
     }
 
     /**
-     * get the image
+     * Get the image
      *
      * @return string
      */
@@ -334,7 +334,7 @@ class core
     }
 
     /**
-     * get the keyword as a string
+     * Get the keyword as a string
      *
      * @return string
      */
@@ -344,7 +344,7 @@ class core
     }
 
     /**
-     * get the keyword as an array
+     * Get the keyword as an array
      *
      * @return array
      */
@@ -354,7 +354,7 @@ class core
     }
 
     /**
-     * get the description
+     * Get the description
      *
      * @return string
      */
@@ -364,7 +364,7 @@ class core
     }
 
     /**
-     * get the meta collected as an array
+     * Get the meta collected as an array
      *
      * @return array
      */
@@ -379,7 +379,7 @@ class core
     }
 
     /**
-     * gets the open graph attributes as an array
+     * Gets the open graph attributes as an array
      *
      * @return array
      */
@@ -399,7 +399,7 @@ class core
     }
 
     /**
-     * gets the open graph attributes as an array
+     * Gets the open graph attributes as an array
      *
      * @return array
      */
@@ -419,7 +419,7 @@ class core
     }
 
     /**
-     * get all <h1> tags (should be usually only one)
+     * Get all <h1> tags (should be usually only one)
      *
      * @return array
      */
@@ -429,7 +429,7 @@ class core
     }
 
     /**
-     * get all <h2> tags
+     * Get all <h2> tags
      *
      * @return array
      */
@@ -439,7 +439,7 @@ class core
     }
 
     /**
-     * get all <h3> tags
+     * Get all <h3> tags
      *
      * @return array
      */
@@ -449,7 +449,7 @@ class core
     }
 
     /**
-     * get all <h4> tags
+     * Get all <h4> tags
      *
      * @return array
      */
@@ -459,7 +459,7 @@ class core
     }
 
     /**
-     * get all <h5> tags
+     * Get all <h5> tags
      *
      * @return array
      */
@@ -469,7 +469,7 @@ class core
     }
 
     /**
-     * get all <h6> tags
+     * Get all <h6> tags
      *
      * @return array
      */
@@ -479,7 +479,7 @@ class core
     }
 
     /**
-     * get all heading tags
+     * Get all heading tags
      *
      * @return array
      */
@@ -496,7 +496,7 @@ class core
     }
 
     /**
-     * get all paragraphs of the page
+     * Get all paragraphs of the page
      *
      * @return array
      */
@@ -506,7 +506,7 @@ class core
     }
 
     /**
-     * get the paragraphs of the page excluding empty paragraphs.
+     * Get the paragraphs of the page excluding empty paragraphs.
      *
      * @return array
      */
@@ -582,6 +582,7 @@ class core
      *
      * @see https://github.com/Donatello-za/rake-php-plus
      * @see https://phpscraper.de/examples/extract-keywords.html
+     * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
      * @return array
      */
@@ -621,7 +622,7 @@ class core
     }
 
     /**
-     * gets a set of keywords based on the rake approach.
+     * Gets a set of keywords based on the rake approach.
      *
      * Uses:
      *  - Title
@@ -633,6 +634,7 @@ class core
      *
      * @see https://github.com/Donatello-za/rake-php-plus
      * @see https://phpscraper.de/examples/extract-keywords.html
+     * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
      * @param string $locale (default: 'en_US')
      * @return array
@@ -646,7 +648,7 @@ class core
     }
 
     /**
-     * gets a set of keywords with scores based on the rake approach
+     * Gets a set of keywords with scores based on the rake approach
      *
      * Uses:
      *  - Title
@@ -658,6 +660,7 @@ class core
      *
      * @see https://github.com/Donatello-za/rake-php-plus
      * @see https://phpscraper.de/examples/extract-keywords.html
+     * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
      * @param string $locale (default: 'en_US')
      * @return array
@@ -671,7 +674,9 @@ class core
     }
 
     /**
-     * get all links on the page as absolute URLs
+     * Get all links on the page as absolute URLs
+     *
+     * @see https://github.com/spekulatius/link-scraping-test-beautifulsoup-vs-phpscraper
      *
      * @return array
      */
@@ -689,7 +694,7 @@ class core
     }
 
     /**
-     * get all internal links (same root or sub-domain) on the page as absolute URLs
+     * Get all internal links (same root or sub-domain) on the page as absolute URLs
      *
      * @return array
      */
@@ -718,7 +723,7 @@ class core
     }
 
     /**
-     * get all external links on the page as absolute URLs
+     * Get all external links on the page as absolute URLs
      *
      * @return array
      */
@@ -732,7 +737,7 @@ class core
     }
 
     /**
-     * get all links within the same sub-domain on the page as absolute URLs
+     * Get all links within the same sub-domain on the page as absolute URLs
      *
      * E.g.
      * www.example.com with a link to www.example.com/test would be found
@@ -755,7 +760,7 @@ class core
     }
 
     /**
-     * get all links on the page with commonly interesting details
+     * Get all links on the page with commonly interesting details
      *
      * @return array
      */
@@ -791,7 +796,7 @@ class core
     }
 
     /**
-     * get all images on the page with absolute URLs
+     * Get all images on the page with absolute URLs
      *
      * @return array
      */
@@ -809,7 +814,7 @@ class core
     }
 
     /**
-     * get all images on the page with commonly interesting details
+     * Get all images on the page with commonly interesting details
      *
      * @return array
      */
