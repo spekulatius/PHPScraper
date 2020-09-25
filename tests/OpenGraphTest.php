@@ -35,7 +35,7 @@ final class OpenGraphTest extends TestCase
         $this->assertSame('Lorem Ipsum', $web->openGraph['og:title']);
         $this->assertSame('Lorem ipsum dolor etc.', $web->openGraph['og:description']);
 
-        // the whole set.
+        // The whole set.
         $this->assertSame(
             [
                 'og:site_name' => 'Lorem ipsum',

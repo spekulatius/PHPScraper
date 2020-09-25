@@ -35,7 +35,7 @@ final class TwitterCardTest extends TestCase
         $this->assertSame('summary_large_image', $web->twitterCard['twitter:card']);
         $this->assertSame('Lorem Ipsum', $web->twitterCard['twitter:title']);
 
-        // the whole set.
+        // The whole set.
         $this->assertSame(
             [
                 'twitter:card' => 'summary_large_image',

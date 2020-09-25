@@ -20,7 +20,7 @@ final class KeywordTest extends TestCase
         // Check the keywords on this case...
         $keywords = $web->contentKeywords;
 
-        // a selected list of keywords to expect
+        // A selected list of keywords to expect
         $shouldKeywords = [
             '1960s',
             'added',
@@ -39,7 +39,7 @@ final class KeywordTest extends TestCase
             'lorem ipsum text',
         ];
 
-        // check if all are part of the output
+        // Check if all are part of the output
         foreach ($shouldKeywords as $keyword) {
             $this->assertTrue(in_array($keyword, $keywords));
         }
@@ -59,7 +59,7 @@ final class KeywordTest extends TestCase
         // Check the keywords on this case...
         $keywords = $web->contentKeywordsWithScores;
 
-        // a selected list of keywords to expect
+        // A selected list of keywords to expect
         $shouldKeywords = [
             '1960s' => 1.0,
             'added' => 1.0,
@@ -78,9 +78,9 @@ final class KeywordTest extends TestCase
             'lorem ipsum text' => 11.0,
         ];
 
-        // check if all are part of the output with the expected score
+        // Check if all are part of the output with the expected score
         foreach ($shouldKeywords as $keyword => $score) {
-            // has the same score
+            // Has the same score
             $this->assertSame($keywords[$keyword], $score);
         }
     }

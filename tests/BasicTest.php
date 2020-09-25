@@ -38,7 +38,7 @@ final class BasicTest extends TestCase
             $web->title()
         );
 
-        // so...
+        // So...
         $this->assertSame($web->title, $web->title());
     }
 

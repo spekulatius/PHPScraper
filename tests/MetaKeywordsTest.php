@@ -19,7 +19,7 @@ final class MetaKeywordTest extends TestCase
         // null if there aren't any keywords set.
         $this->assertSame(null, $web->keywordString);
 
-        // empty array if there aren't any keywords set.
+        // Empty array if there aren't any keywords set.
         $this->assertTrue(is_iterable($web->keywords));
         $this->assertTrue(empty($web->keywords));
     }

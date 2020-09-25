@@ -19,7 +19,7 @@ final class MetaViewportTest extends TestCase
         // null if there isn't a viewport set.
         $this->assertSame(null, $web->viewportString);
 
-        // empty array if there aren't any viewports set.
+        // Empty array if there aren't any viewports set.
         $this->assertTrue(is_iterable($web->viewport));
         $this->assertTrue(empty($web->viewport));
     }

@@ -18,14 +18,14 @@ use DonatelloZa\RakePlus\RakePlus;
 class phpscraper
 {
     /**
-     * holds the client
+     * Holds the client
      *
      * @var spekulatius\core;
      */
     protected $core = null;
 
     /**
-     * constructor
+     * Constructor
      */
     public function __construct()
     {
@@ -33,19 +33,19 @@ class phpscraper
     }
 
     /**
-     * catch alls to properties and process them accordingly.
+     * Catch alls to properties and process them accordingly.
      *
      * @param string $name
      * @return mixed
      */
     public function __get(string $name)
     {
-        // we are assuming that all calls for properties actually method calls...
+        // We are assuming that all calls for properties actually method calls...
         return $this->call($name);
     }
 
     /**
-     * catches the method calls and tries to satisfy them.
+     * Catches the method calls and tries to satisfy them.
      *
      * @param string $name
      * @param array $arguments = null
@@ -65,33 +65,33 @@ class phpscraper
 class core
 {
     /**
-     * holds the client
+     * Holds the client
      *
      * @var Goutte\Client
      */
     protected $client = null;
 
     /**
-     * holds the current page (a Crawler object)
+     * Holds the current page (a Crawler object)
      *
      * @var Symfony\Component\DomCrawler\Crawler
      */
     protected $current_page = null;
 
     /**
-     * constructor
+     * Constructor
      */
     public function __construct()
     {
         // Goutte Client
         $this->client = new Client();
 
-        // we assume that we want to follow any redirects.
+        // We assume that we want to follow any redirects.
         $this->client->followRedirects(true);
         $this->client->followMetaRefresh(true);
         $this->client->setMaxRedirects(5);
 
-        // make ourselves known
+        // Make ourselves known
         $this->client->setServerParameter(
             'HTTP_USER_AGENT',
             'Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)'
@@ -99,7 +99,7 @@ class core
     }
 
     /**
-     * returns the current url
+     * Returns the current url
      *
      * @return string $url
      */
@@ -109,7 +109,7 @@ class core
     }
 
     /**
-     * navigates to an url
+     * Navigates to an url
      *
      * @param string $url
      */
@@ -119,7 +119,7 @@ class core
     }
 
     /**
-     * fetch an asset from a given URL
+     * Fetch an asset from a given URL
      *
      * @param string $url
      */
@@ -129,7 +129,7 @@ class core
     }
 
     /**
-     * filters the current page by a parameter
+     * Filters the current page by a parameter
      *
      * @param string $filter
      * @return Crawler
@@ -140,7 +140,7 @@ class core
     }
 
     /**
-     * filters the current page by a parameter and returns the first one, or null.
+     * Filters the current page by a parameter and returns the first one, or null.
      *
      * @param string $filter
      * @return Crawler|null
@@ -153,7 +153,7 @@ class core
     }
 
     /**
-     * filters the current page by a parameter and returns the first ones content, or null.
+     * Filters the current page by a parameter and returns the first ones content, or null.
      *
      * @param string $filter
      * @return string|null
@@ -166,7 +166,7 @@ class core
     }
 
     /**
-     * filters the current page by a parameter and returns the first ones content, or null.
+     * Filters the current page by a parameter and returns the first ones content, or null.
      *
      * @param string $filter
      * @param array $attributes
@@ -180,7 +180,7 @@ class core
     }
 
     /**
-     * filters the current page by a parameter and returns the first ones content, or null.
+     * Filters the current page by a parameter and returns the first ones content, or null.
      *
      * @param string $filter
      * @param array $attributes
@@ -194,7 +194,7 @@ class core
     }
 
     /**
-     * returns the content attribute for the first result of the query, or null.
+     * Returns the content attribute for the first result of the query, or null.
      *
      * @param string $filter
      * @return string|null
@@ -232,7 +232,7 @@ class core
      */
     public function charset()
     {
-        // a bit more complex, as I didn't get the XPath working proper...
+        // A bit more complex, as I didn't get the XPath working proper...
         $filteredList = array_values(array_filter(
             // 1. Get all attributes "charset"
             $this->filter('//meta')->extract(['charset']),
@@ -389,7 +389,7 @@ class core
             ->filter('//meta[contains(@name, "twitter:")]')
             ->extract(['name', 'content']);
 
-        // prepare the data
+        // Prepare the data
         $result = [];
         foreach ($data as $set) {
             $result[$set[0]] = $set[1];
@@ -409,7 +409,7 @@ class core
             ->filter('//meta[contains(@property, "og:")]')
             ->extract(['property', 'content']);
 
-        // prepare the data
+        // Prepare the data
         $result = [];
         foreach ($data as $set) {
             $result[$set[0]] = $set[1];
@@ -519,7 +519,7 @@ class core
     }
 
     /**
-     * parses the content outline of the web-page
+     * Parses the content outline of the web-page
      *
      * @return array
      */
@@ -535,7 +535,7 @@ class core
     }
 
     /**
-     * parses the content outline of the web-page
+     * Parses the content outline of the web-page
      *
      * @return array
      */
@@ -551,7 +551,7 @@ class core
     }
 
     /**
-     * parses the content outline of the web-page
+     * Parses the content outline of the web-page
      *
      * @return array
      */
@@ -590,13 +590,13 @@ class core
     {
         // Collect content strings
         $content = array_merge(
-            // website title
+            // Website title
             [$this->title()],
 
-            // paragraphs
+            // Paragraphs
             $this->paragraphs(),
 
-            // various meta tags
+            // Various meta tags
             [
                 $this->author(),
                 $this->description(),
@@ -684,7 +684,7 @@ class core
     {
         $links = $this->filter('//a')->links();
 
-        // generate a list of all image entries
+        // Generate a list of all image entries
         $result = [];
         foreach ($links as $link) {
             $result[] = $link->getUri();
@@ -700,7 +700,7 @@ class core
      */
     public function internalLinks()
     {
-        // get the current host - to compare against for internal links
+        // Get the current host - to compare against for internal links
         $manager = new Manager(new Cache(), new CurlHttpClient());
         $rules = $manager->getRules();
 
@@ -709,7 +709,7 @@ class core
             ->getRegistrableDomain();
 
 
-        // filter the array
+        // Filter the array
         return array_values(array_filter(
             $this->links(),
             function($link) use (&$root_domain, &$rules) {
@@ -729,7 +729,7 @@ class core
      */
     public function externalLinks()
     {
-        // diff the array
+        // Diff the array
         return array_diff(
             $this->links(),
             $this->internalLinks()
@@ -749,10 +749,10 @@ class core
      */
     public function subdomainLinks()
     {
-        // get the current host - to compare against for internal links
+        // Get the current host - to compare against for internal links
         $host = parse_url($this->currentURL(), PHP_URL_HOST);
 
-        // filter the array
+        // Filter the array
         return array_values(array_filter(
             $this->links(),
             function($link) use (&$host) { return ($host === parse_url($link, PHP_URL_HOST)); }
@@ -768,13 +768,13 @@ class core
     {
         $links = $this->filter('//a');
 
-        // generate a list of all image entries
+        // Generate a list of all image entries
         $result = [];
         foreach ($links as $link) {
-            // generate the proper uri using the Symfony's link class
+            // Generate the proper uri using the Symfony's link class
             $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentURL());
 
-            // collect commonly interesting attributes and URL
+            // Collect commonly interesting attributes and URL
             $entry = [
                 'url' => $linkObj->getUri(),
                 'text' => $link->nodeValue,
@@ -783,7 +783,7 @@ class core
                 'rel' => $link->getAttribute('rel') == '' ? null : strtolower($link->getAttribute('rel')),
             ];
 
-            // add additional parameters in for "rel"
+            // Add additional parameters in for "rel"
             $entry['isNofollow'] = \strpos($entry['rel'], 'nofollow') !== false;
             $entry['isUGC'] = \strpos($entry['rel'], 'ugc') !== false;
             $entry['isNoopener'] = \strpos($entry['rel'], 'noopener') !== false;
@@ -804,7 +804,7 @@ class core
     {
         $images = $this->filter('//img')->images();
 
-        // generate a list of all image entries
+        // Generate a list of all image entries
         $result = [];
         foreach ($images as $image) {
             $result[] = $image->getUri();
@@ -822,13 +822,13 @@ class core
     {
         $images = $this->filter('//img');
 
-        // generate a list of all image entries
+        // Generate a list of all image entries
         $result = [];
         foreach ($images as $image) {
-            // generate the proper uri using the Symfony's image class
+            // Generate the proper uri using the Symfony's image class
             $imageObj = new \Symfony\Component\DomCrawler\Image($image, $this->currentURL());
 
-            // collect commonly interesting attributes and URL
+            // Collect commonly interesting attributes and URL
             $result[] = [
                 'url' => $imageObj->getUri(),
                 'alt' => $image->getAttribute('alt'),
@@ -841,29 +841,25 @@ class core
     }
 
     /**
-     * click a link (either with title or url)
+     * Click a link (either with title or url)
      *
      * @param string $title_or_url
      * @return boolean
      */
     public function clickLink($title_or_url)
     {
-        // if the string starts with http just go to it - we assume it's an URL
+        // If the string starts with http just go to it - we assume it's an URL
         if (\stripos($title_or_url, 'http') === 0) {
-            // go to a URL
+            // Go to a URL
             $this->go($title_or_url);
-
-            return true;
         } else {
-            // find link based on the title
+            // Find link based on the title
             $link = $this->current_page->selectLink($title_or_url)->link();
 
-            // click the link and store the DOMCrawler object
+            // Click the link and store the DOMCrawler object
             $this->current_page = $this->client->click($link);
-
-            return true;
         }
 
-        return false;
+        return true;
     }
 }

@@ -34,13 +34,13 @@ final class ImageTest extends TestCase
         // Navigate to the test page. This page contains two images (cat.jpg).
         $this->assertSame(2, count($web->images));
 
-        // check the simple list
+        // Check the simple list
         $this->assertSame([
             'https://test-pages.phpscraper.de/assets/cat.jpg',
             'https://test-pages.phpscraper.de/assets/cat.jpg',
         ], $web->images);
 
-        // check the expected data
+        // Check the expected data
         $this->assertSame([
             [
                 'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
@@ -70,16 +70,16 @@ final class ImageTest extends TestCase
         // Check the h1
         $this->assertSame('We are testing here ä ü ö!', $web->h1[0]);
 
-        // check the number of images
+        // Check the number of images
         $this->assertSame(2, count($web->images));
 
-        // check the simple list
+        // Check the simple list
         $this->assertSame([
             'https://test-pages.phpscraper.de/assets/katze-ä-ü-ö.jpg',
             'https://test-pages.phpscraper.de/assets/katze-ä-ü-ö.jpg',
         ], $web->images);
 
-        // check the expected data
+        // Check the expected data
         $this->assertSame([
             [
                 'url' => 'https://test-pages.phpscraper.de/assets/katze-ä-ü-ö.jpg',
@@ -106,16 +106,16 @@ final class ImageTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
 
-        // check the number of images
+        // Check the number of images
         $this->assertSame(2, count($web->images));
 
-        // check the simple list
+        // Check the simple list
         $this->assertSame([
             'https://test-pages.phpscraper.de/assets/貓.jpg',
             'https://test-pages.phpscraper.de/assets/貓.jpg',
         ], $web->images);
 
-        // check the expected data
+        // Check the expected data
         $this->assertSame([
             [
                 'url' => 'https://test-pages.phpscraper.de/assets/貓.jpg',
@@ -142,7 +142,7 @@ final class ImageTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/images/base-href.html');
 
-        // check the number of images
+        // Check the number of images
         $this->assertSame(2, count($web->images));
 
         // Current broken, due to bug in Guotte/DOMCrawler
@@ -178,10 +178,10 @@ final class ImageTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/images/width.html');
 
-        // check the number of images
+        // Check the number of images
         $this->assertSame(3, count($web->images));
 
-        // check the expected data
+        // Check the expected data
         $this->assertSame([
             [
                 'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
@@ -214,10 +214,10 @@ final class ImageTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/images/height.html');
 
-        // check the number of imagess
+        // Check the number of imagess
         $this->assertSame(3, count($web->images));
 
-        // check the expected data
+        // Check the expected data
         $this->assertSame([
             [
                 'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',

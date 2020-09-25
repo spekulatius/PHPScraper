@@ -31,7 +31,7 @@ final class LinkTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/target.html');
 
-        // check the number of links
+        // Check the number of links
         $this->assertSame(6, count($web->links));
 
         // Check the simple links list
@@ -121,7 +121,7 @@ final class LinkTest extends TestCase
         // This page contains a number of links with different rel attributes.
         $web->go('https://test-pages.phpscraper.de/links/rel.html');
 
-        // check the number of links
+        // Check the number of links
         $this->assertSame(5, count($web->links));
 
         // Check the simple links list
@@ -199,7 +199,7 @@ final class LinkTest extends TestCase
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
-        // check the number of links
+        // Check the number of links
         $this->assertSame(2, count($web->links));
 
         // Check the simple links list
