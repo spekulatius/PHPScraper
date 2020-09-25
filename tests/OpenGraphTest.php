@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class OpenGraphTest extends TestCase
+class OpenGraphTest extends BaseTest
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class OpenGraphTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Attempt to check Google
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go($this->url . '/meta/missing.html');
 
         // Empty array, because there aren't any open graph props set.
         $this->assertTrue(is_iterable($web->openGraph));
@@ -29,7 +29,7 @@ final class OpenGraphTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/og/example.html');
+        $web->go($this->url . '/og/example.html');
 
         // Check elements
         $this->assertSame('Lorem Ipsum', $web->openGraph['og:title']);
@@ -42,8 +42,8 @@ final class OpenGraphTest extends TestCase
                 'og:type' => 'website',
                 'og:title' => 'Lorem Ipsum',
                 'og:description' => 'Lorem ipsum dolor etc.',
-                'og:url' => 'https://test-pages.phpscraper.de/lorem-ipsum.html',
-                'og:image' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+                'og:url' => $this->url . '/lorem-ipsum.html',
+                'og:image' => $this->url . '/assets/cat.jpg',
             ],
             $web->openGraph
         );

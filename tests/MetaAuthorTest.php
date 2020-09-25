@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class MetaAuthorTest extends TestCase
+class MetaAuthorTest extends BaseTest
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class MetaAuthorTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/meta/missing.html');
+        $web->go($this->url . '/meta/meta/missing.html');
 
         // Check the author as not given (null)
         $this->assertSame(null, $web->author);
@@ -28,7 +28,7 @@ final class MetaAuthorTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
+        $web->go($this->url . '/meta/html-entities.html');
 
         // Check the author
         $this->assertSame('Cat & Mouse', $web->author);
@@ -42,7 +42,7 @@ final class MetaAuthorTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
+        $web->go($this->url . '/meta/lorem-ipsum.html');
 
         // Check the author
         $this->assertSame('Lorem ipsum', $web->author);
@@ -56,7 +56,7 @@ final class MetaAuthorTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
+        $web->go($this->url . '/meta/german-umlaute.html');
 
         // Check the author
         $this->assertSame('Müller', $web->author);
@@ -70,7 +70,7 @@ final class MetaAuthorTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
+        $web->go($this->url . '/meta/chinese-characters.html');
 
         // Check the author
         $this->assertSame('貓', $web->author);

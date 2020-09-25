@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class LinkTest extends TestCase
+class LinkTest extends BaseTest
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class LinkTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/links/no-links.html');
+        $web->go($this->url . '/links/no-links.html');
 
         // No links -> an empty array is expected.
         $this->assertSame([], $web->links);
@@ -29,7 +29,7 @@ final class LinkTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/links/target.html');
+        $web->go($this->url . '/links/target.html');
 
         // Check the number of links
         $this->assertSame(6, count($web->links));
@@ -119,7 +119,7 @@ final class LinkTest extends TestCase
 
         // Navigate to the test page.
         // This page contains a number of links with different rel attributes.
-        $web->go('https://test-pages.phpscraper.de/links/rel.html');
+        $web->go($this->url . '/links/rel.html');
 
         // Check the number of links
         $this->assertSame(5, count($web->links));
@@ -197,7 +197,7 @@ final class LinkTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/links/base-href.html');
+        $web->go($this->url . '/links/base-href.html');
 
         // Check the number of links
         $this->assertSame(2, count($web->links));
@@ -205,10 +205,10 @@ final class LinkTest extends TestCase
         // Check the simple links list
         $this->assertSame([
             'https://placekitten.com/408/287',
-            'https://test-pages.phpscraper.de/assets/cat.jpg',
+            $this->url . '/assets/cat.jpg',
 
             // Temporary deactivated, because relative paths using base_href doesn't work.
-            // 'https://test-pages.phpscraper.de/cat.jpg',
+            // $this->url . '/cat.jpg',
         ], $web->links);
 
         // Check the complex links list
@@ -224,7 +224,7 @@ final class LinkTest extends TestCase
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
-                'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+                'url' => $this->url . '/assets/cat.jpg',
                 'text' => 'absolute path to cat',
                 'title' => null,
                 'target' => null,
@@ -234,7 +234,7 @@ final class LinkTest extends TestCase
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             // ], [
-            //     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+            //     'url' => $this->url . '/assets/cat.jpg',
             //     'text' => 'relative path with base href',
             //     'title' => null,
             //     'target' => null,
@@ -255,37 +255,11 @@ final class LinkTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/links/base-href.html');
+        $web->go($this->url . '/links/base-href.html');
 
         // Check the internal links list
         $this->assertSame(
-            ['https://test-pages.phpscraper.de/assets/cat.jpg'],
-            $web->internalLinks
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function testSubdomainLinks()
-    {
-        $web = new \spekulatius\phpscraper();
-
-        // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
-
-        // Check the sub domain links
-        $this->assertSame(
-            ['https://test-pages.phpscraper.de'],
-            $web->subdomainLinks
-        );
-
-        // Check the internal links list
-        $this->assertSame(
-            [
-                'https://phpscraper.de',
-                'https://test-pages.phpscraper.de',
-            ],
+            [$this->url . '/assets/cat.jpg'],
             $web->internalLinks
         );
     }
@@ -298,7 +272,7 @@ final class LinkTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/links/base-href.html');
+        $web->go($this->url . '/links/base-href.html');
 
         // Check the external links list
         $this->assertSame(

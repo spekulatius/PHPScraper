@@ -631,7 +631,7 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    PHPScraper is a web-page parsing interface around Guotte (itself licensed under MIT).
+    PHPScraper is a web-page parsing interface around Goutte (itself licensed under MIT).
     Copyright (C) 2020 Peter Thaleikis
 
     This program is free software: you can redistribute it and/or modify

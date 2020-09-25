@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class KeywordTest extends TestCase
+class KeywordTest extends BaseTest
 {
     /**
      * @test
@@ -15,7 +15,7 @@ final class KeywordTest extends TestCase
 
         // Navigate to the test page.
         // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
-        $web->go('https://test-pages.phpscraper.de/content/keywords.html');
+        $web->go($this->url . '/content/keywords.html');
 
         // Check the keywords on this case...
         $keywords = $web->contentKeywords;
@@ -54,7 +54,7 @@ final class KeywordTest extends TestCase
 
         // Navigate to the test page.
         // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
-        $web->go('https://test-pages.phpscraper.de/content/keywords.html');
+        $web->go($this->url . '/content/keywords.html');
 
         // Check the keywords on this case...
         $keywords = $web->contentKeywordsWithScores;

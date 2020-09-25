@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class OutlineTest extends TestCase
+class OutlineTest extends BaseTest
 {
     /**
      * @test
@@ -31,7 +31,7 @@ final class OutlineTest extends TestCase
          * <h3>Example 3</h3>
          * <p>Here would be another example.</p>
          */
-        $web->go('https://test-pages.phpscraper.de/content/outline.html');
+        $web->go($this->url . '/content/outline.html');
 
 
         // Get the content outline
@@ -86,7 +86,7 @@ final class OutlineTest extends TestCase
          * <!-- an empty paragraph to check if it gets filtered out correctly -->
          * <p></p>
          */
-        $web->go('https://test-pages.phpscraper.de/content/outline.html');
+        $web->go($this->url . '/content/outline.html');
 
 
         // Get the content outline

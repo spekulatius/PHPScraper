@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class MetaCharsetTest extends TestCase
+class MetaCharsetTest extends BaseTest
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class MetaCharsetTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go($this->url . '/meta/missing.html');
 
         // Check the charset as not given (null)
         $this->assertSame(null, $web->charset);
@@ -28,7 +28,7 @@ final class MetaCharsetTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
+        $web->go($this->url . '/meta/lorem-ipsum.html');
 
         // Check the charset
         $this->assertSame('utf-8', $web->charset);
