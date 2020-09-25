@@ -117,3 +117,7 @@ foreach ($keywords as $keyword => $score) {
  * [...]
  */
 ```
+
+::: tip
+The PHP-functions [similar_text](https://www.php.net/manual/en/function.similar-text.php) and [levenshtein](https://www.php.net/manual/en/function.levenshtein.php) can help you identify and merge similar keywords as well as typo variations of keywords.
+:::
