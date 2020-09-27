@@ -25,6 +25,7 @@
         "donatello-za/rake-php-plus": "^1.0"
     },
     "require-dev": {
+        "symfony/thanks": "*",
         "phpunit/phpunit": "^8.0",
         "symfony/process": "^4.0|^5.0"
     },
