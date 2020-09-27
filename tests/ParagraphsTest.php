@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class ParagraphsTest extends TestCase
+class ParagraphsTest extends BaseTest
 {
     /**
      * @test
@@ -34,7 +34,7 @@ final class ParagraphsTest extends TestCase
          * <!-- an empty paragraph to check if it gets filtered out correctly -->
          * <p></p>
          */
-        $web->go('https://test-pages.phpscraper.de/content/outline.html');
+        $web->go($this->url . '/content/outline.html');
 
         // Get the paragraphs
         $this->assertSame([
@@ -75,7 +75,7 @@ final class ParagraphsTest extends TestCase
          * <!-- an empty paragraph to check if it gets filtered out correctly -->
          * <p></p>
          */
-        $web->go('https://test-pages.phpscraper.de/content/outline.html');
+        $web->go($this->url . '/content/outline.html');
 
         // Get the cleaned up paragraphs
         $this->assertSame([

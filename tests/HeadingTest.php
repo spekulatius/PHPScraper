@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class HeadingTest extends TestCase
+class HeadingTest extends BaseTest
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class HeadingTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go($this->url . '/meta/missing.html');
 
         // Check the missing headers (h1 actually exists on the page).
         $this->assertSame([], $web->h2);
@@ -32,7 +32,7 @@ final class HeadingTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
+        $web->go($this->url . '/meta/html-entities.html');
 
         // Check the h1
         $this->assertSame('We are testing here & elsewhere!', $web->h1[0]);
@@ -66,7 +66,7 @@ final class HeadingTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
+        $web->go($this->url . '/meta/lorem-ipsum.html');
 
         // Check the h1
         $this->assertSame('We are testing here!', $web->h1[0]);
@@ -87,7 +87,7 @@ final class HeadingTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
+        $web->go($this->url . '/meta/german-umlaute.html');
 
         // Check the h1
         $this->assertSame('We are testing here ä ü ö!', $web->h1[0]);
@@ -108,7 +108,7 @@ final class HeadingTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
+        $web->go($this->url . '/meta/chinese-characters.html');
 
         // Check the h1
         $this->assertSame('We are testing here! 加油!', $web->h1[0]);

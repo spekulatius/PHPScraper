@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use Tests\BaseTest;
 
-final class CanonicalTest extends TestCase
+class CanonicalTest extends BaseTest
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class CanonicalTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Attempt to check Google
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go($this->url . '/meta/missing.html');
 
         // null if there isn't a canonical set.
         $this->assertSame(null, $web->canonical);
@@ -28,12 +28,12 @@ final class CanonicalTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        // It contains: <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
-        $web->go('https://test-pages.phpscraper.de/navigation/1.html');
+        // It contains: <link rel="canonical" href="http://localhost:8089/navigation/2.html" />
+        $web->go($this->url . '/navigation/1.html');
 
         // Check the canonical
         $this->assertSame(
-            'https://test-pages.phpscraper.de/navigation/2.html',
+            $this->url . '/navigation/2.html',
             $web->canonical
         );
     }

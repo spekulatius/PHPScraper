@@ -2,21 +2,10 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
+use TestsBaseTest;
 
-final class BasicTest extends TestCase
+class CoreTest extends BaseTest
 {
-    /**
-     * @test
-     */
-    public function testPageMissing()
-    {
-        $web = new \spekulatius\phpscraper();
-
-        // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/page-does-not-exist.html');
-        $this->assertSame("Page Not Found", $web->title);
-    }
 
     /**
      * @test
@@ -26,7 +15,7 @@ final class BasicTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page
-        $web->go('https://test-pages.phpscraper.de');
+        $web->go('https://phpscraper.de');
 
         // Both the method call as well as property call should return the same...
         $this->assertSame(
@@ -38,7 +27,7 @@ final class BasicTest extends TestCase
             $web->title()
         );
 
-        // so...
+        // So...
         $this->assertSame($web->title, $web->title());
     }
 
@@ -50,7 +39,7 @@ final class BasicTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page
-        $web->go('https://test-pages.phpscraper.de');
+        $web->go('https://phpscraper.de');
 
         // Both the method call as well as property call should return the same...
         $this->assertSame(
@@ -65,13 +54,6 @@ final class BasicTest extends TestCase
         // Shouldn't match, because we surfed on...
         $this->assertNotSame(
             "PHP Scraper - An opinionated web-scraper library for PHP",
-            $web->title
-        );
-
-        // Instead it should be GitHub now.
-        // Side-note: The not signed-in title for GitHub is different.
-        $this->assertSame(
-            "The world’s leading software development platform · GitHub",
             $web->title
         );
     }

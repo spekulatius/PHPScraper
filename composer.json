@@ -25,7 +25,8 @@
         "donatello-za/rake-php-plus": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.0",
+        "symfony/process": "^4.0|^5.0"
     },
     "autoload": {
         "psr-4": {
