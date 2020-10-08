@@ -24,7 +24,7 @@ class BaseTest extends TestCase
 
         // The server needs a little to establish.
         // This is needed to ensure it's up and running before we start testing.
-        sleep(1);
+        usleep(500000);
     }
 
     /**

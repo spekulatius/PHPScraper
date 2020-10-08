@@ -11,7 +11,7 @@ class TwitterCardTest extends BaseTest
     {
         $web = new \spekulatius\phpscraper();
 
-        // Attempt to check Google
+        // Go to the test page
         $web->go($this->url . '/meta/missing.html');
 
         // Empty array, because there aren't any twitter cards props set.

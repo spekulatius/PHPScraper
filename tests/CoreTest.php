@@ -4,7 +4,6 @@ namespace Tests;
 
 class CoreTest extends BaseTest
 {
-
     /**
      * @test
      */

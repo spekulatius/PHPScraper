@@ -3,7 +3,7 @@
 An oppinated & limited way to access the web using PHP. This is an extension to provide an alternative interface to [Goutte](https://github.com/FriendsOfPHP/Goutte). The [examples](https://phpscraper.de/) tell the story much better. Have a look!
 
 
-# Sponsors
+## Sponsors
 
 This project is sponsored by:
 
@@ -18,7 +18,7 @@ Here are a few impressions on the way the library works. More examples are on th
 
 Fetching the title of a web page:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper();
 
 $web->go('https://google.com');
@@ -32,7 +32,7 @@ echo $web->title();
 
 Scraping the images with attributes on the img-tag:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper();
 
 /**
