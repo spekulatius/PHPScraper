@@ -39,7 +39,10 @@ class KeywordTest extends BaseTest
 
         // Check if all are part of the output
         foreach ($shouldKeywords as $keyword) {
-            $this->assertTrue(in_array($keyword, $keywords));
+            $this->assertTrue(
+                in_array($keyword, $keywords),
+                sprintf('"%s" is missing', $keyword)
+            );
         }
     }
 
@@ -59,7 +62,6 @@ class KeywordTest extends BaseTest
 
         // A selected list of keywords to expect
         $shouldKeywords = [
-            '1960s' => 1.0,
             'added' => 1.0,
             'adopted lorem ipsum' => 11.0,
             'advertisements' => 1.0,
@@ -79,7 +81,11 @@ class KeywordTest extends BaseTest
         // Check if all are part of the output with the expected score
         foreach ($shouldKeywords as $keyword => $score) {
             // Has the same score
-            $this->assertSame($keywords[$keyword], $score);
+            $this->assertSame(
+                $keywords[$keyword],
+                $score,
+                sprintf('Score for "%s" is incorrect', $keyword)
+            );
         }
     }
 }
