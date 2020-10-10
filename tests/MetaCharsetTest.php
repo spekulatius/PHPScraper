@@ -2,8 +2,6 @@
 
 namespace Tests;
 
-use TestsBaseTest;
-
 class MetaCharsetTest extends BaseTest
 {
     /**

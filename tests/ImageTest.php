@@ -2,8 +2,6 @@
 
 namespace Tests;
 
-use TestsBaseTest;
-
 class ImageTest extends BaseTest
 {
     /**

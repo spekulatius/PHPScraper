@@ -2,8 +2,6 @@
 
 namespace Tests;
 
-use TestsBaseTest;
-
 class HeadingTest extends BaseTest
 {
     /**
