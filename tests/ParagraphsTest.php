@@ -2,8 +2,6 @@
 
 namespace Tests;
 
-use TestsBaseTest;
-
 class ParagraphsTest extends BaseTest
 {
     /**
