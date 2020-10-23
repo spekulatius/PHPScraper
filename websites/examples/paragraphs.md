@@ -49,7 +49,6 @@ foreach ($web->paragraphs as $paragraph) {
 
 Scraping the first paragraph of the website can be done by accessing the first element of the array (index 0).
 
-
 ```PHP
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
