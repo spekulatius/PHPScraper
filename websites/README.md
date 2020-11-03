@@ -87,7 +87,7 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
-Some information *optionally* is returned as an array with details. For this example, a simple list of images is avaiable using `$web->images` too.
+Some information *optionally* is returned as an array with details. For this example, a simple list of images is available using `$web->images` too.
 
 More example code can be found in the sidebar or the tests.
 
