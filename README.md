@@ -1,4 +1,4 @@
-![PHP Scraper](header.jpg)
+<a href="https://phpscraper.de" target="_blank"><img src="/spekulatius/PHPScraper/raw/master/header.jpg" alt="PHP Scraper" style="max-width:100%; border-radius: 15px;"></a>
 
 # [PHP Scraper](https://github.com/spekulatius/phpscraper)
 
