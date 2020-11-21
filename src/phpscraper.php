@@ -119,6 +119,20 @@ class core
     }
 
     /**
+     * Allows to set HTML content to process.
+     *
+     * @param string $url
+     * @param string $content
+     */
+    public function setContent(string $url, string $content)
+    {
+        $this->current_page = new \Symfony\Component\DomCrawler\Crawler(
+            $content,
+            $url
+        );
+    }
+
+    /**
      * Fetch an asset from a given URL
      *
      * @param string $url
