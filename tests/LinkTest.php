@@ -52,6 +52,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -62,6 +64,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -72,6 +76,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -82,6 +88,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -92,6 +100,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -102,6 +112,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ]
@@ -141,6 +153,8 @@ class LinkTest extends BaseTest
                 'rel' => 'nofollow',
                 'isNofollow' => true,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -151,6 +165,8 @@ class LinkTest extends BaseTest
                 'rel' => 'ugc',
                 'isNofollow' => false,
                 'isUGC' => true,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -161,6 +177,8 @@ class LinkTest extends BaseTest
                 'rel' => 'nofollow ugc',
                 'isNofollow' => true,
                 'isUGC' => true,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -171,6 +189,8 @@ class LinkTest extends BaseTest
                 'rel' => 'noopener',
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => true,
                 'isNoreferrer' => false,
             ], [
@@ -181,6 +201,8 @@ class LinkTest extends BaseTest
                 'rel' => 'noreferrer',
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => true,
             ]
@@ -219,6 +241,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
@@ -229,6 +253,8 @@ class LinkTest extends BaseTest
                 'rel' => null,
                 'isNofollow' => false,
                 'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             // ], [

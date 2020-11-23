@@ -800,6 +800,8 @@ class core
             // Add additional parameters in for "rel"
             $entry['isNofollow'] = \strpos($entry['rel'], 'nofollow') !== false;
             $entry['isUGC'] = \strpos($entry['rel'], 'ugc') !== false;
+            $entry['isSponsored'] = \strpos($entry['rel'], 'sponsored') !== false;
+            $entry['isMe'] = \strpos($entry['rel'], 'me') !== false;
             $entry['isNoopener'] = \strpos($entry['rel'], 'noopener') !== false;
             $entry['isNoreferrer'] = \strpos($entry['rel'], 'noreferrer') !== false;
 
