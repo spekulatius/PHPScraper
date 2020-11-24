@@ -6,10 +6,6 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https:
 
 Scraping lists follows a similar approach as other parsing.
 
-## Scrape Single Heading
-
-Scraping a single heading is easy and be done following this example:
-
 ```PHP
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
@@ -65,16 +61,10 @@ var_dump($web->orderedLists);
  *
  */
 
+// Both lists combined (as above)
 var_dump($web->lists);
-/**
- * Both lists
- *
- *
- *
- *
- */
 ```
 
-:: warning Nested Lists
+::: warning Nested Lists
 At the moment, this doesn't handle nested lists well. To allow further processing nested lists are included in the result as `children`.
-::
+:::
