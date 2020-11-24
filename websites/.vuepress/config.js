@@ -53,11 +53,11 @@ module.exports = {
         children: [
           'examples/headings',
           'examples/paragraphs',
+          'examples/lists',
           'examples/outline',
           'examples/extract-keywords',
           'examples/scrape-images',
           'examples/scrape-links',
-          'examples/lists',
           'examples/navigation',
         ],
       },
