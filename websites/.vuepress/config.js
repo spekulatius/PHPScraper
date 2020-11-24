@@ -57,6 +57,7 @@ module.exports = {
           'examples/extract-keywords',
           'examples/scrape-images',
           'examples/scrape-links',
+          'examples/lists',
           'examples/navigation',
         ],
       },
