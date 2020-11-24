@@ -510,6 +510,50 @@ class core
     }
 
     /**
+     * Get all lists on the page
+     *
+     * @return array
+     */
+    public function lists()
+    {
+        $lists = [];
+
+        foreach ($this->current_page->filter('ol, ul') as $list) {
+            $lists[] = [
+                'type' => $list->tagName,
+                'children' => $list->childNodes,
+                'children_plain' => array_filter(array_map('trim', explode("\n", $list->textContent))),
+            ];
+        }
+
+        return $lists;
+    }
+
+    /**
+     * Get all ordered lists on the page
+     *
+     * @return array
+     */
+    public function orderedLists()
+    {
+        return array_values(array_filter($this->lists(), function ($list) {
+            return $list['type'] === 'ol';
+        }));
+    }
+
+    /**
+     * Get all unordered lists on the page
+     *
+     * @return array
+     */
+    public function unorderedLists()
+    {
+        return array_values(array_filter($this->lists(), function ($list) {
+            return $list['type'] === 'ul';
+        }));
+    }
+
+    /**
      * Get all paragraphs of the page
      *
      * @return array
