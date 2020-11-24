@@ -4,61 +4,60 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https:
 
 # Scraping Lists
 
-Scraping lists follows a similar approach as other parsing.
+Scraping lists follows a similar approach as other scraping:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper();
-$web->go('https://test-pages.phpscraper.de/content/lists.html');
+
 /**
  * Navigate to the test page. This page contains:
  *
  * <h2>Example 1: Unordered List</h2>
  * <ul>
- *     <li>Unordered item 1</li>
- *     <li>Unordered item 2</li>
- *     <li>Unordered item with <b>HTML</b></li>
+ *     <li>Unordered list item 1</li>
+ *     <li>Unordered list item 2</li>
+ *     <li>Unordered list item with <b>HTML</b></li>
  * </ul>
  *
  * <h2>Example 2: Ordered List</h2>
  * <ol>
- *     <li>Order list item 1</li>
- *     <li>Order list item 2</li>
- *     <li>Order list item with <i>HTML</i></li>
- * </ol>
- *
- * <h2>Example 3: Nested Lists</h2>
- * <ol>
- *     <li>
- *         <ul>
- *             <li>Sub-Item 1</li>
- *             <li>Sub-Item 2</li>
- *         </ul>
- *     </li>
- *     <li>
- *         <ul>
- *             <li>Sub-Item 1</li>
- *             <li>Sub-Item 2</li>
- *         </ul>
- *     </li>
+ *     <li>Ordered list item 1</li>
+ *     <li>Ordered list item 2</li>
+ *     <li>Ordered list item with <i>HTML</i></li>
  * </ol>
  */
+$web->go('https://test-pages.phpscraper.de/content/lists.html');
 
 var_dump($web->unorderedLists);
 /**
- * only unordered lists (<ul>)
+ * Only unordered lists (<ul>)
  *
- *
- *
- *
+ * [
+ *     "type" => "ul",
+ *     "children" => ... // List of childNodes
+ *     "children_plain" =>
+ *     [
+ *         "Unordered list item 1"
+ *         "Unordered list item 2"
+ *         "Unordered list item with HTML"
+ *     ]
+ * ]
  */
 
 var_dump($web->orderedLists);
 /**
- * only ordered lists (<ol>)
+ * Only ordered lists (<ol>)
  *
- *
- *
- *
+ * [
+ *     "type" => "ul",
+ *     "children" => ... // List of childNodes
+ *     "children_plain" =>
+ *     [
+ *         "Ordered list item 1"
+ *         "Ordered list item 2"
+ *         "Ordered list item with HTML"
+ *     ]
+ * ]
  */
 
 // Both lists combined (as above)

@@ -526,8 +526,6 @@ class core
             ];
         }
 
-        var_dump($lists);die;
-
         return $lists;
     }
 
