@@ -837,7 +837,7 @@ class core
             // Collect commonly interesting attributes and URL
             $entry = [
                 'url' => $linkObj->getUri(),
-                'text' => $link->nodeValue,
+                'text' => trim($link->nodeValue),
                 'title' => $link->getAttribute('title') == '' ? null : $link->getAttribute('title'),
                 'target' => $link->getAttribute('target') == '' ? null : $link->getAttribute('target'),
                 'rel' => $link->getAttribute('rel') == '' ? null : strtolower($link->getAttribute('rel')),
