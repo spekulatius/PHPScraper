@@ -298,7 +298,8 @@ class core
      */
     public function viewport()
     {
-        return \preg_split('/,\s*/', $this->viewportString());
+        return is_null($this->viewportString()) ?
+            [] : \preg_split('/,\s*/', $this->viewportString());
     }
 
     /**
@@ -364,7 +365,8 @@ class core
      */
     public function keywords()
     {
-        return \preg_split('/,\s*/', $this->keywordString());
+        return is_null($this->keywordString()) ?
+            [] : \preg_split('/,\s*/', $this->keywordString());
     }
 
     /**
