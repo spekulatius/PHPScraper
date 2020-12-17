@@ -605,6 +605,7 @@ class core
 
         foreach ($result as $index => $array) {
             $result[$index] = array_combine(['tag', 'content'], $array);
+            $result[$index]['content'] = trim($result[$index]['content']);
         }
 
         return $result;
@@ -622,6 +623,7 @@ class core
         foreach ($result as $index => $array) {
             if ($array[1] !== '') {
                 $result[$index] = array_combine(['tag', 'content'], $array);
+                $result[$index]['content'] = trim($result[$index]['content']);
             }
         }
 
