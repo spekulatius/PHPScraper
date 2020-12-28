@@ -896,8 +896,8 @@ class core
             $result[] = [
                 'url' => $imageObj->getUri(),
                 'alt' => $image->getAttribute('alt'),
-                'width' => $image->getAttribute('width') == '' ? null : $image->getAttribute('width'),
-                'height' => $image->getAttribute('height') == '' ? null : $image->getAttribute('height'),
+                'width' => $image->getAttribute('width') == '' ? null : (int) $image->getAttribute('width'),
+                'height' => $image->getAttribute('height') == '' ? null : (int) $image->getAttribute('height'),
             ];
         }
 
