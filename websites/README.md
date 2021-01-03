@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-An *opinionated* web-access library for PHP
+An *opinionated* web-scraping library for PHP
 ===========================================
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
@@ -15,7 +15,7 @@ The examples tell the story much better. Have a look!
 The Idea 💡️
 ----------
 
-Access websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need.
+Accessing websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need.
 
 
 Supporters 💪️

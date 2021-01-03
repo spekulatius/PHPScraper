@@ -1,6 +1,6 @@
 module.exports = {
   dest: 'dist/',
-  title: 'PHP Scraper - An opinionated web-scraper library for PHP',
+  title: 'PHP Scraper - An opinionated web-scraping library for PHP',
   description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
 
   plugins: {

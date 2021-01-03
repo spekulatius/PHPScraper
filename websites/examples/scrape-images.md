@@ -4,12 +4,12 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https
 
 # Scraping Images
 
-Scraping the images from a website follows a similar approach as the other examples. Images can be parsed with details such as tag attributes or only as an URL list.
+Scraping the images &amp; photos from a website follows a similar approach as the other examples. All graphics such as images, photos and infographics can be parsed with details such as tag attributes or only as an URL list.
 
 
 ## Scraping Image URLs
 
-The following example parses a web-page for images and returns absolute URLs as an array.
+The following example parses a web-page for images and returns absolute image URLs as an array.
 
 ```PHP
 $web = new \spekulatius\phpscraper();
