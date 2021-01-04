@@ -562,7 +562,10 @@ class core
      */
     public function paragraphs()
     {
-        return $this->filterExtractAttributes('//p', ['_text']);
+        return array_map(
+            'trim',
+            $this->filterExtractAttributes('//p', ['_text'])
+        );
     }
 
     /**
@@ -836,6 +839,12 @@ class core
             // Generate the proper uri using the Symfony's link class
             $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentURL());
 
+            // Check if the anchor is maybe only an image.
+            // If so wrap it into DomCrawler\Image to get the Uri
+            // $image = (trim($link->nodeValue) !== '' || !isset($link->childNodes[1]) || $link->childNodes[1]->nodeName !== 'img') ? null :  null;
+                // (new \Symfony\Component\DomCrawler\Image($link->childNodes[1], $this->currentURL()))->getUri();
+$image = null;
+                // 'image' => $image,
             // Collect commonly interesting attributes and URL
             $entry = [
                 'url' => $linkObj->getUri(),
@@ -896,8 +905,8 @@ class core
             $result[] = [
                 'url' => $imageObj->getUri(),
                 'alt' => $image->getAttribute('alt'),
-                'width' => $image->getAttribute('width') == '' ? null : (int) $image->getAttribute('width'),
-                'height' => $image->getAttribute('height') == '' ? null : (int) $image->getAttribute('height'),
+                'width' => $image->getAttribute('width') == '' ? null : $image->getAttribute('width'),
+                'height' => $image->getAttribute('height') == '' ? null : $image->getAttribute('height'),
             ];
         }
 
