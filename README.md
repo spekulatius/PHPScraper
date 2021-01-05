@@ -2,7 +2,7 @@
 
 # [PHP Scraper](https://github.com/spekulatius/phpscraper)
 
-An oppinated & limited way to scrape the web using PHP. The main goal is to help getting stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
+An opinionated & limited way to scrape the web using PHP. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
 
 Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json).
 
@@ -22,7 +22,7 @@ Here are a few impressions on the way the library works. More examples are on th
 
 ### Get the Title of a Website
 
-All scraping functionality can used either as function call or property call. On the example of title scraping this would like like this:
+All scraping functionality can be accessed either as a function call or a property call. On the example of title scraping this would like like this:
 
 ```php
 $web = new \spekulatius\phpscraper();
