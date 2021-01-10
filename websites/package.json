@@ -14,6 +14,7 @@
     "vuepress-plugin-seo": "^0.1.2",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-umami": "^0.0.4",
-    "vuepress-plugin-web-monetization": "^0.0.1"
+    "vuepress-plugin-web-monetization": "^0.0.1",
+    "vuepress-plugin-social-share": "^1.0.0"
   }
 }
