@@ -1,12 +1,3 @@
-const extendsNetworks = {
-  telegram: {
-    color: '#2CA5E0',
-  },
-  twitter: {
-    color: '#1DA1F2',
-  },
-}
-
 module.exports = {
   dest: 'dist/',
   title: 'PHP Scraper - An opinionated web-scraping library for PHP',
@@ -28,13 +19,11 @@ module.exports = {
     '@vuepress/plugin-back-to-top': {},
 
     'social-share': {
-      networks: ['telegram', 'line', 'email', 'twitter', 'reddit'],
-      email: '',
+      networks: ['telegram', 'line', 'twitter', 'reddit'],
       twitterUser: 'spekulatius1984',
       fallbackImage: 'https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7',
       autoQuote: true,
       isPlain: true,
-      extendsNetworks,
     },
   },
   serviceWorker: true,
