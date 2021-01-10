@@ -18,8 +18,7 @@ module.exports = {
     },
     '@vuepress/plugin-back-to-top': {},
 
-    'social-share',
-    {
+    'social-share': {
       networks: ['telegram', 'line', 'email', 'twitter', 'reddit'],
       twitterUser: 'spekulatius1984',
       fallbackImage: 'https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7',
