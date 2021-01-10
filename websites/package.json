@@ -14,5 +14,8 @@
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-umami": "^0.0.4",
     "vuepress-plugin-web-monetization": "^0.0.1"
+  },
+  "devDependencies": {
+    "vuepress-plugin-google-adsense": "^0.1.1"
   }
 }
