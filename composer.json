@@ -18,11 +18,11 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": ">=7.2",
         "ext-intl": "*",
         "fabpot/goutte": "^4.0",
         "symfony/dom-crawler": "^5.0",
-        "jeremykendall/php-domain-parser": "^5.6",
+        "jeremykendall/php-domain-parser": ">=5.6",
         "donatello-za/rake-php-plus": "^1.0.15"
     },
     "require-dev": {
