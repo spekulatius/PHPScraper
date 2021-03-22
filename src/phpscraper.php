@@ -240,28 +240,6 @@ class core
     }
 
     /**
-     * Get the charset
-     *
-     * @return string
-     */
-    public function charset()
-    {
-        // A bit more complex, as I didn't get the XPath working proper...
-        $filteredList = array_values(array_filter(
-            // 1. Get all attributes "charset"
-            $this->filter('//meta')->extract(['charset']),
-
-            // 2. filter empty ones out.
-            function ($charset) {
-                return $charset == '';
-            },
-            ARRAY_FILTER_USE_KEY
-        ));
-
-        return count($filteredList) == 0 ? null : $filteredList[0];
-    }
-
-    /**
      * Get the content-type
      *
      * @return string
