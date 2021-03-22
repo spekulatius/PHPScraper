@@ -99,6 +99,18 @@ class core
     }
 
     /**
+     * Overwrites the agent
+     *
+     * @param string $agent
+     */
+    public function setAgent(string $agent)
+    {
+        $this->client->setServerParameter('HTTP_USER_AGENT', $agent);
+
+        return $this;
+    }
+
+    /**
      * Returns the current url
      *
      * @return string $url
