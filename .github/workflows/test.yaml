@@ -14,5 +14,6 @@ jobs:
           php-version: ${{ matrix.php-version }}
           coverage: none
           extensions: intl curl
+      - run: php -v
       - run: composer update ${{ matrix.composer-flags }} --no-interaction --no-progress --prefer-dist --ansi
       - run: ./vendor/bin/phpunit --color=always
