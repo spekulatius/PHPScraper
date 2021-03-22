@@ -240,28 +240,6 @@ class core
     }
 
     /**
-     * Get the charset
-     *
-     * @return string
-     */
-    public function charset()
-    {
-        // A bit more complex, as I didn't get the XPath working proper...
-        $filteredList = array_values(array_filter(
-            // 1. Get all attributes "charset"
-            $this->filter('//meta')->extract(['charset']),
-
-            // 2. filter empty ones out.
-            function ($charset) {
-                return $charset == '';
-            },
-            ARRAY_FILTER_USE_KEY
-        ));
-
-        return count($filteredList) == 0 ? null : $filteredList[0];
-    }
-
-    /**
      * Get the content-type
      *
      * @return string
@@ -524,7 +502,7 @@ class core
             $lists[] = [
                 'type' => $list->tagName,
                 'children' => $list->childNodes,
-                'children_plain' => array_filter(array_map('trim', explode("\n", $list->textContent))),
+                'children_plain' => array_values(array_filter(array_map('trim', explode("\n", $list->textContent)))),
             ];
         }
 
@@ -577,7 +555,9 @@ class core
     {
         return array_values(array_filter(
             $this->paragraphs(),
-            function($paragraph) { return ($paragraph != ''); }
+            function ($paragraph) {
+                return ($paragraph != '');
+            }
         ));
     }
 
@@ -777,7 +757,7 @@ class core
         // Filter the array
         return array_values(array_filter(
             $this->links(),
-            function($link) use (&$root_domain, &$rules) {
+            function ($link) use (&$root_domain, &$rules) {
                 $link_root_domain = $rules
                     ->resolve(parse_url($link, PHP_URL_HOST))
                     ->getRegistrableDomain();
@@ -820,7 +800,9 @@ class core
         // Filter the array
         return array_values(array_filter(
             $this->links(),
-            function($link) use (&$host) { return ($host === parse_url($link, PHP_URL_HOST)); }
+            function ($link) use (&$host) {
+                return ($host === parse_url($link, PHP_URL_HOST));
+            }
         ));
     }
 
@@ -842,9 +824,9 @@ class core
             // Check if the anchor is maybe only an image.
             // If so wrap it into DomCrawler\Image to get the Uri
             // $image = (trim($link->nodeValue) !== '' || !isset($link->childNodes[1]) || $link->childNodes[1]->nodeName !== 'img') ? null :  null;
-                // (new \Symfony\Component\DomCrawler\Image($link->childNodes[1], $this->currentURL()))->getUri();
-$image = null;
-                // 'image' => $image,
+            // (new \Symfony\Component\DomCrawler\Image($link->childNodes[1], $this->currentURL()))->getUri();
+            $image = null;
+            // 'image' => $image,
             // Collect commonly interesting attributes and URL
             $entry = [
                 'url' => $linkObj->getUri(),

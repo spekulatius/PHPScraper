@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [7.3, 7.4]
+        php-version: [7.3, 7.4, 8.0]
         composer-flags: [null, --prefer-lowest]
     steps:
       - uses: actions/checkout@v2
@@ -13,6 +13,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
           coverage: none
-          extensions: intl
+          extensions: intl curl
+      - run: php -v
       - run: composer update ${{ matrix.composer-flags }} --no-interaction --no-progress --prefer-dist --ansi
       - run: ./vendor/bin/phpunit --color=always
