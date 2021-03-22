@@ -524,7 +524,7 @@ class core
             $lists[] = [
                 'type' => $list->tagName,
                 'children' => $list->childNodes,
-                'children_plain' => array_filter(array_map('trim', explode("\n", $list->textContent))),
+                'children_plain' => array_values(array_filter(array_map('trim', explode("\n", $list->textContent)))),
             ];
         }
 
