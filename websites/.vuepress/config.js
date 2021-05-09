@@ -6,7 +6,6 @@ module.exports = {
   plugins: {
     'seo': {},
     'web-monetization': { address: '$ilp.uphold.com/DrRw6MnEEqBB' },
-    'vuepress-plugin-google-adsense': { adClient: 'ca-pub-9502576386405849', adsTxt: true },
     'minimal-analytics': { ga: 'UA-85277681-13' },
     'umami': { trackerUrl: 'https://u.peterthaleikis.com', siteId: '5ee0a886-020d-4fd9-99f1-201ef2691cf6' },
     'canonical': { baseURL: 'https://phpscraper.de' },
