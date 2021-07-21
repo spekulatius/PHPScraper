@@ -834,11 +834,13 @@ class core
             $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentURL());
 
             // Check if the anchor is maybe only an image.
-            // If so wrap it into DomCrawler\Image to get the Uri
-            // $image = (trim($link->nodeValue) !== '' || !isset($link->childNodes[1]) || $link->childNodes[1]->nodeName !== 'img') ? null :  null;
-            // (new \Symfony\Component\DomCrawler\Image($link->childNodes[1], $this->currentURL()))->getUri();
-            $image = null;
-            // 'image' => $image,
+            $image = [];
+            foreach($link->childNodes as $childNode) {
+                if (!empty($childNode) && $childNode->nodeName === 'img') {
+                    $image[] = (new \Symfony\Component\DomCrawler\Image($childNode, $this->currentURL()))->getUri();
+                }
+            }
+
             // Collect commonly interesting attributes and URL
             $entry = [
                 'url' => $linkObj->getUri(),
@@ -846,6 +848,7 @@ class core
                 'title' => $link->getAttribute('title') == '' ? null : $link->getAttribute('title'),
                 'target' => $link->getAttribute('target') == '' ? null : $link->getAttribute('target'),
                 'rel' => $link->getAttribute('rel') == '' ? null : strtolower($link->getAttribute('rel')),
+                'image' => $image,
             ];
 
             // Add additional parameters in for "rel"
