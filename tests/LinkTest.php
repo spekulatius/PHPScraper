@@ -50,6 +50,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => '_blank',
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -62,6 +63,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => '_blank',
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -74,6 +76,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => '_blank',
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -86,6 +89,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => 'kitten',
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -98,6 +102,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => 'kitten',
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -110,6 +115,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => 'kitten',
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -151,6 +157,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => 'nofollow',
+                'image' => [],
                 'isNofollow' => true,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -163,6 +170,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => 'ugc',
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => true,
                 'isSponsored' => false,
@@ -175,6 +183,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => 'nofollow ugc',
+                'image' => [],
                 'isNofollow' => true,
                 'isUGC' => true,
                 'isSponsored' => false,
@@ -187,6 +196,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => 'noopener',
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -199,6 +209,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => 'noreferrer',
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -239,6 +250,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -251,6 +263,7 @@ class LinkTest extends BaseTest
                 'title' => null,
                 'target' => null,
                 'rel' => null,
+                'image' => [],
                 'isNofollow' => false,
                 'isUGC' => false,
                 'isSponsored' => false,
@@ -267,6 +280,71 @@ class LinkTest extends BaseTest
             //     'isUGC' => false,
             //     'isNoopener' => false,
             //     'isNoreferrer' => false,
+            ]
+        ], $web->linksWithDetails);
+    }
+
+    /**
+     * @test
+     */
+    public function testImageUrl()
+    {
+        $web = new \spekulatius\phpscraper();
+
+        // Navigate to the test page.
+        $web->go($this->url . '/links/image-url.html');
+
+        // Check the number of links
+        $this->assertSame(3, count($web->links));
+
+        // Check the complex links list
+        $this->assertSame([
+            [
+                'url' => 'https://placekitten.com/432/287',
+                'text' => '',
+                'title' => null,
+                'target' => null,
+                'rel' => 'nofollow',
+                'image' => [
+                    'https://placekitten.com/432/287'
+                ],
+                'isNofollow' => true,
+                'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
+                'isNoopener' => false,
+                'isNoreferrer' => false,
+            ], [
+                'url' => 'https://placekitten.com/456/287',
+                'text' => '',
+                'title' => null,
+                'target' => null,
+                'rel' => 'ugc',
+                'image' => [
+                    'https://placekitten.com/456/287',
+                    'https://placekitten.com/456/287'
+                ],
+                'isNofollow' => false,
+                'isUGC' => true,
+                'isSponsored' => false,
+                'isMe' => false,
+                'isNoopener' => false,
+                'isNoreferrer' => false,
+            ], [
+                'url' => 'https://placekitten.com/345/287',
+                'text' => 'This is image',
+                'title' => null,
+                'target' => null,
+                'rel' => 'nofollow ugc',
+                'image' => [
+                    'https://placekitten.com/345/287'
+                ],
+                'isNofollow' => true,
+                'isUGC' => true,
+                'isSponsored' => false,
+                'isMe' => false,
+                'isNoopener' => false,
+                'isNoreferrer' => false,
             ]
         ], $web->linksWithDetails);
     }
