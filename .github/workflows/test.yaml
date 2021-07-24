@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         php-version: [7.3, 7.4, 8.0]
-        composer-flags: [null, --prefer-lowest]
+        composer-flags: [null]
     steps:
       - uses: actions/checkout@v2
       - uses: shivammathur/setup-php@v2
