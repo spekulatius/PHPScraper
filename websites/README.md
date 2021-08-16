@@ -7,7 +7,7 @@ An *opinionated* web-scraping library for PHP
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
-Accessing the web from PHP can done easier. This is an opinionated wrapper around some great libraries.
+Web scraping using PHP can done easier. This is an opinionated wrapper around some great PHP libraries to make accessing the web easier.
 
 The examples tell the story much better. Have a look!
 
@@ -15,7 +15,7 @@ The examples tell the story much better. Have a look!
 The Idea 💡️
 ----------
 
-Accessing websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need.
+Accessing websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need. Web scraping with PHP re-imagined.
 
 
 Supporters 💪️
@@ -31,7 +31,7 @@ Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
 Examples
 --------
 
-Here are some examples of what the library can do at this point:
+Here are some examples of what the web scraping library can do at this point:
 
 ### Scrape Meta Information:
 
@@ -87,7 +87,7 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
-Some information *optionally* is returned as an array with details. For this example, a simple list of images is available using `$web->images` too.
+Some information *optionally* is returned as an array with details. For this example, a simple list of images is available using `$web->images` too. This should make your web scraping easier.
 
 More example code can be found in the sidebar or the tests.
 
@@ -101,7 +101,7 @@ As usual, done via composer:
 composer require spekulatius/phpscraper
 ```
 
-This automatically ensures the package is loaded. You can now use any of the above noted examples.
+This automatically ensures the package is loaded and you can start to scrape the web. You can now use any of the noted examples.
 
 
 Contributing
