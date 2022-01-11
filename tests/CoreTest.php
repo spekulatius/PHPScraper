@@ -15,14 +15,7 @@ class CoreTest extends BaseTest
         $web->go('https://phpscraper.de');
 
         // Both the method call as well as property call should return the same...
-        $this->assertSame(
-            "PHP Scraper - An opinionated web-scraping library for PHP",
-            $web->title
-        );
-        $this->assertSame(
-            "PHP Scraper - An opinionated web-scraping library for PHP",
-            $web->title()
-        );
+        $this->assertSame($web->title(), $web->title);
 
         // So...
         $this->assertSame($web->title, $web->title());
