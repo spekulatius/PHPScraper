@@ -99,6 +99,16 @@ class core
     }
 
     /**
+     * Returns the Goutte Client
+     *
+     * @return Client
+     */
+    public function client(): Client
+    {
+        return $this->client;
+    }
+
+    /**
      * Overwrites the agent
      *
      * @param string $agent
