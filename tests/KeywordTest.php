@@ -82,8 +82,8 @@ class KeywordTest extends BaseTest
         foreach ($shouldKeywords as $keyword => $score) {
             // Has the same score
             $this->assertSame(
-                $keywords[$keyword],
-                $score,
+                round($keywords[$keyword], 8),
+                round($score, 8),
                 sprintf('Score for "%s" is incorrect', $keyword)
             );
         }
