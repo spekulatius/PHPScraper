@@ -52,5 +52,10 @@
             "type": "buymeacoffee",
             "url": "https://www.buymeacoffee.com/spekulatius"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "symfony/thanks": true
+        }
+    }
 }
