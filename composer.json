@@ -1,6 +1,6 @@
 {
     "name": "spekulatius/phpscraper",
-    "description": "An oppinionated way to access the web. See tests/ for examples.",
+    "description": "An opinionated way to access the web. See tests/ for examples.",
     "keywords": [
         "PHP scraper",
         "PHP scraping",
@@ -21,14 +21,14 @@
         "php": "^7.3 | ^8.0",
         "ext-intl": "*",
         "fabpot/goutte": "^4.0",
-        "symfony/dom-crawler": "^5.0",
+        "symfony/dom-crawler": "^5.4 || ^6.0 ",
         "jeremykendall/php-domain-parser": "^5.6",
         "donatello-za/rake-php-plus": "^1.0.15"
     },
     "require-dev": {
         "symfony/thanks": "*",
         "phpunit/phpunit": "^8.0",
-        "symfony/process": "^4.0|^5.0"
+        "symfony/process": "^5.4 || ^6.0"
     },
     "autoload": {
         "psr-4": {
