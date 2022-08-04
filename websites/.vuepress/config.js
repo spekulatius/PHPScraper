@@ -70,7 +70,21 @@ module.exports = {
         ],
       },
       {
-        title: 'Support and More',
+        title: 'APIs',
+        collapsable: false,
+        children: [
+          'apis/alibaba',
+          'apis/amazon',
+          'apis/facebook',
+          'apis/instagram',
+          'apis/linkedin',
+          'apis/tiktok',
+          'apis/walmart',
+          'apis/zalando',
+        ],
+      },
+      {
+        title: 'Commerical Support and More',
         collapsable: true,
         children: [
           'support/more-examples',
