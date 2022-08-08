@@ -842,22 +842,21 @@ class core
             }
 
             // Collect commonly interesting attributes and URL
+            $rel = $link->getAttribute('rel');
             $entry = [
                 'url' => $linkObj->getUri(),
                 'text' => trim($link->nodeValue),
                 'title' => $link->getAttribute('title') == '' ? null : $link->getAttribute('title'),
                 'target' => $link->getAttribute('target') == '' ? null : $link->getAttribute('target'),
-                'rel' => $link->getAttribute('rel') == '' ? null : strtolower($link->getAttribute('rel')),
+                'rel' => ($rel == '') ? null : strtolower($rel),
                 'image' => $image,
+                'isNofollow' => ($rel == '') ? false : (\strpos($rel, 'nofollow') !== false),
+                'isUGC' => ($rel == '') ? false : (\strpos($rel, 'ugc') !== false),
+                'isSponsored' => ($rel == '') ? false : (\strpos($rel, 'sponsored') !== false),
+                'isMe' => ($rel == '') ? false : (\strpos($rel, 'me') !== false),
+                'isNoopener' => ($rel == '') ? false : (\strpos($rel, 'noopener') !== false),
+                'isNoreferrer' => ($rel == '') ? false : (\strpos($rel, 'noreferrer') !== false),
             ];
-
-            // Add additional parameters in for "rel"
-            $entry['isNofollow'] = \strpos($entry['rel'], 'nofollow') !== false;
-            $entry['isUGC'] = \strpos($entry['rel'], 'ugc') !== false;
-            $entry['isSponsored'] = \strpos($entry['rel'], 'sponsored') !== false;
-            $entry['isMe'] = \strpos($entry['rel'], 'me') !== false;
-            $entry['isNoopener'] = \strpos($entry['rel'], 'noopener') !== false;
-            $entry['isNoreferrer'] = \strpos($entry['rel'], 'noreferrer') !== false;
 
             $result[] = $entry;
         }
