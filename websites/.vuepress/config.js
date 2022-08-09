@@ -37,7 +37,12 @@ module.exports = {
             lang: 'de',
             title: 'PHP Scraper - Eine meinungsstarke Web-Scraping-Bibliothek für PHP',
             description: 'PHP Scraper bietet eine einfachere Möglichkeit, Websites mit PHP abzurufen und zu analysieren.'
-        }
+        },
+        '/es/': {
+            lang: 'es',
+            title: 'PHP Scraper - Una biblioteca de raspado web para PHP',
+            description: 'PHP Scraper proporciona una forma más sencilla de obtener y analizar sitios web utilizando PHP.eb utilizando PHP.'
+        },
     },
     themeConfig: {
         domain: 'https://phpscraper.de',
@@ -45,15 +50,15 @@ module.exports = {
         docsDir: 'websites',
         editLinks: true,
         smoothScroll: true,
-        // serviceWorker: {
-        //     updatePopup: true,
-        // },
         locales: {
             '/': {
                 ...require('./config.theme.en')
             },
             '/de/': {
                 ...require('./config.theme.de')
+            },
+            '/es/': {
+                ...require('./config.theme.es')
             },
         }
     }
