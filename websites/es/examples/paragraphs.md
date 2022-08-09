@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Text
+# Texto de raspado
 
 El raspado de contenido, sobre todo de párrafos, se puede hacer fácilmente usando PHP Scraper. Hay un método dedicado para acceder a los párrafos (`<p>`) en un sitio web. Los siguientes ejemplos muestran cómo acceder al contenido/textos de un sitio web.
 
