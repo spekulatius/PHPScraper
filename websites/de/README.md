@@ -2,20 +2,20 @@
 image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-Eine *meinungsstarke* Web-Scraping-Bibliothek für PHP
+Eine *etwas andere* Web-Scraping-Bibliothek für PHP
 ===========================================
 
 *von [Peter Thaleikis](https://peterthaleikis.com)*
 
-Web Scraping mit PHP kann einfacher gemacht werden. Es handelt sich dabei um eine meinungsstarke Hülle um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
+Web Scraping mit PHP kann man einfacher machen werden. Hier handelt es sich um eine experimentiEs handelt sich dabei um eine meinungsstarke Hülle um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
 
-Die Beispiele erzählen die Geschichte viel besser. Schauen Sie mal rein!
+Die Beispiele erzählen die Geschichte viel besser. Einen Blick wert!
 
 
 Die Idee 💡️
 ----------
 
-Der Zugriff auf Websites und das Sammeln grundlegender Informationen aus dem Web ist zu komplex. Dieser Wrapper um [Goutte](https://github.com/FriendsOfPHP/Goutte) macht es einfacher. Er erspart Ihnen XPath und Co. und ermöglicht Ihnen den direkten Zugriff auf alles, was Sie brauchen. Web Scraping mit PHP neu interpretiert.
+Der Zugriff auf Websites und das Sammeln grundlegender Informationen aus dem Web ist oft zu komplex. Dieser Wrapper um [Goutte](https://github.com/FriendsOfPHP/Goutte) macht es einfacher. Er erspart Ihnen XPath und Co. und ermöglicht Ihnen den direkten Zugriff auf alles, was Sie brauchen. Web Scraping mit PHP *etwas anders*.
 
 
 Unterstützer 💪️

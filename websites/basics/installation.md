@@ -1,6 +1,6 @@
 # Installation
 
-The library is usually installed using composer:
+Installation with composer:
 
 ```bash
 composer require spekulatius/phpscraper
@@ -8,10 +8,12 @@ composer require spekulatius/phpscraper
 
 ## Usage
 
-After the installation is completed the package will be picked up by the Composer autoloader. If you are using a VanillaPHP library you will need to include the autoloader in your script:
+After the installation is completed the package will be picked up by the Composer autoloader.
+
+If you are building a VanillaPHP project, you will need to include the autoloader in your script at the top of your PHP script:
 
 ```php
 require 'vendor/autoload.php';
 ```
 
-If you are using a framework such as Laravel, SilverStripe or Flarum, you won't need this step.
+If you are using a framework such as Laravel, Symfony, Zend, Phalcon, or CakePHP, you won't need this step. The autoloader is automatically included.
