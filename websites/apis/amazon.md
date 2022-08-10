@@ -15,7 +15,7 @@ For Amazon we are considering the implementation of an API with the following sc
 
 ::: tip
 ::: tip
-Please note that this is not final and is likely to change.
+Please note this list of API endpoints is *not* final is likely going to change.
 :::
 :::
 

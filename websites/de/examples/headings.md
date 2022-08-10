@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Kratzen von Überschriften
+# Scrapen von Überschriften
 
 Überschriften können nützlich sein, um sich einen Überblick über den Inhalt einer Website zu verschaffen. Das folgende Beispiel zeigt, wie man scrapen kann:
 
@@ -11,7 +11,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=htt
  - Alle Überschriften auf einer Seite
 
 
-## Einzelne Überschrift kratzen
+## Einzelne Überschrift Scrapen
 
 Das Einscannen einer einzelnen Überschrift ist einfach und kann anhand dieses Beispiels durchgeführt werden:
 

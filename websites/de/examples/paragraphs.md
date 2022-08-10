@@ -45,7 +45,7 @@ foreach ($web->paragraphs as $paragraph) {
 ```
 
 
-## Kratzen des ersten Absatzes
+## Scrapen des ersten Absatzes
 
 Das Scraping des ersten Absatzes der Website kann durch Zugriff auf das erste Element des Arrays (Index 0) erfolgen.
 

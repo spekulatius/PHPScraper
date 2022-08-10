@@ -10,7 +10,7 @@ For Zalando we are considering the implementation of an API with the following s
 - Keyword Search for Products
 
 ::: tip
-Please note that this is not final and is likely to change.
+Please note this list of API endpoints is *not* final is likely going to change.
 :::
 
 ## Platform Support

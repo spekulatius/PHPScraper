@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Inhalt exportieren
+# Gliederung Extractieren
 
 Auch wenn Sie nur auf die [`Überschriften`](/examples/headings) zugreifen möchten, um z. B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
 
@@ -15,7 +15,7 @@ Auch wenn Sie nur auf die [`Überschriften`](/examples/headings) zugreifen möch
 Die folgenden Beispiele sollen helfen, die Funktionalität besser zu verstehen. Es sind spezielle Methoden für die [Schlüsselwort-Extraktion](/examples/extract-keywords) verfügbar.
 
 
-## Exportieren der Gliederung
+## Extrahieren der Gliederung
 
 Die Gliederung des Inhalts ermöglicht es Ihnen, einen Index des Dokuments zu erstellen. Im folgenden Beispiel wird eine Markdown-Version der Überschriften des angeforderten Dokuments erstellt:
 
@@ -69,7 +69,7 @@ $outline = $web->outline;
 ```
 
 
-## Gliederung mit Absätzen exportieren
+## Gliederung mit Absätzen extrahieren
 
 Die folgende Methode funktioniert ähnlich wie `outline`, aber sie schließt auch alle Absätze als Teil des zurückgegebenen Arrays ein:
 
@@ -144,7 +144,7 @@ $content = $web->outlineWithParagraphs;
 ```
 
 
-## Exportieren Sie die bereinigte Gliederung mit Absätzen
+## Extrahieren der bereinigten Gliederung mit Absätzen
 
 Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber sie enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
 

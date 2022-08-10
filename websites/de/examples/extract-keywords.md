@@ -67,7 +67,7 @@ foreach ($keywords as $keyword) {
 ```
 
 ::: tip Tipp
-Die Standardsprache (Gebietsschema) hierfür ist "de_US". Andere Sprachen können als Parameter übergeben werden. Dies funktioniert derzeit nur für eine Auswahl von Sprachen. Weitere Informationen finden Sie in dieser [list](https://github.com/Donatello-za/rake-php-plus#currently-supported-languages).
+Die Standardsprache (Gebietsschema) hierfür ist "en_US". Andere Sprachen, wie Deutsch, können als Parameter übergeben werden. Dies funktioniert derzeit nur für eine Auswahl von Sprachen. Weitere Informationen finden Sie in dieser [list](https://github.com/Donatello-za/rake-php-plus#currently-supported-languages).
 :::
 
 

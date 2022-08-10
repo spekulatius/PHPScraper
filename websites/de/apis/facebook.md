@@ -1,6 +1,6 @@
 # Facebook Scraper API
 
-Das Team hinter PHP Scraper arbeitet an der Bereitstellung kommerzieller APIs für verschiedene gängige Anwendungsfälle und Plattformen. Diese APIs sollen nicht selbst gehostet werden und werden auf einer Pay-as-you-use-Basis bereitgestellt.
+Das Team hinter PHP Scraper arbeitet daran, kommerzielle APIs für verschiedene gängige Anwendungsfälle und Plattformen bereitzustellen. Diese APIs werden nicht selbst gehostet. Sie müssen sich keine Gedanken über rotierende IPs/Proxies machen und einen Headless-Browser wie Puppeteer verwenden. Mit einem einfachen API-Aufruf erhalten Sie alle erforderlichen Informationen. Die Dienste werden auf der Grundlage einer attraktiven, nutzungsabhängigen Gebührenstruktur bereitgestellt.
 
 Für Facebook erwägen wir die Implementierung einer API mit folgendem Umfang.
 
@@ -19,7 +19,9 @@ Für Facebook erwägen wir die Implementierung einer API mit folgendem Umfang.
 - öffentliche Gruppen und private Gruppen mit Schlüssel: Beiträge
 - Beitrag: Öffentliche Beitragsdetails (inkl. Kommentare, Likes, Likers, etc.)
 
-Bitte beachten Sie, dass diese Angaben nicht endgültig sind und sich noch ändern können.
+::: tip
+Bitte beachten Sie, dass diese Liste der API-Endpunkte *nicht* endgültig ist und sich wahrscheinlich noch ändern wird.
+:::
 
 ## Plattform-Unterstützung
 

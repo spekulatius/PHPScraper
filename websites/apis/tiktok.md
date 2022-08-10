@@ -13,7 +13,7 @@ For TikTok we are considering the implementation of an API with the following sc
 - Video Download with convertion to mp4, mp3, etc. and without watermark
 
 ::: tip
-Please note that this is not final and is likely to change.
+Please note this list of API endpoints is *not* final is likely going to change.
 :::
 
 ## Platform Support
