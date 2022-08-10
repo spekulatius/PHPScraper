@@ -11,7 +11,7 @@ Für Amazon ziehen wir die Implementierung einer API mit folgendem Umfang in Bet
 - Informationen zu Bewertungen abrufen
 - Verkäufer-Informationen abrufen
 - Alle Verkäuferpreise abrufen
-- Produkte nach Schlüsselwort oder Verkäufer-ID suchen
+- Produkte nach Schlüsselwörter oder Verkäufer-ID suchen
 
 Bitte beachten Sie, dass diese Angaben nicht endgültig sind und sich noch ändern können.
 
