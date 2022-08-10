@@ -35,13 +35,13 @@ module.exports = {
         },
         '/de/': {
             lang: 'de',
-            title: 'PHP Scraper - Eine meinungsstarke Web-Scraping-Bibliothek für PHP',
+            title: 'PHP Scraper - Eine etwas andere Web-Scraping-Bibliothek für PHP',
             description: 'PHP Scraper bietet eine einfachere Möglichkeit, Websites mit PHP abzurufen und zu analysieren.'
         },
         '/es/': {
             lang: 'es',
             title: 'PHP Scraper - Una biblioteca de raspado web para PHP',
-            description: 'PHP Scraper proporciona una forma más sencilla de obtener y analizar sitios web utilizando PHP.eb utilizando PHP.'
+            description: 'PHP Scraper proporciona una forma más sencilla de obtener y analizar sitios web utilizando PHP.'
         },
     },
     themeConfig: {
