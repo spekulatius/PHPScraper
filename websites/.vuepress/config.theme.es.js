@@ -19,7 +19,7 @@ module.exports = {
             ],
         },
         {
-            title: 'Cabecera',
+            title: '<head>',
             collapsable: false,
             children: [
                 'es/examples/scrape-website-title',
@@ -29,7 +29,7 @@ module.exports = {
             ],
         },
         {
-            title: 'Contenido',
+            title: '<body>',
             collapsable: false,
             children: [
                 'es/examples/headings',
