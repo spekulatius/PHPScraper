@@ -30,7 +30,7 @@ echo $web->h1[0];          // "Wir testen hier!"
 ```
 
 ::: tip
-Der [Website-Titel](/examples/scrape-website-title) und die Überschrift 1 (`<h1>`) können unterschiedlich sein. Stellen Sie sicher, dass Sie die richtige abrufen.
+Der [Website-Titel](/de/examples/scrape-website-title) und die Überschrift 1 (`<h1>`) können unterschiedlich sein. Stellen Sie sicher, dass Sie die richtige abrufen.
 :::
 
 
@@ -122,4 +122,4 @@ $headings = $web->headings;
  */
 ```
 
-Wie Sie sehen können, enthält dies keine Informationen über die Struktur der Überschriften. Es geht nur darum zu wissen, welche Überschriften vorhanden sind. Wenn Sie eine [Gliederung](/examples/outline) haben möchten, müssen Sie die entsprechenden Methoden verwenden.
+Wie Sie sehen können, enthält dies keine Informationen über die Struktur der Überschriften. Es geht nur darum zu wissen, welche Überschriften vorhanden sind. Wenn Sie eine [Gliederung](/de/examples/outline) haben möchten, müssen Sie die entsprechenden Methoden verwenden.

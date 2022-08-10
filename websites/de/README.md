@@ -92,27 +92,27 @@ Some information *optionally* is returned as an array with details. For this exa
 More example code can be found in the sidebar or the tests.
 
 
-Installation
+Einrichtung
 ------------
 
-As usual, done via composer:
+Wie üblich erfolgt dies über den Komponisten:
 
 ```bash
 composer require spekulatius/phpscraper
 ```
 
-This automatically ensures the package is loaded and you can start to scrape the web. You can now use any of the noted examples.
+Dadurch wird automatisch sichergestellt, dass das Paket geladen wird und Sie mit dem Scrapen des Webs beginnen können. Sie können nun eines der aufgeführten Beispiele verwenden.
 
 
-Contributing
+beisteuern.
 ------------
 
-Awesome, if you would like contribute please check the [guidelines](/contributing) before getting started.
+Toll, wenn Sie einen Beitrag leisten möchten, besuchen Sie bitte die[guidelines](/contributing) bevor Sie loslegen.
 
 
 Tests
 -----
 
-The code is roughly covered with end-to-end tests. For this, simple web-pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
+Der Code wird grob mit End-to-End-Tests abgedeckt. Dazu werden einfache Webseiten unter *https://test-pages.phpscraper.de/* gehostet, geladen und geparst mit [PHPUnit](https://phpunit.de/). Diese Tests sind auch als Beispiele geeignet - siehe `tests/`!
 
-This being said, there are probably edge cases which aren't working and may cause trouble. If you find one, please raise a bug on GitHub.
+Trotzdem gibt es wahrscheinlich Randfälle, die nicht funktionieren und Probleme verursachen können. Wenn Sie einen finden, melden Sie bitte einen Fehler auf GitHub.

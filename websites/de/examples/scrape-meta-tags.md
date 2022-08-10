@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=
 
 # Scraping Meta Tags
 
-Der Zugriff auf die Meta-Informationen erfolgt nach einem ähnlichen Muster wie bei den zuvor gezeigten [header-tags](/examples/scrape-header-tags). Nachfolgend finden Sie eine Reihe von Beispielen:
+Der Zugriff auf die Meta-Informationen erfolgt nach einem ähnlichen Muster wie bei den zuvor gezeigten [header-tags](/de/examples/scrape-header-tags). Nachfolgend finden Sie eine Reihe von Beispielen:
 
 
 ## Meta Autor, Beschreibung und Bild
@@ -64,7 +64,7 @@ echo $web->keywordString;   // "one, two, three"
 ```
 
 ::: tip Tipp
-Dies bezieht sich nur auf die Schlüsselwörter im "keyword"-Meta-Tag. Sie können auch [die Schlüsselwörter des Inhalts](/examples/extract-keywords)) mit PHPScraper extrahieren.
+Dies bezieht sich nur auf die Schlüsselwörter im "keyword"-Meta-Tag. Sie können auch [die Schlüsselwörter des Inhalts](/de/examples/extract-keywords)) mit PHPScraper extrahieren.
 :::
 
 
