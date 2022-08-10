@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Text
+# Kratzen von Text
 
 Das Scraping von Inhalten, vor allem von Absätzen, kann mit PHP Scraper leicht durchgeführt werden. Es gibt eine spezielle Methode, um auf die Absätze (`<p>`) einer Website zuzugreifen. Die folgenden Beispiele zeigen, wie man auf den Inhalt/Text einer Website zugreifen kann.
 
