@@ -14,7 +14,7 @@ Very simple example of how to scrape the title of a website:
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page - this one doesn't contain a title-tag.
+// Navigate to the test page - this one does contain a title-tag "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**

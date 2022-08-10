@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Website%20Title&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping eines Website-Titels
+# Scraping des Website-Titels
 
 Das Scraping des Titels einer Website ist einfach. Die folgenden Beispiele zeigen, wie es mit PHPScraper funktioniert.
 
@@ -14,7 +14,7 @@ Ein sehr einfaches Beispiel, wie man den Titel einer Website scrapen kann:
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigieren Sie zu der Testseite - diese enthält keinen Titel-Tag.
+// Navigieren Sie zu der Testseite - diese enthält den Titel-Tag "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**

@@ -2,9 +2,9 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping-Listen
+# Listen Scrapen
 
-Das Scraping von Listen folgt einem ähnlichen Ansatz wie anderes Scraping:
+Das Scraping von Listen folgt einem ähnlichen Ansatz wie anderes Scraping mit PHPScraper:
 
 ```php
 $web = new \spekulatius\phpscraper();
