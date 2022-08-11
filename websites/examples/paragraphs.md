@@ -53,12 +53,12 @@ Scraping the first paragraph of the website can be done by accessing the first e
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
+echo $web->paragraphs[0];
 /**
  * Prints the first paragraph:
  *
  * Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
  */
-echo $web->paragraphs[0];
 ```
 
 Empty p-tags would lead to empty strings in the returned array. To avoid this you can call `$web->cleanParagraphs` instead. This will filter empty paragraphs and only return those with content. To access the first paragraph with content use `$web->cleanParagraphs[0]`.

@@ -74,8 +74,7 @@ The default language (locale) for this is `en_US`. Other languages can be passed
 
 Not every keyword has the same weight in the ranking-algorithms of search engines. A mix of several factors and SEO-signals decides on the weight a search engine assigns to a word. Frequency of words, length of the texts, and variations such as synonyms can lead to different weighting.
 
-The PHPScraper library allows you to get an indication of keyword weights in the form of scores:
-
+PHPScraper allows you to get an indication of keyword weights in the form of scores:
 
 ```PHP
 $web = new \spekulatius\phpscraper();

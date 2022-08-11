@@ -54,7 +54,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 var_dump($web->viewport);
 ```
 
-Wenn Sie auf die ursprüngliche Zeichenfolge zugreifen müssen, greifen Sie auch auf die ursprüngliche Zeichenfolge zu
+Wenn Sie auf die ursprüngliche Reihenfolge zugreifen müssen, können Sie diese mit `viewportString` abrufen:
 
 ```php
 $web = new \spekulatius\phpscraper();
@@ -83,7 +83,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
-// Drucken Sie die canonical URL
+// Ausgabe der canonical URL
 echo $web->canonical;       // "https://test-pages.phpscraper.de/navigation/2.html"
 ```
 
@@ -106,7 +106,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Drucken Sie die contentType
+// Ausgabe des contentType
 echo $web->contentType;     // "text/html; charset=utf-8"
 ```
 
@@ -125,7 +125,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Holen Sie sich die csrfToken
+// Holen Sie den csrfToken
 echo $web->csrfToken;     // "token"
 ```
 
@@ -136,8 +136,6 @@ Wenn Sie auf alle oben genannten Methoden zugreifen wollen, verwenden Sie die Me
 
 ```php
 /**
- * die gesammelten Header als Array erhalten
- *
  * @return array
  */
 public function headers()

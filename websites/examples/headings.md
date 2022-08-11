@@ -21,12 +21,12 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigate to the test page. It contains:
  *
- * <title>We are testing here!</title>
+ * <title>Outline Test</title>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 // Print the H1 heading
-echo $web->h1[0];          // "We are testing here!"
+echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip
@@ -64,7 +64,7 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  *    'Example 3'
  * ]
  */
-$secondaryHeadings = $web->h3;
+$web->h3;
 ```
 
 If no headings are found, the array is left empty.
@@ -98,8 +98,6 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
-
-$headings = $web->headings;
 /**
  * $headings contains now:
  *
@@ -120,6 +118,7 @@ $headings = $web->headings;
  *     []
  * ]
  */
+$web->headings;
 ```
 
 As you can see, this doesn't contain any information about the structure the headings are in. It's purely to know which headings exist. If you like to have an [outline](/examples/outline) you will need use the related methods.

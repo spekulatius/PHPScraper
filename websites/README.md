@@ -95,7 +95,7 @@ More example code can be found in the sidebar or the tests.
 Installation
 ------------
 
-As usual, done via composer:
+Installation via [Composer](https://getcomposer.org):
 
 ```bash
 composer require spekulatius/phpscraper

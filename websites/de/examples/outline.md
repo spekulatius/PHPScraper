@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Gliederung Extractieren
+# Gliederung Extrahieren
 
 Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings) zugreifen möchten, um z. B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
 
@@ -42,10 +42,8 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
-
-$outline = $web->outline;
 /**
- * $outline enthält jetzt:
+ * $outline wird gesetzt auf:
  *
  * [
  *    [
@@ -66,6 +64,7 @@ $outline = $web->outline;
  *    ]
  * ]
  */
+$outline = $web->outline;
 ```
 
 

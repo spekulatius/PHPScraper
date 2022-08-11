@@ -21,12 +21,12 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
  *
- * <title>Wir testen hier!</title>
+ * <title>Outline Test</title>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
-// Drucken der H1-Überschrift
-echo $web->h1[0];          // "Wir testen hier!"
+// Ausgeben der H1-Überschrift
+echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip
@@ -64,7 +64,7 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  *    'Beispiel 3'
  * ]
  */
-$secondaryHeadings = $web->h3;
+$web->h3;
 ```
 
 Wenn keine Überschriften gefunden werden, bleibt das Feld leer.
@@ -98,8 +98,6 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
-
-$headings = $web->headings;
 /**
  * $headings enthält jetzt:
  *
@@ -120,6 +118,7 @@ $headings = $web->headings;
  *     []
  * ]
  */
+$web->headings;
 ```
 
 Wie Sie sehen können, enthält dies keine Informationen über die Struktur der Überschriften. Es geht nur darum zu wissen, welche Überschriften vorhanden sind. Wenn Sie eine [Gliederung](/de/examples/outline) haben möchten, müssen Sie die entsprechenden Methoden verwenden.

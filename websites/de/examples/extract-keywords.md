@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Extract%20Keywords&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Schlüsselwörter extrahieren
+# Keywords Extrahieren
 
 Während es oft ausreicht, Inhalte zu scrapen, müssen Sie manchmal wichtige Begriffe und Phrasen (Keywords) aus diesen Inhalten extrahieren. PHPScraper ermöglicht es Ihnen, die Keywords der Website direkt zu extrahieren. Hierfür verwendet er:
 
@@ -15,7 +15,7 @@ Während es oft ausreicht, Inhalte zu scrapen, müssen Sie manchmal wichtige Beg
 
 Auch wenn diese Schlüsselwörter extrahiert werden, bedeutet dies nicht, dass die Seite tatsächlich für diese Schlüsselwörter rangiert. Die endgültige Entscheidung darüber, für welche Schlüsselwörter eine Webseite rangiert, liegt bei der Suchmaschine.
 
-Das folgende Beispiel gibt eine Liste aller aus der Webseite extrahierten Schlüsselwörter zurück:
+Das folgende Beispiel gibt eine Liste aller aus der Webseite extrahierten Keywords zurück:
 
 ```PHP
 
@@ -75,11 +75,9 @@ Die Standardsprache (Gebietsschema) hierfür ist "en_US". Andere Sprachen, wie D
 
 Nicht jedes Keyword hat in den Ranking-Algorithmen der Suchmaschinen das gleiche Gewicht. Ein Mix aus verschiedenen Faktoren und SEO-Signalen entscheidet über die Gewichtung, die eine Suchmaschine einem Wort zuweist. Häufigkeit der Wörter, Länge der Texte und Variationen wie Synonyme können zu einer unterschiedlichen Gewichtung führen.
 
-Die PHPScraper-Bibliothek ermöglicht es Ihnen, die Gewichtung von Schlüsselwörtern in Form von Scores zu ermitteln:
-
+PHPScraper ermöglicht es Ihnen, einen Hinweis auf die Gewichtung der Keywords in Form von Scores zu erhalten:
 
 ```PHP
-
 $web = new \spekulatius\phpscraper();
 
 // Navigieren Sie zu der Testseite.

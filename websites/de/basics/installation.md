@@ -1,6 +1,6 @@
 # Installation
 
-Installation über Composer:
+Installation über [Composer](https://getcomposer.org):
 
 ```bash
 composer require spekulatius/phpscraper
@@ -10,13 +10,10 @@ composer require spekulatius/phpscraper
 
 Nach Abschluss der Installation wird das Paket vom Composer-Autoloader geladen.
 
-Wenn Sie eine VanillaPHP-Projekt bauen, müssen Sie den Autoloader oben im Skript einbinden:
+Wenn Sie ein VanillaPHP-Projekt bauen, müssen Sie den Autoloader oben im Skript einbinden:
 
 ```php
 require 'vendor/autoload.php';
 ```
 
 Wenn Sie ein Framework wie Laravel, Symfony, Zend, Phalcon, or CakePHP verwenden, brauchen Sie diesen Schritt nicht.
-
-
-If you are using a framework such as Laravel, Symfony, Zend, Phalcon, or CakePHP, you won't need this step. The autoloader is automatically included.

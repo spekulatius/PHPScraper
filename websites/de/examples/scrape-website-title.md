@@ -23,8 +23,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Holen Sie den Titel. Dies sollte zurückgeben:
-// "Lorem Ipsum"
+// Holen Sie den Titel. Dies sollte "Lorem Ipsum" zurückgeben.
 var_dump($web->title);
 ```
 
@@ -60,7 +59,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
-// Drucken Sie den Titel: "Eine Seite mit vielen deutschen Umlauten überall (ä ü ö)"
+// Ausgeben Sie den Titel: "Eine Seite mit vielen deutschen Umlauten überall (ä ü ö)"
 echo $web->title;
 ```
 
@@ -81,7 +80,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
-// Drucken Sie den Titel: "Cat & Mouse'"
+// Ausgeben Sie den Titel: "Cat & Mouse"
 echo $web->title;
 ```
 

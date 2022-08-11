@@ -22,23 +22,18 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Prüfen, ob Bilder gefunden wurden
-$images = $web->images;
-if (count($images) > 0) {
-
-    var_dump($images);
-    /**
-     * [
-     *     'https://test-pages.phpscraper.de/assets/cat.jpg',
-     *     'https://test-pages.phpscraper.de/assets/cat.jpg',
-     * ]
-     *
-     * Anmerkung:
-     * Doppelt, weil es zweimal das gleiche Bild ist:
-     * Einmal mit einem relativen Pfad und einmal mit einem absoluten Pfad.
-     * Die relativen Pfade werden standardmäßig in absolute Pfade aufgelöst.
-     */
-}
+/**
+ * [
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg',
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg',
+ * ]
+ *
+ * Anmerkung:
+ * Doppelt, weil es zweimal das gleiche Bild ist:
+ * Einmal mit einem relativen Pfad und einmal mit einem absoluten Pfad.
+ * Die relativen Pfade werden standardmäßig in absolute Pfade aufgelöst.
+ */
+var_dump($web->images);
 ```
 
 ::: tip Tipp
@@ -54,7 +49,6 @@ Wenn Sie mehr Details benötigen, können Sie mit den folgenden Anfragen auf die
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-var_dump($web->imagesWithDetails);
 /**
  * [
  *     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
@@ -69,6 +63,7 @@ var_dump($web->imagesWithDetails);
  *     'height' => null,
  * ]
  */
+var_dump($web->imagesWithDetails);
 ```
 
 ::: tip SEO

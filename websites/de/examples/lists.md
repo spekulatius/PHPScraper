@@ -28,7 +28,6 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
 
-var_dump($web->unorderedLists);
 /**
  * Nur unsortierte Listen (<ul>)
  *
@@ -43,8 +42,9 @@ var_dump($web->unorderedLists);
  *     ]
  * ]
  */
+var_dump($web->unorderedLists);
 
-var_dump($web->orderedLists);
+
 /**
  * Nur geordnete Listen (<ol>)
  *
@@ -59,12 +59,13 @@ var_dump($web->orderedLists);
  *     ]
  * ]
  */
+var_dump($web->orderedLists);
+
 
 // Beide Listen zusammen (wie oben)
 var_dump($web->lists);
 ```
 
 ::: warning Verschachtelte Listen
-
-Im Moment werden verschachtelte Listen nicht gut verarbeitet. Um eine weitere Verarbeitung zu ermöglichen, werden verschachtelte Listen im Ergebnis als `children`.
+Im Moment werden verschachtelte Listen nicht gut verarbeitet. Verschachtelte Listen werden als `children` in das Ergebnis aufgenommen, um eine weitere Verarbeitung zu ermöglichen.
 :::

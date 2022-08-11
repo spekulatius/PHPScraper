@@ -22,23 +22,18 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Check if any images have been found
-$images = $web->images;
-if (count($images) > 0) {
-
-    var_dump($images);
-    /**
-     * [
-     *     'https://test-pages.phpscraper.de/assets/cat.jpg',
-     *     'https://test-pages.phpscraper.de/assets/cat.jpg',
-     * ]
-     *
-     * Note:
-     * Double because it's twice the same image:
-     * Once with a relative path and once with an absolute path.
-     * The relative paths are resolved to absolute paths by default.
-     */
-}
+/**
+ * [
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg',
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg',
+ * ]
+ *
+ * @Note:
+ * Double because it's twice the same image:
+ * Once with a relative path and once with an absolute path.
+ * The relative paths are resolved to absolute paths by default.
+ */
+var_dump($web->images);
 ```
 
 ::: tip
@@ -54,7 +49,6 @@ If you are in need of more details the following requests allows you to access a
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-var_dump($web->imagesWithDetails);
 /**
  * [
  *     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
@@ -69,6 +63,7 @@ var_dump($web->imagesWithDetails);
  *     'height' => null,
  * ]
  */
+var_dump($web->imagesWithDetails);
 ```
 
 ::: tip SEO

@@ -17,14 +17,14 @@ $web = new \spekulatius\phpscraper();
 // Wir beginnen mit der Testseite Nr. 1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
-// Drucken Sie den Titel aus, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
+// Ausgaben des Titel, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
 echo $web->h1[0];   // Seite 1
 
 
 // Wir navigieren zur Testseite #2 unter Verwendung der absoluten URL.
 $web->clickLink('https://test-pages.phpscraper.de/navigation/2.html');
 
-// Drucken Sie den Titel aus, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
+// Ausgaben des Titel, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
 echo $web->h1[0];   // 'Seite #2'
 ```
 
@@ -45,14 +45,14 @@ $web->go('https://test-pages.phpscraper.de/navigation/1.html');
  * <a href="2.html">2 relativ</a>
  */
 
-// Drucken Sie den Titel aus, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
+// Ausgaben des Titel, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
 echo $web->h1[0];   // Seite 1
 
 
 // Wir navigieren zur Testseite #2, indem wir den Text verwenden, der auf der Seite steht.
 $web->clickLink('2 relative');
 
-// Drucken Sie den Titel aus, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
+// Ausgaben des Titel, um zu sehen, ob wir tatsächlich auf der richtigen Seite sind...
 echo $web->h1[0];   // 'Seite #2'
 ```
 

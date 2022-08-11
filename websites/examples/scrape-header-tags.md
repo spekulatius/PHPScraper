@@ -54,7 +54,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 var_dump($web->viewport);
 ```
 
-If you need to access the original string you also access the original string
+If you need to access the original "viewport"-string, you can use `viewportString`:
 
 ```php
 $web = new \spekulatius\phpscraper();
@@ -136,8 +136,6 @@ If you want to access all of the above mentioned methods you use the `headers`-m
 
 ```php
 /**
- * get the header collected as an array
- *
  * @return array
  */
 public function headers()

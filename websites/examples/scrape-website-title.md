@@ -23,15 +23,14 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Fetch the title. This should return:
-// "Lorem Ipsum"
+// Fetch the title. This will return: "Lorem Ipsum"
 var_dump($web->title);
 ```
 
 
 ## Missing Title
 
-If the title is missing `null` will be returned:
+`null` will be returned if the title is missing:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -39,7 +38,7 @@ $web = new \spekulatius\phpscraper();
 // Navigate to the test page - this one doesn't contain a title-tag.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
-// Fetch the title. This should return null.
+// Fetch the title. This will return null.
 var_dump($web->title);
 ```
 
@@ -81,7 +80,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
-// Print the title: "Cat & Mouse'"
+// Print the title: "Cat & Mouse"
 echo $web->title;
 ```
 

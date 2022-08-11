@@ -35,7 +35,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
 
 
-## Meta-Schlüsselwörter
+## Meta-Keywords
 
 Der Meta-Tag keywords ist natürlich ein Array und wird zu Ihrer Bequemlichkeit aufgeteilt:
 
@@ -74,7 +74,7 @@ Wenn Sie auf alle Meta-Eigenschaften zugreifen möchten, können Sie die `metaTa
 
 ```php
 /**
- * liefert die gesammelten Metadaten als Array
+ * Liefert die gesammelten Metadaten als Array
  *
  * @return array
  */
@@ -111,4 +111,4 @@ var_dump($web->metaTags);
 
 ## Fehlende Meta-Tags
 
-Wenn Sie auf eine andere Meta-Eigenschaft zugreifen müssen, können Sie einen [Beitrag](/contributing) zum Paket leisten oder einen [issue on GitHub](https://github.com/spekulatius/phpscraper/issues) einreichen.
+Wenn Sie auf eine andere Meta-Eigenschaft zugreifen müssen, bitte lesen Sie die [Contribution Guidelines](/contributing) bevor Sie einen Pull Request öffnen oder ein [Issue auf GitHub](https://github.com/spekulatius/phpscraper/issues) aufmachen.

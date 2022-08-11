@@ -57,7 +57,7 @@ Wurden keine Daten gefunden, wird das Array leer zurückgegeben.
 :::
 
 
-## Twitter-Karte
+## Twitter-Card Scrapen
 
 Das Parsen der Twitter Card funktioniert ähnlich:
 

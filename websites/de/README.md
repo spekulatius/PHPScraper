@@ -92,22 +92,22 @@ Some information *optionally* is returned as an array with details. For this exa
 More example code can be found in the sidebar or the tests.
 
 
-Einrichtung
+Installation
 ------------
 
-Wie üblich erfolgt dies über den Komponisten:
+Die Installation erfolgt über Composer:
 
 ```bash
 composer require spekulatius/phpscraper
 ```
 
-Dadurch wird automatisch sichergestellt, dass das Paket geladen wird und Sie mit dem Scrapen des Webs beginnen können. Sie können nun eines der aufgeführten Beispiele verwenden.
+Dadurch wird automatisch sichergestellt, dass das Paket geladen wird und Sie mit dem Scrapen beginnen können. Sie können nun eines der aufgeführten Beispiele verwenden.
 
 
-beisteuern.
-------------
+Mit machen
+----------
 
-Toll, wenn Sie einen Beitrag leisten möchten, besuchen Sie bitte die[guidelines](/contributing) bevor Sie loslegen.
+Toll, wenn Sie einen Beitrag leisten möchten, besuchen Sie bitte die [Guidelines](/contributing) bevor Sie loslegen.
 
 
 Tests

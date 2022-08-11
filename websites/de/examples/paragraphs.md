@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Kratzen von Text
+# Scrapen von Text
 
 Das Scraping von Inhalten, vor allem von Absätzen, kann mit PHP Scraper leicht durchgeführt werden. Es gibt eine spezielle Methode, um auf die Absätze (`<p>`) einer Website zuzugreifen. Die folgenden Beispiele zeigen, wie man auf den Inhalt/Text einer Website zugreifen kann.
 
@@ -53,12 +53,12 @@ Das Scraping des ersten Absatzes der Website kann durch Zugriff auf das erste El
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
+echo $web->paragraphs[0];
 /**
  * Druckt den ersten Absatz:
  *
  * Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
  */
-echo $web->paragraphs[0];
 ```
 
 Leere p-tags würden zu leeren Strings im zurückgegebenen Array führen. Um dies zu vermeiden, können Sie stattdessen `$web->cleanParagraphs` aufrufen. Dadurch werden leere Absätze herausgefiltert und nur solche mit Inhalt zurückgegeben. Um auf den ersten Absatz mit Inhalt zuzugreifen, verwenden Sie `$web->cleanParagraphs[0]`.
