@@ -2,33 +2,33 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Text
+# Scrapen von Text
 
-Scraping content, mostly paragraphs, can be done easily using PHP Scraper. There is a dedicated method to access the paragraphs (`<p>`) on a website. The following examples show how to access the content/texts on a website.
+Das Scraping von Inhalten, vor allem von Absätzen, kann mit PHP Scraper leicht durchgeführt werden. Es gibt eine spezielle Methode, um auf die Absätze (`<p>`) einer Website zuzugreifen. Die folgenden Beispiele zeigen, wie man auf den Inhalt/Text einer Website zugreifen kann.
 
 
-## Getting all Paragraphs
+## Alle Absätze abrufen
 
-The following example will return a list of all paragraphs (`<p>`-tags) on the website:
+Das folgende Beispiel gibt eine Liste aller Absätze (`<p>`-Tags) auf der Website zurück:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
-// Navigate to the test page. It contains 6 lorem ipsum paragraphs
+// Navigieren Sie zu der Testseite. Sie enthält 6 lorem ipsum-Absätze
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
-// check the number of paragraphs.
-echo "This page contains " . count($web->paragraphs) . " paragraphs.\n\n";
+// Überprüfen Sie die Anzahl der Absätze.
+echo "Diese Seite enthält " . count($web->paragraphs) . " Paragraphen.\n\n";
 
-// Loop through the paragraphs
+// Schleife durch die Absätze
 foreach ($web->paragraphs as $paragraph) {
     echo " - " . $paragraph . "\n";
 }
 
 /**
- * Will print out:
+ * Wird ausgedruckt:
  *
- * This page contains 6 paragraphs.
+ * Diese Seite enthält 6 Absätze.
  *
  * - Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
 
@@ -45,9 +45,9 @@ foreach ($web->paragraphs as $paragraph) {
 ```
 
 
-## Scraping the First Paragraph
+## Scrapen des ersten Absatzes
 
-Scraping the first paragraph of the website can be done by accessing the first element of the array (index 0).
+Das Scraping des ersten Absatzes der Website kann durch Zugriff auf das erste Element des Arrays (Index 0) erfolgen.
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -55,10 +55,10 @@ $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 echo $web->paragraphs[0];
 /**
- * Prints the first paragraph:
+ * Druckt den ersten Absatz:
  *
  * Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
  */
 ```
 
-Empty p-tags would lead to empty strings in the returned array. To avoid this you can call `$web->cleanParagraphs` instead. This will filter empty paragraphs and only return those with content. To access the first paragraph with content use `$web->cleanParagraphs[0]`.
+Leere p-tags würden zu leeren Strings im zurückgegebenen Array führen. Um dies zu vermeiden, können Sie stattdessen `$web->cleanParagraphs` aufrufen. Dadurch werden leere Absätze herausgefiltert und nur solche mit Inhalt zurückgegeben. Um auf den ersten Absatz mit Inhalt zuzugreifen, verwenden Sie `$web->cleanParagraphs[0]`.

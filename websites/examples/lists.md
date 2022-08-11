@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https:
 
 # Scraping Lists
 
-Scraping lists follows a similar approach as other scraping:
+Scraping lists follows a similar approach as other scraping with PHPScraper:
 
 ```php
 $web = new \spekulatius\phpscraper();
@@ -28,7 +28,6 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
 
-var_dump($web->unorderedLists);
 /**
  * Only unordered lists (<ul>)
  *
@@ -43,8 +42,9 @@ var_dump($web->unorderedLists);
  *     ]
  * ]
  */
+var_dump($web->unorderedLists);
 
-var_dump($web->orderedLists);
+
 /**
  * Only ordered lists (<ol>)
  *
@@ -59,11 +59,13 @@ var_dump($web->orderedLists);
  *     ]
  * ]
  */
+var_dump($web->orderedLists);
+
 
 // Both lists combined (as above)
 var_dump($web->lists);
 ```
 
 ::: warning Nested Lists
-At the moment, this doesn't handle nested lists well. To allow further processing nested lists are included in the result as `children`.
+At the moment, this doesn't handle nested lists well. Nested lists are included in the result as `children` to allow further processing.
 :::

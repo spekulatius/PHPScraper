@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Export Content
+# Outline Extraction
 
 While you might want to only access the [`headings`](/examples/headings) to process, for example, the number or length of the headings it might not always be enough. In some case you might need to identify the actual structure of the content. For these use-cases you might want to consider one of these methods:
 
@@ -15,7 +15,7 @@ While you might want to only access the [`headings`](/examples/headings) to proc
 The following examples should help to understand the functionality better. There are dedicated methods for [keyword extraction](/examples/extract-keywords) available.
 
 
-## Export the Outline
+## Extract the Outline
 
 The outline of the content allows you build an index of the document. The following example builds a markdown version of the headings in the requested document:
 
@@ -42,10 +42,8 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
-
-$outline = $web->outline;
 /**
- * $outline now contains:
+ * $outline will be set to contains:
  *
  * [
  *    [
@@ -66,10 +64,11 @@ $outline = $web->outline;
  *    ]
  * ]
  */
+$outline = $web->outline;
 ```
 
 
-## Export the Outline with Paragraphs
+## Extract the Outline with Paragraphs
 
 The following method works in a similar manner as `outline`, but it also includes any paragraphs as part of the returned array:
 
@@ -144,7 +143,7 @@ $content = $web->outlineWithParagraphs;
 ```
 
 
-## Export the Cleaned up Outline with Paragraphs
+## Extract the cleaned up Outline with Paragraphs
 
 The following method works in a similar manner as `outlineWithParagraphs`, but it doesn't include any empty empty headings or paragraphs as part of the returned array:
 

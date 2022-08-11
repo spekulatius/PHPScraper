@@ -1,6 +1,6 @@
 # TikTok Scraper API
 
-The team behind PHP Scraper is working on providing commercial APIs for various common use-cases as well as platforms. These APIs are not intended to be self-hosted and will be provided on a pay-as-you-use basis.
+The team behind PHP Scraper is working on providing commercial APIs for various common use-cases as well as platforms. These APIs aren't self-hosted. You won't need to worry about rotating IPs/proxies, running a headless browser such as Puppeteer. A simple API call will get you all information required. The services will be provided on a attractive usage-dependent fee-structure basis.
 
 For TikTok we are considering the implementation of an API with the following scope.
 
@@ -12,7 +12,9 @@ For TikTok we are considering the implementation of an API with the following sc
 - Video Details
 - Video Download with convertion to mp4, mp3, etc. and without watermark
 
-Please note that this is not final and is likely to change.
+::: tip
+Please note this list of API endpoints is *not* final is likely going to change.
+:::
 
 ## Platform Support
 

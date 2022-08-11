@@ -4,22 +4,22 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=
 
 # Scraping Meta Tags
 
-Accessing the meta information follows a similar pattern as the previously shown [header tags](/examples/scrape-header-tags). Below is a set of examples:
+Der Zugriff auf die Meta-Informationen erfolgt nach einem ähnlichen Muster wie bei den zuvor gezeigten [header-tags](/de/examples/scrape-header-tags). Nachfolgend finden Sie eine Reihe von Beispielen:
 
 
-## Meta Author, Description and Image
+## Meta Autor, Beschreibung und Bild
 
-The following example shows the extraction of three attributes:
+Das folgende Beispiel zeigt die Extraktion von drei Attributen:
 
-- the Meta Author,
-- the Meta Description and
-- the Meta Image URL
+- der Meta-Autor,
+- die Meta-Beschreibung und
+- die Meta Image URL
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <meta name="author" content="Lorem ipsum" />
  * <meta name="keywords" content="Lorem,ipsum,dolor" />
@@ -28,28 +28,28 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Get the information:
+// Abrufen der Informationen:
 echo $web->author;          // "Lorem ipsum"
 echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
 
 
-## Meta Keywords
+## Meta-Keywords
 
-The keywords meta-tag is naturally an array and will be split for your convience:
+Der Meta-Tag keywords ist natürlich ein Array und wird zu Ihrer Bequemlichkeit aufgeteilt:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <meta name="keywords" content="one, two, three">
  */
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
-// dump the keywords as an array
+// Auslesen der Schlüsselwörter als Array
 var_dump($web->keywords);   // ['one', 'two', 'three']
 ```
 
@@ -59,22 +59,22 @@ Alternatively, you can access the original keyword string:
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
-// Print the keywords as string
+// Ausgabe der Schlüsselwörter als String
 echo $web->keywordString;   // "one, two, three"
 ```
 
-::: tip
-This refers only to the keywords in the "keyword" meta-tag. You can also [extract the content keywords](/examples/extract-keywords)) using PHPScraper.
+::: tip Tipp
+Dies bezieht sich nur auf die Schlüsselwörter im "keyword"-Meta-Tag. Sie können auch [die Schlüsselwörter des Inhalts](/de/examples/extract-keywords)) mit PHPScraper extrahieren.
 :::
 
 
-## Combined Meta Tags
+## Kombinierte Meta-Tags
 
-If you would like to access all meta properties you can use the `metaTags`-method. It returns the above mentioned methods as an array. It is defined as:
+Wenn Sie auf alle Meta-Eigenschaften zugreifen möchten, können Sie die `metaTags`-Methode verwenden. Sie gibt die oben genannten Methoden als Array zurück. Sie ist definiert als:
 
 ```php
 /**
- * get the meta collected as an array
+ * Liefert die gesammelten Metadaten als Array
  *
  * @return array
  */
@@ -89,7 +89,7 @@ public function metaTags()
 }
 ```
 
-From the example above it would be used as following:
+Im obigen Beispiel würde es wie folgt verwendet werden:
 
 ```php
 $web = new \spekulatius\phpscraper();
@@ -97,7 +97,7 @@ $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);
 /**
- * Contains:
+ * Enthält:
  *
  * [
  *     'Lorem ipsum',
@@ -109,6 +109,6 @@ var_dump($web->metaTags);
 ```
 
 
-## Missing Meta Tags
+## Fehlende Meta-Tags
 
-If you need to access another meta property, please read the [contribution guidelines](/contributing) before opening a pull request or submitting an [issue on GitHub](https://github.com/spekulatius/phpscraper/issues).
+Wenn Sie auf eine andere Meta-Eigenschaft zugreifen müssen, bitte lesen Sie die [Contribution Guidelines](/contributing) bevor Sie einen Pull Request öffnen oder ein [Issue auf GitHub](https://github.com/spekulatius/phpscraper/issues) aufmachen.

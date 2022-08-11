@@ -4,44 +4,44 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_imag
 
 # Scrape Header Tags
 
-The header tags often contain useful information about a web-page and how it fits into the overall structure of the website it is part of. The following examples show how to access particular pieces of information from the `<head>` and collections around these.
+Die Header-Tags enthalten oft nützliche Informationen über eine Webseite und darüber, wie sie sich in die Gesamtstruktur der Website einfügt, zu der sie gehört. Die folgenden Beispiele zeigen, wie man auf bestimmte Informationen aus dem `<head>` zugreift und Sammlungen um diese herum erstellt.
 
 
-## Charset
+## Zeichensatz
 
-To access the defined charset, you can use the following method:
+Um auf den definierten Zeichensatz zuzugreifen, können Sie die folgende Methode verwenden:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <meta charset="utf-8" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Print the contentType
+// Druckt den ContentType
 echo $web->charset;     // "utf-8"
 ```
 
 
-## Viewport
+## Ansichtsfenster
 
-In some cases, such as the viewport and the meta keywords, the string is representing an array and will be provided as such:
+In einigen Fällen, wie z. B. dem Ansichtsfenster und den Meta-Schlüsselwörtern, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Get the viewport as an array. It should contain:
+ * Holt das Ansichtsfenster als Array. Es sollte enthalten:
  *
  * [
  *     'width=device-width',
@@ -54,14 +54,14 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 var_dump($web->viewport);
 ```
 
-If you need to access the original "viewport"-string, you can use `viewportString`:
+Wenn Sie auf die ursprüngliche Reihenfolge zugreifen müssen, können Sie diese mit `viewportString` abrufen:
 
 ```php
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Get the viewport as a string. Prints:
+ * Holt das Ansichtsfenster als String. Druckt:
  *
  * "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
  */
@@ -71,68 +71,68 @@ echo $web->viewportString;
 
 ## Canonical URL
 
-The canonical URL, if given, can be accessed as shown in the example below:
+Auf die kanonische URL kann, sofern vorhanden, wie im folgenden Beispiel gezeigt, zugegriffen werden:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
  */
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
-// Print the canonical URL
+// Ausgabe der canonical URL
 echo $web->canonical;       // "https://test-pages.phpscraper.de/navigation/2.html"
 ```
 
-::: tip
-If no canonical link is set, the method returns `null`.
+::: tip Tipp
+Wenn kein kanonischer Link gesetzt ist, gibt die Methode `null` zurück.
 :::
 
 
 ## Content Type
 
-To access the content type you can use the following functionality:
+Um auf den Inhaltstyp zuzugreifen, können Sie die folgenden Funktionen nutzen:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Print the contentType
+// Ausgabe des contentType
 echo $web->contentType;     // "text/html; charset=utf-8"
 ```
 
 
 ## CSFR Token
 
-The CSFR token method assumes that the token is stored in a meta tag with the name "csrf-token". This is the default for Laravel. You can access it using the following code:
+Die CSFR-Token-Methode geht davon aus, dass das Token in einem Meta-Tag mit dem Namen "csrf-token" gespeichert ist. Dies ist der Standard für Laravel. Sie können mit folgendem Code darauf zugreifen:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigate to the test page. It contains:
+ * Navigieren Sie zur Testseite. Sie enthält:
  *
  * <meta name="csrf-token" content="token" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Get the csrfToken
+// Holen Sie den csrfToken
 echo $web->csrfToken;     // "token"
 ```
 
 
-## Combined Header Tags
+## Kombinierte Kopfzeilen-Tags
 
-If you want to access all of the above mentioned methods you use the `headers`-method. It is defined as:
+Wenn Sie auf alle oben genannten Methoden zugreifen wollen, verwenden Sie die Methode `headers`. Sie ist definiert als:
 
 ```php
 /**
@@ -150,4 +150,4 @@ public function headers()
 }
 ```
 
-More information on accessing the [meta tags](/examples/scrape-meta-tags.md).
+Weitere Informationen zum Zugriff auf die [Meta-Tags](/de/examples/scrape-meta-tags.md).
