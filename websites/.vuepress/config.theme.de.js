@@ -11,13 +11,13 @@ module.exports = {
         }
     },
     sidebar: [
-        {
-            title: 'Grundlagen',
-            collapsable: false,
-            children: [
-                'de/basics/installation',
-            ],
-        },
+        // {
+        //     title: 'Grundlagen',
+        //     collapsable: false,
+        //     children: [
+        //         'de/basics/installation',
+        //     ],
+        // },
         {
             title: '<head>',
             collapsable: false,
@@ -42,20 +42,20 @@ module.exports = {
                 'de/examples/navigation',
             ],
         },
-        {
-            title: 'APIs',
-            collapsable: false,
-            children: [
-                'de/apis/alibaba',
-                'de/apis/amazon',
-                'de/apis/facebook',
-                'de/apis/instagram',
-                'de/apis/linkedin',
-                'de/apis/tiktok',
-                'de/apis/walmart',
-                'de/apis/zalando',
-            ],
-        },
+        // {
+        //     title: 'APIs',
+        //     collapsable: false,
+        //     children: [
+        //         'de/apis/alibaba',
+        //         'de/apis/amazon',
+        //         'de/apis/facebook',
+        //         'de/apis/instagram',
+        //         'de/apis/linkedin',
+        //         'de/apis/tiktok',
+        //         'de/apis/walmart',
+        //         'de/apis/zalando',
+        //     ],
+        // },
         {
             title: 'Kommerzielle Unterstützung und mehr',
             collapsable: true,
