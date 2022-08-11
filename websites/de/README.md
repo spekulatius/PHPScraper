@@ -104,11 +104,10 @@ composer require spekulatius/phpscraper
 Dadurch wird automatisch sichergestellt, dass das Paket geladen wird und Sie mit dem Scrapen beginnen können. Sie können nun eines der aufgeführten Beispiele verwenden.
 
 
-Mit machen
-----------
+Ein Problem gefunden und gefixt? Super!
+---------------------------------------
 
-Toll, wenn Sie einen Beitrag leisten möchten, besuchen Sie bitte die [Guidelines](/contributing) bevor Sie loslegen.
-
+Bevor Sie loslegen, machen Sie sich mit den [Contribution Guidelines](/contributing) vertraut. Bei Fragen bitte eine kurze Nachricht oder Email.
 
 Tests
 -----

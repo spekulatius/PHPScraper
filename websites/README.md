@@ -104,10 +104,10 @@ composer require spekulatius/phpscraper
 This automatically ensures the package is loaded and you can start to scrape the web. You can now use any of the noted examples.
 
 
-Contributing
-------------
+Found a bug and fixed it? Awesome!
+----------------------------------
 
-Awesome, if you would like contribute please check the [guidelines](/contributing) before getting started.
+Before you get started, make yourself familiar with the [contribution guidelines](/contributing). Any questions feel free to reach out.
 
 
 Tests
