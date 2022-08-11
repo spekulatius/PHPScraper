@@ -54,7 +54,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 var_dump($web->viewport);
 ```
 
-Si necesitas acceder a la cadena original también accedes a la cadena original
+Si necesitas acceder a la cadena original "viewport", puedes utilizar `viewportString`:
 
 ```php
 $web = new \spekulatius\phpscraper();
@@ -136,8 +136,6 @@ Si desea acceder a todos los métodos mencionados anteriormente, utilice el mét
 
 ```php
 /**
- * obtener la cabecera recogida como un array
- *
  * @return array
  */
 public function headers()

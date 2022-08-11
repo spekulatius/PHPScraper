@@ -25,7 +25,7 @@ Este proyecto está patrocinado por:
 
 <a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
 
-¿Quieres patrocinar este proyecto? [Póngase en contacto conmigo](https://peterthaleikis.com/contact).
+¿Quieres patrocinar este proyecto? [Escríbeme](https://peterthaleikis.com/contact).
 
 
 Ejemplos
@@ -95,23 +95,32 @@ Puede encontrar más código de ejemplo en la barra lateral o en las pruebas.
 Instalación
 ------------
 
-Como siempre, se hace a través de Composer:
+La instalación suele realizarse mediante [Composer](https://getcomposer.org).
+
+### Instalación con Composer
 
 ```bash
 composer require spekulatius/phpscraper
 ```
 
-Esto asegura automáticamente que el paquete se cargue y puedas empezar a raspar la web. Ahora puede utilizar cualquiera de los ejemplos anotados.
+Una vez completada la instalación, el paquete será recogido por el autocargador de Composer. En las aplicaciones y frameworks típicos de PHP como Laravel o Symfony ya puedes empezar a hacer scraping. Ahora puedes usar cualquiera de los ejemplos anotados o los ejemplos en la carpeta `tests/`.
 
+### Uso en proyectos VanillaPHP
 
-Contribuyendo a
-------------
+Si estás construyendo un proyecto VanillaPHP, necesitarás incluir el autoloader en tu script en la parte superior de tu script PHP:
 
-Impresionante, si quieres contribuir por favor revisa las [directrices](/contributing) antes de empezar.
+```php
+require 'vendor/autoload.php';
+```
 
+Si estás usando un framework como Laravel, Symfony, Zend, Phalcon o CakePHP, no necesitarás este paso. El autoloader se incluye automáticamente.
 
-Pruebas
------
+¿Has encontrado un error y lo has arreglado? ¡Impresionante!
+----------------------------------
+Antes de empezar, familiarícese con las [directrices de contribución](/contributing). Si tiene alguna pregunta, no dude en ponerse en contacto con nosotros.
+
+Pruebas: Asegurarse de que funciona.
+----------------------------
 
 El código está cubierto a grandes rasgos con pruebas de extremo a extremo. Para ello, se alojan páginas web sencillas en *https://test-pages.phpscraper.de/*, cargado y analizado usando [PHPUnit](https://phpunit.de/). Estas pruebas también son adecuadas como ejemplos - véase`tests/`!
 

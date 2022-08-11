@@ -28,7 +28,6 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
 
-var_dump($web->unorderedLists);
 /**
  * Sólo listas desordenadas (<ul>)
  *
@@ -43,8 +42,9 @@ var_dump($web->unorderedLists);
  *     ]
  * ]
  */
+var_dump($web->unorderedLists);
 
-var_dump($web->orderedLists);
+
 /**
  * Sólo listas ordenadas (<ol>)
  *
@@ -59,11 +59,12 @@ var_dump($web->orderedLists);
  *     ]
  * ]
  */
+var_dump($web->orderedLists);
 
 // Ambas listas combinadas (como la anterior)
 var_dump($web->lists);
 ```
 
 ::: warning Listas anidadas
-Por el momento, esto no maneja bien las listas anidadas. Para permitir el procesamiento posterior, las listas anidadas se incluyen en el resultado como `hijos`.
+Por el momento, esto no maneja bien las listas anidadas. Las listas anidadas se incluyen en el resultado como `hijos` para permitir su procesamiento posterior.
 :::

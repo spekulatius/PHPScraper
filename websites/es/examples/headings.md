@@ -21,12 +21,12 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de pruebas. Contiene:
  *
- * <title>¡Estamos probando aquí!</title>
+ * <title>Prueba de contorno</title>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 // Imprimir la cabecera H1
-echo $web->h1[0];          // "¡Estamos probando aquí!"
+echo $web->h1[0];          // "Prueba de contorno"
 ```
 
 ::: tip CONSEJO
@@ -64,7 +64,7 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  *      'Ejemplo 3'
  * ]
  */
-$secondaryHeadings = $web->h3;
+$web->h3;
 ```
 
 Si no se encuentra ningún encabezamiento, la matriz se deja vacía.
@@ -98,8 +98,6 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
-
-$headings = $web->headings;
 /**
  * $headings contiene ahora:
  *
@@ -120,6 +118,7 @@ $headings = $web->headings;
  *     []
  * ]
  */
+$web->headings;
 ```
 
 Como puede ver, esto no contiene ninguna información sobre la estructura de los encabezados. Es puramente para saber qué encabezados existen. Si quiere tener un [esquema](/es/examples/outline) tendrá que utilizar los métodos relacionados.

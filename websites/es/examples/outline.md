@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Extracto del esquema
+# Extracción de contornos
 
 Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/headings) para procesar, por ejemplo, el número o la longitud de los epígrafes, no siempre es suficiente. En algunos casos puede ser necesario identificar la estructura real del contenido. Para estos casos de uso, puede considerar uno de estos métodos:
 
@@ -42,10 +42,8 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
-
-$outline = $web->outline;
 /**
- * $outline ahora contiene:
+ * $outline se establecerá para que contenga:
  *
  * [
  *    [
@@ -66,6 +64,7 @@ $outline = $web->outline;
  *    ]
  * ]
  */
+$outline = $web->outline;
 ```
 
 

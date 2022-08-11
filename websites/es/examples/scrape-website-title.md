@@ -23,15 +23,14 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Obtener el título. Esto debería devolver:
-// "Lorem Ipsum"
+// Fetch the title. This will return: "Lorem Ipsum"
 var_dump($web->title);
 ```
 
 
 ## Falta el título
 
-Si falta el título se devolverá `null`:
+Se devolverá `null` si falta el título:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
@@ -39,7 +38,7 @@ $web = new \spekulatius\phpscraper();
 // Navega a la página de prueba - ésta no contiene una etiqueta de título.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
-// Obtener el título. Esto debería devolver null.
+// Obtener el título. Esto devolverá null.
 var_dump($web->title);
 ```
 

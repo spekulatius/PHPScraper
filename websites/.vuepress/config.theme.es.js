@@ -1,5 +1,5 @@
 module.exports = {
-    selectText: 'Idiomas',
+    selectText: '🇺🇳️',
     label: 'Español',
     ariaLabel: 'Idiomas',
     editLinkText: 'Editar esta página en GitHub',
@@ -11,13 +11,6 @@ module.exports = {
         }
     },
     sidebar: [
-        {
-            title: 'Básico',
-            collapsable: false,
-            children: [
-                'es/basics/installation',
-            ],
-        },
         {
             title: '<head>',
             collapsable: false,

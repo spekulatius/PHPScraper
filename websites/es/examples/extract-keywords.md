@@ -74,7 +74,7 @@ El idioma por defecto (locale) es `en_US`. Se pueden pasar otros idiomas como pa
 
 No todas las palabras clave tienen el mismo peso en los algoritmos de clasificación de los motores de búsqueda. Una mezcla de varios factores y señales de SEO decide el peso que un motor de búsqueda asigna a una palabra. La frecuencia de las palabras, la longitud de los textos y las variaciones, como los sinónimos, pueden dar lugar a una ponderación diferente.
 
-La biblioteca PHPScraper permite obtener una indicación de la ponderación de las palabras clave en forma de puntuación:
+PHPScraper le permite obtener una indicación del peso de las palabras clave en forma de puntuación:
 
 
 ```PHP

@@ -53,12 +53,12 @@ La extracción del primer párrafo de la página web puede hacerse accediendo al
 $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
+echo $web->paragraphs[0];
 /**
  * Imprime el primer párrafo:
  *
  * Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
  */
-echo $web->paragraphs[0];
 ```
 
 Los p-tags vacíos conducirían a cadenas vacías en el array devuelto. Para evitar esto puede llamar a `$web->cleanParagraphs` en su lugar. Esto filtrará los párrafos vacíos y sólo devolverá los que tengan contenido. Para acceder al primer párrafo con contenido utilice `$web->cleanParagraphs[0]`.
