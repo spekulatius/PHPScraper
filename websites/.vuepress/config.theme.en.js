@@ -12,13 +12,6 @@ module.exports = {
     },
     sidebar: [
         {
-            title: 'Basics',
-            collapsable: false,
-            children: [
-                'basics/installation',
-            ],
-        },
-        {
             title: '<head>',
             collapsable: false,
             children: [

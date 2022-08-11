@@ -25,7 +25,7 @@ This project is sponsored by:
 
 <a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
 
-Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
+Want to sponsor this project? [Write me](https://peterthaleikis.com/contact).
 
 
 Examples
@@ -95,13 +95,25 @@ More example code can be found in the sidebar or the tests.
 Installation
 ------------
 
-Installation via [Composer](https://getcomposer.org):
+The installation usually is done using [Composer](https://getcomposer.org).
+
+### Installation with Composer
 
 ```bash
 composer require spekulatius/phpscraper
 ```
 
-This automatically ensures the package is loaded and you can start to scrape the web. You can now use any of the noted examples.
+After the installation is completed the package will be picked up by the Composer autoloader. In typical PHP applications and frameworks such as Laravel or Symfony you can start scraping now. You can now use any of the noted examples or examples in the `tests/`-folder.
+
+### Usage in VanillaPHP-Projects
+
+If you are building a VanillaPHP project, you will need to include the autoloader in your script at the top of your PHP script:
+
+```php
+require 'vendor/autoload.php';
+```
+
+If you are using a framework such as Laravel, Symfony, Zend, Phalcon, or CakePHP, you won't need this step. The autoloader is automatically included.
 
 
 Found a bug and fixed it? Awesome!
@@ -110,8 +122,8 @@ Found a bug and fixed it? Awesome!
 Before you get started, make yourself familiar with the [contribution guidelines](/contributing). Any questions feel free to reach out.
 
 
-Tests
------
+Tests: Making sure it works!
+----------------------------
 
 The code is roughly covered with end-to-end tests. For this, simple web-pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
 

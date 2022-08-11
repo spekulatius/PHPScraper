@@ -11,13 +11,6 @@ module.exports = {
         }
     },
     sidebar: [
-        // {
-        //     title: 'Grundlagen',
-        //     collapsable: false,
-        //     children: [
-        //         'de/basics/installation',
-        //     ],
-        // },
         {
             title: '<head>',
             collapsable: false,
