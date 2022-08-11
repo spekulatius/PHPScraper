@@ -1,4 +1,17 @@
+const fs = require('fs')
+const path = require('path')
+
+
 module.exports = {
+    generated() {
+        let source = path.resolve(__dirname, '_redirects')
+        let destination = path.resolve(__dirname, '..', 'dist', '_redirects')
+        if (fs.existsSync(source)) {
+            fs.copyFile(source, destination, error => { })
+        } else {
+            console.log(source, " not found");
+        }
+    },
     dest: 'dist/',
     title: 'PHP Scraper - An opinionated web-scraping library for PHP',
     description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
