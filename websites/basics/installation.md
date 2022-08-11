@@ -1,12 +1,14 @@
 # Installation
 
-Installation with composer:
+The installation usually is done using [Composer](https://getcomposer.org).
+
+## Installation with Composer
 
 ```bash
 composer require spekulatius/phpscraper
 ```
 
-## Usage
+## Usage in VanillaPHP-Projects
 
 After the installation is completed the package will be picked up by the Composer autoloader.
 
