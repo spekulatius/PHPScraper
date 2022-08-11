@@ -7,7 +7,7 @@ module.exports = {
     serviceWorker: {
         updatePopup: {
             message: "Neue Inhalte sind verfügbar.",
-            buttonText: "Refresh"
+            buttonText: "Aktualisieren"
         }
     },
     sidebar: [
@@ -50,7 +50,7 @@ module.exports = {
         //     ],
         // },
         {
-            title: 'Kommerzielle Unterstützung und mehr',
+            title: 'usw',
             collapsable: true,
             children: [
                 'de/support/more-examples',
