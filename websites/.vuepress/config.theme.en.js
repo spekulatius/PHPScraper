@@ -50,7 +50,7 @@ module.exports = {
             ],
         },
         {
-            title: 'Commerical Support and More',
+            title: 'MISC',
             collapsable: true,
             children: [
                 'support/more-examples',
