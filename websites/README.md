@@ -2,12 +2,12 @@
 image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-An *opinionated* web-scraping library for PHP
-===========================================
+PHP Scraper: Bringing simplicity back to scraping and crawling
+==============================================================
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
-Web scraping using PHP can done easier. This is an opinionated wrapper around some great PHP libraries to make accessing the web easier.
+PHPScraper is a scraper library for PHP, built with simplicity in mind. This is an opinionated wrapper around some great PHP libraries to make accessing the web easier.
 
 The examples tell the story much better. Have a look!
 

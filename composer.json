@@ -1,9 +1,11 @@
 {
     "name": "spekulatius/phpscraper",
-    "description": "An opinionated way to access the web. See tests/ for examples.",
+    "description": "PHPScraper, built for simple access the web. See tests/ for examples.",
     "keywords": [
         "PHP scraper",
         "PHP scraping",
+        "PHP crawler",
+        "xpath scraper",
         "web scraping",
         "PHP library",
         "web-access"
@@ -49,8 +51,8 @@
             "url": "https://github.com/sponsors/spekulatius"
         },
         {
-            "type": "buymeacoffee",
-            "url": "https://www.buymeacoffee.com/spekulatius"
+            "type": "homepage",
+            "url": "https://phpscraper.de/#supporters-%F0%9F%92%AA%EF%B8%8F"
         }
     ],
     "config": {
