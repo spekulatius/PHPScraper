@@ -54,6 +54,11 @@ module.exports = {
             title: 'PHP Scraper: La simplicidad en el scraping y el crawling',
             description: 'PHP Scraper proporciona una forma más sencilla de obtener y analizar sitios web utilizando PHP.'
         },
+        '/fr/': {
+            lang: 'fr',
+            title: 'PHP Scraper: Rendre la simplicité au grattage et à la marche à quatre pattes',
+            description: 'PHP Scraper offre un moyen plus simple de récupérer et d\'analyser des sites web en utilisant PHP.'
+        },
     },
     themeConfig: {
         domain: 'https://phpscraper.de',
@@ -70,6 +75,9 @@ module.exports = {
             },
             '/es/': {
                 ...require('./config.theme.es')
+            },
+            '/fr/': {
+                ...require('./config.theme.fr')
             },
         }
     }
