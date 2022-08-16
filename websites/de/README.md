@@ -2,12 +2,12 @@
 image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-Eine *etwas andere* Web-Scraping-Lib für PHP
-============================================
+PHP Scraper: Scraping und Crawling einfach gemacht
+==================================================
 
 *von [Peter Thaleikis](https://peterthaleikis.com)*
 
-Web Scraping mit PHP kann man einfacher machen werden. Hier handelt es sich um eine experimentiEs handelt sich dabei um eine meinungsstarke Hülle um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
+PHPScraper ist eine Scraper-Library für PHP, fokusiert es einfach zu halten. Bei PHPScraper handelt sich dabei um einen Wrapper um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
 
 Die Beispiele erzählen die Geschichte viel besser. Einen Blick wert!
 

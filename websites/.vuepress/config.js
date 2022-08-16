@@ -42,12 +42,12 @@ module.exports = {
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'PHP Scraper - An opinionated web-scraping library for PHP',
+            title: 'PHP Scraper: Bringing simplicity back to scraping and crawlin',
             description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.'
         },
         '/de/': {
             lang: 'de',
-            title: 'PHP Scraper - Eine etwas andere Web-Scraping-Bibliothek für PHP',
+            title: 'PHP Scraper: Scraping und Crawling einfach gemacht',
             description: 'PHP Scraper bietet eine einfachere Möglichkeit, Websites mit PHP abzurufen und zu analysieren.'
         },
         '/es/': {

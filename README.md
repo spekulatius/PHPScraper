@@ -2,7 +2,7 @@
 
 # [PHP Scraper](https://github.com/spekulatius/phpscraper)
 
-An opinionated & limited way to scrape the web using PHP. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
+PHPScraper is a scraper library for PHP, built with simplicity in mind. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
 
 Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json).
 
