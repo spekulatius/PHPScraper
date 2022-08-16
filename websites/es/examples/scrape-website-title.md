@@ -23,7 +23,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Fetch the title. This will return: "Lorem Ipsum"
+// Obtener el título. Esto devolverá: "Lorem Ipsum"
 var_dump($web->title);
 ```
 
@@ -55,11 +55,11 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de pruebas. Contiene:
  *
- * <title>Una página con muchas diéresis alemanas por todas partes (ä ü ö)</title>
+ *  <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
-// Imprime el título: "Una página con muchas diéresis alemanas por todas partes (ä ü ö)"
+// Imprime el título: "A page with plenty of German umlaute everywhere (ä ü ö)"
 echo $web->title;
 ```
 
@@ -76,14 +76,14 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navega hasta la página de la prueba. Contiene:
  *
- * <title>Gato &amp; ratón</title>
+ * <title>Cat &amp; Mouse</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
-// Imprime el título: "Gato & Ratón"
+// Imprime el título: "Cat & Mouse"
 echo $web->title;
 ```
 
 ::: tip CONSEJO
-Se han tenido en cuenta las entidades y los caracteres especiales en toda la biblioteca. Si encuentra un lugar donde no funcionan como se espera, por favor, plantee un [problema].(https://github.com/spekulatius/PHPScraper/issues).
+Se han tenido en cuenta las entidades y los caracteres especiales en toda la biblioteca. Si encuentra un lugar donde no funcionan como se espera, por favor, plantee un [problema](https://github.com/spekulatius/PHPScraper/issues).
 :::

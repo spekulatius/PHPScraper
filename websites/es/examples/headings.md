@@ -21,12 +21,12 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de pruebas. Contiene:
  *
- * <title>Prueba de contorno</title>
+ * <title>Outline Test</title>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 // Imprimir la cabecera H1
-echo $web->h1[0];          // "Prueba de contorno"
+echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip CONSEJO
@@ -44,14 +44,14 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de pruebas. Contiene:
  *
- * <h3>Ejemplo 1</h3>
- * <p>Aquí se vería un ejemplo.</p> <p>
+ * <h3>Example 1</h3>
+ * <p>Here would be an example.</p>
  *
- * <h3>Ejemplo 2</h3>
- * <p>Aquí estaría el segundo ejemplo.</p> <p>
+ * <h3>Example 2</h3>
+ * <p>Here would be the second example.</p>
  *
- * <h3>Ejemplo 3</h3>
- * <p>Aquí estaría otro ejemplo.</p> <p>
+ * <h3>Example 3</h3>
+ * <p>Here would be another example.</p>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
@@ -59,9 +59,9 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  * Obtenga los encabezados h3:
  *
  * [
- *      'Ejemplo 1',
- *      'Ejemplo 2',
- *      'Ejemplo 3'
+ *    'Example 1',
+ *    'Example 2',
+ *    'Example 3'
  * ]
  */
 $web->h3;
@@ -81,20 +81,20 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:
  *
- * <h1>¡Aquí estamos probando!</h1>
- * <p>Esta página contiene una estructura de ejemplo para ser analizada. Viene con una serie de encabezados y párrafos anidados como ejemplo de scrape.</p>
+ * <h1>We are testing here!</h1>
+ * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
  *
- * <h2>Ejemplos</h2>
- * <p>Hay numerosos ejemplos en el sitio web. Por favor, compruébalos para obtener más contexto sobre cómo funciona el scraping.</p> <p>
+ * <h2>Examples</h2>
+ * <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
  *
- * <h3>Ejemplo 1</h3>
- * <p>Aquí hay un ejemplo.</p> <p>
+ * <h3>Example 1</h3>
+ * <p>Here would be an example.</p>
  *
- * <h3>Ejemplo 2</h3>
- * <p>Aquí estaría el segundo ejemplo.</p> <p>
+ * <h3>Example 2</h3>
+ * <p>Here would be the second example.</p>
  *
- * <h3>Ejemplo 3</h3>
- * <p>Aquí estaría otro ejemplo.</p> <p>
+ * <h3>Example 3</h3>
+ * <p>Here would be another example.</p>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
@@ -103,15 +103,15 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  *
  * [
  *     [
- *         '¡Estamos probando aquí!'
+ *         'We are testing here!'
  *     ],
  *     [
- *         'Ejemplos'
+ *         'Examples'
  *     ],
  *     [
- *         'Ejemplo 1',
- *         'Ejemplo 2',
- *         'Ejemplo 3',
+ *         'Example 1',
+ *         'Example 2',
+ *         'Example 3',
  *     ],
  *     [],
  *     [],

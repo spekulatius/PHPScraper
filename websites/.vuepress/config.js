@@ -13,7 +13,7 @@ module.exports = {
         }
     },
     dest: 'dist/',
-    title: 'PHP Scraper - An opinionated web-scraping library for PHP',
+    title: 'PHP Scraper: Bringing simplicity back to scraping and crawlin',
     description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
 
     plugins: {
@@ -52,7 +52,7 @@ module.exports = {
         },
         '/es/': {
             lang: 'es',
-            title: 'PHP Scraper - Una biblioteca de raspado web para PHP',
+            title: 'PHP Scraper: Devolver la sencillez al raspado y al gateo',
             description: 'PHP Scraper proporciona una forma más sencilla de obtener y analizar sitios web utilizando PHP.'
         },
     },

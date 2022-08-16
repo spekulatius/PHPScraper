@@ -12,18 +12,18 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegar a la página de prueba. Esta página contiene:
  *
- * <h2>Ejemplo 1: Lista desordenada</h2>
+ * <h2>Example 1: Unordered List</h2>
  * <ul>
- * <li>Lista desordenada elemento 1</li>
- * <li>Integro de la lista desordenada 2</li>.
- * <li>Elemento de lista desordenada con <b>HTML</b></li>.
+ *     <li>Unordered list item 1</li>
+ *     <li>Unordered list item 2</li>
+ *     <li>Unordered list item with <b>HTML</b></li>
  * </ul>
  *
- * <h2>Ejemplo 2: Lista ordenada</h2>
+ * <h2>Example 2: Ordered List</h2>
  * <ol>
- * <li>Item de la lista ordenada 1</li>.
- * <li>Elemento de la lista ordenada 2</li>.
- * <li>Elemento de lista ordenada con <i>HTML</i></li>
+ *     <li>Ordered list item 1</li>
+ *     <li>Ordered list item 2</li>
+ *     <li>Ordered list item with <i>HTML</i></li>
  * </ol>
  */
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
@@ -36,9 +36,9 @@ $web->go('https://test-pages.phpscraper.de/content/lists.html');
  *     "children" => ... // Lista de childNodes
  *     "children_plain" =>
  *     [
- *         "Lista desordenada elemento 1"
- *         "Lista desordenada elemento 2"
- *         "Elemento de lista desordenada con HTML"
+ *         "Unordered list item 1"
+ *         "Unordered list item 2"
+ *         "Unordered list item with HTML"
  *     ]
  * ]
  */
@@ -53,9 +53,9 @@ var_dump($web->unorderedLists);
  *     "children" => ... // Lista de childNodes
  *     "children_plain" =>
  *     [
- *         "Lista ordenada elemento 1"
- *         "Lista ordenada elemento 2"
- *         "Elemento de la lista ordenada con HTML"
+ *         "Ordered list item 1"
+ *         "Ordered list item 2"
+ *         "Ordered list item with HTML"
  *     ]
  * ]
  */

@@ -28,10 +28,10 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  *     'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  *
- * @Note:
- * Double because it's twice the same image:
- * Once with a relative path and once with an absolute path.
- * The relative paths are resolved to absolute paths by default.
+ * @Nota:
+ * Doble porque es dos veces la misma imagen:
+ * Una con una ruta relativa y otra con una ruta absoluta.
+ * Las rutas relativas se resuelven en rutas absolutas por defecto.
  */
 var_dump($web->images);
 ```

@@ -17,20 +17,20 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de prueba. Contiene 6 enlaces a placekitten.com con diferentes atributos:
  *
- * <h2>Diferentes formas de envolver los atributos</h2>
- * <p><a href="https://placekitten.com/408/287" target=_blank>gatito externo</a></p>
- * <p><a href="https://placekitten.com/444/333" target="_blank">gatito externo</a></p>
- * <p><a href="https://placekitten.com/444/321" target='_blank'>gatito externo</a></p>
+ * <h2>Different ways to wrap the attributes</h2>
+ * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/333" target="_blank">external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/321" target='_blank'>external kitten</a></p>
  *
  * <h2>Named frame/window/tab</h2>
- * <p><a href="https://placekitten.com/408/287" target=kitten>gatito externo</a></p>
- * <p><a href="https://placekitten.com/444/333" target="kitten">gatito externo</a></p>
- * <p><a href="https://placekitten.com/444/321" target='kitten'>gatito externo</a></p>
+ * <p><a href="https://placekitten.com/408/287" target=kitten>external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/333" target="kitten">external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/321" target='kitten'>external kitten</a></p>
  */
 $web->go('https://test-pages.phpscraper.de/links/target.html');
 
 // Imprime el número de enlaces.
-echo "This page contains " . count($web->links) . " links.\n\n";
+echo "Esta página contiene " . count($web->links) . " enlaces.\n\n";
 
 // Recorrer los enlaces en bucle
 foreach ($web->links as $link) {
@@ -64,7 +64,7 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navegue hasta la página de prueba. Esta página contiene varios enlaces con diferentes atributos rel. Para ahorrar espacio sólo el primero:
  *
- * <a href="https://placekitten.com/432/287" rel="nofollow">gatito externo</a>
+ * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
 $web->go('https://test-pages.phpscraper.de/links/rel.html');
 
@@ -76,7 +76,7 @@ $firstLink = $web->linksWithDetails[0];
  *
  * [
  *     'url' => 'https://placekitten.com/432/287',
- *     'text' => 'gatito externo',
+ *     'text' => 'external kitten',
  *     'title' => null,
  *     'target' => null,
  *     'rel' => 'nofollow',

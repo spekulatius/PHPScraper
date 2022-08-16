@@ -6,4 +6,4 @@ Si observa algún error o problema de naturaleza similar, por favor, plantee una
 
 ## Soporte comercial
 
-El soporte para aplicaciones comerciales, licencias comerciales, desarrollo personalizado, etc. puede ser [discutido].(https://peterthaleikis.com/contact).
+El soporte para aplicaciones comerciales, licencias comerciales, desarrollo personalizado, etc. puede ser [discutido](https://peterthaleikis.com/contact).

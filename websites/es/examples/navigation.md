@@ -18,14 +18,14 @@ $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
 // Imprime el título para ver si estamos en la página correcta...
-echo $web->h1[0];   // 'Página 1'
+echo $web->h1[0];   // 'Page #1'
 
 
 // Navegamos a la página de prueba #2 usando la URL absoluta.
 $web->clickLink('https://test-pages.phpscraper.de/navigation/2.html');
 
 // Imprime el título para ver si estamos en la página correcta...
-echo $web->h1[0];   // 'Página 2'
+echo $web->h1[0];   // 'Page #2'
 ```
 
 
@@ -42,18 +42,18 @@ $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 /**
  * Esta página contiene:
  *
- * <a href="2.html">2 relativo</a>
+ * <a href="2.html">2 relative</a>
  */
 
 // Imprime el título para ver si estamos en la página correcta...
-echo $web->h1[0];   // 'Página 1'
+echo $web->h1[0];   // 'Page #1'
 
 
 // Navegamos a la página de prueba #2 usando el texto que tiene en la página.
 $web->clickLink('2 relativo');
 
 // Imprime el título para ver si estamos en la página correcta...
-echo $web->h1[0];   // 'Página 2'
+echo $web->h1[0];   // 'Page #2'
 ```
 
 Esta funcionalidad básica debería permitirle navegar por los sitios web.
