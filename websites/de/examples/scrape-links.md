@@ -17,20 +17,20 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Sie enthält 6 Links zu placekitten.com mit unterschiedlichen Attributen:
  *
- * <h2>Verschiedene Möglichkeiten, die Attribute zu verpacken</h2>
- * <p><a href="https://placekitten.com/408/287" target=_blank>externes Kätzchen</a></p>
- * <p><a href="https://placekitten.com/444/333" target="_blank">externes Kätzchen</a></p>
- * <p><a href="https://placekitten.com/444/321" target='_blank'>externes Kätzchen</a></p>
+ * <h2>Different ways to wrap the attributes</h2>
+ * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/333" target="_blank">external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/321" target='_blank'>external kitten</a></p>
  *
- * <h2>Benannt frame/window/tab</h2>
- * <p><a href="https://placekitten.com/408/287" target=kitten>externes Kätzchen</a></p>
- * <p><a href="https://placekitten.com/444/333" target="kitten">externes Kätzchen</a></p>
- * <p><a href="https://placekitten.com/444/321" target='kitten'>externes Kätzchen</a></p>
+ * <h2>Named frame/window/tab</h2>
+ * <p><a href="https://placekitten.com/408/287" target=kitten>external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/333" target="kitten">external kitten</a></p>
+ * <p><a href="https://placekitten.com/444/321" target='kitten'>external kitten</a></p>
  */
 $web->go('https://test-pages.phpscraper.de/links/target.html');
 
 // Geben Sie die Anzahl der Links aus.
-echo "This page contains " . count($web->links) . " links.\n\n";
+echo "Diese Seite enthält " . count($web->links) . " Links.\n\n";
 
 // Schleife durch die Links
 foreach ($web->links as $link) {
@@ -64,7 +64,7 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Diese Seite enthält eine Reihe von Links mit unterschiedlichen rel-Attributen. Um Platz zu sparen, wird nur der erste Link angezeigt:
  *
- * <a href="https://placekitten.com/432/287" rel="nofollow">externes Kätzchen</a>
+ * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
 $web->go('https://test-pages.phpscraper.de/links/rel.html');
 
@@ -76,7 +76,7 @@ $firstLink = $web->linksWithDetails[0];
  *
  * [
  *     'url' => 'https://placekitten.com/432/287',
- *     'text' => 'externes Kätzchen',
+ *     'text' => 'external kitten',
  *     'title' => null,
  *     'target' => null,
  *     'rel' => 'nofollow',

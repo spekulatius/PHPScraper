@@ -44,14 +44,14 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
  *
- * <h3>Beispiel 1</h3>
- * <p>Dies wäre ein Beispiel.</p>
+ * <h3>Example 1</h3>
+ * <p>Here would be an example.</p>
  *
- * <h3>Beispiel 2</h3>
- * <p>Dies wäre das zweite Beispiel.</p>
+ * <h3>Example 2</h3>
+ * <p>Here would be the second example.</p>
  *
- * <h3>Beispiel 3</h3>
- * <p>Dies wäre ein weiteres Beispiel.</p>
+ * <h3>Example 3</h3>
+ * <p>Here would be another example.</p>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
@@ -59,9 +59,9 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  * Holen Sie sich die h3-Überschriften:
  *
  * [
- *    'Beispiel 1',
- *    'Beispiel 2',
- *    'Beispiel 3'
+ *    'Example 1',
+ *    'Example 2',
+ *    'Example 3'
  * ]
  */
 $web->h3;
@@ -81,20 +81,20 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zu der Testseite. Diese Seite enthält:
  *
- * <h1>Wir testen hier!</h1>
- * <p>Diese Seite enthält eine Beispielstruktur, die geparst werden soll. Sie enthält eine Reihe von Überschriften und verschachtelten Absätzen als Beispiel für das Scrapen.</p>
+ * <h1>We are testing here!</h1>
+ * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
  *
- * <h2>Beispiele</h2>
- * <p>Es gibt zahlreiche Beispiele auf der Website. Schauen Sie sich diese an, um mehr darüber zu erfahren, wie Scraping funktioniert.</p>
+ * <h2>Examples</h2>
+ * <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
  *
- * <h3>Beispiel 1</h3>
- * <p>Dies wäre ein Beispiel.</p>
+ * <h3>Example 1</h3>
+ * <p>Here would be an example.</p>
  *
- * <h3>Beispiel 2</h3>
- * <p>Hier wäre das zweite Beispiel.</p>
+ * <h3>Example 2</h3>
+ * <p>Here would be the second example.</p>
  *
- * <h3>Beispiel 3</h3>
- * <p>Hier wäre ein weiteres Beispiel.</p>
+ * <h3>Example 3</h3>
+ * <p>Here would be another example.</p>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
@@ -103,15 +103,15 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
  *
  * [
  *     [
- *          'Wir testen hier!'
+ *         'We are testing here!'
  *     ],
  *     [
- *          'Beispiele'
+ *         'Examples'
  *     ],
  *     [
- *          'Beispiel 1',
- *          'Beispiel 2',
- *          'Beispiel 3',
+ *         'Example 1',
+ *         'Example 2',
+ *         'Example 3',
  *     ],
  *     [],
  *     [],

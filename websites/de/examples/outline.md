@@ -25,19 +25,19 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zu der Testseite. Diese Seite enthält:
  *
- * <h1>Wir testen hier!</h1>
+ * <h1>We are testing here!</h1>
  * [...]
  *
- * <h2>Beispiele</h2>
+ * <h2>Examples</h2>
  * [...]
  *
- * <h3>Beispiel 1</h3>
+ * <h3>Example 1</h3>
  * [...]
  *
- * <h3>Beispiel 2</h3>
+ * <h3>Example 2</h3>
  * [...]
  *
- * <h3>Beispiel 3</h3>
+ * <h3>Example 3</h3>
  * [...]
  */
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
@@ -48,19 +48,19 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
  * [
  *    [
  *      "tag" => "h1",
- *      "content" =>  "Wir testen hier!"
+ *      "content" =>  "We are testing here!"
  *    ], [
  *      "tag" => "h2",
- *      "content" => "Beispiele"
+ *      "content" => "Examples"
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 1"
+ *      "content" => "Example 1"
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 2"
+ *      "content" => "Example 2"
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 3"
+ *      "content" => "Example 3"
  *    ]
  * ]
  */
@@ -78,22 +78,22 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Diese Seite enthält:
  *
- * <h1>Wir testen hier!</h1>
- * <p>Diese Seite enthält eine Beispielstruktur, die geparst werden soll. Sie enthält eine Reihe von Überschriften und verschachtelten Absätzen als Beispiel für das Scrapen.</p>
+ * <h1>We are testing here!</h1>
+ * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
  *
- * <h2>Beispiele</h2>
- * <p>Es gibt zahlreiche Beispiele auf der Website. Schauen Sie sich diese an, um mehr darüber zu erfahren, wie Scraping funktioniert.</p>
+ * <h2>Examples</h2>
+ * <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
  *
- * <h3>Beispiel 1</h3>
- * <p>Hier wäre ein Beispiel.</p>
+ * <h3>Example 1</h3>
+ * <p>Here would be an example.</p>
  *
- * <h3>Beispiel 2</h3>
- * <p>Hier wäre das zweite Beispiel.</p>
+ * <h3>Example 2</h3>
+ * <p>Here would be the second example.</p>
  *
- * <h3>Beispiel 3</h3>
- * <p>Hier wäre ein weiteres Beispiel.</p>
+ * <h3>Example 3</h3>
+ * <p>Here would be another example.</p>
  *
- * <!-- ein leerer Absatz, um zu prüfen, ob er korrekt herausgefiltert wird -->
+ * <!-- an empty paragraph to check if it gets filtered out correctly -->
  * <p></p>
  */
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
@@ -106,34 +106,34 @@ $content = $web->outlineWithParagraphs;
  * [
  *    [
  *      "tag" => "h1",
- *      "content" =>  "Wir testen hier!"
+ *      "content" =>  "We are testing here!"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Diese Seite enthält eine Beispielstruktur, die geparst werden soll. Sie enthält eine Reihe von Überschriften und verschachtelten Absätzen als Beispiel für das Scrapen."
+ *      "content" => "This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example."
  *    ], [
  *      "tag" => "h2",
- *      "content" => "Beispiele"
+ *      "content" => "Examples"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Auf der Website gibt es zahlreiche Beispiele. Schauen Sie sich diese an, um mehr darüber zu erfahren, wie Scraping funktioniert."
+ *      "content" => "There are numerous examples on the website. Please check them out to get more context on how scraping works."
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 1"
+ *      "content" => "Example 1"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Dies wäre ein Beispiel."
+ *      "content" => "Here would be an example."
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 2"
+ *      "content" => "Example 2"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Dies wäre das zweite Beispiel."
+ *      "content" => "Here would be the second example."
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 3"
+ *      "content" => "Example 3"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Dies wäre ein weiteres Beispiel."
+ *      "content" => "Here would be another example."
  *    ], [
  *      "tag" => "p",
  *      "content" => ""
@@ -153,22 +153,22 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Diese Seite enthält:
  *
- * <h1>Wir testen hier!</h1>
- * <p>Diese Seite enthält eine Beispielstruktur, die geparst werden soll. Sie enthält eine Reihe von Überschriften und verschachtelten Absätzen als Beispiel für das Scrapen.</p>
+ * <h1>We are testing here!</h1>
+ * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
  *
- * <h2>Beispiele</h2>
- * <p>Es gibt zahlreiche Beispiele auf der Website. Schauen Sie sich diese an, um mehr darüber zu erfahren, wie Scraping funktioniert.</p>
+ * <h2>Examples</h2>
+ * <p>There are numerous examples on the website. Please check them out to get more context on how scraping works.</p>
  *
- * <h3>Beispiel 1</h3>
- * <p>Hier wäre ein Beispiel.</p>
+ * <h3>Example 1</h3>
+ * <p>Here would be an example.</p>
  *
- * <h3>Beispiel 2</h3>
- * <p>Hier wäre das zweite Beispiel.</p>
+ * <h3>Example 2</h3>
+ * <p>Here would be the second example.</p>
  *
- * <h3>Beispiel 3</h3>
- * <p>Hier wäre ein weiteres Beispiel.</p>
+ * <h3>Example 3</h3>
+ * <p>Here would be another example.</p>
  *
- * <!-- ein leerer Absatz, um zu prüfen, ob er korrekt herausgefiltert wird -->
+ * <!-- an empty paragraph to check if it gets filtered out correctly -->
  * <p></p>
  */
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
@@ -177,38 +177,38 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 $content = $web->cleanOutlineWithParagraphs;
 /**
  * $content enthält jetzt:
- *
+  *
  * [
  *    [
  *      "tag" => "h1",
- *      "content" =>  "Wir testen hier!"
+ *      "content" =>  "We are testing here!"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Diese Seite enthält eine Beispielstruktur, die geparst werden soll. Sie enthält eine Reihe von Überschriften und verschachtelten Absätzen als Beispiel für das Scrapen."
+ *      "content" => "This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example."
  *    ], [
  *      "tag" => "h2",
- *      "content" => "Beispiele"
+ *      "content" => "Examples"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Auf der Website gibt es zahlreiche Beispiele. Schauen Sie sich diese an, um mehr darüber zu erfahren, wie Scraping funktioniert."
+ *      "content" => "There are numerous examples on the website. Please check them out to get more context on how scraping works."
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 1"
+ *      "content" => "Example 1"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Dies wäre ein Beispiel."
+ *      "content" => "Here would be an example."
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 2"
+ *      "content" => "Example 2"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Dies wäre das zweite Beispiel."
+ *      "content" => "Here would be the second example."
  *    ], [
  *      "tag" => "h3",
- *      "content" => "Beispiel 3"
+ *      "content" => "Example 3"
  *    ], [
  *      "tag" => "p",
- *      "content" => "Dies wäre ein weiteres Beispiel."
+ *      "content" => "Here would be another example."
  *    ]
  * ]
  */

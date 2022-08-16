@@ -12,18 +12,18 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zu der Testseite. Diese Seite enthält:
  *
- * <h2>Beispiel 1: Ungeordnete Liste</h2>
+ * <h2>Example 1: Unordered List</h2>
  * <ul>
- * <li>Ungeordnete Liste Punkt 1</li>
- * <li>Ungeordnete Liste Punkt 2</li>
- * <li>Ungeordneter Listeneintrag mit <b>HTML</b></li>
+ *     <li>Unordered list item 1</li>
+ *     <li>Unordered list item 2</li>
+ *     <li>Unordered list item with <b>HTML</b></li>
  * </ul>
  *
- * <h2>Beispiel 2: Geordnete Liste</h2>
+ * <h2>Example 2: Ordered List</h2>
  * <ol>
- * <li>Geordnete Liste Punkt 1</li>
- * <li>Geordnete Liste Punkt 2</li>
- * <li>Gereihte Liste mit <i>HTML</i></li>
+ *     <li>Ordered list item 1</li>
+ *     <li>Ordered list item 2</li>
+ *     <li>Ordered list item with <i>HTML</i></li>
  * </ol>
  */
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
@@ -36,9 +36,9 @@ $web->go('https://test-pages.phpscraper.de/content/lists.html');
  *     "children" => ... // Liste der ChildNodes
  *     "children_plain" =>
  *     [
- *         "Ungeordnetes Listenelement 1"
- *         "Ungeordnetes Listenelement 2"
- *         "Ungeordnetes Listenelement mit HTML"
+ *         "Unordered list item 1"
+ *         "Unordered list item 2"
+ *         "Unordered list item with HTML"
  *     ]
  * ]
  */
@@ -53,9 +53,9 @@ var_dump($web->unorderedLists);
  *     "children" => ... // Liste der ChildNodes
  *     "children_plain" =>
  *     [
- *         "Bestellte Listenposition 1"
- *         "Bestellte Listenposition 2"
- *         "Geordneter Listeneintrag mit HTML"
+ *         "Ordered list item 1"
+ *         "Ordered list item 2"
+ *         "Ordered list item with HTML"
  *     ]
  * ]
  */
