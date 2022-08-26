@@ -2,20 +2,20 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Links
+# Enlaces de raspado
 
-Das Scraping von Links funktioniert sehr ähnlich wie [image scraping](/de/examples/scrape-images). Sie können sowohl eine Liste von URLs ohne zusätzliche Informationen als auch eine detaillierte Liste mit `rel`, `target` und anderen Attributen abrufen.
+El scraping de enlaces funciona de forma muy similar al [image scraping](/es/examples/scrape-images). Puede recuperar una lista de URL sin ninguna información adicional, así como una lista detallada que contenga `rel`, `target` así como otros atributos.
 
 
-## Einfache Link-Liste
+## Lista de enlaces simples
 
-Das folgende Beispiel analysiert eine Webseite nach Links und gibt ein Array mit absoluten URLs zurück:
+El siguiente ejemplo analiza una página web en busca de enlaces y devuelve un array de URLs absolutas:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält 6 Links zu placekitten.com mit unterschiedlichen Attributen:
+ * Navegue hasta la página de prueba. Contiene 6 enlaces a placekitten.com con diferentes atributos:
  *
  * <h2>Different ways to wrap the attributes</h2>
  * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
@@ -29,18 +29,18 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/links/target.html');
 
-// Geben Sie die Anzahl der Links aus.
-echo "Diese Seite enthält " . count($web->links) . " Links.\n\n";
+// Imprime el número de enlaces.
+echo "Esta página contiene " . count($web->links) . " enlaces.\n\n";
 
-// Schleife durch die Links
+// Recorrer los enlaces en bucle
 foreach ($web->links as $link) {
     echo " - " . $link . "\n";
 }
 
 /**
- * Kombiniert wird dies ausgedruckt:
+ * Combinado esto se imprimirá:
  *
- * Diese Seite enthält 6 Links.
+ * Esta página contiene 6 enlaces.
  *
  * - https://placekitten.com/408/287
  * - https://placekitten.com/444/333
@@ -51,28 +51,28 @@ foreach ($web->links as $link) {
  */
 ```
 
-Wenn die Seite keine Links enthalten soll, wird ein leeres Array zurückgegeben.
+Si la página no debe contener ningún enlace, se devuelve un array vacío.
 
 
-## Links mit Details
+## Enlaces con detalles
 
-Wenn Sie weitere Details benötigen, können Sie diese auf ähnliche Weise wie bei den Bildern abrufen. Nachstehend finden Sie ein Beispiel für den Zugriff auf die detaillierten Daten des ersten Links auf der Seite:
+Si necesitas más detalles puedes acceder a ellos de forma similar a como se hace en las imágenes. A continuación se muestra un ejemplo para acceder a los datos detallados del primer enlace de la página:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält eine Reihe von Links mit unterschiedlichen rel-Attributen. Um Platz zu sparen, wird nur der erste Link angezeigt:
+ * Navegue hasta la página de prueba. Esta página contiene varios enlaces con diferentes atributos rel. Para ahorrar espacio sólo el primero:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
 $web->go('https://test-pages.phpscraper.de/links/rel.html');
 
-// Ermittelt den ersten Link auf der Seite.
+// Obtener el primer enlace de la página.
 $firstLink = $web->linksWithDetails[0];
 
 /**
- * $firstLink enthält jetzt:
+ * $firstLink contiene ahora:
  *
  * [
  *     'url' => 'https://placekitten.com/432/287',
@@ -88,20 +88,20 @@ $firstLink = $web->linksWithDetails[0];
  */
 ```
 
-Wenn Sie mehr Daten benötigen, müssen Sie entweder die Bibliothek erweitern oder eine Ausgabe zur Prüfung einreichen.
+Si necesita más datos, tendrá que ampliar la biblioteca o presentar una edición para su consideración.
 
 
-## Interne Links und externe Links
+## Enlaces internos y externos
 
-PHPScraper erlaubt es, nur interne oder externe Links zurückzugeben. Die internen Links beinhalten sowohl Links der gleichen Root-Domain als auch jeder Sub-Domain. Wenn Sie nur die Links innerhalb der genauen Subdomain benötigen, verwenden Sie stattdessen [`subdomainLinks`](#sub-domain-links). Das Folgende demonstriert beides:
+PHPScraper permite devolver sólo enlaces internos o externos. Los enlaces internos incluyen enlaces tanto del mismo dominio raíz como de cualquier subdominio. Si necesita obtener sólo los enlaces dentro del subdominio exacto utilice [`subdomainLinks`](#sub-domain-links) en su lugar. Lo siguiente demuestra ambas cosas:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
-// Navigieren Sie zur Testseite.
+// Navega a la página de prueba.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
-// Abrufen der Liste der internen Links (im Beispiel ist ein Bild verlinkt)
+// Obtener la lista de enlaces internos (en el ejemplo se enlaza una imagen)
 var_dump($web->internalLinks);
 /**
  * [
@@ -109,7 +109,7 @@ var_dump($web->internalLinks);
  * ]
  */
 
-// Abrufen der Liste der externen Links
+// Obtener la lista de enlaces externos
 var_dump($web->externalLinks);
 /**
  * [
@@ -118,14 +118,14 @@ var_dump($web->externalLinks);
  */
 ```
 
-## Sub-Domain Links
+## Enlaces a subdominios
 
-Wenn Sie nur Links auf die exakte Subdomain abrufen wollen, können Sie die `subdomainLinks`-Methode verwenden:
+Si necesita recuperar sólo los enlaces del subdominio exacto, puede utilizar el método `subdomainLinks`:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
-// Navigieren Sie zur Testseite.
+// Navega a la página de prueba.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
 
 var_dump($web->subdomainLinks);
@@ -136,6 +136,6 @@ var_dump($web->subdomainLinks);
  */
 ```
 
-::: warning
-Dies kann zu Problemen führen, wenn eine Website Links mit *und* ohne "www" mischt, da www als Subdomain betrachtet wird.
+::: warning advertencia
+Esto puede causar problemas cuando un sitio mezcla enlaces con *y* sin 'www', ya que www se considera un subdominio.
 :::

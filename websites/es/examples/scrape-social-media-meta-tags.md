@@ -2,20 +2,20 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping von Social Media Meta-Tags
+# Scraping Social Media Meta Tags
 
-Das Scraping von Social Media Sharing Tags von einer Website kann mit den folgenden Methoden durchgeführt werden. Die genaue Ergebnismenge hängt von den angegebenen Tags ab. Alle Tags werden berücksichtigt, solange sie sich im vorangestellten Namensraum befinden (z. B. `twitter:` für Twitter Cards).
+El raspado de las etiquetas de compartición de las redes sociales de un sitio web puede realizarse mediante los siguientes métodos. El conjunto exacto de resultados depende de las etiquetas proporcionadas. Se incluyen todas las etiquetas, siempre que estén en el espacio de nombres prefijado (por ejemplo, `twitter:` para Twitter Cards).
 
 
-## Open-Graph (OG) Daten
+## Datos de Open-Graph (OG)
 
-Das Abrufen von Open-Graph-Daten kann durchgeführt werden:
+Se pueden obtener datos de gráficos abiertos:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Die Seite enthält:
+ * Navegar a la página de la prueba. La página contiene:
  *
  * <!-- open graph example -->
  * <meta property="og:site_name" content="Lorem ipsum" />
@@ -29,17 +29,17 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/og/example.html');
 
-// Sollte drucken 'Lorem Ipsum'
+// Debería imprimirse 'Lorem Ipsum'
 echo $web->openGraph['og:title'];
 
-// Sollte drucken 'Lorem ipsum dolor etc.'
+// Debería imprimir "Lorem ipsum dolor etc.
 echo $web->openGraph['og:description'];
 
-// das ganze Set:
+// todo el conjunto:
 $data = $web->openGraph;
 
 /**
- * $data enthält jetzt:
+ * $data ahora contiene:
  *
  * [
  *     'og:site_name' => 'Lorem ipsum',
@@ -52,22 +52,22 @@ $data = $web->openGraph;
  */
 ```
 
-::: tip Tipp
-Wurden keine Daten gefunden, wird das Array leer zurückgegeben.
+::: tip CONSEJO
+Si no se encuentran datos, el array se devolverá vacío.
 :::
 
 
-## Twitter-Card Scrapen
+## Twitter Card
 
-Das Parsen der Twitter Card funktioniert ähnlich:
+El análisis de la Twitter Card funciona de forma similar:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Die Seite enthält die folgende Twitter-Karte:
+ * Navegue a la página de prueba. La página contiene la siguiente tarjeta de Twitter:
  *
- * <!-- Twitter-Karte -->
+ * <!-- Twitter card -->
  * <meta name="twitter:card" content="summary_large_image" />
  * <meta name="twitter:title" content="Lorem Ipsum" />
  * <meta name="twitter:description" content="Lorem ipsum dolor etc." />
@@ -78,17 +78,17 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/twittercard/example.html');
 
-// Sollte ausgedruckt werden'summary_large_image'
+// Debería imprimirse 'summary_large_image'
 echo $web->twitterCard['twitter:card'];
 
-// Sollte ausgedruckt werden 'Lorem Ipsum'
+// Debería imprimirse 'Lorem Ipsum'
 echo $web->twitterCard['twitter:title'];
 
-// Der gesamte Satz.
+// Todo el conjunto.
 $data = $web->twitterCard;
 
 /**
- * $data enthält jetzt:
+ * $data contiene ahora:
  *
  * [
  *     'twitter:card' => 'summary_large_image',
@@ -100,4 +100,4 @@ $data = $web->twitterCard;
  */
 ```
 
-Ähnlich wie bei Open Graph wird das Array leer sein, wenn keine Twitter Card Tags gefunden wurden.
+De forma similar a Open Graph, la matriz estará vacía si no se han encontrado etiquetas de Twitter Card.

@@ -55,11 +55,11 @@ $web = new \spekulatius\phpscraper();
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
  *
- * <title>Eine Seite mit vielen deutschen Umlauten überall (ä ü ö)</title>
+ * <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
-// Ausgeben Sie den Titel: "Eine Seite mit vielen deutschen Umlauten überall (ä ü ö)"
+// Ausgeben Sie den Titel: "A page with plenty of German umlaute everywhere (ä ü ö)"
 echo $web->title;
 ```
 

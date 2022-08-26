@@ -2,28 +2,28 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Gliederung Extrahieren
+# Extracción de contornos
 
-Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings) zugreifen möchten, um z. B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
+Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/headings) para procesar, por ejemplo, el número o la longitud de los epígrafes, no siempre es suficiente. En algunos casos puede ser necesario identificar la estructura real del contenido. Para estos casos de uso, puede considerar uno de estos métodos:
 
- - `outline` funktioniert ähnlich wie die zuvor erwähnte Methode `headings`. Sie gibt ebenfalls alle Überschriften zurück, behält aber die Struktur des Originaldokuments bei und liefert nur die Überschriftenebenen (z.B. `h1`) mit der Ausgabe.
+ - `outline` funciona de forma similar al método `headings` mencionado anteriormente. También devuelve todos los encabezados, pero mantiene la estructura del documento original en su lugar y proporciona los niveles de encabezado (por ejemplo, `h1`) solo con la salida.
 
- - Die Methode `outlineWithParagraphs` funktioniert ähnlich wie `outline`, mit dem Unterschied, dass dieser Aufruf auch die Absätze enthält.
+ - El método `outlineWithParagraphs` funciona de forma similar a `outline`, con la diferencia de que esta llamada también incluye los párrafos.
 
- - `cleanOutlineWithParagraphs` funktioniert ähnlich wie `outlineWithParagraphs`, mit dem Unterschied, dass alle leeren HTML-Tags entfernt werden.
+ - CleanOutlineWithParagraphs` funciona de forma similar a `outlineWithParagraphs`, con la diferencia de que se eliminan las etiquetas HTML vacías.
 
-Die folgenden Beispiele sollen helfen, die Funktionalität besser zu verstehen. Es sind spezielle Methoden für die [Schlüsselwort-Extraktion](/de/examples/extract-keywords) verfügbar.
+Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay métodos dedicados para la [extracción de palabras clave](/es/examples/extract-keywords) disponibles.
 
 
-## Extrahieren der Gliederung
+## Extraer el esquema
 
-Die Gliederung des Inhalts ermöglicht es Ihnen, einen Index des Dokuments zu erstellen. Im folgenden Beispiel wird eine Markdown-Version der Überschriften des angeforderten Dokuments erstellt:
+El esquema del contenido permite construir un índice del documento. El siguiente ejemplo construye una versión markdown de los encabezados del documento solicitado:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zu der Testseite. Diese Seite enthält:
+ * Navegue hasta la página de la prueba. Esta página contiene:
  *
  * <h1>We are testing here!</h1>
  * [...]
@@ -43,7 +43,7 @@ $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 /**
- * $outline wird gesetzt auf:
+ * $outline se establecerá para que contenga:
  *
  * [
  *    [
@@ -68,15 +68,15 @@ $outline = $web->outline;
 ```
 
 
-## Gliederung mit Absätzen extrahieren
+## Extraer el esquema con párrafos
 
-Die folgende Methode funktioniert ähnlich wie `outline`, aber sie schließt auch alle Absätze als Teil des zurückgegebenen Arrays ein:
+El siguiente método funciona de manera similar a `outline`, pero también incluye los párrafos como parte del array devuelto:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält:
+ * Navegue hasta la página de la prueba. Esta página contiene:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -101,7 +101,7 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 $content = $web->outlineWithParagraphs;
 /**
- * $content now contains:
+ * $content ahora contiene:
  *
  * [
  *    [
@@ -143,15 +143,15 @@ $content = $web->outlineWithParagraphs;
 ```
 
 
-## Extrahieren der bereinigten Gliederung mit Absätzen
+## Extraer el esquema depurado con los párrafos
 
-Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber sie enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
+El siguiente método funciona de manera similar a `outlineWithParagraphs`, pero no incluye ningún encabezado o párrafo vacío como parte del array devuelto:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält:
+ * Navegue hasta la página de la prueba. Esta página contiene:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -176,9 +176,9 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 $content = $web->cleanOutlineWithParagraphs;
 /**
- * $content enthält jetzt:
-  *
- * [
+ * $content ahora contiene:
+ *
+  * [
  *    [
  *      "tag" => "h1",
  *      "content" =>  "We are testing here!"

@@ -2,47 +2,47 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scrapen von Überschriften
+# Recolección de encabezados
 
-Überschriften können nützlich sein, um sich einen Überblick über den Inhalt einer Website zu verschaffen. Das folgende Beispiel zeigt, wie man scrapen kann:
+Los encabezados pueden ser útiles para hacerse una idea del contenido de un sitio web. El siguiente ejemplo muestra cómo hacer scraping:
 
- - Eine einzelne Überschrift
- - Alle Überschriften einer bestimmten Ebene (z.B. `<h3>`)
- - Alle Überschriften auf einer Seite
+ - Un solo encabezado
+ - Todos los encabezamientos de un nivel determinado (por ejemplo, `<h3>`)
+ - Todos los encabezamientos de una página
 
 
-## Einzelne Überschrift Scrapen
+## Raspado de un solo encabezado
 
-Das Einscannen einer einzelnen Überschrift ist einfach und kann anhand dieses Beispiels durchgeführt werden:
+Raspar un solo encabezado es fácil y se puede hacer siguiendo este ejemplo:
 
 ```PHP
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navegue hasta la página de pruebas. Contiene:
  *
  * <title>Outline Test</title>
  */
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
-// Ausgeben der H1-Überschrift
+// Imprimir la cabecera H1
 echo $web->h1[0];          // "Outline Test"
 ```
 
-::: tip
-Der [Website-Titel](/de/examples/scrape-website-title) und die Überschrift 1 (`<h1>`) können unterschiedlich sein. Stellen Sie sicher, dass Sie die richtige abrufen.
+::: tip CONSEJO
+El [título del sitio web](/es/examples/scrape-website-title) y el encabezado 1 (`<h1>`) pueden ser diferentes. Asegúrese de recuperar el correcto.
 :::
 
 
-## Rubriken nach Ebene
+## Rúbricas por nivel
 
-Es kann Fälle geben, in denen Sie alle Überschriften einer bestimmten Ebene abrufen möchten. Das folgende Beispiel zeigt Ihnen, wie das geht:
+Puede haber casos en los que desee recuperar todos los títulos de un nivel determinado. El siguiente ejemplo muestra cómo hacerlo:
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navegue hasta la página de pruebas. Contiene:
  *
  * <h3>Example 1</h3>
  * <p>Here would be an example.</p>
@@ -56,7 +56,7 @@ $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * Holen Sie sich die h3-Überschriften:
+ * Obtenga los encabezados h3:
  *
  * [
  *    'Example 1',
@@ -67,19 +67,19 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->h3;
 ```
 
-Wenn keine Überschriften gefunden werden, bleibt das Feld leer.
+Si no se encuentra ningún encabezamiento, la matriz se deja vacía.
 
 
-## Alle Überschriften auf einer Seite
+## Todos los encabezados de una página
 
-Um auf alle Rubriken einer Seite zuzugreifen, können Sie die verschiedenen Ebenen von 1 bis 6 anwählen. Alternativ können Sie auch alle auf einmal aufrufen:
+Para acceder a todos los encabezados de una página, puede hacerlo accediendo a los diferentes niveles del 1 al 6. O, alternativamente, puede acceder a todos a la vez:
 
 
 ```php
 $web = new \spekulatius\phpscraper();
 
 /**
- * Navigieren Sie zu der Testseite. Diese Seite enthält:
+ * Navegue hasta la página de la prueba. Esta página contiene:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -99,7 +99,7 @@ $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * $headings enthält jetzt:
+ * $headings contiene ahora:
  *
  * [
  *     [
@@ -121,4 +121,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-Wie Sie sehen können, enthält dies keine Informationen über die Struktur der Überschriften. Es geht nur darum zu wissen, welche Überschriften vorhanden sind. Wenn Sie eine [Gliederung](/de/examples/outline) haben möchten, müssen Sie die entsprechenden Methoden verwenden.
+Como puede ver, esto no contiene ninguna información sobre la estructura de los encabezados. Es puramente para saber qué encabezados existen. Si quiere tener un [esquema](/es/examples/outline) tendrá que utilizar los métodos relacionados.

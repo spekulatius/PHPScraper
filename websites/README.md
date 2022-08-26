@@ -2,12 +2,12 @@
 image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-An *opinionated* web-scraping library for PHP
-===========================================
+PHP Scraper: Bringing Simplicity back to Scraping and Crawling
+==============================================================
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
-Web scraping using PHP can done easier. This is an opinionated wrapper around some great PHP libraries to make accessing the web easier.
+PHPScraper is a scraper library for PHP, built with simplicity in mind. This is an opinionated wrapper around some great PHP libraries to make accessing the web easier.
 
 The examples tell the story much better. Have a look!
 
@@ -28,8 +28,8 @@ This project is sponsored by:
 Want to sponsor this project? [Write me](https://peterthaleikis.com/contact).
 
 
-Examples
---------
+Some Examples
+-------------
 
 Here are some examples of what the web scraping library can do at this point:
 
@@ -54,7 +54,7 @@ echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
 
-Most other information can be accessed directly - either as string or an array.
+Nearly any information can be accessed directly, either as string or an array.
 
 
 ### Scrape Content, such as Images:
@@ -89,7 +89,7 @@ var_dump($web->imagesWithDetails);
 
 Some information *optionally* is returned as an array with details. For this example, a simple list of images is available using `$web->images` too. This should make your web scraping easier.
 
-More example code can be found in the sidebar or the tests.
+More example code can be found in the examples and tests.
 
 
 Installation

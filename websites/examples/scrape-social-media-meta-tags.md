@@ -79,10 +79,10 @@ $web = new \spekulatius\phpscraper();
 $web->go('https://test-pages.phpscraper.de/twittercard/example.html');
 
 // Should print out 'summary_large_image'
-echo $web->twitterCard['twitter:card']);
+echo $web->twitterCard['twitter:card'];
 
 // Should print out 'Lorem Ipsum'
-echo $web->twitterCard['twitter:title']);
+echo $web->twitterCard['twitter:title'];
 
 // The whole set.
 $data = $web->twitterCard;

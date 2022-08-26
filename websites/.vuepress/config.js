@@ -1,6 +1,19 @@
+const fs = require('fs')
+const path = require('path')
+
+
 module.exports = {
+    generated() {
+        let source = path.resolve(__dirname, '_redirects')
+        let destination = path.resolve(__dirname, '..', 'dist', '_redirects')
+        if (fs.existsSync(source)) {
+            fs.copyFile(source, destination, error => { })
+        } else {
+            console.log(source, " not found");
+        }
+    },
     dest: 'dist/',
-    title: 'PHP Scraper - An opinionated web-scraping library for PHP',
+    title: 'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
     description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
 
     plugins: {
@@ -29,13 +42,18 @@ module.exports = {
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'PHP Scraper - An opinionated web-scraping library for PHP',
-            description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.'
+            title: 'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
+            description: 'PHP Scraper is providing a fuss-free way to scrape and crawl websites using PHP.'
         },
         '/de/': {
             lang: 'de',
-            title: 'PHP Scraper - Eine etwas andere Web-Scraping-Bibliothek für PHP',
-            description: 'PHP Scraper bietet eine einfachere Möglichkeit, Websites mit PHP abzurufen und zu analysieren.'
+            title: 'PHP Scraper: Scraping und Crawling einfach gemacht',
+            description: 'PHP Scraper: Scraping, Crawling und Daten Sammeln einfach gemacht.'
+        },
+        '/es/': {
+            lang: 'es',
+            title: 'PHP Scraper: La simplicidad en el scraping y el crawling',
+            description: 'PHP Scraper proporciona una forma más sencilla de obtener y analizar sitios web utilizando PHP.'
         },
     },
     themeConfig: {
@@ -50,6 +68,9 @@ module.exports = {
             },
             '/de/': {
                 ...require('./config.theme.de')
+            },
+            '/es/': {
+                ...require('./config.theme.es')
             },
         }
     }
