@@ -12,7 +12,7 @@ PHPScraper est une bibliothèque de scraper pour PHP, construite avec la simplic
 Les exemples racontent bien mieux l'histoire. Jetez-y un coup d'œil !
 
 ::: tip Note
-Ce site de documentation en anglais est en cours d'élaboration. Veuillez élever un PR sur GitHub si vous trouvez des erreurs. Merci !
+Ce site de documentation en français est en cours d'élaboration. Veuillez élever un PR sur GitHub si vous trouvez des erreurs. Merci !
 :::
 
 
