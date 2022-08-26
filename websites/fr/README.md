@@ -5,11 +5,15 @@ image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated
 PHP Scraper: Rendre la simplicité au grattage et à la marche à quatre pattes
 ==============================================================
 
-*par [Peter Thaleikis](https://peterthaleikis.com)*
+*de [Peter Thaleikis](https://peterthaleikis.com)*
 
 PHPScraper est une bibliothèque de scraper pour PHP, construite avec la simplicité en tête. Il s'agit d'un habillage d'opinion autour de quelques grandes bibliothèques PHP pour rendre l'accès au web plus facile.
 
 Les exemples racontent bien mieux l'histoire. Jetez-y un coup d'œil !
+
+::: tip Note
+Ce site de documentation en anglais est en cours d'élaboration. Veuillez élever un PR sur GitHub si vous trouvez des erreurs. Merci !
+:::
 
 
 L'idée 💡️
@@ -89,7 +93,7 @@ var_dump($web->imagesWithDetails);
 
 Certaines informations *optionnellement* sont retournées comme un tableau avec des détails. Pour cet exemple, une simple liste d'images est disponible en utilisant `$web->images` aussi. Cela devrait faciliter votre travail de scraping web.
 
-Vous trouverez d'autres exemples de code dans la barre latérale ou dans les tests.
+Vous trouverez plus d'exemples de code dans les exemples individuels et dans les tests.
 
 
 Installation

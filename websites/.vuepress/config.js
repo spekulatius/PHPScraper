@@ -56,7 +56,7 @@ module.exports = {
         },
         '/fr/': {
             lang: 'fr',
-            title: 'PHP Scraper: Rendre la simplicité au grattage et à la marche à quatre pattes',
+            title: 'PHP Scraper: Simplifier les opérations de scraping et de crawling',
             description: 'PHP Scraper offre un moyen plus simple de récupérer et d\'analyser des sites web en utilisant PHP.'
         },
     },
