@@ -103,7 +103,7 @@ var_dump($web->images);
  */
 ```
 
-Mehr Beispielcode finden Sie in der Seitenleiste oder in den Tests.
+Mehr Beispielcode finden Sie in den Einzelbeispielen und in den Tests.
 
 
 Installation

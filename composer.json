@@ -1,6 +1,6 @@
 {
     "name": "spekulatius/phpscraper",
-    "description": "PHPScraper, built for simple access the web. See tests/ for examples.",
+    "description": "PHPScraper, built with simplicity in mind. See tests/ for examples.",
     "keywords": [
         "PHP scraper",
         "PHP scraping",
