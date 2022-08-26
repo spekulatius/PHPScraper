@@ -7,9 +7,9 @@ PHP Scraper: Scraping und Crawling einfach gemacht
 
 *von [Peter Thaleikis](https://peterthaleikis.com)*
 
-PHPScraper ist eine Scraper-Library für PHP, fokusiert es einfach zu halten. Bei PHPScraper handelt sich dabei um einen Wrapper um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
+PHPScraper ist eine Scraping-Bibliothek ohne Schnickschnack für PHP. Bei PHPScraper handelt sich dabei um einen Wrapper um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
 
-Die Beispiele erzählen die Geschichte viel besser. Einen Blick wert!
+Die Beispiele vermitteln die Idee besser. Einen Blick wert!
 
 
 Die Idee 💡️
@@ -54,7 +54,7 @@ echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
 
-Most other information can be accessed directly - either as string or an array.
+Nahezu alle Informationen können direkt als string oder array genutzt werden.
 
 
 ### Scrape Content, such as Images:
@@ -87,15 +87,29 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
-Some information *optionally* is returned as an array with details. For this example, a simple list of images is available using `$web->images` too. This should make your web scraping easier.
+Hier werden einige zusätzliche, *optionale* Informationen im Array als Details zurückgegeben. Alternativ ist für dieses Beispiel ist auch eine vereinfachte Liste nur mit den Bildern mit `$web->images` verfügbar:
 
-More example code can be found in the sidebar or the tests.
+```php
+// Wie oben.
+
+var_dump($web->images);
+/**
+ * [
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg',
+ *     'https://test-pages.phpscraper.de/assets/cat.jpg',
+ * ]
+ *
+ * // Hinweis: Doppelt, da die Seite das Bild mehrfach enthält.
+ */
+```
+
+Mehr Beispielcode finden Sie in der Seitenleiste oder in den Tests.
 
 
 Installation
 ------------
 
-Die Installation erfolgt normalerweise mit [Composer](https://getcomposer.org).
+Die Installation erfolgt üblicherweise mit [Composer](https://getcomposer.org).
 
 ### Installation mit Composer
 
@@ -113,7 +127,7 @@ Wenn Sie ein VanillaPHP-Projekt bauen, müssen Sie den Autoloader oben im Skript
 require 'vendor/autoload.php';
 ```
 
-Wenn Sie ein Framework wie Laravel, Symfony, Zend, Phalcon, or CakePHP verwenden, brauchen Sie diesen Schritt nicht. Der autoloader übernimmt die Arbeit.
+Wenn Sie ein Framework wie Laravel, Symfony, Zend, Phalcon, oder CakePHP verwenden, brauchen Sie diesen Schritt nicht. Der Autoloader übernimmt die Arbeit.
 
 Ein Problem gefunden und gefixt? Super!
 ---------------------------------------

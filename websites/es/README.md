@@ -2,14 +2,18 @@
 image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-Una librería *opinante* de web-scraping para PHP
-===========================================
+PHP Scraper: Devolviendo la simplicidad al scraping y al crawling
+=================================================================
 
 *por [Peter Thaleikis](https://peterthaleikis.com)*
 
 El raspado de la web usando PHP puede hacerse más fácilmente. Esta es una envoltura de opinión alrededor de algunas grandes bibliotecas de PHP para hacer el acceso a la web más fácil.
 
 Los ejemplos cuentan la historia mucho mejor. Echa un vistazo.
+
+::: tip Nota
+Este sitio web de documentación en español es WIP. Por favor, eleve un PR en GitHub si encuentra algún error. Gracias!
+:::
 
 
 La idea 💡️
@@ -54,7 +58,7 @@ echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
 
-El resto de la información se puede acceder directamente, ya sea como cadena o como matriz.
+La mayor parte de la información se puede acceder directamente, ya sea como cadena o como matriz.
 
 
 ### Raspado de contenidos, como imágenes:
@@ -89,7 +93,7 @@ var_dump($web->imagesWithDetails);
 
 Alguna información *opcionalmente* se devuelve como un array con detalles. Para este ejemplo, una simple lista de imágenes está disponible usando `$web->images` también. Esto debería facilitar el raspado de la web.
 
-Puede encontrar más código de ejemplo en la barra lateral o en las pruebas.
+Se puede encontrar más código de ejemplo en los ejemplos y pruebas.
 
 
 Instalación

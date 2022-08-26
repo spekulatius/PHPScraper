@@ -13,7 +13,7 @@ module.exports = {
         }
     },
     dest: 'dist/',
-    title: 'PHP Scraper: Bringing simplicity back to scraping and crawlin',
+    title: 'PHP Scraper: Bringing simplicity back to scraping and crawling',
     description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
 
     plugins: {
@@ -42,13 +42,13 @@ module.exports = {
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'PHP Scraper: Bringing simplicity back to scraping and crawlin',
+            title: 'PHP Scraper: Bringing simplicity back to scraping and crawling',
             description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.'
         },
         '/de/': {
             lang: 'de',
             title: 'PHP Scraper: Scraping und Crawling einfach gemacht',
-            description: 'PHP Scraper bietet eine einfachere Möglichkeit, Websites mit PHP abzurufen und zu analysieren.'
+            description: 'PHP Scraper: Scraping, Crawling und Daten Sammeln einfach gemacht.'
         },
         '/es/': {
             lang: 'es',
