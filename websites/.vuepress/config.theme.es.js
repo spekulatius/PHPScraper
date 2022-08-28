@@ -50,7 +50,7 @@ module.exports = {
             ],
         },
         {
-            title: 'Apoyo comercial y más',
+            title: 'Misceláneas',
             collapsable: true,
             children: [
                 'es/support/more-examples',
