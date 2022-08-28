@@ -115,7 +115,7 @@ class core
      *
      * @return string $url
      */
-    public function currentURL()
+    public function currentURL(): ?string
     {
         return $this->current_page->getUri();
     }
@@ -125,7 +125,7 @@ class core
      *
      * @param string $url
      */
-    public function go(string $url)
+    public function go(string $url): void
     {
         $this->current_page = $this->client->request('GET', $url);
     }
@@ -136,7 +136,7 @@ class core
      * @param string $url
      * @param string $content
      */
-    public function setContent(string $url, string $content)
+    public function setContent(string $url, string $content): void
     {
         $this->current_page = new \Symfony\Component\DomCrawler\Crawler(
             $content,
@@ -149,7 +149,7 @@ class core
      *
      * @param string $url
      */
-    public function fetchAsset(string $url)
+    public function fetchAsset(string $url): ?string
     {
         return $this->client->request('GET', $url)->getResponse();
     }
@@ -171,7 +171,7 @@ class core
      * @param string $filter
      * @return Crawler|null
      */
-    public function filterFirst(string $query)
+    public function filterFirst(string $query): ?Crawler
     {
         $filtered = $this->filter($query);
 
@@ -184,7 +184,7 @@ class core
      * @param string $filter
      * @return string|null
      */
-    public function filterFirstText(string $query)
+    public function filterFirstText(string $query): ?string
     {
         $filtered = $this->filter($query);
 
@@ -196,9 +196,9 @@ class core
      *
      * @param string $filter
      * @param array $attributes
-     * @return string|null
+     * @return array
      */
-    public function filterExtractAttributes(string $query, array $attributes)
+    public function filterExtractAttributes(string $query, array $attributes): array
     {
         $filtered = $this->filter($query);
 
@@ -212,7 +212,7 @@ class core
      * @param array $attributes
      * @return string|null
      */
-    public function filterFirstExtractAttribute(string $query, array $attributes)
+    public function filterFirstExtractAttribute(string $query, array $attributes): ?string
     {
         $filtered = $this->filter($query);
 
@@ -225,7 +225,7 @@ class core
      * @param string $filter
      * @return string|null
      */
-    public function filterFirstContent(string $query)
+    public function filterFirstContent(string $query): ?string
     {
         return $this->filterFirstExtractAttribute($query, ['content']);
     }
@@ -246,7 +246,7 @@ class core
      *
      * @return string
      */
-    public function title()
+    public function title(): ?string
     {
         return $this->filterFirstText('//title');
     }
@@ -256,7 +256,7 @@ class core
      *
      * @return string
      */
-    public function contentType()
+    public function contentType(): ?string
     {
         return $this->filterFirstExtractAttribute('//meta[@http-equiv="Content-type"]', ['content']);
     }
@@ -266,7 +266,7 @@ class core
      *
      * @return string
      */
-    public function canonical()
+    public function canonical(): ?string
     {
         return $this->filterFirstExtractAttribute('//link[@rel="canonical"]', ['href']);
     }
@@ -276,7 +276,7 @@ class core
      *
      * @return string
      */
-    public function viewportString()
+    public function viewportString(): ?string
     {
         return $this->filterFirstContent('//meta[@name="viewport"]');
     }
@@ -286,7 +286,7 @@ class core
      *
      * @return array
      */
-    public function viewport()
+    public function viewport(): array
     {
         return is_null($this->viewportString()) ?
             [] : \preg_split('/,\s*/', $this->viewportString());
@@ -297,7 +297,7 @@ class core
      *
      * @return string
      */
-    public function csrfToken()
+    public function csrfToken(): ?string
     {
         return $this->filterFirstExtractAttribute('//meta[@name="csrf-token"]', ['content']);
     }
@@ -307,7 +307,7 @@ class core
      *
      * @return array
      */
-    public function headers()
+    public function headers(): array
     {
         return [
             'charset' => $this->charset(),
@@ -323,17 +323,17 @@ class core
      *
      * @return string
      */
-    public function author()
+    public function author(): ?string
     {
         return $this->filterFirstContent('//meta[@name="author"]');
     }
 
     /**
-     * Get the image
+     * Get the social media sharing image (generic, see OG and Twitter for others).
      *
      * @return string
      */
-    public function image()
+    public function image(): ?string
     {
         return $this->filterFirstContent('//meta[@name="image"]');
     }
@@ -343,7 +343,7 @@ class core
      *
      * @return string
      */
-    public function keywordString()
+    public function keywordString(): ?string
     {
         return $this->filterFirstContent('//meta[@name="keywords"]');
     }
@@ -353,7 +353,7 @@ class core
      *
      * @return array
      */
-    public function keywords()
+    public function keywords(): array
     {
         return is_null($this->keywordString()) ?
             [] : \preg_split('/,\s*/', $this->keywordString());
@@ -364,7 +364,7 @@ class core
      *
      * @return string
      */
-    public function description()
+    public function description(): ?string
     {
         return $this->filterFirstContent('//meta[@name="description"]');
     }
@@ -374,7 +374,7 @@ class core
      *
      * @return array
      */
-    public function metaTags()
+    public function metaTags(): array
     {
         return [
             'author' => $this->author(),
@@ -389,7 +389,7 @@ class core
      *
      * @return array
      */
-    public function twitterCard()
+    public function twitterCard(): array
     {
         $data = $this
             ->filter('//meta[contains(@name, "twitter:")]')
@@ -409,7 +409,7 @@ class core
      *
      * @return array
      */
-    public function openGraph()
+    public function openGraph(): array
     {
         $data = $this
             ->filter('//meta[contains(@property, "og:")]')
@@ -429,7 +429,7 @@ class core
      *
      * @return array
      */
-    public function h1()
+    public function h1(): array
     {
         return $this->filterExtractAttributes('//h1', ['_text']);
     }
@@ -439,7 +439,7 @@ class core
      *
      * @return array
      */
-    public function h2()
+    public function h2(): array
     {
         return $this->filterExtractAttributes('//h2', ['_text']);
     }
@@ -449,7 +449,7 @@ class core
      *
      * @return array
      */
-    public function h3()
+    public function h3(): array
     {
         return $this->filterExtractAttributes('//h3', ['_text']);
     }
@@ -459,7 +459,7 @@ class core
      *
      * @return array
      */
-    public function h4()
+    public function h4(): array
     {
         return $this->filterExtractAttributes('//h4', ['_text']);
     }
@@ -469,7 +469,7 @@ class core
      *
      * @return array
      */
-    public function h5()
+    public function h5(): array
     {
         return $this->filterExtractAttributes('//h5', ['_text']);
     }
@@ -479,7 +479,7 @@ class core
      *
      * @return array
      */
-    public function h6()
+    public function h6(): array
     {
         return $this->filterExtractAttributes('//h6', ['_text']);
     }
@@ -489,7 +489,7 @@ class core
      *
      * @return array
      */
-    public function headings()
+    public function headings(): array
     {
         return [
             $this->h1(),
@@ -506,7 +506,7 @@ class core
      *
      * @return array
      */
-    public function lists()
+    public function lists(): array
     {
         $lists = [];
 
@@ -526,7 +526,7 @@ class core
      *
      * @return array
      */
-    public function orderedLists()
+    public function orderedLists(): array
     {
         return array_values(array_filter($this->lists(), function ($list) {
             return $list['type'] === 'ol';
@@ -538,7 +538,7 @@ class core
      *
      * @return array
      */
-    public function unorderedLists()
+    public function unorderedLists(): array
     {
         return array_values(array_filter($this->lists(), function ($list) {
             return $list['type'] === 'ul';
@@ -550,7 +550,7 @@ class core
      *
      * @return array
      */
-    public function paragraphs()
+    public function paragraphs(): array
     {
         return array_map(
             'trim',
@@ -563,7 +563,7 @@ class core
      *
      * @return array
      */
-    public function cleanParagraphs()
+    public function cleanParagraphs(): array
     {
         return array_values(array_filter(
             $this->paragraphs(),
@@ -578,7 +578,7 @@ class core
      *
      * @return array
      */
-    public function outline()
+    public function outline(): array
     {
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6', ['_name', '_text']);
 
@@ -594,7 +594,7 @@ class core
      *
      * @return array
      */
-    public function outlineWithParagraphs()
+    public function outlineWithParagraphs(): array
     {
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
 
@@ -611,7 +611,7 @@ class core
      *
      * @return array
      */
-    public function cleanOutlineWithParagraphs()
+    public function cleanOutlineWithParagraphs(): array
     {
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
 
@@ -643,7 +643,7 @@ class core
      *
      * @return array
      */
-    protected function prepContent()
+    protected function prepContent(): array
     {
         // Collect content strings
         $content = array_merge(
@@ -696,7 +696,7 @@ class core
      * @param string $locale (default: 'en_US')
      * @return array
      */
-    public function contentKeywords($locale = 'en_US')
+    public function contentKeywords($locale = 'en_US'): array
     {
         // Extract the keyword phrases and return a sorted array
         return RakePlus::create(join(' ', $this->prepContent()), $locale)
@@ -722,7 +722,7 @@ class core
      * @param string $locale (default: 'en_US')
      * @return array
      */
-    public function contentKeywordsWithScores($locale = 'en_US')
+    public function contentKeywordsWithScores($locale = 'en_US'): array
     {
         // Extract the keyword phrases and return a sorted array
         return RakePlus::create(join(' ', $this->prepContent()), $locale)
@@ -737,7 +737,7 @@ class core
      *
      * @return array
      */
-    public function links()
+    public function links(): array
     {
         $links = $this->filter('//a')->links();
 
@@ -755,7 +755,7 @@ class core
      *
      * @return array
      */
-    public function internalLinks()
+    public function internalLinks(): array
     {
         // Get the current host - to compare against for internal links
         $manager = new Manager(new Cache(), new CurlHttpClient());
@@ -784,7 +784,7 @@ class core
      *
      * @return array
      */
-    public function externalLinks()
+    public function externalLinks(): array
     {
         // Diff the array
         return array_diff(
@@ -804,7 +804,7 @@ class core
      *
      * @return array
      */
-    public function subdomainLinks()
+    public function subdomainLinks(): array
     {
         // Get the current host - to compare against for internal links
         $host = parse_url($this->currentURL(), PHP_URL_HOST);
@@ -823,7 +823,7 @@ class core
      *
      * @return array
      */
-    public function linksWithDetails()
+    public function linksWithDetails(): array
     {
         $links = $this->filter('//a');
 
@@ -869,7 +869,7 @@ class core
      *
      * @return array
      */
-    public function images()
+    public function images(): array
     {
         $images = $this->filter('//img')->images();
 
@@ -887,7 +887,7 @@ class core
      *
      * @return array
      */
-    public function imagesWithDetails()
+    public function imagesWithDetails(): array
     {
         $images = $this->filter('//img');
 
