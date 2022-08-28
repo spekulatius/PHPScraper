@@ -14,9 +14,7 @@ For Amazon we are considering the implementation of an API with the following sc
 - Search for Products by keyword or seller id
 
 ::: tip
-::: tip
 Please note this list of API endpoints is *not* final is likely going to change.
-:::
 :::
 
 ## Platform Support
