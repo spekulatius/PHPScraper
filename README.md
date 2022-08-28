@@ -22,7 +22,7 @@ Here are a few impressions on the way the library works. More examples are on th
 
 ### Get the Title of a Website
 
-All scraping functionality can be accessed either as a function call or a property call. The title can be accesses:
+All scraping functionality can be accessed either as a function call or a property call. For example, the title can be accessed in two ways:
 
 ```php
 // Prep
@@ -71,6 +71,7 @@ $firstLink = $web->linksWithDetails[0];
  */
 ```
 
+If there aren't any matching elements (here links) on the page, an empty array will be returned.
 
 ### Scrape the Images from a Website
 
