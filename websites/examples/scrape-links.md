@@ -62,7 +62,7 @@ If you are in need of more details you can access these in a similar way as on t
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains a number of links with different rel attributes. To save space only the first one:
+ * Navigate to the test page. This page contains several links with different rel attributes. To save space only the first one:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */

@@ -18,7 +18,7 @@ Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
 
 ## Examples
 
-Here are a few impressions on the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
+Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
 
 ### Get the Title of a Website
 
@@ -45,7 +45,7 @@ The following example shows how to collect links along with meta information:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains a number of links with different rel attributes. To save space only the first one:
+ * Navigate to the test page. This page contains several links with different rel attributes. To save space only the first one:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
