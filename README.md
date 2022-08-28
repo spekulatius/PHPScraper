@@ -22,9 +22,10 @@ Here are a few impressions on the way the library works. More examples are on th
 
 ### Get the Title of a Website
 
-All scraping functionality can be accessed either as a function call or a property call. On the example of title scraping this would like like this:
+All scraping functionality can be accessed either as a function call or a property call. The title can be accesses:
 
 ```php
+// Prep
 $web = new \spekulatius\phpscraper;
 
 $web->go('https://google.com');
@@ -36,11 +37,47 @@ echo $web->title;
 echo $web->title();
 ```
 
+### Links
+
+The following example shows how to collect links along with meta information:
+
+```PHP
+$web = new \spekulatius\phpscraper;
+
+/**
+ * Navigate to the test page. This page contains a number of links with different rel attributes. To save space only the first one:
+ *
+ * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
+ */
+$web->go('https://test-pages.phpscraper.de/links/rel.html');
+
+// Get the first link on the page.
+$firstLink = $web->linksWithDetails[0];
+
+/**
+ * $firstLink contains now:
+ *
+ * [
+ *     'url' => 'https://placekitten.com/432/287',
+ *     'text' => 'external kitten',
+ *     'title' => null,
+ *     'target' => null,
+ *     'rel' => 'nofollow',
+ *     'isNofollow' => true,
+ *     'isUGC' => false,
+ *     'isNoopener' => false,
+ *     'isNoreferrer' => false,
+ * ]
+ */
+```
+
+
 ### Scrape the Images from a Website
 
 Scraping the images including the attributes of the `img`-tags:
 
 ```php
+// Prep
 $web = new \spekulatius\phpscraper;
 
 /**

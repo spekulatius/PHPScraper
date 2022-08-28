@@ -92,7 +92,7 @@ Si no se establece un enlace canónico, el método devuelve `null`.
 :::
 
 
-## Tipo de contenido
+## Content-Type
 
 Para acceder al tipo de contenido puede utilizar la siguiente funcionalidad:
 

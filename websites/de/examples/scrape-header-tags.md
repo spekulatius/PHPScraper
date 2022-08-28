@@ -7,7 +7,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_imag
 Die Header-Tags enthalten oft nützliche Informationen über eine Webseite und darüber, wie sie sich in die Gesamtstruktur der Website einfügt, zu der sie gehört. Die folgenden Beispiele zeigen, wie man auf bestimmte Informationen aus dem `<head>` zugreift und Sammlungen um diese herum erstellt.
 
 
-## Zeichensatz
+## Charset / Zeichensatz
 
 Um auf den definierten Zeichensatz zuzugreifen, können Sie die folgende Methode verwenden:
 
@@ -26,7 +26,7 @@ echo $web->charset;     // "utf-8"
 ```
 
 
-## Ansichtsfenster
+## Viewport
 
 In einigen Fällen, wie z. B. dem Ansichtsfenster und den Meta-Schlüsselwörtern, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
 
@@ -92,7 +92,7 @@ Wenn kein kanonischer Link gesetzt ist, gibt die Methode `null` zurück.
 :::
 
 
-## Content Type
+## Content-Type
 
 Um auf den Inhaltstyp zuzugreifen, können Sie die folgenden Funktionen nutzen:
 

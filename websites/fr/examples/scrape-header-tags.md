@@ -7,7 +7,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_imag
 Les balises d'en-tête contiennent souvent des informations utiles sur une page Web et sur la façon dont elle s'intègre dans la structure globale du site dont elle fait partie. Les exemples suivants montrent comment accéder à des éléments d'information particuliers de la balise `<head>` et à des collections autour de ceux-ci.
 
 
-## Jeu de caractères
+## Charset
 
 Pour accéder au jeu de caractères défini, vous pouvez utiliser la méthode suivante :
 
@@ -26,7 +26,7 @@ echo $web->charset;     // "utf-8"
 ```
 
 
-## Fenêtre de visualisation
+## Viewport
 
 Dans certains cas, comme pour la fenêtre d'affichage et les méta-mots-clés, la chaîne représente un tableau et sera fournie comme telle :
 
@@ -92,7 +92,7 @@ Si aucun lien canonique n'est défini, la méthode renvoie `null`.
 :::
 
 
-## Type de contenu
+## Content-Type
 
 Pour accéder au type de contenu, vous pouvez utiliser la fonctionnalité suivante :
 
@@ -111,7 +111,7 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 ```
 
 
-## Jeton CSFR
+## CSFR Token
 
 La méthode CSFR token suppose que le jeton est stocké dans une balise méta avec le nom "csrf-token". C'est la valeur par défaut pour Laravel. Vous pouvez y accéder en utilisant le code suivant :
 

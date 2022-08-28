@@ -92,7 +92,7 @@ If no canonical link is set, the method returns `null`.
 :::
 
 
-## Content Type
+## Content-Type
 
 To access the content type you can use the following functionality:
 
