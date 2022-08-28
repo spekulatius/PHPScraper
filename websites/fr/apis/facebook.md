@@ -14,9 +14,9 @@ Pour Facebook, nous envisageons la mise en œuvre d'une API avec la portée suiv
 - Utilisateur : Messages de l'utilisateur
 - Groupes publics et groupes privés avec clé : Profil du groupe public
 - Groupes publics et groupes privés avec clé : Liste des membres
-- public Groupes et groupes privés avec clé : Images
-- public Groupes et groupes privés avec clé : Messages de localisation
-- public Groupes et groupes privés avec clé : Messages
+- Public Groupes et groupes privés avec clé : Images
+- Public Groupes et groupes privés avec clé : Messages de localisation
+- Public Groupes et groupes privés avec clé : Messages
 - Messages : Détails du message public (y compris les commentaires, les "likes", les "likers", etc.)
 
 ::: tip conseil

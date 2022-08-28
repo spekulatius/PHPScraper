@@ -12,7 +12,7 @@ Le grattage de liens fonctionne de manière très similaire à [grattage d'image
 L'exemple suivant analyse une page Web à la recherche de liens et renvoie un tableau d'URL absolues :
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguez vers la page de test. Elle contient 6 liens vers placekitten.com avec des attributs différents :
@@ -59,7 +59,7 @@ Si la page ne doit pas contenir de liens, un tableau vide est renvoyé.
 Si vous avez besoin de plus de détails, vous pouvez y accéder de la même manière que pour les images. Voici un exemple pour accéder aux données détaillées du premier lien de la page :
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguez vers la page de test. Cette page contient un certain nombre de liens avec des attributs rel différents. Pour gagner de la place, ne retenez que le premier :
@@ -96,7 +96,7 @@ Si vous avez besoin de plus de données, vous devrez soit étendre la bibliothè
 PHPScraper permet de retourner seulement des liens internes ou externes. Les liens internes comprennent les liens du même domaine racine ainsi que de tout sous-domaine. Si vous avez besoin d'obtenir seulement les liens dans le sous-domaine exact utilisez [`subdomainLinks`](#sub-domain-links) à la place. L'exemple suivant démontre les deux :
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -123,7 +123,7 @@ var_dump($web->externalLinks);
 Si vous avez besoin de récupérer uniquement les liens sur le sous-domaine exact, vous pouvez utiliser la méthode `subdomainLinks` :
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');

@@ -12,7 +12,7 @@ Extraire le titre d'un site Web est simple. Les exemples suivants montrent comme
 Exemple très simple de la façon de récupérer le titre d'un site web :
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test - celle-ci contient une étiquette de titre "Lorem Ipsum".
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -33,7 +33,7 @@ var_dump($web->title);
 `null` sera retourné si le titre est manquant :
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Naviguez vers la page de test - celle-ci ne contient pas de balise titre.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -50,7 +50,7 @@ Note : C'est le comportement par défaut : Si une balise n'a pas été trouvée 
 Chargement d'un titre de site web avec Umlaute allemand
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguez vers la page de test. Elle contient :
@@ -71,7 +71,7 @@ Cela devrait fonctionner de manière similaire avec tous les caractères UTF-8.
 Les entités HTML doivent être résolues
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguer vers la page de test. Contient :

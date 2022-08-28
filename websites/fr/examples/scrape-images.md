@@ -12,7 +12,7 @@ Récupérer les images &amp; Les photos d'un site Web suivent une approche simil
 L'exemple suivant analyse une page Web à la recherche d'images et renvoie les URL absolues des images sous forme de tableau.
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguez vers la page de test. Cette page contient deux images :
@@ -46,7 +46,7 @@ Si aucune image n'est trouvée, le tableau reste vide.
 Si vous avez besoin de plus de détails, les requêtes suivantes vous permettent d'accéder aux attributs de la balise image :
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**

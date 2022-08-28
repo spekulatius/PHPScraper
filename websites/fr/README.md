@@ -40,7 +40,7 @@ Voici quelques exemples de ce que la bibliothèque de scraping web peut faire à
 ### Scrape Meta Information:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -64,7 +64,7 @@ La plupart des autres informations sont accessibles directement, sous forme de c
 ### Racler du contenu, comme des images:
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Naviguez vers la page de test. Cette page contient deux images:
