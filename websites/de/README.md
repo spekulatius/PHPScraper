@@ -36,7 +36,7 @@ Hier sind einige Beispiele dafür, was die Web-Scraping-Bibliothek an dieser Ste
 ### Scrape Meta-Informationen:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -60,7 +60,7 @@ Nahezu alle Informationen können direkt als string oder array genutzt werden.
 ### Scrape Content, such as Images:
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. This page contains two images:

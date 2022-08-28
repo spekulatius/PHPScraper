@@ -12,7 +12,7 @@ Scraping social media sharing tags from a website can be done using the followin
 Fetching open-graph data can be done:
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. Page contains:
@@ -62,7 +62,7 @@ If not data was found, the array will be returned empty.
 Parsing the Twitter Card works similarly:
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. The page contains the following Twitter Card:

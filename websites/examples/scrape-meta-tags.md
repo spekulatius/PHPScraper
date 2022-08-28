@@ -16,7 +16,7 @@ The following example shows the extraction of three attributes:
 - the Meta Image URL
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -40,7 +40,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 The keywords meta-tag is naturally an array and will be split for your convience:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -56,7 +56,7 @@ var_dump($web->keywords);   // ['one', 'two', 'three']
 Alternatively, you can access the original keyword string:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 // Print the keywords as string
@@ -92,7 +92,7 @@ public function metaTags()
 From the example above it would be used as following:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);

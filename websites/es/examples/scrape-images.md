@@ -12,7 +12,7 @@ El scraping de imágenes &amp; fotos de un sitio web sigue un enfoque similar al
 El siguiente ejemplo analiza una página web en busca de imágenes y devuelve las URLs absolutas de las imágenes como un array.
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue a la página de prueba. Esta página contiene dos imágenes:
@@ -46,7 +46,7 @@ Si no se encuentra ninguna imagen, la matriz queda vacía.
 Si necesita más detalles, las siguientes peticiones le permiten acceder a los atributos de la etiqueta de la imagen:
 
 ```PHP
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
