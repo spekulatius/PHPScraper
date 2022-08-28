@@ -33,7 +33,7 @@ class CoreTest extends BaseTest
 
         // Both the method call as well as property call should return the same...
         $this->assertSame(
-            "PHP Scraper - An opinionated web-scraping library for PHP",
+            'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
             $web->title
         );
 
@@ -43,7 +43,7 @@ class CoreTest extends BaseTest
 
         // Shouldn't match, because we surfed on...
         $this->assertNotSame(
-            "PHP Scraper - An opinionated web-scraping library for PHP",
+            'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
             $web->title
         );
     }
