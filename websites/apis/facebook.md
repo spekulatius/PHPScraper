@@ -12,11 +12,11 @@ For Facebook we are considering the implementation of an API with the following 
 - User: Images
 - User: Location Posts
 - User: User Posts
-- public Groups and private groups with key: Public Group Profile
-- public Groups and private groups with key: Member List
-- public Groups and private groups with key: Images
-- public Groups and private groups with key: Location Posts
-- public Groups and private groups with key: Posts
+- Public Groups and private groups with key: Public Group Profile
+- Public Groups and private groups with key: Member List
+- Public Groups and private groups with key: Images
+- Public Groups and private groups with key: Location Posts
+- Public Groups and private groups with key: Posts
 - Post: Public Post Details (incl. comments, likes, likers, etc.)
 
 ::: tip
