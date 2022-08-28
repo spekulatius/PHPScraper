@@ -17,7 +17,7 @@ Si ces mots-clés sont extraits, cela ne signifie pas que la page est effectivem
 
 L'exemple suivant renvoie une liste de tous les mots-clés extraits de la page Web :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test.
@@ -76,7 +76,7 @@ Tous les mots clés n'ont pas le même poids dans les algorithmes de classement 
 
 PHPScraper vous permet d'obtenir une indication de la pondération des mots-clés sous la forme de scores :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test.

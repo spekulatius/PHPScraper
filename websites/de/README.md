@@ -59,7 +59,7 @@ Nahezu alle Informationen können direkt als string oder array genutzt werden.
 
 ### Scrape Content, such as Images:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

@@ -15,7 +15,7 @@ Los encabezados pueden ser útiles para hacerse una idea del contenido de un sit
 
 Raspar un solo encabezado es fácil y se puede hacer siguiendo este ejemplo:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

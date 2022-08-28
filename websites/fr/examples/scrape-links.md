@@ -11,7 +11,7 @@ Le grattage de liens fonctionne de manière très similaire à [grattage d'image
 
 L'exemple suivant analyse une page Web à la recherche de liens et renvoie un tableau d'URL absolues :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -58,7 +58,7 @@ Si la page ne doit pas contenir de liens, un tableau vide est renvoyé.
 
 Si vous avez besoin de plus de détails, vous pouvez y accéder de la même manière que pour les images. Voici un exemple pour accéder aux données détaillées du premier lien de la page :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

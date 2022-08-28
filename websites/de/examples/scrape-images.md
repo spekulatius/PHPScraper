@@ -11,7 +11,7 @@ Das Scraping der Bilder &amp; Fotos von einer Website folgt einem ähnlichen Ans
 
 Das folgende Beispiel durchsucht eine Webseite nach Bildern und gibt absolute Bild-URLs als Array zurück.
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -45,7 +45,7 @@ Wenn keine Bilder gefunden werden, bleibt das Feld leer.
 
 Wenn Sie mehr Details benötigen, können Sie mit den folgenden Anfragen auf die Attribute des Bild-Tags zugreifen:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 

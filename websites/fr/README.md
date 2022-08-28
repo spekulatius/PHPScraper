@@ -63,7 +63,7 @@ La plupart des autres informations sont accessibles directement, sous forme de c
 
 ### Racler du contenu, comme des images:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

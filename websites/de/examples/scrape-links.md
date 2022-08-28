@@ -11,7 +11,7 @@ Das Scraping von Links funktioniert sehr ähnlich wie [image scraping](/de/examp
 
 Das folgende Beispiel analysiert eine Webseite nach Links und gibt ein Array mit absoluten URLs zurück:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -58,7 +58,7 @@ Wenn die Seite keine Links enthalten soll, wird ein leeres Array zurückgegeben.
 
 Wenn Sie weitere Details benötigen, können Sie diese auf ähnliche Weise wie bei den Bildern abrufen. Nachstehend finden Sie ein Beispiel für den Zugriff auf die detaillierten Daten des ersten Links auf der Seite:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

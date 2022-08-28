@@ -11,7 +11,7 @@ Scraping content, mostly paragraphs, can be done easily using PHP Scraper. There
 
 The following example will return a list of all paragraphs (`<p>`-tags) on the website:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Navigate to the test page. It contains 6 lorem ipsum paragraphs
@@ -49,7 +49,7 @@ foreach ($web->paragraphs as $paragraph) {
 
 Scraping the first paragraph of the website can be done by accessing the first element of the array (index 0).
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 

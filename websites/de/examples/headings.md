@@ -15,7 +15,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=htt
 
 Das Einscannen einer einzelnen Überschrift ist einfach und kann anhand dieses Beispiels durchgeführt werden:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

@@ -11,7 +11,7 @@ L'extraction des balises de partage des médias sociaux d'un site Web peut être
 
 Il est possible de récupérer les données des graphiques ouverts :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -61,7 +61,7 @@ Si aucune donnée n'a été trouvée, le tableau sera retourné vide.
 
 L'analyse de la carte Twitter fonctionne de la même manière :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

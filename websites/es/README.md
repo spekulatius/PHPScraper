@@ -63,7 +63,7 @@ La mayor parte de la información se puede acceder directamente, ya sea como cad
 
 ### Raspado de contenidos, como imágenes:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

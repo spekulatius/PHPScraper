@@ -11,7 +11,7 @@ Raspar el título de un sitio web es sencillo. Los siguientes ejemplos muestran 
 
 Ejemplo muy simple de cómo raspar el título de un sitio web:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Navegue a la página de prueba - ésta sí contiene una etiqueta de título "Lorem Ipsum"
@@ -32,7 +32,7 @@ var_dump($web->title);
 
 Se devolverá `null` si falta el título:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Navega a la página de prueba - ésta no contiene una etiqueta de título.
@@ -49,7 +49,7 @@ Nota: Este es el comportamiento por defecto: Si no se encuentra una etiqueta por
 
 Cargar el título de un sitio web con la diéresis alemana
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -70,7 +70,7 @@ Debería funcionar de forma similar con cualquier carácter UTF-8.
 
 Las entidades HTML deben resolverse
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

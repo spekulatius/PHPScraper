@@ -11,7 +11,7 @@ Bien que PHPScraper soit principalement destiné à analyser les sites Web et à
 
 Vous pouvez naviguer vers n'importe quelle URL. Ces URLs proviennent généralement du [liens analysés](/fr/examples/scrape-links).
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Nous commençons sur la page de test #1.
@@ -33,7 +33,7 @@ echo $web->h1[0];   // 'Page #2'
 
 Sur un site Web, vous pouvez *cliquer* sur des liens en utilisant leurs textes d'ancrage :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Nous commençons sur la page de test #1.

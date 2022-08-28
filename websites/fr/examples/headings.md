@@ -15,7 +15,7 @@ Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web
 
 La récupération d'un seul titre est facile et peut être réalisée en suivant cet exemple :
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

@@ -15,7 +15,7 @@ Heading can be useful to get an idea of the content on a website. The following 
 
 Scraping a single heading is easy and be done following this example:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

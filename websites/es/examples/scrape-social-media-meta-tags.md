@@ -11,7 +11,7 @@ El raspado de las etiquetas de compartición de las redes sociales de un sitio w
 
 Se pueden obtener datos de gráficos abiertos:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -61,7 +61,7 @@ Si no se encuentran datos, el array se devolverá vacío.
 
 El análisis de la Twitter Card funciona de forma similar:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

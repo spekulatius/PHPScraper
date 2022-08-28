@@ -11,7 +11,7 @@ The scraping of links works very similar to [image scraping](/examples/scrape-im
 
 The following example parses a web-page for links and returns an array of absolute URLs:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**
@@ -58,7 +58,7 @@ If the page shouldn't contain any links, an empty array is returned.
 
 If you are in need of more details you can access these in a similar way as on the images. Below is an example to access the detailed data of the first link on the page:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 /**

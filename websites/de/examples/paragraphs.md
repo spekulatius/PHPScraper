@@ -11,7 +11,7 @@ Das Scraping von Inhalten, vor allem von Absätzen, kann mit PHP Scraper leicht 
 
 Das folgende Beispiel gibt eine Liste aller Absätze (`<p>`-Tags) auf der Website zurück:
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 
 // Navigieren Sie zu der Testseite. Sie enthält 6 lorem ipsum-Absätze
@@ -49,7 +49,7 @@ foreach ($web->paragraphs as $paragraph) {
 
 Das Scraping des ersten Absatzes der Website kann durch Zugriff auf das erste Element des Arrays (Index 0) erfolgen.
 
-```PHP
+```php
 $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
