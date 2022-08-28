@@ -25,7 +25,7 @@ Here are a few impressions on the way the library works. More examples are on th
 All scraping functionality can be accessed either as a function call or a property call. On the example of title scraping this would like like this:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 $web->go('https://google.com');
 
@@ -41,7 +41,7 @@ echo $web->title();
 Scraping the images including the attributes of the `img`-tags:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page.
