@@ -6,18 +6,18 @@ Pour Facebook, nous envisageons la mise en œuvre d'une API avec la portée suiv
 
 ## Points de terminaison pris en charge proposés
 
-- Utilisateur : profil utilisateur public
-- Utilisateur : autres comptes sociaux
-- Utilisateur : Liste d'amis
-- Utilisateur : Images
-- Utilisateur : Messages de localisation
-- Utilisateur : Messages de l'utilisateur
-- Groupes publics et groupes privés avec clé : Profil du groupe public
-- Groupes publics et groupes privés avec clé : Liste des membres
-- Public Groupes et groupes privés avec clé : Images
-- Public Groupes et groupes privés avec clé : Messages de localisation
-- Public Groupes et groupes privés avec clé : Messages
-- Messages : Détails du message public (y compris les commentaires, les "likes", les "likers", etc.)
+- Utilisateur: profil utilisateur public
+- Utilisateur: autres comptes sociaux
+- Utilisateur: Liste d'amis
+- Utilisateur: Images
+- Utilisateur: Messages de localisation
+- Utilisateur: Messages de l'utilisateur
+- Groupes publics et groupes privés avec clé: Profil du groupe public
+- Groupes publics et groupes privés avec clé: Liste des membres
+- Public Groupes et groupes privés avec clé: Images
+- Public Groupes et groupes privés avec clé: Messages de localisation
+- Public Groupes et groupes privés avec clé: Messages
+- Messages: Détails du message public (y compris les commentaires, les "likes", les "likers", etc.)
 
 ::: tip conseil
 Veuillez noter que cette liste de points d'accès aux API n'est *pas* définitive et qu'elle est susceptible de changer.

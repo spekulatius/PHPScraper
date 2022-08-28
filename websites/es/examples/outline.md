@@ -10,7 +10,7 @@ Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/h
 
  - El método `outlineWithParagraphs` funciona de forma similar a `outline`, con la diferencia de que esta llamada también incluye los párrafos.
 
- - CleanOutlineWithParagraphs` funciona de forma similar a `outlineWithParagraphs`, con la diferencia de que se eliminan las etiquetas HTML vacías.
+ - `CleanOutlineWithParagraphs` funciona de forma similar a `outlineWithParagraphs`, con la diferencia de que se eliminan las etiquetas HTML vacías.
 
 Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay métodos dedicados para la [extracción de palabras clave](/es/examples/extract-keywords) disponibles.
 

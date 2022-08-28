@@ -6,10 +6,10 @@ Pour LinkedIn, nous envisageons la mise en œuvre d'une API avec la portée suiv
 
 ## Points de terminaison supportés proposés
 
-- Utilisateur : Détails du profil
-- Utilisateur : Messages
-- Post : Téléchargeur et convertisseur de vidéo.
-- Entreprise : Détails du profil
+- Utilisateur: Détails du profil
+- Utilisateur: Messages
+- Post: Téléchargeur et convertisseur de vidéo.
+- Entreprise: Détails du profil
 - Recherche d'emploi
 
 ::: tip Conseil

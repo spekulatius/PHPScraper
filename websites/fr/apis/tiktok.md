@@ -7,8 +7,8 @@ Pour TikTok, nous envisageons la mise en œuvre d'une API avec la portée suivan
 ## Points de terminaison supportés proposés
 
 - Recherche par Tag
-- Utilisateur : Détails du profil public
-- Utilisateur : Autres comptes sociaux
+- Utilisateur: Détails du profil public
+- Utilisateur: Autres comptes sociaux
 - Détails de la vidéo
 - Téléchargement de vidéos avec conversion en mp4, mp3, etc. et sans filigrane
 

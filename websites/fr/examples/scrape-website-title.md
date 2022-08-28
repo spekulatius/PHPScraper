@@ -23,7 +23,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Récupérer le titre. Cela renverra : "Lorem Ipsum"
+// Récupérer le titre. Cela renverra: "Lorem Ipsum"
 var_dump($web->title);
 ```
 
@@ -42,7 +42,7 @@ $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 var_dump($web->title);
 ```
 
-Note : C'est le comportement par défaut : Si une balise n'a pas été trouvée parce qu'elle est manquante dans le HTML source, `null` sera retourné. Si un élément itérable est vide (par exemple, pour récupérer des images d'une page sans images), un tableau vide sera retourné.
+Note: C'est le comportement par défaut: Si une balise n'a pas été trouvée parce qu'elle est manquante dans le HTML source, `null` sera retourné. Si un élément itérable est vide (par exemple, pour récupérer des images d'une page sans images), un tableau vide sera retourné.
 
 
 ## Caractères spéciaux

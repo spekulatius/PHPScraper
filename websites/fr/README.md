@@ -19,7 +19,7 @@ Ce site de documentation en français est en cours d'élaboration. Veuillez éle
 L'idée 💡️
 ----------
 
-Accéder aux sites web et collecter les informations de base du web est trop complexe. Cette enveloppe autour de [Goutte](https://github.com/FriendsOfPHP/Goutte) rend les choses plus faciles. Il vous épargne XPath et autres, en vous donnant un accès direct à tout ce dont vous avez besoin. Le scraping Web avec PHP : un nouveau concept.
+Accéder aux sites web et collecter les informations de base du web est trop complexe. Cette enveloppe autour de [Goutte](https://github.com/FriendsOfPHP/Goutte) rend les choses plus faciles. Il vous épargne XPath et autres, en vous donnant un accès direct à tout ce dont vous avez besoin. Le scraping Web avec PHP: un nouveau concept.
 
 
 Supporters 💪️
@@ -126,7 +126,7 @@ Vous avez trouvé un bug et l'avez corrigé ? C'est génial !
 Avant de commencer, familiarisez-vous avec les éléments suivants [directives de contribution](/contributing). Si vous avez des questions, n'hésitez pas à nous contacter.
 
 
-Tests : S'assurer que ça marche !
+Tests: S'assurer que ça marche !
 ----------------------------
 
 Le code est grossièrement couvert par des tests de bout en bout. Pour cela, des pages web simples sont hébergées sur *https://test-pages.phpscraper.de/*, chargées et analysées à l'aide de [PHPUnit](https://phpunit.de/). Ces tests peuvent également servir d'exemples - voir `tests/` !

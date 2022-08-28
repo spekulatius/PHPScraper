@@ -6,17 +6,17 @@ Pour Instagram, nous envisageons la mise en œuvre d'une API avec la portée sui
 
 ## Points de terminaison supportés proposés
 
-- Utilisateur : détails du profil
-- Utilisateur : Faits marquants
-- Utilisateur : Messages
-- Utilisateur : Messages marqués
-- Utilisateur : Messages publics
-- Utilisateur : Suiveurs
-- Utilisateur : Obtenir des histoires
-- Utilisateur : Statut actuel
-- Utilisateur : Autres comptes sociaux
-- Messages publics : Commentaires
-- Messages publics : J'aime
+- Utilisateur: détails du profil
+- Utilisateur: Faits marquants
+- Utilisateur: Messages
+- Utilisateur: Messages marqués
+- Utilisateur: Messages publics
+- Utilisateur: Suiveurs
+- Utilisateur: Obtenir des histoires
+- Utilisateur: Statut actuel
+- Utilisateur: Autres comptes sociaux
+- Messages publics: Commentaires
+- Messages publics: J'aime
 - Story downloader avec conversion en mp4, mp3, etc.
 - Messages avec hashtag
 - Messages sur l'emplacement

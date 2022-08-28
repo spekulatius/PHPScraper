@@ -71,7 +71,7 @@ Le texte `alt` (avec le caractère [mots-clés du contenu](/fr/examples/extract-
 :::
 
 
-## Attributs du scraping : Alt, largeur et hauteur
+## Attributs du scraping: Alt, largeur et hauteur
 
 Les attributs pour `alt`, `width` et `height` sont inclus dans l'ensemble de données détaillées.
 
