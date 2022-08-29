@@ -4,7 +4,7 @@ L'équipe à l'origine de PHP Scraper s'efforce de fournir des API commerciales 
 
 Pour Alibaba, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points d'extrémité supportés proposés
+## Endpoints supportés proposés
 
 - Recherche de produits par mot-clé
 - Obtenir des informations sur les produits

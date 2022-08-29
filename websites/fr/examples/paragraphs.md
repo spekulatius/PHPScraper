@@ -26,7 +26,7 @@ foreach ($web->paragraphs as $paragraph) {
 }
 
 /**
- * S'imprimera:
+ * S'affichera:
  *
  * Cette page contient 6 paragraphes.
  *

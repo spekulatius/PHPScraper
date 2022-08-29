@@ -9,7 +9,7 @@ Les balises d'en-tête contiennent souvent des informations utiles sur une page 
 
 ## Charset
 
-Pour accéder au jeu de caractères défini, vous pouvez utiliser la méthode suivante:
+Pour accéder au charset défini, vous pouvez utiliser la méthode suivante:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -28,7 +28,7 @@ echo $web->charset;     // "utf-8"
 
 ## Viewport
 
-Dans certains cas, comme pour la fenêtre d'affichage et les méta-mots-clés, la chaîne représente un tableau et sera fournie comme telle:
+Dans certains cas, comme pour la fenêtre d'affichage et les méta-mots-clés, la string représente un tableau et sera fournie comme telle:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -54,7 +54,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 var_dump($web->viewport);
 ```
 
-Si vous avez besoin d'accéder à la chaîne originale de "viewport", vous pouvez utiliser `viewportString`:
+Si vous avez besoin d'accéder à la string originale de "viewport", vous pouvez utiliser `viewportString`:
 
 ```php
 $web = new \spekulatius\phpscraper;

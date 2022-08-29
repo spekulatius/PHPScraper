@@ -4,7 +4,7 @@ L'équipe derrière PHP Scraper travaille à fournir des API commerciales pour d
 
 Pour Instagram, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points de terminaison supportés proposés
+## Endpoints supportés proposés
 
 - Utilisateur: détails du profil
 - Utilisateur: Faits marquants

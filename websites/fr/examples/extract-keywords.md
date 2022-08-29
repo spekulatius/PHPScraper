@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Extract%20Keywords&bg_image=http
 
 # Mots clés extraits
 
-Bien que le grattage du contenu soit souvent suffisant, vous avez parfois besoin d'extraire des termes et des phrases significatifs (mots-clés) de ce contenu. PHPScraper vous permet d'extraire directement les mots-clés du site web. Pour cela, il utilise:
+Bien que le scraping du contenu soit souvent suffisant, vous avez parfois besoin d'extraire des termes et des phrases spécifiques (mots-clés) dans ce contenu. PHPScraper vous permet d'extraire directement les mots-clés du site web. Pour cela, il utilise:
 
 - le titre du site web,
 - les balises méta,
@@ -93,7 +93,7 @@ foreach ($keywords as $keyword => $score) {
 }
 
 /**
- * S'imprimera:
+ * S'affichera:
  *
  * Cette page contient au moins 40 mots-clés/expressions.
  *

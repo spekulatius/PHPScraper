@@ -4,7 +4,7 @@ L'équipe à l'origine de PHP Scraper s'efforce de fournir des API commerciales 
 
 Pour LinkedIn, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points de terminaison supportés proposés
+## Endpoints supportés proposés
 
 - Utilisateur: Détails du profil
 - Utilisateur: Messages

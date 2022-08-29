@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=htt
 
 # Scraping Headings
 
-Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web. L'exemple suivant montre comment effectuer un scrapping:
+Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web. L'exemple suivant montre comment effectuer un scraping:
 
  - Un seul Heading
  - Tous les titres d'un niveau particulier (par exemple, `<h3>`)

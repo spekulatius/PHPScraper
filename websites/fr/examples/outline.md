@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Extraction des contours
+# Outline Extraction
 
 Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examples/headings) pour traiter, par exemple, le nombre ou la longueur des titres, ce n'est pas toujours suffisant. Dans certains cas, vous pouvez avoir besoin d'identifier la structure réelle du contenu. Pour ces cas d'utilisation, vous pouvez envisager l'une de ces méthodes:
 
@@ -15,9 +15,9 @@ Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examp
 Les exemples suivants devraient vous aider à mieux comprendre cette fonctionnalité. Il existe des méthodes dédiées pour [extraction de mots-clés](/fr/examples/extract-keywords) disponible sur.
 
 
-## Extraire l'ébauche
+## Extraire l'Outline
 
-Le contour du contenu vous permet de construire un index du document. L'exemple suivant construit une version markdown des titres du document demandé:
+L'Outline Extraction vous permet de construire un index du document. L'exemple suivant construit une version markdown des titres du document demandé:
 
 ```php
 $web = new \spekulatius\phpscraper;

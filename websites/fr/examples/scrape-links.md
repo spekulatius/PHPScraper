@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https:
 
 # Scraping Links
 
-Le grattage de liens fonctionne de manière très similaire à [grattage d'images](/fr/examples/scrape-images). Vous pouvez récupérer une liste d'URL sans aucune information supplémentaire ainsi qu'une liste détaillée contenant `rel`, `target` ainsi que d'autres attributs.
+Le scraping de liens fonctionne de manière très similaire ay [scraping d'images](/fr/examples/scrape-images). Vous pouvez récupérer une liste d'URL sans aucune information supplémentaire ainsi qu'une liste détaillée contenant `rel`, `target` ainsi que d'autres attributs.
 
 
 ## Liste de liens simples

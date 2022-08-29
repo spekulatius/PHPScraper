@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https
 
 # Scraping d'images
 
-Récupérer les images &amp; Les photos d'un site Web suivent une approche similaire à celle des autres exemples. Tous les graphiques tels que les images, les photos et les infographies peuvent être analysés avec des détails tels que les attributs de balises ou uniquement sous forme de liste d'URL.
+Récupérer les images &amp; Les photos d'un site Web suivent une approche similaire à celle des autres exemples. Tous les éléments graphiques tels que les images, les photos et les infographies peuvent être analysés avec des détails tels que les attributs de balises ou uniquement sous forme de liste d'URL.
 
 
 ## Scraping Image URLs

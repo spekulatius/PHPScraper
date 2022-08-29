@@ -4,7 +4,7 @@ L'équipe à l'origine de PHP Scraper travaille à la fourniture d'API commercia
 
 Pour Walmart, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points de terminaison supportés proposés
+## Endpoints supportés proposés
 
 - Obtenir des détails sur le produit
 - Recherche de produits par mot-clé
