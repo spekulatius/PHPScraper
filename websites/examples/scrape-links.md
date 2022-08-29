@@ -11,8 +11,8 @@ The scraping of links works very similar to [image scraping](/examples/scrape-im
 
 The following example parses a web-page for links and returns an array of absolute URLs:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains 6 links to placekitten.com with different attributes:
@@ -58,11 +58,11 @@ If the page shouldn't contain any links, an empty array is returned.
 
 If you are in need of more details you can access these in a similar way as on the images. Below is an example to access the detailed data of the first link on the page:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains a number of links with different rel attributes. To save space only the first one:
+ * Navigate to the test page. This page contains several links with different rel attributes. To save space only the first one:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
@@ -96,7 +96,7 @@ If you require more data, you will either need to extend the library or submit a
 PHPScraper allows to return only internal or external links. The internal links include links both the same root-domain as well as any sub-domain. If you are in need to get only the links within the exact sub-domain use [`subdomainLinks`](#sub-domain-links) instead. The following demonstrates both:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Navigate to the test page.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -123,7 +123,7 @@ var_dump($web->externalLinks);
 If you need you retrieve only links on the exact sub-domain you can use the `subdomainLinks`-method:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Navigate to the test page.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');

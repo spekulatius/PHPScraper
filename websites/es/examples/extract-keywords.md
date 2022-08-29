@@ -17,8 +17,8 @@ Aunque se extraigan estas frases de palabras clave, no significa que la página 
 
 El siguiente ejemplo devolverá una lista de todas las palabras clave extraídas de la página web:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Navega a la página de prueba.
 // Contiene 3 párrafos del artículo de Wikipedia en inglés para "lorem ipsum"
@@ -77,8 +77,8 @@ No todas las palabras clave tienen el mismo peso en los algoritmos de clasificac
 PHPScraper le permite obtener una indicación del peso de las palabras clave en forma de puntuación:
 
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Navega a la página de prueba.
 // Contiene 3 párrafos del artículo de Wikipedia en inglés para "lorem ipsum"

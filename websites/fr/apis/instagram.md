@@ -1,22 +1,22 @@
-# Instagram Scraper API
+# API pour scraper Instagram
 
 L'équipe derrière PHP Scraper travaille à fournir des API commerciales pour divers cas d'utilisation courants ainsi que pour des plateformes. Ces API ne sont pas auto-hébergées. Vous n'aurez pas à vous soucier de la rotation des IP/proxies, de l'utilisation d'un navigateur sans tête tel que Puppeteer. Un simple appel à l'API vous permettra d'obtenir toutes les informations requises. Les services seront fournis sur la base d'une structure tarifaire attractive dépendant de l'utilisation.
 
 Pour Instagram, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points de terminaison supportés proposés
+## Endpoints supportés proposés
 
-- Utilisateur : détails du profil
-- Utilisateur : Faits marquants
-- Utilisateur : Messages
-- Utilisateur : Messages marqués
-- Utilisateur : Messages publics
-- Utilisateur : Suiveurs
-- Utilisateur : Obtenir des histoires
-- Utilisateur : Statut actuel
-- Utilisateur : Autres comptes sociaux
-- Messages publics : Commentaires
-- Messages publics : J'aime
+- Utilisateur: détails du profil
+- Utilisateur: Faits marquants
+- Utilisateur: Messages
+- Utilisateur: Messages marqués
+- Utilisateur: Messages publics
+- Utilisateur: Suiveurs
+- Utilisateur: Obtenir des histoires
+- Utilisateur: Statut actuel
+- Utilisateur: Autres comptes sociaux
+- Messages publics: Commentaires
+- Messages publics: J'aime
 - Story downloader avec conversion en mp4, mp3, etc.
 - Messages avec hashtag
 - Messages sur l'emplacement

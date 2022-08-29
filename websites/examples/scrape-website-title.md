@@ -11,8 +11,8 @@ Scraping the title from a website is simple. The following examples show how it 
 
 Very simple example of how to scrape the title of a website:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Navigate to the test page - this one does contain a title-tag "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -32,8 +32,8 @@ var_dump($web->title);
 
 `null` will be returned if the title is missing:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Navigate to the test page - this one doesn't contain a title-tag.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -49,8 +49,8 @@ Note: This is the default behaviour: If a tag wasn't found because it's missing 
 
 Load a website title with German Umlaute
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -70,8 +70,8 @@ It should work in similar manner with any UTF-8 characters.
 
 HTML Entities should be resolved
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. Contains:

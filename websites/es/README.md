@@ -40,7 +40,7 @@ Aquí hay algunos ejemplos de lo que la biblioteca de raspado web puede hacer en
 ### Scrape Meta Information:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -63,8 +63,8 @@ La mayor parte de la información se puede acceder directamente, ya sea como cad
 
 ### Raspado de contenidos, como imágenes:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de prueba. Esta página contiene dos imágenes:

@@ -10,7 +10,7 @@ Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/h
 
  - El método `outlineWithParagraphs` funciona de forma similar a `outline`, con la diferencia de que esta llamada también incluye los párrafos.
 
- - CleanOutlineWithParagraphs` funciona de forma similar a `outlineWithParagraphs`, con la diferencia de que se eliminan las etiquetas HTML vacías.
+ - `CleanOutlineWithParagraphs` funciona de forma similar a `outlineWithParagraphs`, con la diferencia de que se eliminan las etiquetas HTML vacías.
 
 Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay métodos dedicados para la [extracción de palabras clave](/es/examples/extract-keywords) disponibles.
 
@@ -20,7 +20,7 @@ Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay 
 El esquema del contenido permite construir un índice del documento. El siguiente ejemplo construye una versión markdown de los encabezados del documento solicitado:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:
@@ -73,7 +73,7 @@ $outline = $web->outline;
 El siguiente método funciona de manera similar a `outline`, pero también incluye los párrafos como parte del array devuelto:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:
@@ -148,7 +148,7 @@ $content = $web->outlineWithParagraphs;
 El siguiente método funciona de manera similar a `outlineWithParagraphs`, pero no incluye ningún encabezado o párrafo vacío como parte del array devuelto:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:

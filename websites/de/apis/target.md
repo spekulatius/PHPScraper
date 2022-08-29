@@ -1,23 +1,13 @@
-# Facebook Scraper API
+# Target Scraper API
 
 The team behind PHP Scraper is working on providing commercial APIs for various common use-cases as well as platforms. These APIs aren't self-hosted. You won't need to worry about rotating IPs/proxies, running a headless browser such as Puppeteer. A simple API call will get you all information required. The services will be provided on a attractive usage-dependent fee-structure basis.
 
-For Facebook we are considering the implementation of an API with the following scope.
+For Target we are considering the implementation of an API with the following scope.
 
 ## Proposed Supported Endpoints
 
-- User: Public User Profile
-- User: Other Social Accounts
-- User: Friends List
-- User: Images
-- User: Location Posts
-- User: User Posts
-- Public Groups and private groups with key: Public Group Profile
-- Public Groups and private groups with key: Member List
-- Public Groups and private groups with key: Images
-- Public Groups and private groups with key: Location Posts
-- Public Groups and private groups with key: Posts
-- Post: Public Post Details (incl. comments, likes, likers, etc.)
+- Get Product Details
+- Keyword Search for Products
 
 ::: tip
 Please note this list of API endpoints is *not* final is likely going to change.

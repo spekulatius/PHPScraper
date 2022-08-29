@@ -12,7 +12,7 @@ The header tags often contain useful information about a web-page and how it fit
 To access the defined charset, you can use the following method:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -31,7 +31,7 @@ echo $web->charset;     // "utf-8"
 In some cases, such as the viewport and the meta keywords, the string is representing an array and will be provided as such:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -57,7 +57,7 @@ var_dump($web->viewport);
 If you need to access the original "viewport"-string, you can use `viewportString`:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
@@ -74,7 +74,7 @@ echo $web->viewportString;
 The canonical URL, if given, can be accessed as shown in the example below:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -92,12 +92,12 @@ If no canonical link is set, the method returns `null`.
 :::
 
 
-## Content Type
+## Content-Type
 
 To access the content type you can use the following functionality:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -116,7 +116,7 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 The CSFR token method assumes that the token is stored in a meta tag with the name "csrf-token". This is the default for Laravel. You can access it using the following code:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:

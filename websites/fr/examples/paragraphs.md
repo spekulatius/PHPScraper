@@ -9,10 +9,10 @@ La récupération de contenu, principalement des paragraphes, peut être faite f
 
 ## Obtenir tous les paragraphes
 
-L'exemple suivant renvoie une liste de tous les paragraphes (balises `<p>`) du site Web :
+L'exemple suivant renvoie une liste de tous les paragraphes (balises `<p>`) du site Web:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Naviguez vers la page de test. Elle contient 6 paragraphes lorem ipsum.
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
@@ -26,7 +26,7 @@ foreach ($web->paragraphs as $paragraph) {
 }
 
 /**
- * S'imprimera :
+ * S'affichera:
  *
  * Cette page contient 6 paragraphes.
  *
@@ -49,13 +49,13 @@ foreach ($web->paragraphs as $paragraph) {
 
 La récupération du premier paragraphe du site Web peut être effectuée en accédant au premier élément du tableau (index 0).
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 echo $web->paragraphs[0];
 /**
- * Imprime le premier paragraphe :
+ * Imprime le premier paragraphe:
  *
  * Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
  */

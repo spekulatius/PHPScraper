@@ -9,13 +9,13 @@ L'extraction des balises de partage des médias sociaux d'un site Web peut être
 
 ## Données Open-Graph (OG)
 
-Il est possible de récupérer les données des graphiques ouverts :
+Il est possible de récupérer les données des graphiques ouverts:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. La page contient :
+ * Naviguer vers la page de test. La page contient:
  *
  * <!-- open graph example -->
  * <meta property="og:site_name" content="Lorem ipsum" />
@@ -35,7 +35,7 @@ echo $web->openGraph['og:title'];
 // Doit imprimer "Lorem ipsum dolor etc.".
 echo $web->openGraph['og:description'];
 
-// l'ensemble du jeu :
+// l'ensemble du jeu:
 $data = $web->openGraph;
 
 /**
@@ -59,13 +59,13 @@ Si aucune donnée n'a été trouvée, le tableau sera retourné vide.
 
 ## Carte Twitter
 
-L'analyse de la carte Twitter fonctionne de la même manière :
+L'analyse de la carte Twitter fonctionne de la même manière:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. La page contient la carte Twitter suivante :
+ * Naviguez vers la page de test. La page contient la carte Twitter suivante:
  *
  * <!-- Twitter card -->
  * <meta name="twitter:card" content="summary_large_image" />

@@ -36,7 +36,7 @@ Here are some examples of what the web scraping library can do at this point:
 ### Scrape Meta Information:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -59,8 +59,8 @@ Nearly any information can be accessed directly, either as string or an array.
 
 ### Scrape Content, such as Images:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. This page contains two images:

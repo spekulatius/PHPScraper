@@ -1,23 +1,23 @@
-# Facebook Scraper API
+# API pour scraper Facebook
 
 L'équipe à l'origine de PHP Scraper s'efforce de fournir des API commerciales pour divers cas d'utilisation courants ainsi que pour des plateformes. Ces API ne sont pas auto-hébergées. Vous n'aurez pas à vous soucier de la rotation des IPs/proxies, de l'utilisation d'un navigateur sans tête tel que Puppeteer. Un simple appel à l'API vous permettra d'obtenir toutes les informations requises. Les services seront fournis sur la base d'une structure tarifaire attractive dépendant de l'utilisation.
 
 Pour Facebook, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points de terminaison pris en charge proposés
+## Endpoints pris en charge proposés
 
-- Utilisateur : profil utilisateur public
-- Utilisateur : autres comptes sociaux
-- Utilisateur : Liste d'amis
-- Utilisateur : Images
-- Utilisateur : Messages de localisation
-- Utilisateur : Messages de l'utilisateur
-- Groupes publics et groupes privés avec clé : Profil du groupe public
-- Groupes publics et groupes privés avec clé : Liste des membres
-- public Groupes et groupes privés avec clé : Images
-- public Groupes et groupes privés avec clé : Messages de localisation
-- public Groupes et groupes privés avec clé : Messages
-- Messages : Détails du message public (y compris les commentaires, les "likes", les "likers", etc.)
+- Utilisateur: profil utilisateur public
+- Utilisateur: autres comptes sociaux
+- Utilisateur: Liste d'amis
+- Utilisateur: Images
+- Utilisateur: Messages de localisation
+- Utilisateur: Messages de l'utilisateur
+- Groupes publics et groupes privés avec clé: Profil du groupe public
+- Groupes publics et groupes privés avec clé: Liste des membres
+- Public Groupes et groupes privés avec clé: Images
+- Public Groupes et groupes privés avec clé: Messages de localisation
+- Public Groupes et groupes privés avec clé: Messages
+- Messages: Détails du message public (y compris les commentaires, les "likes", les "likers", etc.)
 
 ::: tip conseil
 Veuillez noter que cette liste de points d'accès aux API n'est *pas* définitive et qu'elle est susceptible de changer.

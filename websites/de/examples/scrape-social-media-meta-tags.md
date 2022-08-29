@@ -11,8 +11,8 @@ Das Scraping von Social Media Sharing Tags von einer Website kann mit den folgen
 
 Das Abrufen von Open-Graph-Daten kann durchgeführt werden:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Die Seite enthält:
@@ -61,8 +61,8 @@ Wurden keine Daten gefunden, wird das Array leer zurückgegeben.
 
 Das Parsen der Twitter Card funktioniert ähnlich:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Die Seite enthält die folgende Twitter-Karte:

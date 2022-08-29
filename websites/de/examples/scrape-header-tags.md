@@ -7,12 +7,12 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_imag
 Die Header-Tags enthalten oft nützliche Informationen über eine Webseite und darüber, wie sie sich in die Gesamtstruktur der Website einfügt, zu der sie gehört. Die folgenden Beispiele zeigen, wie man auf bestimmte Informationen aus dem `<head>` zugreift und Sammlungen um diese herum erstellt.
 
 
-## Zeichensatz
+## Charset / Zeichensatz
 
 Um auf den definierten Zeichensatz zuzugreifen, können Sie die folgende Methode verwenden:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
@@ -26,12 +26,12 @@ echo $web->charset;     // "utf-8"
 ```
 
 
-## Ansichtsfenster
+## Viewport
 
 In einigen Fällen, wie z. B. dem Ansichtsfenster und den Meta-Schlüsselwörtern, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
@@ -57,7 +57,7 @@ var_dump($web->viewport);
 Wenn Sie auf die ursprüngliche Reihenfolge zugreifen müssen, können Sie diese mit `viewportString` abrufen:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
@@ -74,7 +74,7 @@ echo $web->viewportString;
 Auf die kanonische URL kann, sofern vorhanden, wie im folgenden Beispiel gezeigt, zugegriffen werden:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
@@ -92,12 +92,12 @@ Wenn kein kanonischer Link gesetzt ist, gibt die Methode `null` zurück.
 :::
 
 
-## Content Type
+## Content-Type
 
 Um auf den Inhaltstyp zuzugreifen, können Sie die folgenden Funktionen nutzen:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Sie enthält:
@@ -116,7 +116,7 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 Die CSFR-Token-Methode geht davon aus, dass das Token in einem Meta-Tag mit dem Namen "csrf-token" gespeichert ist. Dies ist der Standard für Laravel. Sie können mit folgendem Code darauf zugreifen:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigieren Sie zur Testseite. Sie enthält:

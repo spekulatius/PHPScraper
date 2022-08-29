@@ -4,13 +4,13 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https:
 
 # Scraping Lists
 
-Le scrapping de listes suit une approche similaire aux autres scrappings avec PHPScraper :
+Le scrapping de listes suit une approche similaire aux autres scrappings avec PHPScraper:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. Cette page contient :
+ * Naviguer vers la page de test. Cette page contient:
  *
  * <h2>Example 1: Unordered List</h2>
  * <ul>

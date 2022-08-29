@@ -1,13 +1,13 @@
-# Alibaba/AliExpress Scraper API
+# API de Target Scraper
 
-El equipo detrás de PHP Scraper está trabajando en la provisión de APIs comerciales para varios casos de uso común así como para plataformas. Estas APIs no son auto-alojadas. No tendrá que preocuparse de rotar IPs/proxies, ejecutando un navegador sin cabeza como Puppeteer. Una simple llamada a la API le permitirá obtener toda la información necesaria. Los servicios serán proporcionados en una atractiva estructura de tarifas dependiente del uso.
+El equipo detrás de PHP Scraper está trabajando en proveer APIs comerciales para varios casos de uso común así como plataformas. Estas APIs no son auto-alojadas. No tendrá que preocuparse de rotar IPs/proxies, ejecutando un navegador sin cabeza como Puppeteer. Una simple llamada a la API le permitirá obtener toda la información necesaria. Los servicios serán proporcionados en una atractiva estructura de tarifas dependiente del uso.
 
-Para Alibaba estamos considerando la implementación de una API con el siguiente alcance.
+Para Target estamos considerando la implementación de una API con el siguiente alcance.
 
 ## Puntos finales propuestos
 
+- Obtener detalles del producto
 - Búsqueda de productos por palabra clave
-- Obtener información sobre el producto
 
 ::: tip CONSEJO
 Tenga en cuenta que esta lista de puntos finales de la API no es *final* y es probable que cambie.

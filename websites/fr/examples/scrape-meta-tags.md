@@ -4,22 +4,22 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=
 
 # Scraping Meta Tags
 
-L'accès aux méta-informations suit un schéma similaire à celui présenté précédemment. [balises d'en-tête](/fr/examples/scrape-header-tags). Vous trouverez ci-dessous une série d'exemples :
+L'accès aux méta-informations suit un schéma similaire à celui présenté précédemment. [balises d'en-tête](/fr/examples/scrape-header-tags). Vous trouverez ci-dessous une série d'exemples:
 
 
 ## Meta Author, Description et Image
 
-L'exemple suivant montre l'extraction de trois attributs :
+L'exemple suivant montre l'extraction de trois attributs:
 
 - l'Auteur Meta,
 - la Meta Description et
 - l'URL de la méta-image
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <meta name="author" content="Lorem ipsum" />
  * <meta name="keywords" content="Lorem,ipsum,dolor" />
@@ -28,7 +28,7 @@ $web = new \spekulatius\phpscraper();
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Obtenir l'information :
+// Obtenir l'information:
 echo $web->author;          // "Lorem ipsum"
 echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
@@ -37,13 +37,13 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 
 ## Mots-clés Méta
 
-Le méta-tag "keywords" est naturellement un tableau et sera divisé pour votre convenance :
+Le méta-tag "keywords" est naturellement un tableau et sera divisé pour votre convenance:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <meta name="keywords" content="one, two, three">
  */
@@ -53,10 +53,10 @@ $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 var_dump($web->keywords);   // ['one', 'two', 'three']
 ```
 
-Vous pouvez également accéder à la chaîne de mots-clés originale :
+Vous pouvez également accéder à la chaîne de mots-clés originale:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 // Imprimez les mots-clés sous forme de chaîne
@@ -70,7 +70,7 @@ Il s'agit uniquement des mots-clés figurant dans le métabaliseur "keyword". Vo
 
 ## Balises Méta combinées
 
-Si vous souhaitez accéder à toutes les propriétés méta, vous pouvez utiliser la méthode `metaTags`. Elle retourne les méthodes mentionnées ci-dessus sous forme de tableau. Elle est définie comme suit :
+Si vous souhaitez accéder à toutes les propriétés méta, vous pouvez utiliser la méthode `metaTags`. Elle retourne les méthodes mentionnées ci-dessus sous forme de tableau. Elle est définie comme suit:
 
 ```php
 /**
@@ -89,10 +89,10 @@ public function metaTags()
 }
 ```
 
-Dans l'exemple ci-dessus, il serait utilisé comme suit :
+Dans l'exemple ci-dessus, il serait utilisé comme suit:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);

@@ -134,7 +134,7 @@ class LinkTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        // This page contains a number of links with different rel attributes.
+        // This page contains several links with different rel attributes.
         $web->go($this->url . '/links/rel.html');
 
         // Check the number of links

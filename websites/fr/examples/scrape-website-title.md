@@ -9,10 +9,10 @@ Extraire le titre d'un site Web est simple. Les exemples suivants montrent comme
 
 ## Exemple simple
 
-Exemple très simple de la façon de récupérer le titre d'un site web :
+Exemple très simple de la façon de récupérer le titre d'un site web:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test - celle-ci contient une étiquette de titre "Lorem Ipsum".
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -23,17 +23,17 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Récupérer le titre. Cela renverra : "Lorem Ipsum"
+// Récupérer le titre. Cela renverra: "Lorem Ipsum"
 var_dump($web->title);
 ```
 
 
 ### Titre manquant
 
-`null` sera retourné si le titre est manquant :
+`null` sera retourné si le titre est manquant:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Naviguez vers la page de test - celle-ci ne contient pas de balise titre.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -42,18 +42,18 @@ $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 var_dump($web->title);
 ```
 
-Note : C'est le comportement par défaut : Si une balise n'a pas été trouvée parce qu'elle est manquante dans le HTML source, `null` sera retourné. Si un élément itérable est vide (par exemple, pour récupérer des images d'une page sans images), un tableau vide sera retourné.
+Note: C'est le comportement par défaut: Si une balise n'a pas été trouvée parce qu'elle est manquante dans le HTML source, `null` sera retourné. Si un élément itérable est vide (par exemple, pour récupérer des images d'une page sans images), un tableau vide sera retourné.
 
 
 ## Caractères spéciaux
 
 Chargement d'un titre de site web avec Umlaute allemand
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
@@ -70,11 +70,11 @@ Cela devrait fonctionner de manière similaire avec tous les caractères UTF-8.
 
 Les entités HTML doivent être résolues
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. Contient :
+ * Naviguer vers la page de test. Contient:
  *
  * <title>Cat &amp; Mouse</title>
  */

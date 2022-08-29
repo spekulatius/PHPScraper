@@ -11,8 +11,8 @@ El raspado de contenido, sobre todo de párrafos, se puede hacer fácilmente usa
 
 El siguiente ejemplo devolverá una lista de todos los párrafos (etiquetas `<p>`) del sitio web:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 // Navegue a la página de prueba. Contiene 6 párrafos lorem ipsum
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
@@ -49,8 +49,8 @@ foreach ($web->paragraphs as $paragraph) {
 
 La extracción del primer párrafo de la página web puede hacerse accediendo al primer elemento del array (índice 0).
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 echo $web->paragraphs[0];

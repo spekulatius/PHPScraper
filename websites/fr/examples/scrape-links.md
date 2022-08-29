@@ -4,18 +4,18 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https:
 
 # Scraping Links
 
-Le grattage de liens fonctionne de manière très similaire à [grattage d'images](/fr/examples/scrape-images). Vous pouvez récupérer une liste d'URL sans aucune information supplémentaire ainsi qu'une liste détaillée contenant `rel`, `target` ainsi que d'autres attributs.
+Le scraping de liens fonctionne de manière très similaire ay [scraping d'images](/fr/examples/scrape-images). Vous pouvez récupérer une liste d'URL sans aucune information supplémentaire ainsi qu'une liste détaillée contenant `rel`, `target` ainsi que d'autres attributs.
 
 
 ## Liste de liens simples
 
-L'exemple suivant analyse une page Web à la recherche de liens et renvoie un tableau d'URL absolues :
+L'exemple suivant analyse une page Web à la recherche de liens et renvoie un tableau d'URL absolues:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient 6 liens vers placekitten.com avec des attributs différents :
+ * Naviguez vers la page de test. Elle contient 6 liens vers placekitten.com avec des attributs différents:
  *
  * <h2>Different ways to wrap the attributes</h2>
  * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
@@ -38,7 +38,7 @@ foreach ($web->links as $link) {
 }
 
 /**
- * Combiné, cela s'imprimera :
+ * Combiné, cela s'imprimera:
  *
  * Cette page contient 6 liens.
  *
@@ -56,13 +56,13 @@ Si la page ne doit pas contenir de liens, un tableau vide est renvoyé.
 
 ## Liens avec les détails
 
-Si vous avez besoin de plus de détails, vous pouvez y accéder de la même manière que pour les images. Voici un exemple pour accéder aux données détaillées du premier lien de la page :
+Si vous avez besoin de plus de détails, vous pouvez y accéder de la même manière que pour les images. Voici un exemple pour accéder aux données détaillées du premier lien de la page:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Cette page contient un certain nombre de liens avec des attributs rel différents. Pour gagner de la place, ne retenez que le premier :
+ * Naviguez vers la page de test. Cette page contient un certain nombre de liens avec des attributs rel différents. Pour gagner de la place, ne retenez que le premier:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
@@ -93,10 +93,10 @@ Si vous avez besoin de plus de données, vous devrez soit étendre la bibliothè
 
 ## Liens internes et liens externes
 
-PHPScraper permet de retourner seulement des liens internes ou externes. Les liens internes comprennent les liens du même domaine racine ainsi que de tout sous-domaine. Si vous avez besoin d'obtenir seulement les liens dans le sous-domaine exact utilisez [`subdomainLinks`](#sub-domain-links) à la place. L'exemple suivant démontre les deux :
+PHPScraper permet de retourner seulement des liens internes ou externes. Les liens internes comprennent les liens du même domaine racine ainsi que de tout sous-domaine. Si vous avez besoin d'obtenir seulement les liens dans le sous-domaine exact utilisez [`subdomainLinks`](#sub-domain-links) à la place. L'exemple suivant démontre les deux:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -120,10 +120,10 @@ var_dump($web->externalLinks);
 
 ## Liens de sous-domaines
 
-Si vous avez besoin de récupérer uniquement les liens sur le sous-domaine exact, vous pouvez utiliser la méthode `subdomainLinks` :
+Si vous avez besoin de récupérer uniquement les liens sur le sous-domaine exact, vous pouvez utiliser la méthode `subdomainLinks`:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Naviguer vers la page de test.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');

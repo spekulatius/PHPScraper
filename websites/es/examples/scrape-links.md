@@ -11,8 +11,8 @@ El scraping de enlaces funciona de forma muy similar al [image scraping](/es/exa
 
 El siguiente ejemplo analiza una página web en busca de enlaces y devuelve un array de URLs absolutas:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de prueba. Contiene 6 enlaces a placekitten.com con diferentes atributos:
@@ -58,8 +58,8 @@ Si la página no debe contener ningún enlace, se devuelve un array vacío.
 
 Si necesitas más detalles puedes acceder a ellos de forma similar a como se hace en las imágenes. A continuación se muestra un ejemplo para acceder a los datos detallados del primer enlace de la página:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de prueba. Esta página contiene varios enlaces con diferentes atributos rel. Para ahorrar espacio sólo el primero:
@@ -96,7 +96,7 @@ Si necesita más datos, tendrá que ampliar la biblioteca o presentar una edici�
 PHPScraper permite devolver sólo enlaces internos o externos. Los enlaces internos incluyen enlaces tanto del mismo dominio raíz como de cualquier subdominio. Si necesita obtener sólo los enlaces dentro del subdominio exacto utilice [`subdomainLinks`](#sub-domain-links) en su lugar. Lo siguiente demuestra ambas cosas:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Navega a la página de prueba.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -123,7 +123,7 @@ var_dump($web->externalLinks);
 Si necesita recuperar sólo los enlaces del subdominio exacto, puede utilizar el método `subdomainLinks`:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 // Navega a la página de prueba.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');

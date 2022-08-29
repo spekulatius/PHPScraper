@@ -7,15 +7,15 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_imag
 Les balises d'en-tête contiennent souvent des informations utiles sur une page Web et sur la façon dont elle s'intègre dans la structure globale du site dont elle fait partie. Les exemples suivants montrent comment accéder à des éléments d'information particuliers de la balise `<head>` et à des collections autour de ceux-ci.
 
 
-## Jeu de caractères
+## Charset
 
-Pour accéder au jeu de caractères défini, vous pouvez utiliser la méthode suivante :
+Pour accéder au charset défini, vous pouvez utiliser la méthode suivante:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <meta charset="utf-8" />
  */
@@ -26,22 +26,22 @@ echo $web->charset;     // "utf-8"
 ```
 
 
-## Fenêtre de visualisation
+## Viewport
 
-Dans certains cas, comme pour la fenêtre d'affichage et les méta-mots-clés, la chaîne représente un tableau et sera fournie comme telle :
+Dans certains cas, comme pour la fenêtre d'affichage et les méta-mots-clés, la string représente un tableau et sera fournie comme telle:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Obtenez la fenêtre d'affichage sous forme de tableau. Il doit contenir :
+ * Obtenez la fenêtre d'affichage sous forme de tableau. Il doit contenir:
  *
  * [
  *     'width=device-width',
@@ -54,14 +54,14 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 var_dump($web->viewport);
 ```
 
-Si vous avez besoin d'accéder à la chaîne originale de "viewport", vous pouvez utiliser `viewportString` :
+Si vous avez besoin d'accéder à la string originale de "viewport", vous pouvez utiliser `viewportString`:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Obtenir la fenêtre d'affichage sous forme de chaîne. Imprime :
+ * Obtenir la fenêtre d'affichage sous forme de chaîne. Imprime:
  *
  * "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
  */
@@ -71,13 +71,13 @@ echo $web->viewportString;
 
 ## URL canonique
 
-L'URL canonique, si elle est donnée, est accessible comme indiqué dans l'exemple ci-dessous :
+L'URL canonique, si elle est donnée, est accessible comme indiqué dans l'exemple ci-dessous:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
  */
@@ -92,15 +92,15 @@ Si aucun lien canonique n'est défini, la méthode renvoie `null`.
 :::
 
 
-## Type de contenu
+## Content-Type
 
-Pour accéder au type de contenu, vous pouvez utiliser la fonctionnalité suivante :
+Pour accéder au type de contenu, vous pouvez utiliser la fonctionnalité suivante:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  */
@@ -111,15 +111,15 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 ```
 
 
-## Jeton CSFR
+## CSFR Token
 
-La méthode CSFR token suppose que le jeton est stocké dans une balise méta avec le nom "csrf-token". C'est la valeur par défaut pour Laravel. Vous pouvez y accéder en utilisant le code suivant :
+La méthode CSFR token suppose que le jeton est stocké dans une balise méta avec le nom "csrf-token". C'est la valeur par défaut pour Laravel. Vous pouvez y accéder en utilisant le code suivant:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <meta name="csrf-token" content="token" />
  */
@@ -132,7 +132,7 @@ echo $web->csrfToken;     // "token"
 
 ## Balises d'en-tête combinées
 
-Si vous voulez accéder à toutes les méthodes mentionnées ci-dessus, utilisez la méthode `headers`. Elle est définie comme suit :
+Si vous voulez accéder à toutes les méthodes mentionnées ci-dessus, utilisez la méthode `headers`. Elle est définie comme suit:
 
 ```php
 /**

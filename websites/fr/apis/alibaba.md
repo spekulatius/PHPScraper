@@ -1,10 +1,10 @@
-# Alibaba Scraper API
+# API pour scraper Alibaba/AliExpress
 
 L'équipe à l'origine de PHP Scraper s'efforce de fournir des API commerciales pour divers cas d'utilisation courants ainsi que pour des plateformes. Ces API ne sont pas auto-hébergées. Vous n'aurez pas à vous soucier de la rotation des IP/proxies, ni à utiliser un navigateur sans tête comme Puppeteer. Un simple appel à l'API vous permettra d'obtenir toutes les informations requises. Les services seront fournis sur la base d'une structure tarifaire attractive dépendant de l'utilisation.
 
 Pour Alibaba, nous envisageons la mise en œuvre d'une API avec la portée suivante.
 
-## Points d'extrémité supportés proposés
+## Endpoints supportés proposés
 
 - Recherche de produits par mot-clé
 - Obtenir des informations sur les produits

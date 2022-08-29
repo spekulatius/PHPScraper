@@ -11,8 +11,8 @@ Scraping the images &amp; photos from a website follows a similar approach as th
 
 The following example parses a web-page for images and returns absolute image URLs as an array.
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page. This page contains two images:
@@ -45,8 +45,8 @@ If no images are found, the array remains empty.
 
 If you are in need of more details the following requests allows you to access attributes of the image tag:
 
-```PHP
-$web = new \spekulatius\phpscraper();
+```php
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**

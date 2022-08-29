@@ -12,11 +12,11 @@ Para Facebook estamos considerando la implementación de una API con el siguient
 - Usuario: Imágenes
 - Usuario: Mensajes de ubicación
 - Usuario: Mensajes de usuario
-- Grupos públicos y grupos privados con clave: Perfil del grupo público
-- Grupos públicos y grupos privados con clave: Lista de miembros
-- public Grupos y grupos privados con clave: Imágenes
-- público Grupos y grupos privados con clave: Perfil del grupo público Mensajes de ubicación
-- público Grupos y grupos privados con clave: Mensajes Mensajes
+- Público Grupos y grupos privados con clave: Perfil del grupo público
+- Público Grupos y grupos privados con clave: Lista de miembros
+- Público Grupos y grupos privados con clave: Imágenes
+- Público Grupos y grupos privados con clave: Perfil del grupo público Mensajes de ubicación
+- Público Grupos y grupos privados con clave: Mensajes Mensajes
 - Mensajes: Detalles del post público (incluyendo comentarios, likes, likers, etc.)
 
 ::: tip CONSEJO

@@ -18,14 +18,15 @@ Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
 
 ## Examples
 
-Here are a few impressions on the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
+Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
 
 ### Get the Title of a Website
 
-All scraping functionality can be accessed either as a function call or a property call. On the example of title scraping this would like like this:
+All scraping functionality can be accessed either as a function call or a property call. For example, the title can be accessed in two ways:
 
 ```php
-$web = new \spekulatius\phpscraper();
+// Prep
+$web = new \spekulatius\phpscraper;
 
 $web->go('https://google.com');
 
@@ -36,12 +37,49 @@ echo $web->title;
 echo $web->title();
 ```
 
+### Links
+
+The following example shows how to collect links along with meta information:
+
+```PHP
+$web = new \spekulatius\phpscraper;
+
+/**
+ * Navigate to the test page. This page contains several links with different rel attributes. To save space only the first one:
+ *
+ * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
+ */
+$web->go('https://test-pages.phpscraper.de/links/rel.html');
+
+// Get the first link on the page.
+$firstLink = $web->linksWithDetails[0];
+
+/**
+ * $firstLink contains now:
+ *
+ * [
+ *     'url' => 'https://placekitten.com/432/287',
+ *     'text' => 'external kitten',
+ *     'title' => null,
+ *     'target' => null,
+ *     'rel' => 'nofollow',
+ *     'isNofollow' => true,
+ *     'isUGC' => false,
+ *     'isNoopener' => false,
+ *     'isNoreferrer' => false,
+ * ]
+ */
+```
+
+If there aren't any matching elements (here links) on the page, an empty array will be returned.
+
 ### Scrape the Images from a Website
 
 Scraping the images including the attributes of the `img`-tags:
 
 ```php
-$web = new \spekulatius\phpscraper();
+// Prep
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navigate to the test page.

@@ -16,7 +16,7 @@ El siguiente ejemplo muestra la extracción de tres atributos:
 - la URL de la meta imagen
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -40,7 +40,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 La meta etiqueta de palabras clave es naturalmente una matriz y será dividida para su conveniencia:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -56,7 +56,7 @@ var_dump($web->keywords);   // ['one', 'two', 'three']
 También puede acceder a la cadena de palabras clave original:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 // Imprime las palabras clave en forma de cadena
@@ -92,7 +92,7 @@ public function metaTags()
 A partir del ejemplo anterior se utilizaría lo siguiente:
 
 ```php
-$web = new \spekulatius\phpscraper();
+$web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);
