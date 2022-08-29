@@ -1,4 +1,4 @@
-# L'API de Target Scraper
+# API pour scraper Target
 
 L'équipe à l'origine de PHP Scraper travaille à la fourniture d'API commerciales pour divers cas d'utilisation courants ainsi que pour des plateformes. Ces API ne sont pas auto-hébergées. Vous n'aurez pas à vous soucier de la rotation des IPs/proxies, ni à utiliser un navigateur sans tête comme Puppeteer. Un simple appel à l'API vous permettra d'obtenir toutes les informations requises. Les services seront fournis sur la base d'une structure tarifaire attractive dépendant de l'utilisation.
 

@@ -1,4 +1,4 @@
-# Instagram Scraper API
+# API pour scraper Instagram
 
 L'équipe derrière PHP Scraper travaille à fournir des API commerciales pour divers cas d'utilisation courants ainsi que pour des plateformes. Ces API ne sont pas auto-hébergées. Vous n'aurez pas à vous soucier de la rotation des IP/proxies, de l'utilisation d'un navigateur sans tête tel que Puppeteer. Un simple appel à l'API vous permettra d'obtenir toutes les informations requises. Les services seront fournis sur la base d'une structure tarifaire attractive dépendant de l'utilisation.
 
