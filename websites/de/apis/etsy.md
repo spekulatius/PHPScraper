@@ -1,15 +1,21 @@
-# Alibaba/AliExpress Scraper API
+# Etsy Scraper API
 
 Das Team hinter PHP Scraper arbeitet daran, kommerzielle APIs für verschiedene gängige Anwendungsfälle und Plattformen bereitzustellen. Diese APIs werden nicht selbst gehostet. Sie müssen sich keine Gedanken über rotierende IPs/Proxies machen und einen Headless-Browser wie Puppeteer verwenden. Mit einem einfachen API-Aufruf erhalten Sie alle erforderlichen Informationen. Die Dienste werden auf der Grundlage einer attraktiven, nutzungsabhängigen Gebührenstruktur bereitgestellt.
 
-Für Alibaba erwägen wir die Implementierung einer API mit folgendem Umfang.
+Für Etsy ziehen wir die Implementierung einer API mit folgendem Umfang in Betracht.
 
 ## Vorgeschlagene unterstützte Endpunkte
 
-- Suche nach Produkten nach Schlüsselwort
 - Produktinformation abrufen
+- Empfehlungen abrufen
+- Informationen zu Bewertungen abrufen
+- Verkäufer-Informationen abrufen
+- Alle Verkäuferpreise abrufen
+- Nach Produkten suchen mit Schlüsselwörter oder per Verkäufer-ID
 
-Bitte beachten Sie, dass diese Informationen nicht endgültig sind und sich noch ändern können.
+::: tip
+Bitte beachten Sie, dass diese Liste der API-Endpunkte *nicht* endgültig ist und sich wahrscheinlich noch ändern wird.
+:::
 
 ## Plattform-Unterstützung
 
