@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Extraction des contours
 
-Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examples/headings) pour traiter, par exemple, le nombre ou la longueur des titres, ce n'est pas toujours suffisant. Dans certains cas, vous pouvez avoir besoin d'identifier la structure réelle du contenu. Pour ces cas d'utilisation, vous pouvez envisager l'une de ces méthodes :
+Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examples/headings) pour traiter, par exemple, le nombre ou la longueur des titres, ce n'est pas toujours suffisant. Dans certains cas, vous pouvez avoir besoin d'identifier la structure réelle du contenu. Pour ces cas d'utilisation, vous pouvez envisager l'une de ces méthodes:
 
  - `outline` fonctionne de manière similaire à la méthode `headings` mentionnée précédemment. Elle retourne également tous les titres, mais elle garde la structure du document original en place et fournit les niveaux de titres (par exemple `h1`) seuls avec la sortie.
 
@@ -17,13 +17,13 @@ Les exemples suivants devraient vous aider à mieux comprendre cette fonctionnal
 
 ## Extraire l'ébauche
 
-Le contour du contenu vous permet de construire un index du document. L'exemple suivant construit une version markdown des titres du document demandé :
+Le contour du contenu vous permet de construire un index du document. L'exemple suivant construit une version markdown des titres du document demandé:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. Cette page contient :
+ * Naviguer vers la page de test. Cette page contient:
  *
  * <h1>We are testing here!</h1>
  * [...]
@@ -43,7 +43,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 /**
- * $outline sera défini comme contenant :
+ * $outline sera défini comme contenant:
  *
  * [
  *    [
@@ -70,13 +70,13 @@ $outline = $web->outline;
 
 ### Extraire le plan avec des paragraphes
 
-La méthode suivante fonctionne de manière similaire à `outline`, mais elle inclut également les paragraphes dans le tableau retourné :
+La méthode suivante fonctionne de manière similaire à `outline`, mais elle inclut également les paragraphes dans le tableau retourné:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. Cette page contient :
+ * Naviguer vers la page de test. Cette page contient:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -101,7 +101,7 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 $content = $web->outlineWithParagraphs;
 /**
- * $content now contains :
+ * $content now contains:
  *
  * [
  *    [
@@ -145,13 +145,13 @@ $content = $web->outlineWithParagraphs;
 
 ## Extraire le plan nettoyé avec les paragraphes.
 
-La méthode suivante fonctionne de manière similaire à `outlineWithParagraphs`, mais elle n'inclut aucun titre ou paragraphe vide dans le tableau retourné :
+La méthode suivante fonctionne de manière similaire à `outlineWithParagraphs`, mais elle n'inclut aucun titre ou paragraphe vide dans le tableau retourné:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. Cette page contient :
+ * Naviguer vers la page de test. Cette page contient:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -176,7 +176,7 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 $content = $web->cleanOutlineWithParagraphs;
 /**
- * $content contient maintenant :
+ * $content contient maintenant:
  *
  * [
  *    [

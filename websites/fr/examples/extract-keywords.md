@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Extract%20Keywords&bg_image=http
 
 # Mots clés extraits
 
-Bien que le grattage du contenu soit souvent suffisant, vous avez parfois besoin d'extraire des termes et des phrases significatifs (mots-clés) de ce contenu. PHPScraper vous permet d'extraire directement les mots-clés du site web. Pour cela, il utilise :
+Bien que le grattage du contenu soit souvent suffisant, vous avez parfois besoin d'extraire des termes et des phrases significatifs (mots-clés) de ce contenu. PHPScraper vous permet d'extraire directement les mots-clés du site web. Pour cela, il utilise:
 
 - le titre du site web,
 - les balises méta,
@@ -15,7 +15,7 @@ Bien que le grattage du contenu soit souvent suffisant, vous avez parfois besoin
 
 Si ces mots-clés sont extraits, cela ne signifie pas que la page est effectivement classée pour ces mots-clés. C'est le moteur de recherche qui prend la décision finale quant au classement d'une page Web.
 
-L'exemple suivant renvoie une liste de tous les mots-clés extraits de la page Web :
+L'exemple suivant renvoie une liste de tous les mots-clés extraits de la page Web:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -34,7 +34,7 @@ foreach ($keywords as $keyword) {
 }
 
 /**
- * S'imprimera :
+ * S'imprimera:
  *
  * Cette page contient au moins 40 mots-clés/expressions.
  *
@@ -74,7 +74,7 @@ La langue (locale) par défaut est `en_US`. D'autres langues peuvent être pass�
 
 Tous les mots clés n'ont pas le même poids dans les algorithmes de classement des moteurs de recherche. Un mélange de plusieurs facteurs et signaux de référencement décide du poids qu'un moteur de recherche attribue à un mot. La fréquence des mots, la longueur des textes et les variations telles que les synonymes peuvent entraîner une pondération différente.
 
-PHPScraper vous permet d'obtenir une indication de la pondération des mots-clés sous la forme de scores :
+PHPScraper vous permet d'obtenir une indication de la pondération des mots-clés sous la forme de scores:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -93,7 +93,7 @@ foreach ($keywords as $keyword => $score) {
 }
 
 /**
- * S'imprimera :
+ * S'imprimera:
  *
  * Cette page contient au moins 40 mots-clés/expressions.
  *

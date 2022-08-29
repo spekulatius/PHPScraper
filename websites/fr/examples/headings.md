@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=htt
 
 # Scraping Headings
 
-Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web. L'exemple suivant montre comment effectuer un scrapping :
+Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web. L'exemple suivant montre comment effectuer un scrapping:
 
  - Un seul Heading
  - Tous les titres d'un niveau particulier (par exemple, `<h3>`)
@@ -13,13 +13,13 @@ Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web
 
 ## Récupération d'un seul titre
 
-La récupération d'un seul titre est facile et peut être réalisée en suivant cet exemple :
+La récupération d'un seul titre est facile et peut être réalisée en suivant cet exemple:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <title>Outline Test</title>
  */
@@ -36,13 +36,13 @@ Le site [titre du site web](/fr/examples/scrape-website-title) et la rubrique 1 
 
 ## Rubriques par niveau
 
-Il peut arriver que vous souhaitiez récupérer toutes les rubriques d'un niveau particulier. L'exemple ci-dessous vous montre comment faire :
+Il peut arriver que vous souhaitiez récupérer toutes les rubriques d'un niveau particulier. L'exemple ci-dessous vous montre comment faire:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Elle contient :
+ * Naviguez vers la page de test. Elle contient:
  *
  * <h3>Example 1</h3>
  * <p>Here would be an example.</p>
@@ -56,7 +56,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * Obtenir les en-têtes h3 :
+ * Obtenir les en-têtes h3:
  *
  * [
  *    'Example 1',
@@ -72,14 +72,14 @@ Si aucun titre n'est trouvé, le tableau est laissé vide.
 
 ## Toutes les rubriques d'une page
 
-Pour accéder à toutes les rubriques d'une page, vous pouvez le faire en accédant aux différents niveaux de 1 à 6. Ou bien, vous pouvez accéder à toutes les rubriques en même temps :
+Pour accéder à toutes les rubriques d'une page, vous pouvez le faire en accédant aux différents niveaux de 1 à 6. Ou bien, vous pouvez accéder à toutes les rubriques en même temps:
 
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguer vers la page de test. Cette page contient :
+ * Naviguer vers la page de test. Cette page contient:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -99,7 +99,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * $headings contains now :
+ * $headings contains now:
  *
  * [
  *     [

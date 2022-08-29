@@ -31,7 +31,7 @@ echo $web->h1[0];   // 'Page #2'
 
 ## Navigation à l'aide de textes d'ancrage
 
-Sur un site Web, vous pouvez *cliquer* sur des liens en utilisant leurs textes d'ancrage :
+Sur un site Web, vous pouvez *cliquer* sur des liens en utilisant leurs textes d'ancrage:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -40,7 +40,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
 /**
- * Cette page contient :
+ * Cette page contient:
  *
  * <a href="2.html">2 relative</a>
  */

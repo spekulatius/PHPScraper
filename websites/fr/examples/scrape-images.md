@@ -15,7 +15,7 @@ L'exemple suivant analyse une page Web à la recherche d'images et renvoie les U
 $web = new \spekulatius\phpscraper;
 
 /**
- * Naviguez vers la page de test. Cette page contient deux images :
+ * Naviguez vers la page de test. Cette page contient deux images:
  *
  * <img src="https://test-pages.phpscraper.de/assets/cat.jpg" alt="absolute path">
  * <img src="/assets/cat.jpg" alt="relative path">
@@ -28,8 +28,8 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  *     'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  *
- * @Note :
- * Double car il s'agit de deux fois la même image :
+ * @Note:
+ * Double car il s'agit de deux fois la même image:
  * Une fois avec un chemin relatif et une fois avec un chemin absolu.
  * Les chemins relatifs sont résolus en chemins absolus par défaut.
  */
@@ -43,7 +43,7 @@ Si aucune image n'est trouvée, le tableau reste vide.
 
 ## Scraping d'images avec des détails
 
-Si vous avez besoin de plus de détails, les requêtes suivantes vous permettent d'accéder aux attributs de la balise image :
+Si vous avez besoin de plus de détails, les requêtes suivantes vous permettent d'accéder aux attributs de la balise image:
 
 ```php
 $web = new \spekulatius\phpscraper;
