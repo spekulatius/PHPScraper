@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=
 
 # Scraping Meta Tags
 
-Accessing the meta information follows a similar pattern as the previously shown [header tags](/examples/scrape-header-tags). Below is a set of examples:
+Accessing the meta information follows a similar pattern as the previously shown [header tags](/examples/scrape-header-tags.html). Below is a set of examples:
 
 
 ## Meta Author, Description and Image
@@ -64,7 +64,7 @@ echo $web->keywordString;   // "one, two, three"
 ```
 
 ::: tip
-This refers only to the keywords in the "keyword" meta-tag. You can also [extract the content keywords](/examples/extract-keywords)) using PHPScraper.
+This refers only to the keywords in the "keyword" meta-tag. You can also [extract the content keywords](/examples/extract-keywords.html)) using PHPScraper.
 :::
 
 
@@ -111,4 +111,4 @@ var_dump($web->metaTags);
 
 ## Missing Meta Tags
 
-If you need to access another meta property, please read the [contribution guidelines](/contributing) before opening a pull request or submitting an [issue on GitHub](https://github.com/spekulatius/phpscraper/issues).
+If you need to access another meta property, please read the [contribution guidelines](/contributing.html) before opening a pull request or submitting an [issue on GitHub](https://github.com/spekulatius/phpscraper/issues).

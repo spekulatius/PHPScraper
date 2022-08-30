@@ -30,7 +30,7 @@ echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip CONSEJO
-El [título del sitio web](/es/examples/scrape-website-title) y el encabezado 1 (`<h1>`) pueden ser diferentes. Asegúrese de recuperar el correcto.
+El [título del sitio web](/es/examples/scrape-website-title.html) y el encabezado 1 (`<h1>`) pueden ser diferentes. Asegúrese de recuperar el correcto.
 :::
 
 
@@ -121,4 +121,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-Como puede ver, esto no contiene ninguna información sobre la estructura de los encabezados. Es puramente para saber qué encabezados existen. Si quiere tener un [esquema](/es/examples/outline) tendrá que utilizar los métodos relacionados.
+Como puede ver, esto no contiene ninguna información sobre la estructura de los encabezados. Es puramente para saber qué encabezados existen. Si quiere tener un [esquema](/es/examples/outline.html) tendrá que utilizar los métodos relacionados.

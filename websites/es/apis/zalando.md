@@ -1,4 +1,4 @@
-# API de Zalando Scraper
+# Zalando Scraper API
 
 El equipo detrás de PHP Scraper está trabajando en proporcionar APIs comerciales para varios casos de uso común, así como plataformas. Estas APIs no son auto-alojadas. No tendrá que preocuparse de rotar IPs/proxies, ejecutando un navegador sin cabeza como Puppeteer. Una simple llamada a la API le permitirá obtener toda la información necesaria. Los servicios serán proporcionados en una atractiva estructura de tarifas dependiente del uso.
 

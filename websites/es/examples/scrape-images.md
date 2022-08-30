@@ -67,7 +67,7 @@ var_dump($web->imagesWithDetails);
 ```
 
 ::: tip SEO
-El texto `alt` (con las [palabras clave del contenido](/es/examples/extract-keywords)) es utilizado por los motores de búsqueda para las búsquedas basadas en imágenes. Asegúrese de definirlo siempre.
+El texto `alt` (con las [palabras clave del contenido](/es/examples/extract-keywords.html)) es utilizado por los motores de búsqueda para las búsquedas basadas en imágenes. Asegúrese de definirlo siempre.
 :::
 
 

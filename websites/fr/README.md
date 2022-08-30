@@ -123,7 +123,7 @@ Si vous utilisez un framework tel que Laravel, Symfony, Zend, Phalcon ou CakePHP
 Vous avez trouvé un bug et l'avez corrigé ? C'est génial !
 ----------------------------------
 
-Avant de commencer, familiarisez-vous avec les éléments suivants [directives de contribution](/contributing). Si vous avez des questions, n'hésitez pas à nous contacter.
+Avant de commencer, familiarisez-vous avec les éléments suivants [directives de contribution](/contributing.html). Si vous avez des questions, n'hésitez pas à nous contacter.
 
 
 Tests: S'assurer que ça marche !

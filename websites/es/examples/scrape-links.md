@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https:
 
 # Enlaces de raspado
 
-El scraping de enlaces funciona de forma muy similar al [image scraping](/es/examples/scrape-images). Puede recuperar una lista de URL sin ninguna información adicional, así como una lista detallada que contenga `rel`, `target` así como otros atributos.
+El scraping de enlaces funciona de forma muy similar al [image scraping](/es/examples/scrape-images.html). Puede recuperar una lista de URL sin ninguna información adicional, así como una lista detallada que contenga `rel`, `target` así como otros atributos.
 
 
 ## Lista de enlaces simples

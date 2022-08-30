@@ -119,7 +119,7 @@ If you are using a framework such as Laravel, Symfony, Zend, Phalcon, or CakePHP
 Found a bug and fixed it? Awesome!
 ----------------------------------
 
-Before you get started, make yourself familiar with the [contribution guidelines](/contributing). Any questions feel free to reach out.
+Before you get started, make yourself familiar with the [contribution guidelines](/contributing.html). Any questions feel free to reach out.
 
 
 Tests: Making sure it works!
