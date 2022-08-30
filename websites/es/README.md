@@ -121,7 +121,7 @@ Si estás usando un framework como Laravel, Symfony, Zend, Phalcon o CakePHP, no
 
 ¿Has encontrado un error y lo has arreglado? ¡Impresionante!
 ----------------------------------
-Antes de empezar, familiarícese con las [directrices de contribución](/contributing). Si tiene alguna pregunta, no dude en ponerse en contacto con nosotros.
+Antes de empezar, familiarícese con las [directrices de contribución](/contributing.html). Si tiene alguna pregunta, no dude en ponerse en contacto con nosotros.
 
 Pruebas: Asegurarse de que funciona.
 ----------------------------

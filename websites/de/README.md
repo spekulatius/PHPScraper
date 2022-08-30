@@ -132,7 +132,7 @@ Wenn Sie ein Framework wie Laravel, Symfony, Zend, Phalcon, oder CakePHP verwend
 Ein Problem gefunden und gefixt? Super!
 ---------------------------------------
 
-Bevor Sie loslegen, machen Sie sich mit den [Contribution Guidelines](/contributing) vertraut. Bei Fragen bitte eine kurze Nachricht oder Email.
+Bevor Sie loslegen, machen Sie sich mit den [Contribution Guidelines](/contributing.html) vertraut. Bei Fragen bitte eine kurze Nachricht oder Email.
 
 
 Tests: Damit es wirklich funktioniert!

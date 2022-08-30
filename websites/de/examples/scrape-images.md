@@ -67,7 +67,7 @@ var_dump($web->imagesWithDetails);
 ```
 
 ::: tip SEO
-Der `alt`-Text (mit den [Schlüsselwörtern des Inhalts](/de/examples/extract-keywords)) wird von Suchmaschinen für bildbasierte Suchen verwendet. Achten Sie darauf, ihn immer zu definieren.
+Der `alt`-Text (mit den [Schlüsselwörtern des Inhalts](/de/examples/extract-keywords.html)) wird von Suchmaschinen für bildbasierte Suchen verwendet. Achten Sie darauf, ihn immer zu definieren.
 :::
 
 

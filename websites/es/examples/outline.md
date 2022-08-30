@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Extracción de contornos
 
-Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/headings) para procesar, por ejemplo, el número o la longitud de los epígrafes, no siempre es suficiente. En algunos casos puede ser necesario identificar la estructura real del contenido. Para estos casos de uso, puede considerar uno de estos métodos:
+Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/headings.html) para procesar, por ejemplo, el número o la longitud de los epígrafes, no siempre es suficiente. En algunos casos puede ser necesario identificar la estructura real del contenido. Para estos casos de uso, puede considerar uno de estos métodos:
 
  - `outline` funciona de forma similar al método `headings` mencionado anteriormente. También devuelve todos los encabezados, pero mantiene la estructura del documento original en su lugar y proporciona los niveles de encabezado (por ejemplo, `h1`) solo con la salida.
 
@@ -12,7 +12,7 @@ Si bien es posible que quiera acceder sólo a los [`encabezados`](/es/examples/h
 
  - `CleanOutlineWithParagraphs` funciona de forma similar a `outlineWithParagraphs`, con la diferencia de que se eliminan las etiquetas HTML vacías.
 
-Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay métodos dedicados para la [extracción de palabras clave](/es/examples/extract-keywords) disponibles.
+Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay métodos dedicados para la [extracción de palabras clave](/es/examples/extract-keywords.html) disponibles.
 
 
 ## Extraer el esquema

@@ -30,7 +30,7 @@ echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip
-The [website title](/examples/scrape-website-title) and heading 1 (`<h1>`) can be different. Make sure you retrieve the correct one.
+The [website title](/examples/scrape-website-title.html) and heading 1 (`<h1>`) can be different. Make sure you retrieve the correct one.
 :::
 
 
@@ -121,4 +121,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-As you can see, this doesn't contain any information about the structure the headings are in. It's purely to know which headings exist. If you like to have an [outline](/examples/outline) you will need use the related methods.
+As you can see, this doesn't contain any information about the structure the headings are in. It's purely to know which headings exist. If you like to have an [outline](/examples/outline.html) you will need use the related methods.

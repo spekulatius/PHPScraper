@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Outline Extraction
 
-Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examples/headings) pour traiter, par exemple, le nombre ou la longueur des titres, ce n'est pas toujours suffisant. Dans certains cas, vous pouvez avoir besoin d'identifier la structure réelle du contenu. Pour ces cas d'utilisation, vous pouvez envisager l'une de ces méthodes:
+Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examples/headings.html) pour traiter, par exemple, le nombre ou la longueur des titres, ce n'est pas toujours suffisant. Dans certains cas, vous pouvez avoir besoin d'identifier la structure réelle du contenu. Pour ces cas d'utilisation, vous pouvez envisager l'une de ces méthodes:
 
  - `outline` fonctionne de manière similaire à la méthode `headings` mentionnée précédemment. Elle retourne également tous les titres, mais elle garde la structure du document original en place et fournit les niveaux de titres (par exemple `h1`) seuls avec la sortie.
 
@@ -12,7 +12,7 @@ Bien que vous puissiez vouloir accéder uniquement à la [`rubriques`](/fr/examp
 
  - `cleanOutlineWithParagraphs` fonctionne de la même manière que `outlineWithParagraphs`, à la différence que toutes les balises HTML vides sont supprimées.
 
-Les exemples suivants devraient vous aider à mieux comprendre cette fonctionnalité. Il existe des méthodes dédiées pour [extraction de mots-clés](/fr/examples/extract-keywords) disponible sur.
+Les exemples suivants devraient vous aider à mieux comprendre cette fonctionnalité. Il existe des méthodes dédiées pour [extraction de mots-clés](/fr/examples/extract-keywords.html) disponible sur.
 
 
 ## Extraire l'Outline

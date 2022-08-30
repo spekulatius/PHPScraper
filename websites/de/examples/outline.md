@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Gliederung Extrahieren
 
-Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings) zugreifen möchten, um z. B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
+Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings.html) zugreifen möchten, um z. B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
 
  - `outline` funktioniert ähnlich wie die zuvor erwähnte Methode `headings`. Sie gibt ebenfalls alle Überschriften zurück, behält aber die Struktur des Originaldokuments bei und liefert nur die Überschriftenebenen (z.B. `h1`) mit der Ausgabe.
 
@@ -12,7 +12,7 @@ Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings) zugreifen m�
 
  - `cleanOutlineWithParagraphs` funktioniert ähnlich wie `outlineWithParagraphs`, mit dem Unterschied, dass alle leeren HTML-Tags entfernt werden.
 
-Die folgenden Beispiele sollen helfen, die Funktionalität besser zu verstehen. Es sind spezielle Methoden für die [Schlüsselwort-Extraktion](/de/examples/extract-keywords) verfügbar.
+Die folgenden Beispiele sollen helfen, die Funktionalität besser zu verstehen. Es sind spezielle Methoden für die [Schlüsselwort-Extraktion](/de/examples/extract-keywords.html) verfügbar.
 
 
 ## Extrahieren der Gliederung

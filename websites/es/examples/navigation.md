@@ -9,7 +9,7 @@ Aunque PHPScraper está pensado principalmente para analizar sitios web y recopi
 
 ## Navegación usando URLs
 
-Puedes navegar a cualquier URL. Estas URLs suelen proceder de los [enlaces analizados](/es/examples/scrape-links).
+Puedes navegar a cualquier URL. Estas URLs suelen proceder de los [enlaces analizados](/es/examples/scrape-links.html).
 
 ```php
 $web = new \spekulatius\phpscraper;

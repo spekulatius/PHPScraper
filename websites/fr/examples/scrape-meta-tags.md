@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=
 
 # Scraping Meta Tags
 
-L'accès aux méta-informations suit un schéma similaire à celui présenté précédemment. [balises d'en-tête](/fr/examples/scrape-header-tags). Vous trouverez ci-dessous une série d'exemples:
+L'accès aux méta-informations suit un schéma similaire à celui présenté précédemment. [balises d'en-tête](/fr/examples/scrape-header-tags.html). Vous trouverez ci-dessous une série d'exemples:
 
 
 ## Meta Author, Description et Image
@@ -64,7 +64,7 @@ echo $web->keywordString;   // "one, two, three"
 ```
 
 ::: tip conseil
-Il s'agit uniquement des mots-clés figurant dans le métabaliseur "keyword". Vous pouvez également [extract the content keywords](/fr/examples/extract-keywords) en utilisant PHPScraper.
+Il s'agit uniquement des mots-clés figurant dans le métabaliseur "keyword". Vous pouvez également [extract the content keywords](/fr/examples/extract-keywords.html) en utilisant PHPScraper.
 :::
 
 
@@ -111,4 +111,4 @@ var_dump($web->metaTags);
 
 ## Balises Méta manquantes
 
-Si vous avez besoin d'accéder à une autre méta-propriété, veuillez lire l'article suivant [directives de contribution](/contributing) avant d'ouvrir une demande de modification ou de soumettre une [problème sur GitHub](https://github.com/spekulatius/phpscraper/issues).
+Si vous avez besoin d'accéder à une autre méta-propriété, veuillez lire l'article suivant [directives de contribution](/contributing.html) avant d'ouvrir une demande de modification ou de soumettre une [problème sur GitHub](https://github.com/spekulatius/phpscraper/issues).

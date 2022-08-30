@@ -30,7 +30,7 @@ echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip
-Der [Website-Titel](/de/examples/scrape-website-title) und die Überschrift 1 (`<h1>`) können unterschiedlich sein. Stellen Sie sicher, dass Sie die richtige abrufen.
+Der [Website-Titel](/de/examples/scrape-website-title.html) und die Überschrift 1 (`<h1>`) können unterschiedlich sein. Stellen Sie sicher, dass Sie die richtige abrufen.
 :::
 
 
@@ -121,4 +121,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-Wie Sie sehen können, enthält dies keine Informationen über die Struktur der Überschriften. Es geht nur darum zu wissen, welche Überschriften vorhanden sind. Wenn Sie eine [Gliederung](/de/examples/outline) haben möchten, müssen Sie die entsprechenden Methoden verwenden.
+Wie Sie sehen können, enthält dies keine Informationen über die Struktur der Überschriften. Es geht nur darum zu wissen, welche Überschriften vorhanden sind. Wenn Sie eine [Gliederung](/de/examples/outline.html) haben möchten, müssen Sie die entsprechenden Methoden verwenden.

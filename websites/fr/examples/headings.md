@@ -30,7 +30,7 @@ echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip Conseil
-Le site [titre du site web](/fr/examples/scrape-website-title) et la rubrique 1 (`<h1>`) peuvent être différentes. Assurez-vous que vous récupérez le bon.
+Le site [titre du site web](/fr/examples/scrape-website-title.html) et la rubrique 1 (`<h1>`) peuvent être différentes. Assurez-vous que vous récupérez le bon.
 :::
 
 
@@ -121,4 +121,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-Comme vous pouvez le constater, il ne contient aucune information sur la structure des rubriques. Il s'agit uniquement de savoir quelles rubriques existent. Si vous souhaitez avoir une [aperçu](/fr/examples/outline) vous devrez utiliser les méthodes correspondantes.
+Comme vous pouvez le constater, il ne contient aucune information sur la structure des rubriques. Il s'agit uniquement de savoir quelles rubriques existent. Si vous souhaitez avoir une [aperçu](/fr/examples/outline.html) vous devrez utiliser les méthodes correspondantes.

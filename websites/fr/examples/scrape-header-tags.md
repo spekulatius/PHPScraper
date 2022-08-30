@@ -150,4 +150,4 @@ public function headers()
 }
 ```
 
-Plus d'informations sur l'accès à la [balises méta](/fr/examples/scrape-meta-tags.md).
+Plus d'informations sur l'accès à la [balises méta](/fr/examples/scrape-meta-tags.html).

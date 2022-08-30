@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https:
 
 # Scraping Links
 
-The scraping of links works very similar to [image scraping](/examples/scrape-images). You can retrieve a list of URL without any additional information as well as a detailed list containing `rel`, `target` as well as other attributes.
+The scraping of links works very similar to [image scraping](/examples/scrape-images.html). You can retrieve a list of URL without any additional information as well as a detailed list containing `rel`, `target` as well as other attributes.
 
 
 ## Simple Link List
