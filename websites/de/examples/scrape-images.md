@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https
 
 # Scraping von Bildern
 
-Das Scraping der Bilder &amp; Fotos von einer Website folgt einem ähnlichen Ansatz wie die anderen Beispiele. Alle Grafiken wie Bilder, Fotos und Infografiken können mit Details wie Tag-Attributen oder nur als URL-Liste geparst werden.
+Sie fragen sich vielleicht, wie man mit PHPScraper Fotos, Bilder und andere Grafiken von einer Website scrapen kann. Wie bei anderen Funktionen auch, folgt das Scraping von Bildern &amp; Fotos von einer Website einem ähnlichen Ansatz. Alle Grafiken wie Bilder, Fotos und Infografiken können zusammen mit Details wie Tag-Attributen oder nur als URL-Liste ausgelesen und analysiert werden.
 
 
 ## Scraping von Bild-URLs
