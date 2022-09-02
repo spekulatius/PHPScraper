@@ -1,8 +1,5 @@
 ---
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
-
-note:
-    - first paragraph wasn't updated in other lang yet.
 ---
 
 # Scraping Images
