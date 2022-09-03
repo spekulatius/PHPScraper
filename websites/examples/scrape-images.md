@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https
 
 # Scraping Images
 
-Scraping the images &amp; photos from a website follows a similar approach as the other examples. All graphics such as images, photos and infographics can be parsed with details such as tag attributes or only as an URL list.
+You might wonder how to scrape photos, images and other graphics from a website using PHPScraper. As with other functionality, scraping the images &amp; photos from a website follows a similar approach. All graphics such as images, photos, and infographics can be scraped and parsed along with details such as tag attributes or only as an URL list.
 
 
 ## Scraping Image URLs
