@@ -1,18 +1,18 @@
 # Target Scraper API
 
-Das Team hinter PHP Scraper arbeitet daran, kommerzielle APIs für verschiedene gängige Anwendungsfälle und Plattformen bereitzustellen. Diese APIs werden nicht selbst gehostet. Sie müssen sich keine Gedanken über rotierende IPs/Proxies machen und einen Headless-Browser wie Puppeteer verwenden. Mit einem einfachen API-Aufruf erhalten Sie alle erforderlichen Informationen. Die Dienste werden auf der Grundlage einer attraktiven, nutzungsabhängigen Gebührenstruktur bereitgestellt.
+The team behind PHP Scraper is working on providing commercial APIs for various common use-cases as well as platforms. These APIs aren't self-hosted. You won't need to worry about rotating IPs/proxies, running a headless browser such as Puppeteer. A simple API call will get you all information required. The services will be provided on a attractive usage-dependent fee-structure basis.
 
-Für Target ziehen wir die Implementierung einer API mit folgendem Umfang in Betracht.
+For Target we are considering the implementation of an API with the following scope.
 
-## Vorgeschlagene unterstützte Endpunkte
+## Proposed Supported Endpoints
 
-- Produktdetails abrufen
-- Schlüsselwortsuche für Produkte
+- Get Product Details
+- Keyword Search for Products
 
 ::: tip
-Bitte beachten Sie, dass diese Liste der API-Endpunkte *nicht* endgültig ist und sich wahrscheinlich noch ändern wird.
+Please note this list of API endpoints is *not* final is likely going to change.
 :::
 
-## Plattform-Unterstützung
+## Platform Support
 
-Mit dem Ansatz, eine verwaltete API zu verwenden, müssen sich die Nutzer keine Gedanken mehr über rotierende Proxys, Skalierungsprobleme und Ausfälle machen. Außerdem wird eine breite Palette von Plattformen unterstützt. Sie können problemlos in NodeJS, Python (ohne Requests oder Beautifulsoap), Golang usw. integriert werden. Jede Plattform, die es erlaubt, GET-Anfragen auszuführen, kann so programmiert werden, dass sie Daten von diesem Dienst abruft.
+With the approach to use a managed API, users are freed from worrying about rotating proxies, scaling issues, and outages. Also, a wide range of platforms is supported. You can easily integrate into NodeJS, Python (without requests or beautifulsoap), Golang, etc. Any platform that allows to execute GET requests can be programmed to request data from this service.
