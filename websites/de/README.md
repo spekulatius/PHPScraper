@@ -5,6 +5,8 @@ image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated
 PHP Scraper: Scraping und Crawling einfach gemacht
 ==================================================
 
+![PHP Scraper: Scraping und Crawling einfach gemacht](logo-light.png)
+
 *von [Peter Thaleikis](https://peterthaleikis.com)*
 
 PHPScraper ist eine Scraping-Bibliothek ohne Schnickschnack für PHP. Bei PHPScraper handelt sich dabei um einen Wrapper um einige großartige PHP-Bibliotheken, die den Zugriff auf das Web erleichtern.
