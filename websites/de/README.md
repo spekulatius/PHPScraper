@@ -5,7 +5,7 @@ image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated
 PHP Scraper: Scraping und Crawling einfach gemacht
 ==================================================
 
-![PHP Scraper: Scraping und Crawling einfach gemacht](/logo-dark.png)
+![PHP Scraper: Scraping und Crawling einfach gemacht](https://raw.githubusercontent.com/spekulatius/PHPScraper/replace-old-logo/websites/logo-light.png)
 
 *von [Peter Thaleikis](https://peterthaleikis.com)*
 
