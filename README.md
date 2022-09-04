@@ -1,20 +1,6 @@
-<style>
-body[data-color-mode="auto"] .phpscraper-logo {
-    fill: currentColor;
-}
-
-body[data-theme="dark"] .phpscraper-logo {
-    fill: currentColor;
-}
-</style>
-
-<img src="websites/logo.svg" class="phpscraper-logo">
-
-
-
 <picture style="width: 100%">
-  <source srcset="websites/dark-logo.svg" media="(prefers-color-scheme:dark)">
-  <img src="websites/light-logo.svg">
+  <source srcset="websites/dark-logo.png" media="(prefers-color-scheme:dark)">
+  <img src="websites/light-logo.png">
 </picture>
 
 # [PHP Scraper](https://github.com/spekulatius/phpscraper)
