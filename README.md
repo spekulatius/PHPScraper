@@ -2,8 +2,8 @@
 
 <p align="center">
   <picture style="width: 100%;">
-    <source srcset="websites/logo-dark.png" media="(prefers-color-scheme:dark)">
-    <img src="websites/logo-light.png">
+    <source srcset="websites/.vuepress/public/logo-dark.png" media="(prefers-color-scheme:dark)">
+    <img src="websites/.vuepress/public/logo-light.png">
   </picture>
 </p>
 
