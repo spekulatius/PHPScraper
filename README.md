@@ -1,9 +1,11 @@
-<picture style="width: 100%">
-  <source srcset="websites/logo-dark.png" media="(prefers-color-scheme:dark)">
-  <img src="websites/logo-light.png">
-</picture>
-
 # [PHP Scraper](https://github.com/spekulatius/PHPScraper)
+
+<p align="center">
+  <picture style="width: 100%;">
+    <source srcset="websites/logo-dark.png" media="(prefers-color-scheme:dark)">
+    <img src="websites/logo-light.png">
+  </picture>
+</p>
 
 PHP Scraper is a scraper library for PHP, built with simplicity in mind. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
 
