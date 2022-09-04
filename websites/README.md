@@ -5,7 +5,7 @@ image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated
 PHP Scraper: Bringing Simplicity back to Scraping and Crawling
 ==============================================================
 
-![PHP Scraper: Bringing Simplicity back to Scraping and Crawling](./logo-dark.png)
+![PHP Scraper: Bringing Simplicity back to Scraping and Crawling](/logo-dark.png)
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
