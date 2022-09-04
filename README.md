@@ -3,9 +3,9 @@
   <img src="websites/logo-light.png">
 </picture>
 
-# [PHP Scraper](https://github.com/spekulatius/phpscraper)
+# [PHP Scraper](https://github.com/spekulatius/PHPScraper)
 
-PHPScraper is a scraper library for PHP, built with simplicity in mind. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
+PHP Scraper is a scraper library for PHP, built with simplicity in mind. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
 
 Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json).
 
@@ -23,7 +23,7 @@ Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
 
 Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
 
-### Get the Title of a Website
+### Basics: Get the Title of a Website
 
 All scraping functionality can be accessed either as a function call or a property call. For example, the title can be accessed in two ways:
 
@@ -111,4 +111,4 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
-See the [full documentation](https://phpscraper.de) for more information and examples.
+See the [full documentation](https://phpscraper.de) for more information and many more examples.
