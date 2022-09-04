@@ -1,6 +1,6 @@
 <picture style="width: 100%">
-  <source srcset="websites/dark-logo.png" media="(prefers-color-scheme:dark)">
-  <img src="websites/light-logo.png">
+  <source srcset="websites/logo-dark.png" media="(prefers-color-scheme:dark)">
+  <img src="websites/logo-light.png">
 </picture>
 
 # [PHP Scraper](https://github.com/spekulatius/phpscraper)
