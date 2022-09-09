@@ -40,7 +40,7 @@ class OpenGraphTest extends BaseTest
                 'og:type' => 'website',
                 'og:title' => 'Lorem Ipsum',
                 'og:description' => 'Lorem ipsum dolor etc.',
-                'og:url' => $this->url . '/lorem-ipsum.html',
+                'og:url' => $this->url . '/meta/lorem-ipsum.html',
                 'og:image' => $this->url . '/assets/cat.jpg',
             ],
             $web->openGraph

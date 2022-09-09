@@ -22,7 +22,7 @@ $web = new \spekulatius\phpscraper;
  * <meta property="og:type" content="website" />
  * <meta property="og:title" content="Lorem Ipsum" />
  * <meta property="og:description" content="Lorem ipsum dolor etc." />
- * <meta property="og:url" content="https://test-pages.phpscraper.de/lorem-ipsum.html" />
+ * <meta property="og:url" content="https://test-pages.phpscraper.de/meta/lorem-ipsum.html" />
  * <meta property="og:image" content="https://test-pages.phpscraper.de/assets/cat.jpg" />
  *
  * @see https://test-pages.phpscraper.de/og/example.html
@@ -46,7 +46,7 @@ $data = $web->openGraph;
  *     'og:type' => 'website',
  *     'og:title' => 'Lorem Ipsum',
  *     'og:description' => 'Lorem ipsum dolor etc.',
- *     'og:url' => 'https://test-pages.phpscraper.de/lorem-ipsum.html',
+ *     'og:url' => 'https://test-pages.phpscraper.de/meta/lorem-ipsum.html',
  *     'og:image' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  */
@@ -71,7 +71,7 @@ $web = new \spekulatius\phpscraper;
  * <meta name="twitter:card" content="summary_large_image" />
  * <meta name="twitter:title" content="Lorem Ipsum" />
  * <meta name="twitter:description" content="Lorem ipsum dolor etc." />
- * <meta name="twitter:url" content="https://test-pages.phpscraper.de/lorem-ipsum.html" />
+ * <meta name="twitter:url" content="https://test-pages.phpscraper.de/meta/lorem-ipsum.html" />
  * <meta name="twitter:image" content="https://test-pages.phpscraper.de/assets/cat.jpg" />
  *
  * @see https://test-pages.phpscraper.de/twittercard/example.html
@@ -94,7 +94,7 @@ $data = $web->twitterCard;
  *     'twitter:card' => 'summary_large_image',
  *     'twitter:title' => 'Lorem Ipsum',
  *     'twitter:description' => 'Lorem ipsum dolor etc.',
- *     'twitter:url' => 'https://test-pages.phpscraper.de/lorem-ipsum.html',
+ *     'twitter:url' => 'https://test-pages.phpscraper.de/meta/lorem-ipsum.html',
  *     'twitter:image' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  */
