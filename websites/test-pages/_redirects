@@ -2,3 +2,4 @@ https://test-pages.phpscraper.de/ https://phpscraper.de 301!
 https://test-pages.phpscraper.de/redirected_url_1 https://test-pages.phpscraper.de/links/base-href
 https://test-pages.phpscraper.de/redirected_url_2 https://test-pages.phpscraper.de/links/base-href
 https://test-pages.phpscraper.de/redirected_url_3 https://test-pages.phpscraper.de/links/base-href
+https://test-pages.phpscraper.de/lorem-ipsum.html https://test-pages.phpscraper.de/meta/lorem-ipsum.html
