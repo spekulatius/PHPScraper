@@ -39,7 +39,7 @@ class TwitterCardTest extends BaseTest
                 'twitter:card' => 'summary_large_image',
                 'twitter:title' => 'Lorem Ipsum',
                 'twitter:description' => 'Lorem ipsum dolor etc.',
-                'twitter:url' => $this->url . '/lorem-ipsum.html',
+                'twitter:url' => $this->url . '/meta/lorem-ipsum.html',
                 'twitter:image' => $this->url . '/assets/cat.jpg',
             ],
             $web->twitterCard
