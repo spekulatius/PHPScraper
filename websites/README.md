@@ -107,6 +107,12 @@ composer require spekulatius/phpscraper
 
 After the installation is completed the package will be picked up by the Composer autoloader. In typical PHP applications and frameworks such as Laravel or Symfony you can start scraping now. You can now use any of the noted examples or examples in the `tests/`-folder.
 
+Please consider supporting PHPScraper with a star or [sponsorship](https://github.com/sponsors/spekulatius):
+
+```bash
+composer thanks
+```
+
 ### Usage in VanillaPHP-Projects
 
 If you are building a VanillaPHP project, you will need to include the autoloader in your script at the top of your PHP script:
