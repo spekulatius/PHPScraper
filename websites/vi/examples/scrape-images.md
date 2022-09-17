@@ -2,14 +2,13 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Images
+# Thu thập hình ảnh
 
-You might wonder how to scrape photos, images and other graphics from a website using PHPScraper. As with other functionality, scraping the images &amp; photos from a website follows a similar approach. All graphics such as images, photos, and infographics can be scraped and parsed along with details such as tag attributes or only as an URL list.
+Bạn có thể tự hỏi làm thế nào để lấy hình ảnh từ một trang web bằng cách sử dụng PHPScraper. Cũng giống các chức năng khác, thu thập hình ảnh từ một trang web theo cách tiếp cận tương tự. Tất cả hình ảnh có thể được lấy và phân tích cú pháp cùng với các chi tiết như thuộc tính thẻ hoặc chỉ dưới dạng danh sách URL.
 
+## Thu thập liên kết hình ảnh
 
-## Scraping Image URLs
-
-The following example parses a web-page for images and returns absolute image URLs as an array.
+Ví dụ sau đây sẽ trả về các hình ảnh trên trang web dưới dạng mảng URL:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -37,13 +36,12 @@ var_dump($web->images);
 ```
 
 ::: tip
-If no images are found, the array remains empty.
+Nếu không có hình ảnh nào, mảng sẽ bị rỗng.
 :::
 
+## Thu thập hình ảnh với thông tin chi tiết
 
-## Scraping Images with Details
-
-If you are in need of more details the following requests allows you to access attributes of the image tag:
+Nếu bạn muốn lấy thông tin chi tiết về hình ảnh, ví dụ sau sẽ lấy toàn bộ thuộc tính có trong thẻ `img`:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -67,12 +65,9 @@ var_dump($web->imagesWithDetails);
 ```
 
 ::: tip SEO
-The `alt`-text (with the [keywords of the content](/examples/extract-keywords.html)) is used by search engines for image-based searches. Make sure to always define it.
+Thuộc tính `alt` (với [từ khóa trong nội dung](/examples/extract-keywords.html)) được các công cụ tìm kiếm sử dụng cho các tìm kiếm dựa trên hình ảnh.
 :::
 
+## Lấy các thông tin còn thiếu
 
-## Scraping Attributes: Alt, Width and Height
-
-The attributes for `alt`, `width` and `height` are included in the detailed data set.
-
-If you require more data, you will either need to extend the library or submit an issue for consideration.
+Nếu bạn muốn lấy thêm các thông tin khác, bạn có thể tạo một pull request hoặc issue trên github về vấn đề này.

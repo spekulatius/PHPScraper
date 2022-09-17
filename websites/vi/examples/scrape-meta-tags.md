@@ -8,12 +8,11 @@ Việc lấy thẻ meta cũng giống như [thẻ header](/examples/scrape-heade
 
 ## Thẻ meta Author, Description và Image
 
-Ví dụ bên dưới hiển thi
-The following example shows the extraction of three attributes:
+Ví dụ bên dưới sẽ lấy ba thuộc tính:
 
-- the Meta Author,
-- the Meta Description and
-- the Meta Image URL
+- thẻ Meta Author,
+- thẻ Meta Description and
+- thẻ Meta Image URL
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -37,7 +36,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 
 ## Meta Keywords
 
-The keywords meta-tag is naturally an array and will be split for your convience:
+Thẻ meta keywords là một mảng và sẽ được phân chia tùy theo mong muốn của bạn:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -53,7 +52,7 @@ $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 var_dump($web->keywords);   // ['one', 'two', 'three']
 ```
 
-Alternatively, you can access the original keyword string:
+Bạn có thể lấy chuỗi keywords gốc:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -64,13 +63,12 @@ echo $web->keywordString;   // "one, two, three"
 ```
 
 ::: tip
-This refers only to the keywords in the "keyword" meta-tag. You can also [extract the content keywords](/examples/extract-keywords.html)) using PHPScraper.
+Điều này chỉ đề cập đến các từ khóa trong thẻ meta "keywords". Bạn cũng có thể sử dụng PHPScraper để [lấy các từ khóa nội dung](/examples/extract-keywords.html)).
 :::
 
+## Kết hợp các thẻ meta
 
-## Combined Meta Tags
-
-If you would like to access all meta properties you can use the `metaTags`-method. It returns the above mentioned methods as an array. It is defined as:
+Nếu bạn muốn lấy toàn bộ thuộc tính thẻ meta, bạn có thể tạo mới và sử dụng phương thức `metaTags`. Nó sẽ trả về các phương thức đã nhắc bên trên dưới dạng mảng:
 
 ```php
 /**
@@ -89,7 +87,7 @@ public function metaTags()
 }
 ```
 
-From the example above it would be used as following:
+Từ ví dụ trên sẽ được sử dụng như sau:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -108,7 +106,6 @@ var_dump($web->metaTags);
  */
 ```
 
+## Các thẻ Meta bị thiếu
 
-## Missing Meta Tags
-
-If you need to access another meta property, please read the [contribution guidelines](/contributing.html) before opening a pull request or submitting an [issue on GitHub](https://github.com/spekulatius/phpscraper/issues).
+Nếu bạn cần lấy thuộc tính thẻ meta khác, vui lòng đọc [contribution guidelines](/contributing.html) trước khi tạo pull request hoặc [issue trên github](https://github.com/spekulatius/phpscraper/issues).
