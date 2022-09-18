@@ -2,14 +2,13 @@
 image: https://api.imageee.com/bold?text=PHP:%20Navigate%20while%20Scraping&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Navigation
+# Điều hướng
 
-While PHPScraper is mostly intended to parse websites and collect information, you can also use it to navigate websites. Below are examples of ways to *surf* around a website.
+Đa số là PHPScraper phân tích và thu thập nội dung trang web, thì bạn có thể sử dụng nó để điều hướng trang web. Các ví dụ bên dưới sẽ cho bạn thấy cách *lướt* quanh trang web.
 
+## Sử dụng URL để điều hướng
 
-## Navigation using URLs
-
-You can navigate to any URL. These URLs usually come from the [parsed links](/examples/scrape-links.html).
+Bạn có thể điều hướng bất kỳ URL nào. Các URL này thường được lấy từ [phân tích liên kết](/examples/scrape-links.html).
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -29,9 +28,9 @@ echo $web->h1[0];   // 'Page #2'
 ```
 
 
-## Navigation using Anchor Texts
+## Sử dụng Anchor Texts để điều hướng
 
-On a website you can *click* on links using their anchor texts:
+Bạn có thể sử dụng anchor text trên trang web để *nhấn* vào liên kết để điều hướng:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -56,4 +55,4 @@ $web->clickLink('2 relative');
 echo $web->h1[0];   // 'Page #2'
 ```
 
-This basic functionality should allow you to navigate websites.
+Chức năng cơ bản này sẽ cho phép bạn điều hướng các trang web.
