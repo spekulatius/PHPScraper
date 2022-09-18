@@ -2,31 +2,30 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Text
+# Thu thập văn bản
 
-Scraping content, mostly paragraphs, can be done easily using PHP Scraper. There is a dedicated method to access the paragraphs (`<p>`) on a website. The following examples show how to access the content/texts on a website.
+Thu thập nội dung và đa số là đoạn văn, có thể dễ dàng thu thập bằng PHPScraper. Có một phương pháp chuyên dụng để truy cập các đoạn văn (`` <p> `) trên một trang web. Các ví dụ bên dưới sẽ cho chúng ta thấy lấy nội dung/văn bản trên trang web.
 
+## Lấy toàn bộ đoạn văn
 
-## Getting all Paragraphs
-
-The following example will return a list of all paragraphs (`<p>`-tags) on the website:
+Ví dụ bên dưới sẽ trả về danh sách đoạn văn (thẻ `<p>`) trên trang web:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page. It contains 6 lorem ipsum paragraphs
+// Chuyển hướng đến trang test. Nó chứa 6 đoạn văn lorem ipsum
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
-// check the number of paragraphs.
+// kiểm tra số lượng đoạn văn.
 echo "This page contains " . count($web->paragraphs) . " paragraphs.\n\n";
 
-// Loop through the paragraphs
+// vòng lặp đoạn văn
 foreach ($web->paragraphs as $paragraph) {
     echo " - " . $paragraph . "\n";
 }
 
 /**
- * Will print out:
+ * Sẽ in:
  *
  * This page contains 6 paragraphs.
  *
@@ -44,10 +43,9 @@ foreach ($web->paragraphs as $paragraph) {
  */
 ```
 
+## Thu thập một đoạn văn
 
-## Scraping the First Paragraph
-
-Scraping the first paragraph of the website can be done by accessing the first element of the array (index 0).
+Thu thập một đoạn văn của trang web có thể thực hiện bằng cách truy cập vào phần tử 0 của mảng.
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -55,10 +53,9 @@ $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 echo $web->paragraphs[0];
 /**
- * Prints the first paragraph:
+ * In đoạn văn đầu tiên:
  *
  * Maecenas eget ex sit amet urna porta fermentum at ut dui. Praesent lectus arcu, hendrerit sed mi vel, commodo lacinia velit. Nullam ac velit quis ante tristique scelerisque quis non metus. Pellentesque non aliquam elit, in tincidunt purus. Vestibulum fringilla cursus risus, eget ornare dolor feugiat vitae. Sed non porta lorem, eget ornare diam. Sed quam est, eleifend porttitor imperdiet sit amet, ultricies vel ipsum. Pellentesque mauris mauris, fermentum pretium ex quis, viverra mattis est. Donec laoreet sem nec arcu rhoncus lobortis. Duis id orci vel enim interdum aliquam. Integer eu ex ligula. Ut mattis nisi non malesuada ornare. In elit ligula, ultricies a aliquet eget, dictum sit amet neque. Quisque nulla sem, aliquam id molestie iaculis, consequat at augue. Nullam sollicitudin finibus eros in venenatis. Donec semper sagittis ipsum, et rhoncus magna ultricies eu.
  */
 ```
-
-Empty p-tags would lead to empty strings in the returned array. To avoid this you can call `$web->cleanParagraphs` instead. This will filter empty paragraphs and only return those with content. To access the first paragraph with content use `$web->cleanParagraphs[0]`.
+Thẻ <p> rỗng sẽ dẫn đến các chuỗi rỗng trong mảng sẽ được trả về. Để tránh điều này bạn có thể gọi `$web->cleanParagraphs`. Nó sẽ lọc các đoạn văn rỗng và chỉ trả về các đoạn văn có nội dung. Để lấy nội dung đoạn văn đầu tiên chúng ta sử dụng `$web->cleanParagraph[0]`.
