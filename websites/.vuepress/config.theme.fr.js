@@ -55,7 +55,6 @@ module.exports = {
             title: 'MISC',
             collapsable: true,
             children: [
-                'fr/support/more-examples',
                 'fr/support/support',
             ],
         },

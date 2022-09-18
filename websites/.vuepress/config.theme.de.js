@@ -55,7 +55,6 @@ module.exports = {
             title: 'usw',
             collapsable: true,
             children: [
-                'de/support/more-examples',
                 'de/support/support',
             ],
         },
