@@ -2,39 +2,39 @@
 image: https://api.imageee.com/bold?text=PHP:%20Extract%20Keywords&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Extract Keywords
+# Trích xuất từ ​​khóa
 
-While scraping content is often enough, sometimes you require to extract significant terms and phrases (keywords) from this content. PHPScraper allows you to extract the keywords of the website directly. For this it uses:
+Đôi khi bạn có thể cần trích xuất các thuật ngữ và cụm từ (keywords) quan trọng trong nội dung này. PHPScraper cho phép bạn trích xuất các từ khóa của trang web một cách trực tiếp. Để làm được nó sử dụng các:
 
-- the title of the website,
-- the meta tags,
-- all headings,
-- the paragraphs on the page,
-- link anchors and link titles as well as
-- title attributes on images
+- tiêu đề trang web,
+- thẻ meta,
+- tất cả heading,
+- đoạn văn trên trang,
+- liên kết
+- thuộc tính title của ảnh
 
-While these keyword phrases are extracted it doesn't mean the page actually ranks for these keywords. The final decision on which keywords a web-page ranks is with the search engine.
+Mặc dù các cụm từ khóa này được trích xuất, điều đó không có nghĩa là trang thực sự xếp hạng cho các từ khóa này. Quyết định cuối cùng về việc xếp hạng từ khóa của một trang web là với công cụ tìm kiếm.
 
-The following example will return a list of all keywords extracted from the web-page:
+Ví dụ sau sẽ trả về danh sách tất cả các từ khóa được trích xuất từ ​​trang web:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page.
+// Chuyển hướng đến trang test.
 // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// check the number of keywords.
+// số lượng từ khóa.
 $keywords = $web->contentKeywords;
 echo "This page contains at least " . count($keywords) . " keywords/phrases.\n\n";
 
-// Loop through the keywords
+// lặp các từ khóa
 foreach ($keywords as $keyword) {
     echo " - " . $keyword . "\n";
 }
 
 /**
- * Will print out:
+ * Nó sẽ hiển thị:
  *
  * This page contains at least 40 keywords/phrases.
  *
@@ -66,15 +66,14 @@ foreach ($keywords as $keyword) {
 ```
 
 ::: tip
-The default language (locale) for this is `en_US`. Other languages can be passed as a parameter. This currently works only for a selection of languages. Check this [list](https://github.com/Donatello-za/rake-php-plus#currently-supported-languages) for further information.
+Ngôn ngữ mặc định (locale) là `en_US`. Các ngôn ngữ khác có thể được truyền dưới dạng tham số. Điều này hiện chỉ hoạt động cho một số ngôn ngữ. Xem [danh sách này](https://github.com/Donatello-za/rake-php-plus#currently-supported-languages) để biết thêm chi tiết.
 :::
 
+## Chấm điểm từ khóa
 
-## Scoring of Keywords
+Không phải mọi từ khóa đều có điểm số như nhau trong thuật toán xếp hạng của các công cụ tìm kiếm. Sự kết hợp của một số yếu tố và tín hiệu SEO quyết định trọng lượng mà công cụ tìm kiếm gán cho một từ. Tần suất của từ, độ dài của văn bản và các biến thể như từ đồng nghĩa có thể dẫn đến trọng số khác nhau.
 
-Not every keyword has the same weight in the ranking-algorithms of search engines. A mix of several factors and SEO-signals decides on the weight a search engine assigns to a word. Frequency of words, length of the texts, and variations such as synonyms can lead to different weighting.
-
-PHPScraper allows you to get an indication of keyword weights in the form of scores:
+PHPScraper cho phép bạn lấy điểm số của từ khóa:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -118,5 +117,5 @@ foreach ($keywords as $keyword => $score) {
 ```
 
 ::: tip
-The PHP-functions [similar_text](https://www.php.net/manual/en/function.similar-text.php) and [levenshtein](https://www.php.net/manual/en/function.levenshtein.php) can help you identify and merge similar keywords as well as typo variations of keywords. [Keyword Merge](https://github.com/spekulatius/keyword-merge) is a composer package to help sorting out similar keywords.
+Hàm PHP [similar_text](https://www.php.net/manual/en/function.similar-text.php) và [levenshtein](https://www.php.net/manual/en/function.levenshtein.php) có thể giúp bạn xác định và hợp nhất các từ khóa tương tự cũng như các biến thể lỗi đánh máy của từ khóa. [Keyword Merge](https://github.com/spekulatius/keyword-merge) là một thư viện composer để giúp phân loại các từ khóa tương tự.
 :::

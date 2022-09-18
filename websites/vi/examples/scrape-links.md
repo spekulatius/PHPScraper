@@ -2,7 +2,9 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Lấy liên két
+# Thu thập liên kết
+
+Thu thập liên kết hoạt động tương tự như [thu thập hình ảnh](/examples/scrape-images.html. Bạn có thể lấy danh sách URL mà không có bất kỳ thông tin bổ sung nào cũng như danh sách chi tiết chứa `rel`, ` target` hay các thuộc tính khác.
 
 The scraping of links works very similar to [image scraping](/examples/scrape-images.html). You can retrieve a list of URL without any additional information as well as a detailed list containing `rel`, `target` as well as other attributes.
 

@@ -2,18 +2,17 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Headings
+# Thu thập heading
 
-Heading can be useful to get an idea of the content on a website. The following example shows how to scrape:
+Heading hữu ích trong việc lấy ý tưởng từ nội dung của trang web. Ví dụ sau sẽ cho thấy cách lấy nó:
 
- - A single Heading
- - All headings of a particular level (e.g. `<h3>`)
- - All headings on a page
+ - Một heading
+ - Tất cả heading với cấp cụ thể (e.g. `<h3>`)
+ - Tất cả heading trên trang
 
+## Thu thập một heading
 
-## Scrape Single Heading
-
-Scraping a single heading is easy and be done following this example:
+Thu thập một heading đơn rất dễ dàng và được thực hiện theo ví dụ sau:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -30,13 +29,12 @@ echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip
-The [website title](/examples/scrape-website-title.html) and heading 1 (`<h1>`) can be different. Make sure you retrieve the correct one.
+[Tiêu đề trang web](/examples/scrape-website-title.html) và heading 1 (`<h1>`) có thể khác nhau. Đảm bảo rằng bạn truy xuất đúng.
 :::
 
+## Heading theo cấp độ
 
-## Headings by Level
-
-There might be cases, in which you would like to retrieve all headings of a particular level. The example below shows you how to do so:
+Có thể có những trường hợp, trong đó bạn muốn truy xuất tất cả các heading của một cấp cụ thể. Ví dụ dưới đây cho bạn thấy cách làm như vậy:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -67,13 +65,11 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->h3;
 ```
 
-If no headings are found, the array is left empty.
+Nếu không có heading nào, mảng sẽ rỗng:
 
+## Tất cả heading trên trang
 
-## All Headings on a Page
-
-To access all headings on a page, you can do so by accessing the different levels from 1 to 6. Or, alternatively, you can access all at once:
-
+Để lấy toàn bộ heading trên trang, bạn có thể truy cập vào cấp độ từ 1 đến 6. Hoặc bằng cách sử dụng:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -121,4 +117,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-As you can see, this doesn't contain any information about the structure the headings are in. It's purely to know which headings exist. If you like to have an [outline](/examples/outline.html) you will need use the related methods.
+Như bạn có thể thấy, phần này không chứa bất kỳ thông tin nào về cấu trúc của các heading. Nó hoàn toàn để biết những heading nào tồn tại. Nếu bạn muốn có một [outline](/examples/outline.html) bạn sẽ cần sử dụng các phương pháp liên quan.

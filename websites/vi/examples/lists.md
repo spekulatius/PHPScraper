@@ -2,15 +2,15 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Lists
+# Thu thập danh sách
 
-Scraping lists follows a similar approach as other scraping with PHPScraper:
+Thu thập danh sách tương tự như các kiểu thu thập khác với PHPScraper:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains:
+ * Chuyển hướng đến trang test, trang này chứa:
  *
  * <h2>Example 1: Unordered List</h2>
  * <ul>
@@ -29,7 +29,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/lists.html');
 
 /**
- * Only unordered lists (<ul>)
+ * Chỉ danh sách không có thứ tự (<ul>)
  *
  * [
  *     "type" => "ul",
@@ -44,9 +44,8 @@ $web->go('https://test-pages.phpscraper.de/content/lists.html');
  */
 var_dump($web->unorderedLists);
 
-
 /**
- * Only ordered lists (<ol>)
+ * Chỉ danh sách có thứ tự (<ol>)
  *
  * [
  *     "type" => "ul",
@@ -62,10 +61,10 @@ var_dump($web->unorderedLists);
 var_dump($web->orderedLists);
 
 
-// Both lists combined (as above)
+// Cả hai danh sách kết hợp (như trên)
 var_dump($web->lists);
 ```
 
-::: warning Nested Lists
-At the moment, this doesn't handle nested lists well. Nested lists are included in the result as `children` to allow further processing.
+::: warning Danh sách lồng nhau
+Hiện tại, danh sách lồng nhau không được hỗ trợ. Danh sách lồng nhau được đính kèm với kết quả dưới dạng `children` để xử lý thêm.
 :::
