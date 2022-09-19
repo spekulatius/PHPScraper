@@ -33,7 +33,6 @@ module.exports = {
                 'examples/scrape-images',
                 'examples/scrape-links',
                 'examples/navigation',
-                'examples/custom-selectors',
             ],
         },
         {
