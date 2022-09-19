@@ -27,7 +27,6 @@ $web->clickLink('https://test-pages.phpscraper.de/navigation/2.html');
 echo $web->h1[0];   // 'Page #2'
 ```
 
-
 ## Sử dụng Anchor Texts để điều hướng
 
 Bạn có thể sử dụng anchor text trên trang web để *nhấn* vào liên kết để điều hướng:

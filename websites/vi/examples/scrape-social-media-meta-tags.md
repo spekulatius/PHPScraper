@@ -2,14 +2,13 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Social Media Meta Tags
+# Thu thập thẻ Meta mạng xã hội
 
-Scraping social media sharing tags from a website can be done using the following methods. The exact result set depends on the provided tags. All tags are included, as long as these are in the prefixed namespace (e.g. `twitter:` for Twitter Cards).
+Thu thập các thẻ meta chia sẻ mạng xã hội từ trang web bằng các phương thức sau. Kết quả phụ thuộc vào thẻ được cung cấp. Tất cả các thẻ đều được bao gồm, miễn là chúng nằm trong không gian tên có tiền tố (ví dụ: `twitter: 'dành cho Thẻ Twitter).
 
+## Dữ liệu Open-Graph (OG)
 
-## Open-Graph (OG) Data
-
-Fetching open-graph data can be done:
+Lấy dữ liệu open-graph có thể làm như sau:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -53,19 +52,18 @@ $data = $web->openGraph;
 ```
 
 ::: tip
-If not data was found, the array will be returned empty.
+Nếu không có dữ liệu, mạng sẽ trả về rỗng.
 :::
-
 
 ## Twitter Card
 
-Parsing the Twitter Card works similarly:
+Phân tích cú pháp Twitter Card hoạt động tương tự
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. The page contains the following Twitter Card:
+ * Chuyển hướng đến trang test. Trang chứa các Twitter Card như sau:
  *
  * <!-- Twitter card -->
  * <meta name="twitter:card" content="summary_large_image" />
@@ -78,17 +76,17 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/twittercard/example.html');
 
-// Should print out 'summary_large_image'
+// In ra 'summary_large_image'
 echo $web->twitterCard['twitter:card'];
 
-// Should print out 'Lorem Ipsum'
+// In ra 'Lorem Ipsum'
 echo $web->twitterCard['twitter:title'];
 
 // The whole set.
 $data = $web->twitterCard;
 
 /**
- * $data contains now:
+ * $data chứa:
  *
  * [
  *     'twitter:card' => 'summary_large_image',
@@ -100,4 +98,4 @@ $data = $web->twitterCard;
  */
 ```
 
-In similar fashion to Open Graph, the array will be empty if no Twitter Card tags have been found.
+Tương tự như Open Graph, mảng sẽ trống nếu không tìm thấy thẻ Twitter Card.

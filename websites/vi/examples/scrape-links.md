@@ -6,11 +6,9 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https:
 
 Thu thập liên kết hoạt động tương tự như [thu thập hình ảnh](/examples/scrape-images.html. Bạn có thể lấy danh sách URL mà không có bất kỳ thông tin bổ sung nào cũng như danh sách chi tiết chứa `rel`, ` target` hay các thuộc tính khác.
 
-The scraping of links works very similar to [image scraping](/examples/scrape-images.html). You can retrieve a list of URL without any additional information as well as a detailed list containing `rel`, `target` as well as other attributes.
+## Danh sách liên kết đơn giản
 
-## Simple Link List
-
-The following example parses a web-page for links and returns an array of absolute URLs:
+Ví dụ sau phân tích trang web cho các liên kết và trả về một loạt các URL tuyệt đối:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -30,16 +28,16 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/links/target.html');
 
-// Print the number of links.
+// Số lượng liên kết.
 echo "This page contains " . count($web->links) . " links.\n\n";
 
-// Loop through the links
+// Lặp qua các liên kết
 foreach ($web->links as $link) {
     echo " - " . $link . "\n";
 }
 
 /**
- * Combined this will print out:
+ * Kết hợp điều này sẽ in ra:
  *
  * This page contains 6 links.
  *
@@ -52,24 +50,23 @@ foreach ($web->links as $link) {
  */
 ```
 
-If the page shouldn't contain any links, an empty array is returned.
+Nếu trang không được chứa bất kỳ liên kết nào, một mảng trống sẽ được trả về.
 
+## Liên kết và chi tiết
 
-## Links with Details
-
-If you are in need of more details you can access these in a similar way as on the images. Below is an example to access the detailed data of the first link on the page:
+Nếu bạn cần thêm thông tin chi tiết, bạn có thể truy cập chúng theo cách tương tự như trên hình ảnh. Dưới đây là ví dụ để truy cập dữ liệu chi tiết của liên kết đầu tiên trên trang:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains several links with different rel attributes. To save space only the first one:
+ * Điều hướng đến trang test. Trang này chứa một số liên kết với các thuộc tính rel khác nhau. Để tiết kiệm dung lượng, chỉ lấy link đầu tiên:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
 $web->go('https://test-pages.phpscraper.de/links/rel.html');
 
-// Get the first link on the page.
+// Lấy liên kết đầu tiên trên trang.
 $firstLink = $web->linksWithDetails[0];
 
 /**
@@ -89,20 +86,19 @@ $firstLink = $web->linksWithDetails[0];
  */
 ```
 
-If you require more data, you will either need to extend the library or submit an issue for consideration.
+Nếu bạn yêu cầu nhiều dữ liệu hơn, bạn sẽ cần phải mở rộng thư viện hoặc gửi issue để cùng thảo luận.
 
+## Liên kết nội bộ và liên kết bên ngoài
 
-## Internal Links and External Links
-
-PHPScraper allows to return only internal or external links. The internal links include links both the same root-domain as well as any sub-domain. If you are in need to get only the links within the exact sub-domain use [`subdomainLinks`](#sub-domain-links) instead. The following demonstrates both:
+PHPScraper chỉ cho phép trả về các liên kết bên trong hoặc bên ngoài. Các liên kết nội bộ bao gồm các liên kết trên cùng một tên miền gốc cũng như bất kỳ tên miền phụ nào. Nếu bạn chỉ cần lấy các liên kết trong việc sử dụng tên miền phụ thì sử dụng [`subdomainLinks`](#sub-domain-links). Xem các vị dụ sau:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page.
+// Điều hướng đến trang test.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
-// Get the list of internal links (in the example an image is linked)
+// Lấy tất cả liên kết nội bộ (trong ví dụ một hình ảnh được liên kết)
 var_dump($web->internalLinks);
 /**
  * [
@@ -110,7 +106,7 @@ var_dump($web->internalLinks);
  * ]
  */
 
-// Get the list of external links
+// Lấy tất cả liên kết bên ngoài
 var_dump($web->externalLinks);
 /**
  * [
@@ -119,14 +115,14 @@ var_dump($web->externalLinks);
  */
 ```
 
-## Sub-domain Links
+## Liên kết Sub-domain
 
-If you need you retrieve only links on the exact sub-domain you can use the `subdomainLinks`-method:
+Nếu bạn chỉ cần lấy các liên kết trên miền phụ, bạn có thể sử dụng phương thức `subdomainLinks`:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page.
+// Điều hướng đến trang test.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
 
 var_dump($web->subdomainLinks);
@@ -138,5 +134,5 @@ var_dump($web->subdomainLinks);
 ```
 
 ::: warning
-This might case issues when a site mixes links with *and* without 'www', as www is considered a sub-domain.
+Điều này có thể xảy ra sự cố khi một trang web kết hợp các liên kết có* và* mà không có 'www', vì www được coi là một miền phụ.
 :::
