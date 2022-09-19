@@ -5,35 +5,35 @@ image: https://api.imageee.com/bold?text=PHP%20Scraper:%20a%20web%20utility%20fo
 PHP Scraper: a web utility for PHP
 ==================================
 
-![PHP Scraper: a web utility for PHP](logo-light.png)
+![PHP Scraper: Bringing Simplicity back to Scraping and Crawling](logo-light.png)
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
-PHPScraper is a scraper library for PHP, built with simplicity in mind. This is an opinionated wrapper around some great PHP libraries to make accessing the web easier.
+PHPScraper is a web scraping library for PHP, built with simplicity in mind. Goal is to make xPath Selectors *optional* and avoid the commonly needed boilerplate code. Just create an instance of *PHPScraper* and start collecting data.
 
 The examples tell the story much better. Have a look!
 
 
-The Idea 💡️
-----------
+The Idea 💡️ What is PHP Scraper?
+--------------------------------
 
-Accessing websites and collecting simple information is often too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need. Web scraping with PHP re-imagined.
+Accessing websites and collecting simple information is often too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you'll need. Web scraping with PHP re-imagined.
 
 
 Supporters 💪️
 -------------
 
-This project is sponsored by:
+PHP Scraper is proudly supported by:
 
 <a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
 
 Want to sponsor this project? [Write me](https://peterthaleikis.com/contact).
 
 
-Some Examples
--------------
+Some Simple Examples
+--------------------
 
-Here are some examples of what the web scraping library can do at this point:
+Here are some examples of what PHPScraper can do for you:
 
 ### Scrape Meta Information:
 
@@ -105,7 +105,7 @@ The installation usually is done using [Composer](https://getcomposer.org).
 composer require spekulatius/phpscraper
 ```
 
-After the installation is completed the package will be picked up by the Composer autoloader. In typical PHP applications and frameworks such as Laravel or Symfony you can start scraping now. You can now use any of the noted examples or examples in the `tests/`-folder.
+After the installation is completed the package will be picked up by the Composer autoloader. In typical PHP applications and frameworks such as Laravel or Symfony you can start scraping now. You can use any of the examples or tests now.
 
 Please consider supporting PHPScraper with a star or [sponsorship](https://github.com/sponsors/spekulatius):
 
@@ -115,7 +115,7 @@ composer thanks
 
 ### Usage in VanillaPHP-Projects
 
-If you are building a VanillaPHP project, you will need to include the autoloader in your script at the top of your PHP script:
+If you are building a VanillaPHP project, you will need to include the autoloader at the top of your PHP script:
 
 ```php
 require 'vendor/autoload.php';
