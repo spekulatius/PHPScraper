@@ -55,7 +55,7 @@ module.exports = {
             title: 'Misceláneas',
             collapsable: true,
             children: [
-                'es/support/support',
+                'es/misc/support',
             ],
         },
     ]
