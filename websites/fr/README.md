@@ -1,5 +1,5 @@
 ---
-image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+image: https://api.imageee.com/bold?text=PHP%20Scraper:%20Rendre%20sa%20simplicité%20au%20Scraping%20et%20au%20Crawling&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
 PHP Scraper: Rendre sa simplicité au Scraping et au Crawling

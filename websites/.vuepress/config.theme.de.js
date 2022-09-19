@@ -53,10 +53,12 @@ module.exports = {
         },
         {
             title: 'usw',
-            collapsable: true,
+            collapsable: false,
             children: [
-                'de/support/more-examples',
-                'de/support/support',
+                'de/misc/sponsors',
+                'de/misc/tutorials',
+                'de/misc/show-case',
+                'de/misc/support',
             ],
         },
     ]
