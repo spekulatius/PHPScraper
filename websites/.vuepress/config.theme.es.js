@@ -53,8 +53,11 @@ module.exports = {
         },
         {
             title: 'Misceláneas',
-            collapsable: true,
+            collapsable: false,
             children: [
+                'es/misc/sponsors',
+                'es/misc/tutorials',
+                'es/misc/show-case',
                 'es/misc/support',
             ],
         },

@@ -33,6 +33,7 @@ module.exports = {
                 'examples/scrape-images',
                 'examples/scrape-links',
                 'examples/navigation',
+                'examples/custom-selectors',
             ],
         },
         {
@@ -53,8 +54,11 @@ module.exports = {
         },
         {
             title: 'MISC',
-            collapsable: true,
+            collapsable: false,
             children: [
+                'misc/sponsors',
+                'misc/tutorials',
+                'misc/show-case',
                 'misc/support',
             ],
         },
