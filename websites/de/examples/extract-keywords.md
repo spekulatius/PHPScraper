@@ -21,10 +21,10 @@ Das folgende Beispiel gibt eine Liste aller aus der Webseite extrahierten Keywor
 $web = new \spekulatius\phpscraper;
 
 // Navigation zur Testseite.
-// Sie enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
+// Diese enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// Überprüfen Sie die Anzahl der Schlüsselwörter.
+// Überprüfen der Anzahl der Schlüsselwörter.
 $keywords = $web->contentKeywords;
 echo "Diese Seite enthält mindestens" . count($keywords) . " Schlüsselwörter/Phrasen.\n\n";
 
@@ -80,10 +80,10 @@ PHPScraper ermöglicht es Ihnen, einen Hinweis auf die Gewichtung der Keywords i
 $web = new \spekulatius\phpscraper;
 
 // Navigation zur Testseite.
-// Sie enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
+// Diese enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// Überprüfen Sie die Anzahl der Schlüsselwörter.
+// Überprüfen der Anzahl der Schlüsselwörter.
 $keywords = $web->contentKeywordsWithScores;
 echo "Diese Seite enthält mindestens " . count($keywords) . " Schlüsselwörter/Phrasen.\n\n";
 

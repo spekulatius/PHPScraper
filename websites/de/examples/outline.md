@@ -145,7 +145,7 @@ $content = $web->outlineWithParagraphs;
 
 ## Extrahieren der bereinigten Gliederung mit Absätzen
 
-Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber sie enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
+Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber diese enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
 
 ```php
 $web = new \spekulatius\phpscraper;

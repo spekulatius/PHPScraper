@@ -53,7 +53,7 @@ Laden eines Website-Titels mit deutschen Umlauten
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigation zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
@@ -85,5 +85,5 @@ echo $web->title;
 ```
 
 ::: tip Tipp
-Entitäten und Sonderzeichen wurden in der gesamten Bibliothek berücksichtigt. Wenn Sie eine Stelle finden, an der diese nicht wie erwartet funktionieren, melden Sie dies bitte unter [issue](https://github.com/spekulatius/PHPScraper/issues).
+Entities und Sonderzeichen wurden in der gesamten Bibliothek berücksichtigt. Wenn Sie eine Stelle finden, an der diese nicht wie erwartet funktionieren, melden Sie dies bitte unter [issue](https://github.com/spekulatius/PHPScraper/issues).
 :::

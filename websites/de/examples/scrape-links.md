@@ -15,7 +15,7 @@ Das folgende Beispiel analysiert eine Webseite nach Links und gibt ein Array mit
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigation zur Testseite. Sie enthält 6 Links zu placekitten.com mit unterschiedlichen Attributen:
+ * Navigation zur Testseite. Diese enthält 6 Links zu placekitten.com mit unterschiedlichen Attributen:
  *
  * <h2>Different ways to wrap the attributes</h2>
  * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
