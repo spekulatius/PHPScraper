@@ -10,7 +10,7 @@ Das Scraping von Listen folgt einem ähnlichen Ansatz wie anderes Scraping mit P
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zu der Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h2>Example 1: Unordered List</h2>
  * <ul>

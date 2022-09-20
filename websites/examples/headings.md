@@ -36,7 +36,7 @@ The [website title](/examples/scrape-website-title.html) and heading 1 (`<h1>`) 
 
 ## Headings by Level
 
-There might be cases, in which you would like to retrieve all headings of a particular level. The example below shows you how to do so:
+There might be cases, in which all headings of a particular level should be retrieved. The example below shows how to do so:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -56,7 +56,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * Get the h3 headings:
+ * Return the h3 headings:
  *
  * [
  *    'Example 1',

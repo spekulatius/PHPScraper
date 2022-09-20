@@ -18,14 +18,13 @@ Auch wenn diese Schlüsselwörter extrahiert werden, bedeutet dies nicht, dass d
 Das folgende Beispiel gibt eine Liste aller aus der Webseite extrahierten Keywords zurück:
 
 ```php
-
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite.
-// Sie enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
+// Navigation zur Testseite.
+// Diese enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// Überprüfen Sie die Anzahl der Schlüsselwörter.
+// Überprüfen der Anzahl der Schlüsselwörter.
 $keywords = $web->contentKeywords;
 echo "Diese Seite enthält mindestens" . count($keywords) . " Schlüsselwörter/Phrasen.\n\n";
 
@@ -35,7 +34,7 @@ foreach ($keywords as $keyword) {
 }
 
 /**
- * Wird ausgedruckt:
+ * Ausgegeben wird:
  *
  * Diese Seite enthält mindestens 40 Schlüsselwörter/Phrasen.
  *
@@ -80,11 +79,11 @@ PHPScraper ermöglicht es Ihnen, einen Hinweis auf die Gewichtung der Keywords i
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite.
-// Sie enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
+// Navigation zur Testseite.
+// Diese enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// Überprüfen Sie die Anzahl der Schlüsselwörter.
+// Überprüfen der Anzahl der Schlüsselwörter.
 $keywords = $web->contentKeywordsWithScores;
 echo "Diese Seite enthält mindestens " . count($keywords) . " Schlüsselwörter/Phrasen.\n\n";
 
@@ -94,7 +93,7 @@ foreach ($keywords as $keyword => $score) {
 }
 
 /**
- * Wird ausgedruckt:
+ * Ausgegeben wird:
  *
  * Diese Seite enthält mindestens 40 Schlüsselwörter/Phrasen.
  *

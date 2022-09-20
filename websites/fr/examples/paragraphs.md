@@ -17,7 +17,7 @@ $web = new \spekulatius\phpscraper;
 // Naviguez vers la page de test. Elle contient 6 paragraphes lorem ipsum.
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
-// vérifier le nombre de paragraphes.
+// Vérifier le nombre de paragraphes.
 echo "Cette page contient " . count($web->paragraphs) . " paragraphes.\n\n";
 
 // Boucle à travers les paragraphes

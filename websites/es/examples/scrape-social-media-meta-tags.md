@@ -35,7 +35,7 @@ echo $web->openGraph['og:title'];
 // Debería imprimir "Lorem ipsum dolor etc.
 echo $web->openGraph['og:description'];
 
-// todo el conjunto:
+// Todo el conjunto:
 $data = $web->openGraph;
 
 /**

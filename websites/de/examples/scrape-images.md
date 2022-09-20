@@ -15,7 +15,7 @@ Das folgende Beispiel durchsucht eine Webseite nach Bildern und gibt absolute Bi
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält zwei Bilder:
+ * Navigation zur Testseite. Diese Seite enthält zwei Bilder:
  *
  * <img src="https://test-pages.phpscraper.de/assets/cat.jpg" alt="absolute path">
  * <img src="/assets/cat.jpg" alt="relative path">

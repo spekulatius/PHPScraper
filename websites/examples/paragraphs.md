@@ -14,13 +14,13 @@ The following example will return a list of all paragraphs (`<p>`-tags) on the w
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page. It contains 6 lorem ipsum paragraphs
+// Navigate to the test page. It contains 6 "lorem ipsum" paragraphs:
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
-// check the number of paragraphs.
+// Check the number of paragraphs:
 echo "This page contains " . count($web->paragraphs) . " paragraphs.\n\n";
 
-// Loop through the paragraphs
+// Loop through the paragraphs:
 foreach ($web->paragraphs as $paragraph) {
     echo " - " . $paragraph . "\n";
 }

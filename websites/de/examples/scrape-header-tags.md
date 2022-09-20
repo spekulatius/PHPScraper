@@ -15,7 +15,7 @@ Um auf den definierten Zeichensatz zuzugreifen, können Sie die folgende Methode
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <meta charset="utf-8" />
  */
@@ -28,20 +28,20 @@ echo $web->charset;     // "utf-8"
 
 ## Viewport
 
-In einigen Fällen, wie z. B. dem Ansichtsfenster und den Meta-Schlüsselwörtern, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
+In einigen Fällen, wie z.B. dem Viewport und den Meta-Keywords, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Holt das Ansichtsfenster als Array. Es sollte enthalten:
+ * Gibt den Viewport als Array zurück. Es beinhaltet:
  *
  * [
  *     'width=device-width',
@@ -61,7 +61,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Holt das Ansichtsfenster als String. Druckt:
+ * Gibt den Viewport als String zurück:
  *
  * "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
  */
@@ -77,7 +77,7 @@ Auf die kanonische URL kann, sofern vorhanden, wie im folgenden Beispiel gezeigt
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
  */
@@ -100,7 +100,7 @@ Um auf den Inhaltstyp zuzugreifen, können Sie die folgenden Funktionen nutzen:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  */
@@ -119,13 +119,13 @@ Die CSFR-Token-Methode geht davon aus, dass das Token in einem Meta-Tag mit dem 
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <meta name="csrf-token" content="token" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Holen Sie den csrfToken
+// Gibt den csrfToken aus:
 echo $web->csrfToken;     // "token"
 ```
 

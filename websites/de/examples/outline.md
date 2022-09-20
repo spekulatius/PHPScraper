@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Gliederung Extrahieren
 
-Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings.html) zugreifen möchten, um z. B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
+Auch wenn Sie nur auf die [`Überschriften`](/de/examples/headings.html) zugreifen möchten, um z.B. die Anzahl oder Länge der Überschriften zu verarbeiten, reicht dies nicht immer aus. In einigen Fällen müssen Sie vielleicht die tatsächliche Struktur des Inhalts ermitteln. Für diese Anwendungsfälle sollten Sie eine der folgenden Methoden in Betracht ziehen:
 
  - `outline` funktioniert ähnlich wie die zuvor erwähnte Methode `headings`. Sie gibt ebenfalls alle Überschriften zurück, behält aber die Struktur des Originaldokuments bei und liefert nur die Überschriftenebenen (z.B. `h1`) mit der Ausgabe.
 
@@ -23,7 +23,7 @@ Die Gliederung des Inhalts ermöglicht es Ihnen, einen Index des Dokuments zu er
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zu der Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * [...]
@@ -76,7 +76,7 @@ Die folgende Methode funktioniert ähnlich wie `outline`, aber sie schließt auc
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -145,13 +145,13 @@ $content = $web->outlineWithParagraphs;
 
 ## Extrahieren der bereinigten Gliederung mit Absätzen
 
-Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber sie enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
+Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber diese enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
