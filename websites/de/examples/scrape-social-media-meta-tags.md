@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_imag
 
 # Scraping von Social Media Meta-Tags
 
-Das Scraping von Social Media Sharing Tags von einer Website kann mit den folgenden Methoden durchgeführt werden. Die genaue Ergebnismenge hängt von den angegebenen Tags ab. Alle Tags werden berücksichtigt, solange sie sich im vorangestellten Namensraum befinden (z. B. `twitter:` für Twitter Cards).
+Das Scraping von Social Media Sharing Tags von einer Website kann mit den folgenden Methoden durchgeführt werden. Die genaue Ergebnismenge hängt von den angegebenen Tags ab. Alle Tags werden berücksichtigt, solange sie sich im vorangestellten Namensraum befinden (z.B. `twitter:` für TwitterCards).
 
 
 ## Open-Graph (OG) Daten
@@ -29,13 +29,13 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/og/example.html');
 
-// Sollte drucken 'Lorem Ipsum'
+// Gibt 'Lorem Ipsum' aus:
 echo $web->openGraph['og:title'];
 
-// Sollte drucken 'Lorem ipsum dolor etc.'
+// Gibt 'Lorem ipsum dolor etc.' aus:
 echo $web->openGraph['og:description'];
 
-// das ganze Set:
+// Das ganze OpenGraph-Set:
 $data = $web->openGraph;
 
 /**
@@ -59,7 +59,7 @@ Wurden keine Daten gefunden, wird das Array leer zurückgegeben.
 
 ## Twitter-Card Scrapen
 
-Das Parsen der Twitter Card funktioniert ähnlich:
+Das Parsen der TwitterCard funktioniert ähnlich:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -78,13 +78,13 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/twittercard/example.html');
 
-// Sollte ausgedruckt werden'summary_large_image'
+// Ausgegeben wird 'summary_large_image':
 echo $web->twitterCard['twitter:card'];
 
-// Sollte ausgedruckt werden 'Lorem Ipsum'
+// Ausgegeben wird 'Lorem Ipsum':
 echo $web->twitterCard['twitter:title'];
 
-// Der gesamte Satz.
+// Die gesamte TwitterCard:
 $data = $web->twitterCard;
 
 /**
@@ -100,4 +100,4 @@ $data = $web->twitterCard;
  */
 ```
 
-Ähnlich wie bei Open Graph wird das Array leer sein, wenn keine Twitter Card Tags gefunden wurden.
+Ähnlich wie bei Open Graph wird das Array leer sein, wenn keine TwitterCard Tags gefunden wurden.

@@ -23,7 +23,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Holen Sie den Titel. Dies sollte "Lorem Ipsum" zurückgeben.
+// Gibt den Titel zurück. Dies sollte "Lorem Ipsum" zurückgeben.
 var_dump($web->title);
 ```
 
@@ -38,7 +38,7 @@ $web = new \spekulatius\phpscraper;
 // Navigieren Sie zu der Testseite - diese enthält keinen Titel-Tag.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
-// Holen Sie den Titel. Dies sollte null zurückgeben.
+// Gibt den Titel zurück. Dies sollte null zurückgeben.
 var_dump($web->title);
 ```
 

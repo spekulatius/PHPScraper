@@ -28,7 +28,7 @@ echo $web->charset;     // "utf-8"
 
 ## Viewport
 
-In einigen Fällen, wie z. B. dem Ansichtsfenster und den Meta-Schlüsselwörtern, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
+In einigen Fällen, wie z.B. dem Viewport und den Meta-Keywords, stellt die Zeichenkette ein Array dar und wird als solches angegeben:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -41,7 +41,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Holt das Ansichtsfenster als Array. Es sollte enthalten:
+ * Gibt den Viewport als Array zurück. Es beinhaltet:
  *
  * [
  *     'width=device-width',
@@ -61,7 +61,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Holt das Ansichtsfenster als String. Druckt:
+ * Gibt den Viewport als String zurück:
  *
  * "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
  */
@@ -125,7 +125,7 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Holen Sie den csrfToken
+// Gibt den csrfToken aus:
 echo $web->csrfToken;     // "token"
 ```
 

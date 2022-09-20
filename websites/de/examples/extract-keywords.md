@@ -35,7 +35,7 @@ foreach ($keywords as $keyword) {
 }
 
 /**
- * Wird ausgedruckt:
+ * Ausgegeben wird:
  *
  * Diese Seite enthält mindestens 40 Schlüsselwörter/Phrasen.
  *
@@ -94,7 +94,7 @@ foreach ($keywords as $keyword => $score) {
 }
 
 /**
- * Wird ausgedruckt:
+ * Ausgegeben wird:
  *
  * Diese Seite enthält mindestens 40 Schlüsselwörter/Phrasen.
  *

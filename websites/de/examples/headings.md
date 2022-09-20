@@ -56,7 +56,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * Holen Sie sich die h3-Überschriften:
+ * Gibt die h3-Überschriften zurück:
  *
  * [
  *    'Example 1',

@@ -38,7 +38,7 @@ foreach ($web->links as $link) {
 }
 
 /**
- * Kombiniert wird dies ausgedruckt:
+ * Kombiniert wird dies ausgegeben:
  *
  * Diese Seite enthält 6 Links.
  *
