@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_imag
 
 # Thu thập thẻ Meta mạng xã hội
 
-Thu thập các thẻ meta chia sẻ mạng xã hội từ trang web bằng các phương thức sau. Kết quả phụ thuộc vào thẻ được cung cấp. Tất cả các thẻ đều được bao gồm, miễn là chúng nằm trong không gian tên có tiền tố (ví dụ: `twitter: 'dành cho Thẻ Twitter).
+Thu thập các thẻ meta chia sẻ mạng xã hội từ trang web bằng các phương thức sau. Kết quả phụ thuộc vào thẻ được cung cấp. Tất cả các thẻ đều được bao gồm, miễn là chúng nằm trong không gian tên có tiền tố (ví dụ: `twitter` dành cho Twitter Card).
 
 ## Dữ liệu Open-Graph (OG)
 
@@ -14,7 +14,7 @@ Lấy dữ liệu open-graph có thể làm như sau:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. Page contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <!-- open graph example -->
  * <meta property="og:site_name" content="Lorem ipsum" />
@@ -28,17 +28,17 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/og/example.html');
 
-// Should print 'Lorem Ipsum'
+// Sẽ in ra 'Lorem Ipsum'
 echo $web->openGraph['og:title'];
 
-// Should print 'Lorem ipsum dolor etc.'
+// Sẽ in ra 'Lorem ipsum dolor etc.'
 echo $web->openGraph['og:description'];
 
-// the whole set:
+// toàn bộ:
 $data = $web->openGraph;
 
 /**
- * $data now contains:
+ * bây giờ $data có:
  *
  * [
  *     'og:site_name' => 'Lorem ipsum',
@@ -82,7 +82,7 @@ echo $web->twitterCard['twitter:card'];
 // In ra 'Lorem Ipsum'
 echo $web->twitterCard['twitter:title'];
 
-// The whole set.
+// Toàn bộ.
 $data = $web->twitterCard;
 
 /**

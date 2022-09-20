@@ -14,13 +14,13 @@ Thẻ header thường chứa các thông tin hữu ích về trang web. Các v�
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <meta charset="utf-8" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Print the contentType
+// In contentType
 echo $web->charset;     // "utf-8"
 ```
 
@@ -32,14 +32,14 @@ Trong vài trường hợp, như viewport và các từ khóa meta, chuỗi sẽ
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Get the viewport as an array. It should contain:
+ * Lấy viewport dưới dạng mạng, nó sẽ in:
  *
  * [
  *     'width=device-width',
@@ -59,7 +59,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Get the viewport as a string. Prints:
+ * Lấy viewport dưới dạng string, nó sẽ in:
  *
  * "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
  */
@@ -74,13 +74,13 @@ Nếu URL chuẩn được tìm tháy, có thể lấy theo ví dụ bên dướ
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
  */
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
-// Print the canonical URL
+// In URL canonical
 echo $web->canonical;       // "https://test-pages.phpscraper.de/navigation/2.html"
 ```
 
@@ -96,13 +96,13 @@ Bạn có thể lấy kiểu nội dung của trang web bằng cách sử dụng
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Print the contentType
+// In contentType
 echo $web->contentType;     // "text/html; charset=utf-8"
 ```
 
@@ -114,13 +114,13 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <meta name="csrf-token" content="token" />
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Get the csrfToken
+// Lấy csrfToken
 echo $web->csrfToken;     // "token"
 ```
 

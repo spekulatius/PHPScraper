@@ -13,17 +13,16 @@ Bạn có thể điều hướng bất kỳ URL nào. Các URL này thường đ
 ```php
 $web = new \spekulatius\phpscraper;
 
-// We start on test page #1.
+// Bắt đầu bằng trang test #1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
-// Print the title to see if we actually at the right page...
+// In tiêu đề để xem chúng ta thực sự ở đúng trang hay không...
 echo $web->h1[0];   // 'Page #1'
 
-
-// We navigate to the test page #2 using the absolute URL.
+// Điều hướng đến trang test số 2 bằng cách sử dụng URL tuyệt đối.
 $web->clickLink('https://test-pages.phpscraper.de/navigation/2.html');
 
-// Print the title to see if we actually at the right page...
+// In tiêu đề để xem chúng ta thực sự ở đúng trang hay không...
 echo $web->h1[0];   // 'Page #2'
 ```
 
@@ -34,23 +33,23 @@ Bạn có thể sử dụng anchor text trên trang web để *nhấn* vào liê
 ```php
 $web = new \spekulatius\phpscraper;
 
-// We start on test page #1.
+// Bắt đầu bằng trang test #1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
 /**
- * This page contains:
+ * Trang này chứa:
  *
  * <a href="2.html">2 relative</a>
  */
 
-// Print the title to see if we actually at the right page...
+// In tiêu đề để xem chúng ta thực sự ở đúng trang hay không...
 echo $web->h1[0];   // 'Page #1'
 
 
 // We navigate to the test page #2 using the text it has on the page.
 $web->clickLink('2 relative');
 
-// Print the title to see if we actually at the right page...
+// In tiêu đề để xem chúng ta thực sự ở đúng trang hay không...
 echo $web->h1[0];   // 'Page #2'
 ```
 

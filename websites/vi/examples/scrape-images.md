@@ -14,7 +14,7 @@ Ví dụ sau đây sẽ trả về các hình ảnh trên trang web dưới dạ
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains two images:
+ * Điều hướng đến trang test. Trang này có 2 ảnh:
  *
  * <img src="https://test-pages.phpscraper.de/assets/cat.jpg" alt="absolute path">
  * <img src="/assets/cat.jpg" alt="relative path">
@@ -28,9 +28,9 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * ]
  *
  * @Note:
- * Double because it's twice the same image:
- * Once with a relative path and once with an absolute path.
- * The relative paths are resolved to absolute paths by default.
+ * Có hai cái vì hai ảnh giống nhau:
+ * Một ảnh đường dẫn tuyệt đối và một ảnh tương đối.
+ * Các đường dẫn tương đối sẽ đổi thành đường dẫn tuyệt đối.
  */
 var_dump($web->images);
 ```

@@ -13,11 +13,11 @@ Ví dụ rất đơn giản về cách lấy tiêu đề của một trang web:
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page - this one does contain a title-tag "Lorem Ipsum"
+// Điều hướng đến trang test - trang này có chứa thẻ title "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Contains:
+ * Trang này có:
  *
  * <title>Lorem Ipsum</title>
  */
@@ -34,7 +34,7 @@ var_dump($web->title);
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page - this one doesn't contain a title-tag.
+// Điều hướng đến trang test - trang này không có thẻ title.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
 // Lấy tiêu đề. Sẽ trả về null
@@ -42,7 +42,6 @@ var_dump($web->title);
 ```
 
 Ghi chú: Đây là hành vi mặc định: Nếu không tìm thấy thẻ vì thẻ bị thiếu trong mã nguồn HTML, thì `null` sẽ được trả về. Nếu một mục có thể lặp lại trống (ví dụ: cắt các hình ảnh từ một trang không có hình ảnh), một mảng trống sẽ được trả về.
-
 
 ## Ký tự đặc biệt
 
@@ -52,18 +51,17 @@ Lấy tiêu đề trang web bằng tiếng Đức Umlaut
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
-// Print the title: "A page with plenty of German umlaute everywhere (ä ü ö)"
+// In ra title: "A page with plenty of German umlaute everywhere (ä ü ö)"
 echo $web->title;
 ```
 
 Nó cũng hoạt động theo cách tương tự với bất kỳ ký tự UTF-8 nào.
-
 
 ## Thực thể HTML
 
@@ -73,13 +71,13 @@ Các thực thể HTML sẽ được giải quyết
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. Contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <title>Cat &amp; Mouse</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
-// Print the title: "Cat & Mouse"
+// Sẽ in ra: "Cat & Mouse"
 echo $web->title;
 ```
 

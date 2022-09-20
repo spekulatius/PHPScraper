@@ -14,7 +14,7 @@ Ví dụ sau phân tích trang web cho các liên kết và trả về một lo�
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains 6 links to placekitten.com with different attributes:
+ * Điều hướng đến trang test. Có 6 liên kết placekitten.com với các thuộc tính khác nhau:
  *
  * <h2>Different ways to wrap the attributes</h2>
  * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
@@ -70,7 +70,7 @@ $web->go('https://test-pages.phpscraper.de/links/rel.html');
 $firstLink = $web->linksWithDetails[0];
 
 /**
- * $firstLink contains now:
+ * bây giờ $firstLink có:
  *
  * [
  *     'url' => 'https://placekitten.com/432/287',

@@ -42,7 +42,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 /**
- * $outline will be set to contains:
+ * $outline sẽ thành:
  *
  * [
  *    [
@@ -98,7 +98,7 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 $content = $web->outlineWithParagraphs;
 /**
- * $content now contains:
+ * bây giờ $content chứa:
  *
  * [
  *    [
@@ -171,7 +171,7 @@ $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
 $content = $web->cleanOutlineWithParagraphs;
 /**
- * $content now contains:
+ * bây giờ $content chứa:
  *
  * [
  *    [

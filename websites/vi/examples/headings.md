@@ -18,7 +18,7 @@ Thu thập một heading đơn rất dễ dàng và được thực hiện theo 
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <title>Outline Test</title>
  */
@@ -40,7 +40,7 @@ Có thể có những trường hợp, trong đó bạn muốn truy xuất tất
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <h3>Example 1</h3>
  * <p>Here would be an example.</p>
@@ -54,7 +54,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * Get the h3 headings:
+ * Lấy các heading 3:
  *
  * [
  *    'Example 1',
@@ -75,7 +75,7 @@ Nếu không có heading nào, mảng sẽ rỗng:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -95,7 +95,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * $headings contains now:
+ * bây giờ $headings có:
  *
  * [
  *     [

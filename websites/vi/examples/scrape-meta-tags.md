@@ -18,7 +18,7 @@ Ví dụ bên dưới sẽ lấy ba thuộc tính:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <meta name="author" content="Lorem ipsum" />
  * <meta name="keywords" content="Lorem,ipsum,dolor" />
@@ -27,12 +27,11 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Get the information:
+// Lấy thông tin:
 echo $web->author;          // "Lorem ipsum"
 echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
-
 
 ## Meta Keywords
 
@@ -42,13 +41,13 @@ Thẻ meta keywords là một mảng và sẽ được phân chia tùy theo mong
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này chứa:
  *
  * <meta name="keywords" content="one, two, three">
  */
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
-// dump the keywords as an array
+// in các từ khóa dưới dạng một mảng
 var_dump($web->keywords);   // ['one', 'two', 'three']
 ```
 
@@ -58,7 +57,7 @@ Bạn có thể lấy chuỗi keywords gốc:
 $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
-// Print the keywords as string
+// In các từ khóa dưới dạng chuỗi
 echo $web->keywordString;   // "one, two, three"
 ```
 
@@ -72,7 +71,7 @@ Nếu bạn muốn lấy toàn bộ thuộc tính thẻ meta, bạn có thể t�
 
 ```php
 /**
- * get the meta collected as an array
+ * lấy meta được thu thập dưới dạng một mảng
  *
  * @return array
  */
@@ -95,7 +94,7 @@ $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);
 /**
- * Contains:
+ * Sẽ in:
  *
  * [
  *     'Lorem ipsum',

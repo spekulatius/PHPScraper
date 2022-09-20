@@ -21,12 +21,12 @@ Ví dụ sau sẽ trả về danh sách tất cả các từ khóa được trí
 $web = new \spekulatius\phpscraper;
 
 // Chuyển hướng đến trang test.
-// It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
+// Nó chứa 3 đoạn văn từ bài viết Wikipedia tiếng Anh cho "lorem ipsum"
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
 // số lượng từ khóa.
 $keywords = $web->contentKeywords;
-echo "This page contains at least " . count($keywords) . " keywords/phrases.\n\n";
+echo "Trang này chứa " . count($keywords) . " từ khóa.\n\n";
 
 // lặp các từ khóa
 foreach ($keywords as $keyword) {
@@ -36,7 +36,7 @@ foreach ($keywords as $keyword) {
 /**
  * Nó sẽ hiển thị:
  *
- * This page contains at least 40 keywords/phrases.
+ * Trang này chứa 40 từ khóa.
  *
  * [...]
  * - graphic
@@ -78,13 +78,13 @@ PHPScraper cho phép bạn lấy điểm số của từ khóa:
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigate to the test page.
-// It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
+// Điều hướng đến trang test.
+// Nó chứa 3 đoạn văn từ bài viết Wikipedia tiếng Anh cho "lorem ipsum"
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// check the number of keywords.
+// kiểm tra số lượng từ khóa.
 $keywords = $web->contentKeywordsWithScores;
-echo "This page contains at least " . count($keywords) . " keywords/phrases.\n\n";
+echo "Trang này chứa " . count($keywords) . " từ khóa.\n\n";
 
 // Loop through the keywords
 foreach ($keywords as $keyword => $score) {
@@ -92,9 +92,9 @@ foreach ($keywords as $keyword => $score) {
 }
 
 /**
- * Will print out:
+ * Sẽ in ra:
  *
- * This page contains at least 40 keywords/phrases.
+ * Trang này chứa 40 từ khóa.
  *
  * [...]
  *  - 1960s (1.0)
