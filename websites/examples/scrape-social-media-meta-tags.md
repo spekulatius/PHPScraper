@@ -29,13 +29,13 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/og/example.html');
 
-// Should print 'Lorem Ipsum'
+// Prints 'Lorem Ipsum':
 echo $web->openGraph['og:title'];
 
-// Should print 'Lorem ipsum dolor etc.'
+// Prints 'Lorem ipsum dolor etc.':
 echo $web->openGraph['og:description'];
 
-// the whole set:
+// The whole OpenGraph-set:
 $data = $web->openGraph;
 
 /**

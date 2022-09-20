@@ -49,7 +49,7 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
-// dump the keywords as an array
+// Dump the keywords as an array
 var_dump($web->keywords);   // ['one', 'two', 'three']
 ```
 

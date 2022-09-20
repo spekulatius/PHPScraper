@@ -14,7 +14,7 @@ Ein sehr einfaches Beispiel, wie man den Titel einer Website scrapen kann:
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite - diese enthält den Titel-Tag "Lorem Ipsum"
+// Navigation zur Testseite - diese enthält den Titel-Tag "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
@@ -23,7 +23,7 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  * <title>Lorem Ipsum</title>
  */
 
-// Holen Sie den Titel. Dies sollte "Lorem Ipsum" zurückgeben.
+// Gibt den Titel zurück. Dies sollte "Lorem Ipsum" zurückgeben.
 var_dump($web->title);
 ```
 
@@ -35,10 +35,10 @@ Fehlt der Titel, wird `null` zurückgegeben:
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite - diese enthält keinen Titel-Tag.
+// Navigation zur Testseite - diese enthält keinen Titel-Tag.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
-// Holen Sie den Titel. Dies sollte null zurückgeben.
+// Gibt den Titel zurück. Dies sollte null zurückgeben.
 var_dump($web->title);
 ```
 
@@ -53,13 +53,13 @@ Laden eines Website-Titels mit deutschen Umlauten
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <title>A page with plenty of German umlaute everywhere (ä ü ö)</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
-// Ausgeben Sie den Titel: "A page with plenty of German umlaute everywhere (ä ü ö)"
+// Ausgabe des Titels: "A page with plenty of German umlaute everywhere (ä ü ö)"
 echo $web->title;
 ```
 
@@ -74,16 +74,16 @@ HTML-Entities sollten aufgelöst werden
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Enthält:
+ * Navigation zur Testseite. Enthält:
  *
  * <title>Cat &amp; Mouse</title>
  */
 $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
-// Ausgeben Sie den Titel: "Cat & Mouse"
+// Ausgabe des Titels: "Cat & Mouse"
 echo $web->title;
 ```
 
 ::: tip Tipp
-Entitäten und Sonderzeichen wurden in der gesamten Bibliothek berücksichtigt. Wenn Sie eine Stelle finden, an der diese nicht wie erwartet funktionieren, melden Sie dies bitte unter [issue](https://github.com/spekulatius/PHPScraper/issues).
+Entities und Sonderzeichen wurden in der gesamten Bibliothek berücksichtigt. Wenn Sie eine Stelle finden, an der diese nicht wie erwartet funktionieren, melden Sie dies bitte unter [issue](https://github.com/spekulatius/PHPScraper/issues).
 :::

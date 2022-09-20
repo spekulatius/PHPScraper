@@ -1,5 +1,5 @@
 ---
-image: https://api.imageee.com/bold?text=PHPScraper:%20an%20highly%20opinionated%20web-interface&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+image: https://api.imageee.com/bold?text=PHP%20Scraper:%20Bringing%20Simplicity%20back%20to%20Scraping%20and%20Crawling&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
 PHP Scraper: Bringing Simplicity back to Scraping and Crawling
@@ -106,6 +106,12 @@ composer require spekulatius/phpscraper
 ```
 
 After the installation is completed the package will be picked up by the Composer autoloader. In typical PHP applications and frameworks such as Laravel or Symfony you can start scraping now. You can now use any of the noted examples or examples in the `tests/`-folder.
+
+Please consider supporting PHPScraper with a star or [sponsorship](https://github.com/sponsors/spekulatius):
+
+```bash
+composer thanks
+```
 
 ### Usage in VanillaPHP-Projects
 

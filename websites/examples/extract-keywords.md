@@ -24,7 +24,7 @@ $web = new \spekulatius\phpscraper;
 // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// check the number of keywords.
+// Check the number of keywords.
 $keywords = $web->contentKeywords;
 echo "This page contains at least " . count($keywords) . " keywords/phrases.\n\n";
 
@@ -83,7 +83,7 @@ $web = new \spekulatius\phpscraper;
 // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
-// check the number of keywords.
+// Check the number of keywords.
 $keywords = $web->contentKeywordsWithScores;
 echo "This page contains at least " . count($keywords) . " keywords/phrases.\n\n";
 

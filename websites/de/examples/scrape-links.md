@@ -15,7 +15,7 @@ Das folgende Beispiel analysiert eine Webseite nach Links und gibt ein Array mit
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält 6 Links zu placekitten.com mit unterschiedlichen Attributen:
+ * Navigation zur Testseite. Diese enthält 6 Links zu placekitten.com mit unterschiedlichen Attributen:
  *
  * <h2>Different ways to wrap the attributes</h2>
  * <p><a href="https://placekitten.com/408/287" target=_blank>external kitten</a></p>
@@ -38,7 +38,7 @@ foreach ($web->links as $link) {
 }
 
 /**
- * Kombiniert wird dies ausgedruckt:
+ * Kombiniert wird dies ausgegeben als:
  *
  * Diese Seite enthält 6 Links.
  *
@@ -62,7 +62,7 @@ Wenn Sie weitere Details benötigen, können Sie diese auf ähnliche Weise wie b
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält eine Reihe von Links mit unterschiedlichen rel-Attributen. Um Platz zu sparen, wird nur der erste Link angezeigt:
+ * Navigation zur Testseite. Diese Seite enthält eine Reihe von Links mit unterschiedlichen rel-Attributen. Um Platz zu sparen, wird nur der erste Link angezeigt:
  *
  * <a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>
  */
@@ -98,7 +98,7 @@ PHPScraper erlaubt es, nur interne oder externe Links zurückzugeben. Die intern
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zur Testseite.
+// Navigation zur Testseite.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
 // Abrufen der Liste der internen Links (im Beispiel ist ein Bild verlinkt)
@@ -125,7 +125,7 @@ Wenn Sie nur Links auf die exakte Subdomain abrufen wollen, können Sie die `sub
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zur Testseite.
+// Navigation zur Testseite.
 $web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
 
 var_dump($web->subdomainLinks);

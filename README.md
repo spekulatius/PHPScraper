@@ -113,4 +113,23 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
-See the [full documentation](https://phpscraper.de) for more information and many more examples.
+See the full documentation on the website for more information and many more examples.
+
+Installation
+------------
+
+[Composer](https://getcomposer.org) is used to install PHPScraper:
+
+```bash
+composer require spekulatius/phpscraper
+```
+
+After the installation, the package will be picked up by the Composer autoloader. You can start scraping now if you are using typical PHP applications or frameworks such as Laravel or Symfony. You can now use any of the examples on the website or examples in the [`tests/`-folder](https://github.com/spekulatius/PHPScraper/tree/master/tests).
+
+Please consider supporting PHPScraper with a star or [sponsorship](https://github.com/sponsors/spekulatius):
+
+```bash
+composer thanks
+```
+
+Thank you :muscle:

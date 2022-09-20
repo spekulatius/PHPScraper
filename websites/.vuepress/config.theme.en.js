@@ -53,10 +53,12 @@ module.exports = {
         },
         {
             title: 'MISC',
-            collapsable: true,
+            collapsable: false,
             children: [
-                'support/more-examples',
-                'support/support',
+                'misc/sponsors',
+                'misc/tutorials',
+                'misc/show-case',
+                'misc/support',
             ],
         },
     ]

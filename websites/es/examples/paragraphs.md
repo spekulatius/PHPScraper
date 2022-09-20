@@ -17,7 +17,7 @@ $web = new \spekulatius\phpscraper;
 // Navegue a la página de prueba. Contiene 6 párrafos lorem ipsum
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
-// comprueba el número de párrafos.
+// Comprueba el número de párrafos.
 echo "Esta página contiene " . count($web->paragraphs) . " párrafos.\n\n";
 
 // Recorrer los párrafos en bucle

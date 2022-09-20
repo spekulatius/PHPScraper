@@ -19,7 +19,7 @@ Das Einscannen einer einzelnen Überschrift ist einfach und kann anhand dieses B
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <title>Outline Test</title>
  */
@@ -36,13 +36,13 @@ Der [Website-Titel](/de/examples/scrape-website-title.html) und die Überschrift
 
 ## Rubriken nach Ebene
 
-Es kann Fälle geben, in denen Sie alle Überschriften einer bestimmten Ebene abrufen möchten. Das folgende Beispiel zeigt Ihnen, wie das geht:
+Es kann Fälle geben, die Überschriften einer bestimmten Ebene abgerufen werden sollen. Das folgende Beispiel zeigt, wie dies möglich ist:
 
 ```php
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Diese enthält:
  *
  * <h3>Example 1</h3>
  * <p>Here would be an example.</p>
@@ -56,7 +56,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/content/online.html');
 
 /**
- * Holen Sie sich die h3-Überschriften:
+ * Gibt die h3-Überschriften zurück:
  *
  * [
  *    'Example 1',
@@ -79,7 +79,7 @@ Um auf alle Rubriken einer Seite zuzugreifen, können Sie die verschiedenen Eben
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zu der Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>

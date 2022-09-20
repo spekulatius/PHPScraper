@@ -41,7 +41,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Get the viewport as an array. It should contain:
+ * Returns the viewport as an array. For the example it contains:
  *
  * [
  *     'width=device-width',
@@ -61,7 +61,7 @@ $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
- * Get the viewport as a string. Prints:
+ * Returns the viewport as a string. It prints:
  *
  * "width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"
  */
@@ -83,7 +83,7 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
-// Print the canonical URL
+// Print the canonical URL:
 echo $web->canonical;       // "https://test-pages.phpscraper.de/navigation/2.html"
 ```
 
@@ -106,7 +106,7 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Print the contentType
+// Print the contentType:
 echo $web->contentType;     // "text/html; charset=utf-8"
 ```
 
@@ -125,7 +125,7 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Get the csrfToken
+// Returns the csrfToken:
 echo $web->csrfToken;     // "token"
 ```
 
