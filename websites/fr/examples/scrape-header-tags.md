@@ -21,7 +21,7 @@ $web = new \spekulatius\phpscraper;
  */
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
-// Imprimez le contentType
+// Imprimez le charset
 echo $web->charset;     // "utf-8"
 ```
 
