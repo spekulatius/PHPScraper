@@ -39,7 +39,7 @@ Dưới đây là một số ví dụ về những gì mà thư viện cào web 
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. It contains:
+ * Điều hướng đến trang test. Trang này có:
  *
  * <meta name="author" content="Lorem ipsum" />
  * <meta name="keywords" content="Lorem,ipsum,dolor" />
@@ -63,7 +63,7 @@ Gần như mọi thông tin đều có thể lấy được trực tiếp, dư�
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigate to the test page. This page contains two images:
+ * Điều hướng đến trang test. Trang này có hai ảnh:
  *
  * <img src="https://test-pages.phpscraper.de/assets/cat.jpg" alt="absolute path">
  * <img src="/assets/cat.jpg" alt="relative path">
@@ -123,6 +123,6 @@ Trước khi bắt đầu, hãy đọc qua [hướng dẫn đóng góp](/contrib
 Tests: Đảm bảo nó hoạt động!
 ----------------------------
 
-The code is roughly covered with end-to-end tests. For this, simple web-pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
+Đoạn code này gần như được cover bởi tests từ đầu đến cuối. Đối với điều này, các trang web đơn giản được lưu trữ dưới *https://test-pages.phpscraper.de/*, được tải và phân tích cú pháp bằng cách sử dụng [PHPUnit](https://phpunit.de/). Các bài test này cũng thích hợp làm ví dụ - xem `tests/`!
 
 Điều này đang được nói, có lẽ có những trường hợp cạnh không hoạt động và có thể gây ra sự cố. Nếu bạn tìm thấy một lỗi, vui lòng nêu ra một lỗi trên GitHub.
