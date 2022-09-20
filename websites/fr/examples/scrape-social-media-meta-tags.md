@@ -35,7 +35,7 @@ echo $web->openGraph['og:title'];
 // Doit imprimer "Lorem ipsum dolor etc.".
 echo $web->openGraph['og:description'];
 
-// l'ensemble du jeu:
+// L'ensemble du jeu:
 $data = $web->openGraph;
 
 /**
