@@ -118,7 +118,7 @@ Nếu bạn đang sử dụng framework như Laravel, Symfony, Zend, Phalcon ho�
 Tìm thấy lỗi và muốn sửa nó? Tuyệt vời!
 ----------------------------------
 
-Trước khi bắt đầu, hãy đọc qua [hướng dẫn đóng góp](/contributing.html). Mọi thắc mắc vui lòng liên hệ.
+Trước khi bắt đầu, hãy đọc qua [hướng dẫn đóng góp](/vi/contributing.html). Mọi thắc mắc vui lòng liên hệ.
 
 Tests: Đảm bảo nó hoạt động!
 ----------------------------

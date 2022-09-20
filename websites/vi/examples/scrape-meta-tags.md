@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=
 
 # Thu thập thẻ Meta
 
-Việc lấy thẻ meta cũng giống như [thẻ header](/examples/scrape-header-tags.html). Bên dưới là một vài ví dụ:
+Việc lấy thẻ meta cũng giống như [thẻ header](/vi/examples/scrape-header-tags.html). Bên dưới là một vài ví dụ:
 
 ## Thẻ meta Author, Description và Image
 
@@ -62,7 +62,7 @@ echo $web->keywordString;   // "one, two, three"
 ```
 
 ::: tip
-Điều này chỉ đề cập đến các từ khóa trong thẻ meta "keywords". Bạn cũng có thể sử dụng PHPScraper để [lấy các từ khóa nội dung](/examples/extract-keywords.html)).
+Điều này chỉ đề cập đến các từ khóa trong thẻ meta "keywords". Bạn cũng có thể sử dụng PHPScraper để [lấy các từ khóa nội dung](/vi/examples/extract-keywords.html)).
 :::
 
 ## Kết hợp các thẻ meta
@@ -107,4 +107,4 @@ var_dump($web->metaTags);
 
 ## Các thẻ Meta bị thiếu
 
-Nếu bạn cần lấy thuộc tính thẻ meta khác, vui lòng đọc [contribution guidelines](/contributing.html) trước khi tạo pull request hoặc [issue trên github](https://github.com/spekulatius/phpscraper/issues).
+Nếu bạn cần lấy thuộc tính thẻ meta khác, vui lòng đọc [contribution guidelines](/vi/contributing.html) trước khi tạo pull request hoặc [issue trên github](https://github.com/spekulatius/phpscraper/issues).

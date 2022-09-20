@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Trích xuất outline
 
-Đôi khi bạn có thể chỉ muốn lấy [`đề mục`](/examples/headings.html) để xử lý, ví dụ, số lượng hoặc độ dài của các đề mục có thể không phải lúc nào cũng đủ. Trong một số trường hợp, bạn có thể cần xác định cấu trúc thực tế của nội dung. Đối với những trường hợp sử dụng này, bạn có thể muốn xem xét một trong những phương pháp sau:
+Đôi khi bạn có thể chỉ muốn lấy [`đề mục`](/vi/examples/headings.html) để xử lý, ví dụ, số lượng hoặc độ dài của các đề mục có thể không phải lúc nào cũng đủ. Trong một số trường hợp, bạn có thể cần xác định cấu trúc thực tế của nội dung. Đối với những trường hợp sử dụng này, bạn có thể muốn xem xét một trong những phương pháp sau:
 
  - `outline` hoạt động tương tự như phương pháp `đề mục` đã đề cập trước đó. Nó cũng trả về tất cả các đề mục, nhưng nó giữ nguyên cấu trúc của tài liệu gốc và cung cấp các cấp đề mục (ví dụ: `h1`) một mình với đầu ra.
 
@@ -12,7 +12,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
  - `cleanOutlineWithParagraphs` hoạt động tương tự như `outlineWithParagraphs`, sự khác biệt bất kỳ thẻ HTML trống nào sẽ bị xóa.
 
-Các ví dụ sau đây sẽ giúp hiểu rõ hơn về chức năng. Có các phương pháp dành riêng cho [trích xuất từ ​​khóa](/examples/extract-keywords.html).
+Các ví dụ sau đây sẽ giúp hiểu rõ hơn về chức năng. Có các phương pháp dành riêng cho [trích xuất từ ​​khóa](/vi/examples/extract-keywords.html).
 
 ## Trích xuất Outline
 

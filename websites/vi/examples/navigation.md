@@ -8,7 +8,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Navigate%20while%20Scraping&bg_i
 
 ## Sử dụng URL để điều hướng
 
-Bạn có thể điều hướng bất kỳ URL nào. Các URL này thường được lấy từ [phân tích liên kết](/examples/scrape-links.html).
+Bạn có thể điều hướng bất kỳ URL nào. Các URL này thường được lấy từ [phân tích liên kết](/vi/examples/scrape-links.html).
 
 ```php
 $web = new \spekulatius\phpscraper;

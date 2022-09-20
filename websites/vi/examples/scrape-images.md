@@ -65,7 +65,7 @@ var_dump($web->imagesWithDetails);
 ```
 
 ::: tip SEO
-Thuộc tính `alt` (với [từ khóa trong nội dung](/examples/extract-keywords.html)) được các công cụ tìm kiếm sử dụng cho các tìm kiếm dựa trên hình ảnh.
+Thuộc tính `alt` (với [từ khóa trong nội dung](/vi/examples/extract-keywords.html)) được các công cụ tìm kiếm sử dụng cho các tìm kiếm dựa trên hình ảnh.
 :::
 
 ## Lấy các thông tin còn thiếu

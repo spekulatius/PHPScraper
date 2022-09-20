@@ -144,4 +144,4 @@ public function headers()
 }
 ```
 
-Xem thêm thông tin về cách lấy [thẻ meta](/examples/scrape-meta-tags.html).
+Xem thêm thông tin về cách lấy [thẻ meta](/vi/examples/scrape-meta-tags.html).

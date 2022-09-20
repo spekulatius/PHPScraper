@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=http
 
 # Thu thập văn bản
 
-Thu thập nội dung và đa số là đoạn văn, có thể dễ dàng thu thập bằng PHPScraper. Có một phương pháp chuyên dụng để truy cập các đoạn văn (`` <p> `) trên một trang web. Các ví dụ bên dưới sẽ cho chúng ta thấy lấy nội dung/văn bản trên trang web.
+Thu thập nội dung và đa số là đoạn văn, có thể dễ dàng thu thập bằng PHPScraper. Có một phương pháp chuyên dụng để truy cập các đoạn văn (`<p>`) trên một trang web. Các ví dụ bên dưới sẽ cho chúng ta thấy lấy nội dung/văn bản trên trang web.
 
 ## Lấy toàn bộ đoạn văn
 

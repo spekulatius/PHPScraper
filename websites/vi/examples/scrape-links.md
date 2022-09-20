@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Links&bg_image=https:
 
 # Thu thập liên kết
 
-Thu thập liên kết hoạt động tương tự như [thu thập hình ảnh](/examples/scrape-images.html. Bạn có thể lấy danh sách URL mà không có bất kỳ thông tin bổ sung nào cũng như danh sách chi tiết chứa `rel`, ` target` hay các thuộc tính khác.
+Thu thập liên kết hoạt động tương tự như [thu thập hình ảnh](/vi/examples/scrape-images.html. Bạn có thể lấy danh sách URL mà không có bất kỳ thông tin bổ sung nào cũng như danh sách chi tiết chứa `rel`, ` target` hay các thuộc tính khác.
 
 ## Danh sách liên kết đơn giản
 

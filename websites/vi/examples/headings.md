@@ -29,7 +29,7 @@ echo $web->h1[0];          // "Outline Test"
 ```
 
 ::: tip
-[Tiêu đề trang web](/examples/scrape-website-title.html) và heading 1 (`<h1>`) có thể khác nhau. Đảm bảo rằng bạn truy xuất đúng.
+[Tiêu đề trang web](/vi/examples/scrape-website-title.html) và heading 1 (`<h1>`) có thể khác nhau. Đảm bảo rằng bạn truy xuất đúng.
 :::
 
 ## Heading theo cấp độ
@@ -117,4 +117,4 @@ $web->go('https://test-pages.phpscraper.de/content/online.html');
 $web->headings;
 ```
 
-Như bạn có thể thấy, phần này không chứa bất kỳ thông tin nào về cấu trúc của các heading. Nó hoàn toàn để biết những heading nào tồn tại. Nếu bạn muốn có một [outline](/examples/outline.html) bạn sẽ cần sử dụng các phương pháp liên quan.
+Như bạn có thể thấy, phần này không chứa bất kỳ thông tin nào về cấu trúc của các heading. Nó hoàn toàn để biết những heading nào tồn tại. Nếu bạn muốn có một [outline](/vi/examples/outline.html) bạn sẽ cần sử dụng các phương pháp liên quan.
