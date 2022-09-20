@@ -14,7 +14,7 @@ Das folgende Beispiel gibt eine Liste aller Absätze (`<p>`-Tags) auf der Websit
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite. Sie enthält 6 lorem ipsum-Absätze
+// Navigation zur Testseite. Sie enthält 6 lorem ipsum-Absätze
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 // Überprüfen Sie die Anzahl der Absätze.

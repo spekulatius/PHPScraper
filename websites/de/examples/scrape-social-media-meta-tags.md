@@ -15,7 +15,7 @@ Das Abrufen von Open-Graph-Daten kann durchgeführt werden:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Die Seite enthält:
+ * Navigation zur Testseite. Die Seite enthält:
  *
  * <!-- open graph example -->
  * <meta property="og:site_name" content="Lorem ipsum" />
@@ -65,7 +65,7 @@ Das Parsen der TwitterCard funktioniert ähnlich:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Die Seite enthält die folgende Twitter-Karte:
+ * Navigation zur Testseite. Die Seite enthält die folgende Twitter-Karte:
  *
  * <!-- Twitter-Karte -->
  * <meta name="twitter:card" content="summary_large_image" />

@@ -23,7 +23,7 @@ Die Gliederung des Inhalts ermöglicht es Ihnen, einen Index des Dokuments zu er
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zu der Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * [...]
@@ -76,7 +76,7 @@ Die folgende Methode funktioniert ähnlich wie `outline`, aber sie schließt auc
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>
@@ -151,7 +151,7 @@ Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber sie
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Diese Seite enthält:
+ * Navigation zur Testseite. Diese Seite enthält:
  *
  * <h1>We are testing here!</h1>
  * <p>This page contains an example structure to be parsed. It comes with a number of headings and nested paragraphs as an scrape example.</p>

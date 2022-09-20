@@ -19,7 +19,7 @@ Das folgende Beispiel zeigt die Extraktion von drei Attributen:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <meta name="author" content="Lorem ipsum" />
  * <meta name="keywords" content="Lorem,ipsum,dolor" />
@@ -43,7 +43,7 @@ Der Meta-Tag keywords ist natürlich ein Array und wird zu Ihrer Bequemlichkeit 
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <meta name="keywords" content="one, two, three">
  */

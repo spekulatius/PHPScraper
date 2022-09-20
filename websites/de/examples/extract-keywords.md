@@ -18,10 +18,9 @@ Auch wenn diese Schlüsselwörter extrahiert werden, bedeutet dies nicht, dass d
 Das folgende Beispiel gibt eine Liste aller aus der Webseite extrahierten Keywords zurück:
 
 ```php
-
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite.
+// Navigation zur Testseite.
 // Sie enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
@@ -80,7 +79,7 @@ PHPScraper ermöglicht es Ihnen, einen Hinweis auf die Gewichtung der Keywords i
 ```php
 $web = new \spekulatius\phpscraper;
 
-// Navigieren Sie zu der Testseite.
+// Navigation zur Testseite.
 // Sie enthält 3 Absätze aus dem englischen Wikipedia-Artikel zu "lorem ipsum".
 $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 

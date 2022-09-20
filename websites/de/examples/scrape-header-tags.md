@@ -15,7 +15,7 @@ Um auf den definierten Zeichensatz zuzugreifen, können Sie die folgende Methode
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <meta charset="utf-8" />
  */
@@ -34,7 +34,7 @@ In einigen Fällen, wie z.B. dem Viewport und den Meta-Keywords, stellt die Zeic
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no" />
  */
@@ -77,7 +77,7 @@ Auf die kanonische URL kann, sofern vorhanden, wie im folgenden Beispiel gezeigt
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
  */
@@ -100,7 +100,7 @@ Um auf den Inhaltstyp zuzugreifen, können Sie die folgenden Funktionen nutzen:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  */
@@ -119,7 +119,7 @@ Die CSFR-Token-Methode geht davon aus, dass das Token in einem Meta-Tag mit dem 
 $web = new \spekulatius\phpscraper;
 
 /**
- * Navigieren Sie zur Testseite. Sie enthält:
+ * Navigation zur Testseite. Sie enthält:
  *
  * <meta name="csrf-token" content="token" />
  */
