@@ -50,6 +50,11 @@ module.exports = {
             title: 'PHP Scraper: Simplifier les opérations de scraping et de crawling',
             description: 'PHP Scraper offre un moyen plus simple de récupérer et d\'analyser des sites web en utilisant PHP.'
         },
+        '/vi/': {
+            lang: 'vi',
+            title: 'PHP Scraper: Đưa sự đơn giản trở lại Thu thập và Cào',
+            description: 'PHP Scraper đang cung cấp một cách dễ dàng phân tích và thu thập dữ liệu các trang web bằng PHP.'
+        },
     },
     themeConfig: {
         domain: 'https://phpscraper.de',
@@ -69,6 +74,9 @@ module.exports = {
             },
             '/fr/': {
                 ...require('./config.theme.fr')
+            },
+            '/vi/': {
+                ...require('./config.theme.vi')
             },
         }
     }
