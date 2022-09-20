@@ -12,7 +12,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
  - `cleanOutlineWithParagraphs` hoạt động tương tự như `outlineWithParagraphs`, sự khác biệt bất kỳ thẻ HTML trống nào sẽ bị xóa.
 
-Các ví dụ sau đây sẽ giúp hiểu rõ hơn về chức năng. Có các phương pháp dành riêng cho [trích xuất từ ​​khóa](/vi/examples/extract-keywords.html).
+Các ví dụ sau đây sẽ giúp hiểu rõ hơn về chức năng. Có các phương pháp dành riêng cho [trích xuất từ khóa](/vi/examples/extract-keywords.html).
 
 ## Trích xuất Outline
 
