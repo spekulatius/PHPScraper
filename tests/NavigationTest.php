@@ -31,13 +31,13 @@ class NavigationTest extends BaseTest
     {
         $web = new \spekulatius\phpscraper();
 
-        // Navigate to test page 1.
+        // Navigate to test page #1.
         $web->go($this->url . '/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
         $this->assertSame('Page #1', $web->h1[0]);
 
-        // Navigate to test page #1 using the absolute link.
+        // Navigate to test page #2 using the relative link.
         $web->clickLink('2 relative');
 
         // Check the title to see if we actually moved...
@@ -51,7 +51,7 @@ class NavigationTest extends BaseTest
     {
         $web = new \spekulatius\phpscraper();
 
-        // Navigate to test page 2.
+        // Navigate to test page #2.
         $web->go($this->url . '/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
@@ -72,7 +72,7 @@ class NavigationTest extends BaseTest
     {
         $web = new \spekulatius\phpscraper();
 
-        // Navigate to test page 2.
+        // Navigate to test page #2.
         $web->go($this->url . '/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
@@ -93,7 +93,7 @@ class NavigationTest extends BaseTest
     {
         $web = new \spekulatius\phpscraper();
 
-        // Navigate to the test page.
+         // Navigate to test page #2.
         $web->go($this->url . '/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
