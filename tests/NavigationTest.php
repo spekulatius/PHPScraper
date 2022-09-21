@@ -93,7 +93,7 @@ class NavigationTest extends BaseTest
     {
         $web = new \spekulatius\phpscraper();
 
-         // Navigate to test page #2.
+        // Navigate to test page #2.
         $web->go($this->url . '/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
