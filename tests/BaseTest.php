@@ -39,16 +39,4 @@ class BaseTest extends TestCase
             $this->servingProcess->stop(0);
         }
     }
-
-    /**
-     * @test
-     */
-    public function testPageMissing()
-    {
-        $web = new \spekulatius\phpscraper();
-
-        // Navigate to the test page.
-        $web->go($this->url . '/page-does-not-exist.html');
-        $this->assertSame('404 Not Found', $web->title);
-    }
 }
