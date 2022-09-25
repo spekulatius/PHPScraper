@@ -166,7 +166,7 @@ class core
     }
 
     /**
-     * Filters the current page by a parameter and returns the first one, or null.
+     * Filters the current page by a xPath-query and returns the first one, or null.
      *
      * @param string $filter
      * @return Crawler|null
@@ -179,7 +179,7 @@ class core
     }
 
     /**
-     * Filters the current page by a parameter and returns the first ones content, or null.
+     * Filters the current page by a xPath-query and returns the first ones content, or null.
      *
      * @param string $filter
      * @return string|null
@@ -192,7 +192,7 @@ class core
     }
 
     /**
-     * Filters the current page by a parameter and returns the first ones content, or null.
+     * Filters the current page by a xPath-query and returns the first ones content, or null.
      *
      * @param string $filter
      * @param array $attributes
@@ -206,7 +206,7 @@ class core
     }
 
     /**
-     * Filters the current page by a parameter and returns the first ones content, or null.
+     * Filters the current page by a xPath-query and returns the first ones content, or null.
      *
      * @param string $filter
      * @param array $attributes
