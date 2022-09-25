@@ -155,7 +155,7 @@ class core
     }
 
     /**
-     * Filters the current page by a parameter
+     * Filters the current page by a xPath-query
      *
      * @param string $filter
      * @return Crawler
@@ -189,6 +189,17 @@ class core
         $filtered = $this->filter($query);
 
         return ($filtered->count() == 0) ? null : $filtered->first()->text();
+    }
+
+    /**
+     * Filters the current page by a xPath-query and returns the textual content as array.
+     *
+     * @param string $filter
+     * @return array
+     */
+    public function filterTexts(string $query): array
+    {
+        return $this->filterExtractAttributes($query, ['_text']);
     }
 
     /**
@@ -231,7 +242,7 @@ class core
     }
 
     /**
-     * Access conviences: Methods, to access data easier.
+     * Access conveniences: Methods, to access data easier.
      *
      * I like to have direct access to stuff without many chained calls.
      * So I've added a number of things which might be of interest.

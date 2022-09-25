@@ -15,9 +15,9 @@ class NotFoundTest extends TestCase
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/page-does-not-exist.html');
+        $web->go('https://test-pages.phpscraper.de/page-does-not-exist.html');
 
         // The built-in server returns this string.
-        $this->assertSame('404 Not Found', $web->title);
+        $this->assertSame('Page Not Found', $web->title);
     }
 }

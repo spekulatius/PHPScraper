@@ -39,4 +39,12 @@ class BaseTest extends TestCase
             $this->servingProcess->stop(0);
         }
     }
+
+    /**
+     * @test
+     */
+    public function stubTest()
+    {
+        $this->assertSame(true, true);
+    }
 }
