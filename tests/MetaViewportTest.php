@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class MetaViewportTest extends BaseTest
+class MetaViewportTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class MetaViewportTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Go to the test page
-        $web->go($this->url . '/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // null if there isn't a viewport set.
         $this->assertSame(null, $web->viewportString);
@@ -30,7 +30,7 @@ class MetaViewportTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/lorem-ipsum.html');
+        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the viewport
         $this->assertSame(

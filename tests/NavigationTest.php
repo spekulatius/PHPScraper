@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class NavigationTest extends BaseTest
+class NavigationTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class NavigationTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page #1.
-        $web->go($this->url . '/navigation/1.html');
+        $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
         $this->assertSame('Page #1', $web->h1[0]);
@@ -32,7 +32,7 @@ class NavigationTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page #1.
-        $web->go($this->url . '/navigation/1.html');
+        $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
         $this->assertSame('Page #1', $web->h1[0]);
@@ -52,7 +52,7 @@ class NavigationTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page #2.
-        $web->go($this->url . '/navigation/2.html');
+        $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
         $this->assertSame('Page #2', $web->h1[0]);
@@ -73,7 +73,7 @@ class NavigationTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page #2.
-        $web->go($this->url . '/navigation/2.html');
+        $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
         $this->assertSame('Page #2', $web->h1[0]);
@@ -94,7 +94,7 @@ class NavigationTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to test page #2.
-        $web->go($this->url . '/navigation/2.html');
+        $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
         $this->assertSame('Page #2', $web->h1[0]);

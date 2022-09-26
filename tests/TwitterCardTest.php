@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class TwitterCardTest extends BaseTest
+class TwitterCardTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class TwitterCardTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Go to the test page
-        $web->go($this->url . '/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Empty array, because there aren't any twitter cards props set.
         $this->assertTrue(is_iterable($web->twitterCard));
@@ -27,7 +27,7 @@ class TwitterCardTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/twittercard/example.html');
+        $web->go('https://test-pages.phpscraper.de/twittercard/example.html');
 
         // Check elements
         $this->assertSame('summary_large_image', $web->twitterCard['twitter:card']);
@@ -39,8 +39,8 @@ class TwitterCardTest extends BaseTest
                 'twitter:card' => 'summary_large_image',
                 'twitter:title' => 'Lorem Ipsum',
                 'twitter:description' => 'Lorem ipsum dolor etc.',
-                'twitter:url' => $this->url . '/meta/lorem-ipsum.html',
-                'twitter:image' => $this->url . '/assets/cat.jpg',
+                'twitter:url' => 'https://test-pages.phpscraper.de/meta/lorem-ipsum.html',
+                'twitter:image' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
             ],
             $web->twitterCard
         );

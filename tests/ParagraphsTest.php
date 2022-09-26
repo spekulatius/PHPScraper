@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class ParagraphsTest extends BaseTest
+class ParagraphsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -32,7 +32,7 @@ class ParagraphsTest extends BaseTest
          * <!-- an empty paragraph to check if it gets filtered out correctly -->
          * <p></p>
          */
-        $web->go($this->url . '/content/outline.html');
+        $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
         // Get the paragraphs
         $this->assertSame([
@@ -73,7 +73,7 @@ class ParagraphsTest extends BaseTest
          * <!-- an empty paragraph to check if it gets filtered out correctly -->
          * <p></p>
          */
-        $web->go($this->url . '/content/outline.html');
+        $web->go('https://test-pages.phpscraper.de/content/outline.html');
 
         // Get the cleaned up paragraphs
         $this->assertSame([

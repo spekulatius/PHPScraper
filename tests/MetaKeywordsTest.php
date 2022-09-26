@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class MetaKeywordTest extends BaseTest
+class MetaKeywordTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Go to the test page
-        $web->go($this->url . '/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // null if there aren't any keywords set.
         $this->assertSame(null, $web->keywordString);
@@ -30,7 +30,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/keywords/parse-no-spaces.html');
+        $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-no-spaces.html');
 
         // Check the keywords on this case...
         $this->assertSame("one,two,three", $web->keywordString);
@@ -45,7 +45,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/keywords/parse-spaces.html');
+        $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
         // Check the keywords on this case...
         $this->assertSame("one, two, three", $web->keywordString);
@@ -60,7 +60,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/keywords/parse-irregular-spaces.html');
+        $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-irregular-spaces.html');
 
         // Check the keywords on this case...
         $this->assertSame("one, two,   three", $web->keywordString);
@@ -75,7 +75,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/html-entities.html');
+        $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
         // Check the keywords
         $this->assertSame(['Cat & Mouse', 'Mouse & Cat'], $web->keywords);
@@ -89,7 +89,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/lorem-ipsum.html');
+        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the keywords
         $this->assertSame(['Lorem', 'ipsum', 'dolor'], $web->keywords);
@@ -103,7 +103,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/german-umlaute.html');
+        $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
         // Check the keywords
         $this->assertSame(['keywords', 'schlüsselwörter'], $web->keywords);
@@ -117,7 +117,7 @@ class MetaKeywordTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/chinese-characters.html');
+        $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
 
         // Check the keywords
         $this->assertSame(['加油', '貓'], $web->keywords);

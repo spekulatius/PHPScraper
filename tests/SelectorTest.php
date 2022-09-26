@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class SelectorTest extends BaseTest
+class SelectorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class HeadingTest extends BaseTest
+class HeadingTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class HeadingTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/no-meta.html');
 
         // Check the missing headers (h1 actually exists on the page).
         $this->assertSame([], $web->h2);
@@ -30,7 +30,7 @@ class HeadingTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/html-entities.html');
+        $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
         // Check the h1
         $this->assertSame('We are testing here & elsewhere!', $web->h1[0]);
@@ -64,7 +64,7 @@ class HeadingTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/lorem-ipsum.html');
+        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the h1
         $this->assertSame('We are testing here!', $web->h1[0]);
@@ -85,7 +85,7 @@ class HeadingTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/german-umlaute.html');
+        $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
         // Check the h1
         $this->assertSame('We are testing here ä ü ö!', $web->h1[0]);
@@ -106,7 +106,7 @@ class HeadingTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/chinese-characters.html');
+        $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
 
         // Check the h1
         $this->assertSame('We are testing here! 加油!', $web->h1[0]);
