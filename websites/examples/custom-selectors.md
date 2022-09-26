@@ -22,7 +22,7 @@ $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 echo $web->filter("//*[@id='by-id']")->text();   // "Content by ID"
 ```
 
-::: Tip
+::: tip
 This example uses `->text()` to get the textual content. You can also sub-select items on the same [html5](https://github.com/Masterminds/html5-php) element.
 :::
 
@@ -46,7 +46,7 @@ echo $web->filterFirst("//h1")->text();     // 'Selector Tests (h1)'
 echo $web->filterTexts("//h1");             // ['Selector Tests (h1)']
 ```
 
-::: Note
+::: tip
 While SEO best practices recommend having only one `<h1>`-tag per page, it is still technically possible to have multiple. To ensure you are able to scrap any number of headings this method will return a list instead of a string.
 :::
 
