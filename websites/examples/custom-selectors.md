@@ -68,8 +68,10 @@ echo $web->filter("//*[@class='by-class']");   // "Selector Tests"
 
 ### `PHP Fatal error: Uncaught InvalidArgumentException: The current node list is empty.`
 
-This will happen if your current selection is empty. This means, no element
+This will happen if your current selection is empty. This means, no element was found matching your query.
 
 ### `PHP Warning: DOMXPath::query(): Invalid expression`
 
-This usually means your xPath is incorrect. Usually, this error occurs in `vendor/symfony/dom-crawler/Crawler.php on line 919`. The examples above show the required format, including the Asterix: `//*[...]`.
+This usually means your xPath is incorrect. Usually, this error occurs in `vendor/symfony/dom-crawler/Crawler.php on line 919`.
+
+Make sure to format the xPath query correctly. The examples above show the required format, including the Asterix: `//*[...]`.
