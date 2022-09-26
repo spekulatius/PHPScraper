@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class ListsTest extends BaseTest
+class ListsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -28,7 +28,7 @@ class ListsTest extends BaseTest
          *     <li>Order list item with <i>HTML</i></li>
          * </ol>
          */
-        $web->go($this->url . '/content/lists.html');
+        $web->go('https://test-pages.phpscraper.de/content/lists.html');
 
         // Check all lists are recognized
         $this->assertSame(count($web->lists), 2);

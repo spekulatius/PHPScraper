@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class CoreTest extends BaseTest
+class CoreTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

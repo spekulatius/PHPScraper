@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class MetaImageTest extends BaseTest
+class MetaImageTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -26,7 +26,7 @@ class MetaImageTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the absolute image path
         $this->assertSame(null, $web->image);
@@ -40,10 +40,10 @@ class MetaImageTest extends BaseTest
         $web = new \spekulatius\phpscraper();
 
         // Navigate to the test page.
-        $web->go($this->url . '/meta/image/absolute-path.html');
+        $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path.html');
 
         // Check the absolute image path
-        $this->assertSame("$this->url/assets/cat.jpg", $web->image);
+        $this->assertSame("https://test-pages.phpscraper.de/assets/cat.jpg", $web->image);
     }
 
     // /**
@@ -54,7 +54,7 @@ class MetaImageTest extends BaseTest
     //     $web = new \spekulatius\phpscraper();
 
     //     // Navigate to the test page.
-    //     $web->go($this->url . '/meta/image/relative-path.html');
+    //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
 
     //     // Check the relative image path
     //     $this->assertSame("$this->url/assets/cat.jpg", $web->image);
@@ -68,7 +68,7 @@ class MetaImageTest extends BaseTest
     //     $web = new \spekulatius\phpscraper();
 
     //     // Navigate to the test page.
-    //     $web->go($this->url . '/meta/image/absolute-path-with-base-href.html');
+    //     $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
     //     $this->assertNotSame("Page Not Found", $web->title);
 
     //     // Check the absolute image path
@@ -83,7 +83,7 @@ class MetaImageTest extends BaseTest
     //     $web = new \spekulatius\phpscraper();
 
     //     // Navigate to the test page.
-    //     $web->go($this->url . '/meta/image/relative-path-with-base-href.html');
+    //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path-with-base-href.html');
     //     $this->assertNotSame("Page Not Found", $web->title);
 
     //     // Check the relative image path
