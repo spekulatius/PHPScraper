@@ -9,7 +9,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testNoLinks()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/no-links.html');
@@ -24,7 +24,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testTarget()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/target.html');
@@ -131,7 +131,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testRel()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         // This page contains several links with different rel attributes.
@@ -225,7 +225,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testBaseHref()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -289,7 +289,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testImageUrl()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/image-url.html');
@@ -354,7 +354,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testInternalLinks()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -371,7 +371,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      */
     public function testExternalLinks()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');

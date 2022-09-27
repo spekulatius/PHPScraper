@@ -9,7 +9,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testCallMethodsAreEqual()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Attempt to my blog
         $web->go('https://peterthaleikis.com');
@@ -23,7 +23,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testMissingImage()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -37,7 +37,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testAbsolutePath()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path.html');
@@ -51,7 +51,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
     //  */
     // public function testRelativePath()
     // {
-    //     $web = new \spekulatius\phpscraper();
+    //     $web = new \spekulatius\phpscraper;
 
     //     // Navigate to the test page.
     //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
@@ -65,7 +65,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
     //  */
     // public function testAbsolutePathWithBaseHref()
     // {
-    //     $web = new \spekulatius\phpscraper();
+    //     $web = new \spekulatius\phpscraper;
 
     //     // Navigate to the test page.
     //     $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
@@ -80,7 +80,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
     //  */
     // public function testRelativePathBaseHref()
     // {
-    //     $web = new \spekulatius\phpscraper();
+    //     $web = new \spekulatius\phpscraper;
 
     //     // Navigate to the test page.
     //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path-with-base-href.html');

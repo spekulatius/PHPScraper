@@ -9,7 +9,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testSurfWithAbsoluteLink()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page #1.
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -29,7 +29,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testSurfWithRelativeLink()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page #1.
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -49,7 +49,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testLeavePageByText()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -70,7 +70,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testLeavePageWithRedirect()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -91,7 +91,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testLeavePageByURL()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');

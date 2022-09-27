@@ -9,7 +9,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
      */
     public function testMethodAndPropertyCallsAreEqual()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page
         $web->go('https://phpscraper.de');
@@ -26,7 +26,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
      */
     public function testChangeOfCurrentPage()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to test page
         $web->go('https://phpscraper.de');

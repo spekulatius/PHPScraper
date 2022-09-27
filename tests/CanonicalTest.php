@@ -9,7 +9,7 @@ class CanonicalTest extends \PHPUnit\Framework\TestCase
      */
     public function testMissingCanonical()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Go to the test page
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -23,7 +23,7 @@ class CanonicalTest extends \PHPUnit\Framework\TestCase
      */
     public function testProvided()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         // It contains: <link rel="canonical" href="http://localhost:8089/navigation/2.html" />

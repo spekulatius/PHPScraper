@@ -9,7 +9,7 @@ class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
      */
     public function testMissingCharset()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -23,7 +23,7 @@ class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
      */
     public function testProvided()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
