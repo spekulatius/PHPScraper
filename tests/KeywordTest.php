@@ -9,7 +9,7 @@ class KeywordTest extends \PHPUnit\Framework\TestCase
      */
     public function testKeywordExtraction()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
@@ -51,7 +51,7 @@ class KeywordTest extends \PHPUnit\Framework\TestCase
      */
     public function testKeywordExtractionWithScores()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"

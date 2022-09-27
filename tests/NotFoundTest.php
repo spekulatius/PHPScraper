@@ -12,7 +12,7 @@ class NotFoundTest extends TestCase
      */
     public function testPageMissing()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/page-does-not-exist.html');

@@ -9,7 +9,7 @@ class ParagraphsTest extends \PHPUnit\Framework\TestCase
      */
     public function paragraphTest()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         /**
          * Navigate to the test page. This page contains:
@@ -50,7 +50,7 @@ class ParagraphsTest extends \PHPUnit\Framework\TestCase
      */
     public function cleanParagraphTest()
     {
-        $web = new \spekulatius\phpscraper();
+        $web = new \spekulatius\phpscraper;
 
         /**
          * Navigate to the test page. This page contains:
