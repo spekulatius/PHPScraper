@@ -8,6 +8,10 @@ While PHP Scraper supports various simple and xPath-free options to access conte
 
 The following examples of custom selectors should be seen as a starting point for any custom information you need to scrape.
 
+::: tip
+If you are struggling with xPath, you might find [this cheatsheet](https://devhints.io/xpath) useful.
+:::
+
 
 ## Select an element using the ID attribute
 
