@@ -68,14 +68,18 @@ $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 echo $web->filter("//*[@class='by-class']");   // "Selector Tests"
 ```
 
-## Troubleshooting while selecting
+## Troubleshooting
+
+When using custom selectors, PHPScraper hands you the full power of Guotte. You will also receive all errors directly from Guotte instead of PHPScraper (for now).
+
+Below are some common errors while working with custom xPaths:
 
 ### `PHP Fatal error: Uncaught InvalidArgumentException: The current node list is empty.`
 
-This will happen if your current selection is empty. This means, no element was found matching your query.
+This will happen if your current selection is empty: No element was found matching your query. You might need to adjust your query to select elements.
 
 ### `PHP Warning: DOMXPath::query(): Invalid expression`
 
-This usually means your xPath is incorrect. Usually, this error occurs in `vendor/symfony/dom-crawler/Crawler.php on line 919`.
+This means your xPath is incorrect. Usually, this error occurs in `vendor/symfony/dom-crawler/Crawler.php on line 919`.
 
 Make sure to format the xPath query correctly. The examples above show the required format, including the Asterix: `//*[...]`.
