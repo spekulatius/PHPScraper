@@ -1,7 +1,5 @@
 # Tài trợ
 
-## Người ủng hộ 💪️
-
 PHP Scraper được hỗ trợ bởi:
 
 <a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
