@@ -113,7 +113,7 @@ Nếu bạn đang làm trong dự án PHP thuần, bạn cần phải include au
 require 'vendor/autoload.php';
 ```
 
-Nếu bạn đang sử dụng framework như Laravel, Symfony, Zend, Phalcon hoặc CakePHP, bạn không cần làm bước này. Autoloader sẽ được đưa vào tự động.
+Nếu bạn đang sử dụng framework như Laravel, Symfony, Laminas, Phalcon hoặc CakePHP, bạn không cần làm bước này. Autoloader sẽ được đưa vào tự động.
 
 Tìm thấy lỗi và muốn sửa nó? Tuyệt vời!
 ----------------------------------

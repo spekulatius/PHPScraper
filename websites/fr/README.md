@@ -119,7 +119,7 @@ Si vous construisez un projet VanillaPHP, vous devrez inclure l'autoloader dans 
 require 'vendor/autoload.php';
 ```
 
-Si vous utilisez un framework tel que Laravel, Symfony, Zend, Phalcon ou CakePHP, vous n'aurez pas besoin de cette étape. L'autoloader est automatiquement inclus.
+Si vous utilisez un framework tel que Laravel, Symfony, Laminas, Phalcon ou CakePHP, vous n'aurez pas besoin de cette étape. L'autoloader est automatiquement inclus.
 
 
 Vous avez trouvé un bug et l'avez corrigé ? C'est génial !
