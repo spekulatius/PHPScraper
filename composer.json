@@ -30,7 +30,8 @@
     "require-dev": {
         "symfony/thanks": "*",
         "phpunit/phpunit": "^8.0",
-        "symfony/process": "^5.4 || ^6.0"
+        "symfony/process": "^5.4 || ^6.0",
+        "illuminate/collections": "*"
     },
     "autoload": {
         "psr-4": {

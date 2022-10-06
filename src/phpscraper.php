@@ -578,9 +578,7 @@ class core
     {
         return array_values(array_filter(
             $this->paragraphs(),
-            function ($paragraph) {
-                return ($paragraph != '');
-            }
+            function ($paragraph) { return $paragraph !== ''; }
         ));
     }
 
