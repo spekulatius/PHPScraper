@@ -15,6 +15,9 @@ use Pdp\Manager;
 // https://github.com/Donatello-za/rake-php-plus
 use DonatelloZa\RakePlus\RakePlus;
 
+// https://symfony.com/doc/current/http_client.html
+use Symfony\Component\HttpClient\HttpClient;
+
 class phpscraper
 {
     /**
@@ -96,6 +99,23 @@ class core
             'HTTP_USER_AGENT',
             'Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)'
         );
+    }
+
+    /**
+     * Sets a http proxy
+     *
+     * @param string $proxy
+     */
+    public function setProxy(string $proxy)
+    {
+        $httpClient = HttpClient::create([
+            'proxy' => $proxy
+        ]);
+
+        // Goutte Client
+        $this->client = new Client($httpClient);
+
+        return $this;
     }
 
     /**
