@@ -5,3 +5,4 @@ vendor
 composer.lock
 yarn-error.log
 .vscode
+.history
