@@ -134,7 +134,7 @@ Wenn Sie ein Framework wie Laravel, Symfony, Laminas, Phalcon, oder CakePHP verw
 Konfiguration
 -------------
 
-Weitere Konfiguration ist optional. Unterhalb sind die gegenwärtig verfügbaren Optionen:
+Die weitere Konfiguration ist optional. Unterhalb finden Sie die gegenwärtig verfügbaren Optionen:
 
 ### Proxy
 
