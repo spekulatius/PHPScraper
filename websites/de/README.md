@@ -138,7 +138,7 @@ Weitere Konfiguration ist optional. Unterhalb sind die gegenwärtig verfügbaren
 
 ### Proxy
 
-Falls Sie Proxies benötigen können Sie PHPScraper wie folgt konfiguren:
+Falls Sie Proxies benötigen können Sie PHPScraper wie folgt konfigurieren:
 
 ```php
 $web = new \spekulatius\phpscraper;
