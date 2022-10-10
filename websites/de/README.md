@@ -59,7 +59,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 Nahezu alle Informationen können direkt als string oder array genutzt werden.
 
 
-### Scrape Content, such as Images:
+### Scrape Content, beispielsweise Bilder:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -130,6 +130,21 @@ require 'vendor/autoload.php';
 ```
 
 Wenn Sie ein Framework wie Laravel, Symfony, Laminas, Phalcon, oder CakePHP verwenden, brauchen Sie diesen Schritt nicht. Der Autoloader übernimmt die Arbeit.
+
+Konfiguration
+-------------
+
+Weitere Konfiguration ist optional. Unterhalb sind die gegenwärtig verfügbaren Optionen:
+
+### Proxy
+
+Falls Sie Proxies benötigen können Sie PHPScraper wie folgt konfiguren:
+
+```php
+$web = new \spekulatius\phpscraper;
+$web->setProxy('http://user:password@127.0.0.1:3128');
+```
+
 
 Ein Problem gefunden und gefixt? Super!
 ---------------------------------------

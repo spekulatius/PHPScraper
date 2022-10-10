@@ -115,6 +115,22 @@ require 'vendor/autoload.php';
 
 Nếu bạn đang sử dụng framework như Laravel, Symfony, Laminas, Phalcon hoặc CakePHP, bạn không cần làm bước này. Autoloader sẽ được đưa vào tự động.
 
+
+Cấu hình
+-------------
+
+Cấu hình thêm là tùy chọn. Dưới đây là các tùy chọn có sẵn chính xác.
+
+### Hỗ trợ proxy
+
+Nếu bạn yêu cầu proxy, bạn có thể định cấu hình hỗ trợ proxy bằng `setProxy`:
+
+```php
+$web = new \spekulatius\phpscraper;
+$web->setProxy('http://user:password@127.0.0.1:3128');
+```
+
+
 Tìm thấy lỗi và muốn sửa nó? Tuyệt vời!
 ----------------------------------
 
