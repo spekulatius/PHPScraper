@@ -113,6 +113,15 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
+### Proxy Support
+
+You can configure proxy support with `setProxy`:
+
+```php
+$web = new \spekulatius\phpscraper;
+$web->setProxy('http://user:password@127.0.0.1:3128');
+```
+
 See the full documentation on the website for more information and many more examples.
 
 Installation
