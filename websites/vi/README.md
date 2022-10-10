@@ -119,11 +119,11 @@ Nếu bạn đang sử dụng framework như Laravel, Symfony, Laminas, Phalcon 
 Cấu hình
 -------------
 
-Cấu hình thêm là tùy chọn. Dưới đây là các tùy chọn có sẵn chính xác.
+Các cấu hình sau không bắt buộc. Bên dưới là các tuỳ chọn có sẵn.
 
 ### Hỗ trợ proxy
 
-Nếu bạn yêu cầu proxy, bạn có thể định cấu hình hỗ trợ proxy bằng `setProxy`:
+Nếu bạn cần sử dụng proxy, bạn có thể cấu hình proxy bằng `setProxy`:
 
 ```php
 $web = new \spekulatius\phpscraper;
