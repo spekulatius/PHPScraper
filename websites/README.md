@@ -138,6 +138,10 @@ $web = new \spekulatius\phpscraper;
 $web->setProxy('http://user:password@127.0.0.1:3128');
 ```
 
+::: tip
+If you're looking for decent prices residential proxy, check [IProyal](https://iproyal.com?r=119987).
+:::
+
 
 Found a bug and fixed it? Awesome!
 ----------------------------------
