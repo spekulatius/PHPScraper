@@ -13,6 +13,7 @@ use Pdp\CurlHttpClient;
 use Pdp\Manager;
 use DonatelloZa\RakePlus\RakePlus;
 use Goutte\Client as GoutteClient;
+use Symfony\Component\DomCrawler\Crawler;
 
 class Core
 {
@@ -26,7 +27,7 @@ class Core
     /**
      * Holds the current page (a Crawler object)
      *
-     * @var Symfony\Component\DomCrawler\Crawler
+     * @var \Symfony\Component\DomCrawler\Crawler
      */
     protected $currentPage = null;
 
@@ -72,10 +73,7 @@ class Core
      */
     public function setContent(string $url, string $content)
     {
-        $this->currentPage = new \Symfony\Component\DomCrawler\Crawler(
-            $content,
-            $url
-        );
+        $this->currentPage = new Crawler($content, $url);
 
         return $this;
     }
@@ -96,7 +94,7 @@ class Core
      * @param string $filter
      * @return Crawler
      */
-    public function filter(string $query)
+    public function filter(string $query): Crawler
     {
         return $this->currentPage->filterXPath($query);
     }
@@ -105,9 +103,9 @@ class Core
      * Filters the current page by a xPath-query and returns the first one, or null.
      *
      * @param string $filter
-     * @return Crawler|null
+     * @return ?Crawler
      */
-    public function filterFirst(string $query)
+    public function filterFirst(string $query): ?Crawler
     {
         $filteredNodes = $this->filter($query);
 
