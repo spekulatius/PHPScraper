@@ -118,13 +118,21 @@ var_dump($web->imagesWithDetails);
 You can configure proxy support with `setConfig`:
 
 ```php
-$web = new \spekulatius\phpscraper;
 $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
+```
+
+### Setting Timeout
+
+You can set the `timeout` using `setConfig`:
+
+```php
+$web->setConfig(['timeout' => 15]);
 ```
 
 You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use-case when unsetting values.
 
 See the full documentation on the website for more information and many more examples.
+
 
 Installation
 ------------

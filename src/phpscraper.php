@@ -67,6 +67,15 @@ class phpscraper
              * ```
              */
             'proxy' => null,
+
+            /**
+             * Timeout in seconds.
+             *
+             * ```php
+             * $web->setConfig(['timeout' => 15]);
+             * ```
+             */
+            'timeout' => 10,
         ];
 
         // Add the defaults in
@@ -75,6 +84,7 @@ class phpscraper
         // Symfony HttpCleint
         $httpClient = SymfonyHttpClient::create([
             'proxy' => $this->config['proxy'],
+            'timeout' => $this->config['timeout'],
         ]);
 
         // Goutte Client and set some config needed for it.
