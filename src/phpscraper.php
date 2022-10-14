@@ -79,7 +79,7 @@ class core
      *
      * @var Symfony\Component\DomCrawler\Crawler
      */
-    protected $current_page = null;
+    protected $currentPage = null;
 
     /**
      * Constructor
@@ -137,7 +137,7 @@ class core
      */
     public function currentURL()
     {
-        return $this->current_page->getUri();
+        return $this->currentPage->getUri();
     }
 
     /**
@@ -147,7 +147,7 @@ class core
      */
     public function go(string $url)
     {
-        $this->current_page = $this->client->request('GET', $url);
+        $this->currentPage = $this->client->request('GET', $url);
     }
 
     /**
@@ -158,14 +158,14 @@ class core
      */
     public function setContent(string $url, string $content)
     {
-        $this->current_page = new \Symfony\Component\DomCrawler\Crawler(
+        $this->currentPage = new \Symfony\Component\DomCrawler\Crawler(
             $content,
             $url
         );
     }
 
     /**
-     * Fetch an asset from a given URL
+     * Fetch an asset from a given URL (for example an image)
      *
      * @param string $url
      */
@@ -182,7 +182,7 @@ class core
      */
     public function filter(string $query)
     {
-        return $this->current_page->filterXPath($query);
+        return $this->currentPage->filterXPath($query);
     }
 
     /**
@@ -193,9 +193,9 @@ class core
      */
     public function filterFirst(string $query)
     {
-        $filtered = $this->filter($query);
+        $filteredNodes = $this->filter($query);
 
-        return ($filtered->count() == 0) ? null : $filtered->first();
+        return ($filteredNodes->count() == 0) ? null : $filteredNodes->first();
     }
 
     /**
@@ -206,9 +206,9 @@ class core
      */
     public function filterFirstText(string $query)
     {
-        $filtered = $this->filter($query);
+        $filteredNodes = $this->filter($query);
 
-        return ($filtered->count() == 0) ? null : $filtered->first()->text();
+        return ($filteredNodes->count() == 0) ? null : $filteredNodes->first()->text();
     }
 
     /**
@@ -231,9 +231,9 @@ class core
      */
     public function filterExtractAttributes(string $query, array $attributes)
     {
-        $filtered = $this->filter($query);
+        $filteredNodes = $this->filter($query);
 
-        return ($filtered->count() == 0) ? [] : $filtered->extract($attributes);
+        return ($filteredNodes->count() == 0) ? [] : $filteredNodes->extract($attributes);
     }
 
     /**
@@ -245,9 +245,9 @@ class core
      */
     public function filterFirstExtractAttribute(string $query, array $attributes)
     {
-        $filtered = $this->filter($query);
+        $filteredNodes = $this->filter($query);
 
-        return ($filtered->count() == 0) ? null : $filtered->first()->extract($attributes)[0];
+        return ($filteredNodes->count() == 0) ? null : $filteredNodes->first()->extract($attributes)[0];
     }
 
     /**
@@ -541,7 +541,7 @@ class core
     {
         $lists = [];
 
-        foreach ($this->current_page->filter('ol, ul') as $list) {
+        foreach ($this->currentPage->filter('ol, ul') as $list) {
             $lists[] = [
                 'type' => $list->tagName,
                 'children' => $list->childNodes,
@@ -941,21 +941,21 @@ class core
     /**
      * Click a link (either with title or url)
      *
-     * @param string $title_or_url
+     * @param string $titleOrUrl
      * @return boolean
      */
-    public function clickLink($title_or_url)
+    public function clickLink($titleOrUrl)
     {
         // If the string starts with http just go to it - we assume it's an URL
-        if (\stripos($title_or_url, 'http') === 0) {
+        if (\stripos($titleOrUrl, 'http') === 0) {
             // Go to a URL
-            $this->go($title_or_url);
+            $this->go($titleOrUrl);
         } else {
             // Find link based on the title
-            $link = $this->current_page->selectLink($title_or_url)->link();
+            $link = $this->currentPage->selectLink($titleOrUrl)->link();
 
             // Click the link and store the DOMCrawler object
-            $this->current_page = $this->client->click($link);
+            $this->currentPage = $this->client->click($link);
         }
 
         return true;
