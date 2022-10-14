@@ -131,6 +131,7 @@ require 'vendor/autoload.php';
 
 Wenn Sie ein Framework wie Laravel, Symfony, Laminas, Phalcon, oder CakePHP verwenden, brauchen Sie diesen Schritt nicht. Der Autoloader übernimmt die Arbeit.
 
+
 Konfiguration
 -------------
 
@@ -141,13 +142,20 @@ Die weitere Konfiguration ist optional. Unterhalb finden Sie die gegenwärtig ve
 Falls Sie Proxies benötigen können Sie PHPScraper wie folgt konfigurieren:
 
 ```php
-$web = new \spekulatius\phpscraper;
 $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
 
 ::: tip
 Falls Sie nach einem günstigen Proxy suchen ist [IProyal](https://iproyal.com?r=119987) einen Blick wert.
 :::
+
+### Timeout setzen
+
+Das `timeout` kann mit `setConfig` gesetzt werden:
+
+```php
+$web->setConfig(['timeout' => 15]);
+```
 
 `setConfig` kann mehrfach aufgerufen werden. Es speichert die Konfiguration und merged frühere Einstellungen. Dies sollte bedacht werden, wenn man etwas zurücksetzen will.
 

@@ -13,10 +13,12 @@ PHPScraper là một thư viện cào dành cho PHP, đơn giản. Thư viện n
 
 Các ví dụ kể câu chuyện hay hơn nhiều. Hãy xem!
 
+
 Ý tưởng 💡️
 ----------
 
 Việc truy cập và lấy các thông tin cơ bản của trang web rất phức tạp. Wrapper [Goutte](https://github.com/FriendsOfPHP/Goutte) này giúp việc này trở nên dễ dàng hơn. Nó giúp bạn tiết kiệm khỏi XPath và đồng., Cho phép bạn truy cập trực tiếp vào mọi thứ bạn cần. Hình dung lại trang web bằng PHP.
+
 
 Nhà tài trợ 💪️
 -------------
@@ -91,6 +93,7 @@ Một số thông tin *tùy chọn* được trả về dưới dạng một m�
 
 Có thể tìm thấy thêm code ví dụ trong các `examples` và `tests`.
 
+
 Cài đặt
 ------------
 
@@ -126,15 +129,25 @@ Các cấu hình sau không bắt buộc. Bên dưới là các tuỳ chọn có
 Nếu bạn cần sử dụng proxy, bạn có thể cấu hình proxy bằng `setConfig`:
 
 ```php
-$web = new \spekulatius\phpscraper;
 $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
+
+### Timeout
+
+Nếu bạn cần sử dụng `timeout`, bạn có thể cấu hình timeout bằng `setConfig`:
+
+```php
+$web->setConfig(['timeout' => 15]);
+```
+
+Bạn có thể gọi `setConfig` nhiều lần. Nó lưu trữ cấu hình và hợp nhất nó với các cài đặt trước đó. Điều này cần được ghi nhớ trong trường hợp sử dụng không mong muốn khi bỏ thiết lập giá trị.
 
 
 Tìm thấy lỗi và muốn sửa nó? Tuyệt vời!
 ----------------------------------
 
 Trước khi bắt đầu, hãy đọc qua [hướng dẫn đóng góp](/vi/contributing.html). Mọi thắc mắc vui lòng liên hệ.
+
 
 Tests: Đảm bảo nó hoạt động!
 ----------------------------

@@ -132,9 +132,18 @@ Une configuration supplémentaire est facultative. Voici les options correctemen
 Si vous avez besoin de proxys, vous pouvez configurer le support des proxys avec `setConfig` :
 
 ```php
-$web = new \spekulatius\phpscraper;
 $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
+
+### Timeout
+
+Vous pouvez définir le `timeout` en utilisant `setConfig`:
+
+```php
+$web->setConfig(['timeout' => 15]);
+```
+
+Vous pouvez appeler `setConfig` plusieurs fois. Il stocke la configuration et la fusionne avec les paramètres précédents. Ceci doit être gardé à l'esprit dans le cas improbable d'une utilisation pour annuler des valeurs.
 
 
 Vous avez trouvé un bug et l'avez corrigé ? C'est génial !
