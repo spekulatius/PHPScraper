@@ -34,7 +34,7 @@ class Core
     /**
      * Overwrites the client
      *
-     * @param GoutteClient $client
+     * @param \Goutte\Client $client
      */
     public function setClient(GoutteClient $client)
     {
