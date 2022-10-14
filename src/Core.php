@@ -2,12 +2,17 @@
 
 namespace spekulatius;
 
-use Goutte\Client;
+/**
+ * This call organizes the actual scraping calls.
+ *
+ * It doesn't handle any client management. That's with phpscraper.php
+ */
+
 use Pdp\Cache;
 use Pdp\CurlHttpClient;
 use Pdp\Manager;
 use DonatelloZa\RakePlus\RakePlus;
-use Symfony\Component\HttpClient\HttpClient;
+use Goutte\Client as GoutteClient;
 
 class Core
 {
@@ -26,50 +31,13 @@ class Core
     protected $currentPage = null;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        // Goutte Client
-        $this->client = new Client();
-
-        // We assume that we want to follow any redirects.
-        $this->client->followRedirects(true);
-        $this->client->followMetaRefresh(true);
-        $this->client->setMaxRedirects(5);
-
-        // Make ourselves known
-        $this->client->setServerParameter(
-            'HTTP_USER_AGENT',
-            'Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)'
-        );
-    }
-
-    /**
-     * Sets a http proxy
+     * Overwrites the client
      *
-     * @param string $proxy
+     * @param GoutteClient $client
      */
-    public function setProxy(string $proxy)
+    public function setClient(GoutteClient $client)
     {
-        $httpClient = HttpClient::create([
-            'proxy' => $proxy
-        ]);
-
-        // Goutte Client
-        $this->client = new Client($httpClient);
-
-        return $this;
-    }
-
-    /**
-     * Overwrites the agent
-     *
-     * @param string $agent
-     */
-    public function setAgent(string $agent)
-    {
-        $this->client->setServerParameter('HTTP_USER_AGENT', $agent);
+        $this->client = $client;
 
         return $this;
     }
@@ -92,6 +60,8 @@ class Core
     public function go(string $url)
     {
         $this->currentPage = $this->client->request('GET', $url);
+
+        return $this;
     }
 
     /**
@@ -106,6 +76,8 @@ class Core
             $content,
             $url
         );
+
+        return $this;
     }
 
     /**
@@ -146,7 +118,7 @@ class Core
      * Filters the current page by a xPath-query and returns the first ones content, or null.
      *
      * @param string $filter
-     * @return string|null
+     * @return ?string
      */
     public function filterFirstText(string $query): ?string
     {
@@ -171,7 +143,7 @@ class Core
      *
      * @param string $filter
      * @param array $attributes
-     * @return array|null
+     * @return ?array
      */
     public function filterExtractAttributes(string $query, array $attributes): ?array
     {
@@ -185,7 +157,7 @@ class Core
      *
      * @param string $filter
      * @param array $attributes
-     * @return string|null
+     * @return ?string
      */
     public function filterFirstExtractAttribute(string $query, array $attributes): ?string
     {
@@ -198,7 +170,7 @@ class Core
      * Returns the content attribute for the first result of the query, or null.
      *
      * @param string $filter
-     * @return string|null
+     * @return ?string
      */
     public function filterFirstContent(string $query): ?string
     {
