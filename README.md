@@ -1,4 +1,4 @@
-# [PHP Scraper](https://github.com/spekulatius/PHPScraper)
+# [PHP Scraper - a web utility for PHP](https://github.com/spekulatius/PHPScraper)
 
 <p align="center">
   <picture style="width: 100%;">
@@ -7,9 +7,32 @@
   </picture>
 </p>
 
-PHP Scraper is a scraper library for PHP, built with simplicity in mind. The main goal is to get stuff done instead of getting distracted with xPath selectors, preparing data structures, etc. Instead, you can just "go to a website" and get an array with all details relevant to your scraping project.
+PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get all relevant details for your project.
 
-Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json).
+Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte), [League/URI](https://github.com/thephpleague/uri) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for details.
+
+
+Roadmap
+-------
+
+The future development is organized into milestones.
+
+### v1: Building the stable base version.
+
+- Improve documentation and examples.
+- Organize code better (move websites into separate repos, etc.)
+
+More Details: https://github.com/spekulatius/PHPScraper/milestone/4
+
+### v2: Expand the functionality to cover more types
+
+More Details: https://github.com/spekulatius/PHPScraper/milestone/5
+
+### v3: Expand to provide more guidance on building custom scrapers on top of PHPScraper.
+
+TBC.
+
+If you want to support the development or looking for support with a custom feature, please consider a sponsorship or donation.
 
 
 ## Sponsors
@@ -167,3 +190,15 @@ composer thanks
 ```
 
 Thank you :muscle:
+
+
+Testing
+-------
+
+The library comes with a PHPUnit test suite. You can find the tests [here](https://github.com/spekulatius/PHPScraper/tree/master/tests).
+
+To run the tests, run the following command from the project folder.
+
+```bash
+composer test
+```
