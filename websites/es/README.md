@@ -129,11 +129,11 @@ La configuración adicional es opcional. A continuación se muestran las opcione
 
 ### Soporte de Proxy
 
-Si necesita proxies, puede configurar el soporte de proxy con `setProxy`:
+Si necesita proxies, puede configurar el soporte de proxy con `setConfig`:
 
 ```php
 $web = new \spekulatius\phpscraper;
-$web->setProxy('http://user:password@127.0.0.1:3128');
+$web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
 
 
