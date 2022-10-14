@@ -123,11 +123,11 @@ Các cấu hình sau không bắt buộc. Bên dưới là các tuỳ chọn có
 
 ### Hỗ trợ proxy
 
-Nếu bạn cần sử dụng proxy, bạn có thể cấu hình proxy bằng `setProxy`:
+Nếu bạn cần sử dụng proxy, bạn có thể cấu hình proxy bằng `setConfig`:
 
 ```php
 $web = new \spekulatius\phpscraper;
-$web->setProxy('http://user:password@127.0.0.1:3128');
+$web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
 
 
