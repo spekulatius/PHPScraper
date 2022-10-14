@@ -76,3 +76,13 @@ The `alt`-text (with the [keywords of the content](/examples/extract-keywords.ht
 The attributes for `alt`, `width` and `height` are included in the detailed data set.
 
 If you require more data, you will either need to extend the library or submit an issue for consideration.
+
+
+## Fetching Assets
+
+If you want to fetch assets, you can do so using `fetchAsset`:
+
+```php
+$web = new \spekulatius\phpscraper;
+$sharingImage = $web->fetchAsset($web->image);
+```
