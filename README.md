@@ -121,12 +121,22 @@ You can configure proxy support with `setConfig`:
 $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
 
-### Setting Timeout
+### Timeout
 
 You can set the `timeout` using `setConfig`:
 
 ```php
 $web->setConfig(['timeout' => 15]);
+```
+
+Setting the timeout to zero will disable it.
+
+### Disabling SSL
+
+While unrecommended, it might be required to disable SSL checks. You can do so using:
+
+```php
+$web->setConfig(['disable_ssl' => true]);
 ```
 
 You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use-case when unsetting values.
