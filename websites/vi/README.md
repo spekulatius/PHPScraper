@@ -140,6 +140,16 @@ Nếu bạn cần sử dụng `timeout`, bạn có thể cấu hình timeout b�
 $web->setConfig(['timeout' => 15]);
 ```
 
+Đặt thời gian chờ thành 0 sẽ vô hiệu hóa nó.
+
+### Tắt SSL
+
+Trong khi không được khuyến nghị, bạn có thể phải tắt kiểm tra SSL. Bạn có thể làm như vậy bằng cách sử dụng:
+
+```php
+$web->setConfig(['disable_ssl' => true]);
+```
+
 Bạn có thể gọi `setConfig` nhiều lần. Nó lưu trữ cấu hình và hợp nhất nó với các cài đặt trước đó. Điều này cần được ghi nhớ trong trường hợp sử dụng không mong muốn khi bỏ thiết lập giá trị.
 
 

@@ -143,6 +143,16 @@ Vous pouvez définir le `timeout` en utilisant `setConfig`:
 $web->setConfig(['timeout' => 15]);
 ```
 
+La mise à `0` (zéro) du délai d'attente le désactivera.
+
+### Désactivation de SSL
+
+Bien que cela ne soit pas recommandé, il peut être nécessaire de désactiver les contrôles SSL. Vous pouvez le faire en utilisant :
+
+```php
+$web->setConfig(['disable_ssl' => true]);
+```
+
 Vous pouvez appeler `setConfig` plusieurs fois. Il stocke la configuration et la fusionne avec les paramètres précédents. Ceci doit être gardé à l'esprit dans le cas improbable d'une utilisation pour annuler des valeurs.
 
 

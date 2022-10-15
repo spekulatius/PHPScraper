@@ -76,6 +76,13 @@ class phpscraper
              * ```
              */
             'timeout' => 10,
+
+            /**
+             * Disable SSL (not recommended unless really needed).
+             *
+             * @var bool
+             */
+            'disable_ssl' => false,
         ];
 
         // Add the defaults in
@@ -85,6 +92,8 @@ class phpscraper
         $httpClient = SymfonyHttpClient::create([
             'proxy' => $this->config['proxy'],
             'timeout' => $this->config['timeout'],
+            'verify_host' => $this->config['disable_ssl'],
+            'verify_peer' => $this->config['disable_ssl'],
         ]);
 
         // Goutte Client and set some config needed for it.
