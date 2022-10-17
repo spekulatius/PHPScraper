@@ -46,6 +46,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         $this->assertSame([
             [
                 'url' => 'https://placekitten.com/408/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => '_blank',
@@ -59,6 +60,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/444/333',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => '_blank',
@@ -72,6 +74,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/444/321',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => '_blank',
@@ -85,6 +88,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/408/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => 'kitten',
@@ -98,6 +102,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/444/333',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => 'kitten',
@@ -111,6 +116,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/444/321',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => 'kitten',
@@ -153,6 +159,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         $this->assertSame([
             [
                 'url' => 'https://placekitten.com/432/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => null,
@@ -166,6 +173,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/456/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => null,
@@ -179,6 +187,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/345/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => null,
@@ -192,6 +201,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/345/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => null,
@@ -205,6 +215,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/345/222',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => null,
@@ -246,6 +257,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         $this->assertSame([
             [
                 'url' => 'https://placekitten.com/408/287',
+                'protocol' => 'https',
                 'text' => 'external kitten',
                 'title' => null,
                 'target' => null,
@@ -259,6 +271,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+                'protocol' => 'https',
                 'text' => 'absolute path to cat',
                 'title' => null,
                 'target' => null,
@@ -301,6 +314,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         $this->assertSame([
             [
                 'url' => 'https://placekitten.com/432/287',
+                'protocol' => 'https',
                 'text' => '',
                 'title' => null,
                 'target' => null,
@@ -316,6 +330,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/456/287',
+                'protocol' => 'https',
                 'text' => '',
                 'title' => null,
                 'target' => null,
@@ -332,6 +347,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoreferrer' => false,
             ], [
                 'url' => 'https://placekitten.com/345/287',
+                'protocol' => 'https',
                 'text' => 'This is image',
                 'title' => null,
                 'target' => null,
