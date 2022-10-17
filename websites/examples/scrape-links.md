@@ -76,6 +76,7 @@ $firstLink = $web->linksWithDetails[0];
  *
  * [
  *     'url' => 'https://placekitten.com/432/287',
+ *     'protocol' => 'https',
  *     'text' => 'external kitten',
  *     'title' => null,
  *     'target' => null,

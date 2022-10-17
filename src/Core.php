@@ -776,7 +776,7 @@ class Core
             // Generate the proper uri using the Symfony's link class
             $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentURL());
 
-            // Check if the anchor is maybe only an image.
+            // Check if the anchor is only an image. If so, wrap it accordingly to make it work.
             $image = [];
             foreach($link->childNodes as $childNode) {
                 if (!empty($childNode) && $childNode->nodeName === 'img') {
@@ -786,8 +786,10 @@ class Core
 
             // Collect commonly interesting attributes and URL
             $rel = $link->getAttribute('rel');
+            $uri = $linkObj->getUri();
             $entry = [
-                'url' => $linkObj->getUri(),
+                'url' => $uri,
+                'protocol' => \strpos($uri, ':') !== false ? explode(':', $uri)[0] : null,
                 'text' => trim($link->nodeValue),
                 'title' => $link->getAttribute('title') == '' ? null : $link->getAttribute('title'),
                 'target' => $link->getAttribute('target') == '' ? null : $link->getAttribute('target'),
