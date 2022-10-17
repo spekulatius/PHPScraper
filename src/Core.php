@@ -36,7 +36,7 @@ class Core
      *
      * @param \Goutte\Client $client
      */
-    public function setClient(GoutteClient $client)
+    public function setClient(GoutteClient $client): self
     {
         $this->client = $client;
 
@@ -48,7 +48,7 @@ class Core
      *
      * @return string $url
      */
-    public function currentURL()
+    public function currentURL(): string
     {
         return $this->currentPage->getUri();
     }
@@ -58,7 +58,7 @@ class Core
      *
      * @param string $url
      */
-    public function go(string $url)
+    public function go(string $url): self
     {
         $this->currentPage = $this->client->request('GET', $url);
 
@@ -71,7 +71,7 @@ class Core
      * @param string $url
      * @param string $content
      */
-    public function setContent(string $url, string $content)
+    public function setContent(string $url, string $content): self
     {
         $this->currentPage = new Crawler($content, $url);
 
