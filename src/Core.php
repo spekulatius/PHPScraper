@@ -109,7 +109,7 @@ class Core
     {
         $filteredNodes = $this->filter($query);
 
-        return ($filteredNodes->count() == 0) ? null : $filteredNodes->first();
+        return ($filteredNodes->count() === 0) ? null : $filteredNodes->first();
     }
 
     /**
@@ -122,7 +122,7 @@ class Core
     {
         $filteredNodes = $this->filter($query);
 
-        return ($filteredNodes->count() == 0) ? null : $filteredNodes->first()->text();
+        return ($filteredNodes->count() === 0) ? null : $filteredNodes->first()->text();
     }
 
     /**
@@ -147,7 +147,7 @@ class Core
     {
         $filteredNodes = $this->filter($query);
 
-        return ($filteredNodes->count() == 0) ? [] : $filteredNodes->extract($attributes);
+        return ($filteredNodes->count() === 0) ? [] : $filteredNodes->extract($attributes);
     }
 
     /**
@@ -161,7 +161,7 @@ class Core
     {
         $filteredNodes = $this->filter($query);
 
-        return ($filteredNodes->count() == 0) ? null : $filteredNodes->first()->extract($attributes)[0];
+        return ($filteredNodes->count() === 0) ? null : $filteredNodes->first()->extract($attributes)[0];
     }
 
     /**
@@ -791,16 +791,16 @@ class Core
                 'url' => $uri,
                 'protocol' => \strpos($uri, ':') !== false ? explode(':', $uri)[0] : null,
                 'text' => trim($link->nodeValue),
-                'title' => $link->getAttribute('title') == '' ? null : $link->getAttribute('title'),
-                'target' => $link->getAttribute('target') == '' ? null : $link->getAttribute('target'),
-                'rel' => ($rel == '') ? null : strtolower($rel),
+                'title' => $link->getAttribute('title') === '' ? null : $link->getAttribute('title'),
+                'target' => $link->getAttribute('target') === '' ? null : $link->getAttribute('target'),
+                'rel' => ($rel === '') ? null : strtolower($rel),
                 'image' => $image,
-                'isNofollow' => ($rel == '') ? false : (\strpos($rel, 'nofollow') !== false),
-                'isUGC' => ($rel == '') ? false : (\strpos($rel, 'ugc') !== false),
-                'isSponsored' => ($rel == '') ? false : (\strpos($rel, 'sponsored') !== false),
-                'isMe' => ($rel == '') ? false : (\strpos($rel, 'me') !== false),
-                'isNoopener' => ($rel == '') ? false : (\strpos($rel, 'noopener') !== false),
-                'isNoreferrer' => ($rel == '') ? false : (\strpos($rel, 'noreferrer') !== false),
+                'isNofollow' => ($rel === '') ? false : (\strpos($rel, 'nofollow') !== false),
+                'isUGC' => ($rel === '') ? false : (\strpos($rel, 'ugc') !== false),
+                'isSponsored' => ($rel === '') ? false : (\strpos($rel, 'sponsored') !== false),
+                'isMe' => ($rel === '') ? false : (\strpos($rel, 'me') !== false),
+                'isNoopener' => ($rel === '') ? false : (\strpos($rel, 'noopener') !== false),
+                'isNoreferrer' => ($rel === '') ? false : (\strpos($rel, 'noreferrer') !== false),
             ];
 
             $result[] = $entry;
@@ -846,8 +846,8 @@ class Core
             $result[] = [
                 'url' => $imageObj->getUri(),
                 'alt' => $image->getAttribute('alt'),
-                'width' => $image->getAttribute('width') == '' ? null : $image->getAttribute('width'),
-                'height' => $image->getAttribute('height') == '' ? null : $image->getAttribute('height'),
+                'width' => $image->getAttribute('width') === '' ? null : $image->getAttribute('width'),
+                'height' => $image->getAttribute('height') === '' ? null : $image->getAttribute('height'),
             ];
         }
 
