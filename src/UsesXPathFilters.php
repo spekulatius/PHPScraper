@@ -55,7 +55,7 @@ trait UsesXPathFilters
     }
 
     /**
-     * Filters the current page by a xPath-query and returns the first ones content, or null.
+     * Filters the current page by a xPath-query and returns the selected attributes as array.
      *
      * @param string $filter
      * @param array $attributes
@@ -69,7 +69,7 @@ trait UsesXPathFilters
     }
 
     /**
-     * Filters the current page by a xPath-query and returns the first ones content, or null.
+     * Filters the current page by a xPath-query and returns the selected attributes of the first match.
      *
      * @param string $filter
      * @param array $attributes

@@ -5,7 +5,7 @@ namespace spekulatius;
 use Goutte\Client as GoutteClient;
 use Symfony\Component\DomCrawler\Crawler;
 
-trait UsesGuotte
+trait UsesGoutte
 {
     /**
      * Holds the client

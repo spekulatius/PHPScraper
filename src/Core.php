@@ -9,9 +9,9 @@ namespace spekulatius;
 class Core
 {
     /**
-     * This trait manages Guotte itself.
+     * This trait manages Goutte itself.
      */
-    use UsesGuotte;
+    use UsesGoutte;
 
     /**
      * This contains the basic filter methods.
