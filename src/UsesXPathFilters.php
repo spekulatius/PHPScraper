@@ -1,0 +1,95 @@
+<?php
+
+namespace spekulatius;
+
+use Symfony\Component\DomCrawler\Crawler;
+
+trait UsesXPathFilters
+{
+    /**
+     * Filters the current page by a xPath-query
+     *
+     * @param string $filter
+     * @return Crawler
+     */
+    public function filter(string $query): Crawler
+    {
+        return $this->currentPage->filterXPath($query);
+    }
+
+    /**
+     * Filters the current page by a xPath-query and returns the first one, or null.
+     *
+     * @param string $filter
+     * @return ?Crawler
+     */
+    public function filterFirst(string $query): ?Crawler
+    {
+        $filteredNodes = $this->filter($query);
+
+        return ($filteredNodes->count() === 0) ? null : $filteredNodes->first();
+    }
+
+    /**
+     * Filters the current page by a xPath-query and returns the first ones content, or null.
+     *
+     * @param string $filter
+     * @return ?string
+     */
+    public function filterFirstText(string $query): ?string
+    {
+        $filteredNodes = $this->filter($query);
+
+        return ($filteredNodes->count() === 0) ? null : $filteredNodes->first()->text();
+    }
+
+    /**
+     * Filters the current page by a xPath-query and returns the textual content as array.
+     *
+     * @param string $filter
+     * @return array
+     */
+    public function filterTexts(string $query): array
+    {
+        return $this->filterExtractAttributes($query, ['_text']);
+    }
+
+    /**
+     * Filters the current page by a xPath-query and returns the first ones content, or null.
+     *
+     * @param string $filter
+     * @param array $attributes
+     * @return ?array
+     */
+    public function filterExtractAttributes(string $query, array $attributes): ?array
+    {
+        $filteredNodes = $this->filter($query);
+
+        return ($filteredNodes->count() === 0) ? [] : $filteredNodes->extract($attributes);
+    }
+
+    /**
+     * Filters the current page by a xPath-query and returns the first ones content, or null.
+     *
+     * @param string $filter
+     * @param array $attributes
+     * @return ?string
+     */
+    public function filterFirstExtractAttribute(string $query, array $attributes): ?string
+    {
+        $filteredNodes = $this->filter($query);
+
+        return ($filteredNodes->count() === 0) ? null : $filteredNodes->first()->extract($attributes)[0];
+    }
+
+    /**
+     * Returns the content attribute for the first result of the query, or null.
+     *
+     * @param string $filter
+     * @return ?string
+     */
+    public function filterFirstContent(string $query): ?string
+    {
+        return $this->filterFirstExtractAttribute($query, ['content']);
+    }
+}
