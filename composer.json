@@ -24,8 +24,8 @@
         "ext-intl": "*",
         "fabpot/goutte": "^4.0",
         "symfony/dom-crawler": "^5.4 || ^6.0",
-        "jeremykendall/php-domain-parser": "^5.6",
-        "donatello-za/rake-php-plus": "^1.0.15"
+        "donatello-za/rake-php-plus": "^1.0.15",
+        "league/uri": "^6.8"
     },
     "require-dev": {
         "symfony/thanks": "*",

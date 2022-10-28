@@ -94,7 +94,7 @@ Si vous avez besoin de plus de données, vous devrez soit étendre la bibliothè
 
 ## Liens internes et liens externes
 
-PHPScraper permet de retourner seulement des liens internes ou externes. Les liens internes comprennent les liens du même domaine racine ainsi que de tout sous-domaine. Si vous avez besoin d'obtenir seulement les liens dans le sous-domaine exact utilisez [`subdomainLinks`](#sub-domain-links) à la place. L'exemple suivant démontre les deux:
+PHPScraper permet de retourner seulement des liens internes ou externes. L'exemple suivant démontre les deux:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -118,25 +118,3 @@ var_dump($web->externalLinks);
  * ]
  */
 ```
-
-## Liens de sous-domaines
-
-Si vous avez besoin de récupérer uniquement les liens sur le sous-domaine exact, vous pouvez utiliser la méthode `subdomainLinks`:
-
-```php
-$web = new \spekulatius\phpscraper;
-
-// Naviguer vers la page de test.
-$web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
-
-var_dump($web->subdomainLinks);
-/**
- * [
- *    'https://test-pages.phpscraper.de/',
- * ]
- */
-```
-
-::: warning avertissement
-Cela peut poser des problèmes lorsqu'un site mélange des liens avec *et* sans 'www', car www est considéré comme un sous-domaine.
-:::

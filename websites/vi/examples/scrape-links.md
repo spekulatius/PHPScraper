@@ -91,7 +91,7 @@ Nếu bạn yêu cầu nhiều dữ liệu hơn, bạn sẽ cần phải mở r�
 
 ## Liên kết nội bộ và liên kết bên ngoài
 
-PHPScraper chỉ cho phép trả về các liên kết bên trong hoặc bên ngoài. Các liên kết nội bộ bao gồm các liên kết trên cùng một tên miền gốc cũng như bất kỳ tên miền phụ nào. Nếu bạn chỉ cần lấy các liên kết trong việc sử dụng tên miền phụ thì sử dụng [`subdomainLinks`](#sub-domain-links). Xem các vị dụ sau:
+PHPScraper chỉ cho phép trả về các liên kết bên trong hoặc bên ngoài. Xem các vị dụ sau:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -115,25 +115,3 @@ var_dump($web->externalLinks);
  * ]
  */
 ```
-
-## Liên kết Sub-domain
-
-Nếu bạn chỉ cần lấy các liên kết trên miền phụ, bạn có thể sử dụng phương thức `subdomainLinks`:
-
-```php
-$web = new \spekulatius\phpscraper;
-
-// Điều hướng đến trang test.
-$web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
-
-var_dump($web->subdomainLinks);
-/**
- * [
- *    'https://test-pages.phpscraper.de/',
- * ]
- */
-```
-
-::: warning
-Điều này có thể xảy ra sự cố khi một trang web kết hợp các liên kết có* và* mà không có 'www', vì www được coi là một miền phụ.
-:::
