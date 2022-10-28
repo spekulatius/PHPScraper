@@ -2,10 +2,8 @@
 
 namespace spekulatius;
 
-use Pdp\Cache;
-use Pdp\CurlHttpClient;
-use Pdp\Manager;
 use DonatelloZa\RakePlus\RakePlus;
+use League\Uri\Uri;
 
 trait UsesContent
 {
@@ -67,8 +65,7 @@ trait UsesContent
      */
     public function viewport(): array
     {
-        return is_null($this->viewportString()) ?
-            [] : \preg_split('/,\s*/', $this->viewportString());
+        return is_null($this->viewportString()) ? [] : \preg_split('/,\s*/', $this->viewportString());
     }
 
     /**
@@ -134,8 +131,7 @@ trait UsesContent
      */
     public function keywords()
     {
-        return is_null($this->keywordString()) ?
-            [] : \preg_split('/,\s*/', $this->keywordString());
+        return is_null($this->keywordString()) ? [] : \preg_split('/,\s*/', $this->keywordString());
     }
 
     /**
@@ -535,23 +531,15 @@ trait UsesContent
     public function internalLinks(): array
     {
         // Get the current host - to compare against for internal links
-        $manager = new Manager(new Cache(), new CurlHttpClient());
-        $rules = $manager->getRules();
-
-        $root_domain = $rules
-            ->resolve(parse_url($this->currentURL(), PHP_URL_HOST))
-            ->getRegistrableDomain();
-
+        $currentRootDomain = Uri::createFromString($this->currentURL())->getHost();
 
         // Filter the array
         return array_values(array_filter(
             $this->links(),
-            function ($link) use (&$root_domain, &$rules) {
-                $link_root_domain = $rules
-                    ->resolve(parse_url($link, PHP_URL_HOST))
-                    ->getRegistrableDomain();
+            function ($link) use (&$currentRootDomain, &$rules) {
+                $LinkRootDomain = Uri::createFromString($link)->getHost();
 
-                return ($root_domain === $link_root_domain);
+                return ($currentRootDomain === $LinkRootDomain);
             }
         ));
     }
@@ -568,31 +556,6 @@ trait UsesContent
             $this->links(),
             $this->internalLinks()
         );
-    }
-
-    /**
-     * Get all links within the same sub-domain on the page as absolute URLs
-     *
-     * E.g.
-     * www.example.com with a link to www.example.com/test would be found
-     * www.example.com with a link to example.com/test would not be found
-     *
-     * @see internalLinks() and externalLinks() for more details
-     *
-     * @return array
-     */
-    public function subdomainLinks(): array
-    {
-        // Get the current host - to compare against for internal links
-        $host = parse_url($this->currentURL(), PHP_URL_HOST);
-
-        // Filter the array
-        return array_values(array_filter(
-            $this->links(),
-            function ($link) use (&$host) {
-                return ($host === parse_url($link, PHP_URL_HOST));
-            }
-        ));
     }
 
     /**

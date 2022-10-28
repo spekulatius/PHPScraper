@@ -50,6 +50,7 @@ trait UsesGoutte
      */
     public function go(string $url): self
     {
+        // Keep it around for internal processing.
         $this->currentPage = $this->client->request('GET', $url);
 
         return $this;
@@ -63,6 +64,7 @@ trait UsesGoutte
      */
     public function setContent(string $url, string $content): self
     {
+        // Overwrite the current page with a fresh Crawler instance of the content.
         $this->currentPage = new Crawler($content, $url);
 
         return $this;

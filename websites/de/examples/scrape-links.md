@@ -94,7 +94,7 @@ Wenn Sie mehr Daten benötigen, müssen Sie entweder die Bibliothek erweitern od
 
 ## Interne Links und externe Links
 
-PHPScraper erlaubt es, nur interne oder externe Links zurückzugeben. Die internen Links beinhalten sowohl Links der gleichen Root-Domain als auch jeder Sub-Domain. Wenn Sie nur die Links innerhalb der genauen Subdomain benötigen, verwenden Sie stattdessen [`subdomainLinks`](#sub-domain-links). Das Folgende demonstriert beides:
+PHPScraper erlaubt es alle, interne oder externe Links zurückzugeben. Das folgende Beispiel demonstriert `internalLinks` sowie `externalLinks`:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -118,25 +118,3 @@ var_dump($web->externalLinks);
  * ]
  */
 ```
-
-## Sub-Domain Links
-
-Wenn Sie nur Links auf die exakte Subdomain abrufen wollen, können Sie die `subdomainLinks`-Methode verwenden:
-
-```php
-$web = new \spekulatius\phpscraper;
-
-// Navigation zur Testseite.
-$web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
-
-var_dump($web->subdomainLinks);
-/**
- * [
- *    'https://test-pages.phpscraper.de/',
- * ]
- */
-```
-
-::: warning
-Dies kann zu Problemen führen, wenn eine Website Links mit *und* ohne "www" mischt, da www als Subdomain betrachtet wird.
-:::

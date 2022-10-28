@@ -9,7 +9,7 @@ The scraping of links works very similar to [image scraping](/examples/scrape-im
 
 ## Simple Link List
 
-The following example parses a web-page for links and returns an array of absolute URLs:
+The following example parses a web-page for any links and returns an array of absolute URLs:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -94,7 +94,7 @@ If you require more data, you will either need to extend the library or submit a
 
 ## Internal Links and External Links
 
-PHPScraper allows to return only internal or external links. The internal links include links both the same root-domain as well as any sub-domain. If you are in need to get only the links within the exact sub-domain use [`subdomainLinks`](#sub-domain-links) instead. The following demonstrates both:
+PHPScraper allows to return only internal or external links. The following demonstrates both:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -118,25 +118,3 @@ var_dump($web->externalLinks);
  * ]
  */
 ```
-
-## Sub-domain Links
-
-If you need you retrieve only links on the exact sub-domain you can use the `subdomainLinks`-method:
-
-```php
-$web = new \spekulatius\phpscraper;
-
-// Navigate to the test page.
-$web->go('https://test-pages.phpscraper.de/links/sub-domain-links.html');
-
-var_dump($web->subdomainLinks);
-/**
- * [
- *    'https://test-pages.phpscraper.de/',
- * ]
- */
-```
-
-::: warning
-This might case issues when a site mixes links with *and* without 'www', as www is considered a sub-domain.
-:::
