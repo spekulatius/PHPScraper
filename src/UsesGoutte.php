@@ -127,7 +127,7 @@ trait UsesGoutte
      */
     public function fetchAsset(string $url)
     {
-        return $this->httpClient->request('GET', $url)?->getContent();
+        return $this->httpClient->request('GET', $url)->getContent();
     }
 
     /**
