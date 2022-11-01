@@ -62,7 +62,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         // Click the link with the text:
         $web->clickLink('external link');
 
-        // Check the Url
+        // Check the URL
         $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
 
@@ -82,7 +82,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         // Click the link with the text:
         $web->clickLink('external link with redirect');
 
-        // Check the Url
+        // Check the URL
         $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
 
@@ -102,7 +102,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         // Click the link with the text:
         $web->clickLink('https://peterthaleikis.com/');
 
-        // Check the Url
+        // Check the URL
         $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
 }

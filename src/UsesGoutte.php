@@ -72,7 +72,7 @@ trait UsesGoutte
     }
 
     /**
-     * Navigates to an url
+     * Navigates to a new page using an URL.
      *
      * @param string $url
      */
@@ -86,6 +86,8 @@ trait UsesGoutte
 
     /**
      * Allows to set HTML content to process.
+     *
+     * This is intended to be used as a work-around, if you already have the DOM.
      *
      * @param string $url
      * @param string $content
