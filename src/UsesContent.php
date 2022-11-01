@@ -531,7 +531,7 @@ trait UsesContent
     public function internalLinks(): array
     {
         // Get the current host - to compare against for internal links
-        $currentRootDomain = Uri::createFromString($this->currentURL())->getHost();
+        $currentRootDomain = $this->currentHost();
 
         // Filter the array
         return array_values(array_filter(
@@ -571,13 +571,13 @@ trait UsesContent
         $result = [];
         foreach ($links as $link) {
             // Generate the proper uri using the Symfony's link class
-            $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentURL());
+            $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentUrl());
 
             // Check if the anchor is only an image. If so, wrap it accordingly to make it work.
             $image = [];
             foreach($link->childNodes as $childNode) {
                 if (!empty($childNode) && $childNode->nodeName === 'img') {
-                    $image[] = (new \Symfony\Component\DomCrawler\Image($childNode, $this->currentURL()))->getUri();
+                    $image[] = (new \Symfony\Component\DomCrawler\Image($childNode, $this->currentUrl()))->getUri();
                 }
             }
 
@@ -637,7 +637,7 @@ trait UsesContent
         $result = [];
         foreach ($images as $image) {
             // Generate the proper uri using the Symfony's image class
-            $imageObj = new \Symfony\Component\DomCrawler\Image($image, $this->currentURL());
+            $imageObj = new \Symfony\Component\DomCrawler\Image($image, $this->currentUrl());
 
             // Collect commonly interesting attributes and URL
             $result[] = [

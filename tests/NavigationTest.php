@@ -15,13 +15,14 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame('Page #1', $web->h1[0]);
+        $this->assertSame($web->h1[0], 'Page #1');
 
         // Navigate to test page #2 using the absolute link.
         $web->clickLink('2 absolute');
 
-        // Check the title to see if we actually moved...
-        $this->assertSame('Page #2', $web->h1[0]);
+        // Check the title and URL to see if we actually moved...
+        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame($web->currentUrl, 'https://test-pages.phpscraper.de/navigation/2.html');
     }
 
     /**
@@ -35,13 +36,14 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame('Page #1', $web->h1[0]);
+        $this->assertSame($web->h1[0], 'Page #1');
 
         // Navigate to test page #2 using the relative link.
         $web->clickLink('2 relative');
 
-        // Check the title to see if we actually moved...
-        $this->assertSame('Page #2', $web->h1[0]);
+        // Check the title and URL to see if we actually moved...
+        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame($web->currentUrl, 'https://test-pages.phpscraper.de/navigation/2.html');
     }
 
     /**
@@ -55,14 +57,13 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame('Page #2', $web->h1[0]);
+        $this->assertSame($web->h1[0], 'Page #2');
 
         // Click the link with the text:
         $web->clickLink('external link');
 
-        // Check the title
-        // @todo: confirm issue
-        // $this->assertSame('https://peterthaleikis.com/', $web->currentURL);
+        // Check the Url
+        $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
 
     /**
@@ -76,14 +77,13 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame('Page #2', $web->h1[0]);
+        $this->assertSame($web->h1[0], 'Page #2');
 
         // Click the link with the text:
         $web->clickLink('external link with redirect');
 
-        // Check the title
-        // @todo: confirm issue
-        // $this->assertSame('https://peterthaleikis.com/', $web->currentURL);
+        // Check the Url
+        $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
 
     /**
@@ -97,12 +97,12 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame('Page #2', $web->h1[0]);
+        $this->assertSame($web->h1[0], 'Page #2');
 
         // Click the link with the text:
         $web->clickLink('https://peterthaleikis.com/');
 
-        // Check the title
-        $this->assertSame('https://peterthaleikis.com/', $web->currentURL);
+        // Check the Url
+        $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
 }
