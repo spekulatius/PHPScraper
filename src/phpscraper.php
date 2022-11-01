@@ -88,7 +88,7 @@ class phpscraper
         // Add the defaults in
         $this->config = array_merge($defaults, $config);
 
-        // Symfony HttpCleint
+        // Symfony HttpClient
         $httpClient = SymfonyHttpClient::create([
             'proxy' => $this->config['proxy'],
             'timeout' => $this->config['timeout'],
@@ -105,6 +105,7 @@ class phpscraper
 
         // Set the client on the core.
         $this->core->setClient($client);
+        $this->core->setHttpClient($httpClient);
 
         return $this;
     }

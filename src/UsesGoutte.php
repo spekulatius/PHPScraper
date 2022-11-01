@@ -5,6 +5,7 @@ namespace spekulatius;
 use League\Uri\Uri;
 use Goutte\Client as GoutteClient;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\HttpClient\CurlHttpClient;
 
 trait UsesGoutte
 {
@@ -14,6 +15,13 @@ trait UsesGoutte
      * @var Goutte\Client
      */
     protected $client = null;
+
+    /**
+     * Holds the HttpClient
+     *
+     * @var Symfony\Component\HttpClient\CurlHttpClient
+     */
+    protected $httpClient = null;
 
     /**
      * Holds the current page (a Crawler object)
@@ -30,6 +38,18 @@ trait UsesGoutte
     public function setClient(GoutteClient $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Overwrites the httpClient
+     *
+     * @param Symfony\Component\HttpClient\CurlHttpClient $httpClient
+     */
+    public function setHttpClient(CurlHttpClient $httpClient): self
+    {
+        $this->httpClient = $httpClient;
 
         return $this;
     }
@@ -107,7 +127,7 @@ trait UsesGoutte
      */
     public function fetchAsset(string $url)
     {
-        return $this->client->request('GET', $url)->getResponse();
+        return $this->httpClient->request('GET', $url)->getContent();
     }
 
     /**
