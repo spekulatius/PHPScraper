@@ -22,4 +22,9 @@ class Core
      * This contains various content-related selectors.
      */
     use UsesContent;
+
+    /**
+     * This contains the feeds-related selectors and parsers.
+     */
+    use UsesFeeds;
 }
