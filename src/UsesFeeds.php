@@ -15,7 +15,7 @@ trait UsesFeeds
     public function sitemapUrl(): ?string
     {
         // This needs to be guessed as sitemap URLs aren't fixed. Usually it's `/sitemap.xml`.
-        return $this->currentHost() . '/sitemap.xml';
+        return $this->currentBaseUrl() . '/sitemap.xml';
     }
 
     /**
@@ -37,16 +37,26 @@ trait UsesFeeds
     public function sitemap(): array
     {
         // See if we can parse the current URL already. If not, navigate to the guessed URL.
-        $sitemap = $this->sitemapRaw();
+        $xmlString = $this->sitemapRaw();
 
+        try {
+            // Convert XML to array
+            // Credit: https://stackoverflow.com/a/20431742
+            $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
+            $json = json_encode($xml);
+            $sitemap = json_decode($json, true);
+        } catch (\Exception $e) {
+            throw new \Exception('Failed to parse sitemap, usually invalid XML: ' . $e->getMessage());
+        }
 
+        return $sitemap;
     }
 
 
     public function searchIndexUrl(): ?string
     {
         // This is the usual location for various search indexes.
-        return $this->currentHost() . '/index.json';
+        return $this->currentBaseUrl() . '/index.json';
     }
 
     public function searchIndexRaw(): string
