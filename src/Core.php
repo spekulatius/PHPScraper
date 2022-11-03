@@ -9,6 +9,16 @@ namespace spekulatius;
 class Core
 {
     /**
+     * Shared simple parsers.
+     */
+    use UsesParsers;
+
+    /**
+     * Url related helpers.
+     */
+    use UsesUrls;
+
+    /**
      * This trait manages Goutte itself.
      */
     use UsesGoutte;

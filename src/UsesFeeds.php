@@ -2,86 +2,77 @@
 
 namespace spekulatius;
 
-use Goutte\Client as GoutteClient;
-use Symfony\Component\DomCrawler\Crawler;
-
 trait UsesFeeds
 {
     /**
-     * Returns a guessed sitemap URL based on the current host.
+     * Returns a guessed sitemap URL based on the current host. Usually it's `/sitemap.xml`.
+     *
+     * @todo implement actual checks if the URL exists.
      *
      * @return ?string
      */
     public function sitemapUrl(): ?string
     {
-        // This needs to be guessed as sitemap URLs aren't fixed. Usually it's `/sitemap.xml`.
         return $this->currentBaseUrl() . '/sitemap.xml';
     }
 
     /**
-     * Resolves the sitemap and returns an array with std objects.
+     * Resolves the sitemap and returns an array.
      *
-     * @return string $sitemap
-     */
-    public function sitemapRaw(): string
-    {
-        return $this->fetchAsset($this->sitemapUrl());
-    }
-
-    /**
-     * Resolves the sitemap and returns an array with std objects.
+     * @todo Support for text-only sitemaps, split versions, image-sitemaps, etc.
      *
-     * @todo Support for text-only, linked versions, image-sitemaps, etc.
      * @return array $sitemap
      */
-    public function sitemap(): array
+    public function sitemap(?string $url = null): array
     {
-        // See if we can parse the current URL already. If not, navigate to the guessed URL.
-        $xmlString = $this->sitemapRaw();
-
-        try {
-            // Convert XML to array
-            // Credit: https://stackoverflow.com/a/20431742
-            $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
-            $json = json_encode($xml);
-            $sitemap = json_decode($json, true);
-        } catch (\Exception $e) {
-            throw new \Exception('Failed to parse sitemap, usually invalid XML: ' . $e->getMessage());
-        }
-
-        return $sitemap;
+        return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()));
     }
 
 
+    /**
+     * Returns the usual location (URL) for the static search index.
+     *
+     * @todo implement actual checks if the URL exists.
+     *
+     * @return ?string
+     */
     public function searchIndexUrl(): ?string
     {
-        // This is the usual location for various search indexes.
         return $this->currentBaseUrl() . '/index.json';
     }
 
-    public function searchIndexRaw(): string
+    public function searchIndex(?string $url = null): array
     {
-        return $this->fetchAsset($this->searchIndexUrl());
-    }
-
-    public function searchIndex(): array
-    {
-        // See if we can parse the current URL already. If not, navigate to the usual URL.
-
-        // https://symfony.com/doc/current/components/browser_kit.html#dealing-with-http-responses
+        return $this->parseJson($this->fetchAsset($url ?? $this->searchIndexUrl()));
     }
 
 
+
+
+    /**
+     * Compiles a list of RSS urls based on the <link>-tags on the current page.
+     */
     public function rssUrls(): array
     {
+        $urls = $this->filterExtractAttributes('//link[@type="application/rss+xml"]', ['href']);
 
+        return array_map(fn ($url) => $this->makeUrlAbsolute($url), $urls);
     }
 
-    public function rss(): array
+    public function rss(?string $url): array
     {
         // See if we can parse the current URL already. If not, navigate to the URLs.
+        return $this->parseXML($this->rssRaw());
     }
 
+
+
+
+    /**
+     * Merges all feeds in a unified structure. Removes duplicated URLs.
+     *
+     * @return array $feeds
+     */
     public function feeds(): array
     {
         return [
@@ -103,6 +94,5 @@ trait UsesFeeds
         // Check if there is a `index.json` (static search engines)
 
         // Add all RSS feeds we found defined.
-
     }
 }
