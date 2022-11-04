@@ -12,7 +12,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         $web = new \spekulatius\phpscraper;
 
         // Navigate to any test page. As the URL is predefined, it's only about the base URL.
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/index.json`.
         $this->assertSame('https://test-pages.phpscraper.de/index.json', $web->searchIndexUrl);
@@ -30,7 +30,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         $web = new \spekulatius\phpscraper;
 
         // Navigate to any test page. As the URL is predefined, it's only about the base URL.
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/index.json`.
         $this->assertSame(
@@ -47,7 +47,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         $web = new \spekulatius\phpscraper;
 
         // Navigate to any test page.
-        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/sitemap.xml`? It should be sitemap.xml as provided by the the url method.
         $this->assertSame(60, count($web->searchIndex));

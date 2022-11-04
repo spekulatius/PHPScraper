@@ -25,7 +25,7 @@ trait UsesFeeds
      */
     public function sitemap(?string $url = null): array
     {
-        return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()));
+        return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()))['url'];
     }
 
 

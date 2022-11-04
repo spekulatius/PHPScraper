@@ -36,10 +36,22 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Tests if we can use a custom url instead of a provided one.
+     *
      * @test
      */
     public function testCustomRssUrl()
     {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to any test page.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+        // Both files are the same. One URL isn't linked from the feeds.html and therefore is custom.
+        $this->assertSame(
+            $web->rss('https://test-pages.phpscraper.de/custom_rss.xml'),
+            $web->rss('https://test-pages.phpscraper.de/relative.xml')
+        );
     }
 
     /**
