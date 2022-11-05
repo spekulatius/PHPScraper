@@ -85,4 +85,49 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
             'https://peterthaleikis.com/posts/startup-name-check:-experiences-of-the-first-week/'
         );
     }
+
+    /**
+     * Tests the DTO creation.
+     *
+     * @test
+     */
+    public function testRssContent()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to any test page.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+        // The raw RSS is rather unhandy to work with. Let's put it in a var before testing stuff.
+        $entries = $web->rss('https://test-pages.phpscraper.de/custom_rss.xml');
+
+        // Check the count
+        $this->assertSame(37, count($entries));
+
+        // Check some entries to ensure the parsing works.
+        $this->assertSame(
+            $entries[4]->title,
+            'How I Built My First Browser Extension'
+        );
+        $this->assertSame(
+            $entries[4]->link,
+            'https://peterthaleikis.com/posts/how-i-built-my-first-browser-extension/'
+        );
+        $this->assertSame(
+            $entries[2]->title,
+            'How to Use Pug on Netlify?'
+        );
+        $this->assertSame(
+            $entries[2]->link,
+            'https://peterthaleikis.com/posts/how-to-use-pug-on-netlify/'
+        );
+        $this->assertSame(
+            $entries[0]->title,
+            'Startup Name Check: Experiences of the First week'
+        );
+        $this->assertSame(
+            $entries[0]->link,
+            'https://peterthaleikis.com/posts/startup-name-check:-experiences-of-the-first-week/'
+        );
+    }
 }

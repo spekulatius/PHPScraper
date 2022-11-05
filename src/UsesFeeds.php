@@ -17,15 +17,35 @@ trait UsesFeeds
     }
 
     /**
-     * Resolves the sitemap and returns an array.
-     *
-     * @todo Support for text-only sitemaps, split versions, image-sitemaps, etc.
+     * Resolves the sitemap and returns an array with raw data.
      *
      * @return array $sitemap
      */
     public function sitemapRaw(?string $url = null): array
     {
         return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()))['url'];
+    }
+
+    /**
+     * Resolves the sitemap and returns an array of `\spekulatius\DataTransferObjects\FeedEntry`.
+     *
+     * @todo Support for text-only sitemaps, split versions, image-sitemaps, etc.?
+     *
+     * @return array $sitemap
+     */
+    public function sitemap(?string $url = null): array
+    {
+        return array_map(
+            // Create the generic DTO for each
+            fn ($entry) => DataTransferObjects\FeedEntry::fromArray([
+                'title' => '',
+                'description' => '',
+                'link' => $entry['loc'],
+            ]),
+
+            // Fetch the sitemap URL, parse it and select the `url` section.
+            $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()))['url']
+        );
     }
 
 
@@ -41,9 +61,34 @@ trait UsesFeeds
         return $this->currentBaseUrl() . '/index.json';
     }
 
+    /**
+     * Returns an array of the parsed search index JSON.
+     *
+     * @return array $searchIndex
+     */
     public function searchIndexRaw(?string $url = null): array
     {
         return $this->parseJson($this->fetchAsset($url ?? $this->searchIndexUrl()));
+    }
+
+    /**
+     * Resolves the search index and returns an array of `\spekulatius\DataTransferObjects\FeedEntry`.
+     *
+     * @return array $searchIndex
+     */
+    public function searchIndex(?string $url = null): array
+    {
+        return array_map(
+            // Create the generic DTO for each
+            fn ($entry) => DataTransferObjects\FeedEntry::fromArray([
+                'title' => $entry['title'],
+                'description' => $entry['snippet'],
+                'link' => $entry['link'],
+            ]),
+
+            // Fetch the sitemap URL, parse it and select the `url` section.
+            $this->searchIndexRaw()
+        );
     }
 
 
@@ -60,10 +105,10 @@ trait UsesFeeds
     /**
      * Fetches a given set of RSS feeds and returns one array with raw data.
      *
-     * @param string ...$urls
+     * @param ?string ...$urls
      * @return array $rss
      */
-    public function rssRaw(string ...$urls): array
+    public function rssRaw(?string ...$urls): array
     {
         return array_map(
             fn ($url) => $this->parseXml($this->fetchAsset($url)),
@@ -71,6 +116,25 @@ trait UsesFeeds
         );
     }
 
+    /**
+     * Fetches a given set of RSS feeds and returns one array with raw data.
+     *
+     * @param ?string ...$urls
+     * @return array $rss
+     */
+    public function rss(?string ...$urls): array
+    {
+        return array_map(
+            // Create the generic DTO for each
+            fn ($entry) => DataTransferObjects\FeedEntry::fromArray([
+                'title' => $entry['title'],
+                'link' => $entry['link']['@attributes']['href'],
+            ]),
+
+            // Fetch the rss URLs, parse it and select the `url` section.
+            $this->rssRaw(...$urls)[0]['entry']
+        );
+    }
 
 
     /**

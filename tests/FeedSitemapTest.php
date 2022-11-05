@@ -79,4 +79,28 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
             $web->sitemapRaw[20]['loc'],
         );
     }
+
+    /**
+     * @test
+     */
+    public function testSitemap()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to any test page. As the URL is guessed, it's only about the base URL.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+        // Check the count
+        $this->assertSame(129, count($web->sitemap));
+
+        // Check some samples.
+        $this->assertSame(
+            'https://phpscraper.de/apis/linkedin.html',
+            $web->sitemap[4]->link,
+        );
+        $this->assertSame(
+            'https://phpscraper.de/de/apis/zalando.html',
+            $web->sitemap[20]->link
+        );
+    }
 }
