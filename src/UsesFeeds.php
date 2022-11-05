@@ -23,7 +23,7 @@ trait UsesFeeds
      *
      * @return array $sitemap
      */
-    public function sitemap(?string $url = null): array
+    public function sitemapRaw(?string $url = null): array
     {
         return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()))['url'];
     }
@@ -41,12 +41,10 @@ trait UsesFeeds
         return $this->currentBaseUrl() . '/index.json';
     }
 
-    public function searchIndex(?string $url = null): array
+    public function searchIndexRaw(?string $url = null): array
     {
         return $this->parseJson($this->fetchAsset($url ?? $this->searchIndexUrl()));
     }
-
-
 
 
     /**
@@ -59,12 +57,19 @@ trait UsesFeeds
         return array_map(fn ($url) => $this->makeUrlAbsolute($url), $urls);
     }
 
-    public function rss(?string $url): array
+    /**
+     * Fetches a given set of RSS feeds and returns one array with raw data.
+     *
+     * @param string ...$urls
+     * @return array $rss
+     */
+    public function rssRaw(string ...$urls): array
     {
-        // See if we can parse the current URL already. If not, navigate to the URLs.
-        return $this->parseXML($this->rssRaw());
+        return array_map(
+            fn ($url) => $this->parseXml($this->fetchAsset($url)),
+            empty($urls) ? $this->rssUrls() : $urls
+        );
     }
-
 
 
 
@@ -73,17 +78,17 @@ trait UsesFeeds
      *
      * @return array $feeds
      */
-    public function feeds(): array
+    public function feedUrls(): array
     {
         return [
-            // Check if there is a `sitemap.xml`
-            $this->sitemapUrl(),
+            // Check the `sitemap.xml` for Urls
+            $this->sitemap(),
 
-            // Check if there is a `index.json` (static search engines)
-            $this->searchIndexUrl(),
+            // Check the `index.json` (static-site search engines) for Urls
+            $this->searchIndex(),
 
             // Add all RSS feeds we found defined.
-            ...$this->rssUrls(),
+            ...$this->rss(),
         ];
     }
 

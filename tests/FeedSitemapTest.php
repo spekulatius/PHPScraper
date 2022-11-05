@@ -14,7 +14,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // Navigate to any test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-        // Did we get the expected `/sitemap.xml`.
+        // Did we get the expected `/sitemap.xml`?
         $this->assertSame('https://test-pages.phpscraper.de/sitemap.xml', $web->sitemapUrl);
     }
 
@@ -30,10 +30,10 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // Navigate to any test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-        // Did we get the expected `/sitemap.xml`.
+        // The sitemapUrl should be the default.
         $this->assertSame(
-            $web->sitemap(),
-            $web->sitemap($web->sitemapUrl),
+            $web->sitemapRaw(),
+            $web->sitemapRaw($web->sitemapUrl),
         );
     }
 
@@ -49,31 +49,34 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // Navigate to any test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-        // Did we get the expected `/sitemap.xml`.
+        // We should always allow for custom paths.
         $this->assertSame(
-            $web->sitemap($web->sitemapUrl),
-            $web->sitemap($web->currentBaseUrl . '/custom_sitemap.xml'),
+            $web->sitemapRaw($web->sitemapUrl),
+            $web->sitemapRaw($web->currentBaseUrl . '/custom_sitemap.xml'),
         );
     }
 
     /**
      * @test
      */
-    public function testSitemap()
+    public function testSitemapRaw()
     {
         $web = new \spekulatius\phpscraper;
 
         // Navigate to any test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-        // Did we get the expected `/sitemap.xml`.
+        // Check the count
+        $this->assertSame(129, count($web->sitemapRaw));
+
+        // Check some entries to ensure the parsing works as expected.
         $this->assertSame(
             'https://phpscraper.de/apis/linkedin.html',
-            $web->sitemap[4]['loc'],
+            $web->sitemapRaw[4]['loc'],
         );
         $this->assertSame(
             'https://phpscraper.de/de/apis/zalando.html',
-            $web->sitemap[20]['loc'],
+            $web->sitemapRaw[20]['loc'],
         );
     }
 }
