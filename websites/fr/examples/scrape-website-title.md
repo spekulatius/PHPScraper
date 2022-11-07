@@ -84,6 +84,6 @@ $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 echo $web->title;
 ```
 
-::: tip conseil
+::: tip Conseil
 Les entités et les caractères spéciaux ont été pris en compte dans toute la bibliothèque. Si vous trouvez un endroit où ils ne fonctionnent pas comme prévu, veuillez signaler le problème à l'administrateur. [numéro](https://github.com/spekulatius/PHPScraper/issues).
 :::

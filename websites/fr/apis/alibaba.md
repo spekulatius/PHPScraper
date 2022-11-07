@@ -9,7 +9,7 @@ Pour Alibaba, nous envisageons la mise en œuvre d'une API avec la portée suiva
 - Recherche de produits par mot-clé
 - Obtenir des informations sur les produits
 
-::: tip conseil
+::: tip Conseil
 Veuillez noter que cette liste de points d'accès aux API n'est *pas* définitive et qu'elle est susceptible de changer.
 :::
 

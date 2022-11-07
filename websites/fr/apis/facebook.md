@@ -19,7 +19,7 @@ Pour Facebook, nous envisageons la mise en œuvre d'une API avec la portée suiv
 - Public Groupes et groupes privés avec clé: Messages
 - Messages: Détails du message public (y compris les commentaires, les "likes", les "likers", etc.)
 
-::: tip conseil
+::: tip Conseil
 Veuillez noter que cette liste de points d'accès aux API n'est *pas* définitive et qu'elle est susceptible de changer.
 :::
 

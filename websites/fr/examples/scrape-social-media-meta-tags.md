@@ -52,7 +52,7 @@ $data = $web->openGraph;
  */
 ```
 
-::: tip conseil
+::: tip Conseil
 Si aucune donnée n'a été trouvée, le tableau sera retourné vide.
 :::
 
