@@ -59,6 +59,31 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * We should support both absolute and relative URLs.
+     *
+     * @test
+     */
+    public function testDifferentSearchIndexUrlTypes()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+        // Test 1: Absolute URL
+        $this->assertSame(
+            $web->searchIndexRaw($web->searchIndexUrl),
+            $web->searchIndexRaw($web->currentBaseUrl . '/custom_index.json'),
+        );
+
+        // Test 2: Relative URL
+        $this->assertSame(
+            $web->searchIndexRaw($web->searchIndexUrl),
+            $web->searchIndexRaw('/custom_index.json'),
+        );
+    }
+
+    /**
      * Tests the raw parsing.
      *
      * @test

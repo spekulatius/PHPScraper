@@ -57,6 +57,33 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * We should support both absolute and relative URLs.
+     *
+     * @test
+     */
+    public function testDifferentSitemapUrlTypes()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+        // Test 1: Absolute URL
+        $this->assertSame(
+            $web->sitemapRaw($web->sitemapUrl),
+            $web->sitemapRaw($web->currentBaseUrl . '/custom_sitemap.xml'),
+        );
+
+        // Test 2: Relative URL
+        $this->assertSame(
+            $web->sitemapRaw($web->sitemapUrl),
+            $web->sitemapRaw('/custom_sitemap.xml'),
+        );
+    }
+
+    /**
+     * Ensure we can parse the sitemap in itself (XML).
+     *
      * @test
      */
     public function testSitemapRaw()

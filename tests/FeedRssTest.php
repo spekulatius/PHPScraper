@@ -57,6 +57,31 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * We should support both absolute and relative URLs.
+     *
+     * @test
+     */
+    public function testDifferentSitemapUrlTypes()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+        // Test 1: Absolute URL
+        $this->assertSame(
+            $web->rssRaw($web->rssUrls[0]),
+            $web->rssRaw($web->currentBaseUrl . '/custom_rss.xml'),
+        );
+
+        // Test 2: Relative URL
+        $this->assertSame(
+            $web->rssRaw($web->rssUrls[0]),
+            $web->rssRaw('/custom_rss.xml'),
+        );
+    }
+
+    /**
      * Tests the raw parsing.
      *
      * @test

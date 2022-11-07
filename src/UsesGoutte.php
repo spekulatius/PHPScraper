@@ -121,13 +121,19 @@ trait UsesGoutte
     }
 
     /**
-     * Fetch an asset from a given URL (for example an image)
+     * Fetch an asset from a given absolute or relative URL
      *
      * @param string $url
      */
     public function fetchAsset(string $url)
     {
-        return $this->httpClient->request('GET', $url)->getContent();
+        return $this
+            ->httpClient
+            ->request(
+                'GET',
+                ($this->currentPage === null) ? $url : $this->makeUrlAbsolute($url),
+            )
+            ->getContent();
     }
 
     /**
