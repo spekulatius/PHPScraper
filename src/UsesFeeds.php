@@ -87,7 +87,7 @@ trait UsesFeeds
             ]),
 
             // Fetch the sitemap URL, parse it and select the `url` section.
-            $this->searchIndexRaw()
+            $this->searchIndexRaw($url)
         );
     }
 
