@@ -43,9 +43,11 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
     /**
      * We should support both absolute and relative URLs.
      *
+     * Here we use the sitemap test page as a reference.
+     *
      * @test
      */
-    public function testDifferentSitemapUrlTypes()
+    public function testDifferentUrlTypes()
     {
         $web = new \spekulatius\phpscraper;
 

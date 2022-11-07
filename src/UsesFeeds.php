@@ -135,38 +135,4 @@ trait UsesFeeds
             $this->rssRaw(...$urls)[0]['entry']
         );
     }
-
-
-    /**
-     * Merges all feeds in a unified structure. Removes duplicated URLs.
-     *
-     * @return array $feedUrls
-     */
-    public function feedUrls(): array
-    {
-        return array_unique([
-            // Check the `sitemap.xml` for Urls
-            array_map(fn ($item) => $item->link, $this->sitemap()),
-
-            // Check the `index.json` (static-site search engines) for Urls
-            array_map(fn ($item) => $item->link, $this->searchIndex()),
-
-            // // Add all RSS feeds we found defined.
-            // array_map(
-            //     function ($item) {
-
-            //     },
-            //     ...$this->rss()
-            // ),
-        ]);
-    }
-
-    public function feedsWithDetails(): array
-    {
-        // Check if there is a `sitemap.xml`
-
-        // Check if there is a `index.json` (static search engines)
-
-        // Add all RSS feeds we found defined.
-    }
 }
