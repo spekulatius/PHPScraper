@@ -64,13 +64,13 @@ $rss = $web->rss($web->rssUrls[0]);
 // Multiple URLs
 $rss = $web->rss(
     'https://example.com/feed_1.xml',
-    'https://example.com/feed_1.xml',
+    'https://example.com/feed_2.xml',
 );
 ```
 
-::: tip Limited Details
-The result contains only select properties. It return an array of `\spekuatius\DataTransferObjects\FeedEntry` with `link`, `title`, and `description`.
+This result contains only selected properties. It returns an array of `DataTransferObjects\FeedEntry` with properties `link` and `title`.
 
+::: tip Complete Details
 If you need all details, please fallback on `$web->rssRaw(...)`. It can be called the same as `$web->rss(...)` and returns an array-structure.
 :::
 
@@ -83,9 +83,10 @@ You can parse XML sitemaps using `sitemap()`:
 $web = new \spekulatius\phpscraper;
 
 /**
- * Get the sitemap for the current website (if it exists under `/sitemap.xml`).
+ * Get the sitemap for the current website (if it exists).
+ * This assumes the default URL `/sitemap.xml` is used.
  *
- * It will return an array of `\spekuatius\DataTransferObjects\FeedEntry`.
+ * @throws exceptions (e.g. Guzzle).
  */
 $sitemap = $web
     ->go('https://example.com')
@@ -95,9 +96,9 @@ $sitemap = $web
 $sitemap = $web->sitemap('https://example.com/custom_sitemap.xml');
 ```
 
-::: tip Limited Details
-This contains only select properties. It will return an array of `\spekuatius\DataTransferObjects\FeedEntry` with `link`, `title`, and `description`.
+This result contains only selected properties. It returns an array of `DataTransferObjects\FeedEntry` with the `link` property.
 
+::: tip Complete Details
 If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be called the same as `$web->sitemap()` and returns an array-structure.
 :::
 
@@ -119,8 +120,8 @@ $searchIndex = $web
 $searchIndex = $web->searchIndex('https://example.com/custom_index.json');
 ```
 
-::: tip
-This contains only select properties. It will return an array of `\spekuatius\DataTransferObjects\FeedEntry` with `link`, `title`, and `description`.
+**This result contains only selected properties.** It returns an array of `DataTransferObjects\FeedEntry` with properties `link`, `title`, and `description`.
 
+::: tip Complete Details
 If you need all details, please fallback on `$web->searchIndexRaw(...)`. It can be called the same as `$web->searchIndex()` and returns an array-structure.
 :::
