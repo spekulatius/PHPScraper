@@ -67,20 +67,22 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Check the count
-        $this->assertSame(129, count($web->sitemapRaw));
+        $this->assertSame(129, count($web->sitemapRaw['url']));
 
         // Check some entries to ensure the parsing works as expected.
         $this->assertSame(
             'https://phpscraper.de/apis/linkedin.html',
-            $web->sitemapRaw[4]['loc'],
+            $web->sitemapRaw['url'][4]['loc'],
         );
         $this->assertSame(
             'https://phpscraper.de/de/apis/zalando.html',
-            $web->sitemapRaw[20]['loc'],
+            $web->sitemapRaw['url'][20]['loc'],
         );
     }
 
     /**
+     * Tests the DTO creation.
+     *
      * @test
      */
     public function testSitemap()

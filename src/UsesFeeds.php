@@ -23,7 +23,7 @@ trait UsesFeeds
      */
     public function sitemapRaw(?string $url = null): array
     {
-        return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()))['url'];
+        return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()));
     }
 
     /**
@@ -44,7 +44,7 @@ trait UsesFeeds
             ]),
 
             // Fetch the sitemap URL, parse it and select the `url` section.
-            $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()))['url']
+            $this->sitemapRaw($url)['url']
         );
     }
 
