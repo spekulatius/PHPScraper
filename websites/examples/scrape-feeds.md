@@ -4,14 +4,12 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Feeds%20Tags&bg_image
 
 # Scrape Feeds
 
-PHPScraper can identify and process feeds for you. Currently the following feeds are supported:
+PHPScraper can identify and process feeds for you. The following feed-specific features are implemented:
 
-- RSS Feeds
-- XML-Sitemaps
-- Static Site Indexes
+[[toc]]
 
 
-## RSS Feeds
+## Identify RSS Feed URLs
 
 You can identify any RSS feeds defined in the markup of the current page using `rssUrls`:
 
@@ -32,10 +30,13 @@ $web = new \spekulatius\phpscraper;
  *   href="/relative.xml"
  * />
  */
-$web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-// Print the URLs
-echo $web->rssUrls;
+print_r(
+    $web
+        ->go('https://test-pages.phpscraper.de/meta/feeds.html')
+        ->rssUrls
+);
+
 /**
  * [
  *     'https://test-pages.phpscraper.de/absolute.xml',
@@ -44,9 +45,82 @@ echo $web->rssUrls;
  */
 ```
 
+
 ## Parse RSS feeds
 
-You can parse RSS feeds using `rss` in various ways:
+The `rss()`-method can be used to parse RSS feeds. If called without any parameter `rssUrls` will be used:
+
+```php
+// Same as `$web->rss(...$web->rssUrls)`
+$rss = $web->rss();
+```
+
+You can also parse RSS feeds by passing one or more URLs in:
+
+```php
+// Single URL.
+$rss = $web->rss($web->rssUrls[0]);
+
+// Multiple URLs
+$rss = $web->rss(
+    'https://example.com/feed_1.xml',
+    'https://example.com/feed_1.xml',
+);
+```
+
+::: tip Limited Details
+The result contains only select properties. It return an array of `\spekuatius\DataTransferObjects\FeedEntry` with `link`, `title`, and `description`.
+
+If you need all details, please fallback on `$web->rssRaw(...)`. It can be called the same as `$web->rss(...)` and returns an array-structure.
+:::
 
 
+## Parse XML Sitemaps
 
+You can parse XML sitemaps using `sitemap()`:
+
+```php
+$web = new \spekulatius\phpscraper;
+
+/**
+ * Get the sitemap for the current website (if it exists under `/sitemap.xml`).
+ *
+ * It will return an array of `\spekuatius\DataTransferObjects\FeedEntry`.
+ */
+$sitemap = $web
+    ->go('https://example.com')
+    ->sitemap();
+
+// You can pass in an URL to parse:
+$sitemap = $web->sitemap('https://example.com/custom_sitemap.xml');
+```
+
+::: tip Limited Details
+This contains only select properties. It will return an array of `\spekuatius\DataTransferObjects\FeedEntry` with `link`, `title`, and `description`.
+
+If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be called the same as `$web->sitemap()` and returns an array-structure.
+:::
+
+
+## Parse Static Search Indexes
+
+You can parse static search indexes using `searchIndex()`:
+
+```php
+$web = new \spekulatius\phpscraper;
+
+// Get the search index for the current website (if it exists).
+// This assumes the default URL `/index.json` is used.
+$searchIndex = $web
+    ->go('https://example.com')
+    ->searchIndex();
+
+// You can pass in an URL to parse:
+$searchIndex = $web->searchIndex('https://example.com/custom_index.json');
+```
+
+::: tip
+This contains only select properties. It will return an array of `\spekuatius\DataTransferObjects\FeedEntry` with `link`, `title`, and `description`.
+
+If you need all details, please fallback on `$web->searchIndexRaw(...)`. It can be called the same as `$web->searchIndex()` and returns an array-structure.
+:::
