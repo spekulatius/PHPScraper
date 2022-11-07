@@ -86,6 +86,24 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+    // /**
+    //  * Tests the DTO creation.
+    //  *
+    //  * @test
+    //  */
+    // public function testRssContent2()
+    // {
+    //     $web = new \spekulatius\phpscraper;
+
+    //     // Navigate to any test page.
+    //     $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
+    //     $this->assertSame(
+    //         $web->rssRaw(),
+    //         $web->rssRaw('https://test-pages.phpscraper.de/custom_rss.xml'),
+    //     );
+    // }
+
     /**
      * Tests the DTO creation.
      *
