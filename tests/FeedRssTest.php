@@ -116,13 +116,14 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
         // Navigate to any test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-        // The raw RSS is rather unhandy to work with. Let's put it in a var before testing stuff.
+        // The raw RSS is rather unhandy to work with (hence we actually use the DTOs).
         $entries = $web->rss('https://test-pages.phpscraper.de/custom_rss.xml');
 
         // Check the count
         $this->assertSame(37, count($entries));
 
         // Check some entries to ensure the parsing works.
+        // Set 1
         $this->assertSame(
             $entries[4]->title,
             'How I Built My First Browser Extension'
@@ -131,6 +132,8 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
             $entries[4]->link,
             'https://peterthaleikis.com/posts/how-i-built-my-first-browser-extension/'
         );
+
+        // Set 2
         $this->assertSame(
             $entries[2]->title,
             'How to Use Pug on Netlify?'
@@ -139,6 +142,8 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
             $entries[2]->link,
             'https://peterthaleikis.com/posts/how-to-use-pug-on-netlify/'
         );
+
+        // Set 3
         $this->assertSame(
             $entries[0]->title,
             'Startup Name Check: Experiences of the First week'

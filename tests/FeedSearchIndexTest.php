@@ -103,7 +103,8 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         // Did we get the expected `/index.json`? It should contain 60 entries.
         $this->assertSame(60, count($web->searchIndex));
 
-        // Check some data to ensure the parsing actually worked.
+        // Check some data to ensure the parsing actually worked:
+        // Set 1
         $this->assertSame(
             'List of the Counties of Croatia',
             $web->searchIndex[4]->title,
@@ -117,6 +118,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
             $web->searchIndex[4]->link,
         );
 
+        // Set 2
         $this->assertSame(
             'List of the Municipalities of Macedonia',
             $web->searchIndex[2]->title,
@@ -130,6 +132,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
             $web->searchIndex[2]->link,
         );
 
+        // Set 3
         $this->assertSame(
             'List of the Counties and Municipalities of Lithuania',
             $web->searchIndex[0]->title,

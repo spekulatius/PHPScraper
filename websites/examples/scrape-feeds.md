@@ -51,6 +51,10 @@ print_r(
 The `rss()`-method can be used to parse RSS feeds. If called without any parameter `rssUrls` will be used:
 
 ```php
+// Init and go to any page of the domain
+$web = new \spekulatius\phpscraper;
+$web->go('https://test-pages.phpscraper.de/meta/feeds.html');
+
 // Same as `$web->rss(...$web->rssUrls)`
 $rss = $web->rss();
 ```
@@ -64,7 +68,7 @@ $rss = $web->rss($web->rssUrls[0]);
 // Multiple URLs
 $rss = $web->rss(
     'https://example.com/feed_1.xml',
-    'https://example.com/feed_2.xml',
+    'https://example.com/feed_2.xml'
 );
 ```
 
