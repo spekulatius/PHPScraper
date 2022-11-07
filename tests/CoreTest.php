@@ -47,4 +47,25 @@ class CoreTest extends \PHPUnit\Framework\TestCase
             $web->title
         );
     }
+
+    /**
+     * @test
+     */
+    public function testBasicChainability()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to test page
+        $web->go('https://phpscraper.de');
+
+        $this->assertSame(
+            // Unchained
+            $web->title,
+
+            // Chained
+            (new \spekulatius\phpscraper)
+                ->go('https://phpscraper.de')
+                ->title
+        );
+    }
 }
