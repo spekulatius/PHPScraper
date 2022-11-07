@@ -13,7 +13,7 @@ Pour Etsy, nous envisageons la mise en œuvre d'une API avec la portée suivante
 - Obtenir tous les prix des vendeurs
 - Recherche de produits par mot-clé ou par identifiant de vendeur
 
-::: tip conseil
+::: tip Conseil
 Veuillez noter que cette liste de points d'accès aux API n'est *pas* définitive et qu'elle est susceptible de changer.
 :::
 

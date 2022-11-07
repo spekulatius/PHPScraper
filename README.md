@@ -114,6 +114,10 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
+## Configuration
+
+While completely optional, you can use the following configuration options if needed:
+
 ### Proxy Support
 
 You can configure proxy support with `setConfig`:

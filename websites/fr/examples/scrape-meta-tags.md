@@ -63,7 +63,7 @@ $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 echo $web->keywordString;   // "one, two, three"
 ```
 
-::: tip conseil
+::: tip Conseil
 Il s'agit uniquement des mots-clés figurant dans le métabaliseur "keyword". Vous pouvez également [extract the content keywords](/fr/examples/extract-keywords.html) en utilisant PHPScraper.
 :::
 
