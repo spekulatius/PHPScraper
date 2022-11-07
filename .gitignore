@@ -4,5 +4,7 @@ vendor
 .phpunit.result.cache
 composer.lock
 yarn-error.log
+websites/.yarn/
+websites/.yarnrc.yml
 .vscode
 .history
