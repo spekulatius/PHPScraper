@@ -15,9 +15,6 @@ class CoreTest extends \PHPUnit\Framework\TestCase
         $web->go('https://phpscraper.de');
 
         // Both the method call as well as property call should return the same...
-        $this->assertSame($web->title(), $web->title);
-
-        // So...
         $this->assertSame($web->title, $web->title());
     }
 
