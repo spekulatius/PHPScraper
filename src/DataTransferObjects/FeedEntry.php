@@ -5,7 +5,7 @@ namespace spekulatius\DataTransferObjects;
 /**
  * A simplified DTO to hold feed entries with incomplete data.
  *
- * This isn't aimed at keeping all detail but the key values.
+ * This isn't aimed at keeping all details but the key values.
  */
 
 class FeedEntry

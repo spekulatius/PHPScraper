@@ -61,7 +61,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testDifferentSitemapUrlTypes()
+    public function testDifferentRssUrlTypes()
     {
         $web = new \spekulatius\phpscraper;
 
@@ -110,24 +110,6 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
             'https://peterthaleikis.com/posts/startup-name-check:-experiences-of-the-first-week/'
         );
     }
-
-    // /**
-    //  * Tests the DTO creation.
-    //  *
-    //  * @test
-    //  */
-    // public function testRssContent2()
-    // {
-    //     $web = new \spekulatius\phpscraper;
-
-    //     // Navigate to any test page.
-    //     $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
-
-    //     $this->assertSame(
-    //         $web->rssRaw(),
-    //         $web->rssRaw('https://test-pages.phpscraper.de/custom_rss.xml'),
-    //     );
-    // }
 
     /**
      * Tests the DTO creation.
