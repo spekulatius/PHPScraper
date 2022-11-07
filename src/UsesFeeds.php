@@ -140,20 +140,25 @@ trait UsesFeeds
     /**
      * Merges all feeds in a unified structure. Removes duplicated URLs.
      *
-     * @return array $feeds
+     * @return array $feedUrls
      */
     public function feedUrls(): array
     {
-        return [
+        return array_unique([
             // Check the `sitemap.xml` for Urls
-            $this->sitemap(),
+            array_map(fn ($item) => $item->link, $this->sitemap()),
 
             // Check the `index.json` (static-site search engines) for Urls
-            $this->searchIndex(),
+            array_map(fn ($item) => $item->link, $this->searchIndex()),
 
-            // Add all RSS feeds we found defined.
-            ...$this->rss(),
-        ];
+            // // Add all RSS feeds we found defined.
+            // array_map(
+            //     function ($item) {
+
+            //     },
+            //     ...$this->rss()
+            // ),
+        ]);
     }
 
     public function feedsWithDetails(): array
