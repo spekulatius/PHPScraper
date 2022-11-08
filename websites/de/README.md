@@ -35,7 +35,7 @@ Beispiele: Code sagt mehr als Tausend Worte.
 
 Hier sind einige Beispiele dafür, was die Web-Scraping-Bibliothek an dieser Stelle tun kann:
 
-### Scrape Meta-Informationen:
+### Meta-Informationen Scrapen:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -59,7 +59,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 Nahezu alle Informationen können direkt als string oder array genutzt werden.
 
 
-### Scrape Content, beispielsweise Bilder:
+### Scrapen von Inhalten, beispielsweise Bilder:
 
 ```php
 $web = new \spekulatius\phpscraper;

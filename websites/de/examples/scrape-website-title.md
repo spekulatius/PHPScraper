@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Website%20Title&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping des Website-Titels
+# Webseite-Titel Scrapen
 
 Das Scraping des Titels einer Website ist einfach. Die folgenden Beispiele zeigen, wie es mit PHPScraper funktioniert.
 

@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Header%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scrape Header Tags
+# Header Tags Scrapen
 
 Die Header-Tags enthalten oft nützliche Informationen über eine Webseite und darüber, wie sie sich in die Gesamtstruktur der Website einfügt, zu der sie gehört. Die folgenden Beispiele zeigen, wie man auf bestimmte Informationen aus dem `<head>` zugreift und Sammlungen um diese herum erstellt.
 

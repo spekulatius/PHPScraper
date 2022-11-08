@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Headings
+# Scrape Headings
 
 Heading can be useful to get an idea of the content on a website. The following example shows how to scrape:
 

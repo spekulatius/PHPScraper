@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Meta Tags
+# Scrape Meta Tags
 
 El acceso a la información meta sigue un patrón similar al mostrado anteriormente [etiquetas de cabecera](/es/examples/scrape-header-tags.html). A continuación se muestran algunos ejemplos:
 

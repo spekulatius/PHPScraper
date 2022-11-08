@@ -27,7 +27,8 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  *     'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  *
- * @Note:
+ * @note
+ *
  * Có hai cái vì hai ảnh giống nhau:
  * Một ảnh đường dẫn tuyệt đối và một ảnh tương đối.
  * Các đường dẫn tương đối sẽ đổi thành đường dẫn tuyệt đối.

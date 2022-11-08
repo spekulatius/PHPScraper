@@ -28,7 +28,8 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  *     'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  *
- * @Note:
+ * @note
+ *
  * Double car il s'agit de deux fois la même image:
  * Une fois avec un chemin relatif et une fois avec un chemin absolu.
  * Les chemins relatifs sont résolus en chemins absolus par défaut.

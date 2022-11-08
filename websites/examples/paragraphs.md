@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Content&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Text
+# Scrape Text
 
 Scraping content, mostly paragraphs, can be done easily using PHP Scraper. There is a dedicated method to access the paragraphs (`<p>`) on a website. The following examples show how to access the content/texts on a website.
 
@@ -45,7 +45,7 @@ foreach ($web->paragraphs as $paragraph) {
 ```
 
 
-## Scraping the First Paragraph
+## Scrape the First Paragraph
 
 Scraping the first paragraph of the website can be done by accessing the first element of the array (index 0).
 

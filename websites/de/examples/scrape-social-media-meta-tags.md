@@ -2,12 +2,12 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Social%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping von Social Media Meta-Tags
+# Social Media Meta-Tags Scrapen
 
 Das Scraping von Social Media Sharing Tags von einer Website kann mit den folgenden Methoden durchgeführt werden. Die genaue Ergebnismenge hängt von den angegebenen Tags ab. Alle Tags werden berücksichtigt, solange sie sich im vorangestellten Namensraum befinden (z.B. `twitter:` für TwitterCards).
 
 
-## Open-Graph (OG) Daten
+## Open-Graph (OG) Scrapen
 
 Das Abrufen von Open-Graph-Daten kann durchgeführt werden:
 
