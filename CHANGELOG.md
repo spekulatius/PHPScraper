@@ -8,11 +8,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.11.0 (2022-11-01)
 
-- [#137](https://github.com/spekulatius/PHPScraper/issues/137): [Fix download bug and improve testing](https://github.com/spekulatius/PHPScraper/commit/3a42adde3c9666a200f8b147e34b3ec09259d536)
+- [#137](https://github.com/spekulatius/PHPScraper/issues/137): Fix download bug and improve testing
 
 ## 0.10.0 (2022-11-01)
 
-- [#136](https://github.com/spekulatius/PHPScraper/issues/136): Expand set of [URL-related methods](https://github.com/spekulatius/PHPScraper/commit/9293c7a81ca70f97cbef33469284846c355f8391)
+- [#136](https://github.com/spekulatius/PHPScraper/issues/136): Expand set of URL-related methods
 
 ## 0.9.0 (2022-10-28)
 
