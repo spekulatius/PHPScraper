@@ -72,10 +72,10 @@ $rss = $web->rss(
 );
 ```
 
-This result contains only selected properties. It returns an array of `DataTransferObjects\FeedEntry` with properties `link` and `title`.
+This result contains an array-structure with selected properties. The array-structure contains instances of `DataTransferObjects\FeedEntry` with properties for `link` and `title`.
 
 ::: tip Complete Details
-If you need all details, please fallback on `$web->rssRaw(...)`. It can be called the same as `$web->rss(...)` and returns an array-structure.
+If you need all details, please fallback on `$web->rssRaw(...)`. It can be called like `$web->rss(...)` and returns an array-structure.
 :::
 
 
@@ -96,14 +96,14 @@ $sitemap = $web
     ->go('https://example.com')
     ->sitemap();
 
-// You can pass in an URL to parse:
+// You can pass in the desired URL:
 $sitemap = $web->sitemap('https://example.com/custom_sitemap.xml');
 ```
 
 This result contains only selected properties. It returns an array of `DataTransferObjects\FeedEntry` with the `link` property.
 
 ::: tip Complete Details
-If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be called the same as `$web->sitemap()` and returns an array-structure.
+If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be called like `$web->sitemap()` and returns an array-structure.
 :::
 
 
@@ -120,12 +120,12 @@ $searchIndex = $web
     ->go('https://example.com')
     ->searchIndex();
 
-// You can pass in an URL to parse:
+// You can pass in the desired URL:
 $searchIndex = $web->searchIndex('https://example.com/custom_index.json');
 ```
 
 **This result contains only selected properties.** It returns an array of `DataTransferObjects\FeedEntry` with properties `link`, `title`, and `description`.
 
 ::: tip Complete Details
-If you need all details, please fallback on `$web->searchIndexRaw(...)`. It can be called the same as `$web->searchIndex()` and returns an array-structure.
+If you need all details, please fallback on `$web->searchIndexRaw(...)`. It can be called like `$web->searchIndex()` and returns an array-structure.
 :::

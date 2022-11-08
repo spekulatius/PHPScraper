@@ -2,6 +2,8 @@
 
 namespace Tests;
 
+use spekulatius\DataTransferObjects\FeedEntry;
+
 class FeedSitemapTest extends \PHPUnit\Framework\TestCase
 {
     /**
@@ -93,17 +95,20 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // Navigate to any test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
+        // Get the sitemap and store it.
+        $sitemapRaw = $web->sitemapRaw;
+
         // Check the count
-        $this->assertSame(129, count($web->sitemapRaw['url']));
+        $this->assertSame(129, count($sitemapRaw['url']));
 
         // Check some entries to ensure the parsing works as expected.
         $this->assertSame(
             'https://phpscraper.de/apis/linkedin.html',
-            $web->sitemapRaw['url'][4]['loc'],
+            $sitemapRaw['url'][4]['loc'],
         );
         $this->assertSame(
             'https://phpscraper.de/de/apis/zalando.html',
-            $web->sitemapRaw['url'][20]['loc'],
+            $sitemapRaw['url'][20]['loc'],
         );
     }
 
@@ -119,17 +124,21 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // Navigate to any test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
+        // Get the sitemap and store it.
+        $sitemap = $web->sitemap;
+
         // Check the count
-        $this->assertSame(129, count($web->sitemap));
+        $this->assertSame(129, count($sitemap));
 
         // Check some samples.
+        $this->assertTrue($sitemap[42] instanceof FeedEntry);
         $this->assertSame(
             'https://phpscraper.de/apis/linkedin.html',
-            $web->sitemap[4]->link,
+            $sitemap[4]->link,
         );
         $this->assertSame(
             'https://phpscraper.de/de/apis/zalando.html',
-            $web->sitemap[20]->link
+            $sitemap[20]->link
         );
     }
 }

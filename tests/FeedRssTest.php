@@ -2,6 +2,8 @@
 
 namespace Tests;
 
+use spekulatius\DataTransferObjects\FeedEntry;
+
 class FeedRssTest extends \PHPUnit\Framework\TestCase
 {
     /**
@@ -94,19 +96,23 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // The raw RSS is rather unhandy to work with. Let's put it in a var before testing stuff.
-        $entries = $web->rssRaw('https://test-pages.phpscraper.de/custom_rss.xml')[0]['entry'];
+        $rssRaw = $web->rssRaw('https://test-pages.phpscraper.de/custom_rss.xml')[0]['entry'];
+
+        // Ensure the structure is an nested array
+        $this->assertTrue(is_array($rssRaw));
+        $this->assertTrue(is_array($rssRaw[4]));
 
         // Check some entries to ensure the parsing works.
         $this->assertSame(
-            $entries[4]['link']['@attributes']['href'],
+            $rssRaw[4]['link']['@attributes']['href'],
             'https://peterthaleikis.com/posts/how-i-built-my-first-browser-extension/'
         );
         $this->assertSame(
-            $entries[2]['link']['@attributes']['href'],
+            $rssRaw[2]['link']['@attributes']['href'],
             'https://peterthaleikis.com/posts/how-to-use-pug-on-netlify/'
         );
         $this->assertSame(
-            $entries[0]['link']['@attributes']['href'],
+            $rssRaw[0]['link']['@attributes']['href'],
             'https://peterthaleikis.com/posts/startup-name-check:-experiences-of-the-first-week/'
         );
     }
@@ -124,39 +130,42 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // The raw RSS is rather unhandy to work with (hence we actually use the DTOs).
-        $entries = $web->rss('https://test-pages.phpscraper.de/custom_rss.xml');
+        $rss = $web->rss('https://test-pages.phpscraper.de/custom_rss.xml');
 
         // Check the count
-        $this->assertSame(37, count($entries));
+        $this->assertSame(37, count($rss));
 
         // Check some entries to ensure the parsing works.
         // Set 1
+        $this->assertTrue($rss[4] instanceof FeedEntry);
         $this->assertSame(
-            $entries[4]->title,
+            $rss[4]->title,
             'How I Built My First Browser Extension'
         );
         $this->assertSame(
-            $entries[4]->link,
+            $rss[4]->link,
             'https://peterthaleikis.com/posts/how-i-built-my-first-browser-extension/'
         );
 
         // Set 2
+        $this->assertTrue($rss[2] instanceof FeedEntry);
         $this->assertSame(
-            $entries[2]->title,
+            $rss[2]->title,
             'How to Use Pug on Netlify?'
         );
         $this->assertSame(
-            $entries[2]->link,
+            $rss[2]->link,
             'https://peterthaleikis.com/posts/how-to-use-pug-on-netlify/'
         );
 
         // Set 3
+        $this->assertTrue($rss[0] instanceof FeedEntry);
         $this->assertSame(
-            $entries[0]->title,
+            $rss[0]->title,
             'Startup Name Check: Experiences of the First week'
         );
         $this->assertSame(
-            $entries[0]->link,
+            $rss[0]->link,
             'https://peterthaleikis.com/posts/startup-name-check:-experiences-of-the-first-week/'
         );
     }
