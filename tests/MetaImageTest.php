@@ -57,7 +57,10 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
     //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
 
     //     // Check the relative image path
-    //     $this->assertSame("$this->url/assets/cat.jpg", $web->image);
+    //     $this->assertSame(
+    //         'https://test-pages.phpscraper.de/assets/cat.jpg',
+    //         $web->image
+    //     );
     // }
 
     // /**
@@ -69,10 +72,10 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
 
     //     // Navigate to the test page.
     //     $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
-    //     $this->assertNotSame("Page Not Found", $web->title);
+    //     $this->assertNotSame('Page Not Found', $web->title);
 
     //     // Check the absolute image path
-    //     $this->assertSame("$this->url/assets/cat.jpg", $web->image);
+    //     $this->assertSame('https://test-pages.phpscraper.de/assets/cat.jpg', $web->image);
     // }
 
     // /**
@@ -84,9 +87,9 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
 
     //     // Navigate to the test page.
     //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path-with-base-href.html');
-    //     $this->assertNotSame("Page Not Found", $web->title);
+    //     $this->assertNotSame('Page Not Found', $web->title);
 
     //     // Check the relative image path
-    //     $this->assertSame("$this->url/assets/cat.jpg", $web->image);
+    //     $this->assertSame('https://test-pages.phpscraper.de/assets/cat.jpg', $web->image);
     // }
 }
