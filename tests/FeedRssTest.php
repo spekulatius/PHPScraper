@@ -122,7 +122,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testRssContent()
+    public function testRss()
     {
         $web = new \spekulatius\phpscraper;
 
