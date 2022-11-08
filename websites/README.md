@@ -5,7 +5,7 @@ image: https://api.imageee.com/bold?text=PHP%20Scraper:%20Bringing%20Simplicity%
 PHP Scraper: a web utility for PHP
 ==================================
 
-![PHP Scraper: Bringing Simplicity back to Scraping and Crawling](logo-light.png)
+![PHP Scraper: a web utility for PHP](logo-light.png)
 
 *by [Peter Thaleikis](https://peterthaleikis.com)*
 
