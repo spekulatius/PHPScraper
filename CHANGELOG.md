@@ -8,15 +8,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.11.0 (2022-11-01)
 
-- #137: [Fix download bug and improve testing](https://github.com/spekulatius/PHPScraper/commit/3a42adde3c9666a200f8b147e34b3ec09259d536)
+- [#137](https://github.com/spekulatius/PHPScraper/issues/137): [Fix download bug and improve testing](https://github.com/spekulatius/PHPScraper/commit/3a42adde3c9666a200f8b147e34b3ec09259d536)
 
 ## 0.10.0 (2022-11-01)
 
-- #136: Expand set of [URL-related methods](https://github.com/spekulatius/PHPScraper/commit/9293c7a81ca70f97cbef33469284846c355f8391)
+- [#136](https://github.com/spekulatius/PHPScraper/issues/136): Expand set of [URL-related methods](https://github.com/spekulatius/PHPScraper/commit/9293c7a81ca70f97cbef33469284846c355f8391)
 
 ## 0.9.0 (2022-10-28)
 
-- #79: Replace URL lib.
+- [#79](https://github.com/spekulatius/PHPScraper/issues/79): Replace URL lib.
 
 ## 0.8.0 (2022-10-27)
 
@@ -25,11 +25,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.7.0 (2022-10-14)
 
 - [Generalize Configuration API](https://github.com/spekulatius/PHPScraper/commit/e19baeb19658fbc4846c24eb597876f54c6012a3) for better usability.
-- #120: Proxy Support
+- [#120](https://github.com/spekulatius/PHPScraper/issues/120): Proxy Support
 
 ## 0.6.0 (2022-07-14)
 
-- #77: Upgrade to allow Symfony 6
+- [#77](https://github.com/spekulatius/PHPScraper/issues/77): Upgrade to allow Symfony 6
 
 ## 0.5.0 (2022-08-16)
 
