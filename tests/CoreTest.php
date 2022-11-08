@@ -19,6 +19,8 @@ class CoreTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test if our local variable is updated correctly.
+     *
      * @test
      */
     public function testChangeOfCurrentPage()
@@ -26,26 +28,28 @@ class CoreTest extends \PHPUnit\Framework\TestCase
         $web = new \spekulatius\phpscraper;
 
         // Navigate to test page
-        $web->go('https://phpscraper.de');
+        $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Both the method call as well as property call should return the same...
         $this->assertSame(
-            'PHP Scraper: a web utility for PHP',
+            'Lorem Ipsum',
             $web->title
         );
 
 
         // Leave the current page and head on to the next one.
-        $web->go('https://github.com');
+        $web->go('https://phpscraper.de');
 
         // Shouldn't match, because we surfed on...
         $this->assertNotSame(
-            'PHP Scraper: a web utility for PHP',
+            'Lorem Ipsum',
             $web->title
         );
     }
 
     /**
+     * Calls should be chainable.
+     *
      * @test
      */
     public function testBasicChainability()
