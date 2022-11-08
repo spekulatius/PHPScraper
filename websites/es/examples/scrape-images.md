@@ -7,7 +7,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https
 Puede que te preguntes cómo raspar fotos, imágenes y otros gráficos de un sitio web utilizando PHPScraper. Al igual que con otras funcionalidades, el scraping de imágenes &amp; fotos de un sitio web sigue un enfoque similar. Todos los gráficos como imágenes, fotos e infografías pueden ser raspados y analizados junto con detalles como atributos de etiquetas o sólo como una lista de URL.
 
 
-## Scraping Image URLs
+## Scrape Image URLs
 
 El siguiente ejemplo analiza una página web en busca de imágenes y devuelve las URLs absolutas de las imágenes como un array.
 

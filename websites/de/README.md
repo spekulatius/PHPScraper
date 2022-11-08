@@ -2,8 +2,8 @@
 image: https://api.imageee.com/bold?text=PHP%20Scraper:%20Scraping%20und%20Crawling%20einfach%20gemacht&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-PHP Scraper: Scraping und Crawling einfach gemacht
-==================================================
+PHP Scraper: ein web utility für PHP
+====================================
 
 ![PHP Scraper: Scraping und Crawling einfach gemacht](logo-light.png)
 
@@ -35,7 +35,7 @@ Beispiele: Code sagt mehr als Tausend Worte.
 
 Hier sind einige Beispiele dafür, was die Web-Scraping-Bibliothek an dieser Stelle tun kann:
 
-### Scrape Meta-Informationen:
+### Meta-Informationen Scrapen:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -59,7 +59,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 Nahezu alle Informationen können direkt als string oder array genutzt werden.
 
 
-### Scrape Content, beispielsweise Bilder:
+### Scrapen von Inhalten, beispielsweise Bilder:
 
 ```php
 $web = new \spekulatius\phpscraper;

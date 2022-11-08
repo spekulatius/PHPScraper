@@ -30,7 +30,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
 
         // Both the method call as well as property call should return the same...
         $this->assertSame(
-            'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
+            'PHP Scraper: a web utility for PHP',
             $web->title
         );
 
@@ -40,7 +40,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
 
         // Shouldn't match, because we surfed on...
         $this->assertNotSame(
-            'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
+            'PHP Scraper: a web utility for PHP',
             $web->title
         );
     }

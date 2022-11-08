@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
     dest: 'dist/',
-    title: 'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
+    title: 'PHP Scraper: a web utility for PHP',
     description: 'PHP Scraper is providing a simpler way to fetch and parse websites using PHP.',
 
     plugins: {
@@ -32,7 +32,7 @@ module.exports = {
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'PHP Scraper: Bringing Simplicity back to Scraping and Crawling',
+            title: 'PHP Scraper: a web utility for PHP',
             description: 'PHP Scraper is providing a fuss-free way to scrape and crawl websites using PHP.'
         },
         '/de/': {

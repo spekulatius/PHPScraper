@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Lists
+# Scrape Lists
 
 Scraping lists follows a similar approach as other scraping with PHPScraper:
 

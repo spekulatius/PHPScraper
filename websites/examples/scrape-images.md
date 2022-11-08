@@ -2,12 +2,12 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Images
+# Scrape Images
 
 You might wonder how to scrape photos, images and other graphics from a website using PHPScraper. As with other functionality, scraping the images &amp; photos from a website follows a similar approach. All graphics such as images, photos, and infographics can be scraped and parsed along with details such as tag attributes or only as an URL list.
 
 
-## Scraping Image URLs
+## Scrape Image URLs
 
 The following example parses a web-page for images and returns absolute image URLs as an array.
 
@@ -28,8 +28,8 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  *     'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  *
- * @Note:
- * Double because it's twice the same image:
+ * @note
+ * The URL is listed twice because it's included twice on the page:
  * Once with a relative path and once with an absolute path.
  * The relative paths are resolved to absolute paths by default.
  */
@@ -37,11 +37,11 @@ var_dump($web->images);
 ```
 
 ::: tip
-If no images are found, the array remains empty.
+If no images are found, the array remains empty. You can download images using `$web->fetchAsset(...)`.
 :::
 
 
-## Scraping Images with Details
+## Scrape Images with Details
 
 If you are in need of more details the following requests allows you to access attributes of the image tag:
 
@@ -71,7 +71,7 @@ The `alt`-text (with the [keywords of the content](/examples/extract-keywords.ht
 :::
 
 
-## Scraping Attributes: Alt, Width and Height
+## Scrape Attributes: Alt, Width and Height
 
 The attributes for `alt`, `width` and `height` are included in the detailed data set.
 

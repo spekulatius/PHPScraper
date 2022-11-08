@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Website%20Title&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping a Website Title
+# Scrape Website Title
 
 Scraping the title from a website is simple. The following examples show how it works using PHPScraper.
 
@@ -63,7 +63,7 @@ $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 echo $web->title;
 ```
 
-It should work in similar manner with any UTF-8 characters.
+It should work similarly with any UTF-8 characters.
 
 
 ## HTML Entities

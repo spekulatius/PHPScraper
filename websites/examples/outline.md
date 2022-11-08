@@ -4,7 +4,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Content%20Outline&bg_im
 
 # Outline Extraction
 
-While you might want to only access the [`headings`](/examples/headings.html) to process, for example, the number or length of the headings it might not always be enough. In some case you might need to identify the actual structure of the content. For these use-cases you might want to consider one of these methods:
+While you might only want to access the [`headings`](/examples/headings.html), for example, the number of headings it might not always be enough. In some cases, you might need to identify the actual structure of the content. For these use cases you might want to consider one of these methods:
 
  - `outline` works similar as the previously mentioned `headings` method. It also returns all headings, but it keeps the structure of the original document in place and provides the heading levels (e.g. `h1`) alone with the output.
 

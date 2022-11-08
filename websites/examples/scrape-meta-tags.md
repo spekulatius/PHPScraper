@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Meta%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping Meta Tags
+# Scrape Meta Tags
 
 Accessing the meta information follows a similar pattern as the previously shown [header tags](/examples/scrape-header-tags.html). Below is a set of examples:
 
@@ -37,7 +37,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 
 ## Meta Keywords
 
-The keywords meta-tag is naturally an array and will be split for your convience:
+The keywords meta-tag is naturally an array and will be split for your convenience:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -70,7 +70,7 @@ This refers only to the keywords in the "keyword" meta-tag. You can also [extrac
 
 ## Combined Meta Tags
 
-If you would like to access all meta properties you can use the `metaTags`-method. It returns the above mentioned methods as an array. It is defined as:
+You can use the `metaTags`-method if you would like to access all meta properties. It returns the above-mentioned methods as an array. It is defined as:
 
 ```php
 /**
@@ -89,7 +89,7 @@ public function metaTags()
 }
 ```
 
-From the example above it would be used as following:
+From the example above it would be used as follows:
 
 ```php
 $web = new \spekulatius\phpscraper;

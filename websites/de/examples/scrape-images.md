@@ -2,12 +2,12 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Images&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scraping von Bildern
+# Bilder Scrapen
 
 Sie fragen sich vielleicht, wie man mit PHPScraper Fotos, Bilder und andere Grafiken von einer Website scrapen kann. Wie bei anderen Funktionen auch, folgt das Scraping von Bildern &amp; Fotos von einer Website einem ähnlichen Ansatz. Alle Grafiken wie Bilder, Fotos und Infografiken können zusammen mit Details wie Tag-Attributen oder nur als URL-Liste ausgelesen und analysiert werden.
 
 
-## Scraping von Bild-URLs
+## Bild-URLs Scrapen
 
 Das folgende Beispiel durchsucht eine Webseite nach Bildern und gibt absolute Bild-URLs als Array zurück.
 
@@ -28,8 +28,9 @@ $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
  *     'https://test-pages.phpscraper.de/assets/cat.jpg',
  * ]
  *
- * Anmerkung:
- * Doppelt, weil es zweimal das gleiche Bild ist:
+ * @note
+ *
+ * Die Image URL ist doppelt enthalten, weil die Seite zweimal das gleiche Bild enthält:
  * Einmal mit einem relativen Pfad und einmal mit einem absoluten Pfad.
  * Die relativen Pfade werden standardmäßig in absolute Pfade aufgelöst.
  */
@@ -37,11 +38,11 @@ var_dump($web->images);
 ```
 
 ::: tip Tipp
-Wenn keine Bilder gefunden werden, bleibt das Feld leer.
+Wenn keine Bilder gefunden werden, bleibt das Feld leer. Bilder können mit `$web->fetchAsset(...)` heruntergeladen werden.
 :::
 
 
-## Scraping von Bildern mit Details
+## Bild URLs mit Details Scrapen
 
 Wenn Sie mehr Details benötigen, können Sie mit den folgenden Anfragen auf die Attribute des Bild-Tags zugreifen:
 
@@ -71,7 +72,7 @@ Der `alt`-Text (mit den [Schlüsselwörtern des Inhalts](/de/examples/extract-ke
 :::
 
 
-## Scraping-Attribute: Alt, Breite und Höhe
+## Attribute Scrapen: Alt-Text, Breite und Höhe
 
 Die Attribute für "Alt", "Breite" und "Höhe" sind im ausführlichen Datensatz enthalten.
 
