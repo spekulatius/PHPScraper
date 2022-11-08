@@ -51,7 +51,7 @@ class UrlTest extends \PHPUnit\Framework\TestCase
             'https://phpscraper.de/index.html',
         );
 
-        // Folders are considered.
+        // Paths are considered.
         $this->assertSame(
             $web->makeUrlAbsolute('test/index.html'),
             'https://phpscraper.de/test/index.html',
@@ -66,6 +66,48 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         // Protocol is considered
         $this->assertSame(
             $web->makeUrlAbsolute('http://example.com/index.html'),
+            'http://example.com/index.html',
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function testMakeUrlAbsoluteWithBaseHost()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to test page: This sets the base URL.
+        $web->go('https://phpscraper.de');
+
+        // Test variations of paths to be processed
+        // With leading slash
+        $this->assertSame(
+            $web->makeUrlAbsolute('/index.html', 'https://example.com'),
+            'https://example.com/index.html',
+        );
+
+        // Without leading slash
+        $this->assertSame(
+            $web->makeUrlAbsolute('index.html', 'https://example.com'),
+            'https://example.com/index.html',
+        );
+
+        // Paths are considered.
+        $this->assertSame(
+            $web->makeUrlAbsolute('test/index.html', 'https://example.com'),
+            'https://example.com/test/index.html',
+        );
+
+        // Absolutely URLs are untouched.
+        $this->assertSame(
+            $web->makeUrlAbsolute('https://example.com/index.html', 'https://example.com/test/with/path'),
+            'https://example.com/index.html',
+        );
+
+        // Protocol is considered
+        $this->assertSame(
+            $web->makeUrlAbsolute('http://example.com/index.html', 'https://example.com/test/with/path'),
             'http://example.com/index.html',
         );
     }

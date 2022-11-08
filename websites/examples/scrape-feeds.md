@@ -4,14 +4,14 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Feeds%20Tags&bg_image
 
 # Scrape Feeds
 
-PHPScraper can identify and process feeds for you. The following feed-specific features are implemented:
+PHPScraper can identify and process feeds (RSS feeds, sitemaps, etc.) for you. The following feed-specific features are implemented:
 
 [[toc]]
 
 
 ## Identify RSS Feed URLs
 
-You can identify any RSS feeds defined in the markup of the current page using `rssUrls`:
+Websites can define RSS feeds in the head section of their markup. PHPScraper allows to identify the RSS feeds of the current page using `rssUrls`:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -51,7 +51,7 @@ print_r(
 The `rss()`-method can be used to parse RSS feeds. If called without any parameter `rssUrls` will be used:
 
 ```php
-// Init and go to any page of the domain
+// Init and go to any page of the domain. This sets the base URL.
 $web = new \spekulatius\phpscraper;
 $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
@@ -90,7 +90,7 @@ $web = new \spekulatius\phpscraper;
  * Get the sitemap for the current website (if it exists).
  * This assumes the default URL `/sitemap.xml` is used.
  *
- * @throws exceptions (e.g. Guzzle).
+ * @throws \Exception (e.g. network).
  */
 $sitemap = $web
     ->go('https://example.com')
