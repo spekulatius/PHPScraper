@@ -132,7 +132,7 @@ echo $web->csrfToken;     // "token"
 
 ## Combined Header Tags
 
-If you want to access all of the above mentioned methods you use the `headers`-method. It is defined as:
+You can use the `headers`-method if you want all of the above-mentioned methods. It is defined as:
 
 ```php
 /**

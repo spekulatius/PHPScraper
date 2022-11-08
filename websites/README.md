@@ -17,7 +17,7 @@ The examples tell the story much better. Have a look!
 The Idea 💡️
 ----------
 
-Accessing websites and collecting basic information of the web is too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need. Web scraping with PHP re-imagined.
+Accessing websites and collecting simple information is often too complex. This wrapper around [Goutte](https://github.com/FriendsOfPHP/Goutte) makes it easier. It saves you from XPath and co., giving you direct access to everything you need. Web scraping with PHP re-imagined.
 
 
 Supporters 💪️
@@ -173,4 +173,4 @@ Tests: Making sure it works!
 
 The code is mostly covered with tests. For this, simple web pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
 
-This being said, there are probably edge cases which aren't working and may cause trouble. If you find one, please raise a bug on GitHub.
+This being said, there are probably edge cases that aren't working and may cause trouble. If you find one, please raise a bug on GitHub.

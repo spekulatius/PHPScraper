@@ -63,7 +63,7 @@ $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 echo $web->title;
 ```
 
-It should work in similar manner with any UTF-8 characters.
+It should work similarly with any UTF-8 characters.
 
 
 ## HTML Entities
