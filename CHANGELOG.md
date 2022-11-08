@@ -16,7 +16,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.9.0 (2022-10-28)
 
-- [#79](https://github.com/spekulatius/PHPScraper/issues/79): Replace URL lib.
+- [#79](https://github.com/spekulatius/PHPScraper/issues/79): Replace URL lib. Sub-domain support dropped.
 
 ## 0.8.0 (2022-10-27)
 
