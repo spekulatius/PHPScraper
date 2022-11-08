@@ -25,6 +25,9 @@ class FeedEntry
         string $description,
         string $link,
     ) {
+        $this->title = $title;
+        $this->description = $description;
+        $this->link = $link;
     }
 
     public static function fromArray(array $data): self
