@@ -15,13 +15,13 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame($web->h1[0], 'Page #1');
+        $this->assertSame('Page #1', $web->h1[0]);
 
         // Navigate to test page #2 using the absolute link.
         $web->clickLink('2 absolute');
 
         // Check the title and URL to see if we actually moved...
-        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame('Page #2', $web->h1[0]);
         $this->assertSame($web->currentUrl, 'https://test-pages.phpscraper.de/navigation/2.html');
     }
 
@@ -36,17 +36,19 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame($web->h1[0], 'Page #1');
+        $this->assertSame('Page #1', $web->h1[0]);
 
         // Navigate to test page #2 using the relative link.
         $web->clickLink('2 relative');
 
         // Check the title and URL to see if we actually moved...
-        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame('Page #2', $web->h1[0]);
         $this->assertSame($web->currentUrl, 'https://test-pages.phpscraper.de/navigation/2.html');
     }
 
     /**
+     * Test navigation using an anchor text.
+     *
      * @test
      */
     public function testLeavePageByText()
@@ -57,7 +59,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame('Page #2', $web->h1[0]);
 
         // Click the link with the text:
         $web->clickLink('external link');
@@ -67,6 +69,8 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test if we can navigate out using a redirect.
+     *
      * @test
      */
     public function testLeavePageWithRedirect()
@@ -77,7 +81,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame('Page #2', $web->h1[0]);
 
         // Click the link with the text:
         $web->clickLink('external link with redirect');
@@ -87,6 +91,8 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test if we can navigate out.
+     *
      * @test
      */
     public function testLeavePageByURL()
@@ -97,7 +103,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
 
         // Check the title to see if we actually at the right page...
-        $this->assertSame($web->h1[0], 'Page #2');
+        $this->assertSame('Page #2', $web->h1[0]);
 
         // Click the link with the text:
         $web->clickLink('https://peterthaleikis.com/');
