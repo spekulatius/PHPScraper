@@ -25,7 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.7.0 (2022-10-14)
 
 - [Generalize Configuration API](https://github.com/spekulatius/PHPScraper/commit/e19baeb19658fbc4846c24eb597876f54c6012a3) for better usability.
-- [#120](https://github.com/spekulatius/PHPScraper/issues/120): Proxy Support
+- [Proxy Support](https://github.com/spekulatius/PHPScraper/commit/326bdff4430a326bdb08f6af8452f148250c7784)
 
 ## 0.6.0 (2022-07-14)
 
