@@ -7,7 +7,7 @@
   </picture>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get all relevant details for your project.
+PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.
 
 Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte), [League/URI](https://github.com/thephpleague/uri) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for details.
 
@@ -15,12 +15,13 @@ Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte), [Leagu
 Roadmap
 -------
 
-The future development is organized into milestones.
+The future development is organized into [milestones](https://github.com/spekulatius/PHPScraper/milestones).
 
 ### v1: Building the stable base version.
 
 - Improve documentation and examples.
 - Organize code better (move websites into separate repos, etc.)
+- Add support for feeds and some typical file types.
 
 More Details: https://github.com/spekulatius/PHPScraper/milestone/4
 
@@ -32,10 +33,11 @@ More Details: https://github.com/spekulatius/PHPScraper/milestone/5
 
 TBC.
 
-If you want to support the development or looking for support with a custom feature, please consider a sponsorship or donation.
+If you find PHPScraper useful to your work or simply want to support the development, please consider a [sponsorship](https://github.com/sponsors/spekulatius) or [donation](https://www.buymeacoffee.com/spekulatius).
 
 
-## Sponsors
+Sponsors
+--------
 
 This project is sponsored by:
 
@@ -44,7 +46,8 @@ This project is sponsored by:
 Want to sponsor this project? [Contact me](https://peterthaleikis.com/contact).
 
 
-## Examples
+Examples
+--------
 
 Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
 
@@ -137,7 +140,9 @@ var_dump($web->imagesWithDetails);
  */
 ```
 
-## Configuration
+
+Configuration
+-------------
 
 While completely optional, you can use the following configuration options if needed:
 
@@ -172,10 +177,8 @@ You can call `setConfig` multiple times. It stores the config and merges it with
 See the full documentation on the website for more information and many more examples.
 
 
-Installation
-------------
-
-[Composer](https://getcomposer.org) is used to install PHPScraper:
+Installation with Composer
+--------------------------
 
 ```bash
 composer require spekulatius/phpscraper
@@ -203,4 +206,4 @@ To run the tests, run the following command from the project folder.
 composer test
 ```
 
-## MISC: [Work](https://github.com/spekulatius/PHPScraper/issues), [Ideas](https://github.com/spekulatius/PHPScraper/milestones), [Contributing](https://github.com/spekulatius/PHPScraper/blob/master/CONTRIBUTING.md), [CHANGELOG](https://github.com/spekulatius/PHPScraper/blob/master/CHANGELOG.md), [UPGRADING](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md), [LICENSE](https://github.com/spekulatius/PHPScraper/blob/master/LICENSE.md)
+## MISC: [Issues](https://github.com/spekulatius/PHPScraper/issues), [Ideas](https://github.com/spekulatius/PHPScraper/milestones), [Contributing](https://github.com/spekulatius/PHPScraper/blob/master/CONTRIBUTING.md), [CHANGELOG](https://github.com/spekulatius/PHPScraper/blob/master/CHANGELOG.md), [UPGRADING](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md), [LICENSE](https://github.com/spekulatius/PHPScraper/blob/master/LICENSE.md)

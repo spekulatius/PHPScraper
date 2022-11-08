@@ -164,6 +164,6 @@ Antes de empezar, familiarícese con las [directrices de contribución](/contrib
 Pruebas: Asegurarse de que funciona.
 ----------------------------
 
-El código está cubierto a grandes rasgos con pruebas de extremo a extremo. Para ello, se alojan páginas web sencillas en *https://test-pages.phpscraper.de/*, cargado y analizado usando [PHPUnit](https://phpunit.de/). Estas pruebas también son adecuadas como ejemplos - véase`tests/`!
+El código está cubierto a grandes rasgos con pruebas de extremo a extremo. Para ello, se alojan páginas web sencillas en *https://test-pages.phpscraper.de/*, cargado y analizado usando [PHPUnit](https://phpunit.de/). Estas pruebas también son adecuadas como ejemplos - véase `tests/`!
 
 Dicho esto, es probable que haya casos límite que no funcionen y puedan causar problemas. Si encuentras uno, por favor, levanta un bug en GitHub.
