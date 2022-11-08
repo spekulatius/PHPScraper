@@ -23,7 +23,7 @@ class FeedEntry
     public function __construct(
         string $title,
         string $description,
-        string $link,
+        string $link
     ) {
         $this->title = $title;
         $this->description = $description;
@@ -36,7 +36,7 @@ class FeedEntry
         return new self(
             $data['title'] ?? '',
             $data['description'] ?? '',
-            $data['link'],
+            $data['link']
         );
     }
 }
