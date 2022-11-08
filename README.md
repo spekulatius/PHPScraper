@@ -202,3 +202,5 @@ To run the tests, run the following command from the project folder.
 ```bash
 composer test
 ```
+
+## MISC: [Current Issues](https://github.com/spekulatius/PHPScraper/issues) [Future Ideas](https://github.com/spekulatius/PHPScraper/milestones), [Contributing](https://github.com/spekulatius/PHPScraper/blob/master/CONTRIBUTING.md), [CHANGELOG](https://github.com/spekulatius/PHPScraper/blob/master/CHANGELOG.md), [UPGRADING](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md), [License](https://github.com/spekulatius/PHPScraper/blob/master/license.md)
