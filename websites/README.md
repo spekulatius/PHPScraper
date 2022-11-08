@@ -1,5 +1,5 @@
 ---
-image: https://api.imageee.com/bold?text=PHP%20Scraper:%20Bringing%20Simplicity%20back%20to%20Scraping%20and%20Crawling&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+image: https://api.imageee.com/bold?text=PHP%20Scraper:%20a%20web%20utility%20for%20PHP&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
 PHP Scraper: a web utility for PHP
@@ -56,7 +56,7 @@ echo $web->description;     // "Lorem ipsum dolor etc."
 echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 ```
 
-Nearly any information can be accessed directly, either as string or an array.
+Nearly any information can be accessed directly, either as a string or an array.
 
 
 ### Scrape Content, such as Images:
@@ -159,7 +159,7 @@ While unrecommended, it might be required to disable SSL checks. You can do so u
 $web->setConfig(['disable_ssl' => true]);
 ```
 
-You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use-case when unsetting values.
+You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use case when unsetting values.
 
 
 Found a bug and fixed it? Awesome!
@@ -171,6 +171,6 @@ Before you get started, make yourself familiar with the [contribution guidelines
 Tests: Making sure it works!
 ----------------------------
 
-The code is roughly covered with end-to-end tests. For this, simple web-pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
+The code is mostly covered with tests. For this, simple web pages are hosted under *https://test-pages.phpscraper.de/*, loaded and parsed using [PHPUnit](https://phpunit.de/). These tests are also suitable as examples - see `tests/`!
 
 This being said, there are probably edge cases which aren't working and may cause trouble. If you find one, please raise a bug on GitHub.

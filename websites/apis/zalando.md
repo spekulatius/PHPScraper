@@ -1,6 +1,6 @@
 # Zalando Scraper API
 
-The team behind PHP Scraper is working on providing commercial APIs for various common use-cases as well as platforms. These APIs aren't self-hosted. You won't need to worry about rotating IPs/proxies, running a headless browser such as Puppeteer. A simple API call will get you all information required. The services will be provided on a attractive usage-dependent fee-structure basis.
+The team behind PHP Scraper is working on providing commercial APIs for various common use cases as well as platforms. These APIs aren't self-hosted. You won't need to worry about rotating IPs/proxies, running a headless browser such as Puppeteer. A simple API call will get you all information required. The services will be provided on a attractive usage-dependent fee-structure basis.
 
 For Zalando we are considering the implementation of an API with the following scope.
 
