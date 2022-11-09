@@ -78,6 +78,11 @@ trait UsesContent
         return $this->filterFirstExtractAttribute('//meta[@name="csrf-token"]', ['content']);
     }
 
+    public function baseHref(): ?string
+    {
+        return $this->filterFirstExtractAttribute('//base', ['href']);
+    }
+
     /**
      * Get the header collected as an array
      *
