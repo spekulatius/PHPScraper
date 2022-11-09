@@ -18,61 +18,31 @@ trait UsesContent
      * @see https://phpscraper.de/contributing
      */
 
-    /**
-     * Get the title
-     *
-     * @return ?string
-     */
     public function title(): ?string
     {
         return $this->filterFirstText('//title');
     }
 
-    /**
-     * Get the content-type
-     *
-     * @return ?string
-     */
     public function contentType(): ?string
     {
         return $this->filterFirstExtractAttribute('//meta[@http-equiv="Content-type"]', ['content']);
     }
 
-    /**
-     * Get the canonical
-     *
-     * @return ?string
-     */
     public function canonical(): ?string
     {
         return $this->filterFirstExtractAttribute('//link[@rel="canonical"]', ['href']);
     }
 
-    /**
-     * Get the viewport as a string
-     *
-     * @return ?string
-     */
     public function viewportString(): ?string
     {
         return $this->filterFirstContent('//meta[@name="viewport"]');
     }
 
-    /**
-     * Get the viewport as an array
-     *
-     * @return array
-     */
     public function viewport(): array
     {
         return is_null($this->viewportString()) ? [] : \preg_split('/,\s*/', $this->viewportString());
     }
 
-    /**
-     * Get the csrfToken
-     *
-     * @return string
-     */
     public function csrfToken(): ?string
     {
         return $this->filterFirstExtractAttribute('//meta[@name="csrf-token"]', ['content']);
@@ -99,51 +69,26 @@ trait UsesContent
         ];
     }
 
-    /**
-     * Get the author
-     *
-     * @return string
-     */
     public function author(): ?string
     {
         return $this->filterFirstContent('//meta[@name="author"]');
     }
 
-    /**
-     * Get the image
-     *
-     * @return string
-     */
     public function image(): ?string
     {
-        return $this->filterFirstContent('//meta[@name="image"]');
+        return $this->makeUrlAbsolute($this->filterFirstContent('//meta[@name="image"]'));
     }
 
-    /**
-     * Get the keyword as a string
-     *
-     * @return string
-     */
     public function keywordString(): ?string
     {
         return $this->filterFirstContent('//meta[@name="keywords"]');
     }
 
-    /**
-     * Get the keyword as an array
-     *
-     * @return array
-     */
     public function keywords()
     {
         return is_null($this->keywordString()) ? [] : \preg_split('/,\s*/', $this->keywordString());
     }
 
-    /**
-     * Get the description
-     *
-     * @return string
-     */
     public function description()
     {
         return $this->filterFirstContent('//meta[@name="description"]');
@@ -204,61 +149,31 @@ trait UsesContent
         return $result;
     }
 
-    /**
-     * Get all <h1> tags (should be usually only one)
-     *
-     * @return array
-     */
     public function h1()
     {
         return $this->filterExtractAttributes('//h1', ['_text']);
     }
 
-    /**
-     * Get all <h2> tags
-     *
-     * @return array
-     */
     public function h2()
     {
         return $this->filterExtractAttributes('//h2', ['_text']);
     }
 
-    /**
-     * Get all <h3> tags
-     *
-     * @return array
-     */
     public function h3()
     {
         return $this->filterExtractAttributes('//h3', ['_text']);
     }
 
-    /**
-     * Get all <h4> tags
-     *
-     * @return array
-     */
     public function h4()
     {
         return $this->filterExtractAttributes('//h4', ['_text']);
     }
 
-    /**
-     * Get all <h5> tags
-     *
-     * @return array
-     */
     public function h5()
     {
         return $this->filterExtractAttributes('//h5', ['_text']);
     }
 
-    /**
-     * Get all <h6> tags
-     *
-     * @return array
-     */
     public function h6()
     {
         return $this->filterExtractAttributes('//h6', ['_text']);
@@ -281,11 +196,6 @@ trait UsesContent
         ];
     }
 
-    /**
-     * Get all lists on the page
-     *
-     * @return array
-     */
     public function lists()
     {
         $lists = [];
@@ -301,11 +211,6 @@ trait UsesContent
         return $lists;
     }
 
-    /**
-     * Get all ordered lists on the page
-     *
-     * @return array
-     */
     public function orderedLists()
     {
         return array_values(array_filter($this->lists(), function ($list) {
@@ -313,11 +218,6 @@ trait UsesContent
         }));
     }
 
-    /**
-     * Get all unordered lists on the page
-     *
-     * @return array
-     */
     public function unorderedLists()
     {
         return array_values(array_filter($this->lists(), function ($list) {
@@ -325,11 +225,6 @@ trait UsesContent
         }));
     }
 
-    /**
-     * Get all paragraphs of the page
-     *
-     * @return array
-     */
     public function paragraphs()
     {
         return array_map(
@@ -408,6 +303,7 @@ trait UsesContent
      *  done in the called methods for the rake analysis
      *
      * Uses:
+     *
      *  - Title
      *  - Headings
      *  - Paragraphs/Content
@@ -460,6 +356,7 @@ trait UsesContent
      * Gets a set of keywords based on the rake approach.
      *
      * Uses:
+     *
      *  - Title
      *  - Headings
      *  - Paragraphs/Content
@@ -486,6 +383,7 @@ trait UsesContent
      * Gets a set of keywords with scores based on the rake approach
      *
      * Uses:
+     *
      *  - Title
      *  - Headings
      *  - Paragraphs/Content
@@ -578,7 +476,7 @@ trait UsesContent
             // Generate the proper uri using the Symfony's link class
             $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentUrl());
 
-            // Check if the anchor is only an image. If so, wrap it accordingly to make it work.
+            // Check if the anchor is only an image. If so, wrap it into DomCrawler\Image to get the Uri.
             $image = [];
             foreach($link->childNodes as $childNode) {
                 if (!empty($childNode) && $childNode->nodeName === 'img') {
