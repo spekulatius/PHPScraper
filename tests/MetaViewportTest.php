@@ -25,7 +25,7 @@ class MetaViewportTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testProvided()
+    public function testWithViewport()
     {
         $web = new \spekulatius\phpscraper;
 

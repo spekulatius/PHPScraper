@@ -21,7 +21,7 @@ class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testProvided()
+    public function testWithCharset()
     {
         $web = new \spekulatius\phpscraper;
 

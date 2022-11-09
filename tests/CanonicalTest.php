@@ -21,7 +21,7 @@ class CanonicalTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testProvided()
+    public function testWithCanonical()
     {
         $web = new \spekulatius\phpscraper;
 

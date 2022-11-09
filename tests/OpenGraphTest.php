@@ -22,7 +22,7 @@ class OpenGraphTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testProvided()
+    public function testOpenGraph()
     {
         $web = new \spekulatius\phpscraper;
 

@@ -38,7 +38,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Tests if we can use a custom url instead of a provided one.
+     * Tests if we can use a custom url instead of a identified one.
      *
      * @test
      */
