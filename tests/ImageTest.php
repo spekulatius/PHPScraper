@@ -66,7 +66,10 @@ class ImageTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
         // Check the h1
-        $this->assertSame('We are testing here ä ü ö!', $web->h1[0]);
+        $this->assertSame(
+            'We are testing here ä ü ö!',
+            $web->h1[0]
+        );
 
         // Check the number of images
         $this->assertSame(2, count($web->images));

@@ -17,7 +17,10 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/sitemap.xml`?
-        $this->assertSame('https://test-pages.phpscraper.de/sitemap.xml', $web->sitemapUrl);
+        $this->assertSame(
+            'https://test-pages.phpscraper.de/sitemap.xml',
+            $web->sitemapUrl
+        );
     }
 
     /**

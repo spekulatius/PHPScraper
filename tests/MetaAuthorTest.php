@@ -29,7 +29,10 @@ class MetaAuthorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
         // Check the author
-        $this->assertSame('Cat & Mouse', $web->author);
+        $this->assertSame(
+            'Cat & Mouse',
+            $web->author
+        );
     }
 
     /**
@@ -43,7 +46,10 @@ class MetaAuthorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the author
-        $this->assertSame('Lorem ipsum', $web->author);
+        $this->assertSame(
+            'Lorem ipsum',
+            $web->author
+        );
     }
 
     /**
@@ -57,7 +63,10 @@ class MetaAuthorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
         // Check the author
-        $this->assertSame('Müller', $web->author);
+        $this->assertSame(
+            'Müller',
+            $web->author
+        );
     }
 
     /**
@@ -71,6 +80,9 @@ class MetaAuthorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
 
         // Check the author
-        $this->assertSame('貓', $web->author);
+        $this->assertSame(
+            '貓',
+            $web->author
+        );
     }
 }

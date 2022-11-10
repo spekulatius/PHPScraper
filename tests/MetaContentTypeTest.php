@@ -29,6 +29,9 @@ class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the contentType
-        $this->assertSame('text/html; charset=utf-8', $web->contentType);
+        $this->assertSame(
+            'text/html; charset=utf-8',
+            $web->contentType
+        );
     }
 }

@@ -37,7 +37,10 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
             $array['url']
         );
 
-        $this->assertContains('https://phpscraper.de/', $urls);
+        $this->assertContains(
+            'https://phpscraper.de/',
+            $urls
+        );
     }
 
     /**
