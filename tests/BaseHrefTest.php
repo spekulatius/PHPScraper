@@ -32,12 +32,12 @@ class BaseHrefTest extends \PHPUnit\Framework\TestCase
         $web = new \spekulatius\phpscraper;
 
         // Navigate to the test page.
-        // Contains: <base href="https://test-pages-2.phpscraper.de/">
+        // Contains: <base href="https://test-pages-with-base-href.phpscraper.de/">
         $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
 
         // Check the baseHref
         $this->assertSame(
-            'https://test-pages-2.phpscraper.de/',
+            'https://test-pages-with-base-href.phpscraper.de/',
             $web->baseHref
         );
     }

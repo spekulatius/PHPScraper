@@ -455,10 +455,10 @@ trait UsesContent
     public function externalLinks(): array
     {
         // Diff the array
-        return array_diff(
+        return array_values(array_diff(
             $this->links(),
             $this->internalLinks()
-        );
+        ));
     }
 
     /**
@@ -473,9 +473,6 @@ trait UsesContent
         // Generate a list of all image entries
         $result = [];
         foreach ($links as $link) {
-            // Generate the proper uri using the Symfony's link class
-            $linkObj = new \Symfony\Component\DomCrawler\Link($link, $this->currentUrl());
-
             // Check if the anchor is only an image. If so, wrap it into DomCrawler\Image to get the Uri.
             $image = [];
             foreach($link->childNodes as $childNode) {
@@ -487,7 +484,12 @@ trait UsesContent
 
             // Collect commonly interesting attributes and URL
             $rel = $link->getAttribute('rel');
-            $uri = $linkObj->getUri();
+
+            // Generate the proper uri using the Symfony's link class
+            $uri = (new \Symfony\Component\DomCrawler\Link($link, $this->currentBaseHost()))
+                ->getUri();
+
+            // Prepare the result set.
             $entry = [
                 'url' => $uri,
                 'protocol' => \strpos($uri, ':') !== false ? explode(':', $uri)[0] : null,

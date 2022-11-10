@@ -242,15 +242,13 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
 
         // Check the number of links
-        $this->assertSame(2, count($web->links));
+        $this->assertSame(3, count($web->links));
 
         // Check the simple links list
         $this->assertSame([
             'https://placekitten.com/408/287',
             'https://test-pages.phpscraper.de/assets/cat.jpg',
-
-            // Temporary deactivated, because relative paths using base_href doesn't work.
-            // 'https://test-pages.phpscraper.de/cat.jpg',
+            'https://test-pages-with-base-href.phpscraper.de/assets/cat.jpg',
         ], $web->links);
 
         // Check the complex links list
@@ -259,7 +257,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'url' => 'https://placekitten.com/408/287',
                 'protocol' => 'https',
                 'text' => 'external kitten',
-                'title' => null,
+                'title' => 'external path with base href',
                 'target' => null,
                 'rel' => null,
                 'image' => [],
@@ -273,7 +271,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
                 'protocol' => 'https',
                 'text' => 'absolute path to cat',
-                'title' => null,
+                'title' => 'absolute internal path with base href',
                 'target' => null,
                 'rel' => null,
                 'image' => [],
@@ -283,16 +281,20 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
-            // ], [
-            //     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
-            //     'text' => 'relative path with base href',
-            //     'title' => null,
-            //     'target' => null,
-            //     'rel' => null,
-            //     'isNofollow' => false,
-            //     'isUGC' => false,
-            //     'isNoopener' => false,
-            //     'isNoreferrer' => false,
+            ], [
+                'url' => 'https://test-pages-with-base-href.phpscraper.de/assets/cat.jpg',
+                'protocol' => 'https',
+                'text' => 'relative cat',
+                'title' => 'relative path with base href',
+                'target' => null,
+                'rel' => null,
+                'image' => [],
+                'isNofollow' => false,
+                'isUGC' => false,
+                'isSponsored' => false,
+                'isMe' => false,
+                'isNoopener' => false,
+                'isNoreferrer' => false,
             ]
         ], $web->linksWithDetails);
     }
@@ -394,7 +396,10 @@ class LinkTest extends \PHPUnit\Framework\TestCase
 
         // Check the external links list
         $this->assertSame(
-            ['https://placekitten.com/408/287'],
+            [
+                'https://placekitten.com/408/287',
+                'https://test-pages-with-base-href.phpscraper.de/assets/cat.jpg',
+            ],
             $web->externalLinks
         );
     }
