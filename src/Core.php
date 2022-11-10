@@ -3,16 +3,11 @@
 namespace spekulatius;
 
 /**
- * This class organizes mostly. For individual functionality please check the related traits.
+ * This class organizes mostly. For individual functionality check the related traits please.
  */
 
 class Core
 {
-    /**
-     * Shared simple parsers.
-     */
-    use UsesParsers;
-
     /**
      * Url related helpers.
      */
@@ -32,6 +27,11 @@ class Core
      * This contains various content-related selectors.
      */
     use UsesContent;
+
+    /**
+     * Shared simple parsers for XML, JSON and CSV.
+     */
+    use UsesParsers;
 
     /**
      * This contains the feeds-related selectors and parsers.
