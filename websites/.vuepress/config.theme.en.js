@@ -19,6 +19,7 @@ module.exports = {
                 'examples/scrape-header-tags',
                 'examples/scrape-meta-tags',
                 'examples/scrape-social-media-meta-tags',
+                'examples/scrape-feeds',
             ],
         },
         {

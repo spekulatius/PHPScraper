@@ -7,6 +7,19 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
+    public function testMissingDownload()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        $this->expectException(\Symfony\Component\HttpClient\Exception\ClientException::class);
+        $this->expectExceptionMessage('HTTP/2 404  returned for "https://phpscraper.de/broken-url"');
+
+        $web->fetchAsset('https://phpscraper.de/broken-url');
+    }
+
+    /**
+     * @test
+     */
     public function testDownload()
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
@@ -28,15 +41,29 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * We should support both absolute and relative URLs.
+     *
+     * Here we use the sitemap test page as a reference.
+     *
      * @test
      */
-    public function testMissingDownload()
+    public function testDifferentUrlTypes()
     {
         $web = new \spekulatius\phpscraper;
 
-        $this->expectException(\Symfony\Component\HttpClient\Exception\ClientException::class);
-        $this->expectExceptionMessage('HTTP/2 404  returned for "https://phpscraper.de/broken-url"');
+        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
-        $web->fetchAsset('https://phpscraper.de/broken-url');
+        // Test 1: Absolute URL
+        $this->assertSame(
+            $web->fetchAsset($web->sitemapUrl),
+            $web->fetchAsset($web->currentBaseUrl . '/custom_sitemap.xml'),
+        );
+
+        // Test 2: Relative URL
+        $this->assertSame(
+            $web->fetchAsset($web->sitemapUrl),
+            $web->fetchAsset('/custom_sitemap.xml'),
+        );
     }
 }
