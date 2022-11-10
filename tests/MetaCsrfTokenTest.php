@@ -21,7 +21,7 @@ class MetaCsrfTokenTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testProvided()
+    public function testWithCsrfToken()
     {
         $web = new \spekulatius\phpscraper;
 

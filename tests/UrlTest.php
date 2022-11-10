@@ -25,7 +25,19 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         $this->assertSame('test-pages.phpscraper.de', $web->currentHost);
 
         // Ensure the host with protocol is parsed correctly.
-        $this->assertSame('https://test-pages.phpscraper.de', $web->currentBaseUrl);
+        $this->assertSame('https://test-pages.phpscraper.de', $web->currentBaseHost);
+    }
+
+    /**
+     * If null is passed to `makeUrlAbsolute`, it should always return null.
+     *
+     * @test
+     */
+    public function testNullPassingThrough()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        $this->assertNull($web->makeUrlAbsolute(null));
     }
 
     /**

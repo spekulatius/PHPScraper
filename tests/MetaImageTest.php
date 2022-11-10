@@ -43,53 +43,57 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path.html');
 
         // Check the absolute image path
-        $this->assertSame("https://test-pages.phpscraper.de/assets/cat.jpg", $web->image);
+        $this->assertSame('https://test-pages.phpscraper.de/assets/cat.jpg', $web->image);
     }
 
-    // /**
-    //  * @test
-    //  */
-    // public function testRelativePath()
-    // {
-    //     $web = new \spekulatius\phpscraper;
+    /**
+     * @test
+     */
+    public function testRelativePath()
+    {
+        $web = new \spekulatius\phpscraper;
 
-    //     // Navigate to the test page.
-    //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/meta/image/relative-path.html');
 
-    //     // Check the relative image path
-    //     $this->assertSame(
-    //         'https://test-pages.phpscraper.de/assets/cat.jpg',
-    //         $web->image
-    //     );
-    // }
+        // Check the relative image path should be converted into an absolute path.
+        $this->assertSame(
+            'https://test-pages.phpscraper.de/assets/cat.jpg',
+            $web->image
+        );
+    }
 
-    // /**
-    //  * @test
-    //  */
-    // public function testAbsolutePathWithBaseHref()
-    // {
-    //     $web = new \spekulatius\phpscraper;
+    /**
+     * @test
+     */
+    public function testAbsolutePathWithBaseHref()
+    {
+        $web = new \spekulatius\phpscraper;
 
-    //     // Navigate to the test page.
-    //     $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
-    //     $this->assertNotSame('Page Not Found', $web->title);
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
 
-    //     // Check the absolute image path
-    //     $this->assertSame('https://test-pages.phpscraper.de/assets/cat.jpg', $web->image);
-    // }
+        // Check the absolute image path
+        $this->assertSame(
+            'https://test-pages.phpscraper.de/assets/cat.jpg',
+            $web->image
+        );
+    }
 
-    // /**
-    //  * @test
-    //  */
-    // public function testRelativePathBaseHref()
-    // {
-    //     $web = new \spekulatius\phpscraper;
+    /**
+     * @test
+     */
+    public function testRelativePathBaseHref()
+    {
+        $web = new \spekulatius\phpscraper;
 
-    //     // Navigate to the test page.
-    //     $web->go('https://test-pages.phpscraper.de/meta/image/relative-path-with-base-href.html');
-    //     $this->assertNotSame('Page Not Found', $web->title);
+        // Navigate to the test page.
+        $web->go('https://test-pages.phpscraper.de/meta/image/relative-path-with-base-href.html');
 
-    //     // Check the relative image path
-    //     $this->assertSame('https://test-pages.phpscraper.de/assets/cat.jpg', $web->image);
-    // }
+        // Check the relative image path
+        $this->assertSame(
+            'https://test-pages-with-base-href.phpscraper.de/assets/cat.jpg',
+            $web->image
+        );
+    }
 }

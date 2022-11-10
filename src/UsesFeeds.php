@@ -15,7 +15,7 @@ trait UsesFeeds
      */
     public function sitemapUrl(): ?string
     {
-        return $this->currentBaseUrl() . '/sitemap.xml';
+        return $this->currentBaseHost() . '/sitemap.xml';
     }
 
     /**
@@ -60,7 +60,7 @@ trait UsesFeeds
      */
     public function searchIndexUrl(): ?string
     {
-        return $this->currentBaseUrl() . '/index.json';
+        return $this->currentBaseHost() . '/index.json';
     }
 
     /**

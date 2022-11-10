@@ -143,27 +143,27 @@ class ImageTest extends \PHPUnit\Framework\TestCase
         // Check the number of images
         $this->assertSame(2, count($web->images));
 
-        // Current broken, due to bug in Goutte/DOMCrawler
-        // Temporary deactivated, because relative paths using base_href doesn't work.
-        // $this->assertSame([
-        //     'https://test-pages.phpscraper.de/assets/cat.jpg',
-        //     'https://test-pages.phpscraper.de/assets/cat.jpg',
-        // ], $web->images);
+        // Base set:
+        $this->assertSame([
+            'https://test-pages.phpscraper.de/assets/cat.jpg',
+            'https://test-pages-with-base-href.phpscraper.de/assets/cat.jpg',
+        ], $web->images);
 
-        // $this->assertSame([
-        //     [
-        //         'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
-        //         'alt' => 'absolute path with base href',
-        //         'width' => null,
-        //         'height' => null,
-        //     ],
-        //     [
-        //         'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
-        //         'alt' => 'relative path with base href',
-        //         'width' => null,
-        //         'height' => null,
-        //     ],
-        // ], $web->imagesWithDetails);
+        // Detail set:
+        $this->assertSame([
+            [
+                'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
+                'alt' => 'absolute path with base href',
+                'width' => null,
+                'height' => null,
+            ],
+            [
+                'url' => 'https://test-pages-with-base-href.phpscraper.de/assets/cat.jpg',
+                'alt' => 'relative path with base href',
+                'width' => null,
+                'height' => null,
+            ],
+        ], $web->imagesWithDetails);
     }
 
     /**

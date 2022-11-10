@@ -22,7 +22,7 @@ class TwitterCardTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testProvided()
+    public function testTwitterCard()
     {
         $web = new \spekulatius\phpscraper;
 

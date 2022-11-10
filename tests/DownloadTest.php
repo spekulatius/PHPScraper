@@ -57,7 +57,7 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
         // Test 1: Absolute URL
         $this->assertSame(
             $web->fetchAsset($web->sitemapUrl),
-            $web->fetchAsset($web->currentBaseUrl . '/custom_sitemap.xml'),
+            $web->fetchAsset($web->currentBaseHost . '/custom_sitemap.xml'),
         );
 
         // Test 2: Relative URL
