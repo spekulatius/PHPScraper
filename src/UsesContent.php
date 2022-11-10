@@ -112,7 +112,7 @@ trait UsesContent
     }
 
     /**
-     * Gets the open graph attributes as an array
+     * Gets all Twitter-Card attributes (`twitter:`) as an array
      *
      * @return array
      */
@@ -132,7 +132,7 @@ trait UsesContent
     }
 
     /**
-     * Gets the open graph attributes as an array
+     * Gets any OpenGraph attributes (`og:`) as an array
      *
      * @return array
      */
