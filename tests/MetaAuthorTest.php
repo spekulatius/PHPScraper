@@ -15,7 +15,7 @@ class MetaAuthorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/meta/missing.html');
 
         // Check the author as not given (null)
-        $this->assertSame(null, $web->author);
+        $this->assertNull($web->author);
     }
 
     /**

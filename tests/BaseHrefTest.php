@@ -21,7 +21,7 @@ class BaseHrefTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the baseHref as not given (null)
-        $this->assertSame(null, $web->baseHref);
+        $this->assertNull($web->baseHref);
     }
 
     /**

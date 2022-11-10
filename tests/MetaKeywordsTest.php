@@ -15,7 +15,7 @@ class MetaKeywordTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // null if there aren't any keywords set.
-        $this->assertSame(null, $web->keywordString);
+        $this->assertNull($web->keywordString);
 
         // Empty array if there aren't any keywords set.
         $this->assertTrue(is_iterable($web->keywords));
