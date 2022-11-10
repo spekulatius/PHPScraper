@@ -112,7 +112,63 @@ class UrlTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test if passed in hosts are considered.
+     * Basic processing of the URLs.
+     *
+     * @test
+     */
+    public function testMakeUrlAbsoluteConsiderBaseHref()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        /**
+         * Navigate to test page: This sets the base URL.
+         *
+         * It contains:
+         *
+         * ```html
+         * <base href="https://test-pages-with-base-href.phpscraper.de/">
+         * ```
+         *
+         * While it's located on `test-pages.phpscraper.de`.
+         *
+         * This page isn't actually used. It's purely to set the context.
+         */
+        $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
+
+        // Test variations of paths to be processed
+        // With leading slash
+        $this->assertSame(
+            'https://test-pages-with-base-href.phpscraper.de/index.html',
+            $web->makeUrlAbsolute('/index.html'),
+        );
+
+        // Without leading slash
+        $this->assertSame(
+            'https://test-pages-with-base-href.phpscraper.de/index.html',
+            $web->makeUrlAbsolute('index.html'),
+        );
+
+        // Paths are considered.
+        $this->assertSame(
+            'https://test-pages-with-base-href.phpscraper.de/test/index.html',
+            $web->makeUrlAbsolute('test/index.html'),
+        );
+
+        // Absolutely URLs are untouched.
+        $this->assertSame(
+            'https://example.com/index.html',
+            $web->makeUrlAbsolute('https://example.com/index.html'),
+        );
+
+        // Protocol is considered
+        $this->assertSame(
+            'http://example.com/index.html',
+            $web->makeUrlAbsolute('http://example.com/index.html'),
+        );
+    }
+
+    /**
+     * Test if passed in hosts are considered. It trumps any base-href and current url.
      *
      * @test
      */
