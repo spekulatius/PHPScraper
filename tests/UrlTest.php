@@ -9,6 +9,18 @@ namespace Tests;
 class UrlTest extends \PHPUnit\Framework\TestCase
 {
     /**
+     * If null is passed to `makeUrlAbsolute`, it should always return null.
+     *
+     * @test
+     */
+    public function testNullPassingThrough()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        $this->assertNull($web->makeUrlAbsolute(null));
+    }
+
+    /**
      * @test
      */
     public function validateUriTest()
@@ -35,18 +47,6 @@ class UrlTest extends \PHPUnit\Framework\TestCase
             'https://test-pages.phpscraper.de',
             $web->currentBaseHost
         );
-    }
-
-    /**
-     * If null is passed to `makeUrlAbsolute`, it should always return null.
-     *
-     * @test
-     */
-    public function testNullPassingThrough()
-    {
-        $web = new \spekulatius\phpscraper;
-
-        $this->assertNull($web->makeUrlAbsolute(null));
     }
 
     /**
