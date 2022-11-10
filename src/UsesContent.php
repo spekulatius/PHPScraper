@@ -4,6 +4,8 @@ namespace spekulatius;
 
 use DonatelloZa\RakePlus\RakePlus;
 use League\Uri\Uri;
+use Symfony\Component\DomCrawler\Link as DomCrawlerLink;
+use Symfony\Component\DomCrawler\Image as DomCrawlerImage;
 
 trait UsesContent
 {
@@ -477,8 +479,7 @@ trait UsesContent
             $image = [];
             foreach($link->childNodes as $childNode) {
                 if (!empty($childNode) && $childNode->nodeName === 'img') {
-                    $image[] = (new \Symfony\Component\DomCrawler\Image($childNode, $this->currentBaseHost()))
-                        ->getUri();
+                    $image[] = (new DomCrawlerImage($childNode, $this->currentBaseHost()))->getUri();
                 }
             }
 
@@ -486,8 +487,7 @@ trait UsesContent
             $rel = $link->getAttribute('rel');
 
             // Generate the proper uri using the Symfony's link class
-            $uri = (new \Symfony\Component\DomCrawler\Link($link, $this->currentBaseHost()))
-                ->getUri();
+            $uri = (new DomCrawlerLink($link, $this->currentBaseHost()))->getUri();
 
             // Prepare the result set.
             $entry = [
@@ -542,12 +542,10 @@ trait UsesContent
         // Generate a list of all image entries
         $result = [];
         foreach ($images as $image) {
-            // Generate the proper uri using the Symfony's image class
-            $imageObj = new \Symfony\Component\DomCrawler\Image($image, $this->currentUrl());
-
-            // Collect commonly interesting attributes and URL
+            // Collect the URL and commonly interesting attributes
             $result[] = [
-                'url' => $imageObj->getUri(),
+                // Re-generate the proper uri using the Symfony's image class
+                'url' => (new DomCrawlerImage($image, $this->currentBaseHost()))->getUri(),
                 'alt' => $image->getAttribute('alt'),
                 'width' => $image->getAttribute('width') === '' ? null : $image->getAttribute('width'),
                 'height' => $image->getAttribute('height') === '' ? null : $image->getAttribute('height'),
