@@ -2,16 +2,67 @@
 
 namespace spekulatius;
 
+use League\Uri\Uri;
 use League\Uri\Http;
 use League\Uri\UriResolver;
 
 trait UsesUrls
 {
-    public function makeUrlAbsolute(string $url, string $baseUrl = null): string
+    /**
+     * Returns the current url - this is either set by `go` indirectly or directly using `setContent`.
+     *
+     * Checking for !$this->currentPage can be usedful when ensuring a navigation has been done.
+     *
+     * @return string $url
+     */
+    public function currentUrl(): string
     {
+        // Ensure we aren't having a "call on null" without context.
+        if ($this->currentPage === null) {
+            throw new \Exception('You can not access the URL before your first navigation using `go`.');
+        }
+
+        return $this->currentPage->getUri();
+    }
+
+    /**
+     * Returns the current host
+     *
+     * @return string $host
+     */
+    public function currentHost(): string
+    {
+        return Uri::createFromString($this->currentUrl())->getHost();
+    }
+
+    /**
+     * Returns the current base host as defined in `<base href="...">` or the current host.
+     *
+     * @return string $baseUrl
+     */
+    public function currentBaseHost(): string
+    {
+        $uri = Uri::createFromString($this->currentUrl());
+
+        return $uri->getScheme() . '://' . $uri->getHost();
+    }
+
+    /**
+     * Converts a current URL to be absolute based on <base> or current page.
+     *
+     * @return string $absoluteUrl
+     */
+    public function makeUrlAbsolute(?string $url = null, string $baseUrl = null): ?string
+    {
+        // Allow to pass null through
+        if (!$url || !$this->currentPage) {
+            return null;
+        }
+
+        // Resolve the Url using one of the provided/set base href.
         return (string) UriResolver::resolve(
             Http::createFromString($url),
-            Http::createFromString($baseUrl ?? $this->currentBaseUrl()),
+            Http::createFromString($baseUrl ?? $this->baseHref() ?? $this->currentBaseUrl()),
         );
     }
 }

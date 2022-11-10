@@ -55,41 +55,8 @@ trait UsesGoutte
     }
 
     /**
-     * Returns the current url
-     *
-     * @return string $url
-     */
-    public function currentUrl(): string
-    {
-        // Ensure we aren't having a "call on null" without context.
-        if ($this->currentPage === null) {
-            throw new \Exception('You can not access the URL before your first navigation using `go`.');
-        }
-
-        return $this->currentPage->getUri();
-    }
-
-    /**
-     * Returns the current host
-     *
-     * @return string $host
-     */
-    public function currentHost(): string
-    {
-        return Uri::createFromString($this->currentUrl())->getHost();
-    }
-
-    /**
-     * Returns the current base URL.
-     *
-     * @return string $baseUrl
-     */
-    public function currentBaseUrl(): string
-    {
-        $uri = Uri::createFromString($this->currentUrl());
-
-        return $uri->getScheme() . '://' . $uri->getHost();
-    }
+     * Any URL-related methods are in `UsesUrls.php`.
+     **/
 
     /**
      * Navigates to a new page using an URL.
