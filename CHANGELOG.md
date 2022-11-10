@@ -6,6 +6,11 @@ Parts regarding the [documentation website](https://phpscraper.de), the [test pa
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.12.0 (2022-11-10)
+
+- [#142](https://github.com/spekulatius/PHPScraper/issues/142): Implement feed parsing.
+- [#145](https://github.com/spekulatius/PHPScraper/issues/145): Reenable previously deactivated tests
+
 ## 0.11.0 (2022-11-01)
 
 - [#137](https://github.com/spekulatius/PHPScraper/issues/137): Fix download bug and improve testing
