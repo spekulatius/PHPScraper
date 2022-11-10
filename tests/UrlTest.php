@@ -201,13 +201,13 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         // Absolutely URLs are untouched.
         $this->assertSame(
             'https://example.com/index.html',
-            $web->makeUrlAbsolute('https://example.com/index.html', 'https://example.com/test/with/path'),
+            $web->makeUrlAbsolute('https://example.com/index.html', 'https://example-2.com/test/with/path'),
         );
 
         // Protocol is considered
         $this->assertSame(
             'http://example.com/index.html',
-            $web->makeUrlAbsolute('http://example.com/index.html', 'https://example.com/test/with/path'),
+            $web->makeUrlAbsolute('http://example.com/index.html', 'https://example-2.com/test/with/path'),
         );
     }
 }
