@@ -29,7 +29,7 @@ class MetaImageTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the absolute image path
-        $this->assertSame(null, $web->image);
+        $this->assertNull($web->image);
     }
 
     /**

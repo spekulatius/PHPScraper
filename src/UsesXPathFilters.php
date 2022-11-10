@@ -9,7 +9,7 @@ trait UsesXPathFilters
     /**
      * Filters the current page by a xPath-query
      *
-     * @param string $filter
+     * @param string $query
      * @return Crawler
      */
     public function filter(string $query): Crawler
@@ -20,7 +20,7 @@ trait UsesXPathFilters
     /**
      * Filters the current page by a xPath-query and returns the first one, or null.
      *
-     * @param string $filter
+     * @param string $query
      * @return ?Crawler
      */
     public function filterFirst(string $query): ?Crawler
@@ -33,7 +33,7 @@ trait UsesXPathFilters
     /**
      * Filters the current page by a xPath-query and returns the first ones content, or null.
      *
-     * @param string $filter
+     * @param string $query
      * @return ?string
      */
     public function filterFirstText(string $query): ?string
@@ -46,7 +46,7 @@ trait UsesXPathFilters
     /**
      * Filters the current page by a xPath-query and returns the textual content as array.
      *
-     * @param string $filter
+     * @param string $query
      * @return array
      */
     public function filterTexts(string $query): array
@@ -57,11 +57,11 @@ trait UsesXPathFilters
     /**
      * Filters the current page by a xPath-query and returns the selected attributes as array.
      *
-     * @param string $filter
+     * @param string $query
      * @param array $attributes
-     * @return ?array
+     * @return array
      */
-    public function filterExtractAttributes(string $query, array $attributes): ?array
+    public function filterExtractAttributes(string $query, array $attributes): array
     {
         $filteredNodes = $this->filter($query);
 
@@ -71,7 +71,7 @@ trait UsesXPathFilters
     /**
      * Filters the current page by a xPath-query and returns the selected attributes of the first match.
      *
-     * @param string $filter
+     * @param string $query
      * @param array $attributes
      * @return ?string
      */
@@ -85,7 +85,7 @@ trait UsesXPathFilters
     /**
      * Returns the content attribute for the first result of the query, or null.
      *
-     * @param string $filter
+     * @param string $query
      * @return ?string
      */
     public function filterFirstContent(string $query): ?string

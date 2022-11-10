@@ -15,7 +15,7 @@ class MetaCsrfTokenTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the csrfToken as not given (null)
-        $this->assertSame(null, $web->csrfToken);
+        $this->assertNull($web->csrfToken);
     }
 
     /**

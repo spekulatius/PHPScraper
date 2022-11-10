@@ -15,7 +15,7 @@ class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the contentType as not given (null)
-        $this->assertSame(null, $web->contentType);
+        $this->assertNull($web->contentType);
     }
 
     /**

@@ -15,7 +15,7 @@ class MetaViewportTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // null if there isn't a viewport set.
-        $this->assertSame(null, $web->viewportString);
+        $this->assertNull($web->viewportString);
 
         // Empty array if there aren't any viewports set.
         $this->assertTrue(is_iterable($web->viewport));

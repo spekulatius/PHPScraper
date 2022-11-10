@@ -15,7 +15,7 @@ class CanonicalTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // null if there isn't a canonical set.
-        $this->assertSame(null, $web->canonical);
+        $this->assertNull($web->canonical);
     }
 
     /**

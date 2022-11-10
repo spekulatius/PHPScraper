@@ -15,7 +15,7 @@ class MetaDescriptionTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the description as not given (null)
-        $this->assertSame(null, $web->description);
+        $this->assertNull($web->description);
     }
 
     /**

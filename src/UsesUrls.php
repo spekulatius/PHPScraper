@@ -50,7 +50,7 @@ trait UsesUrls
     /**
      * Converts a current URL to be absolute based on <base> or current page.
      *
-     * @return string $absoluteUrl
+     * @return ?string $absoluteUrl
      */
     public function makeUrlAbsolute(?string $url = null, string $baseUrl = null): ?string
     {
