@@ -25,7 +25,7 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         $this->assertSame('test-pages.phpscraper.de', $web->currentHost);
 
         // Ensure the host with protocol is parsed correctly.
-        $this->assertSame('https://test-pages.phpscraper.de', $web->currentBaseUrl);
+        $this->assertSame('https://test-pages.phpscraper.de', $web->currentBaseHost);
     }
 
     /**

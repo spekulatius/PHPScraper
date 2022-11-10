@@ -54,7 +54,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // We should always allow for custom paths.
         $this->assertSame(
             $web->sitemapRaw($web->sitemapUrl),
-            $web->sitemapRaw($web->currentBaseUrl . '/custom_sitemap.xml'),
+            $web->sitemapRaw($web->currentBaseHost . '/custom_sitemap.xml'),
         );
     }
 
@@ -73,7 +73,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
         // Test 1: Absolute URL
         $this->assertSame(
             $web->sitemapRaw($web->sitemapUrl),
-            $web->sitemapRaw($web->currentBaseUrl . '/custom_sitemap.xml'),
+            $web->sitemapRaw($web->currentBaseHost . '/custom_sitemap.xml'),
         );
 
         // Test 2: Relative URL

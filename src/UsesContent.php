@@ -480,7 +480,8 @@ trait UsesContent
             $image = [];
             foreach($link->childNodes as $childNode) {
                 if (!empty($childNode) && $childNode->nodeName === 'img') {
-                    $image[] = (new \Symfony\Component\DomCrawler\Image($childNode, $this->currentUrl()))->getUri();
+                    $image[] = (new \Symfony\Component\DomCrawler\Image($childNode, $this->currentBaseHost()))
+                        ->getUri();
                 }
             }
 

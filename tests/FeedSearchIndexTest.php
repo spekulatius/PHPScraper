@@ -56,7 +56,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         // We should always allow for custom urls.
         $this->assertSame(
             $web->searchIndexRaw($web->searchIndexUrl),
-            $web->searchIndexRaw($web->currentBaseUrl . '/custom_index.json'),
+            $web->searchIndexRaw($web->currentBaseHost . '/custom_index.json'),
         );
     }
 
@@ -75,7 +75,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         // Test 1: Absolute URL
         $this->assertSame(
             $web->searchIndexRaw($web->searchIndexUrl),
-            $web->searchIndexRaw($web->currentBaseUrl . '/custom_index.json'),
+            $web->searchIndexRaw($web->currentBaseHost . '/custom_index.json'),
         );
 
         // Test 2: Relative URL

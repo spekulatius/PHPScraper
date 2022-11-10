@@ -73,7 +73,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
         // Test 1: Absolute URL
         $this->assertSame(
             $web->rssRaw($web->rssUrls[0]),
-            $web->rssRaw($web->currentBaseUrl . '/custom_rss.xml'),
+            $web->rssRaw($web->currentBaseHost . '/custom_rss.xml'),
         );
 
         // Test 2: Relative URL

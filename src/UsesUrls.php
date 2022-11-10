@@ -36,13 +36,13 @@ trait UsesUrls
     }
 
     /**
-     * Returns the current base host as defined in `<base href="...">` or the current host.
+     * Returns the current host as defined in `<base href="...">` or the current host.
      *
      * @return string $baseUrl
      */
     public function currentBaseHost(): string
     {
-        $uri = Uri::createFromString($this->currentUrl());
+        $uri = Uri::createFromString($this->baseHref() ?? $this->currentUrl());
 
         return $uri->getScheme() . '://' . $uri->getHost();
     }
@@ -62,7 +62,7 @@ trait UsesUrls
         // Resolve the Url using one of the provided/set base href.
         return (string) UriResolver::resolve(
             Http::createFromString($url),
-            Http::createFromString($baseUrl ?? $this->baseHref() ?? $this->currentBaseUrl()),
+            Http::createFromString($baseUrl ?? $this->baseHref() ?? $this->currentBaseHost()),
         );
     }
 }
