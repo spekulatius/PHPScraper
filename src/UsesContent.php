@@ -86,12 +86,12 @@ trait UsesContent
         return $this->filterFirstContent('//meta[@name="keywords"]');
     }
 
-    public function keywords()
+    public function keywords(): array
     {
         return is_null($this->keywordString()) ? [] : \preg_split('/,\s*/', $this->keywordString());
     }
 
-    public function description()
+    public function description(): ?string
     {
         return $this->filterFirstContent('//meta[@name="description"]');
     }
@@ -101,7 +101,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function metaTags()
+    public function metaTags(): array
     {
         return [
             'author' => $this->author(),
@@ -116,7 +116,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function twitterCard()
+    public function twitterCard(): array
     {
         $data = $this
             ->filter('//meta[contains(@name, "twitter:")]')
@@ -136,7 +136,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function openGraph()
+    public function openGraph(): array
     {
         $data = $this
             ->filter('//meta[contains(@property, "og:")]')
@@ -186,7 +186,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function headings()
+    public function headings(): array
     {
         return [
             $this->h1(),
@@ -198,7 +198,7 @@ trait UsesContent
         ];
     }
 
-    public function lists()
+    public function lists(): array
     {
         $lists = [];
 
@@ -213,21 +213,21 @@ trait UsesContent
         return $lists;
     }
 
-    public function orderedLists()
+    public function orderedLists(): array
     {
         return array_values(array_filter($this->lists(), function ($list) {
             return $list['type'] === 'ol';
         }));
     }
 
-    public function unorderedLists()
+    public function unorderedLists(): array
     {
         return array_values(array_filter($this->lists(), function ($list) {
             return $list['type'] === 'ul';
         }));
     }
 
-    public function paragraphs()
+    public function paragraphs(): array
     {
         return array_map(
             'trim',
@@ -240,7 +240,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function cleanParagraphs()
+    public function cleanParagraphs(): array
     {
         return array_values(array_filter(
             $this->paragraphs(),
@@ -253,7 +253,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function outline()
+    public function outline(): array
     {
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6', ['_name', '_text']);
 
@@ -269,7 +269,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function outlineWithParagraphs()
+    public function outlineWithParagraphs(): array
     {
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
 
@@ -286,7 +286,7 @@ trait UsesContent
      *
      * @return array
      */
-    public function cleanOutlineWithParagraphs()
+    public function cleanOutlineWithParagraphs(): array
     {
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
 
@@ -319,7 +319,7 @@ trait UsesContent
      *
      * @return array
      */
-    protected function prepContent()
+    protected function prepContent(): array
     {
         // Collect content strings
         $content = array_merge(

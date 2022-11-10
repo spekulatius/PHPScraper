@@ -59,9 +59,9 @@ trait UsesXPathFilters
      *
      * @param string $filter
      * @param array $attributes
-     * @return ?array
+     * @return array
      */
-    public function filterExtractAttributes(string $query, array $attributes): ?array
+    public function filterExtractAttributes(string $query, array $attributes): array
     {
         $filteredNodes = $this->filter($query);
 
