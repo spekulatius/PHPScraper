@@ -16,7 +16,7 @@ class FeedEntry
     public string $link;
 
     /**
-     * @todo with drop of PHP7.4 we should make these public and remove the above.
+     * @todo with drop of PHP7.4 we should make these public and remove the initialization above.
      *
      * @todo with drop of PHP7.4 and 8.0 we should make this `readonly`.
      */

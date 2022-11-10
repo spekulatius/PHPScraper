@@ -29,7 +29,7 @@ class phpscraper
 
     public function __construct(?array $config = [])
     {
-        // Prepare the core.
+        // Prepare the core. It delegates all further processing.
         $this->core = new Core();
 
         // And set the config.
@@ -63,7 +63,7 @@ class phpscraper
              * Agent can be overwritten using:
              *
              * ```php
-             * $web->setConfig(['agent' => 'http://user:password@127.0.0.1:3128']);
+             * $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
              * ```
              */
             'proxy' => null,
