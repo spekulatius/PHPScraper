@@ -14,11 +14,16 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
-        $this->assertSame('Selector Tests', $web->title);
+        $this->assertSame(
+            'Selector Tests',
+            $web->title
+        );
 
         // Check warning through an DOMXPath query.
         $this->expectWarning();
         $this->expectWarningMessage('DOMXPath::query(): Invalid expression');
+
+        // Trigger failing test.
         $web->filterFirstText("//[@id='by-id']");
     }
 
@@ -32,10 +37,16 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
-        $this->assertSame('Selector Tests', $web->title);
+        $this->assertSame(
+            'Selector Tests',
+            $web->title
+        );
 
         // Select content using `->text()`
-        $this->assertSame('Content by ID', $web->filterFirstText("//*[@id='by-id']"));
+        $this->assertSame(
+            'Content by ID',
+            $web->filterFirstText("//*[@id='by-id']")
+        );
     }
 
     /**
@@ -48,13 +59,22 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
-        $this->assertSame('Selector Tests', $web->title);
+        $this->assertSame(
+            'Selector Tests',
+            $web->title
+        );
 
         // Select single string using first and chain `->text()`
-        $this->assertSame('Selector Tests (h1)', $web->filterFirst("//h1")->text());
+        $this->assertSame(
+            'Selector Tests (h1)',
+            $web->filterFirst("//h1")->text()
+        );
 
         // Select as array using `filterTexts`:
-        $this->assertSame(['Selector Tests (h1)'], $web->filterTexts("//h1"));
+        $this->assertSame(
+            ['Selector Tests (h1)'],
+            $web->filterTexts("//h1")
+        );
     }
 
     /**
@@ -67,7 +87,10 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
-        $this->assertSame('Selector Tests', $web->title);
+        $this->assertSame(
+            'Selector Tests',
+            $web->title
+        );
 
         // Select without `->text()` and using the filterTexts-method instead.
         $this->assertSame(

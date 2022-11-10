@@ -17,7 +17,10 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/index.json`?
-        $this->assertSame('https://test-pages.phpscraper.de/index.json', $web->searchIndexUrl);
+        $this->assertSame(
+            'https://test-pages.phpscraper.de/index.json',
+            $web->searchIndexUrl
+        );
     }
 
     /**

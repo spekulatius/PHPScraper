@@ -33,7 +33,10 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
 
         // Check the h1
-        $this->assertSame('We are testing here & elsewhere!', $web->h1[0]);
+        $this->assertSame(
+            'We are testing here & elsewhere!',
+            $web->h1[0]
+        );
 
         // h2s
         $this->assertSame(2, count($web->h2));
@@ -67,7 +70,10 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the h1
-        $this->assertSame('We are testing here!', $web->h1[0]);
+        $this->assertSame(
+            'We are testing here!',
+            $web->h1[0]
+        );
 
         // h2s
         $this->assertSame(2, count($web->h2));
@@ -88,7 +94,10 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
 
         // Check the h1
-        $this->assertSame('We are testing here ä ü ö!', $web->h1[0]);
+        $this->assertSame(
+            'We are testing here ä ü ö!',
+            $web->h1[0]
+        );
 
         // h2s
         $this->assertSame(2, count($web->h2));
@@ -109,7 +118,10 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
 
         // Check the h1
-        $this->assertSame('We are testing here! 加油!', $web->h1[0]);
+        $this->assertSame(
+            'We are testing here! 加油!',
+            $web->h1[0]
+        );
 
         // h2s
         $this->assertSame(2, count($web->h2));

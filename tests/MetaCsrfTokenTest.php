@@ -30,6 +30,9 @@ class MetaCsrfTokenTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
         // Check the csrfToken
-        $this->assertSame('token', $web->csrfToken);
+        $this->assertSame(
+            'token',
+            $web->csrfToken
+        );
     }
 }
