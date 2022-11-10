@@ -19,13 +19,22 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/content/lists.html');
 
         // Ensure the URL is set correctly.
-        $this->assertSame('https://test-pages.phpscraper.de/content/lists.html', $web->currentUrl);
+        $this->assertSame(
+            'https://test-pages.phpscraper.de/content/lists.html',
+            $web->currentUrl
+        );
 
         // Ensure the host is parsed correctly.
-        $this->assertSame('test-pages.phpscraper.de', $web->currentHost);
+        $this->assertSame(
+            'test-pages.phpscraper.de',
+            $web->currentHost
+        );
 
         // Ensure the host with protocol is parsed correctly.
-        $this->assertSame('https://test-pages.phpscraper.de', $web->currentBaseHost);
+        $this->assertSame(
+            'https://test-pages.phpscraper.de',
+            $web->currentBaseHost
+        );
     }
 
     /**
@@ -41,6 +50,26 @@ class UrlTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @test
+     */
+    public function testCurrentBaseHostWithBase()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to the test page.
+        // Contains: <base href="https://test-pages-with-base-href.phpscraper.de/">
+        $web->go('https://test-pages.phpscraper.de/meta/image/absolute-path-with-base-href.html');
+
+        // Check the base href being passed through the current base host.
+        $this->assertSame(
+            'https://test-pages-with-base-href.phpscraper.de',
+            $web->currentBaseHost
+        );
+    }
+
+    /**
+     * Basic processing of the URLs.
+     *
      * @test
      */
     public function testMakeUrlAbsolute()
@@ -83,6 +112,8 @@ class UrlTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test if passed in hosts are considered.
+     *
      * @test
      */
     public function testMakeUrlAbsoluteWithBaseHost()
