@@ -151,32 +151,32 @@ trait UsesContent
         return $result;
     }
 
-    public function h1()
+    public function h1(): array
     {
         return $this->filterExtractAttributes('//h1', ['_text']);
     }
 
-    public function h2()
+    public function h2(): array
     {
         return $this->filterExtractAttributes('//h2', ['_text']);
     }
 
-    public function h3()
+    public function h3(): array
     {
         return $this->filterExtractAttributes('//h3', ['_text']);
     }
 
-    public function h4()
+    public function h4(): array
     {
         return $this->filterExtractAttributes('//h4', ['_text']);
     }
 
-    public function h5()
+    public function h5(): array
     {
         return $this->filterExtractAttributes('//h5', ['_text']);
     }
 
-    public function h6()
+    public function h6(): array
     {
         return $this->filterExtractAttributes('//h6', ['_text']);
     }

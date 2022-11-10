@@ -107,9 +107,8 @@ trait UsesGoutte
      * Click a link (either with title or url)
      *
      * @param string $titleOrUrl
-     * @return boolean
      */
-    public function clickLink($titleOrUrl)
+    public function clickLink($titleOrUrl): self
     {
         // If the string starts with http just go to it - we assume it's an URL
         if (\stripos($titleOrUrl, 'http') === 0) {
@@ -123,6 +122,6 @@ trait UsesGoutte
             $this->currentPage = $this->client->click($link);
         }
 
-        return true;
+        return $this;
     }
 }

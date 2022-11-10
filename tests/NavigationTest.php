@@ -111,4 +111,22 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
         // Check the URL
         $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
     }
+
+    /**
+     * Test chainability of `clickLink`.
+     *
+     * @test
+     */
+    public function testClickLinkChainability()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        // Navigate to a page, click a link by URL and see if we are on the expected `currentUrl`.
+        $web
+            ->go('https://test-pages.phpscraper.de/navigation/2.html')
+            ->clickLink('https://peterthaleikis.com/');
+
+        // Check the URL
+        $this->assertSame('https://peterthaleikis.com/', $web->currentUrl);
+    }
 }
