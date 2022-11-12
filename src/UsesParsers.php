@@ -82,6 +82,14 @@ trait UsesParsers
         return $result;
     }
 
+    /**
+     * Parses a given XML string.
+     * 
+     * @source https://stackoverflow.com/a/20431742
+     *
+     * @param string $xmlStringOrUrl
+     * @return array $data
+     */
     protected function parseXmlString(string $xmlString): array
     {
         // XML parser
