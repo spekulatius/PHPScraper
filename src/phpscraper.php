@@ -36,6 +36,16 @@ class phpscraper
         $this->setConfig($config);
     }
 
+    public static function create(?array $config = []): self
+    {
+        return new self($config);
+    }
+
+    public static function go($url): self
+    {
+        return (new self())->go($url);
+    }
+
     /**
      * Sets the config, generates the required Clients and updates the core with the new clients.
      *

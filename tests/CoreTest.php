@@ -62,25 +62,54 @@ class CoreTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Calls should be chainable.
+     * Calls should be chainable and easy to access.
      *
      * @test
      */
-    public function testBasicChainability()
+    public function testChainability()
     {
+        // Testing env: First h1: "We are testing here & elsewhere!"
+        $url = 'https://test-pages.phpscraper.de/meta/html-entities.html';
+
+
+        // Test 1: Create, navigate to the test page.
         $web = new \spekulatius\phpscraper;
+        $web->go($url);
 
-        // Navigate to test page
-        $web->go('https://phpscraper.de');
-
+        // Check the h1
         $this->assertSame(
-            // Unchained
-            $web->title,
+            'We are testing here & elsewhere!',
+            $web->h1[0]
+        );
+
+
+        // Test 2: Chained
+        $this->assertSame(
+            'We are testing here & elsewhere!',
 
             // Chained
             (new \spekulatius\phpscraper)
-                ->go('https://phpscraper.de')
-                ->title
+                ->go($url)
+                ->h1[0]
+        );
+
+        // Test 3: Static with `create`
+        $this->assertSame(
+            'We are testing here & elsewhere!',
+
+            // Chained
+            \spekulatius\phpscraper::create()
+                ->go($url)
+                ->h1[0]
+        );
+
+        // Test 4: Static with `go`
+        $this->assertSame(
+            'We are testing here & elsewhere!',
+
+            // Chained
+            \spekulatius\phpscraper::go($url)
+                ->h1[0]
         );
     }
 }
