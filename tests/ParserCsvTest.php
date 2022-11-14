@@ -39,19 +39,59 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test with pipe as separator, enclosure and escape.
+     *
      * @test
      */
-    public function testCsvParserWithConfig()
+    public function testCsvDecodeWithCastingAndCustomEncoding()
     {
         $web = new \spekulatius\phpscraper;
 
         $this->assertSame(
-            $web->csvDecodeWithHeaders("date,value\n1945-02-06,420\n1952-03-11,42"),
             [
-                ['date' => '1945-02-06', 'value' => 420],
-                ['date' => '1952-03-11', 'value' => 42],
-            ]
+                ['date', 'value'],
+                ['1945-02-06', 4.20],
+                ['1952-03-11', 42],
+                ['\\'],
+            ],
+            $web->csvDecodeWithCasting(
+                "\"date\"|\"value\"\n\"1945-02-06\"|\"4.20\"\n\"1952-03-11\"|\"42\"\n\\",
+                '|',
+                '"',
+                '\\'
+            )
         );
     }
 
+    /**
+     * @test
+     */
+    public function testCsvDecodeWithHeaderRaw()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        $this->assertSame(
+            [
+                ['date' => '1945-02-06', 'value' => '4.20'],
+                ['date' => '1952-03-11', 'value' => '42'],
+            ],
+            $web->csvDecodeWithHeaderRaw("date,value\n1945-02-06,4.20\n1952-03-11,42"),
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function testCsvDecodeWithHeaderAndCasting()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        $this->assertSame(
+            [
+                ['date' => '1945-02-06', 'value' => 4.20],
+                ['date' => '1952-03-11', 'value' => 42],
+            ],
+            $web->csvDecodeWithHeader("date,value\n1945-02-06,4.20\n1952-03-11,42"),
+        );
+    }
 }

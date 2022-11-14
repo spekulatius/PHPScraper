@@ -5,7 +5,7 @@ namespace spekulatius;
 trait UsesParsers
 {
     /**
-     * Base Util to decode CSVs.
+     * Base Util to decode a CSV string.
      *
      * @param string $csvString
      * @param ?string $separator
@@ -20,15 +20,15 @@ trait UsesParsers
         ?string $escape = null
     ): array {
         try {
-            $array = array_map(
-                fn($line) => str_getcsv($line, $separator, $enclosure, $escape),
+            $csv = array_map(
+                fn ($line) => str_getcsv($line, $separator, $enclosure, $escape),
                 explode("\n", $csvString)
             );
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $array;
+        return $csv;
     }
 
     /**
@@ -47,105 +47,102 @@ trait UsesParsers
         ?string $escape = null
     ): array {
         try {
-            $array = $this->csvDecodeRaw($csvString, $separator, $enclosure, $escape);
+            $csv = $this->csvDecodeRaw($csvString, $separator, $enclosure, $escape);
 
             // Cast native and custom types
-            $array = array_map(
+            $csv = array_map(
                 fn ($line) => array_map(
                     fn ($cell) => $this->castType($cell),
                     $line
                 ),
-                $array
+                $csv
             );
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $array;
+        return $csv;
     }
 
-    // Helper method to cast types
-    protected function castType(string $entry)
-    {
-        if ($entry == (int) $entry) {
-            return (int) $entry;
-        }
-
-        if ($entry == (float) $entry) {
-            return (float) $entry;
-        }
-
-        return $entry;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /**
+     * Util to decode a CSV string to asso. array.
+     *
+     * @param string $csvString
+     * @param ?string $separator
+     * @param ?string $enclosure
+     * @param ?string $escape
+     * @return array $data
+     */
     public function csvDecodeWithHeaderRaw(
         string $csvString,
-        ?array $options = []
+        ?string $separator = null,
+        ?string $enclosure = null,
+        ?string $escape = null
     ): array {
-        // merge options with the configuration and the global defaults
-        // $config = array_merge(
-        //     $this->config
-
-        // );
-
-        $array = [];
-
         try {
-            $array = $this->csvDecodeRaw($csvString);
+            $csv = $this->csvDecodeRaw($csvString, $separator, $enclosure, $escape);
 
-            $header = array_shift($array);
+            $header = array_shift($csv);
 
+            // Combine the rows with the header entry.
             array_walk(
-                $array,
-                function(&$row, $key, $header) {
-                    $row = array_combine($header, $row);
-                },
+                $csv,
+                function(&$row, $key, $header) { $row = array_combine($header, $row); },
                 $header
             );
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $array;
+        return $csv;
     }
 
+    /**
+     * Decode a CSV string to asso. array and cast types.
+     *
+     * @param string $csvString
+     * @param ?string $separator
+     * @param ?string $enclosure
+     * @param ?string $escape
+     * @return array $data
+     */
     public function csvDecodeWithHeader(
         string $csvString,
-        ?array $options = []
+        ?string $separator = null,
+        ?string $enclosure = null,
+        ?string $escape = null
     ): array {
-        $csv = $this->csvDecodeWithHeaderRaw($csvString, $options);
+        try {
+            $csv = $this->csvDecodeWithHeaderRaw($csvString, $separator, $enclosure, $escape);
 
-        // Cast some common types?
-        if ($config['enableCastTyping']) {
-            //
-
-            // Custom types? Callbacks anyone?
-            foreach ($config['customTypes'] as $field => $callback) {
-                // check if the field matches.
-                $entry = $callback($entry);
+            // Cast native and custom types
+            foreach ($csv as $idx => $row) {
+                foreach ($row as $key => $value) {
+                    $csv[$idx][$key] = $this->castType($value);
+                }
             }
+        } catch (\Exception $e) {
+            throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
         return $csv;
     }
 
+    // Helper method to cast types
+    protected function castType(string $entry)
+    {
+        // Looks like an int?
+        if ($entry == (int) $entry) {
+            return (int) $entry;
+        }
 
+        // Looks like a float?
+        if ($entry == (float) $entry) {
+            return (float) $entry;
+        }
+
+        return $entry;
+    }
 
 
     /**
