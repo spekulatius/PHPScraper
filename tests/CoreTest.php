@@ -66,7 +66,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testChainability()
+    public function testBasicChainability()
     {
         // Testing env: First h1: "We are testing here & elsewhere!"
         $url = 'https://test-pages.phpscraper.de/meta/html-entities.html';
