@@ -129,20 +129,23 @@ trait UsesParsers
     }
 
     // Helper method to cast types
-    protected function castType(string $entry)
+    public function castType(string $entry)
     {
         // Looks like an int?
-        if ($entry == (int) $entry) {
+        if ($entry == (string) (int) $entry) {
             return (int) $entry;
         }
 
         // Looks like a float?
-        if ($entry == (float) $entry) {
+        if ($entry == (string) (float) $entry) {
             return (float) $entry;
         }
 
         return $entry;
     }
+
+
+
 
 
     /**
@@ -235,12 +238,27 @@ trait UsesParsers
     }
 
 
-    // // Associate
-    // $csv = array_map('str_getcsv', file($file));
-    // array_walk($csv, function(&$a) use ($csv) {
-    //   $a = array_combine($csv[0], $a);
-    // });
-    // array_shift($csv);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
