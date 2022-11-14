@@ -17,7 +17,7 @@ trait UsesParsers
         string $csvString,
         ?string $separator = null,
         ?string $enclosure = null,
-        ?string $escape = null,
+        ?string $escape = null
     ): array {
         try {
             $array = array_map(
@@ -44,7 +44,7 @@ trait UsesParsers
         string $csvString,
         ?string $separator = null,
         ?string $enclosure = null,
-        ?string $escape = null,
+        ?string $escape = null
     ): array {
         try {
             $array = $this->csvDecodeRaw($csvString, $separator, $enclosure, $escape);
