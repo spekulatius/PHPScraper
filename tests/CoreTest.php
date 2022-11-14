@@ -92,24 +92,5 @@ class CoreTest extends \PHPUnit\Framework\TestCase
                 ->go($url)
                 ->h1[0]
         );
-
-        // Test 3: Static with `create`
-        $this->assertSame(
-            'We are testing here & elsewhere!',
-
-            // Chained
-            \spekulatius\phpscraper::create()
-                ->go($url)
-                ->h1[0]
-        );
-
-        // Test 4: Static with `go`
-        $this->assertSame(
-            'We are testing here & elsewhere!',
-
-            // Chained
-            \spekulatius\phpscraper::go($url)
-                ->h1[0]
-        );
     }
 }
