@@ -24,6 +24,11 @@ trait UsesParsers
                 fn ($line) => str_getcsv($line, $separator, $enclosure, $escape),
                 explode("\n", $csvString)
             );
+
+            // While technically 'valid', a single string isn't overly useful and likely not actually a CSV but an URL.
+            if (count($csv) === 1 && count($csv[0]) === 1) {
+                throw new \Exception('Does not look CSV-like');
+            }
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
@@ -40,7 +45,7 @@ trait UsesParsers
      * @param ?string $escape
      * @return array $data
      */
-    public function csvDecodeWithCasting(
+    public function csvDecode(
         string $csvString,
         ?string $separator = null,
         ?string $enclosure = null,
@@ -144,57 +149,6 @@ trait UsesParsers
         return $entry;
     }
 
-
-
-
-
-    /**
-     * A boilerplate function to process the various calling options for `parseX` functions.
-     */
-    public function parseResource(
-        ?string $stringOrUrl,
-        callable $parserFunction
-    ): ?array {
-        try {
-            // If we have a string, let's try to parse the resource from this.
-            if ($stringOrUrl !== null) {
-                // Simple: Try to parse what we have been given
-                try {
-                    $result = $parserFunction($stringOrUrl, true);
-                } catch (\Exception $e) {
-                    // We don't do anything if it fails - likely we have an URL. Let's continue below.
-                }
-            }
-
-            /**
-             * We fetch the content and process it, if we haven't got a resource as a string.
-             *
-             * This is a work-around to allow for:
-             *
-             * - `$web->parseJson('https://...')`.
-             * - `$web->go('...')->parseJson()`.
-             */
-            $result = $result ?? $parserFunction(
-                // Fetch the resource either using $stringOrUrl
-                $this->fetchAsset(
-                    // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $stringOrUrl || !$this->currentPage ? $stringOrUrl : $this->currentUrl()
-                ),
-                true
-            );
-        } catch (\Exception $e) {
-            throw new \Exception('Failed to parse resource: ' . $e->getMessage());
-        }
-
-        return $result;
-    }
-
-
-
-
-
-
-
     /**
      * Parses a given CSV string or fetches the URL and parses it.
      *
@@ -208,7 +162,7 @@ trait UsesParsers
             if ($csvStringOrUrl !== null) {
                 // Simple: Try to parse what we have been given
                 try {
-                    $result = json_decode($csvStringOrUrl, true);
+                    $result = $this->csvDecode($csvStringOrUrl);
                 } catch (\Exception $e) {
                     // We don't do anything if it fails - likely we have an URL. Let's continue below.
                 }
@@ -222,13 +176,12 @@ trait UsesParsers
              * - `$web->parseJson('https://...')`.
              * - `$web->go('...')->parseJson()`.
              */
-            $result = $result ?? json_decode(
+            $result = $result ?? $this->csvDecode(
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
                     $csvStringOrUrl || !$this->currentPage ? $csvStringOrUrl : $this->currentUrl()
-                ),
-                true
+                )
             );
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
@@ -237,30 +190,46 @@ trait UsesParsers
         return $result;
     }
 
+    /**
+     * Parses a given CSV string into an asso. with headers or fetches the URL and parses it.
+     *
+     * @param ?string $csvStringOrUrl
+     * @return array $data
+     */
+    public function parseCsvWithHeader(?string $csvStringOrUrl = null): array
+    {
+        try {
+            // If we have a string, let's try to parse the CSV from this.
+            if ($csvStringOrUrl !== null) {
+                // Simple: Try to parse what we have been given
+                try {
+                    $result = $this->csvDecodeWithHeader($csvStringOrUrl);
+                } catch (\Exception $e) {
+                    // We don't do anything if it fails - likely we have an URL. Let's continue below.
+                }
+            }
 
+            /**
+             * We fetch the content and process it, if we haven't got a CSV as a string.
+             *
+             * This is a work-around to allow for:
+             *
+             * - `$web->parseJson('https://...')`.
+             * - `$web->go('...')->parseJson()`.
+             */
+            $result = $result ?? $this->csvDecodeWithHeader(
+                // Fetch the resource either using $csvStringOrUrl
+                $this->fetchAsset(
+                    // Fallback on the current URL, if needed and possible (`go` was used before).
+                    $csvStringOrUrl || !$this->currentPage ? $csvStringOrUrl : $this->currentUrl()
+                )
+            );
+        } catch (\Exception $e) {
+            throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return $result;
+    }
 
     /**
      * Parses a given JSON string or fetches the URL and parses it.
