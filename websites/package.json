@@ -1,8 +1,8 @@
 {
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "vuepress dev",
-    "build": "vuepress build"
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build"
   },
   "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.0",

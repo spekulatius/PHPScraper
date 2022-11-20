@@ -1,5 +1,5 @@
 ---
-image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Feeds%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Feeds&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
 # Scrape Feeds
