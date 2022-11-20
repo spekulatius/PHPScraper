@@ -7,7 +7,7 @@
   </picture>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.
+PHPScraper is a universal web-util for PHP. The main goal is to *get stuff done* instead of getting distracted with selectors, preparing & converting data, etc. PHPScraper can just *"go to a website"* and get the relevant information for your project.
 
 Under the hood, it uses [Goutte](https://github.com/FriendsOfPHP/Goutte), [League/URI](https://github.com/thephpleague/uri) and a few other packages. See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for details.
 
