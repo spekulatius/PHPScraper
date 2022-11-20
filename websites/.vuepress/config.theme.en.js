@@ -20,6 +20,7 @@ module.exports = {
                 'examples/scrape-meta-tags',
                 'examples/scrape-social-media-meta-tags',
                 'examples/scrape-feeds',
+                'examples/parse-csv-json-and-xml-files',
             ],
         },
         {
