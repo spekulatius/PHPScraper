@@ -11,7 +11,7 @@ PHPScraper can identify and process feeds (RSS feeds, sitemaps, etc.) for you. T
 
 ## Identify RSS Feed URLs
 
-Websites can define RSS feeds in the head section of their markup. PHPScraper allows to identify any RSS feeds of the current page using `rssUrls`:
+Websites can define RSS feeds in the head section of their markup. PHPScraper allows to identify the RSS feeds of the current page using `rssUrls`:
 
 ```php
 $web = new \spekulatius\phpscraper;
