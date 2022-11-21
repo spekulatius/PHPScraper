@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Common%20File%20Types&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scrape CSV-, XML-, and JSON
+# Scrape CSV, XML and JSON
 
 PHPScraper can process common plain file types such as `csv`, `json`, `xml` from strings or URLs for you. Most functionality described below works for all types. Special cases are noted. The following topics are covered:
 
