@@ -244,7 +244,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             // The first 'go' sets the base URL for the following `go` with relative URL.
             (new \spekulatius\phpscraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
-                ->go('/test-encoded.csv')
+                ->go('/test-custom.csv')
                 ->parseCsv(null, '|', '"')
         );
 
@@ -256,7 +256,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             // The first 'go' sets the base URL for the following `go` with relative URL.
             (new \spekulatius\phpscraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
-                ->parseCsv('/test-encoded.csv', '|', '"')
+                ->parseCsv('/test-custom.csv', '|', '"')
         );
     }
 
@@ -366,7 +366,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             // The first 'go' sets the base URL for the following `go` with relative URL.
             (new \spekulatius\phpscraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
-                ->go('/test-encoded.csv')
+                ->go('/test-custom.csv')
                 ->parseCsvWithHeader(null, '|', '"')
         );
 
@@ -378,7 +378,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             // The first 'go' sets the base URL for the following `go` with relative URL.
             (new \spekulatius\phpscraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
-                ->parseCsvWithHeader('/test-encoded.csv', '|', '"')
+                ->parseCsvWithHeader('/test-custom.csv', '|', '"')
         );
     }
 }
