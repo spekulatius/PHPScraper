@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Common%20File%20Types&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-# Scrape CSV-, XML-, and JSON-URLs/Files
+# Scrape CSV-, XML-, and JSON
 
 PHPScraper can process common plain file types such as `csv`, `json`, `xml` from strings or URLs for you. Most functionality described below works for all types. Special cases are noted. The following topics are covered:
 
@@ -26,7 +26,7 @@ $xml = $web->parseXml($xmlString);
 $csv = $web->parseCsv($csvString);
 ```
 
-This can be useful when chaining steps or accessing embedded elements such as schema-data.
+This can be useful when chaining steps or accessing embedded elements such as schema data.
 
 
 ## Fetching and Parsing of CSV/XML/JSON URLs
@@ -74,7 +74,7 @@ $csv = $web
 ```
 
 ::: notice Multiple Methods
-The examples above apply for the following methods:
+The examples above apply to the following methods:
 
 - `parseJson`
 - `parseXml`
@@ -82,7 +82,7 @@ The examples above apply for the following methods:
 - `parseCsvWithHeader` (resolves into an asso. array)
 :::
 
-## Parsing a CSV string with Headers
+## Parsing a CSV String with Headers
 
 CSV can be parsed into various data structures. PHPScraper comes with two options built-in to parse CSV. Given the following example file:
 
