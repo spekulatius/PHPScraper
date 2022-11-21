@@ -128,6 +128,30 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test with header, pipe as separator, and enclosure.
+     *
+     * @test
+     */
+    public function testCsvDecodeWithHeaderAndCustomEncoding()
+    {
+        $web = new \spekulatius\phpscraper;
+
+        $this->assertSame(
+            [
+                ['date' => '1945-02-06', 'value' => 4.20],
+                ['date' => '1952-03-11', 'value' => 42],
+            ],
+
+            $web->csvDecodeWithHeader(
+                "\"date\"|\"value\"\n\"1945-02-06\"|\"4.20\"\n\"1952-03-11\"|\"42\"",
+                '|',
+                '"',
+                '\\'
+            )
+        );
+    }
+
+    /**
      * Check the pluming: Test the various ways to call `parseCsv()`.
      *
      * @test
@@ -210,6 +234,29 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test.csv')
                 ->parseCsv()
+        );
+
+        // Case 6: With encoding params
+        $this->assertSame(
+            // Pass the CSV Data as reference in.
+            $csvData,
+
+            // The first 'go' sets the base URL for the following `go` with relative URL.
+            (new \spekulatius\phpscraper)
+                ->go('https://test-pages.phpscraper.de/meta/feeds.html')
+                ->go('/test-encoded.csv')
+                ->parseCsv(null, '|', '"')
+        );
+
+        // Case 7: With encoding params and (relative) URL
+        $this->assertSame(
+            // Pass the CSV Data as reference in.
+            $csvData,
+
+            // The first 'go' sets the base URL for the following `go` with relative URL.
+            (new \spekulatius\phpscraper)
+                ->go('https://test-pages.phpscraper.de/meta/feeds.html')
+                ->parseCsv('/test-encoded.csv', '|', '"')
         );
     }
 
@@ -309,6 +356,29 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test.csv')
                 ->parseCsvWithHeader()
+        );
+
+        // Case 6: With encoding params
+        $this->assertSame(
+            // Pass the CSV Data as reference in.
+            $csvData,
+
+            // The first 'go' sets the base URL for the following `go` with relative URL.
+            (new \spekulatius\phpscraper)
+                ->go('https://test-pages.phpscraper.de/meta/feeds.html')
+                ->go('/test-encoded.csv')
+                ->parseCsvWithHeader(null, '|', '"')
+        );
+
+        // Case 7: With encoding params and (relative) URL
+        $this->assertSame(
+            // Pass the CSV Data as reference in.
+            $csvData,
+
+            // The first 'go' sets the base URL for the following `go` with relative URL.
+            (new \spekulatius\phpscraper)
+                ->go('https://test-pages.phpscraper.de/meta/feeds.html')
+                ->parseCsvWithHeader('/test-encoded.csv', '|', '"')
         );
     }
 }

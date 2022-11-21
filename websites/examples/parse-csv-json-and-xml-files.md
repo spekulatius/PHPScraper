@@ -139,7 +139,12 @@ You might want to define which *separate*, *enclosure*, and *escape* to use. You
 ```php
 $web = new \spekulatius\phpscraper;
 
+// Direct access:
+$csv = $web
+    ->parseCsv('https://test-pages.phpscraper.de/test-custom.csv', '|', '"');
+
+// Alternative syntax using `go` first:
 $csv = $web
     ->go('https://test-pages.phpscraper.de/test.csv')
-    ->parseCsv();
+    ->parseCsv(null, '|', '"');
 ```
