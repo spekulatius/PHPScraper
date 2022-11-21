@@ -3,38 +3,38 @@
 namespace spekulatius;
 
 /**
- * This class organizes mostly. For individual functionality please check the related traits.
+ * This class organizes mostly. For individual functionality check the related traits please.
  */
 
 class Core
 {
     /**
-     * Shared simple parsers.
-     */
-    use UsesParsers;
-
-    /**
-     * Url related helpers.
+     * Url related helpers for information about the current location and URL processing.
      */
     use UsesUrls;
 
     /**
-     * This trait manages Goutte itself.
+     * This trait manages the interaction with Goutte.
      */
     use UsesGoutte;
 
     /**
-     * This contains the basic filter methods.
+     * This contains the basic filter methods. Make accessing data easier.
      */
     use UsesXPathFilters;
 
     /**
-     * This contains various content-related selectors.
+     * This contains various content-related selectors. meta tags, h1, etc. pp.
      */
     use UsesContent;
 
     /**
-     * This contains the feeds-related selectors and parsers.
+     * Shared simple parsers for XML, JSON and CSV.
+     */
+    use UsesParsers;
+
+    /**
+     * This contains the feeds-related selectors and parsers: RSS, sitemap, search index, etc.
      */
     use UsesFeeds;
 }
