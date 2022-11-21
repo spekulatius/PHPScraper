@@ -31,7 +31,7 @@ This can be useful when chaining steps or accessing embedded elements such as sc
 
 ## Fetching and Parsing of CSV/XML/JSON URLs
 
-PHPScraper can assist with fetching and parsing the contents of an remote resources (URLs) containing JSON-, CSV- or XML-data:
+PHPScraper can assist with fetching and parsing the contents of remote resources (URLs) containing JSON-, CSV- or XML data:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -44,11 +44,11 @@ $json = $web
 $xml = $web
     ->parseXml('https://test-pages.phpscraper.de/sitemap.xml');
 
-// Fetches URL and parses contents into simple array.
+// Fetches URL and parses contents into a simple array.
 $csv = $web
     ->parseCsv('https://test-pages.phpscraper.de/test.csv');
 
-// Fetches URL and generates an asso. array with the first line as keys.
+// Fetches URL and generates an asso. array (map) with the first line as keys.
 $csv = $web
     ->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv');
 ```
@@ -62,12 +62,12 @@ $web = new \spekulatius\phpscraper;
 $csv = $web
     ->parseCsv('https://test-pages.phpscraper.de/test.csv');
 
-// Option 2: Navigate to relative URL for parsing.
+// Option 2: Navigate to a relative URL for parsing.
 $csv = $web
     ->go('https://test-pages.phpscraper.de/meta/feeds.html')
     ->parseCsv('/test.csv');
 
-// Option 3: Navigate with `go` or `clickLink` and call parser.
+// Option 3: Navigate with `go` or `clickLink` and call the parser.
 $csv = $web
     ->go('https://test-pages.phpscraper.de/test.csv')
     ->parseCsv();
@@ -129,12 +129,12 @@ print_r(
 ```
 
 ::: tip Type Casting
-Native types such as `int` and `float` are automatically casted to PHP-native types.
+Native types such as `int` and `float` are automatically cast to PHP-native types.
 :::
 
 ## Providing CSV Parsing Parameters
 
-You might want to define which *separate*, *enclosure* and *escape* to use. You can do so by passing an options array along:
+You might want to define which *separate*, *enclosure*, and *escape* to use. You can do so by passing an options array along:
 
 ```php
 $web = new \spekulatius\phpscraper;
