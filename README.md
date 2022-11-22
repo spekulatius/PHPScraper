@@ -39,9 +39,9 @@ echo $web->title;
 echo $web->title();
 ```
 
-### Common Use-Cases: Headings, Content, Links, Images, etc. pp.
+### Common Use-Cases: Links, Images, Headings, Content, Lists, Keywords, etc. pp.
 
-Many common use-cases are covered already. You can find extractors for various HTML tags including attributes of interest. Sometimes there is an option to get a simple and a details version, here in the case of links:
+Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. Sometimes there is an option to get a simple and a details version, here in the case of links:
 
 ```PHP
 $web = new \spekulatius\phpscraper;
@@ -144,8 +144,8 @@ The future development is organized into [milestones](https://github.com/spekula
 TBC.
 
 
-Sponsors
---------
+:heart_eyes: Sponsors
+---------------------
 
 PHPScraper is sponsored by:
 
@@ -154,10 +154,10 @@ PHPScraper is sponsored by:
 If you find PHPScraper useful to your work or simply want to support the development, please consider a [sponsorship](https://github.com/sponsors/spekulatius) or [donation](https://www.buymeacoffee.com/spekulatius). Thank you :muscle:
 
 
-:gear: Configuration
---------------------
+:gear: Configuration (optional)
+-------------------------------
 
-While completely optional, you can use the following configuration options if needed:
+If needed, you can use the following configuration options:
 
 ### Proxy Support
 
@@ -187,8 +187,13 @@ $web->setConfig(['disable_ssl' => true]);
 
 ### Agent
 
-Add
+You can set the browser agent using `setConfig`:
 
+```php
+$web->setConfig(['agent' => 'Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0']);
+```
+
+It defaults to `Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)`.
 
 You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use-case when unsetting values.
 
@@ -224,12 +229,12 @@ Thank you :muscle:
 :white_check_mark: Testing
 --------------------------
 
-The library comes with a PHPUnit test suite. You can find the tests [here](https://github.com/spekulatius/PHPScraper/tree/master/tests). The test pages are [publicly available](https://github.com/spekulatius/phpscraper-test-pages).
-
-To run the tests, run the following command from the project folder.
+The library comes with a PHPUnit test suite. To run the tests, run the following command from the project folder.
 
 ```bash
 composer test
 ```
+
+You can find the tests [here](https://github.com/spekulatius/PHPScraper/tree/master/tests). The test pages are [publicly available](https://github.com/spekulatius/phpscraper-test-pages).
 
 ## MISC: [Issues](https://github.com/spekulatius/PHPScraper/issues), [Ideas](https://github.com/spekulatius/PHPScraper/milestones), [Contributing](https://github.com/spekulatius/PHPScraper/blob/master/CONTRIBUTING.md), [CHANGELOG](https://github.com/spekulatius/PHPScraper/blob/master/CHANGELOG.md), [UPGRADING](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md), [LICENSE](https://github.com/spekulatius/PHPScraper/blob/master/LICENSE.md)
