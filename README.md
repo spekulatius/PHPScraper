@@ -1,10 +1,10 @@
-# [PHP Scraper - a web utility for PHP](https://github.com/spekulatius/PHPScraper)
-
 <p align="center">
-  <picture style="width: 100%;">
-    <source srcset="websites/.vuepress/public/logo-dark.png" media="(prefers-color-scheme:dark)">
-    <img src="websites/.vuepress/public/logo-light.png">
-  </picture>
+  <a href="https://github.com/spekulatius/PHPScraper">
+    <picture style="width: 100%;" alt="PHP Scraper - a web utility for PHP">
+      <source srcset="websites/.vuepress/public/logo-dark.png" media="(prefers-color-scheme:dark)">
+      <img src="websites/.vuepress/public/logo-light.png" alt="PHP Scraper - a web utility for PHP">
+    </picture>
+  </a>
   <p align="center">
     <a href="https://github.com/spekulatius/PHPScraper/actions/workflows/test.yaml">
       <img src="https://github.com/spekulatius/PHPScraper/actions/workflows/test.yaml/badge.svg" alt="Unit Tests">
