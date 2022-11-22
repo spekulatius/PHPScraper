@@ -56,7 +56,7 @@ echo $web->title;
 echo $web->title();
 ```
 
-### :battery: Batteries included: Links, Images, Headings, Content, Lists, Keywords, etc. pp.
+### :battery: Batteries included: Meta data, Links, Images, Headings, Content, Lists, Keywords, etc. pp.
 
 Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. In some cases there is an option to get a simple and a detailed version, here in the case of links:
 
@@ -84,7 +84,7 @@ print_r($web->linksWithDetails[0]);
 
 Details such as `follow_redirects`, etc. are optional configuration parameters (see below).
 
-**A list of methods can be found on <url>phpscraper.de</url>. Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
+**A full list of methods with example code can be found on [phpscraper.de](https://phpscraper.de). Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
 
 
 
