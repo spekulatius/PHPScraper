@@ -24,12 +24,12 @@
   </p>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.
+**PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.**
 
 Under the hood, it uses
 
 - [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web,
-- [League/URI](https://github.com/thephpleague/uri) to process URL.
+- [League/URI](https://github.com/thephpleague/uri) to process URLs.
 - [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyse keywords.
 
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for details.
@@ -84,7 +84,7 @@ print_r($web->linksWithDetails[0]);
 
 Details such as `follow_redirects`, etc. are optional configuration parameters (see below).
 
-A list of methods can be found on <url>phpscraper.de</url>. Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).
+**A list of methods can be found on <url>phpscraper.de</url>. Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
 
 
 
