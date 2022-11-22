@@ -24,7 +24,7 @@
   </p>
 </p>
 
-**PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.**
+PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.
 
 Under the hood, it uses
 
@@ -56,7 +56,7 @@ echo $web->title;
 echo $web->title();
 ```
 
-### :battery: Batteries included: Links, Images, Headings, Content, Lists, Keywords, etc. pp. are included
+### :battery: Batteries included: Links, Images, Headings, Content, Lists, Keywords, etc. pp.
 
 Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. In some cases there is an option to get a simple and a detailed version, here in the case of links:
 
