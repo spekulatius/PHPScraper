@@ -56,9 +56,9 @@ echo $web->title;
 echo $web->title();
 ```
 
-### Common Use-Cases: Links, Images, Headings, Content, Lists, Keywords, etc. pp.
+### :battery: Batteries included: Links, Images, Headings, Content, Lists, Keywords, etc. pp. are included
 
-Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. Sometimes there is an option to get a simple and a details version, here in the case of links:
+Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. In some cases there is an option to get a simple and a detailed version, here in the case of links:
 
 ```PHP
 $web = new \spekulatius\phpscraper;
@@ -82,9 +82,10 @@ print_r($web->linksWithDetails[0]);
 // ]
 ```
 
-Details such as follow_redirects, etc. are optional configuration parameters (see below).
+Details such as `follow_redirects`, etc. are optional configuration parameters (see below).
 
-It's also tested. The test-pages are available as GitHub repo.
+A list of methods can be found on <url>phpscraper.de</url>. Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).
+
 
 
 
