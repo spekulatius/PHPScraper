@@ -24,7 +24,7 @@
   </p>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.
+PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *go to a website* and get the relevant information for your project.
 
 Under the hood, it uses
 
@@ -32,7 +32,7 @@ Under the hood, it uses
 - [League/URI](https://github.com/thephpleague/uri) to process URLs.
 - [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyse keywords.
 
-See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for details.
+See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
 
 :timer_clock: 5 Minutes Tutorial: The Basics Explained with Examples
@@ -177,7 +177,7 @@ If you find PHPScraper useful to your work or simply want to support the develop
 
 If needed, you can use the following configuration options:
 
-### Agent
+### User Agent
 
 You can set the browser agent using `setConfig`:
 
@@ -185,7 +185,7 @@ You can set the browser agent using `setConfig`:
 $web->setConfig(['agent' => 'Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0']);
 ```
 
-It defaults to `Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)`.
+It defaults to `Mozilla/5.0 (compatible; PHP Scraper/1.x; +https://phpscraper.de)`.
 
 ### Proxy Support
 
@@ -231,6 +231,8 @@ If not or you are building a standalone-scraper, please include the autoloader i
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+
+// ...
 ```
 
 Now you can now use any of the examples on the documentation website or from the [`tests/`-folder](https://github.com/spekulatius/PHPScraper/tree/master/tests).
@@ -247,7 +249,7 @@ Thank you :muscle:
 :white_check_mark: Testing
 --------------------------
 
-The library comes with a PHPUnit test suite. To run the tests, run the following command from the project folder.
+The library comes with a PHPUnit test suite. To run the tests, run the following command from the project folder:
 
 ```bash
 composer test
