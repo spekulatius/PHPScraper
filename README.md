@@ -176,6 +176,16 @@ If you find PHPScraper useful to your work or simply want to support the develop
 
 If needed, you can use the following configuration options:
 
+### Agent
+
+You can set the browser agent using `setConfig`:
+
+```php
+$web->setConfig(['agent' => 'Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0']);
+```
+
+It defaults to `Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)`.
+
 ### Proxy Support
 
 You can configure proxy support with `setConfig`:
@@ -201,16 +211,6 @@ While unrecommended, it might be required to disable SSL checks. You can do so u
 ```php
 $web->setConfig(['disable_ssl' => true]);
 ```
-
-### Agent
-
-You can set the browser agent using `setConfig`:
-
-```php
-$web->setConfig(['agent' => 'Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0']);
-```
-
-It defaults to `Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)`.
 
 You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use-case when unsetting values.
 
