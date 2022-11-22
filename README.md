@@ -24,13 +24,13 @@
   </p>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *go to a website* and get the relevant information for your project.
+PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *go* to a website and get the relevant information for your project.
 
 Under the hood, it uses
 
 - [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web,
 - [League/URI](https://github.com/thephpleague/uri) to process URLs.
-- [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyse keywords.
+- [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyze keywords.
 
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
@@ -40,7 +40,7 @@ See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/compos
 
 Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
 
-### Basics: Flexible Calling as Attribute or Method
+### Basics: Flexible Calling as an Attribute or Method
 
 All scraping functionality can be accessed either as a function call or a property call. For example, the title can be accessed in two ways:
 
@@ -58,25 +58,34 @@ echo $web->title();
 
 ### :battery: Batteries included: Meta data, Links, Images, Headings, Content, Lists, Keywords, etc. pp.
 
-Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. In some cases there is an option to get a simple and a detailed version, here in the case of links:
+Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. In some cases there is an option to get a simple or detailed version, here in the case of links:
 
 ```PHP
 $web = new \spekulatius\phpscraper;
 
-// Contains `<a href="https://placekitten.com/432/287" rel="nofollow">external kitten</a>`
-$web->go('https://test-pages.phpscraper.de/links/rel.html');
+// Contains:
+// `<base href="https://test-pages-with-base-href.phpscraper.de">`
+// and
+// `<a href="assets/cat.jpg" title="relative path with base href">relative cat</a>`
+$web->go('https://test-pages.phpscraper.de/links/image-urls.html');
 
 // Get the first link on the page and print the result
 print_r($web->linksWithDetails[0]);
 // [
-//     'url' => 'https://placekitten.com/432/287',
+//     'url' => 'https://placekitten.com/456/500',
 //     'protocol' => 'https',
-//     'text' => 'external kitten',
+//     'text' => '',
 //     'title' => null,
 //     'target' => null,
-//     'rel' => 'nofollow',
-//     'isNofollow' => true,
-//     'isUGC' => false,
+//     'rel' => 'ugc',
+//     'image' => [
+//         'https://placekitten.com/456/400',
+//         'https://placekitten.com/456/300'
+//     ],
+//     'isNofollow' => false,
+//     'isUGC' => true,
+//     'isSponsored' => false,
+//     'isMe' => false,
 //     'isNoopener' => false,
 //     'isNoreferrer' => false,
 // ]
@@ -134,7 +143,7 @@ var_dump($web->imagesWithDetails);
 
 There are plenty of examples on the [PHPScraper website](https://phpscraper.de) and in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).
 
-If you prefer learning-by-doing check the [`playground.php`](https://github.com/spekulatius/PHPScraper/blob/master/playground.php) out. You get it up and running with:
+If you prefer learning by doing check the [`playground.php`](https://github.com/spekulatius/PHPScraper/blob/master/playground.php) out. You get it up and running with:
 
 ```bash
 $ git clone git@github.com:spekulatius/PHPScraper.git && composer update
