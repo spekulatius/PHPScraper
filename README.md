@@ -5,6 +5,23 @@
     <source srcset="websites/.vuepress/public/logo-dark.png" media="(prefers-color-scheme:dark)">
     <img src="websites/.vuepress/public/logo-light.png">
   </picture>
+  <p align="center">
+    <a href="https://github.com/spekulatius/PHPScraper/actions/workflows/test.yaml">
+      <img src="https://github.com/spekulatius/PHPScraper/actions/workflows/test.yaml/badge.svg" alt="Unit Tests">
+    </a>
+    <a href="https://packagist.org/packages/spekulatius/PHPScraper">
+      <img src="https://poser.pugx.org/spekulatius/PHPScraper/d/total.svg" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/spekulatius/PHPScraper">
+      <img src="https://poser.pugx.org/spekulatius/PHPScraper/v/stable.svg" alt="Latest Version">
+    </a>
+    <a href="https://packagist.org/packages/spekulatius/PHPScraper">
+      <img src="https://poser.pugx.org/spekulatius/PHPScraper/license.svg" alt="License">
+    </a>
+  </p>
+  <p align="center">
+    <strong>For full documentation, visit <a href="https://phpscraper.de">phpscraper.de</a></strong>.
+  </p>
 </p>
 
 PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *"go to a website"* and get the relevant information for your project.
