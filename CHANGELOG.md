@@ -6,6 +6,12 @@ Parts regarding the [documentation website](https://phpscraper.de), the [test pa
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.0 (2022-11-24)
+
+- [#151](https://github.com/spekulatius/PHPScraper/issues/151): Migrate website into separate repo.
+- [#150](https://github.com/spekulatius/PHPScraper/issues/150): Switch namespaces. See [UPGRADING](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md) for more details.
+- [#147](https://github.com/spekulatius/PHPScraper/issues/147): Prepare for v1.0
+
 ## 0.13.0 (2022-11-21)
 
 - [#146](https://github.com/spekulatius/PHPScraper/issues/146): Implement plain text file/URL parsing.
