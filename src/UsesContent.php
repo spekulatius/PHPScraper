@@ -477,7 +477,7 @@ trait UsesContent
         foreach ($links as $link) {
             // Check if the anchor is only an image. If so, wrap it into DomCrawler\Image to get the Uri.
             $image = [];
-            foreach($link->childNodes as $childNode) {
+            foreach ($link->childNodes as $childNode) {
                 if (!empty($childNode) && $childNode->nodeName === 'img') {
                     $image[] = (new DomCrawlerImage($childNode, $this->currentBaseHost()))->getUri();
                 }

@@ -3,7 +3,6 @@
 namespace Spekulatius\PHPScraper\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Process\Process;
 
 class NotFoundTest extends TestCase
 {

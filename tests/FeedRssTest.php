@@ -143,7 +143,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
             'How I Built My First Browser Extension'
         );
         $this->assertSame(
-        $rss[4]->link,
+            $rss[4]->link,
             'https://peterthaleikis.com/posts/how-i-built-my-first-browser-extension/'
         );
 
