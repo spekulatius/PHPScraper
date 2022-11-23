@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP%20Scraper:%20a%20web%20utility%20for%20PHP&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-<center>PHP Scraper &mdash; a web utility for PHP</center>
+<center>PHP Scraper - a web utility for PHP</center>
 ==================================
 
 <p align="center">
