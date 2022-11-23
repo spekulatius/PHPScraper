@@ -2,7 +2,7 @@
 image: https://api.imageee.com/bold?text=PHP%20Scraper:%20a%20web%20utility%20for%20PHP&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
-<center>PHP Scraper: a web utility for PHP</center>
+<center>PHP Scraper &mdash; a web utility for PHP</center>
 ==================================
 
 <p align="center">
@@ -42,7 +42,7 @@ Under the hood, it uses
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
 
-:timer_clock: 5 Minutes Tutorial using Exampless
+:timer_clock: 5 Minutes Tutorial using Examples
 --------------------------------------------------------------------
 
 Here are a few impressions of the way the library works. More examples are this website in the various sections.
@@ -280,6 +280,10 @@ You can configure proxy support with `setConfig`:
 ```php
 $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);
 ```
+
+::: tip
+If you're looking for decent prices residential proxy, check [IProyal](https://iproyal.com?r=119987).
+:::
 
 ### Timeout
 
