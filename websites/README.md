@@ -31,7 +31,7 @@ image: https://api.imageee.com/bold?text=PHP%20Scraper:%20a%20web%20utility%20fo
   </p>
 </p>
 
-PHPScraper is a universal web-scraping util for PHP, built with simplicity in mind. Goal is to make xPath Selectors *optional* and avoid the commonly needed boilerplate code. Just create an instance of *PHPScraper*, *go* to a website and start collecting data. The examples below tell the story much better. Have a look!
+PHPScraper is a universal web-scraping util for PHP, built with simplicity in mind. The goal is to make xPath Selectors *optional* and avoid the commonly needed boilerplate code. Just create an instance of *PHPScraper*, *go* to a website, and start collecting data. The examples below tell the story much better. Have a look!
 
 Under the hood, it uses
 
@@ -63,9 +63,9 @@ echo $web->title;
 echo $web->title();
 ```
 
-### :battery: Batteries included: Meta data, Links, Images, Headings, Content, Keywords, ...
+### :battery: Batteries included: Meta-Data, Links, Images, Headings, Content, Keywords, ...
 
-Many common use cases are covered already. You can find prepared extractors for various HTML tags, including interesting attributes. You can use these and combine them to your needs. In some cases there is an option to get a simple or detailed version, here in the case of `linksWithDetails`:
+Many common use cases are covered already. You can find prepared extractors for various HTML tags, including interesting attributes. You can filter and combine these to your needs. In some cases there is an option to get a simple or detailed version, here in the case of `linksWithDetails`:
 
 ```PHP
 $web = new \spekulatius\phpscraper;
@@ -115,7 +115,7 @@ Most of the DOM should be covered using these methods:
 - [Keywords](/examples/extract-keywords.html)
 - [Images](/examples/scrape-images.html) & [Links](/examples/scrape-links.html).
 
-**More examples are inlcuded in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
+**More examples are included in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
 
 
 ### Downloading Files
@@ -133,7 +133,7 @@ $csvString = $web
 ```
 
 ::: warning 404s
-If the intended URL isn't available an exception will be thrown. Make sure cover this case by wrapping your code in a try-catch block:
+If the intended URL isn't available an exception will be thrown. Make sure to handle this case by wrapping your code in a try-catch block:
 
 ```php
 try {
@@ -218,7 +218,7 @@ Additional CSV parsing parameters such as separator, enclosure and escape are po
 
 There are plenty of examples on the PHPScraper website and in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).
 
-If you prefer learning by doing check the [`playground.php`](https://github.com/spekulatius/PHPScraper/blob/master/playground.php) out. You get it up and running with:
+Check the [`playground.php`](https://github.com/spekulatius/PHPScraper/blob/master/playground.php) if you prefer learning by doing. You get it up and running with:
 
 ```bash
 $ git clone git@github.com:spekulatius/PHPScraper.git && composer update

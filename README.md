@@ -58,7 +58,7 @@ echo $web->title();
 
 ### :battery: Batteries included: Meta data, Links, Images, Headings, Content, Keywords, ...
 
-Many common use cases are covered already. You can find prepared extractors for various HTML tags, including interesting attributes. You can use these and combine them to your needs. In some cases there is an option to get a simple or detailed version, here in the case of `linksWithDetails`:
+Many common use cases are covered already. You can find prepared extractors for various HTML tags, including interesting attributes. You can filter and combine these to your needs. In some cases there is an option to get a simple or detailed version, here in the case of `linksWithDetails`:
 
 ```PHP
 $web = new \spekulatius\phpscraper;
@@ -123,7 +123,7 @@ $csvString = $web
 
 ### Process the RSS feeds, `sitemap.xml`, etc.
 
-PHPScraper can assist in collecting feeds such as [RSS feeds, `sitemap.xml`-entries and static search indexes](https://phpscraper.de/examples/scrape-feeds.html). This can be useful when deciding on the next page to crawl or build up a list of pages on a website.
+PHPScraper can assist in collecting feeds such as [RSS feeds, `sitemap.xml`-entries and static search indexes](https://phpscraper.de/examples/scrape-feeds.html). This can be useful when deciding on the next page to crawl or building up a list of pages on a website.
 
 Here we are processing the sitemap into a set of [`FeedEntry`-DTOs](https://github.com/spekulatius/PHPScraper/blob/pre-release-tweaks/src/DataTransferObjects/FeedEntry.php):
 
@@ -151,7 +151,7 @@ Whenever post-processing is applied, you can fall back to the underlying `*Raw`-
 
 ### Processing CSV-, XML- and JSON files and URLs
 
-PHPScraper comes out-of-the-box with file / URL processing methods for CSV-, XML- and JSON:
+PHPScraper comes out of the box with file / URL processing methods for CSV-, XML- and JSON:
 
 - `parseJson`
 - `parseXml`
@@ -191,7 +191,7 @@ Additional CSV parsing parameters such as separator, enclosure and escape are po
 
 There are plenty of examples on the [PHPScraper website](https://phpscraper.de) and in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).
 
-If you prefer learning by doing check the [`playground.php`](https://github.com/spekulatius/PHPScraper/blob/master/playground.php) out. You get it up and running with:
+Check the [`playground.php`](https://github.com/spekulatius/PHPScraper/blob/master/playground.php) if you prefer learning by doing. You get it up and running with:
 
 ```bash
 $ git clone git@github.com:spekulatius/PHPScraper.git && composer update
