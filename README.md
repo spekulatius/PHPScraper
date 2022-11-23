@@ -35,7 +35,7 @@ Under the hood, it uses
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
 
-:timer_clock: 5 Minutes Tutorial: The Basics Explained with Examples
+:timer_clock: 5 Minutes Tutorial using Exampless
 --------------------------------------------------------------------
 
 Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
