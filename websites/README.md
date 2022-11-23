@@ -42,7 +42,7 @@ Under the hood, it uses
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
 
-:timer_clock: 5 Minutes Tutorial using Examples
+:timer_clock: PHPScraper in 5 Minutes explained
 -----------------------------------------------
 
 Here are a few impressions of the way the library works. More examples are this website in the various sections.
@@ -118,7 +118,7 @@ Most of the DOM should be covered using these methods:
 **More examples are included in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
 
 
-### Downloading Files
+### Download Files
 
 Besides processing the content on the page itself, you can download files using `fetchAsset`:
 
@@ -176,7 +176,7 @@ Here we are processing the sitemap into a set of [`FeedEntry`-DTOs](https://gith
 Whenever post-processing is applied, you can fall back to the underlying `*Raw`-methods.
 :::
 
-### Processing CSV-, XML- and JSON files and URLs
+### Process CSV-, XML- and JSON files and URLs
 
 PHPScraper comes out-of-the-box with file / URL processing methods for CSV-, XML- and JSON:
 
