@@ -204,7 +204,7 @@ $ git clone git@github.com:spekulatius/PHPScraper.git && composer update
 
 The future development is organized into [milestones](https://github.com/spekulatius/PHPScraper/milestones?direction=asc&sort=title). Releases follow [semver](https://semver.org/).
 
-### v1: [Building the first stable version](https://github.com/spekulatius/PHPScraper/milestone/4)
+### v1: [Building the first stable version](https://github.com/spekulatius/PHPScraper/milestone/4?closed=1)
 
 - Improve documentation and examples.
 - Organize code better (move websites into separate repos, etc.)
