@@ -28,9 +28,9 @@ PHPScraper is a universal web-util for PHP. The main goal is to get stuff done i
 
 Under the hood, it uses
 
-- [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web,
-- [League/URI](https://github.com/thephpleague/uri) to process URLs.
-- [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyze keywords.
+- [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web
+- [League/URI](https://github.com/thephpleague/uri) to process URLs
+- [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyze keywords
 
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
@@ -92,7 +92,7 @@ print_r($web->linksWithDetails[0]);
 // ]
 ```
 
-If there aren't any matching elements (here the links) on the page, an empty array will be returned. If a method normally returns a string it might return `null`. Details such as `follow_redirects`, etc. are optional configuration parameters (see below).
+If there aren't any matching elements (here links) on the page, an empty array will be returned. If a method normally returns a string it might return `null`. Details such as `follow_redirects`, etc. are optional configuration parameters (see below).
 
 Most of the DOM should be covered using these methods:
 
@@ -184,7 +184,7 @@ $csv = $web->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv');
 // ]
 ```
 
-Additional CSV parsing parameters such as separator, enclosure and escape are possible. More details are covered in the documentation.
+Additional CSV parsing parameters such as separator, enclosure and escape are possible.
 
 
 ### There is more!
@@ -226,7 +226,7 @@ PHPScraper is sponsored by:
 
 <a href="https://bringyourownideas.com" target="_blank" rel="noopener noreferrer"><img src="https://bringyourownideas.com/images/byoi-logo.jpg" height="100px"></a>
 
-If you find PHPScraper useful to your work or simply want to support the development, please consider a [sponsorship](https://github.com/sponsors/spekulatius) or [donation](https://www.buymeacoffee.com/spekulatius). Thank you :muscle:
+With your support, PHPScraper can became the *PHP swiss army knife for the web*. If you find PHPScraper useful to your work, please consider a [sponsorship](https://github.com/sponsors/spekulatius) or [donation](https://www.buymeacoffee.com/spekulatius). Thank you :muscle:
 
 
 :gear: Configuration (optional)

@@ -35,9 +35,9 @@ PHPScraper is a universal web-scraping util for PHP, built with simplicity in mi
 
 Under the hood, it uses
 
-- [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web,
-- [League/URI](https://github.com/thephpleague/uri) to process URLs.
-- [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyze keywords.
+- [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web
+- [League/URI](https://github.com/thephpleague/uri) to process URLs
+- [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyze keywords
 
 See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/composer.json) for more details.
 
@@ -100,7 +100,7 @@ print_r($web->linksWithDetails[0]);
 ```
 
 ::: tip Null
-If there aren't any matching elements (here the links) on the page, an empty array will be returned.
+If there aren't any matching elements (here links) on the page, an empty array will be returned.
 
 For methods that normally return a single string (e.g. `title`), `null` will be returned in this case.
 :::
@@ -210,7 +210,7 @@ $csv = $web->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv');
 ```
 
 ::: tip Additional CSV parsing parameters
-Additional CSV parsing parameters such as separator, enclosure and escape are possible. More details are covered in the documentation.
+Additional CSV parsing parameters such as separator, enclosure and escape are possible.
 :::
 
 
