@@ -46,7 +46,7 @@ All scraping functionality can be accessed either as a function call or a proper
 
 ```php
 // Prep
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://google.com');
 
 // Returns "Google"
@@ -61,7 +61,7 @@ echo $web->title();
 Many common use cases are covered already. You can find prepared extractors for various HTML tags, including interesting attributes. You can filter and combine these to your needs. In some cases there is an option to get a simple or detailed version, here in the case of `linksWithDetails`:
 
 ```PHP
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Contains:
 // <a href="https://placekitten.com/456/500" rel="ugc">
@@ -130,13 +130,13 @@ PHPScraper can assist in collecting feeds such as [RSS feeds, `sitemap.xml`-entr
 Here we are processing the sitemap into a set of [`FeedEntry`-DTOs](https://github.com/spekulatius/PHPScraper/blob/pre-release-tweaks/src/DataTransferObjects/FeedEntry.php):
 
 ```php
-(new \spekulatius\phpscraper)
+(new \Spekulatius\PHPScraper\PHPScraper)
     ->go('https://phpscraper.de')
     ->sitemap
 
 // array(131) {
 //   [0]=>
-//   object(spekulatius\DataTransferObjects\FeedEntry)#165 (3) {
+//   object(Spekulatius\PHPScraper\DataTransferObjects\FeedEntry)#165 (3) {
 //     ["title"]=>
 //     string(0) ""
 //     ["description"]=>

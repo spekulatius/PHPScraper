@@ -16,7 +16,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Headings&bg_image=htt
 Das Einscannen einer einzelnen Überschrift ist einfach und kann anhand dieses Beispiels durchgeführt werden:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese enthält:
@@ -39,7 +39,7 @@ Der [Website-Titel](/de/examples/scrape-website-title.html) und die Überschrift
 Es kann Fälle geben, die Überschriften einer bestimmten Ebene abgerufen werden sollen. Das folgende Beispiel zeigt, wie dies möglich ist:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese enthält:
@@ -76,7 +76,7 @@ Um auf alle Rubriken einer Seite zuzugreifen, können Sie die verschiedenen Eben
 
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese Seite enthält:

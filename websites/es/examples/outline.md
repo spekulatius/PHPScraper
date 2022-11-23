@@ -20,7 +20,7 @@ Los siguientes ejemplos deberían ayudar a entender mejor la funcionalidad. Hay 
 El esquema del contenido permite construir un índice del documento. El siguiente ejemplo construye una versión markdown de los encabezados del documento solicitado:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:
@@ -73,7 +73,7 @@ $outline = $web->outline;
 El siguiente método funciona de manera similar a `outline`, pero también incluye los párrafos como parte del array devuelto:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:
@@ -148,7 +148,7 @@ $content = $web->outlineWithParagraphs;
 El siguiente método funciona de manera similar a `outlineWithParagraphs`, pero no incluye ningún encabezado o párrafo vacío como parte del array devuelto:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:

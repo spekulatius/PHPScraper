@@ -7,7 +7,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https:
 Das Scraping von Listen folgt einem ähnlichen Ansatz wie anderes Scraping mit PHPScraper:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese Seite enthält:

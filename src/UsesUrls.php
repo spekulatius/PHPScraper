@@ -1,6 +1,6 @@
 <?php
 
-namespace spekulatius;
+namespace Spekulatius\PHPScraper;
 
 use League\Uri\Uri;
 use League\Uri\Http;

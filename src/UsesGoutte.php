@@ -1,8 +1,7 @@
 <?php
 
-namespace spekulatius;
+namespace Spekulatius\PHPScraper;
 
-use League\Uri\Uri;
 use Goutte\Client as GoutteClient;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpClient\CurlHttpClient;

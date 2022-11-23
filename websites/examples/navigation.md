@@ -12,7 +12,7 @@ While PHPScraper is mostly intended to parse websites and collect information, y
 You can navigate to any URL. These URLs usually come from the [parsed links](/examples/scrape-links.html).
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // We start on test page #1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -34,7 +34,7 @@ echo $web->h1[0];   // 'Page #2'
 On a website you can *click* on links using their anchor texts:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // We start on test page #1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');

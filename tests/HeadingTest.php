@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
 class HeadingTest extends \PHPUnit\Framework\TestCase
 {
@@ -9,7 +9,7 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
      */
     public function testMissingHeadings()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/no-meta.html');
@@ -27,7 +27,7 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
      */
     public function testWithHTMLEntity()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
@@ -64,7 +64,7 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
      */
     public function testLoremIpsum()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -88,7 +88,7 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
      */
     public function testGermanUmlaute()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
@@ -112,7 +112,7 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
      */
     public function testChineseCharacters()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');

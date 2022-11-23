@@ -19,7 +19,7 @@ The following example shows how to use an xPath selector with an ID. The result 
 
 ```php
 // Init and load the test page.
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
 // Select `->text()` using an ID.
@@ -37,7 +37,7 @@ Selecting elements by tags is shown below. The result will be an array containin
 
 ```php
 // Init and load the test page.
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
 // Filter using the ID
@@ -61,7 +61,7 @@ Using a CSS class to select elements is, of course, possible too. Similarly to t
 
 ```php
 // Init and load the test page.
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
 // Filter using the CSS class

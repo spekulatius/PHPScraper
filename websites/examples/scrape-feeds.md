@@ -14,7 +14,7 @@ PHPScraper can identify and process feeds (RSS feeds, sitemaps, etc.) for you. T
 Websites can define RSS feeds in the head section of their markup. PHPScraper allows to identify any RSS feeds noted on the current page using `rssUrls`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -52,7 +52,7 @@ The `rss()`-method can be used to parse RSS feeds. If called without any paramet
 
 ```php
 // Init and go to any page of the domain. This sets the base URL.
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
 // Same as `$web->rss(...$web->rssUrls)`
@@ -84,7 +84,7 @@ If you need all details, please fallback on `$web->rssRaw(...)`. It can be calle
 You can parse XML sitemaps using `sitemap()`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Get the sitemap for the current website (if it exists).
@@ -112,7 +112,7 @@ If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be c
 You can parse static search indexes using `searchIndex()`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Get the search index for the current website (if it exists).
 // This assumes the default URL `/index.json` is used.

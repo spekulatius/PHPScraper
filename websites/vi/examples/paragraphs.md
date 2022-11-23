@@ -11,7 +11,7 @@ Thu thập nội dung và đa số là đoạn văn, có thể dễ dàng thu th
 Ví dụ bên dưới sẽ trả về danh sách đoạn văn (thẻ `<p>`) trên trang web:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Chuyển hướng đến trang test. Nó chứa 6 đoạn văn lorem ipsum
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
@@ -48,7 +48,7 @@ foreach ($web->paragraphs as $paragraph) {
 Thu thập một đoạn văn của trang web có thể thực hiện bằng cách truy cập vào phần tử 0 của mảng.
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 echo $web->paragraphs[0];

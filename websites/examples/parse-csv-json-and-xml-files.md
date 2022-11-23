@@ -14,7 +14,7 @@ PHPScraper can process common plain file types such as `csv`, `json`, `xml` from
 If you have a string that represents a CSV, XML or JSON, PHPScraper can assist in validating and parsing it:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Parse a JSON string
 $json = $web->parseJson($jsonString);
@@ -34,7 +34,7 @@ This can be useful when chaining steps or accessing embedded elements such as sc
 PHPScraper can assist with fetching and parsing the contents of remote resources (URLs) containing JSON-, CSV- or XML data:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Fetches URL and parses contents to JSON.
 $json = $web
@@ -56,7 +56,7 @@ $csv = $web
 Each of the methods above can be accessed in various ways. Using `parseCsv` as an example, you can use any of the methods as following:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Option 1: Pass in the absolute URL
 $csv = $web
@@ -97,7 +97,7 @@ date,value
 The standard parser `parseCsv` returns a simple array with casted values:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 print_r(
     $web->parseCsv('https://test-pages.phpscraper.de/test.csv')
@@ -114,7 +114,7 @@ print_r(
 `parseCsvWithHeader` parses the content and uses the first line as headers and returns an associative array (map):
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 print_r(
     $web->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv')
@@ -137,7 +137,7 @@ Native types such as `int` and `float` are automatically cast to PHP-native type
 You might want to define which *separate*, *enclosure*, and *escape* to use. You can do so by passing an options array along:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Direct access:
 $csv = $web

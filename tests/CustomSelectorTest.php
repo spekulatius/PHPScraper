@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
 class CustomSelectorTest extends \PHPUnit\Framework\TestCase
 {
@@ -10,7 +10,7 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
     public function testFailedSelectionBasedOnId()
     {
         // Navigate to test page
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
@@ -33,7 +33,7 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
     public function testSelectionBasedOnId()
     {
         // Navigate to test page
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
@@ -55,7 +55,7 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
     public function testSelectionBasedOnTag()
     {
         // Navigate to test page
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.
@@ -83,7 +83,7 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
     public function testSelectionBasedOnClass()
     {
         // Navigate to test page
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
         $web->go('https://test-pages.phpscraper.de/content/selectors.html');
 
         // Ensure we got the test page.

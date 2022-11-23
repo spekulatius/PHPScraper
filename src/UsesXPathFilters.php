@@ -1,6 +1,6 @@
 <?php
 
-namespace spekulatius;
+namespace Spekulatius\PHPScraper;
 
 use Symfony\Component\DomCrawler\Crawler;
 

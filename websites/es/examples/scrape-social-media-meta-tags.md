@@ -12,7 +12,7 @@ El raspado de las etiquetas de compartición de las redes sociales de un sitio w
 Se pueden obtener datos de gráficos abiertos:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegar a la página de la prueba. La página contiene:
@@ -62,7 +62,7 @@ Si no se encuentran datos, el array se devolverá vacío.
 El análisis de la Twitter Card funciona de forma similar:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue a la página de prueba. La página contiene la siguiente tarjeta de Twitter:

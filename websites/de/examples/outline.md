@@ -20,7 +20,7 @@ Die folgenden Beispiele sollen helfen, die Funktionalität besser zu verstehen. 
 Die Gliederung des Inhalts ermöglicht es Ihnen, einen Index des Dokuments zu erstellen. Im folgenden Beispiel wird eine Markdown-Version der Überschriften des angeforderten Dokuments erstellt:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese Seite enthält:
@@ -73,7 +73,7 @@ $outline = $web->outline;
 Die folgende Methode funktioniert ähnlich wie `outline`, aber sie schließt auch alle Absätze als Teil des zurückgegebenen Arrays ein:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese Seite enthält:
@@ -148,7 +148,7 @@ $content = $web->outlineWithParagraphs;
 Die folgende Methode funktioniert ähnlich wie `outlineWithParagraphs`, aber diese enthält keine leeren Überschriften oder Absätze als Teil des zurückgegebenen Arrays:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigation zur Testseite. Diese Seite enthält:

@@ -16,7 +16,7 @@ Les titres peuvent être utiles pour se faire une idée du contenu d'un site Web
 La récupération d'un seul titre est facile et peut être réalisée en suivant cet exemple:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -39,7 +39,7 @@ Le site [titre du site web](/fr/examples/scrape-website-title.html) et la rubriq
 Il peut arriver que vous souhaitiez récupérer toutes les rubriques d'un niveau particulier. L'exemple ci-dessous vous montre comment faire:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -76,7 +76,7 @@ Pour accéder à toutes les rubriques d'une page, vous pouvez le faire en accéd
 
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguer vers la page de test. Cette page contient:

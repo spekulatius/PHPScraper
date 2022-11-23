@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
 class ImageTest extends \PHPUnit\Framework\TestCase
 {
@@ -9,7 +9,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testNoImages()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -24,7 +24,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testLoremIpsum()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -60,7 +60,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testGermanUmlaute()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
@@ -102,7 +102,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testChineseCharacters()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
@@ -138,7 +138,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testBaseHref()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/images/base-href.html');
@@ -174,7 +174,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testWidth()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/images/width.html');
@@ -210,7 +210,7 @@ class ImageTest extends \PHPUnit\Framework\TestCase
      */
     public function testHeight()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/images/height.html');

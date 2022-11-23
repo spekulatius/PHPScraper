@@ -12,7 +12,7 @@ Les balises d'en-tête contiennent souvent des informations utiles sur une page 
 Pour accéder au charset défini, vous pouvez utiliser la méthode suivante:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -31,7 +31,7 @@ echo $web->charset;     // "utf-8"
 Dans certains cas, comme pour la fenêtre d'affichage et les méta-mots-clés, la string représente un tableau et sera fournie comme telle:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -57,7 +57,7 @@ var_dump($web->viewport);
 Si vous avez besoin d'accéder à la string originale de "viewport", vous pouvez utiliser `viewportString`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
@@ -74,7 +74,7 @@ echo $web->viewportString;
 L'URL canonique, si elle est donnée, est accessible comme indiqué dans l'exemple ci-dessous:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -97,7 +97,7 @@ Si aucun lien canonique n'est défini, la méthode renvoie `null`.
 Pour accéder au type de contenu, vous pouvez utiliser la fonctionnalité suivante:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -116,7 +116,7 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 La méthode CSFR token suppose que le jeton est stocké dans une balise méta avec le nom "csrf-token". C'est la valeur par défaut pour Laravel. Vous pouvez y accéder en utilisant le code suivant:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:

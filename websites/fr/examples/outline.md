@@ -20,7 +20,7 @@ Les exemples suivants devraient vous aider à mieux comprendre cette fonctionnal
 L'Outline Extraction vous permet de construire un index du document. L'exemple suivant construit une version markdown des titres du document demandé:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguer vers la page de test. Cette page contient:
@@ -73,7 +73,7 @@ $outline = $web->outline;
 La méthode suivante fonctionne de manière similaire à `outline`, mais elle inclut également les paragraphes dans le tableau retourné:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguer vers la page de test. Cette page contient:
@@ -148,7 +148,7 @@ $content = $web->outlineWithParagraphs;
 La méthode suivante fonctionne de manière similaire à `outlineWithParagraphs`, mais elle n'inclut aucun titre ou paragraphe vide dans le tableau retourné:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguer vers la page de test. Cette page contient:

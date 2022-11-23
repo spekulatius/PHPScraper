@@ -1,6 +1,6 @@
 <?php
 
-namespace spekulatius;
+namespace Spekulatius\PHPScraper;
 
 /**
  * This class manages the Clients and connections.
@@ -11,7 +11,7 @@ namespace spekulatius;
 use Goutte\Client as GoutteClient;
 use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
 
-class phpscraper
+class PHPScraper
 {
     /**
      * Holds the config for the clients.
@@ -23,7 +23,7 @@ class phpscraper
     /**
      * Holds the Core class. It handles the actual scraping.
      *
-     * @var spekulatius\Core;
+     * @var \Spekulatius\PHPScraper\Core;
      */
     protected $core = null;
 

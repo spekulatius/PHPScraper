@@ -11,7 +11,7 @@ Thu thập các thẻ meta chia sẻ mạng xã hội từ trang web bằng các
 Lấy dữ liệu open-graph có thể làm như sau:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -60,7 +60,7 @@ Nếu không có dữ liệu, mạng sẽ trả về rỗng.
 Phân tích cú pháp Twitter Card hoạt động tương tự
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Chuyển hướng đến trang test. Trang chứa các Twitter Card như sau:

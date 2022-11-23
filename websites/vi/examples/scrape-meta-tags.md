@@ -15,7 +15,7 @@ Ví dụ bên dưới sẽ lấy ba thuộc tính:
 - thẻ Meta Image URL
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -38,7 +38,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 Thẻ meta keywords là một mảng và sẽ được phân chia tùy theo mong muốn của bạn:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -54,7 +54,7 @@ var_dump($web->keywords);   // ['one', 'two', 'three']
 Bạn có thể lấy chuỗi keywords gốc:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 // In các từ khóa dưới dạng chuỗi
@@ -89,7 +89,7 @@ public function metaTags()
 Từ ví dụ trên sẽ được sử dụng như sau:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);

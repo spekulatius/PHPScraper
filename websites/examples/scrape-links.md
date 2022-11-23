@@ -12,7 +12,7 @@ The scraping of links works very similar to [image scraping](/examples/scrape-im
 The following example parses a web-page for any links and returns an array of absolute URLs:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. It contains 6 links to placekitten.com with different attributes:
@@ -59,7 +59,7 @@ If the page shouldn't contain any links, an empty array is returned.
 If you are in need of more details you can access these in a similar way as on the images. Below is an example to access the detailed data of the first link on the page:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. This page contains several links with different rel attributes. To save space only the first one:
@@ -97,7 +97,7 @@ If you require more data, you will either need to extend the library or submit a
 PHPScraper allows to return only internal or external links. The following demonstrates both:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Navigate to the test page.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');

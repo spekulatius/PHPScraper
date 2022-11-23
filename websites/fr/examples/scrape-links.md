@@ -12,7 +12,7 @@ Le scraping de liens fonctionne de manière très similaire ay [scraping d'image
 L'exemple suivant analyse une page Web à la recherche de liens et renvoie un tableau d'URL absolues:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient 6 liens vers placekitten.com avec des attributs différents:
@@ -59,7 +59,7 @@ Si la page ne doit pas contenir de liens, un tableau vide est renvoyé.
 Si vous avez besoin de plus de détails, vous pouvez y accéder de la même manière que pour les images. Voici un exemple pour accéder aux données détaillées du premier lien de la page:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Cette page contient un certain nombre de liens avec des attributs rel différents. Pour gagner de la place, ne retenez que le premier:
@@ -97,7 +97,7 @@ Si vous avez besoin de plus de données, vous devrez soit étendre la bibliothè
 PHPScraper permet de retourner seulement des liens internes ou externes. L'exemple suivant démontre les deux:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Naviguer vers la page de test.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');

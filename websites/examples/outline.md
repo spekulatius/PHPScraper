@@ -20,7 +20,7 @@ The following examples should help to understand the functionality better. There
 The outline of the content allows you build an index of the document. The following example builds a markdown version of the headings in the requested document:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. This page contains:
@@ -73,7 +73,7 @@ $outline = $web->outline;
 The following method works in a similar manner as `outline`, but it also includes any paragraphs as part of the returned array:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. This page contains:
@@ -148,7 +148,7 @@ $content = $web->outlineWithParagraphs;
 The following method works in a similar manner as `outlineWithParagraphs`, but it doesn't include any empty empty headings or paragraphs as part of the returned array:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. This page contains:

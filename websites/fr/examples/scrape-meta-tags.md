@@ -16,7 +16,7 @@ L'exemple suivant montre l'extraction de trois attributs:
 - l'URL de la méta-image
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -40,7 +40,7 @@ echo $web->image;           // "https://test-pages.phpscraper.de/assets/cat.jpg"
 Le méta-tag "keywords" est naturellement un tableau et sera divisé pour votre convenance:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Elle contient:
@@ -56,7 +56,7 @@ var_dump($web->keywords);   // ['one', 'two', 'three']
 Vous pouvez également accéder à la chaîne de mots-clés originale:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 // Imprimez les mots-clés sous forme de chaîne
@@ -92,7 +92,7 @@ public function metaTags()
 Dans l'exemple ci-dessus, il serait utilisé comme suit:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
 var_dump($web->metaTags);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
-use spekulatius\DataTransferObjects\FeedEntry;
+use Spekulatius\PHPScraper\DataTransferObjects\FeedEntry;
 
 class FeedRssTest extends \PHPUnit\Framework\TestCase
 {
@@ -11,7 +11,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      */
     public function testMissingRssUrls()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -25,7 +25,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      */
     public function testRssUrls()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -44,7 +44,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      */
     public function testCustomRssUrl()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -65,7 +65,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      */
     public function testDifferentRssUrlTypes()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -90,7 +90,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      */
     public function testRssRawContent()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -124,7 +124,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
      */
     public function testRss()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');

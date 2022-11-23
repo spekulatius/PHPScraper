@@ -16,7 +16,7 @@ Heading can be useful to get an idea of the content on a website. The following 
 Scraping a single heading is easy and be done following this example:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -39,7 +39,7 @@ The [website title](/examples/scrape-website-title.html) and heading 1 (`<h1>`) 
 There might be cases, in which all headings of a particular level should be retrieved. The example below shows how to do so:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. It contains:
@@ -76,7 +76,7 @@ To access all headings on a page, you can do so by accessing the different level
 
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navigate to the test page. This page contains:

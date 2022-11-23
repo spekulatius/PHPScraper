@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
 class NavigationTest extends \PHPUnit\Framework\TestCase
 {
@@ -9,7 +9,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testSurfWithAbsoluteLink()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to test page #1.
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -30,7 +30,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testSurfWithRelativeLink()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to test page #1.
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -53,7 +53,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testLeavePageByText()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -75,7 +75,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testLeavePageWithRedirect()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -97,7 +97,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testLeavePageByURL()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -119,7 +119,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      */
     public function testClickLinkChainability()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to a page, click a link by URL and see if we are on the expected `currentUrl`.
         $web

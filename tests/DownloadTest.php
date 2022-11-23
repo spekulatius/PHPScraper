@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
 class DownloadTest extends \PHPUnit\Framework\TestCase
 {
@@ -9,7 +9,7 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
      */
     public function testMissingDownload()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         $this->expectException(\Symfony\Component\HttpClient\Exception\ClientException::class);
         $this->expectExceptionMessage('HTTP/2 404  returned for "https://phpscraper.de/broken-url"');
@@ -23,7 +23,7 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
     public function testDownload()
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
         $xmlString = $web->fetchAsset('https://phpscraper.de/sitemap.xml');
 
         // Convert XML to array
@@ -52,7 +52,7 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
      */
     public function testDifferentUrlTypes()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to any test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');

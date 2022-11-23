@@ -1,8 +1,8 @@
 <?php
 
-namespace spekulatius;
+namespace Spekulatius\PHPScraper;
 
-use spekulatius\DataTransferObjects\FeedEntry;
+use Spekulatius\PHPScraper\DataTransferObjects\FeedEntry;
 
 trait UsesFeeds
 {
@@ -29,7 +29,7 @@ trait UsesFeeds
     }
 
     /**
-     * Resolves the sitemap and returns an array of `\spekulatius\DataTransferObjects\FeedEntry`.
+     * Resolves the sitemap and returns an array of `FeedEntry`-DTOs.
      *
      * @todo Support for text-only sitemaps, split versions, image-sitemaps, etc.?
      *
@@ -74,7 +74,7 @@ trait UsesFeeds
     }
 
     /**
-     * Resolves the search index and returns an array of `\spekulatius\DataTransferObjects\FeedEntry`.
+     * Resolves the search index and returns an array of `\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry`.
      *
      * @return array $searchIndex
      */
