@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://github.com/spekulatius/PHPScraper">
-    <picture style="width: 100%;" alt="PHP Scraper - a web utility for PHP">
+    <picture style="width: 100%;" alt="PHP Scraper: a web utility for PHP">
       <source srcset="websites/.vuepress/public/logo-dark.png" media="(prefers-color-scheme:dark)">
-      <img src="websites/.vuepress/public/logo-light.png" alt="PHP Scraper - a web utility for PHP">
+      <img src="websites/.vuepress/public/logo-light.png" alt="PHP Scraper: a web utility for PHP">
     </picture>
   </a>
   <p align="center">
