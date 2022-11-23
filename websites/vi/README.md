@@ -38,7 +38,7 @@ Dưới đây là một số ví dụ về những gì mà thư viện cào web 
 ### Cào thông tin meta:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:
@@ -62,7 +62,7 @@ Gần như mọi thông tin đều có thể lấy được trực tiếp, dư�
 ### Cào nội dung, như hình ảnh
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có hai ảnh:

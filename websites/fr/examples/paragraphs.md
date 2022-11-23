@@ -12,7 +12,7 @@ La récupération de contenu, principalement des paragraphes, peut être faite f
 L'exemple suivant renvoie une liste de tous les paragraphes (balises `<p>`) du site Web:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Naviguez vers la page de test. Elle contient 6 paragraphes lorem ipsum.
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
@@ -50,7 +50,7 @@ foreach ($web->paragraphs as $paragraph) {
 La récupération du premier paragraphe du site Web peut être effectuée en accédant au premier élément du tableau (index 0).
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/content/paragraphs.html');
 
 echo $web->paragraphs[0];

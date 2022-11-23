@@ -11,7 +11,7 @@ Thu thập liên kết hoạt động tương tự như [thu thập hình ảnh]
 Ví dụ sau phân tích trang web cho các liên kết và trả về một loạt các URL tuyệt đối:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Có 6 liên kết placekitten.com với các thuộc tính khác nhau:
@@ -57,7 +57,7 @@ Nếu trang không được chứa bất kỳ liên kết nào, một mảng tr�
 Nếu bạn cần thêm thông tin chi tiết, bạn có thể truy cập chúng theo cách tương tự như trên hình ảnh. Dưới đây là ví dụ để truy cập dữ liệu chi tiết của liên kết đầu tiên trên trang:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa một số liên kết với các thuộc tính rel khác nhau. Để tiết kiệm dung lượng, chỉ lấy link đầu tiên:
@@ -94,7 +94,7 @@ Nếu bạn yêu cầu nhiều dữ liệu hơn, bạn sẽ cần phải mở r�
 PHPScraper chỉ cho phép trả về các liên kết bên trong hoặc bên ngoài. Xem các vị dụ sau:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Điều hướng đến trang test.
 $web->go('https://test-pages.phpscraper.de/links/base-href.html');

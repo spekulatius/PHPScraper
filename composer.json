@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "spekulatius\\": "src/"
+            "Spekulatius\\PHPScraper\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Spekulatius\\PHPScraper\\Tests\\": "tests/"
         }
     },
     "scripts": {

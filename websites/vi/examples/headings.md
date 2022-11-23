@@ -15,7 +15,7 @@ Heading hữu ích trong việc lấy ý tưởng từ nội dung của trang we
 Thu thập một heading đơn rất dễ dàng và được thực hiện theo ví dụ sau:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -37,7 +37,7 @@ echo $web->h1[0];          // "Outline Test"
 Có thể có những trường hợp, trong đó bạn muốn truy xuất tất cả các heading của một cấp cụ thể. Ví dụ dưới đây cho bạn thấy cách làm như vậy:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -72,7 +72,7 @@ Nếu không có heading nào, mảng sẽ rỗng:
 Để lấy toàn bộ heading trên trang, bạn có thể truy cập vào cấp độ từ 1 đến 6. Hoặc bằng cách sử dụng:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:

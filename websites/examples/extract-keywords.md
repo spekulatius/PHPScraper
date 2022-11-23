@@ -18,7 +18,7 @@ While these keyword phrases are extracted it doesn't mean the page actually rank
 The following example will return a list of all keywords extracted from the web-page:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Navigate to the test page.
 // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"
@@ -77,7 +77,7 @@ Not every keyword has the same weight in the ranking-algorithms of search engine
 PHPScraper allows you to get an indication of keyword weights in the form of scores:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Navigate to the test page.
 // It contains 3 paragraphs from the English Wikipedia article for "lorem ipsum"

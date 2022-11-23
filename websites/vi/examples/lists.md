@@ -7,7 +7,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Lists&bg_image=https:
 Thu thập danh sách tương tự như các kiểu thu thập khác với PHPScraper:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Chuyển hướng đến trang test, trang này chứa:

@@ -12,7 +12,7 @@ Vous vous demandez peut-être comment scraper des photos, des images et d'autres
 L'exemple suivant analyse une page Web à la recherche d'images et renvoie les URL absolues des images sous forme de tableau.
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Naviguez vers la page de test. Cette page contient deux images:
@@ -47,7 +47,7 @@ Si aucune image n'est trouvée, le tableau reste vide.
 Si vous avez besoin de plus de détails, les requêtes suivantes vous permettent d'accéder aux attributs de la balise image:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**

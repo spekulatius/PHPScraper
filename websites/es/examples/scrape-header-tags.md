@@ -12,7 +12,7 @@ Las etiquetas de cabecera suelen contener información útil sobre una página w
 Para acceder al conjunto de caracteres definido, puede utilizar el siguiente método:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -31,7 +31,7 @@ echo $web->charset;     // "utf-8"
 En algunos casos, como el viewport y las meta keywords, la cadena representa un array y se proporcionará como tal:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de la prueba. Contiene:
@@ -57,7 +57,7 @@ var_dump($web->viewport);
 Si necesitas acceder a la cadena original "viewport", puedes utilizar `viewportString`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
@@ -74,7 +74,7 @@ echo $web->viewportString;
 La URL canónica, si se da, se puede acceder como se muestra en el siguiente ejemplo:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -97,7 +97,7 @@ Si no se establece un enlace canónico, el método devuelve `null`.
 Para acceder al tipo de contenido puede utilizar la siguiente funcionalidad:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -116,7 +116,7 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 El método del token CSFR asume que el token se almacena en una etiqueta meta con el nombre "csrf-token". Este es el valor por defecto de Laravel. Puedes acceder a él usando el siguiente código:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:

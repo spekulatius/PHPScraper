@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Spekulatius\PHPScraper\Tests;
 
 class RedirectTest extends \PHPUnit\Framework\TestCase
 {
@@ -9,7 +9,7 @@ class RedirectTest extends \PHPUnit\Framework\TestCase
      */
     public function testRedirect()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page: This redirects to phpscraper.de
         $web->go('https://test-pages.phpscraper.de');
@@ -29,7 +29,7 @@ class RedirectTest extends \PHPUnit\Framework\TestCase
      */
     public function testDisabledRedirect()
     {
-        $web = new \spekulatius\phpscraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         $web->setConfig([
             'follow_redirects' => false,

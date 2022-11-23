@@ -11,7 +11,7 @@ image: https://api.imageee.com/bold?text=PHP:%20Navigate%20while%20Scraping&bg_i
 Bạn có thể điều hướng bất kỳ URL nào. Các URL này thường được lấy từ [phân tích liên kết](/vi/examples/scrape-links.html).
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Bắt đầu bằng trang test #1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -31,7 +31,7 @@ echo $web->h1[0];   // 'Page #2'
 Bạn có thể sử dụng anchor text trên trang web để *nhấn* vào liên kết để điều hướng:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Bắt đầu bằng trang test #1.
 $web->go('https://test-pages.phpscraper.de/navigation/1.html');

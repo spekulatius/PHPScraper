@@ -1,6 +1,6 @@
 <?php
 
-namespace spekulatius\DataTransferObjects;
+namespace Spekulatius\PHPScraper\DataTransferObjects;
 
 /**
  * A simplified DTO to hold feed entries with incomplete data.

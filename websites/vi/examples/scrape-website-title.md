@@ -11,7 +11,7 @@ Lấy tiêu đề từ một trang web rất đơn giản. Các ví dụ sau đ�
 Ví dụ rất đơn giản về cách lấy tiêu đề của một trang web:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Điều hướng đến trang test - trang này có chứa thẻ title "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -32,7 +32,7 @@ var_dump($web->title);
 `null` sẽ được trả về nếu tiêu đề không có:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Điều hướng đến trang test - trang này không có thẻ title.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -48,7 +48,7 @@ Ghi chú: Đây là hành vi mặc định: Nếu không tìm thấy thẻ vì t
 Lấy tiêu đề trang web bằng tiếng Đức Umlaut
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -68,7 +68,7 @@ Nó cũng hoạt động theo cách tương tự với bất kỳ ký tự UTF-8
 Các thực thể HTML sẽ được giải quyết
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:

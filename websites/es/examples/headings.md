@@ -16,7 +16,7 @@ Los encabezados pueden ser útiles para hacerse una idea del contenido de un sit
 Raspar un solo encabezado es fácil y se puede hacer siguiendo este ejemplo:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -39,7 +39,7 @@ El [título del sitio web](/es/examples/scrape-website-title.html) y el encabeza
 Puede haber casos en los que desee recuperar todos los títulos de un nivel determinado. El siguiente ejemplo muestra cómo hacerlo:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -76,7 +76,7 @@ Para acceder a todos los encabezados de una página, puede hacerlo accediendo a 
 
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de la prueba. Esta página contiene:

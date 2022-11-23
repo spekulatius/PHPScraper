@@ -12,7 +12,7 @@ Puede que te preguntes cómo raspar fotos, imágenes y otros gráficos de un sit
 El siguiente ejemplo analiza una página web en busca de imágenes y devuelve las URLs absolutas de las imágenes como un array.
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue a la página de prueba. Esta página contiene dos imágenes:
@@ -46,7 +46,7 @@ Si no se encuentra ninguna imagen, la matriz queda vacía.
 Si necesita más detalles, las siguientes peticiones le permiten acceder a los atributos de la etiqueta de la imagen:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace spekulatius;
+namespace Spekulatius\PHPScraper;
 
 use DonatelloZa\RakePlus\RakePlus;
 use League\Uri\Uri;

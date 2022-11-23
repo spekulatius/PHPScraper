@@ -18,7 +18,7 @@ Mặc dù các cụm từ khóa này được trích xuất, điều đó không
 Ví dụ sau sẽ trả về danh sách tất cả các từ khóa được trích xuất từ ​​trang web:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Chuyển hướng đến trang test.
 // Nó chứa 3 đoạn văn từ bài viết Wikipedia tiếng Anh cho "lorem ipsum"
@@ -76,7 +76,7 @@ Không phải mọi từ khóa đều có điểm số như nhau trong thuật t
 PHPScraper cho phép bạn lấy điểm số của từ khóa:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Điều hướng đến trang test.
 // Nó chứa 3 đoạn văn từ bài viết Wikipedia tiếng Anh cho "lorem ipsum"

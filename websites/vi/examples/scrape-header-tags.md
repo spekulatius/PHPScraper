@@ -11,7 +11,7 @@ Thẻ header thường chứa các thông tin hữu ích về trang web. Các v�
 Để lấy `charset` đã khai báo, bạn có thể sử dụng phương thức sau:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:
@@ -29,7 +29,7 @@ echo $web->charset;     // "utf-8"
 Trong vài trường hợp, như viewport và các từ khóa meta, chuỗi sẽ được chuêynr thành mảng và được cung cấp như sau:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:
@@ -55,7 +55,7 @@ var_dump($web->viewport);
 Nếu bạn cần lấy chuỗi gốc của "viewport", bạn có thể sử dụng `viewportString`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
 
 /**
@@ -71,7 +71,7 @@ echo $web->viewportString;
 Nếu URL chuẩn được tìm tháy, có thể lấy theo ví dụ bên dưới:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:
@@ -93,7 +93,7 @@ Nếu không có liên kết chuẩn nào, phương thức sẽ trả về `null
 Bạn có thể lấy kiểu nội dung của trang web bằng cách sử dụng `contentType`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:
@@ -111,7 +111,7 @@ echo $web->contentType;     // "text/html; charset=utf-8"
 Đối với Laravel, mã token CSRF thường nằm trong thẻ meta có tên là `csrf-token`. Bạn có thể lấy nó bằng cách sử dụng `csrfToken`:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này có:

@@ -19,7 +19,7 @@ Các ví dụ sau đây sẽ giúp hiểu rõ hơn về chức năng. Có các p
 Dàn ý của nội dung cho phép bạn xây dựng một chỉ mục của tài liệu. Ví dụ sau đây tạo một phiên bản đánh dấu xuống của các đề mục trong tài liệu được yêu cầu:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -71,7 +71,7 @@ $outline = $web->outline;
 Phương thức sau hoạt động theo cách tương tự như `outline`, nhưng nó cũng bao gồm bất kỳ đoạn nào như một phần của mảng được trả về:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:
@@ -144,7 +144,7 @@ $content = $web->outlineWithParagraphs;
 Phương pháp sau hoạt động theo cách tương tự như `outlineWithParagraphs`, nhưng nó không bao gồm bất kỳ tiêu đề hoặc đoạn văn nào trống như một phần của mảng được trả về:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Điều hướng đến trang test. Trang này chứa:

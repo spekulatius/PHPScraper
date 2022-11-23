@@ -12,7 +12,7 @@ Raspar el título de un sitio web es sencillo. Los siguientes ejemplos muestran 
 Ejemplo muy simple de cómo raspar el título de un sitio web:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Navegue a la página de prueba - ésta sí contiene una etiqueta de título "Lorem Ipsum"
 $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -33,7 +33,7 @@ var_dump($web->title);
 Se devolverá `null` si falta el título:
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 // Navega a la página de prueba - ésta no contiene una etiqueta de título.
 $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -50,7 +50,7 @@ Nota: Este es el comportamiento por defecto: Si no se encuentra una etiqueta por
 Cargar el título de un sitio web con la diéresis alemana
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navegue hasta la página de pruebas. Contiene:
@@ -71,7 +71,7 @@ Debería funcionar de forma similar con cualquier carácter UTF-8.
 Las entidades HTML deben resolverse
 
 ```php
-$web = new \spekulatius\phpscraper;
+$web = new \Spekulatius\PHPScraper\PHPScraper;
 
 /**
  * Navega hasta la página de la prueba. Contiene:
