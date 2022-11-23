@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "vuepress dev",
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev",
     "build": "vuepress build"
   },
   "dependencies": {

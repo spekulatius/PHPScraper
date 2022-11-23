@@ -57,7 +57,7 @@ class phpscraper
              * $web->setConfig(['agent' => 'My Agent']);
              * ```
              */
-            'agent' => 'Mozilla/5.0 (compatible; PHP Scraper/0.x; +https://phpscraper.de)',
+            'agent' => 'Mozilla/5.0 (compatible; PHP Scraper/1.x; +https://phpscraper.de)',
 
             /**
              * Agent can be overwritten using:

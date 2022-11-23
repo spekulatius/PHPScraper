@@ -1,5 +1,5 @@
 ---
-image: https://api.imageee.com/bold?text=PHP:%20Scraping%20Feeds%20Tags&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
+image: https://api.imageee.com/bold?text=PHP:%20Scrape%20Feeds&bg_image=https://images.unsplash.com/photo-1542762933-ab3502717ce7
 ---
 
 # Scrape Feeds
@@ -11,7 +11,7 @@ PHPScraper can identify and process feeds (RSS feeds, sitemaps, etc.) for you. T
 
 ## Identify RSS Feed URLs
 
-Websites can define RSS feeds in the head section of their markup. PHPScraper allows to identify the RSS feeds of the current page using `rssUrls`:
+Websites can define RSS feeds in the head section of their markup. PHPScraper allows to identify any RSS feeds noted on the current page using `rssUrls`:
 
 ```php
 $web = new \spekulatius\phpscraper;
@@ -72,10 +72,10 @@ $rss = $web->rss(
 );
 ```
 
-This result contains an array-structure with selected properties. The array-structure contains instances of `DataTransferObjects\FeedEntry` with properties for `link` and `title`.
+This result contains an array structure with selected properties. The array structure contains instances of `DataTransferObjects\FeedEntry` with properties for `link` and `title`.
 
 ::: tip Complete Details
-If you need all details, please fallback on `$web->rssRaw(...)`. It can be called like `$web->rss(...)` and returns an array-structure.
+If you need all details, please fallback on `$web->rssRaw(...)`. It can be called like `$web->rss(...)` and returns an array structure.
 :::
 
 
@@ -103,7 +103,7 @@ $sitemap = $web->sitemap('https://example.com/custom_sitemap.xml');
 This result contains only selected properties. It returns an array of `DataTransferObjects\FeedEntry` with the `link` property.
 
 ::: tip Complete Details
-If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be called like `$web->sitemap()` and returns an array-structure.
+If you need all details, please fallback on `$web->sitemapRaw(...)`. It can be called like `$web->sitemap()` and returns an array structure.
 :::
 
 
@@ -127,5 +127,5 @@ $searchIndex = $web->searchIndex('https://example.com/custom_index.json');
 **This result contains only selected properties.** It returns an array of `DataTransferObjects\FeedEntry` with properties `link`, `title`, and `description`.
 
 ::: tip Complete Details
-If you need all details, please fallback on `$web->searchIndexRaw(...)`. It can be called like `$web->searchIndex()` and returns an array-structure.
+If you need all details, please fallback on `$web->searchIndexRaw(...)`. It can be called like `$web->searchIndex()` and returns an array structure.
 :::

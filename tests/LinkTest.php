@@ -315,7 +315,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         // Check the complex links list
         $this->assertSame([
             [
-                'url' => 'https://placekitten.com/432/287',
+                'url' => 'https://placekitten.com/432/500',
                 'protocol' => 'https',
                 'text' => '',
                 'title' => null,
@@ -331,15 +331,15 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
-                'url' => 'https://placekitten.com/456/287',
+                'url' => 'https://placekitten.com/456/500',
                 'protocol' => 'https',
                 'text' => '',
                 'title' => null,
                 'target' => null,
                 'rel' => 'ugc',
                 'image' => [
-                    'https://placekitten.com/456/287',
-                    'https://placekitten.com/456/287'
+                    'https://placekitten.com/456/400',
+                    'https://placekitten.com/456/300'
                 ],
                 'isNofollow' => false,
                 'isUGC' => true,
@@ -348,7 +348,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isNoopener' => false,
                 'isNoreferrer' => false,
             ], [
-                'url' => 'https://placekitten.com/345/287',
+                'url' => 'https://placekitten.com/345/500',
                 'protocol' => 'https',
                 'text' => 'This is image',
                 'title' => null,
