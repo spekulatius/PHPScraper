@@ -151,7 +151,7 @@ Whenever post-processing is applied, you can fall back to the underlying `*Raw`-
 
 ### Processing CSV-, XML- and JSON files and URLs
 
-PHPScraper comes out-of-the-box with file / URL processing methods for plain-text formats:
+PHPScraper comes out-of-the-box with file / URL processing methods for CSV-, XML- and JSON:
 
 - `parseJson`
 - `parseXml`
