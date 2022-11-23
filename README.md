@@ -106,42 +106,85 @@ Most of the DOM should be covered using these methods:
 **A full list of methods with example code can be found on [phpscraper.de](https://phpscraper.de). Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
 
 
+### Downloading Files
 
-
-### Scrape the Images from a Website
-
-Scraping the images including the attributes of the `img`-tags:
+Besides processing the content on the page itself, you can download files using `fetchAsset`:
 
 ```php
-// Prep
-$web = new \spekulatius\phpscraper;
+// Absolute URL
+$csvString = $web->fetchAsset('https://test-pages.phpscraper.de/test.csv');
 
-/**
- * Navigate to the test page.
- *
- * This page contains twice the image "cat.jpg".
- * Once with a relative path and once with an absolute path.
- */
-$web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
-
-var_dump($web->imagesWithDetails);
-/**
- * Contains:
- *
- * [
- *     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
- *     'alt' => 'absolute path',
- *     'width' => null,
- *     'height' => null,
- * ],
- * [
- *     'url' => 'https://test-pages.phpscraper.de/assets/cat.jpg',
- *     'alt' => 'relative path',
- *     'width' => null,
- *     'height' => null,
- * ]
- */
+// Relative URL after navigation
+$csvString = $web
+  ->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html')
+  ->fetchAsset('/test.csv');
 ```
+
+
+### Process the RSS feeds, `sitemap.xml`, etc.
+
+PHPScraper can assist in collecting feeds such as [RSS feeds, `sitemap.xml`-entries and static search indexes](https://phpscraper.de/examples/scrape-feeds.html). This can be useful when deciding on the next page to crawl or build up a list of pages on a website.
+
+Here we are processing the sitemap into a set of [`FeedEntry`-DTOs](https://github.com/spekulatius/PHPScraper/blob/pre-release-tweaks/src/DataTransferObjects/FeedEntry.php):
+
+```php
+(new \spekulatius\phpscraper)
+    ->go('https://phpscraper.de')
+    ->sitemap
+
+// array(131) {
+//   [0]=>
+//   object(spekulatius\DataTransferObjects\FeedEntry)#165 (3) {
+//     ["title"]=>
+//     string(0) ""
+//     ["description"]=>
+//     string(0) ""
+//     ["link"]=>
+//     string(22) "https://phpscraper.de/"
+//   }
+//   [1]=>
+// ...
+```
+
+Whenever post-processing is applied, you can fall back to the underlying `*Raw`-methods.
+
+
+### Processing CSV-, XML- and JSON files and URLs
+
+PHPScraper comes out-of-the-box with file / URL processing methods for plain-text formats:
+
+- `parseJson`
+- `parseXml`
+- `parseCsv`
+- `parseCsvWithHeader` (generates an asso. array using the first row)
+
+Each method can process both strings as well as URLs:
+
+```php
+// Parse CSV into a simple array:
+$csv = $web->parseJson('[{"title": "PHP Scraper: a web utility for PHP", "url": "https://phpscraper.de"}]');
+// [
+//     'title' => 'PHP Scraper: a web utility for PHP',
+//     'url' => 'https://phpscraper.de'
+// ]
+
+// Fetch and parse CSV into a simple array:
+$csv = $web->parseCsv('https://test-pages.phpscraper.de/test.csv');
+// [
+//     ['date', 'value'],
+//     ['1945-02-06', 4.20],
+//     ['1952-03-11', 42],
+// ]
+
+// Fetch and parse CSV with first row as header into an asso. array structure:
+$csv = $web->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv');
+// [
+//     ['date' => '1945-02-06', 'value' => 4.20],
+//     ['date' => '1952-03-11', 'value' => 42],
+// ]
+```
+
+Additional CSV parsing parameters such as separator, enclosure and escape are possible. More details are covered in the documentation.
 
 
 ### There is more!
@@ -196,7 +239,9 @@ If needed, you can use the following configuration options:
 You can set the browser agent using `setConfig`:
 
 ```php
-$web->setConfig(['agent' => 'Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0']);
+$web->setConfig([
+  'agent' => 'Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0'
+]);
 ```
 
 It defaults to `Mozilla/5.0 (compatible; PHP Scraper/1.x; +https://phpscraper.de)`.

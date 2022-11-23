@@ -231,8 +231,8 @@ trait UsesParsers
              *
              * This is a work-around to allow for:
              *
-             * - `$web->parseJson('https://...')`.
-             * - `$web->go('...')->parseJson()`.
+             * - `$web->parseCsvWithHeader('https://...')`.
+             * - `$web->go('...')->parseCsvWithHeader()`.
              */
             $result = $result ?? $this->csvDecodeWithHeader(
                 // Fetch the resource either using $csvStringOrUrl
@@ -332,7 +332,7 @@ trait UsesParsers
     protected function xmlDecode(string $xmlString): array
     {
         // XML parser
-        $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
+        $xml = simplexml_load_string(trim($xmlString), 'SimpleXMLElement', LIBXML_NOCDATA);
 
         return json_decode(json_encode($xml), true);
     }
