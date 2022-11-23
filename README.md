@@ -56,17 +56,18 @@ echo $web->title;
 echo $web->title();
 ```
 
-### :battery: Batteries included: Meta data, Links, Images, Headings, Content, Keywords, ..., etc. pp.
+### :battery: Batteries included: Meta data, Links, Images, Headings, Content, Keywords, ...
 
-Many common use cases are covered already. You can find extractors for various HTML tags including attributes of interest. In some cases there is an option to get a simple or detailed version, here in the case of links:
+Many common use cases are covered already. You can find prepared extractors for various HTML tags, including interesting attributes. You can use these and combine them to your needs. In some cases there is an option to get a simple or detailed version, here in the case of `linksWithDetails`:
 
 ```PHP
 $web = new \spekulatius\phpscraper;
 
 // Contains:
-// `<base href="https://test-pages-with-base-href.phpscraper.de">`
-// and
-// `<a href="assets/cat.jpg" title="relative path with base href">relative cat</a>`
+// <a href="https://placekitten.com/456/500" rel="ugc">
+//   <img src="https://placekitten.com/456/400">
+//   <img src="https://placekitten.com/456/300">
+// </a>
 $web->go('https://test-pages.phpscraper.de/links/image-urls.html');
 
 // Get the first link on the page and print the result
@@ -91,13 +92,18 @@ print_r($web->linksWithDetails[0]);
 // ]
 ```
 
-Details such as `follow_redirects`, etc. are optional configuration parameters (see below). If there aren't any matching elements (here the links) on the page, an empty array will be returned. If a method normally returns a string it might return `null`.
+If there aren't any matching elements (here the links) on the page, an empty array will be returned. If a method normally returns a string it might return `null`. Details such as `follow_redirects`, etc. are optional configuration parameters (see below).
+
+Most of the DOM should be covered using these methods:
+
+- several [meta-tags](https://phpscraper.de/examples/scrape-meta-tags.html) and other [`<head>`-information](https://phpscraper.de/examples/scrape-header-tags.html)
+- [Social-Media information](https://phpscraper.de/examples/scrape-social-media-meta-tags.html) like Twitter Card and Facebook Open Graph
+- Content: [Headings](https://phpscraper.de/examples/headings.html), [Outline](https://phpscraper.de/examples/outline.html), [Texts](https://phpscraper.de/examples/paragraphs.html) and [Lists](https://phpscraper.de/examples/lists.html)
+- [Images](https://phpscraper.de/examples/scrape-images.html)
+- [Links](https://phpscraper.de/examples/scrape-links.html)
+- [Keywords](https://phpscraper.de/examples/extract-keywords.html)
 
 **A full list of methods with example code can be found on [phpscraper.de](https://phpscraper.de). Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
-
-
-
-
 
 
 

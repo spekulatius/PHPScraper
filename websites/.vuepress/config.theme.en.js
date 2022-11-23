@@ -28,9 +28,9 @@ module.exports = {
             collapsable: false,
             children: [
                 'examples/headings',
+                'examples/outline',
                 'examples/paragraphs',
                 'examples/lists',
-                'examples/outline',
                 'examples/extract-keywords',
                 'examples/scrape-images',
                 'examples/scrape-links',

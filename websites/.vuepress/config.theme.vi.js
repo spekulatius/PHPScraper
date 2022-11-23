@@ -26,9 +26,9 @@ module.exports = {
             collapsable: false,
             children: [
                 'vi/examples/headings',
+                'vi/examples/outline',
                 'vi/examples/paragraphs',
                 'vi/examples/lists',
-                'vi/examples/outline',
                 'vi/examples/extract-keywords',
                 'vi/examples/scrape-images',
                 'vi/examples/scrape-links',
