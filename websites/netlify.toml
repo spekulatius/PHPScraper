@@ -1,8 +1,0 @@
-# Global settings applied to the whole site.
-# See more info here: https://www.netlify.com/docs/netlify-toml-reference/
-
-#[build]
-#  command = "yarn run build"
-
-[build.environment]
-  NODE_VERSION = "14"
