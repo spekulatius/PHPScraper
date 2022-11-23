@@ -43,7 +43,7 @@ See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/compos
 
 
 :timer_clock: 5 Minutes Tutorial using Examples
---------------------------------------------------------------------
+-----------------------------------------------
 
 Here are a few impressions of the way the library works. More examples are this website in the various sections.
 
@@ -131,6 +131,8 @@ $csvString = $web
   ->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html')
   ->fetchAsset('/test.csv');
 ```
+
+You will only need to write the content into a file or cloud storage.
 
 ::: warning 404s
 If the intended URL isn't available an exception will be thrown. Make sure to handle this case by wrapping your code in a try-catch block:

@@ -36,7 +36,7 @@ See [composer.json](https://github.com/spekulatius/PHPScraper/blob/master/compos
 
 
 :timer_clock: 5 Minutes Tutorial using Examples
---------------------------------------------------------------------
+-----------------------------------------------
 
 Here are a few impressions of the way the library works. More examples are on the [project website](https://phpscraper.de/examples/scrape-website-title.html).
 
@@ -103,7 +103,7 @@ Most of the DOM should be covered using these methods:
 - [Links](https://phpscraper.de/examples/scrape-links.html)
 - [Keywords](https://phpscraper.de/examples/extract-keywords.html)
 
-**A full list of methods with example code can be found on [phpscraper.de](https://phpscraper.de). Further cases are covered in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
+ **A full list of methods with example code can be found on [phpscraper.de](https://phpscraper.de). Further examples are in the [tests](https://github.com/spekulatius/PHPScraper/tree/master/tests).**
 
 
 ### Downloading Files
@@ -119,6 +119,8 @@ $csvString = $web
   ->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html')
   ->fetchAsset('/test.csv');
 ```
+
+You will only need to write the content into a file or cloud storage.
 
 
 ### Process the RSS feeds, `sitemap.xml`, etc.
