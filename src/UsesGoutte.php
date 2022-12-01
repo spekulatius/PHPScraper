@@ -54,6 +54,16 @@ trait UsesGoutte
     }
 
     /**
+     * Retrieve the client
+     *
+     * @param \Goutte\Client $client
+     */
+    public function client(): GoutteClient
+    {
+        return $this->client;
+    }
+
+    /**
      * Any URL-related methods are in `UsesUrls.php`.
      **/
 
