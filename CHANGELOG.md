@@ -6,6 +6,11 @@ Parts regarding the [documentation website](https://phpscraper.de), the [test pa
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.1 (2022-12-02)
+
+- [#156](https://github.com/spekulatius/PHPScraper/issues/156): Tidy up: Make file naming more intuitive and fix comments
+- [#154](https://github.com/spekulatius/PHPScraper/issues/154): Expose GoutteClient as an accessible property
+
 ## 1.0.0 (2022-11-24)
 
 - [#151](https://github.com/spekulatius/PHPScraper/issues/151): Migrate website into separate repo.
