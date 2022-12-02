@@ -13,7 +13,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page.
+        // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // This page shouldn't contain any RSS feeds.
@@ -27,7 +27,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page.
+        // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected result? Any URLs should be made absolute.
@@ -46,7 +46,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page.
+        // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // We should always allow to use a custom url.
@@ -67,7 +67,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Test 1: Absolute URL
@@ -92,7 +92,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page.
+        // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // The raw RSS is rather unhandy to work with. Let's put it in a var before testing stuff.
@@ -126,7 +126,7 @@ class FeedRssTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page.
+        // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // The raw RSS is rather unhandy to work with (hence we actually use the DTOs).

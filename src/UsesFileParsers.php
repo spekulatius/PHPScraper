@@ -2,7 +2,7 @@
 
 namespace Spekulatius\PHPScraper;
 
-trait UsesParsers
+trait UsesFileParsers
 {
     /**
      * Base Util to decode a CSV string.

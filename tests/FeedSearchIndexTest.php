@@ -13,7 +13,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/index.json`?
@@ -32,7 +32,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // `searchIndexUrl` should be the default.
@@ -53,7 +53,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // We should always allow for custom urls.
@@ -72,7 +72,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Test 1: Absolute URL
@@ -97,7 +97,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Get the raw searchIndex and store it.
@@ -134,7 +134,7 @@ class FeedSearchIndexTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Get the searchIndex and store it.

@@ -54,7 +54,7 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Test 1: Absolute URL

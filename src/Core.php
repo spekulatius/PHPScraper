@@ -31,7 +31,7 @@ class Core
     /**
      * Shared simple parsers for XML, JSON and CSV.
      */
-    use UsesParsers;
+    use UsesFileParsers;
 
     /**
      * This contains the feeds-related selectors and parsers: RSS, sitemap, search index, etc.

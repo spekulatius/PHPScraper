@@ -13,7 +13,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is guessed, it's only about the base URL.
+        // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Did we get the expected `/sitemap.xml`?
@@ -32,7 +32,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is guessed, it's only about the base URL.
+        // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // The sitemapUrl should be the default.
@@ -51,7 +51,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is guessed, it's only about the base URL.
+        // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // We should always allow for custom paths.
@@ -70,7 +70,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is predefined, it's only about the base URL.
+        // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Test 1: Absolute URL
@@ -95,7 +95,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is guessed, it's only about the base URL.
+        // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Get the sitemap and store it.
@@ -124,7 +124,7 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to any test page. As the URL is guessed, it's only about the base URL.
+        // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Get the sitemap and store it.
