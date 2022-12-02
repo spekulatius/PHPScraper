@@ -29,6 +29,11 @@ class Core
     use UsesContent;
 
     /**
+     * Anything related for parsing tables.
+     */
+    use UsesTables;
+
+    /**
      * Shared simple parsers for XML, JSON and CSV.
      */
     use UsesFileParsers;
