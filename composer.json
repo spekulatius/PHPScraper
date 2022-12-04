@@ -28,9 +28,9 @@
         "league/uri": "^6.0"
     },
     "require-dev": {
-        "symfony/thanks": "*",
-        "phpunit/phpunit": "^8.0",
-        "illuminate/collections": "*"
+        "symfony/thanks": "^1.0.0",
+        "phpunit/phpunit": "^8.0.0|^9.0.0",
+        "illuminate/collections": "^8.0.0|^9.0.0"
     },
     "autoload": {
         "psr-4": {
