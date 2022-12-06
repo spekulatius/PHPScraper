@@ -4,7 +4,7 @@ namespace Spekulatius\PHPScraper;
 
 use Goutte\Client as GoutteClient;
 use Symfony\Component\DomCrawler\Crawler;
-use Symfony\Component\HttpClient\CurlHttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 trait UsesGoutte
 {
@@ -18,7 +18,7 @@ trait UsesGoutte
     /**
      * Holds the HttpClient
      *
-     * @var Symfony\Component\HttpClient\CurlHttpClient
+     * @var Symfony\Contracts\HttpClient\HttpClientInterface;
      */
     protected $httpClient = null;
 
@@ -44,9 +44,9 @@ trait UsesGoutte
     /**
      * Overwrites the httpClient
      *
-     * @param Symfony\Component\HttpClient\CurlHttpClient $httpClient
+     * @param Symfony\Contracts\HttpClient\HttpClientInterface $httpClient
      */
-    public function setHttpClient(CurlHttpClient $httpClient): self
+    public function setHttpClient(HttpClientInterface $httpClient): self
     {
         $this->httpClient = $httpClient;
 
