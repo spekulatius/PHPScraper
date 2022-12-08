@@ -133,4 +133,104 @@ trait UsesGoutte
 
         return $this;
     }
+
+    public function statusCode(): ?int
+    {
+        return $this->client->getResponse()?->getStatusCode();
+    }
+
+    public function is2xx(): bool
+    {
+        return $this->statusCode() >= 200 && $this->statusCode() <= 299;
+    }
+
+    public function is3xx(): bool
+    {
+        return $this->statusCode() >= 300 && $this->statusCode() <= 399;
+    }
+
+    public function is4xx(): bool
+    {
+        return $this->statusCode() >= 400 && $this->statusCode() <= 499;
+    }
+
+    public function is5xx(): bool
+    {
+        return $this->statusCode() >= 500 && $this->statusCode() <= 599;
+    }
+
+    public function is200(): bool
+    {
+        return $this->statusCode() === 200;
+    }
+
+    public function is301(): bool
+    {
+        return $this->statusCode() === 301;
+    }
+
+    public function is302(): bool
+    {
+        return $this->statusCode() === 302;
+    }
+
+    public function is400(): bool
+    {
+        return $this->statusCode() === 400;
+    }
+
+    public function is401(): bool
+    {
+        return $this->statusCode() === 401;
+    }
+
+    public function is402(): bool
+    {
+        return $this->statusCode() === 402;
+    }
+
+    public function is403(): bool
+    {
+        return $this->statusCode() === 403;
+    }
+
+    public function is404(): bool
+    {
+        return $this->statusCode() === 404;
+    }
+
+    public function is500(): bool
+    {
+        return $this->statusCode() === 500;
+    }
+
+    public function isOk(): bool
+    {
+        return $this->is200();
+    }
+
+    public function isUnauthorized(): bool
+    {
+        return $this->is401();
+    }
+
+    public function isForbidden(): bool
+    {
+        return $this->is403();
+    }
+
+    public function isNotFound(): bool
+    {
+        return $this->is404();
+    }
+
+    public function isServerError(): bool
+    {
+        return $this->is500();
+    }
+
+    public function isInternalServerError(): bool
+    {
+        return $this->is500();
+    }
 }
