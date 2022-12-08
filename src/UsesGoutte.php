@@ -134,9 +134,13 @@ trait UsesGoutte
         return $this;
     }
 
-    public function statusCode(): ?int
+    public function statusCode(): int
     {
-        return $this->client->getResponse()?->getStatusCode();
+        if ($this->client->getResponse() === null) {
+            throw new \Exception('You can not access the status code before your first navigation using `go`.');
+        }
+
+        return $this->client->getResponse()->getStatusCode();
     }
 
     public function is2xx(): bool
