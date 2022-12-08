@@ -136,7 +136,7 @@ trait UsesGoutte
 
     public function statusCode(): int
     {
-        if ($this->client->getResponse() === null) {
+        if ($this->currentPage === null) {
             throw new \Exception('You can not access the status code before your first navigation using `go`.');
         }
 
