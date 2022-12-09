@@ -31,24 +31,13 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(200, $web->statusCode);
 
         // Check the detailed states.
-        $this->assertTrue($web->is2xx);
-        $this->assertFalse($web->is4xx);
-        $this->assertFalse($web->is5xx);
-        $this->assertTrue($web->is200);
-        $this->assertFalse($web->is400);
-        $this->assertFalse($web->is401);
-        $this->assertFalse($web->is402);
-        $this->assertFalse($web->is403);
-        $this->assertFalse($web->is404);
-        $this->assertFalse($web->is500);
+        $this->assertTrue($web->isSuccess);
+        $this->assertFalse($web->isClientError);
+        $this->assertFalse($web->isServerError);
 
         // Assert access-helpers
-        $this->assertTrue($web->isOk);
-        $this->assertFalse($web->isUnauthorized);
         $this->assertFalse($web->isForbidden);
         $this->assertFalse($web->isNotFound);
-        $this->assertFalse($web->isServerError);
-        $this->assertFalse($web->isInternalServerError);
     }
 
     /**
@@ -58,30 +47,19 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
-        // Navigate to the test page: This redirects to phpscraper.de
+        // Navigate to the test page which doesn't exist.
         $web->go('https://test-pages.phpscraper.de/page-does-not-exist.html');
 
         // Check the status itself.
         $this->assertSame(404, $web->statusCode);
 
         // Check the detailed states.
-        $this->assertFalse($web->is2xx);
-        $this->assertTrue($web->is4xx);
-        $this->assertFalse($web->is5xx);
-        $this->assertFalse($web->is200);
-        $this->assertFalse($web->is400);
-        $this->assertFalse($web->is401);
-        $this->assertFalse($web->is402);
-        $this->assertFalse($web->is403);
-        $this->assertTrue($web->is404);
-        $this->assertFalse($web->is500);
+        $this->assertFalse($web->isSuccess);
+        $this->assertTrue($web->isClientError);
+        $this->assertFalse($web->isServerError);
 
         // Assert access-helpers
-        $this->assertFalse($web->isOk);
-        $this->assertFalse($web->isUnauthorized);
         $this->assertFalse($web->isForbidden);
         $this->assertTrue($web->isNotFound);
-        $this->assertFalse($web->isServerError);
-        $this->assertFalse($web->isInternalServerError);
     }
 }
