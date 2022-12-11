@@ -8,7 +8,6 @@ use Symfony\Component\DomCrawler\Crawler;
 /**
  * Extended Goutte\Client with PHPScraper specific methods
  */
-
 class GoutteClient extends Client
 {
     /**
@@ -47,9 +46,10 @@ class GoutteClient extends Client
     public function followRedirect(): Crawler
     {
         $status = $this->internalResponse->getStatusCode();
-        if($status === 200 /* META REFRESH */ || $status === 301 /* Moved Permanently */ || $status === 308 /* Permanent Redirect */) {
-            if(!$this->usesTemporaryRedirect && empty($this->internalResponse->getHeader('Retry-After')))
+        if ($status === 200 /* META REFRESH */ || $status === 301 /* Moved Permanently */ || $status === 308 /* Permanent Redirect */) {
+            if (!$this->usesTemporaryRedirect && empty($this->internalResponse->getHeader('Retry-After'))) {
                 $this->permanentRedirectUrl = $this->redirect;
+            }
         } else {    // $status === 300 /* Multiple Choices */ || $status === 302 /* Found */ || $status === 303 /* See Other */ || $status === 307 /* Temporary Redirect */
             $this->usesTemporaryRedirect = true;
         }
@@ -68,22 +68,26 @@ class GoutteClient extends Client
     protected function filterResponse(object $response)
     {
         $retryAfterHeaders = $response->getHeader('Retry-After', false);
-        if(!empty($retryAfterHeaders)) {
+        if (!empty($retryAfterHeaders)) {
             $status = $this->internalResponse->getStatusCode();
-            foreach($retryAfterHeaders as $retryAfter) {
-                if(is_numeric($retryAfter))
+            foreach ($retryAfterHeaders as $retryAfter) {
+                if (is_numeric($retryAfter)) {
                     $retryAt = time() + $retryAfter;
-                else
+                } else {
                     $retryAt = strtotime($retryAfter);
-                if($status >= 400) {    // usually 429 Too Many Request or 503 Service Unavailable
-                    if($this->retryFailureAt < $retryAt)
+                }
+                if ($status >= 400) {    // usually 429 Too Many Request or 503 Service Unavailable
+                    if ($this->retryFailureAt < $retryAt) {
                         $this->retryFailureAt = $retryAt;
-                } elseif($status >= 300) {
-                    if($this->retryRedirectAt > $retryAt)
+                    }
+                } elseif ($status >= 300) {
+                    if ($this->retryRedirectAt > $retryAt) {
                         $this->retryRedirectAt = $retryAt;
+                    }
                 }
             }
         }
+
         return parent::filterResponse($response);
     }
 
@@ -92,11 +96,15 @@ class GoutteClient extends Client
      *
      * @return Response
      */
-    public function retryAt(): int {
-        if($this->retryFailureAt)
+    public function retryAt(): int
+    {
+        if ($this->retryFailureAt) {
             return $this->retryFailureAt;
-        if($this->retryRedirectAt < PHP_INT_MAX)
+        }
+        if ($this->retryRedirectAt < PHP_INT_MAX) {
             return $this->retryRedirectAt;
+        }
+
         return 0;
     }
 }
