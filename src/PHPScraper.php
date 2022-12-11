@@ -8,7 +8,6 @@ namespace Spekulatius\PHPScraper;
  * Most calls are passed through to the Core class.
  */
 
-use Goutte\Client as GoutteClient;
 use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
 
 class PHPScraper
