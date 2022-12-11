@@ -39,6 +39,17 @@ class GoutteClient extends Client
     protected $retryFailureAt = 0;
 
     /**
+     * Reset internal variables
+     */
+    public function initNewRequest()
+    {
+        $this->usesTemporaryRedirect = false;
+        $this->permanentRedirectUrl = null;
+        $this->retryRedirectAt = PHP_INT_MAX;
+        $this->retryFailureAt = 0;
+    }
+
+    /**
      * Remember permanent redirect url and detect if the redirect chain contains temporary redirects
      *
      * @return Crawler
