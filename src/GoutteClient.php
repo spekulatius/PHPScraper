@@ -80,7 +80,7 @@ class GoutteClient extends Client
     {
         $retryAfterHeaders = $response->getHeader('Retry-After', false);
         if (!empty($retryAfterHeaders)) {
-            $status = $this->internalResponse->getStatusCode();
+            $status = $response->getStatusCode();
             foreach ($retryAfterHeaders as $retryAfter) {
                 if (is_numeric($retryAfter)) {
                     $retryAt = time() + $retryAfter;
