@@ -32,8 +32,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertTrue($web->isSuccess);
-        $this->assertFalse($web->isClientError);
-        $this->assertFalse($web->isServerError);
         $this->assertFalse($web->isTemporaryResult);
         $this->assertFalse($web->isGone);
         $this->assertFalse($web->isPermanentError);
@@ -42,10 +40,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($web->usesTemporaryRedirect);
         $this->assertSame('', $web->permanentRedirectUrl);
         $this->assertSame(0, $web->retryAt);
-
-        // Assert access-helpers
-        $this->assertFalse($web->isForbidden);
-        $this->assertFalse($web->isNotFound);
     }
 
     /**
@@ -63,8 +57,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertFalse($web->isSuccess);
-        $this->assertTrue($web->isClientError);
-        $this->assertFalse($web->isServerError);
         $this->assertFalse($web->isTemporaryResult);
         $this->assertFalse($web->isGone);
         $this->assertTrue($web->isPermanentError);
@@ -73,10 +65,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($web->usesTemporaryRedirect);
         $this->assertSame('', $web->permanentRedirectUrl);
         $this->assertSame(0, $web->retryAt);
-
-        // Assert access-helpers
-        $this->assertFalse($web->isForbidden);
-        $this->assertTrue($web->isNotFound);
     }
 
     /**
@@ -94,8 +82,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertTrue($web->isSuccess);
-        $this->assertFalse($web->isClientError);
-        $this->assertFalse($web->isServerError);
         $this->assertFalse($web->isTemporaryResult);
         $this->assertFalse($web->isGone);
         $this->assertFalse($web->isPermanentError);
@@ -104,10 +90,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($web->usesTemporaryRedirect);
         $this->assertSame('https://phpscraper.de/', $web->permanentRedirectUrl);
         $this->assertSame(0, $web->retryAt);
-
-        // Assert access-helpers
-        $this->assertFalse($web->isForbidden);
-        $this->assertFalse($web->isNotFound);
     }
 
     /**
@@ -125,8 +107,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertTrue($web->isSuccess);
-        $this->assertFalse($web->isClientError);
-        $this->assertFalse($web->isServerError);
         $this->assertTrue($web->isTemporaryResult);
         $this->assertFalse($web->isGone);
         $this->assertFalse($web->isPermanentError);
@@ -135,10 +115,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($web->usesTemporaryRedirect);
         $this->assertSame('', $web->permanentRedirectUrl);
         $this->assertSame(0, $web->retryAt);
-
-        // Assert access-helpers
-        $this->assertFalse($web->isForbidden);
-        $this->assertFalse($web->isNotFound);
     }
 
     /**
@@ -156,8 +132,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertFalse($web->isSuccess);
-        $this->assertTrue($web->isClientError);
-        $this->assertFalse($web->isServerError);
         $this->assertFalse($web->isTemporaryResult);
         $this->assertTrue($web->isGone);
         $this->assertTrue($web->isPermanentError);
@@ -166,10 +140,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($web->usesTemporaryRedirect);
         $this->assertSame('', $web->permanentRedirectUrl);
         $this->assertSame(0, $web->retryAt);
-
-        // Assert access-helpers
-        $this->assertFalse($web->isForbidden);
-        $this->assertFalse($web->isNotFound);
     }
 
     /**
@@ -189,8 +159,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertFalse($web->isSuccess);
-        $this->assertTrue($web->isClientError);
-        $this->assertFalse($web->isServerError);
         $this->assertTrue($web->isTemporaryResult);
         $this->assertFalse($web->isGone);
         $this->assertFalse($web->isPermanentError);
@@ -200,10 +168,6 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertSame('', $web->permanentRedirectUrl);
         $this->assertGreaterThan($t1, $web->retryAt);
         $this->assertLessThanOrEqual($t2 + 5, $web->retryAt);
-
-        // Assert access-helpers
-        $this->assertFalse($web->isForbidden);
-        $this->assertFalse($web->isNotFound);
     }
 
 }

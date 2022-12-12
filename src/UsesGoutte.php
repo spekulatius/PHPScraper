@@ -232,23 +232,4 @@ trait UsesGoutte
         return $this->statusCode() >= 200 && $this->statusCode() <= 299;
     }
 
-    public function isClientError(): bool
-    {
-        return $this->statusCode() >= 400 && $this->statusCode() <= 499;
-    }
-
-    public function isServerError(): bool
-    {
-        return $this->statusCode() >= 500 && $this->statusCode() <= 599;
-    }
-
-    public function isForbidden(): bool
-    {
-        return $this->statusCode() === 403;
-    }
-
-    public function isNotFound(): bool
-    {
-        return $this->statusCode() === 404;
-    }
 }
