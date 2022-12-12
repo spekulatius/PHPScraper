@@ -7,7 +7,6 @@ $url = 'http://github.com/spekulatius/PHPScraper';
 echo 'requesting ', $url, "\n";
 $web = new \Spekulatius\PHPScraper\PHPScraper();
 $web->go($url);
-//var_dump($web->client);
 
 if ($web->currentUrl !== $url) {
     echo 'redirected to ', $web->currentUrl, "\n";
