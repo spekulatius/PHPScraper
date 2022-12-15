@@ -6,6 +6,13 @@ Parts regarding the [documentation website](https://phpscraper.de), the [test pa
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.2 (2022-12-15)
+
+- [#167](https://github.com/spekulatius/PHPScraper/issues/167): Updating CHANGELOG.md
+- [#166](https://github.com/spekulatius/PHPScraper/issues/166): Minor tidy ups in comments
+- [#165](https://github.com/spekulatius/PHPScraper/issues/165): Adding PHP 8.2 to test workflow
+- [#160](https://github.com/spekulatius/PHPScraper/issues/160): Allow complete interface for HttpClient instead of only one class.
+
 ## 1.0.1 (2022-12-02)
 
 - [#156](https://github.com/spekulatius/PHPScraper/issues/156): Tidy up: Make file naming more intuitive and fix comments
@@ -24,7 +31,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.12.0 (2022-11-10)
 
 - [#142](https://github.com/spekulatius/PHPScraper/issues/142): Implement feed parsing.
-- [#145](https://github.com/spekulatius/PHPScraper/issues/145): Reenable previously deactivated tests
+- [#145](https://github.com/spekulatius/PHPScraper/issues/145): Re-enable previously deactivated tests
 
 ## 0.11.0 (2022-11-01)
 
