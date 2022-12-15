@@ -60,7 +60,7 @@ class PHPScraper
             'agent' => 'Mozilla/5.0 (compatible; PHP Scraper/1.x; +https://phpscraper.de)',
 
             /**
-             * Agent can be overwritten using:
+             * Setting the Proxy
              *
              * ```php
              * $web->setConfig(['proxy' => 'http://user:password@127.0.0.1:3128']);

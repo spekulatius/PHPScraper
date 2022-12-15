@@ -26,7 +26,7 @@ class CanonicalTest extends \PHPUnit\Framework\TestCase
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
-        // It contains: <link rel="canonical" href="http://localhost:8089/navigation/2.html" />
+        // It contains: <link rel="canonical" href="https://test-pages.phpscraper.de/navigation/2.html" />
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
 
         // Check the canonical
