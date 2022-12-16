@@ -39,7 +39,7 @@ class PHPScraper
     /**
      * Sets the config, generates the required Clients and updates the core with the new clients.
      *
-     * @var ?array $config = []
+     * @param ?array $config = []
      */
     public function setConfig(?array $config = []): self
     {
