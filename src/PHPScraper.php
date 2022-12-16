@@ -30,7 +30,7 @@ class PHPScraper
     public function __construct(?array $config = [])
     {
         // Prepare the core. It delegates all further processing.
-        $this->core = new Core();
+        $this->core = new Core;
 
         // And set the config.
         $this->setConfig($config);
@@ -141,7 +141,7 @@ class PHPScraper
 
         // Did we get a Core class element? Keep this.
         if ($result instanceof Core) {
-            $this->core;
+            $this->core = $result;
 
             return $this;
         }
