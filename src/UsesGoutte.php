@@ -29,27 +29,6 @@ trait UsesGoutte
     protected $currentPage = null;
 
     /**
-     * Was a temporary redirect involved in loading this request?
-     *
-     * @var bool
-     */
-    protected $usesTemporaryRedirect = false;
-
-    /**
-     * Should subsequent requests go to a different URL?
-     *
-     * @var string
-     */
-    protected $permanentRedirectUrl = '';
-
-    /**
-     * Which is the earliest moment to retry the request? (unix timestamp)
-     *
-     * @var int
-     */
-    protected $retryAt = 0;
-
-    /**
      * Overwrites the client
      *
      * @param \Goutte\Client $client
@@ -94,19 +73,9 @@ trait UsesGoutte
      */
     public function go(string $url): self
     {
-        $this->client->initNewRequest();
-
         // Keep it around for internal processing.
         $this->currentPage = $this->client->request('GET', $url);
 
-        // Remember request properties.
-        $this->usesTemporaryRedirect = $this->client->usesTemporaryRedirect;
-        $this->permanentRedirectUrl = $this->client->permanentRedirectUrl ?? '';
-        $this->retryAt = $this->client->retryAt();
-        if (!$this->retryAt && $this->statusCode() === 509 /* Bandwidth Limit Exceeded */) {
-            $this->retryAt = strtotime('next month 12:00 UTC');
-            // give providers in each timezone the chance to reset the traffic quota for month
-        }
         return $this;
     }
 
@@ -166,7 +135,7 @@ trait UsesGoutte
 
     public function isTemporaryResult(): bool
     {
-        return $this->usesTemporaryRedirect || \in_array($this->statusCode(), [
+        return $this->usesTemporaryRedirect() || \in_array($this->statusCode(), [
             408, // Request Timeout
             409, // Conflict
             419, // Page Expired
@@ -205,17 +174,24 @@ trait UsesGoutte
 
     public function usesTemporaryRedirect(): bool
     {
-        return $this->usesTemporaryRedirect;
+        return $this->client ? $this->client->usesTemporaryRedirect : false;
     }
 
     public function permanentRedirectUrl(): string
     {
-        return $this->permanentRedirectUrl;
+        return $this->client ? ($this->client->permanentRedirectUrl ?? '') : '';
     }
 
     public function retryAt(): int
     {
-        return $this->retryAt;
+        $retryAt = $this->client ? ($this->client->retryAt()) : 0;
+        if ($retryAt) {
+            return $retryAt;
+        }
+        if ($this->statusCode() === 509 /* Bandwidth Limit Exceeded */) {
+            return strtotime('next month 12:00 UTC');
+        }    // give providers in each timezone the chance to reset the traffic quota for month
+        return 0;
     }
 
     public function statusCode(): int

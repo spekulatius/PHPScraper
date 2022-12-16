@@ -11,6 +11,15 @@ use Symfony\Component\DomCrawler\Crawler;
 class GoutteClient extends Client
 {
     /**
+     * Is this the main request or a subrequest?
+     *
+     * (should always contain the same value as the private parent::$isMainRequest)
+     *
+     * @var bool
+     */
+    private $isMainRequest = true;
+
+    /**
      * Was a temporary redirect involved in loading this request?
      *
      * @var bool
@@ -39,14 +48,25 @@ class GoutteClient extends Client
     protected $retryFailureAt = 0;
 
     /**
-     * Reset internal variables
+     * Reset internal variables before calling a URI.
+     *
+     * @param string $method        The request method
+     * @param string $uri           The URI to fetch
+     * @param array  $parameters    The Request parameters
+     * @param array  $files         The files
+     * @param array  $server        The server parameters (HTTP headers are referenced with an HTTP_ prefix as PHP does)
+     * @param string $content       The raw body data
+     * @param bool   $changeHistory Whether to update the history or not (only used internally for back(), forward(), and reload())
      */
-    public function initNewRequest()
+    public function request(string $method, string $uri, array $parameters = [], array $files = [], array $server = [], string $content = null, bool $changeHistory = true): Crawler
     {
-        $this->usesTemporaryRedirect = false;
-        $this->permanentRedirectUrl = null;
-        $this->retryRedirectAt = PHP_INT_MAX;
-        $this->retryFailureAt = 0;
+        if ($this->isMainRequest) {
+            $this->usesTemporaryRedirect = false;
+            $this->permanentRedirectUrl = null;
+            $this->retryRedirectAt = PHP_INT_MAX;
+            $this->retryFailureAt = 0;
+        }
+        return parent::request($method, $uri, $parameters, $files, $server, $content, $changeHistory);
     }
 
     /**
@@ -56,6 +76,7 @@ class GoutteClient extends Client
      */
     public function followRedirect(): Crawler
     {
+        $this->isMainRequest = false;
         $status = $this->internalResponse->getStatusCode();
         if ($status === 200 /* META REFRESH */ || $status === 301 /* Moved Permanently */ || $status === 308 /* Permanent Redirect */) {
             if (!$this->usesTemporaryRedirect && empty($this->internalResponse->getHeader('Retry-After'))) {
@@ -66,7 +87,9 @@ class GoutteClient extends Client
         }
         // 300 Multiple Choices might also be handled as permanent redirect
         // META REFRESH might also be handled as temporary redirect if the delay is > 1s
-        return parent::followRedirect();
+        $response = parent::followRedirect();
+        $this->isMainRequest = true;
+        return $response;
     }
 
     /**
