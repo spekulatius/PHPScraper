@@ -55,7 +55,7 @@ trait UsesUrls
     public function makeUrlAbsolute(?string $url = null, string $baseUrl = null): ?string
     {
         // Allow to pass null through
-        if (!$url || !$this->currentPage) {
+        if ($url === null || $this->currentPage === null) {
             return null;
         }
 
