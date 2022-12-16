@@ -25,6 +25,11 @@ trait UsesContent
         return $this->filterFirstText('//title');
     }
 
+    public function charset(): ?string
+    {
+        return $this->filterFirstExtractAttribute('//meta[@charset]', ['charset']);
+    }
+
     public function contentType(): ?string
     {
         return $this->filterFirstExtractAttribute('//meta[@http-equiv="Content-type"]', ['content']);
