@@ -47,7 +47,7 @@ trait UsesXPathFilters
      * Filters the current page by a xPath-query and returns the textual content as array.
      *
      * @param string $query
-     * @return array
+     * @return array<string>
      */
     public function filterTexts(string $query): array
     {
@@ -58,8 +58,8 @@ trait UsesXPathFilters
      * Filters the current page by a xPath-query and returns the selected attributes as array.
      *
      * @param string $query
-     * @param array $attributes
-     * @return array
+     * @param array<string> $attributes
+     * @return array<string>
      */
     public function filterExtractAttributes(string $query, array $attributes): array
     {
@@ -72,7 +72,7 @@ trait UsesXPathFilters
      * Filters the current page by a xPath-query and returns the selected attributes of the first match.
      *
      * @param string $query
-     * @param array $attributes
+     * @param array<string> $attributes
      * @return ?string
      */
     public function filterFirstExtractAttribute(string $query, array $attributes): ?string

@@ -33,7 +33,7 @@ trait UsesFeeds
      *
      * @todo Support for text-only sitemaps, split versions, image-sitemaps, etc.?
      *
-     * @return array $sitemap
+     * @return array<FeedEntry> $sitemap
      */
     public function sitemap(?string $url = null): array
     {
@@ -76,7 +76,7 @@ trait UsesFeeds
     /**
      * Resolves the search index and returns an array of `\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry`.
      *
-     * @return array $searchIndex
+     * @return array<FeedEntry> $searchIndex
      */
     public function searchIndex(?string $url = null): array
     {
@@ -96,6 +96,8 @@ trait UsesFeeds
 
     /**
      * Compiles a list of RSS urls based on the <link>-tags on the current page.
+     *
+     * @return array<string>
      */
     public function rssUrls(): array
     {
@@ -122,7 +124,7 @@ trait UsesFeeds
      * Fetches a given set of RSS feeds and returns one array with raw data.
      *
      * @param ?string ...$urls
-     * @return array $rss
+     * @return array<FeedEntry> $rss
      */
     public function rss(?string ...$urls): array
     {

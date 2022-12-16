@@ -63,7 +63,7 @@ trait UsesContent
     /**
      * Get the header collected as an array
      *
-     * @return array
+     * @return array<int, string>
      */
     public function headers(): array
     {
@@ -119,7 +119,7 @@ trait UsesContent
     /**
      * Gets all Twitter-Card attributes (`twitter:`) as an array
      *
-     * @return array
+     * @return array<int, string>
      */
     public function twitterCard(): array
     {
@@ -139,7 +139,7 @@ trait UsesContent
     /**
      * Gets any OpenGraph attributes (`og:`) as an array
      *
-     * @return array
+     * @return array<int, string>
      */
     public function openGraph(): array
     {
@@ -189,7 +189,7 @@ trait UsesContent
     /**
      * Get all heading tags
      *
-     * @return array
+     * @return array<array>
      */
     public function headings(): array
     {
@@ -218,6 +218,9 @@ trait UsesContent
         return $lists;
     }
 
+    /**
+     * @return array<string>
+     **/
     public function orderedLists(): array
     {
         return array_values(array_filter($this->lists(), function ($list) {
@@ -225,6 +228,9 @@ trait UsesContent
         }));
     }
 
+    /**
+     * @return array<string>
+     **/
     public function unorderedLists(): array
     {
         return array_values(array_filter($this->lists(), function ($list) {
@@ -232,6 +238,9 @@ trait UsesContent
         }));
     }
 
+    /**
+     * @return array<string>
+     **/
     public function paragraphs(): array
     {
         return array_map(
@@ -256,7 +265,7 @@ trait UsesContent
     /**
      * Parses the content outline of the web-page
      *
-     * @return array
+     * @return array<string>
      */
     public function outline(): array
     {
@@ -272,7 +281,7 @@ trait UsesContent
     /**
      * Parses the content outline of the web-page
      *
-     * @return array
+     * @return array<array>
      */
     public function outlineWithParagraphs(): array
     {
@@ -322,7 +331,7 @@ trait UsesContent
      * @see https://phpscraper.de/examples/extract-keywords.html
      * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
-     * @return array
+     * @return array<array>
      */
     protected function prepContent(): array
     {

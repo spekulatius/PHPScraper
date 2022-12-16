@@ -101,7 +101,7 @@ trait UsesGoutte
      *
      * @param string $url
      */
-    public function fetchAsset(string $url)
+    public function fetchAsset(string $url): string
     {
         return $this
             ->httpClient
