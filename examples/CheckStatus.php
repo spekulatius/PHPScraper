@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 // ENTER YOUR URL HERE:
 $url = 'http://github.com/spekulatius/PHPScraper';
