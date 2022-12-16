@@ -119,6 +119,7 @@ class PHPScraper
     public function __get(string $name)
     {
         // We are assuming that all calls for properties actually method calls...
+        /** @phpstan-ignore-next-line */
         return $this->call($name);
     }
 

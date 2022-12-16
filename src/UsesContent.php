@@ -10,9 +10,9 @@ use Symfony\Component\DomCrawler\Image as DomCrawlerImage;
 trait UsesContent
 {
     /**
-     * Access conveniences: Methods, to access data easier.
+     * Access conveniences: Methods to make the data more accessible.
      *
-     * I like to have direct access to stuff without many chained calls.
+     * I like to have direct access to stuff without too many chained calls.
      * So I've added a number of things which might be of interest.
      *
      * Any suggestions what is missing? Send a PR :)
@@ -446,7 +446,7 @@ trait UsesContent
         // Filter the array
         return array_values(array_filter(
             $this->links(),
-            function ($link) use (&$currentRootDomain, &$rules) {
+            function ($link) use (&$currentRootDomain) {
                 $linkRootDomain = Uri::createFromString($link)->getHost();
 
                 return ($currentRootDomain === $linkRootDomain);
@@ -483,7 +483,7 @@ trait UsesContent
             // Check if the anchor is only an image. If so, wrap it into DomCrawler\Image to get the Uri.
             $image = [];
             foreach ($link->childNodes as $childNode) {
-                if (!empty($childNode) && $childNode->nodeName === 'img') {
+                if ($childNode->nodeName === 'img') {
                     $image[] = (new DomCrawlerImage($childNode, $this->currentBaseHost()))->getUri();
                 }
             }
