@@ -105,7 +105,7 @@ class GoutteClient extends Client
     /**
      * Calculate the earliest moment to retry the request
      *
-     * @return Response
+     * @return int
      */
     public function retryAt(): int
     {
