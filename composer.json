@@ -31,7 +31,8 @@
         "symfony/thanks": "^1.0.0",
         "phpunit/phpunit": "^8.0.0|^9.0.0",
         "illuminate/collections": "^8.0.0|^9.0.0",
-        "phpstan/phpstan": "^1.9"
+        "phpstan/phpstan": "^1.9",
+        "laravel/pint": "^1.2"
     },
     "autoload": {
         "psr-4": {
