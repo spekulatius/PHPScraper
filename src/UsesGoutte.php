@@ -11,14 +11,14 @@ trait UsesGoutte
     /**
      * Holds the client
      *
-     * @var Goutte\Client
+     * @var \Goutte\Client
      */
     protected $client = null;
 
     /**
      * Holds the HttpClient
      *
-     * @var Symfony\Contracts\HttpClient\HttpClientInterface;
+     * @var \Symfony\Contracts\HttpClient\HttpClientInterface;
      */
     protected $httpClient = null;
 
@@ -44,7 +44,7 @@ trait UsesGoutte
     /**
      * Overwrites the httpClient
      *
-     * @param Symfony\Contracts\HttpClient\HttpClientInterface $httpClient
+     * @param \Symfony\Contracts\HttpClient\HttpClientInterface $httpClient
      */
     public function setHttpClient(HttpClientInterface $httpClient): self
     {
@@ -56,7 +56,7 @@ trait UsesGoutte
     /**
      * Retrieve the client
      *
-     * @param \Goutte\Client $client
+     * @return \Goutte\Client $client
      */
     public function client(): GoutteClient
     {
@@ -101,7 +101,7 @@ trait UsesGoutte
      *
      * @param string $url
      */
-    public function fetchAsset(string $url)
+    public function fetchAsset(string $url): string
     {
         return $this
             ->httpClient

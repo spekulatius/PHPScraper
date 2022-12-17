@@ -187,7 +187,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $csvStringOrUrl || !$this->currentPage ? $csvStringOrUrl : $this->currentUrl()
+                    $csvStringOrUrl || $this->currentPage === null ? $csvStringOrUrl : $this->currentUrl()
                 ),
                 $separator,
                 $enclosure,
@@ -238,7 +238,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $csvStringOrUrl || !$this->currentPage ? $csvStringOrUrl : $this->currentUrl()
+                    $csvStringOrUrl || $this->currentPage === null ? $csvStringOrUrl : $this->currentUrl()
                 ),
                 $separator,
                 $enclosure,
@@ -282,7 +282,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $jsonStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $jsonStringOrUrl || !$this->currentPage ? $jsonStringOrUrl : $this->currentUrl()
+                    $jsonStringOrUrl || $this->currentPage === null ? $jsonStringOrUrl : $this->currentUrl()
                 ),
                 true
             );
@@ -320,7 +320,7 @@ trait UsesFileParsers
              * - `$web->go('...')->parseXml()`.
              */
             $result = $result ?? $this->xmlDecode($this->fetchAsset(
-                $xmlStringOrUrl || !$this->currentPage ? $xmlStringOrUrl : $this->currentUrl()
+                $xmlStringOrUrl || $this->currentPage === null ? $xmlStringOrUrl : $this->currentUrl()
             ));
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse XML: ' . $e->getMessage());

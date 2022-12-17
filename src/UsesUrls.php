@@ -11,9 +11,8 @@ trait UsesUrls
     /**
      * Returns the current url - this is either set by `go` indirectly or directly using `setContent`.
      *
-     * Checking for !$this->currentPage can be usedful when ensuring a navigation has been done.
-     *
      * @return string $url
+     * @throws \Exception
      */
     public function currentUrl(): string
     {
@@ -22,7 +21,7 @@ trait UsesUrls
             throw new \Exception('You can not access the URL before your first navigation using `go`.');
         }
 
-        return $this->currentPage->getUri();
+        return (string) $this->currentPage->getUri();
     }
 
     /**
@@ -55,7 +54,7 @@ trait UsesUrls
     public function makeUrlAbsolute(?string $url = null, string $baseUrl = null): ?string
     {
         // Allow to pass null through
-        if (!$url || !$this->currentPage) {
+        if ($url === null || $this->currentPage === null) {
             return null;
         }
 
