@@ -30,6 +30,9 @@ class FeedEntry
         $this->link = $link;
     }
 
+    /**
+     * @param array<string, string> $data
+     **/
     public static function fromArray(array $data): self
     {
         // Convert to an object and return the instance.
