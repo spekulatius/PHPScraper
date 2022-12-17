@@ -163,8 +163,8 @@ PHPScraper comes out of the box with file / URL processing methods for CSV-, XML
 Each method can process both strings as well as URLs:
 
 ```php
-// Parse CSV into a simple array:
-$csv = $web->parseJson('[{"title": "PHP Scraper: a web utility for PHP", "url": "https://phpscraper.de"}]');
+// Parse JSON into array:
+$json = $web->parseJson('[{"title": "PHP Scraper: a web utility for PHP", "url": "https://phpscraper.de"}]');
 // [
 //     'title' => 'PHP Scraper: a web utility for PHP',
 //     'url' => 'https://phpscraper.de'
