@@ -136,6 +136,7 @@ trait UsesGoutte
     public function isTemporaryResult(): bool
     {
         return $this->usesTemporaryRedirect() || \in_array($this->statusCode(), [
+            0,   // Network Error
             408, // Request Timeout
             409, // Conflict
             419, // Page Expired
@@ -144,6 +145,7 @@ trait UsesGoutte
             423, // Locked
             425, // Too Early
             429, // Too Many Requests
+            499, // Client Closed Request (Timeout)
             500, // Internal Server Error
             502, // Bad Gateway
             503, // Service Unavailable
@@ -169,7 +171,7 @@ trait UsesGoutte
 
     public function isPermanentError(): bool
     {
-        return $this->statusCode() >= 400 && !$this->isTemporaryResult();
+        return (!$this->statusCode() || $this->statusCode() >= 400) && !$this->isTemporaryResult();
     }
 
     public function usesTemporaryRedirect(): bool

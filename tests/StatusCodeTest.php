@@ -170,4 +170,54 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
         $this->assertLessThanOrEqual($t2 + 5, $web->retryAt);
     }
 
+    /**
+     * @test
+     */
+    public function testNetworkError()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
+
+        // Navigate to the test page which is invalid
+        $web->go('https://example.tld/');
+
+        // Check the status itself.
+        $this->assertSame(0, $web->statusCode);
+
+        // Check the detailed states.
+        $this->assertFalse($web->isSuccess);
+        $this->assertTrue($web->isTemporaryResult);
+        $this->assertFalse($web->isGone);
+        $this->assertFalse($web->isPermanentError);
+
+        // Check the request properties
+        $this->assertFalse($web->usesTemporaryRedirect);
+        $this->assertSame('', $web->permanentRedirectUrl);
+        $this->assertSame(0, $web->retryAt);
+    }
+
+    /**
+     * @test
+     */
+    public function testTimeout()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper(['timeout' => 0]);
+
+        // Navigate to the test page
+        $web->go('https://phpscraper.de/');
+
+        // Check the status itself.
+        $this->assertSame(499, $web->statusCode);
+
+        // Check the detailed states.
+        $this->assertFalse($web->isSuccess);
+        $this->assertTrue($web->isTemporaryResult);
+        $this->assertFalse($web->isGone);
+        $this->assertFalse($web->isPermanentError);
+
+        // Check the request properties
+        $this->assertFalse($web->usesTemporaryRedirect);
+        $this->assertSame('', $web->permanentRedirectUrl);
+        $this->assertSame(0, $web->retryAt);
+    }
+
 }

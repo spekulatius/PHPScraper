@@ -4,6 +4,9 @@ namespace Spekulatius\PHPScraper;
 
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpClient\Exception\TimeoutException;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 /**
  * Extended Goutte\Client with PHPScraper specific methods
@@ -66,7 +69,20 @@ class GoutteClient extends Client
             $this->retryRedirectAt = PHP_INT_MAX;
             $this->retryFailureAt = 0;
         }
-        return parent::request($method, $uri, $parameters, $files, $server, $content, $changeHistory);
+        try {
+            return parent::request($method, $uri, $parameters, $files, $server, $content, $changeHistory);
+        } catch (TimeoutException $e) {
+            $content = $e->getMessage();
+            $status = 499;    // Client Closed Request
+        } catch (TransportExceptionInterface $e) {
+            $content = $e->getMessage();
+            $status = 0;    // Network Error
+        }
+        $this->response = new Response($content, $status, ['Content-Type' => 'text/plain', 'Content-Length' => strlen($content), 'Date' => gmdate('D, d M Y H:i:s T')]);
+        $this->internalResponse = $this->filterResponse($this->response);
+        $this->redirect = null;
+        $this->crawler = $this->createCrawlerFromContent($this->internalRequest->getUri(), $this->internalResponse->getContent(), $this->internalResponse->getHeader('Content-Type') ?? '');
+        return $this->crawler;
     }
 
     /**
