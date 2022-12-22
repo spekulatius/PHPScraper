@@ -2,7 +2,6 @@
 
 namespace Spekulatius\PHPScraper;
 
-use Goutte\Client as GoutteClient;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -133,4 +132,81 @@ trait UsesGoutte
 
         return $this;
     }
+
+    public function isTemporaryResult(): bool
+    {
+        return $this->usesTemporaryRedirect() || \in_array($this->statusCode(), [
+            408, // Request Timeout
+            409, // Conflict
+            419, // Page Expired
+            420, // Enhance Your Calm
+            421, // Misdirected Request
+            423, // Locked
+            425, // Too Early
+            429, // Too Many Requests
+            499, // Client Closed Request (Timeout)
+            500, // Internal Server Error
+            502, // Bad Gateway
+            503, // Service Unavailable
+            504, // Gateway Timeout
+            507, // Insufficient Storage
+            520, // Web Server returned an unknown error
+            521, // Web Server is down
+            522, // Connection Timed Out
+            523, // Origin is unreachable
+            524, // A timeout occurred
+            525, // SSL Handshake Failed
+            527, // Railgun Error
+            529, // Site is overloaded
+            598, // Network read timeout error
+            599, // Network Connect Timeout Error
+        ]);
+    }
+
+    public function isGone(): bool
+    {
+        return !$this->isTemporaryResult() && $this->statusCode() === 410 /* Gone */;
+    }
+
+    public function isPermanentError(): bool
+    {
+        return (!$this->statusCode() || $this->statusCode() >= 400) && !$this->isTemporaryResult();
+    }
+
+    public function usesTemporaryRedirect(): bool
+    {
+        return $this->client ? $this->client->usesTemporaryRedirect : false;
+    }
+
+    public function permanentRedirectUrl(): string
+    {
+        return $this->client ? ($this->client->permanentRedirectUrl ?? '') : '';
+    }
+
+    public function retryAt(): int
+    {
+        $retryAt = $this->client ? ($this->client->retryAt()) : 0;
+        if ($retryAt) {
+            return $retryAt;
+        }
+        if ($this->statusCode() === 509 /* Bandwidth Limit Exceeded */) {
+            return strtotime('next month 12:00 UTC');
+        }    // give providers in each timezone the chance to reset the traffic quota for month
+        return 0;
+    }
+
+    public function statusCode(): int
+    {
+        if ($this->currentPage === null) {
+            throw new \Exception('You can not access the status code before your first navigation using `go`.');
+        }
+
+        return $this->client->getResponse()->getStatusCode();
+    }
+
+    public function isSuccess(): bool
+    {
+        return $this->statusCode() >= 200 && $this->statusCode() <= 299;
+    }
+
 }
