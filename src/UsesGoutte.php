@@ -136,7 +136,6 @@ trait UsesGoutte
     public function isTemporaryResult(): bool
     {
         return $this->usesTemporaryRedirect() || \in_array($this->statusCode(), [
-            0,   // Network Error
             408, // Request Timeout
             409, // Conflict
             419, // Page Expired

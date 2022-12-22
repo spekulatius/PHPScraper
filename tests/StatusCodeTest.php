@@ -185,9 +185,9 @@ class StatusCodeTest extends \PHPUnit\Framework\TestCase
 
         // Check the detailed states.
         $this->assertFalse($web->isSuccess);
-        $this->assertTrue($web->isTemporaryResult);
+        $this->assertFalse($web->isTemporaryResult);
         $this->assertFalse($web->isGone);
-        $this->assertFalse($web->isPermanentError);
+        $this->assertTrue($web->isPermanentError);
 
         // Check the request properties
         $this->assertFalse($web->usesTemporaryRedirect);
