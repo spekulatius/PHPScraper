@@ -41,4 +41,18 @@ class BaseHrefTest extends \PHPUnit\Framework\TestCase
             $web->baseHref
         );
     }
+
+    public function testBaseHrefContainRelativePath()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
+
+        // Navigate to the test page.
+        // Contains: <base href="/myglasgow/digitalaccessibility/"> (relative path)
+        $web->go('https://www.gla.ac.uk/myglasgow/digitalaccessibility/');
+        // Check the baseHref
+        $this->assertSame(
+            '/myglasgow/digitalaccessibility/',
+            $web->baseHref
+        );
+    }
 }
