@@ -75,12 +75,12 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         $web = new \Spekulatius\PHPScraper\PHPScraper;
 
         // Navigate to the test page.
-        // Contains: <base href="/myglasgow/digitalaccessibility/">
-        $web->go('https://www.gla.ac.uk/myglasgow/digitalaccessibility/');
+        // Contains: <base href="/links/invalid-base-href.html">
+        $web->go('https://test-pages.phpscraper.de/links/invalid-base-href.html');
 
         // Check the base href being passed through the current base host.
         $this->assertSame(
-            'https://www.gla.ac.uk',
+            'https://test-pages.phpscraper.de',
             $web->currentBaseHost
         );
     }
@@ -200,17 +200,17 @@ class UrlTest extends \PHPUnit\Framework\TestCase
          * It contains:
          *
          * ```html
-         * <base href="/myglasgow/digitalaccessibility/">
+         * <base href="/links/invalid-base-href.html">
          * ```
          *
          * While it's located on `test-pages.phpscraper.de`.
          *
          * This page isn't actually used. It's purely to set the context.
          */
-        $web->go('https://www.gla.ac.uk/myglasgow/digitalaccessibility/');
+        $web->go('https://test-pages.phpscraper.de/links/invalid-base-href.html');
 
         $this->assertSame(
-            'https://www.gla.ac.uk/test/index.html',
+            'https://test-pages.phpscraper.de/test/index.html',
             $web->makeUrlAbsolute('test/index.html'),
         );
     }

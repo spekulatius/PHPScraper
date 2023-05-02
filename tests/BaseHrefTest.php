@@ -44,14 +44,14 @@ class BaseHrefTest extends \PHPUnit\Framework\TestCase
 
     public function testBaseHrefContainRelativePath()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new \Spekulatius\PHPScraper\PHPScraper(['disable_ssl' => true]);
 
         // Navigate to the test page.
-        // Contains: <base href="/myglasgow/digitalaccessibility/"> (relative path)
-        $web->go('https://www.gla.ac.uk/myglasgow/digitalaccessibility/');
+        // Contains: <base href="/links/invalid-base-href.html"> (relative path)
+        $web->go('https://test-pages.phpscraper.de/links/invalid-base-href.html');
         // Check the baseHref
         $this->assertSame(
-            '/myglasgow/digitalaccessibility/',
+            '/links/invalid-base-href.html',
             $web->baseHref
         );
     }
