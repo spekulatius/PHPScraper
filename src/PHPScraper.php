@@ -96,7 +96,7 @@ class PHPScraper
             'verify_peer' => $this->config['disable_ssl'],
         ]);
 
-        // Goutte Client and set some config needed for it.
+        // BrowserKit Client and set some config needed for it.
         $client = new HttpBrowser($httpClient);
         $client->followRedirects($this->config['follow_redirects']);
         $client->followMetaRefresh($this->config['follow_meta_refresh']);

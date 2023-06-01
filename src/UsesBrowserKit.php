@@ -6,7 +6,7 @@ use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-trait UsesGoutte
+trait UsesBrowserKit
 {
     /**
      * Holds the client

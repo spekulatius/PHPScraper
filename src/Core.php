@@ -14,9 +14,9 @@ class Core
     use UsesUrls;
 
     /**
-     * This trait manages the interaction with Goutte.
+     * This trait manages the interaction with BrowserKit (formerly Goutte).
      */
-    use UsesGoutte;
+    use UsesBrowserKit;
 
     /**
      * This contains the basic filter methods. Make accessing data easier.
