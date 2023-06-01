@@ -33,7 +33,7 @@
         "symfony/thanks": "^1.0.0",
         "phpunit/phpunit": "^8.0.0|^9.0.0",
         "illuminate/collections": "^8.0.0|^9.0.0",
-        "phpstan/phpstan": "^1.9"
+        "phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "psr-4": {
@@ -47,7 +47,8 @@
     },
     "scripts": {
         "test": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=/tmp --order-by=defects --colors=always --stop-on-failure",
-        "ct": "while true; do composer run test; sleep 30; done"
+        "ct": "while true; do composer run test; sleep 30; done",
+        "phpstan": "vendor/bin/phpstan -v"
     },
     "funding": [
         {

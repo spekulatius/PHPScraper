@@ -1,0 +1,7 @@
+parameters:
+  level: 3
+  paths:
+    - src
+  excludePaths:
+    - vendor
+  tmpDir: /tmp/phpscraper-phpstan/
