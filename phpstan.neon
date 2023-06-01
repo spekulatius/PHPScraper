@@ -4,4 +4,4 @@ parameters:
     - src
   excludePaths:
     - vendor
-  tmpDir: .tmp
+  tmpDir: /tmp/phpscraper-phpstan/
