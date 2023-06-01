@@ -2,6 +2,7 @@ name: Tests
 on: [pull_request]
 
 jobs:
+  ## PHPUNIT
   phpunit:
     runs-on: ubuntu-latest
     strategy:
@@ -18,3 +19,25 @@ jobs:
       - run: php -v
       - run: composer update ${{ matrix.composer-flags }} --no-interaction --no-progress --prefer-dist --ansi
       - run: ./vendor/bin/phpunit --color=always
+
+  ## PHPSTAN
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@2.21.0
+        with:
+          php-version: '8.0'
+          coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          update: true
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - name: PHPStan tests
+        run: composer phpstan
