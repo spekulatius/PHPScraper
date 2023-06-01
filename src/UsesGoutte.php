@@ -2,7 +2,7 @@
 
 namespace Spekulatius\PHPScraper;
 
-use Goutte\Client as GoutteClient;
+use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -11,7 +11,7 @@ trait UsesGoutte
     /**
      * Holds the client
      *
-     * @var \Goutte\Client
+     * @var \Symfony\Component\BrowserKit\HttpBrowser
      */
     protected $client = null;
 
@@ -32,9 +32,9 @@ trait UsesGoutte
     /**
      * Overwrites the client
      *
-     * @param \Goutte\Client $client
+     * @param \Symfony\Component\BrowserKit\HttpBrowser $client
      */
-    public function setClient(GoutteClient $client): self
+    public function setClient(HttpBrowser $client): self
     {
         $this->client = $client;
 
@@ -56,9 +56,9 @@ trait UsesGoutte
     /**
      * Retrieve the client
      *
-     * @return \Goutte\Client $client
+     * @return \Symfony\Component\BrowserKit\HttpBrowser $client
      */
-    public function client(): GoutteClient
+    public function client(): HttpBrowser
     {
         return $this->client;
     }

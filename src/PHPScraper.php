@@ -8,7 +8,7 @@ namespace Spekulatius\PHPScraper;
  * Most calls are passed through to the Core class.
  */
 
-use Goutte\Client as GoutteClient;
+use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
 
 class PHPScraper
@@ -97,7 +97,7 @@ class PHPScraper
         ]);
 
         // Goutte Client and set some config needed for it.
-        $client = new GoutteClient($httpClient);
+        $client = new HttpBrowser($httpClient);
         $client->followRedirects($this->config['follow_redirects']);
         $client->followMetaRefresh($this->config['follow_meta_refresh']);
         $client->setMaxRedirects($this->config['max_redirects']);
