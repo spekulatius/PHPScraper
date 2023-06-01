@@ -299,7 +299,7 @@ trait UsesFileParsers
      * @param ?string $xmlStringOrUrl
      * @return array $data
      */
-    public function parseXML(?string $xmlStringOrUrl = null): array
+    public function parseXml(?string $xmlStringOrUrl = null): array
     {
         try {
             // Try to parse the XML. If it works we have got an XML string.
