@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [#187](https://github.com/spekulatius/PHPScraper/issues/187): Prepare v2
 - [#185](https://github.com/spekulatius/PHPScraper/issues/185): Adding PHP 8.3 to test pipeline
+- [#184](https://github.com/spekulatius/PHPScraper/issues/184): Adding PHPStan GitHub Action. Thank you @nadar!
 - [#183](https://github.com/spekulatius/PHPScraper/issues/183): Switch from Goutte to BrowserKit
 - [#182](https://github.com/spekulatius/PHPScraper/issues/182): Drop PHP 7.3 and 7.4
 - [#174](https://github.com/spekulatius/PHPScraper/issues/174): Fix local testing
