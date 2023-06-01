@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [8.0, 8.1, 8.2]
+        php-version: [8.0, 8.1, 8.2, 8.3]
         composer-flags: [null]
     steps:
       - uses: actions/checkout@v2
