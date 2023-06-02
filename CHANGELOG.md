@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 2.0.0 (2023-06-01)
 
 - [#187](https://github.com/spekulatius/PHPScraper/issues/187): Prepare v2
+- [#188](https://github.com/spekulatius/PHPScraper/issues/188): Support PHPStan for Windows Users
 - [#185](https://github.com/spekulatius/PHPScraper/issues/185): Adding PHP 8.3 to test pipeline
 - [#184](https://github.com/spekulatius/PHPScraper/issues/184): Adding PHPStan GitHub Action. Thank you @nadar!
 - [#183](https://github.com/spekulatius/PHPScraper/issues/183): Switch from Goutte to BrowserKit
