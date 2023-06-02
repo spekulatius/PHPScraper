@@ -9,3 +9,4 @@ websites/.yarnrc.yml
 .vscode
 .history
 .notes
+.tmp/
