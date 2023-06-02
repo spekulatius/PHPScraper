@@ -334,6 +334,7 @@ trait UsesFileParsers
         // XML parser
         $xml = simplexml_load_string(trim($xmlString), 'SimpleXMLElement', LIBXML_NOCDATA);
 
+        // Convert XML to JSON and then to an associative array
         return json_decode(json_encode($xml), true);
     }
 }
