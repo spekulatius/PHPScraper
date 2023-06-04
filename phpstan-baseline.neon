@@ -356,6 +356,16 @@ parameters:
 			path: tests/DownloadTest.php
 
 		-
+			message: "#^Cannot access offset 'loc' on mixed\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Cannot access offset 'url' on mixed\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
 			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\DownloadTest\\:\\:testDifferentUrlTypes\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: tests/DownloadTest.php
@@ -367,6 +377,11 @@ parameters:
 
 		-
 			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\DownloadTest\\:\\:testMissingDownload\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$array of function array_map expects array, mixed given\\.$#"
 			count: 1
 			path: tests/DownloadTest.php
 

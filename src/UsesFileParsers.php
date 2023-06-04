@@ -192,7 +192,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $csvStringOrUrl || $this->currentPage === null ? $csvStringOrUrl : $this->currentUrl()
+                    $csvStringOrUrl ?? $this->currentUrl()
                 ),
                 $separator,
                 $enclosure,
@@ -202,7 +202,7 @@ trait UsesFileParsers
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $result;
+        return (array) $result;
     }
 
     /**
@@ -248,7 +248,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $csvStringOrUrl || $this->currentPage === null ? $csvStringOrUrl : $this->currentUrl()
+                    $csvStringOrUrl ?? $this->currentUrl()
                 ),
                 $separator,
                 $enclosure,
@@ -258,7 +258,7 @@ trait UsesFileParsers
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $result;
+        return (array) $result;
     }
 
     /**
@@ -297,7 +297,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $jsonStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $jsonStringOrUrl || $this->currentPage === null ? $jsonStringOrUrl : $this->currentUrl()
+                    $jsonStringOrUrl ?? $this->currentUrl()
                 ),
                 true
             );
@@ -305,7 +305,7 @@ trait UsesFileParsers
             throw new \Exception('Failed to parse JSON: ' . $e->getMessage());
         }
 
-        return $result;
+        return (array) $result;
     }
 
     /**
@@ -340,7 +340,7 @@ trait UsesFileParsers
              * - `$web->go('...')->parseXml()`.
              */
             $result = $result ?? $this->xmlDecode($this->fetchAsset(
-                $xmlStringOrUrl || $this->currentPage === null ? $xmlStringOrUrl : $this->currentUrl()
+                $xmlStringOrUrl ?? $this->currentUrl()
             ));
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse XML: ' . $e->getMessage());
@@ -355,6 +355,6 @@ trait UsesFileParsers
         $xml = simplexml_load_string(trim($xmlString), 'SimpleXMLElement', LIBXML_NOCDATA);
 
         // Convert XML to JSON and then to an associative array
-        return json_decode((string) json_encode($xml), true);
+        return (array) json_decode((string) json_encode($xml), true);
     }
 }

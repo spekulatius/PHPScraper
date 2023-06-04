@@ -107,7 +107,7 @@ trait UsesBrowserKit
             ->httpClient
             ->request(
                 'GET',
-                ($this->currentPage === null) ? $url : $this->makeUrlAbsolute($url),
+                ($this->currentPage === null) ? $url : (string) $this->makeUrlAbsolute($url),
             )
             ->getContent();
     }
