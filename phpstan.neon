@@ -4,4 +4,4 @@ parameters:
     - src
   excludePaths:
     - vendor
-  tmpDir: ./tmp/phpstan/
+  tmpDir: ./.tmp/phpstan/
