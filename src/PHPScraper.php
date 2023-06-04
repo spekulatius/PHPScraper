@@ -86,7 +86,7 @@ class PHPScraper
         ];
 
         // Add the defaults in
-        $this->config = array_merge($defaults, $config);
+        $this->config = array_merge($defaults, $config ?? []);
 
         // Symfony HttpClient
         $httpClient = SymfonyHttpClient::create([
@@ -132,6 +132,9 @@ class PHPScraper
      */
     public function __call(string $name, array $arguments = null)
     {
+        // Ensure $arguments is an array (even if empty)
+        $arguments = $arguments ?? [];
+
         if ($name == 'call') {
             $name = $arguments[0];
             $result = $this->core->$name();

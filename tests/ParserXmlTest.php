@@ -15,7 +15,7 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
         // For the reference we are using a simple XML and parse it.
         $xmlString = $web->fetchAsset('https://test-pages.phpscraper.de/sitemap.xml');
         $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
-        $xmlData = json_decode(json_encode($xml), true);
+        $xmlData = json_decode((string) json_encode($xml), true);
 
 
         // Case 1: Passing in an XML string in.

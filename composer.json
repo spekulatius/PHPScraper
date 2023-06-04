@@ -47,7 +47,7 @@
     },
     "scripts": {
         "test": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=/tmp --order-by=defects --colors=always --stop-on-failure",
-        "phpstan": "vendor/bin/phpstan -v"
+        "phpstan": "vendor/bin/phpstan analyse"
     },
     "funding": [
         {

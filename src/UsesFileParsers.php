@@ -21,7 +21,7 @@ trait UsesFileParsers
     ): array {
         try {
             $csv = array_map(
-                fn ($line) => str_getcsv($line, $separator, $enclosure, $escape),
+                fn ($line) => str_getcsv($line, $separator ?? ',', $enclosure ?? '"', $escape ?? "\\"),
                 explode("\n", $csvString)
             );
 
@@ -335,6 +335,6 @@ trait UsesFileParsers
         $xml = simplexml_load_string(trim($xmlString), 'SimpleXMLElement', LIBXML_NOCDATA);
 
         // Convert XML to JSON and then to an associative array
-        return json_decode(json_encode($xml), true);
+        return json_decode((string) json_encode($xml), true);
     }
 }

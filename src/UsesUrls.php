@@ -29,7 +29,7 @@ trait UsesUrls
      *
      * @return string $host
      */
-    public function currentHost(): string
+    public function currentHost(): ?string
     {
         return Uri::createFromString($this->currentUrl())->getHost();
     }
