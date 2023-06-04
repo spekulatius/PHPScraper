@@ -1197,12 +1197,12 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseCsv\\(\\)\\.$#"
-			count: 2
+			count: 3
 			path: tests/ParserCsvTest.php
 
 		-
 			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseCsvWithHeader\\(\\)\\.$#"
-			count: 3
+			count: 4
 			path: tests/ParserCsvTest.php
 
 		-
@@ -1236,6 +1236,11 @@ parameters:
 			path: tests/ParserCsvTest.php
 
 		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvParsingContext\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
 			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testDifferentCsvCalls\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: tests/ParserCsvTest.php
@@ -1257,11 +1262,16 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseJson\\(\\)\\.$#"
-			count: 2
+			count: 3
 			path: tests/ParserJsonTest.php
 
 		-
 			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserJsonTest\\:\\:testDifferentJsonCalls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserJsonTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserJsonTest\\:\\:testJsonParsingContext\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: tests/ParserJsonTest.php
 
@@ -1277,11 +1287,16 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseXml\\(\\)\\.$#"
-			count: 2
+			count: 3
 			path: tests/ParserXmlTest.php
 
 		-
 			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserXmlTest\\:\\:testDifferentXmlCalls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserXmlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserXmlTest\\:\\:testJsonParsingContext\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: tests/ParserXmlTest.php
 

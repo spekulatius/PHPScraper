@@ -164,6 +164,11 @@ trait UsesFileParsers
         ?string $enclosure = null,
         ?string $escape = null
     ): array {
+        // Check if we got either a current page or at least a URL string to process
+        if ($csvStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseCsv() without parameter or initial navigation.');
+        }
+
         try {
             // If we have a string, let's try to parse the CSV from this.
             if ($csvStringOrUrl !== null) {
@@ -215,6 +220,11 @@ trait UsesFileParsers
         ?string $enclosure = null,
         ?string $escape = null
     ): array {
+        // Check if we got either a current page or at least a URL string to process
+        if ($csvStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseCsvWithHeader() without parameter or initial navigation.');
+        }
+
         try {
             // If we have a string, let's try to parse the CSV from this.
             if ($csvStringOrUrl !== null) {
@@ -259,6 +269,11 @@ trait UsesFileParsers
      */
     public function parseJson(?string $jsonStringOrUrl = null): array
     {
+        // Check if we got either a current page or at least a URL string to process
+        if ($jsonStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseJson() without parameter or initial navigation.');
+        }
+
         try {
             // If we have a string, let's try to parse the JSON from this.
             if ($jsonStringOrUrl !== null) {
@@ -301,6 +316,11 @@ trait UsesFileParsers
      */
     public function parseXml(?string $xmlStringOrUrl = null): array
     {
+        // Check if we got either a current page or at least a URL string to process
+        if ($xmlStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseXml() without parameter or initial navigation.');
+        }
+
         try {
             // Try to parse the XML. If it works we have got an XML string.
             if ($xmlStringOrUrl !== null) {

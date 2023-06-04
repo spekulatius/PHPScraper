@@ -7,6 +7,40 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
+    public function testCsvParsingContext()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
+
+        // This tests ensures an exception is thrown, if no context is given.
+        // Context means either it's been navigated before (URL context) or get something to (fetch +) parse
+        try {
+            $web = new \Spekulatius\PHPScraper\PHPScraper;
+            $web->parseCsv();
+        } catch (\Exception $e) {
+            // Did we get the expected exception?
+            $this->assertSame(
+                'You can not call parseCsv() without parameter or initial navigation.',
+                $e->getMessage()
+            );
+        }
+
+        // This tests ensures an exception is thrown, if no context is given.
+        // Context means either it's been navigated before (URL context) or get something to (fetch +) parse
+        try {
+            $web = new \Spekulatius\PHPScraper\PHPScraper;
+            $web->parseCsvWithHeader();
+        } catch (\Exception $e) {
+            // Did we get the expected exception?
+            $this->assertSame(
+                'You can not call parseCsvWithHeader() without parameter or initial navigation.',
+                $e->getMessage()
+            );
+        }
+    }
+
+    /**
+     * @test
+     */
     public function testCsvDecodeRaw()
     {
         $web = new \Spekulatius\PHPScraper\PHPScraper;
