@@ -24,7 +24,7 @@
   </p>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *go* to a website and get the relevant information for your project.
+PHPScraper is a versatile web-utility for PHP. Its primary objective is to streamline the process of extracting information from websites, allowing you to focus on accomplishing tasks without getting caught up in the complexities of selectors, data structure preparation, and conversion.
 
 Under the hood, it uses
 
