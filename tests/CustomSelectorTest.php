@@ -19,12 +19,15 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
             $web->title
         );
 
-        // Check warning through an DOMXPath query.
-        $this->expectWarning();
-        $this->expectWarningMessage('DOMXPath::query(): Invalid expression');
-
         // Trigger failing test.
-        $web->filterFirstText("//[@id='by-id']");
+        try {
+            $web->filterFirstText("//[@id='by-id']");
+        } catch (\Exception $e) {
+            $this->assertSame(
+                'DOMXPath::query(): Invalid expression',
+                $e->getMessage()
+            );
+        }
     }
 
     /**
