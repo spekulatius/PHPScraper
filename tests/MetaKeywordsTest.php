@@ -2,7 +2,7 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class MetaKeywordTest extends \PHPUnit\Framework\TestCase
+class MetaKeywordsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
