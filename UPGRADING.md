@@ -22,4 +22,4 @@ This document will help you upgrading PHPScraper from one version to a new one.
 
 - Support for PHP 7.x was dropped. PHP 8.0 is the minimum for v2.
 - The publicly accessable function `parseXML` was renamed to `parseXml`.
-- The codebase has been analysed with PHPStan and hardened manually. Due to this, various return types have changed. See [v2 pull request](https://github.com/spekulatius/PHPScraper/pull/187/files) for details.
+- The codebase has been analysed with PHPStan and hardened manually. Due to this, some return types have changed. See [v2 pull request](https://github.com/spekulatius/PHPScraper/pull/187/files) for details.
