@@ -1,0 +1,1451 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Dead catch \\- Exception is never thrown in the try block\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:castType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:cleanOutlineWithParagraphs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:cleanParagraphs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:contentKeywords\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:contentKeywordsWithScores\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:csvDecode\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:csvDecodeRaw\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:csvDecodeWithHeader\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:csvDecodeWithHeaderRaw\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:externalLinks\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:h1\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:h2\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:h3\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:h4\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:h5\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:h6\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:headers\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:headings\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:images\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:imagesWithDetails\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:internalLinks\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:keywords\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:links\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:linksWithDetails\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:lists\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:metaTags\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:outlineWithParagraphs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:parseCsv\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:parseCsvWithHeader\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:parseJson\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:parseXml\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:rssRaw\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:searchIndexRaw\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:sitemapRaw\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:viewport\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Core\\:\\:xmlDecode\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$array has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:__call\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/PHPScraper.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:__construct\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/PHPScraper.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:setConfig\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/PHPScraper.php
+
+		-
+			message: "#^Property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$config type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/PHPScraper.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$baseHref\\.$#"
+			count: 2
+			path: tests/BaseHrefTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/BaseHrefTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\BaseHrefTest\\:\\:testBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BaseHrefTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\BaseHrefTest\\:\\:testMissingBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BaseHrefTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$canonical\\.$#"
+			count: 2
+			path: tests/CanonicalTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/CanonicalTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CanonicalTest\\:\\:testMissingCanonical\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CanonicalTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CanonicalTest\\:\\:testWithCanonical\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CanonicalTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentUrl\\.$#"
+			count: 1
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h1\\.$#"
+			count: 1
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$title\\.$#"
+			count: 2
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 5
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:title\\(\\)\\.$#"
+			count: 1
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CoreTest\\:\\:testBasicChainability\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CoreTest\\:\\:testChangeOfCurrentPage\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CoreTest\\:\\:testMethodAndPropertyCallsAreEqual\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CoreTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$title\\.$#"
+			count: 4
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:filterFirst\\(\\)\\.$#"
+			count: 1
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:filterFirstText\\(\\)\\.$#"
+			count: 2
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:filterTexts\\(\\)\\.$#"
+			count: 2
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 4
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CustomSelectorTest\\:\\:testFailedSelectionBasedOnId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CustomSelectorTest\\:\\:testSelectionBasedOnClass\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CustomSelectorTest\\:\\:testSelectionBasedOnId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\CustomSelectorTest\\:\\:testSelectionBasedOnTag\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CustomSelectorTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentBaseHost\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$sitemapUrl\\.$#"
+			count: 2
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:fetchAsset\\(\\)\\.$#"
+			count: 6
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Cannot access offset 'loc' on mixed\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Cannot access offset 'url' on mixed\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\DownloadTest\\:\\:testDifferentUrlTypes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\DownloadTest\\:\\:testDownload\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\DownloadTest\\:\\:testMissingDownload\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$array of function array_map expects array, mixed given\\.$#"
+			count: 1
+			path: tests/DownloadTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentBaseHost\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$rssUrls\\.$#"
+			count: 4
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 6
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:rss\\(\\)\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:rssRaw\\(\\)\\.$#"
+			count: 7
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedRssTest\\:\\:testCustomRssUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedRssTest\\:\\:testDifferentRssUrlTypes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedRssTest\\:\\:testMissingRssUrls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedRssTest\\:\\:testRss\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedRssTest\\:\\:testRssRawContent\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedRssTest\\:\\:testRssUrls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedRssTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentBaseHost\\.$#"
+			count: 2
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$searchIndex\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$searchIndexRaw\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$searchIndexUrl\\.$#"
+			count: 5
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 6
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:searchIndexRaw\\(\\)\\.$#"
+			count: 8
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSearchIndexTest\\:\\:testCustomSearchIndexUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSearchIndexTest\\:\\:testDefaultSearchIndexUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSearchIndexTest\\:\\:testDifferentSearchIndexUrlTypes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSearchIndexTest\\:\\:testSearchIndex\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSearchIndexTest\\:\\:testSearchIndexRaw\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSearchIndexTest\\:\\:testSearchIndexUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSearchIndexTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentBaseHost\\.$#"
+			count: 2
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$sitemap\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$sitemapRaw\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$sitemapUrl\\.$#"
+			count: 5
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 6
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:sitemapRaw\\(\\)\\.$#"
+			count: 8
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSitemapTest\\:\\:testCustomSitemapUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSitemapTest\\:\\:testDefaultSitemapUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSitemapTest\\:\\:testDifferentSitemapUrlTypes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSitemapTest\\:\\:testSitemap\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSitemapTest\\:\\:testSitemapRaw\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\FeedSitemapTest\\:\\:testSitemapUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FeedSitemapTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h1\\.$#"
+			count: 4
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h2\\.$#"
+			count: 9
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h3\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h4\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h5\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h6\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$headings\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 5
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\HeadingTest\\:\\:testChineseCharacters\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\HeadingTest\\:\\:testGermanUmlaute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\HeadingTest\\:\\:testLoremIpsum\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\HeadingTest\\:\\:testMissingHeadings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\HeadingTest\\:\\:testWithHTMLEntity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadingTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h1\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$images\\.$#"
+			count: 11
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$imagesWithDetails\\.$#"
+			count: 7
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 7
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testChineseCharacters\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testGermanUmlaute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testHeight\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testLoremIpsum\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testNoImages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ImageTest\\:\\:testWidth\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ImageTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$contentKeywords\\.$#"
+			count: 1
+			path: tests/KeywordTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$contentKeywordsWithScores\\.$#"
+			count: 1
+			path: tests/KeywordTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/KeywordTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\KeywordTest\\:\\:testKeywordExtraction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeywordTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\KeywordTest\\:\\:testKeywordExtractionWithScores\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeywordTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$externalLinks\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$internalLinks\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$links\\.$#"
+			count: 8
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$linksWithDetails\\.$#"
+			count: 5
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 7
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testExternalLinks\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testImageUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testInternalLinks\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testNoLinks\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testRel\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\LinkTest\\:\\:testTarget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LinkTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$lists\\.$#"
+			count: 1
+			path: tests/ListsTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$orderedLists\\.$#"
+			count: 2
+			path: tests/ListsTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$unorderedLists\\.$#"
+			count: 2
+			path: tests/ListsTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 1
+			path: tests/ListsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ListsTest\\:\\:checkCountTest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ListsTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$author\\.$#"
+			count: 5
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 5
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaAuthorTest\\:\\:testChineseCharacters\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaAuthorTest\\:\\:testGermanUmlaute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaAuthorTest\\:\\:testLoremIpsum\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaAuthorTest\\:\\:testMissingAuthor\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaAuthorTest\\:\\:testWithHTMLEntity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaAuthorTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$charset\\.$#"
+			count: 2
+			path: tests/MetaCharsetTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/MetaCharsetTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaCharsetTest\\:\\:testMissingCharset\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaCharsetTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaCharsetTest\\:\\:testWithCharset\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaCharsetTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$contentType\\.$#"
+			count: 2
+			path: tests/MetaContentTypeTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/MetaContentTypeTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaContentTypeTest\\:\\:testMissingContentType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaContentTypeTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaContentTypeTest\\:\\:testWithContentType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaContentTypeTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$csrfToken\\.$#"
+			count: 2
+			path: tests/MetaCsrfTokenTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/MetaCsrfTokenTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaCsrfTokenTest\\:\\:testMissingCsrfToken\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaCsrfTokenTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaCsrfTokenTest\\:\\:testWithCsrfToken\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaCsrfTokenTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$description\\.$#"
+			count: 5
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 5
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaDescriptionTest\\:\\:testChineseCharacters\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaDescriptionTest\\:\\:testGermanUmlaute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaDescriptionTest\\:\\:testLoremIpsum\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaDescriptionTest\\:\\:testMissingDescription\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaDescriptionTest\\:\\:testWithHTMLEntity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaDescriptionTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$image\\.$#"
+			count: 6
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 6
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:image\\(\\)\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaImageTest\\:\\:testAbsolutePath\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaImageTest\\:\\:testAbsolutePathWithBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaImageTest\\:\\:testCallMethodsAreEqual\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaImageTest\\:\\:testMissingImage\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaImageTest\\:\\:testRelativePath\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaImageTest\\:\\:testRelativePathBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaImageTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$keywordString\\.$#"
+			count: 4
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$keywords\\.$#"
+			count: 8
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 8
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testChineseCharacters\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testGermanUmlaute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testIrregularSpaces\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testLoremIpsum\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testMissingKeywords\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testNoSpaces\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testSpaces\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaKeywordsTest\\:\\:testWithHTMLEntity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaKeywordsTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$viewport\\.$#"
+			count: 2
+			path: tests/MetaViewportTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$viewportString\\.$#"
+			count: 2
+			path: tests/MetaViewportTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/MetaViewportTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaViewportTest\\:\\:testMissingViewport\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaViewportTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\MetaViewportTest\\:\\:testWithViewport\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MetaViewportTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentUrl\\.$#"
+			count: 6
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$h1\\.$#"
+			count: 7
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:clickLink\\(\\)\\.$#"
+			count: 5
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 6
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NavigationTest\\:\\:testClickLinkChainability\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NavigationTest\\:\\:testLeavePageByText\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NavigationTest\\:\\:testLeavePageByURL\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NavigationTest\\:\\:testLeavePageWithRedirect\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NavigationTest\\:\\:testSurfWithAbsoluteLink\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NavigationTest\\:\\:testSurfWithRelativeLink\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NavigationTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$title\\.$#"
+			count: 1
+			path: tests/NotFoundTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 1
+			path: tests/NotFoundTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\NotFoundTest\\:\\:testPageMissing\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NotFoundTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$openGraph\\.$#"
+			count: 4
+			path: tests/OpenGraphTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/OpenGraphTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\OpenGraphTest\\:\\:testMissingOpenGraph\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OpenGraphTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\OpenGraphTest\\:\\:testOpenGraph\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OpenGraphTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$outline\\.$#"
+			count: 1
+			path: tests/OutlineTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$outlineWithParagraphs\\.$#"
+			count: 1
+			path: tests/OutlineTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/OutlineTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\OutlineTest\\:\\:outlineTest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OutlineTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\OutlineTest\\:\\:outlineWithParagraphsTest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OutlineTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$cleanParagraphs\\.$#"
+			count: 1
+			path: tests/ParagraphsTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$paragraphs\\.$#"
+			count: 1
+			path: tests/ParagraphsTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/ParagraphsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParagraphsTest\\:\\:cleanParagraphTest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParagraphsTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParagraphsTest\\:\\:paragraphTest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParagraphsTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:csvDecode\\(\\)\\.$#"
+			count: 3
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:csvDecodeRaw\\(\\)\\.$#"
+			count: 2
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:csvDecodeWithHeader\\(\\)\\.$#"
+			count: 2
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:csvDecodeWithHeaderRaw\\(\\)\\.$#"
+			count: 2
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:fetchAsset\\(\\)\\.$#"
+			count: 3
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 12
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseCsv\\(\\)\\.$#"
+			count: 3
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseCsvWithHeader\\(\\)\\.$#"
+			count: 4
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvDecode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvDecodeAndCustomEncoding\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvDecodeRaw\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvDecodeWithHeaderAndCasting\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvDecodeWithHeaderAndCustomEncoding\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvDecodeWithHeaderRaw\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testCsvParsingContext\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testDifferentCsvCalls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserCsvTest\\:\\:testDifferentCsvWithHeaderCalls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserCsvTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:fetchAsset\\(\\)\\.$#"
+			count: 1
+			path: tests/ParserJsonTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 4
+			path: tests/ParserJsonTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseJson\\(\\)\\.$#"
+			count: 3
+			path: tests/ParserJsonTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserJsonTest\\:\\:testDifferentJsonCalls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserJsonTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserJsonTest\\:\\:testJsonParsingContext\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserJsonTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:fetchAsset\\(\\)\\.$#"
+			count: 1
+			path: tests/ParserXmlTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 4
+			path: tests/ParserXmlTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:parseXml\\(\\)\\.$#"
+			count: 3
+			path: tests/ParserXmlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserXmlTest\\:\\:testDifferentXmlCalls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserXmlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\ParserXmlTest\\:\\:testJsonParsingContext\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ParserXmlTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentUrl\\.$#"
+			count: 3
+			path: tests/RedirectTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/RedirectTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\RedirectTest\\:\\:testDisabledRedirect\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RedirectTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\RedirectTest\\:\\:testRedirect\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RedirectTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$title\\.$#"
+			count: 6
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 6
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TitleTest\\:\\:testChineseCharacters\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TitleTest\\:\\:testGermanUmlaute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TitleTest\\:\\:testLongTitle\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TitleTest\\:\\:testLoremIpsum\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TitleTest\\:\\:testMissingTitle\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TitleTest\\:\\:testWithHTMLEntity\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TitleTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$twitterCard\\.$#"
+			count: 4
+			path: tests/TwitterCardTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 2
+			path: tests/TwitterCardTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TwitterCardTest\\:\\:testMissingTwitterCard\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TwitterCardTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\TwitterCardTest\\:\\:testTwitterCard\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TwitterCardTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentBaseHost\\.$#"
+			count: 2
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentHost\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Access to an undefined property Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:\\$currentUrl\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:go\\(\\)\\.$#"
+			count: 5
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method Spekulatius\\\\PHPScraper\\\\PHPScraper\\:\\:makeUrlAbsolute\\(\\)\\.$#"
+			count: 16
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\UrlTest\\:\\:testCurrentBaseHostWithBase\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\UrlTest\\:\\:testMakeUrlAbsolute\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\UrlTest\\:\\:testMakeUrlAbsoluteConsiderBaseHref\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\UrlTest\\:\\:testMakeUrlAbsoluteWithBaseHost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\UrlTest\\:\\:testNullPassingThrough\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UrlTest.php
+
+		-
+			message: "#^Method Spekulatius\\\\PHPScraper\\\\Tests\\\\UrlTest\\:\\:validateUriTest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UrlTest.php

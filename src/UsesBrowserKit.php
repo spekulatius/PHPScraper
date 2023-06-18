@@ -6,7 +6,7 @@ use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-trait UsesGoutte
+trait UsesBrowserKit
 {
     /**
      * Holds the client
@@ -107,7 +107,7 @@ trait UsesGoutte
             ->httpClient
             ->request(
                 'GET',
-                ($this->currentPage === null) ? $url : $this->makeUrlAbsolute($url),
+                ($this->currentPage === null) ? $url : (string) $this->makeUrlAbsolute($url),
             )
             ->getContent();
     }

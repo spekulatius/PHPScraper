@@ -1,6 +1,6 @@
 {
     "name": "spekulatius/phpscraper",
-    "description": "PHPScraper, built with simplicity in mind. See tests/ for examples.",
+    "description": "PHPScraper, built with simplicity in mind. See tests/ for more examples.",
     "keywords": [
         "PHP scraper",
         "PHP scraping",
@@ -46,9 +46,8 @@
         }
     },
     "scripts": {
-        "test": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=/tmp --order-by=defects --colors=always --stop-on-failure",
-        "ct": "while true; do composer run test; sleep 30; done",
-        "phpstan": "vendor/bin/phpstan -v"
+        "test": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=.tmp/phpunit --order-by=defects --colors=always --stop-on-failure",
+        "phpstan": "vendor/bin/phpstan analyse"
     },
     "funding": [
         {

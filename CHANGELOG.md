@@ -6,6 +6,19 @@ Parts regarding the [documentation website](https://phpscraper.de), the [test pa
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0 (2023-06-01)
+
+- [#187](https://github.com/spekulatius/PHPScraper/issues/187): Prepare v2: Improve typing, bringing PHPStan to --level=9. For details check the [CHANGELOG](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md#from-1x-to-2x).
+- [#188](https://github.com/spekulatius/PHPScraper/issues/188): Support PHPStan for Windows Users
+- [#185](https://github.com/spekulatius/PHPScraper/issues/185): Adding PHP 8.3 to test pipeline
+- [#184](https://github.com/spekulatius/PHPScraper/issues/184): Adding PHPStan GitHub Action. Thank you @nadar!
+- [#183](https://github.com/spekulatius/PHPScraper/issues/183): Switch from Goutte to BrowserKit
+- [#182](https://github.com/spekulatius/PHPScraper/issues/182): Drop PHP 7.3 and 7.4
+- [#174](https://github.com/spekulatius/PHPScraper/issues/174): Fix local testing
+- [#173](https://github.com/spekulatius/PHPScraper/issues/173): Fix README example
+- [#171](https://github.com/spekulatius/PHPScraper/issues/171): Various PHPStan improvements
+- [#169](https://github.com/spekulatius/PHPScraper/issues/169): Adding `<meta charset=...>` extraction
+
 ## 1.0.2 (2022-12-15)
 
 - [#167](https://github.com/spekulatius/PHPScraper/issues/167): Updating CHANGELOG.md

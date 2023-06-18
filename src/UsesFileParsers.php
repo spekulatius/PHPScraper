@@ -21,7 +21,7 @@ trait UsesFileParsers
     ): array {
         try {
             $csv = array_map(
-                fn ($line) => str_getcsv($line, $separator, $enclosure, $escape),
+                fn ($line) => str_getcsv($line, $separator ?? ',', $enclosure ?? '"', $escape ?? "\\"),
                 explode("\n", $csvString)
             );
 
@@ -164,6 +164,11 @@ trait UsesFileParsers
         ?string $enclosure = null,
         ?string $escape = null
     ): array {
+        // Check if we got either a current page or at least a URL string to process
+        if ($csvStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseCsv() without parameter or initial navigation.');
+        }
+
         try {
             // If we have a string, let's try to parse the CSV from this.
             if ($csvStringOrUrl !== null) {
@@ -187,7 +192,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $csvStringOrUrl || $this->currentPage === null ? $csvStringOrUrl : $this->currentUrl()
+                    $csvStringOrUrl ?? $this->currentUrl()
                 ),
                 $separator,
                 $enclosure,
@@ -197,7 +202,7 @@ trait UsesFileParsers
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $result;
+        return (array) $result;
     }
 
     /**
@@ -215,6 +220,11 @@ trait UsesFileParsers
         ?string $enclosure = null,
         ?string $escape = null
     ): array {
+        // Check if we got either a current page or at least a URL string to process
+        if ($csvStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseCsvWithHeader() without parameter or initial navigation.');
+        }
+
         try {
             // If we have a string, let's try to parse the CSV from this.
             if ($csvStringOrUrl !== null) {
@@ -238,7 +248,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $csvStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $csvStringOrUrl || $this->currentPage === null ? $csvStringOrUrl : $this->currentUrl()
+                    $csvStringOrUrl ?? $this->currentUrl()
                 ),
                 $separator,
                 $enclosure,
@@ -248,7 +258,7 @@ trait UsesFileParsers
             throw new \Exception('Failed to parse CSV: ' . $e->getMessage());
         }
 
-        return $result;
+        return (array) $result;
     }
 
     /**
@@ -259,6 +269,11 @@ trait UsesFileParsers
      */
     public function parseJson(?string $jsonStringOrUrl = null): array
     {
+        // Check if we got either a current page or at least a URL string to process
+        if ($jsonStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseJson() without parameter or initial navigation.');
+        }
+
         try {
             // If we have a string, let's try to parse the JSON from this.
             if ($jsonStringOrUrl !== null) {
@@ -282,7 +297,7 @@ trait UsesFileParsers
                 // Fetch the resource either using $jsonStringOrUrl
                 $this->fetchAsset(
                     // Fallback on the current URL, if needed and possible (`go` was used before).
-                    $jsonStringOrUrl || $this->currentPage === null ? $jsonStringOrUrl : $this->currentUrl()
+                    $jsonStringOrUrl ?? $this->currentUrl()
                 ),
                 true
             );
@@ -290,7 +305,7 @@ trait UsesFileParsers
             throw new \Exception('Failed to parse JSON: ' . $e->getMessage());
         }
 
-        return $result;
+        return (array) $result;
     }
 
     /**
@@ -299,8 +314,13 @@ trait UsesFileParsers
      * @param ?string $xmlStringOrUrl
      * @return array $data
      */
-    public function parseXML(?string $xmlStringOrUrl = null): array
+    public function parseXml(?string $xmlStringOrUrl = null): array
     {
+        // Check if we got either a current page or at least a URL string to process
+        if ($xmlStringOrUrl === null && $this->currentPage === null) {
+            throw new \Exception('You can not call parseXml() without parameter or initial navigation.');
+        }
+
         try {
             // Try to parse the XML. If it works we have got an XML string.
             if ($xmlStringOrUrl !== null) {
@@ -320,7 +340,7 @@ trait UsesFileParsers
              * - `$web->go('...')->parseXml()`.
              */
             $result = $result ?? $this->xmlDecode($this->fetchAsset(
-                $xmlStringOrUrl || $this->currentPage === null ? $xmlStringOrUrl : $this->currentUrl()
+                $xmlStringOrUrl ?? $this->currentUrl()
             ));
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse XML: ' . $e->getMessage());
@@ -334,6 +354,7 @@ trait UsesFileParsers
         // XML parser
         $xml = simplexml_load_string(trim($xmlString), 'SimpleXMLElement', LIBXML_NOCDATA);
 
-        return json_decode(json_encode($xml), true);
+        // Convert XML to JSON and then to an associative array
+        return (array) json_decode((string) json_encode($xml), true);
     }
 }

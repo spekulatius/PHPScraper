@@ -47,7 +47,7 @@ trait UsesContent
 
     public function viewport(): array
     {
-        return is_null($this->viewportString()) ? [] : \preg_split('/,\s*/', $this->viewportString());
+        return is_null($this->viewportString()) ? [] : (array) \preg_split('/,\s*/', $this->viewportString());
     }
 
     public function csrfToken(): ?string
@@ -93,7 +93,7 @@ trait UsesContent
 
     public function keywords(): array
     {
-        return is_null($this->keywordString()) ? [] : \preg_split('/,\s*/', $this->keywordString());
+        return is_null($this->keywordString()) ? [] : (array) \preg_split('/,\s*/', $this->keywordString());
     }
 
     public function description(): ?string
@@ -119,7 +119,7 @@ trait UsesContent
     /**
      * Gets all Twitter-Card attributes (`twitter:`) as an array
      *
-     * @return array<int, string>
+     * @return array<string, string>
      */
     public function twitterCard(): array
     {
@@ -130,7 +130,7 @@ trait UsesContent
         // Prepare the data
         $result = [];
         foreach ($data as $set) {
-            $result[$set[0]] = $set[1];
+            $result[(string) $set[0]] = (string) $set[1];
         }
 
         return $result;
@@ -139,7 +139,7 @@ trait UsesContent
     /**
      * Gets any OpenGraph attributes (`og:`) as an array
      *
-     * @return array<int, string>
+     * @return array<string, string>
      */
     public function openGraph(): array
     {
@@ -150,7 +150,7 @@ trait UsesContent
         // Prepare the data
         $result = [];
         foreach ($data as $set) {
-            $result[$set[0]] = $set[1];
+            $result[(string) $set[0]] = (string) $set[1];
         }
 
         return $result;
@@ -273,7 +273,7 @@ trait UsesContent
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6', ['_name', '_text']);
 
         foreach ($result as $index => $array) {
-            $result[$index] = array_combine(['tag', 'content'], $array);
+            $result[$index] = array_combine(['tag', 'content'], (array) $array);
         }
 
         return $result;
@@ -289,7 +289,7 @@ trait UsesContent
         $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
 
         foreach ($result as $index => $array) {
-            $result[$index] = array_combine(['tag', 'content'], $array);
+            $result[$index] = array_combine(['tag', 'content'], (array) $array);
             $result[$index]['content'] = trim($result[$index]['content']);
         }
 
@@ -513,7 +513,7 @@ trait UsesContent
             $entry = [
                 'url' => $uri,
                 'protocol' => \strpos($uri, ':') !== false ? explode(':', $uri)[0] : null,
-                'text' => trim($link->nodeValue),
+                'text' => trim($link->nodeValue ?? ''),
                 'title' => $link->getAttribute('title') === '' ? null : $link->getAttribute('title'),
                 'target' => $link->getAttribute('target') === '' ? null : $link->getAttribute('target'),
                 'rel' => ($rel === '') ? null : strtolower($rel),

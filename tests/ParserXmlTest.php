@@ -7,6 +7,27 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
+    public function testJsonParsingContext()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
+
+        // This tests ensures an exception is thrown, if no context is given.
+        // Context means either it's been navigated before (URL context) or get something to (fetch +) parse
+        try {
+            $web = new \Spekulatius\PHPScraper\PHPScraper;
+            $web->parseXml();
+        } catch (\Exception $e) {
+            // Did we get the expected exception?
+            $this->assertSame(
+                'You can not call parseXml() without parameter or initial navigation.',
+                $e->getMessage()
+            );
+        }
+    }
+
+    /**
+     * @test
+     */
     public function testDifferentXmlCalls()
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
@@ -15,7 +36,7 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
         // For the reference we are using a simple XML and parse it.
         $xmlString = $web->fetchAsset('https://test-pages.phpscraper.de/sitemap.xml');
         $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
-        $xmlData = json_decode(json_encode($xml), true);
+        $xmlData = json_decode((string) json_encode($xml), true);
 
 
         // Case 1: Passing in an XML string in.

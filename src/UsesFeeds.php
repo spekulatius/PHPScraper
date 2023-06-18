@@ -9,11 +9,9 @@ trait UsesFeeds
     /**
      * Returns a guessed sitemap URL based on the current host. Usually it's `/sitemap.xml`.
      *
-     * @todo implement actual checks if the URL exists.
-     *
-     * @return ?string
+     * @return string
      */
-    public function sitemapUrl(): ?string
+    public function sitemapUrl(): string
     {
         return $this->currentBaseHost() . '/sitemap.xml';
     }
@@ -54,11 +52,9 @@ trait UsesFeeds
     /**
      * Returns the usual location (URL) for the static search index.
      *
-     * @todo implement actual checks if the URL exists.
-     *
-     * @return ?string
+     * @return string
      */
-    public function searchIndexUrl(): ?string
+    public function searchIndexUrl(): string
     {
         return $this->currentBaseHost() . '/index.json';
     }
@@ -103,7 +99,7 @@ trait UsesFeeds
     {
         $urls = $this->filterExtractAttributes('//link[@type="application/rss+xml"]', ['href']);
 
-        return array_map(fn ($url) => $this->makeUrlAbsolute($url), $urls);
+        return array_map(fn ($url) => (string) $this->makeUrlAbsolute($url), $urls);
     }
 
     /**
@@ -115,7 +111,7 @@ trait UsesFeeds
     public function rssRaw(?string ...$urls): array
     {
         return array_map(
-            fn ($url) => $this->parseXml($this->fetchAsset($url)),
+            fn ($url) => $this->parseXml($this->fetchAsset((string) $url)),
             empty($urls) ? $this->rssUrls() : $urls
         );
     }

@@ -29,8 +29,7 @@ class DownloadTest extends \PHPUnit\Framework\TestCase
         // Convert XML to array
         // Credit: https://stackoverflow.com/a/20431742
         $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
-        $json = json_encode($xml);
-        $array = json_decode($json, true);
+        $array = json_decode((string) json_encode($xml), true);
 
         $urls = array_map(
             fn ($url) => $url['loc'],

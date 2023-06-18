@@ -24,11 +24,11 @@
   </p>
 </p>
 
-PHPScraper is a universal web-util for PHP. The main goal is to get stuff done instead of getting distracted with selectors, preparing & converting data structures, etc. Instead, you can just *go* to a website and get the relevant information for your project.
+PHPScraper is a versatile web-utility for PHP. Its primary objective is to streamline the process of extracting information from websites, allowing you to focus on accomplishing tasks without getting caught up in the complexities of selectors, data structure preparation, and conversion.
 
 Under the hood, it uses
 
-- [Goutte](https://github.com/FriendsOfPHP/Goutte) to access the web
+- [BrowserKit](https://symfony.com/doc/current/components/browser_kit.html) (formerly [Goutte](https://github.com/FriendsOfPHP/Goutte)) to access the web
 - [League/URI](https://github.com/thephpleague/uri) to process URLs
 - [donatello-za/rake-php-plus](https://github.com/donatello-za/rake-php-plus) to extract and analyze keywords
 
@@ -210,13 +210,17 @@ The future development is organized into [milestones](https://github.com/spekula
 - Organize code better (move websites into separate repos, etc.)
 - Add support for feeds and some typical file types.
 
-### v2: [Expand the functionality and cover more 'types'](https://github.com/spekulatius/PHPScraper/milestone/5)
+### v2: Service Upgrade:
+
+- Switch from Goutte to [Symfony BrowserKit](https://symfony.com/doc/current/components/browser_kit.html). Goutte has been archived.
+
+### v3: [Expand the functionality and cover more 'types'](https://github.com/spekulatius/PHPScraper/milestone/5)
 
 - Expand to parse a wider range of types, elements, embeds, etc.
 - Improve performance with caching and concurrent fetching of assets
 - Minor improvements for parsing methods
 
-### v3: [Expand to provide more guidance on building custom scrapers on top of PHPScraper](https://github.com/spekulatius/PHPScraper/milestone/6)
+### v4: [Expand to provide more guidance on building custom scrapers on top of PHPScraper](https://github.com/spekulatius/PHPScraper/milestone/6)
 
 TBC.
 

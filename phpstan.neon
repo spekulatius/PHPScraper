@@ -1,7 +1,11 @@
+includes:
+  - phpstan-baseline.neon
+
 parameters:
-  level: 3
+  level: 9
   paths:
     - src
+    - tests
   excludePaths:
     - vendor
-  tmpDir: ./tmp/phpstan/
+  tmpDir: ./.tmp/phpstan/
