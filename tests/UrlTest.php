@@ -5,7 +5,6 @@ namespace Spekulatius\PHPScraper\Tests;
 /**
  * Ensure our URL lib, https://github.com/thephpleague/uri, is integrated correctly and works as expected.
  */
-
 class UrlTest extends \PHPUnit\Framework\TestCase
 {
     /**

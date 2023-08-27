@@ -39,7 +39,6 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
         $jsonString = $web->fetchAsset('https://test-pages.phpscraper.de/index.json');
         $jsonData = json_decode($jsonString, true);
 
-
         // Case 1: Passing in an JSON string in.
         $this->assertSame(
             // Pass the JSON Data as reference in.
@@ -49,7 +48,6 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseJson($jsonString)
         );
-
 
         // Case 2: `go` + `parseJson()`
         $this->assertSame(
@@ -62,7 +60,6 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
                 ->parseJson()
         );
 
-
         // Case 3: `parseJson()` with absolute URL.
         $this->assertSame(
             // Pass the JSON Data as reference in.
@@ -72,7 +69,6 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseJson('https://test-pages.phpscraper.de/index.json')
         );
-
 
         // Case 4: `go` + `parseJson()` with relative URL.
         $this->assertSame(
@@ -84,7 +80,6 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseJson('/index.json')
         );
-
 
         // Case 5: `go` with base URL + `go` with relative URL + `parseJson()`.
         // 5.1. Ensure the final URL is correct.

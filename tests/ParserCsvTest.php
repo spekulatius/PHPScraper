@@ -199,7 +199,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
         $csvString = "date,value\n1945-02-06,4.20\n1952-03-11,42";
         $csvData = [['date', 'value'], ['1945-02-06', 4.20], ['1952-03-11', 42]];
 
-
         // Case 1: Passing in an CSV string in.
         $this->assertSame(
             // Pass the CSV Data as reference in.
@@ -209,7 +208,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseCsv($csvString)
         );
-
 
         // Case 2: `go` + `parseCsv()`
         $this->assertSame(
@@ -222,7 +220,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->parseCsv()
         );
 
-
         // Case 3: `parseCsv()` with absolute URL.
         $this->assertSame(
             // Pass the CSV Data as reference in.
@@ -232,7 +229,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseCsv('https://test-pages.phpscraper.de/test.csv')
         );
-
 
         // Case 4: `go` + `parseCsv()` with relative URL.
         $this->assertSame(
@@ -244,7 +240,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseCsv('/test.csv')
         );
-
 
         // Case 5: `go` with base URL + `go` with relative URL + `parseCsv()`.
         // 5.1. Ensure the final URL is correct.
@@ -321,7 +316,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->parseCsvWithHeader($csvString)
         );
 
-
         // Case 2: `parseCsvWithHeader()`
         $this->assertSame(
             // Pass the CSV Data as reference in.
@@ -331,7 +325,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv')
         );
-
 
         // Case 2: `go` + `parseCsvWithHeader()`
         $this->assertSame(
@@ -344,7 +337,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->parseCsvWithHeader()
         );
 
-
         // Case 3: `parseCsvWithHeader()` with absolute URL.
         $this->assertSame(
             // Pass the CSV Data as reference in.
@@ -354,7 +346,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv')
         );
-
 
         // Case 4: `go` + `parseCsvWithHeader()` with relative URL.
         $this->assertSame(
@@ -366,7 +357,6 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseCsvWithHeader('/test.csv')
         );
-
 
         // Case 5: `go` with base URL + `go` with relative URL + `parseCsvWithHeader()`.
         // 5.1. Ensure the final URL is correct.

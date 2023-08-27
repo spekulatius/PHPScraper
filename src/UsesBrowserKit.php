@@ -31,8 +31,6 @@ trait UsesBrowserKit
 
     /**
      * Overwrites the client
-     *
-     * @param \Symfony\Component\BrowserKit\HttpBrowser $client
      */
     public function setClient(HttpBrowser $client): self
     {
@@ -43,8 +41,6 @@ trait UsesBrowserKit
 
     /**
      * Overwrites the httpClient
-     *
-     * @param \Symfony\Contracts\HttpClient\HttpClientInterface $httpClient
      */
     public function setHttpClient(HttpClientInterface $httpClient): self
     {
@@ -69,8 +65,6 @@ trait UsesBrowserKit
 
     /**
      * Navigates to a new page using an URL.
-     *
-     * @param string $url
      */
     public function go(string $url): self
     {
@@ -84,9 +78,6 @@ trait UsesBrowserKit
      * Allows to set HTML content to process.
      *
      * This is intended to be used as a work-around, if you already have the DOM.
-     *
-     * @param string $url
-     * @param string $content
      */
     public function setContent(string $url, string $content): self
     {
@@ -98,8 +89,6 @@ trait UsesBrowserKit
 
     /**
      * Fetch an asset from a given absolute or relative URL
-     *
-     * @param string $url
      */
     public function fetchAsset(string $url): string
     {
@@ -115,7 +104,7 @@ trait UsesBrowserKit
     /**
      * Click a link (either with title or url)
      *
-     * @param string $titleOrUrl
+     * @param  string  $titleOrUrl
      */
     public function clickLink($titleOrUrl): self
     {

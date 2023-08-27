@@ -38,7 +38,6 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
         $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
         $xmlData = json_decode((string) json_encode($xml), true);
 
-
         // Case 1: Passing in an XML string in.
         $this->assertSame(
             // Pass the XML Data as reference in.
@@ -48,7 +47,6 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseXml($xmlString)
         );
-
 
         // Case 2: `go` + `parseXml()`
         $this->assertSame(
@@ -61,7 +59,6 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
                 ->parseXml()
         );
 
-
         // Case 3: `parseXml()` with absolute URL.
         $this->assertSame(
             // Pass the XML Data as reference in.
@@ -71,7 +68,6 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
             (new \Spekulatius\PHPScraper\PHPScraper)
                 ->parseXml('https://test-pages.phpscraper.de/sitemap.xml')
         );
-
 
         // Case 4: `go` + `parseXml()` with relative URL.
         $this->assertSame(
@@ -83,7 +79,6 @@ class ParserXmlTest extends \PHPUnit\Framework\TestCase
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseXml('/sitemap.xml')
         );
-
 
         // Case 5: `go` with base URL + `go` with relative URL + `parseXml()`.
         // 5.1. Ensure the final URL is correct.

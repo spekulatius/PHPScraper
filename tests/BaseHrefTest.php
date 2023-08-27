@@ -7,7 +7,6 @@ namespace Spekulatius\PHPScraper\Tests;
  *
  * If you are looking for any URL-related tests check `UrlTest.php`.
  */
-
 class BaseHrefTest extends \PHPUnit\Framework\TestCase
 {
     /**

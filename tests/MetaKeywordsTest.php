@@ -33,7 +33,7 @@ class MetaKeywordsTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-no-spaces.html');
 
         // Check the keywords on this case...
-        $this->assertSame("one,two,three", $web->keywordString);
+        $this->assertSame('one,two,three', $web->keywordString);
         $this->assertSame(['one', 'two', 'three'], $web->keywords);
     }
 
@@ -48,7 +48,7 @@ class MetaKeywordsTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-spaces.html');
 
         // Check the keywords on this case...
-        $this->assertSame("one, two, three", $web->keywordString);
+        $this->assertSame('one, two, three', $web->keywordString);
         $this->assertSame(['one', 'two', 'three'], $web->keywords);
     }
 
@@ -63,7 +63,7 @@ class MetaKeywordsTest extends \PHPUnit\Framework\TestCase
         $web->go('https://test-pages.phpscraper.de/meta/keywords/parse-irregular-spaces.html');
 
         // Check the keywords on this case...
-        $this->assertSame("one, two,   three", $web->keywordString);
+        $this->assertSame('one, two,   three', $web->keywordString);
         $this->assertSame(['one', 'two', 'three'], $web->keywords);
     }
 

@@ -128,7 +128,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
-            ]
+            ],
         ], $web->linksWithDetails);
     }
 
@@ -227,7 +227,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => true,
-            ]
+            ],
         ], $web->linksWithDetails);
     }
 
@@ -295,7 +295,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
-            ]
+            ],
         ], $web->linksWithDetails);
     }
 
@@ -322,7 +322,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'target' => null,
                 'rel' => 'nofollow',
                 'image' => [
-                    'https://placekitten.com/432/287'
+                    'https://placekitten.com/432/287',
                 ],
                 'isNofollow' => true,
                 'isUGC' => false,
@@ -339,7 +339,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'rel' => 'ugc',
                 'image' => [
                     'https://placekitten.com/456/400',
-                    'https://placekitten.com/456/300'
+                    'https://placekitten.com/456/300',
                 ],
                 'isNofollow' => false,
                 'isUGC' => true,
@@ -355,7 +355,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'target' => null,
                 'rel' => 'nofollow ugc',
                 'image' => [
-                    'https://placekitten.com/345/287'
+                    'https://placekitten.com/345/287',
                 ],
                 'isNofollow' => true,
                 'isUGC' => true,
@@ -363,7 +363,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
                 'isMe' => false,
                 'isNoopener' => false,
                 'isNoreferrer' => false,
-            ]
+            ],
         ], $web->linksWithDetails);
     }
 

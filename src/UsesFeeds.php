@@ -8,8 +8,6 @@ trait UsesFeeds
 {
     /**
      * Returns a guessed sitemap URL based on the current host. Usually it's `/sitemap.xml`.
-     *
-     * @return string
      */
     public function sitemapUrl(): string
     {
@@ -48,11 +46,8 @@ trait UsesFeeds
         );
     }
 
-
     /**
      * Returns the usual location (URL) for the static search index.
-     *
-     * @return string
      */
     public function searchIndexUrl(): string
     {
@@ -89,7 +84,6 @@ trait UsesFeeds
         );
     }
 
-
     /**
      * Compiles a list of RSS urls based on the <link>-tags on the current page.
      *
@@ -105,7 +99,7 @@ trait UsesFeeds
     /**
      * Fetches a given set of RSS feeds and returns one array with raw data.
      *
-     * @param ?string ...$urls
+     * @param  ?string  ...$urls
      * @return array $rss
      */
     public function rssRaw(?string ...$urls): array
@@ -119,7 +113,7 @@ trait UsesFeeds
     /**
      * Fetches a given set of RSS feeds and returns one array with raw data.
      *
-     * @param ?string ...$urls
+     * @param  ?string  ...$urls
      * @return array<FeedEntry> $rss
      */
     public function rss(?string ...$urls): array

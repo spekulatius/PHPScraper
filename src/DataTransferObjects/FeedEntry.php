@@ -7,17 +7,17 @@ namespace Spekulatius\PHPScraper\DataTransferObjects;
  *
  * This isn't aimed at keeping all details but the key values.
  */
-
 class FeedEntry
 {
     // Support for PHP7.4
     public string $title;
+
     public string $description;
+
     public string $link;
 
     /**
      * @todo with drop of PHP7.4 we should make these public and remove the initialization above.
-     *
      * @todo with drop of PHP7.4 and 8.0 we should make this `readonly`.
      */
     public function __construct(
@@ -31,7 +31,7 @@ class FeedEntry
     }
 
     /**
-     * @param array<string, string> $data
+     * @param  array<string, string>  $data
      **/
     public static function fromArray(array $data): self
     {
