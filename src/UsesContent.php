@@ -313,8 +313,8 @@ trait UsesContent
             }
 
             $elementsNameAndText[$index] = [
-                'tag' => $nameAndText['tag'],
-                'content' => trim($nameAndText['content']),
+                'tag' => $nameAndText[0],
+                'content' => trim($nameAndText[1]),
             ];
         }
 
