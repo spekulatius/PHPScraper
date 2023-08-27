@@ -11,12 +11,15 @@ namespace Spekulatius\PHPScraper;
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
 
+/**
+ * @phpstan-type PHPScraperConfig array{'follow_redirects'?: bool, 'follow_meta_refresh'?: bool, 'max_redirects'?: int, 'agent'?: string, 'proxy'?: string|null, 'timeout'?: int, 'disable_ssl'?: bool}
+ */
 class PHPScraper
 {
     /**
      * Holds the config for the clients.
      *
-     * @var array<string, mixed>
+     * @var PHPScraperConfig
      */
     protected $config = [];
 
@@ -28,9 +31,9 @@ class PHPScraper
     protected $core = null;
 
     /**
-     * @param array<string, mixed>|null $config
+     * @param PHPScraperConfig $config
      */
-    public function __construct(?array $config = [])
+    public function __construct(array $config = [])
     {
         // Prepare the core. It delegates all further processing.
         $this->core = new Core;
@@ -42,9 +45,9 @@ class PHPScraper
     /**
      * Sets the config, generates the required Clients and updates the core with the new clients.
      *
-     * @param array<string, mixed>|null $config
+     * @param PHPScraperConfig $config
      */
-    public function setConfig(?array $config = []): self
+    public function setConfig(array $config = []): self
     {
         // Define the default values
         $defaults = [
@@ -89,7 +92,7 @@ class PHPScraper
         ];
 
         // Add the defaults in
-        $this->config = array_merge($defaults, $config ?? []);
+        $this->config = array_merge($defaults, $config);
 
         // Symfony HttpClient
         $httpClient = SymfonyHttpClient::create([
