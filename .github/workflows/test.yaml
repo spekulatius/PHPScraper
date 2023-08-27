@@ -54,6 +54,7 @@ jobs:
         with:
           php-version: '8.0'
           coverage: none
+          tools: cs2pr
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           update: true
@@ -62,4 +63,4 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: Run Pint
-        run: composer pint
+        run: composer exec -- pint --test --format=checkstyle | cs2pr
