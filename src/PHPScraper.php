@@ -119,7 +119,6 @@ class PHPScraper
     public function __get(string $name)
     {
         // We are assuming that all calls for properties actually method calls...
-        /** @phpstan-ignore-next-line */
         return $this->__call($name);
     }
 
@@ -127,20 +126,12 @@ class PHPScraper
      * Catches the method calls and tries to satisfy them.
      *
      * @param string $name
-     * @param array $arguments = null
+     * @param array $arguments
      * @return mixed
      */
-    public function __call(string $name, array $arguments = null)
+    public function __call(string $name, array $arguments = [])
     {
-        // Ensure $arguments is an array (even if empty)
-        $arguments = $arguments ?? [];
-
-        if ($name == 'call') {
-            $name = $arguments[0];
-            $result = $this->core->$name();
-        } else {
-            $result = $this->core->$name(...$arguments);
-        }
+        $result = $this->core->$name(...$arguments);
 
         // Did we get a Core class element? Keep this.
         if ($result instanceof Core) {
