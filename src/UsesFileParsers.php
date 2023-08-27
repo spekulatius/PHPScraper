@@ -133,7 +133,11 @@ trait UsesFileParsers
         return $csv;
     }
 
-    // Helper method to cast types
+    /**
+     * Helper method to cast types
+     *
+     * @return int|float|string
+     */
     public function castType(string $entry)
     {
         // Looks like an int?
@@ -279,7 +283,7 @@ trait UsesFileParsers
             if ($jsonStringOrUrl !== null) {
                 // Simple: Try to parse what we have been given
                 try {
-                    $result = json_decode($jsonStringOrUrl, true);
+                    $result = json_decode($jsonStringOrUrl, true, 512, JSON_THROW_ON_ERROR);
                 } catch (\Exception $e) {
                     // We don't do anything if it fails - likely we have an URL. Let's continue below.
                 }
