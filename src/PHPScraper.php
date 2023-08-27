@@ -132,7 +132,7 @@ class PHPScraper
      * Catches the method calls and tries to satisfy them.
      *
      * @param string $name
-     * @param array $arguments
+     * @param array<mixed> $arguments
      * @return mixed
      */
     public function __call(string $name, array $arguments = [])
