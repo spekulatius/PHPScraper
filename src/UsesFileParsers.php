@@ -90,7 +90,7 @@ trait UsesFileParsers
             array_walk(
                 $csv,
                 function (&$row, $key, $header) {
-                $row = array_combine($header, $row);
+                    $row = array_combine($header, $row);
                 },
                 $header
             );

@@ -255,7 +255,7 @@ trait UsesContent
         return array_values(array_filter(
             $this->paragraphs(),
             function ($paragraph) {
-            return $paragraph !== '';
+                return $paragraph !== '';
             }
         ));
     }
