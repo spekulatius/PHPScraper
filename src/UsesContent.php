@@ -303,17 +303,22 @@ trait UsesContent
      */
     public function cleanOutlineWithParagraphs(): array
     {
-        $result = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
+        $elementsNameAndText = $this->filterExtractAttributes('//h1|//h2|//h3|//h4|//h5|//h6|//p', ['_name', '_text']);
 
-        /** @var array $array */
-        foreach ($result as $index => $array) {
-            if ($array[1] !== '') {
-                $result[$index] = array_combine(['tag', 'content'], $array);
-                $result[$index]['content'] = trim($result[$index]['content']);
+        /** @var array<string> $nameAndText */
+        foreach ($elementsNameAndText as $index => $nameAndText) {
+            // Element has no text.
+            if ($nameAndText[1] === '') {
+                continue;
             }
+
+            $elementsNameAndText[$index] = [
+                'tag' => $nameAndText['tag'],
+                'content' => trim($nameAndText['content']),
+            ];
         }
 
-        return $result;
+        return $elementsNameAndText;
     }
 
     /**

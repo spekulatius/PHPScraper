@@ -16,17 +16,20 @@ class PHPScraper
     /**
      * Holds the config for the clients.
      *
-     * @var array
+     * @var array<string, mixed>
      */
     protected $config = [];
 
     /**
      * Holds the Core class. It handles the actual scraping.
      *
-     * @var \Spekulatius\PHPScraper\Core;
+     * @var \Spekulatius\PHPScraper\Core
      */
     protected $core = null;
 
+    /**
+     * @param array<string, mixed>|null $config
+     */
     public function __construct(?array $config = [])
     {
         // Prepare the core. It delegates all further processing.
@@ -39,7 +42,7 @@ class PHPScraper
     /**
      * Sets the config, generates the required Clients and updates the core with the new clients.
      *
-     * @param ?array $config = []
+     * @param array<string, mixed>|null $config
      */
     public function setConfig(?array $config = []): self
     {
@@ -127,7 +130,7 @@ class PHPScraper
      * Catches the method calls and tries to satisfy them.
      *
      * @param string $name
-     * @param array $arguments = null
+     * @param array<mixed> $arguments = null
      * @return mixed
      */
     public function __call(string $name, array $arguments = null)

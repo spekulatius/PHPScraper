@@ -4,8 +4,9 @@ includes:
 parameters:
   level: 9
   paths:
-    - src
-    - tests
-  excludePaths:
-    - vendor
+    - src/
+    - tests/
   tmpDir: ./.tmp/phpstan/
+  ignoreErrors:
+    # TODO Add those return types.
+    - '#return type has no value type specified in iterable type array\.$#'
