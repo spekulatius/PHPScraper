@@ -22,7 +22,7 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
 
         // Check the title and URL to see if we actually moved...
         $this->assertSame('Page #2', $web->h1[0]);
-        $this->assertSame($web->currentUrl, 'https://test-pages.phpscraper.de/navigation/2.html');
+        $this->assertSame($web->currentUrl, 'https://test-pages.phpscraper.de/navigation/2');
     }
 
     /**
