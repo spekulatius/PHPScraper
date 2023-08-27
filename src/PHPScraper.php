@@ -98,8 +98,8 @@ class PHPScraper
         $httpClient = SymfonyHttpClient::create([
             'proxy' => $this->config['proxy'],
             'timeout' => $this->config['timeout'],
-            'verify_host' => $this->config['disable_ssl'],
-            'verify_peer' => $this->config['disable_ssl'],
+            'verify_host' => !$this->config['disable_ssl'],
+            'verify_peer' => !$this->config['disable_ssl'],
         ]);
 
         // BrowserKit Client and set some config needed for it.
