@@ -111,7 +111,7 @@ class PHPScraper
     }
 
     /**
-     * Catch alls to properties and process them accordingly.
+     * Catch calls to properties and process them accordingly.
      *
      * @param string $name
      * @return mixed
@@ -120,7 +120,7 @@ class PHPScraper
     {
         // We are assuming that all calls for properties actually method calls...
         /** @phpstan-ignore-next-line */
-        return $this->call($name);
+        return $this->__call($name);
     }
 
     /**
