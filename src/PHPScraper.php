@@ -31,7 +31,7 @@ class PHPScraper
     protected $core = null;
 
     /**
-     * @param PHPScraperConfig $config
+     * @param  PHPScraperConfig  $config
      */
     public function __construct(array $config = [])
     {
@@ -45,7 +45,7 @@ class PHPScraper
     /**
      * Sets the config, generates the required Clients and updates the core with the new clients.
      *
-     * @param PHPScraperConfig $config
+     * @param  PHPScraperConfig  $config
      */
     public function setConfig(array $config = []): self
     {
@@ -119,7 +119,6 @@ class PHPScraper
     /**
      * Catch calls to properties and process them accordingly.
      *
-     * @param string $name
      * @return mixed
      */
     public function __get(string $name)
@@ -131,8 +130,7 @@ class PHPScraper
     /**
      * Catches the method calls and tries to satisfy them.
      *
-     * @param string $name
-     * @param array<mixed> $arguments
+     * @param  array<mixed>  $arguments
      * @return mixed
      */
     public function __call(string $name, array $arguments = [])

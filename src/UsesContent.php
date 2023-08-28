@@ -4,8 +4,8 @@ namespace Spekulatius\PHPScraper;
 
 use DonatelloZa\RakePlus\RakePlus;
 use League\Uri\Uri;
-use Symfony\Component\DomCrawler\Link as DomCrawlerLink;
 use Symfony\Component\DomCrawler\Image as DomCrawlerImage;
+use Symfony\Component\DomCrawler\Link as DomCrawlerLink;
 
 trait UsesContent
 {
@@ -19,7 +19,6 @@ trait UsesContent
      *
      * @see https://phpscraper.de/contributing
      */
-
     public function title(): ?string
     {
         return $this->filterFirstText('//title');
@@ -103,8 +102,6 @@ trait UsesContent
 
     /**
      * Get the meta collected as an array
-     *
-     * @return array
      */
     public function metaTags(): array
     {
@@ -252,14 +249,14 @@ trait UsesContent
 
     /**
      * Get the paragraphs of the page excluding empty paragraphs.
-     *
-     * @return array
      */
     public function cleanParagraphs(): array
     {
         return array_values(array_filter(
             $this->paragraphs(),
-            function ($paragraph) { return $paragraph !== ''; }
+            function ($paragraph) {
+                return $paragraph !== '';
+            }
         ));
     }
 
@@ -298,8 +295,6 @@ trait UsesContent
 
     /**
      * Parses the content outline of the web-page
-     *
-     * @return array
      */
     public function cleanOutlineWithParagraphs(): array
     {
@@ -391,8 +386,7 @@ trait UsesContent
      * @see https://phpscraper.de/examples/extract-keywords.html
      * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
-     * @param string $locale (default: 'en_US')
-     * @return array
+     * @param  string  $locale (default: 'en_US')
      */
     public function contentKeywords($locale = 'en_US'): array
     {
@@ -418,8 +412,7 @@ trait UsesContent
      * @see https://phpscraper.de/examples/extract-keywords.html
      * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
-     * @param string $locale (default: 'en_US')
-     * @return array
+     * @param  string  $locale (default: 'en_US')
      */
     public function contentKeywordsWithScores($locale = 'en_US'): array
     {
@@ -433,8 +426,6 @@ trait UsesContent
      * Get all links on the page as absolute URLs
      *
      * @see https://github.com/spekulatius/link-scraping-test-beautifulsoup-vs-phpscraper
-     *
-     * @return array
      */
     public function links(): array
     {
@@ -451,8 +442,6 @@ trait UsesContent
 
     /**
      * Get all internal links (same root or sub-domain) on the page as absolute URLs
-     *
-     * @return array
      */
     public function internalLinks(): array
     {
@@ -465,15 +454,13 @@ trait UsesContent
             function ($link) use (&$currentRootDomain) {
                 $linkRootDomain = Uri::createFromString($link)->getHost();
 
-                return ($currentRootDomain === $linkRootDomain);
+                return $currentRootDomain === $linkRootDomain;
             }
         ));
     }
 
     /**
      * Get all external links on the page as absolute URLs
-     *
-     * @return array
      */
     public function externalLinks(): array
     {
@@ -486,8 +473,6 @@ trait UsesContent
 
     /**
      * Get all links on the page with commonly interesting details
-     *
-     * @return array
      */
     public function linksWithDetails(): array
     {
@@ -539,8 +524,6 @@ trait UsesContent
 
     /**
      * Get all images on the page with absolute URLs
-     *
-     * @return array
      */
     public function images(): array
     {
@@ -559,8 +542,6 @@ trait UsesContent
 
     /**
      * Get all images on the page with commonly interesting details
-     *
-     * @return array
      */
     public function imagesWithDetails(): array
     {

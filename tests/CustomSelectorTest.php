@@ -70,13 +70,13 @@ class CustomSelectorTest extends \PHPUnit\Framework\TestCase
         // Select single string using first and chain `->text()`
         $this->assertSame(
             'Selector Tests (h1)',
-            $web->filterFirst("//h1")->text()
+            $web->filterFirst('//h1')->text()
         );
 
         // Select as array using `filterTexts`:
         $this->assertSame(
             ['Selector Tests (h1)'],
-            $web->filterTexts("//h1")
+            $web->filterTexts('//h1')
         );
     }
 

@@ -2,8 +2,8 @@
 
 namespace Spekulatius\PHPScraper;
 
-use League\Uri\Uri;
 use League\Uri\Http;
+use League\Uri\Uri;
 use League\Uri\UriResolver;
 
 trait UsesUrls
@@ -12,6 +12,7 @@ trait UsesUrls
      * Returns the current url - this is either set by `go` indirectly or directly using `setContent`.
      *
      * @return string $url
+     *
      * @throws \Exception
      */
     public function currentUrl(): string

@@ -7,10 +7,9 @@ trait UsesFileParsers
     /**
      * Base Util to decode a CSV string.
      *
-     * @param string $csvString
-     * @param ?string $separator
-     * @param ?string $enclosure
-     * @param ?string $escape
+     * @param  ?string  $separator
+     * @param  ?string  $enclosure
+     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecodeRaw(
@@ -21,7 +20,7 @@ trait UsesFileParsers
     ): array {
         try {
             $csv = array_map(
-                fn ($line) => str_getcsv($line, $separator ?? ',', $enclosure ?? '"', $escape ?? "\\"),
+                fn ($line) => str_getcsv($line, $separator ?? ',', $enclosure ?? '"', $escape ?? '\\'),
                 explode("\n", $csvString)
             );
 
@@ -39,10 +38,9 @@ trait UsesFileParsers
     /**
      * Decode CSV and cast types.
      *
-     * @param string $csvString
-     * @param ?string $separator
-     * @param ?string $enclosure
-     * @param ?string $escape
+     * @param  ?string  $separator
+     * @param  ?string  $enclosure
+     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecode(
@@ -72,10 +70,9 @@ trait UsesFileParsers
     /**
      * Util to decode a CSV string to asso. array.
      *
-     * @param string $csvString
-     * @param ?string $separator
-     * @param ?string $enclosure
-     * @param ?string $escape
+     * @param  ?string  $separator
+     * @param  ?string  $enclosure
+     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecodeWithHeaderRaw(
@@ -92,7 +89,9 @@ trait UsesFileParsers
             // Combine the rows with the header entry.
             array_walk(
                 $csv,
-                function(&$row, $key, $header) { $row = array_combine($header, $row); },
+                function (&$row, $key, $header) {
+                    $row = array_combine($header, $row);
+                },
                 $header
             );
         } catch (\Exception $e) {
@@ -105,10 +104,9 @@ trait UsesFileParsers
     /**
      * Decode a CSV string to asso. array and cast types.
      *
-     * @param string $csvString
-     * @param ?string $separator
-     * @param ?string $enclosure
-     * @param ?string $escape
+     * @param  ?string  $separator
+     * @param  ?string  $enclosure
+     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecodeWithHeader(
@@ -156,10 +154,10 @@ trait UsesFileParsers
     /**
      * Parses a given CSV string or fetches the URL and parses it.
      *
-     * @param ?string $csvStringOrUrl
-     * @param ?string $separator
-     * @param ?string $enclosure
-     * @param ?string $escape
+     * @param  ?string  $csvStringOrUrl
+     * @param  ?string  $separator
+     * @param  ?string  $enclosure
+     * @param  ?string  $escape
      * @return array $data
      */
     public function parseCsv(
@@ -212,10 +210,10 @@ trait UsesFileParsers
     /**
      * Parses a given CSV string into an asso. with headers or fetches the URL and parses it.
      *
-     * @param ?string $csvStringOrUrl
-     * @param ?string $separator
-     * @param ?string $enclosure
-     * @param ?string $escape
+     * @param  ?string  $csvStringOrUrl
+     * @param  ?string  $separator
+     * @param  ?string  $enclosure
+     * @param  ?string  $escape
      * @return array $data
      */
     public function parseCsvWithHeader(
@@ -268,7 +266,7 @@ trait UsesFileParsers
     /**
      * Parses a given JSON string or fetches the URL and parses it.
      *
-     * @param ?string $jsonStringOrUrl
+     * @param  ?string  $jsonStringOrUrl
      * @return array $data
      */
     public function parseJson(?string $jsonStringOrUrl = null): array
@@ -315,7 +313,7 @@ trait UsesFileParsers
     /**
      * Parses a given XML string or fetches the URL and parses it.
      *
-     * @param ?string $xmlStringOrUrl
+     * @param  ?string  $xmlStringOrUrl
      * @return array $data
      */
     public function parseXml(?string $xmlStringOrUrl = null): array

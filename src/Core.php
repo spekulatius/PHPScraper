@@ -5,7 +5,6 @@ namespace Spekulatius\PHPScraper;
 /**
  * This class organizes mostly. For individual functionality check the related traits please.
  */
-
 class Core
 {
     /**

@@ -27,7 +27,8 @@
         "league/uri": "^6.0",
         "symfony/browser-kit": "^6.0",
         "symfony/http-client": "^6.0",
-        "symfony/css-selector": "^6.0"
+        "symfony/css-selector": "^6.0",
+        "laravel/pint": "^1.5"
     },
     "require-dev": {
         "symfony/thanks": "^1.0.0",
@@ -47,7 +48,8 @@
     },
     "scripts": {
         "test": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=.tmp/phpunit --order-by=defects --colors=always --stop-on-failure",
-        "phpstan": "vendor/bin/phpstan analyse"
+        "phpstan": "./vendor/bin/phpstan analyse",
+        "pint": "./vendor/bin/pint --verbose --test"
     },
     "funding": [
         {

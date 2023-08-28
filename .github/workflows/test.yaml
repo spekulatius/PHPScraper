@@ -41,3 +41,26 @@ jobs:
 
       - name: PHPStan tests
         run: composer phpstan
+
+  ## PINT
+  pint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@2.21.0
+        with:
+          php-version: '8.0'
+          coverage: none
+          tools: cs2pr
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          update: true
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - name: Run Pint
+        run: composer exec -- pint --test --format=checkstyle | cs2pr

@@ -40,7 +40,6 @@ class CoreTest extends \PHPUnit\Framework\TestCase
             $web->title
         );
 
-
         // 2. Leave the current page and head on to the next one.
         $web->go('https://phpscraper.de');
 
@@ -71,7 +70,6 @@ class CoreTest extends \PHPUnit\Framework\TestCase
         // Testing env: First h1: "We are testing here & elsewhere!"
         $url = 'https://test-pages.phpscraper.de/meta/html-entities.html';
 
-
         // Test 1: Create, navigate to the test page.
         $web = new \Spekulatius\PHPScraper\PHPScraper;
         $web->go($url);
@@ -81,7 +79,6 @@ class CoreTest extends \PHPUnit\Framework\TestCase
             'We are testing here & elsewhere!',
             $web->h1[0]
         );
-
 
         // Test 2: Chained
         $this->assertSame(
