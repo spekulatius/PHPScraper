@@ -7,16 +7,13 @@ trait UsesFileParsers
     /**
      * Base Util to decode a CSV string.
      *
-     * @param  ?string  $separator
-     * @param  ?string  $enclosure
-     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecodeRaw(
         string $csvString,
-        ?string $separator = null,
-        ?string $enclosure = null,
-        ?string $escape = null
+        string $separator = null,
+        string $enclosure = null,
+        string $escape = null
     ): array {
         try {
             $csv = array_map(
@@ -38,23 +35,20 @@ trait UsesFileParsers
     /**
      * Decode CSV and cast types.
      *
-     * @param  ?string  $separator
-     * @param  ?string  $enclosure
-     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecode(
         string $csvString,
-        ?string $separator = null,
-        ?string $enclosure = null,
-        ?string $escape = null
+        string $separator = null,
+        string $enclosure = null,
+        string $escape = null
     ): array {
         try {
             $csv = $this->csvDecodeRaw($csvString, $separator, $enclosure, $escape);
 
             // Cast native and custom types
             $csv = array_map(
-                fn ($line) => array_map(
+                fn ($line): array => array_map(
                     fn ($cell) => $this->castType($cell),
                     $line
                 ),
@@ -70,16 +64,13 @@ trait UsesFileParsers
     /**
      * Util to decode a CSV string to asso. array.
      *
-     * @param  ?string  $separator
-     * @param  ?string  $enclosure
-     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecodeWithHeaderRaw(
         string $csvString,
-        ?string $separator = null,
-        ?string $enclosure = null,
-        ?string $escape = null
+        string $separator = null,
+        string $enclosure = null,
+        string $escape = null
     ): array {
         try {
             $csv = $this->csvDecodeRaw($csvString, $separator, $enclosure, $escape);
@@ -104,16 +95,13 @@ trait UsesFileParsers
     /**
      * Decode a CSV string to asso. array and cast types.
      *
-     * @param  ?string  $separator
-     * @param  ?string  $enclosure
-     * @param  ?string  $escape
      * @return array $data
      */
     public function csvDecodeWithHeader(
         string $csvString,
-        ?string $separator = null,
-        ?string $enclosure = null,
-        ?string $escape = null
+        string $separator = null,
+        string $enclosure = null,
+        string $escape = null
     ): array {
         try {
             $csv = $this->csvDecodeWithHeaderRaw($csvString, $separator, $enclosure, $escape);
@@ -152,17 +140,13 @@ trait UsesFileParsers
     /**
      * Parses a given CSV string or fetches the URL and parses it.
      *
-     * @param  ?string  $csvStringOrUrl
-     * @param  ?string  $separator
-     * @param  ?string  $enclosure
-     * @param  ?string  $escape
      * @return array $data
      */
     public function parseCsv(
-        ?string $csvStringOrUrl = null,
-        ?string $separator = null,
-        ?string $enclosure = null,
-        ?string $escape = null
+        string $csvStringOrUrl = null,
+        string $separator = null,
+        string $enclosure = null,
+        string $escape = null
     ): array {
         // Check if we got either a current page or at least a URL string to process
         if ($csvStringOrUrl === null && $this->currentPage === null) {
@@ -208,17 +192,13 @@ trait UsesFileParsers
     /**
      * Parses a given CSV string into an asso. with headers or fetches the URL and parses it.
      *
-     * @param  ?string  $csvStringOrUrl
-     * @param  ?string  $separator
-     * @param  ?string  $enclosure
-     * @param  ?string  $escape
      * @return array $data
      */
     public function parseCsvWithHeader(
-        ?string $csvStringOrUrl = null,
-        ?string $separator = null,
-        ?string $enclosure = null,
-        ?string $escape = null
+        string $csvStringOrUrl = null,
+        string $separator = null,
+        string $enclosure = null,
+        string $escape = null
     ): array {
         // Check if we got either a current page or at least a URL string to process
         if ($csvStringOrUrl === null && $this->currentPage === null) {
@@ -264,10 +244,9 @@ trait UsesFileParsers
     /**
      * Parses a given JSON string or fetches the URL and parses it.
      *
-     * @param  ?string  $jsonStringOrUrl
      * @return array $data
      */
-    public function parseJson(?string $jsonStringOrUrl = null): array
+    public function parseJson(string $jsonStringOrUrl = null): array
     {
         // Check if we got either a current page or at least a URL string to process
         if ($jsonStringOrUrl === null && $this->currentPage === null) {
@@ -313,10 +292,9 @@ trait UsesFileParsers
     /**
      * Parses a given XML string or fetches the URL and parses it.
      *
-     * @param  ?string  $xmlStringOrUrl
      * @return array $data
      */
-    public function parseXml(?string $xmlStringOrUrl = null): array
+    public function parseXml(string $xmlStringOrUrl = null): array
     {
         // Check if we got either a current page or at least a URL string to process
         if ($xmlStringOrUrl === null && $this->currentPage === null) {
