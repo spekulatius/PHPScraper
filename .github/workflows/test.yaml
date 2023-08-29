@@ -30,7 +30,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@2.21.0
         with:
-          php-version: '8.0'
+          php-version: '8.2'
           coverage: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -52,7 +52,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@2.21.0
         with:
-          php-version: '8.0'
+          php-version: '8.2'
           coverage: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +74,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@2.21.0
         with:
-          php-version: '8.0'
+          php-version: '8.2'
           coverage: none
           tools: cs2pr
         env:
