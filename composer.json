@@ -27,8 +27,7 @@
         "league/uri": "^6.0",
         "symfony/browser-kit": "^6.0",
         "symfony/http-client": "^6.0",
-        "symfony/css-selector": "^6.0",
-        "laravel/pint": "^1.5"
+        "symfony/css-selector": "^6.0"
     },
     "require-dev": {
         "symfony/thanks": "^1.0.0",
