@@ -85,4 +85,4 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: Run Pint
-        run: composer test:lint --format=checkstyle | cs2pr
+        run: ./vendor/bin/pint --test --format=checkstyle | cs2pr
