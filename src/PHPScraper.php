@@ -25,10 +25,8 @@ class PHPScraper
 
     /**
      * Holds the Core class. It handles the actual scraping.
-     *
-     * @var \Spekulatius\PHPScraper\Core
      */
-    protected $core = null;
+    protected Core $core;
 
     /**
      * @param  PHPScraperConfig  $config
@@ -92,7 +90,7 @@ class PHPScraper
         ];
 
         // Add the defaults in
-        $this->config = array_merge($defaults, $config);
+        $this->config = [...$defaults, ...$config];
 
         // Symfony HttpClient
         $httpClient = SymfonyHttpClient::create([

@@ -89,7 +89,7 @@ trait UsesFileParsers
             // Combine the rows with the header entry.
             array_walk(
                 $csv,
-                function (&$row, $key, $header) {
+                function (&$row, $key, $header): void {
                     $row = array_combine($header, $row);
                 },
                 $header
@@ -133,18 +133,16 @@ trait UsesFileParsers
 
     /**
      * Helper method to cast types
-     *
-     * @return int|float|string
      */
-    public function castType(string $entry)
+    public function castType(string $entry): int|float|string
     {
         // Looks like an int?
-        if ($entry == (string) (int) $entry) {
+        if ($entry == (int) $entry) {
             return (int) $entry;
         }
 
         // Looks like a float?
-        if ($entry == (string) (float) $entry) {
+        if ($entry == (float) $entry) {
             return (float) $entry;
         }
 
@@ -301,7 +299,9 @@ trait UsesFileParsers
                     // Fallback on the current URL, if needed and possible (`go` was used before).
                     $jsonStringOrUrl ?? $this->currentUrl()
                 ),
-                true
+                true,
+                512,
+                JSON_THROW_ON_ERROR
             );
         } catch (\Exception $e) {
             throw new \Exception('Failed to parse JSON: ' . $e->getMessage());
@@ -357,6 +357,6 @@ trait UsesFileParsers
         $xml = simplexml_load_string(trim($xmlString), 'SimpleXMLElement', LIBXML_NOCDATA);
 
         // Convert XML to JSON and then to an associative array
-        return (array) json_decode((string) json_encode($xml), true);
+        return (array) json_decode(json_encode($xml, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
     }
 }
