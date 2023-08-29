@@ -34,7 +34,10 @@
         "symfony/thanks": "^1.0.0",
         "phpunit/phpunit": "^8.0.0|^9.0.0",
         "illuminate/collections": "^8.0.0|^9.0.0",
-        "phpstan/phpstan": "^1.10"
+        "laravel/pint": "^1.10.1",
+        "phpstan/phpstan": "^1.10",
+        "rector/rector": "^0.15.25",
+        "symfony/var-dumper": "^6.3.0"
     },
     "autoload": {
         "psr-4": {
@@ -47,9 +50,18 @@
         }
     },
     "scripts": {
-        "test": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=.tmp/phpunit --order-by=defects --colors=always --stop-on-failure",
-        "phpstan": "./vendor/bin/phpstan analyse",
-        "pint": "./vendor/bin/pint --verbose --test"
+        "refactor": "./vendor/bin/rector",
+        "lint": "./vendor/bin/pint",
+        "test:refactor": "./vendor/bin/rector --dry-run",
+        "test:lint": "./vendor/bin/pint --test",
+        "test:types": "./vendor/bin/phpstan analyse --ansi src/ tests/ --level=9",
+        "test:unit": "./vendor/phpunit/phpunit/phpunit --cache-result --cache-result-file=.tmp/phpunit --order-by=defects --colors=always --stop-on-failure",
+        "test": [
+            "@test:refactor",
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
     },
     "funding": [
         {
@@ -62,6 +74,7 @@
         }
     ],
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
             "symfony/thanks": true
         }
