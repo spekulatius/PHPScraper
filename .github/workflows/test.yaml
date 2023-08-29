@@ -43,7 +43,7 @@ jobs:
         run: composer test:types
 
   ## RECTOR
-  phpstan:
+  rector:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
