@@ -90,7 +90,7 @@ class PHPScraper
         ];
 
         // Add the defaults in
-        $this->config = [...$defaults, ...$config];
+        $this->config = array_merge($defaults, $config);
 
         // Symfony HttpClient
         $httpClient = SymfonyHttpClient::create([
