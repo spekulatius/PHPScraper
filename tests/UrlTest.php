@@ -67,6 +67,24 @@ class UrlTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @test
+     */
+    public function testCurrentBaseHostWithBaseIsRelativeUri()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
+
+        // Navigate to the test page.
+        // Contains: <base href="/links/invalid-base-href.html">
+        $web->go('https://test-pages.phpscraper.de/links/invalid-base-href.html');
+
+        // Check the base href being passed through the current base host.
+        $this->assertSame(
+            'https://test-pages.phpscraper.de',
+            $web->currentBaseHost
+        );
+    }
+
+    /**
      * Basic processing of the URLs.
      *
      * @test
@@ -163,6 +181,36 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(
             'http://example.com/index.html',
             $web->makeUrlAbsolute('http://example.com/index.html'),
+        );
+    }
+
+    /**
+     * Special case where the base href is a relative URL. So we need to use the current base host.
+     *
+     * @test
+     */
+    public function testMakeUrlAbsoluteConsiderBaseHrefIsRelativeUrl()
+    {
+        $web = new \Spekulatius\PHPScraper\PHPScraper;
+
+        /**
+         * Navigate to test page: This sets the base URL.
+         *
+         * It contains:
+         *
+         * ```html
+         * <base href="/links/invalid-base-href.html">
+         * ```
+         *
+         * While it's located on `test-pages.phpscraper.de`.
+         *
+         * This page isn't actually used. It's purely to set the context.
+         */
+        $web->go('https://test-pages.phpscraper.de/links/invalid-base-href.html');
+
+        $this->assertSame(
+            'https://test-pages.phpscraper.de/test/index.html',
+            $web->makeUrlAbsolute('test/index.html'),
         );
     }
 
