@@ -1,4 +1,3 @@
-name: Tests
 on: [pull_request]
 
 jobs:
@@ -10,7 +9,7 @@ jobs:
         php-version: [8.0, 8.1, 8.2, 8.3]
         composer-flags: [null]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
@@ -25,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install PHP
-        uses: shivammathur/setup-php@2.21.0
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
           coverage: none
@@ -47,10 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install PHP
-        uses: shivammathur/setup-php@2.21.0
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
           coverage: none
@@ -69,10 +68,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install PHP
-        uses: shivammathur/setup-php@2.21.0
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
           coverage: none
