@@ -448,7 +448,7 @@ trait UsesContent
         return array_values(array_filter(
             $this->links(),
             function ($link) use (&$currentRootDomain): bool {
-                $linkRootDomain = Uri::createFromString($link)->getHost();
+                $linkRootDomain = Uri::new($link)->getHost();
 
                 return $currentRootDomain === $linkRootDomain;
             }
