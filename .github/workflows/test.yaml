@@ -1,13 +1,12 @@
 on: [pull_request]
 
 jobs:
-  ## PHPUNIT
   phpunit:
+    name: PHPUnit
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [8.1, 8.2, 8.3]
-        composer-flags: [null]
+        php-version: ['8.1', '8.2', '8.3']
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
@@ -15,12 +14,11 @@ jobs:
           php-version: ${{ matrix.php-version }}
           coverage: none
           extensions: intl curl
-      - run: php -v
-      - run: composer update ${{ matrix.composer-flags }} --no-interaction --no-progress --prefer-dist --ansi
+      - run: composer update --no-interaction --no-progress --prefer-dist --ansi
       - run: composer test:unit
 
-  ## PHPSTAN
   phpstan:
+    name: PHPStan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,17 +30,17 @@ jobs:
           php-version: '8.1'
           coverage: none
         env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPOSER_TOKEN: ${{ github.token }}
           update: true
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
+        run: composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: PHPStan tests
         run: composer test:types
 
-  ## RECTOR
   rector:
+    name: Rector
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -54,17 +52,17 @@ jobs:
           php-version: '8.1'
           coverage: none
         env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPOSER_TOKEN: ${{ github.token }}
           update: true
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
+        run: composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: PHPStan tests
         run: composer test:refactor
 
-  ## PINT
   pint:
+    name: Pint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -77,11 +75,11 @@ jobs:
           coverage: none
           tools: cs2pr
         env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPOSER_TOKEN: ${{ github.token }}
           update: true
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
+        run: composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: Run Pint
-        run: ./vendor/bin/pint --test --format=checkstyle | cs2pr
+        run: composer exec -- pint --test --format=checkstyle | cs2pr
