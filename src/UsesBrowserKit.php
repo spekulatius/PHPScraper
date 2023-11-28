@@ -13,21 +13,21 @@ trait UsesBrowserKit
      *
      * @var \Symfony\Component\BrowserKit\HttpBrowser
      */
-    protected $client;
+    protected $client = null;
 
     /**
      * Holds the HttpClient
      *
      * @var \Symfony\Contracts\HttpClient\HttpClientInterface;
      */
-    protected $httpClient;
+    protected $httpClient = null;
 
     /**
      * Holds the current page (a Crawler object)
      *
      * @var \Symfony\Component\DomCrawler\Crawler
      */
-    protected $currentPage;
+    protected $currentPage = null;
 
     /**
      * Overwrites the client

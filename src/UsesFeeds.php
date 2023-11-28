@@ -19,7 +19,7 @@ trait UsesFeeds
      *
      * @return array $sitemap
      */
-    public function sitemapRaw(string $url = null): array
+    public function sitemapRaw(?string $url = null): array
     {
         return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()));
     }
@@ -31,11 +31,11 @@ trait UsesFeeds
      *
      * @return array<FeedEntry> $sitemap
      */
-    public function sitemap(string $url = null): array
+    public function sitemap(?string $url = null): array
     {
         return array_map(
             // Create the generic DTO for each
-            fn ($entry): FeedEntry => FeedEntry::fromArray([
+            fn ($entry) => FeedEntry::fromArray([
                 'title' => '',
                 'description' => '',
                 'link' => $entry['loc'],
@@ -59,7 +59,7 @@ trait UsesFeeds
      *
      * @return array $searchIndex
      */
-    public function searchIndexRaw(string $url = null): array
+    public function searchIndexRaw(?string $url = null): array
     {
         return $this->parseJson($this->fetchAsset($url ?? $this->searchIndexUrl()));
     }
@@ -69,11 +69,11 @@ trait UsesFeeds
      *
      * @return array<FeedEntry> $searchIndex
      */
-    public function searchIndex(string $url = null): array
+    public function searchIndex(?string $url = null): array
     {
         return array_map(
             // Create the generic DTO for each
-            fn ($entry): FeedEntry => FeedEntry::fromArray([
+            fn ($entry) => FeedEntry::fromArray([
                 'title' => $entry['title'],
                 'description' => $entry['snippet'],
                 'link' => $entry['link'],
@@ -93,32 +93,34 @@ trait UsesFeeds
     {
         $urls = $this->filterExtractAttributes('//link[@type="application/rss+xml"]', ['href']);
 
-        return array_map(fn ($url): string => (string) $this->makeUrlAbsolute($url), $urls);
+        return array_map(fn ($url) => (string) $this->makeUrlAbsolute($url), $urls);
     }
 
     /**
      * Fetches a given set of RSS feeds and returns one array with raw data.
      *
+     * @param  ?string  ...$urls
      * @return array $rss
      */
     public function rssRaw(?string ...$urls): array
     {
         return array_map(
             fn ($url) => $this->parseXml($this->fetchAsset((string) $url)),
-            $urls === [] ? $this->rssUrls() : $urls
+            empty($urls) ? $this->rssUrls() : $urls
         );
     }
 
     /**
      * Fetches a given set of RSS feeds and returns one array with raw data.
      *
+     * @param  ?string  ...$urls
      * @return array<FeedEntry> $rss
      */
     public function rss(?string ...$urls): array
     {
         return array_map(
             // Create the generic DTO for each
-            fn ($entry): FeedEntry => FeedEntry::fromArray([
+            fn ($entry) => FeedEntry::fromArray([
                 'title' => $entry['title'],
                 'link' => $entry['link']['@attributes']['href'],
             ]),

@@ -25,8 +25,10 @@ class PHPScraper
 
     /**
      * Holds the Core class. It handles the actual scraping.
+     *
+     * @var \Spekulatius\PHPScraper\Core
      */
-    protected Core $core;
+    protected $core = null;
 
     /**
      * @param  PHPScraperConfig  $config

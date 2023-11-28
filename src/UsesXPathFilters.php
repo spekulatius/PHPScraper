@@ -16,6 +16,8 @@ trait UsesXPathFilters
 
     /**
      * Filters the current page by a xPath-query and returns the first one, or null.
+     *
+     * @return ?Crawler
      */
     public function filterFirst(string $query): ?Crawler
     {
@@ -26,6 +28,8 @@ trait UsesXPathFilters
 
     /**
      * Filters the current page by a xPath-query and returns the first ones content, or null.
+     *
+     * @return ?string
      */
     public function filterFirstText(string $query): ?string
     {
@@ -61,6 +65,7 @@ trait UsesXPathFilters
      * Filters the current page by a xPath-query and returns the selected attributes of the first match.
      *
      * @param  array<string>  $attributes
+     * @return ?string
      */
     public function filterFirstExtractAttribute(string $query, array $attributes): ?string
     {
@@ -71,6 +76,8 @@ trait UsesXPathFilters
 
     /**
      * Returns the content attribute for the first result of the query, or null.
+     *
+     * @return ?string
      */
     public function filterFirstContent(string $query): ?string
     {

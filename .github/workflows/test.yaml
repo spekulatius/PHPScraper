@@ -1,3 +1,4 @@
+name: Tests
 on: [pull_request]
 
 jobs:
@@ -6,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [8.1, 8.2, 8.3]
+        php-version: [8.0, 8.1, 8.2, 8.3]
         composer-flags: [null]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
@@ -17,19 +18,19 @@ jobs:
           extensions: intl curl
       - run: php -v
       - run: composer update ${{ matrix.composer-flags }} --no-interaction --no-progress --prefer-dist --ansi
-      - run: composer test:unit
+      - run: ./vendor/bin/phpunit --color=always
 
   ## PHPSTAN
   phpstan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Install PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@2.21.0
         with:
-          php-version: '8.1'
+          php-version: '8.0'
           coverage: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -39,41 +40,19 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: PHPStan tests
-        run: composer test:types
-
-  ## RECTOR
-  rector:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-          coverage: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          update: true
-
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
-
-      - name: PHPStan tests
-        run: composer test:refactor
+        run: composer phpstan
 
   ## PINT
   pint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Install PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@2.21.0
         with:
-          php-version: '8.1'
+          php-version: '8.0'
           coverage: none
           tools: cs2pr
         env:
@@ -84,4 +63,4 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: Run Pint
-        run: ./vendor/bin/pint --test --format=checkstyle | cs2pr
+        run: composer exec -- pint --test --format=checkstyle | cs2pr
