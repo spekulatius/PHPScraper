@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "ext-intl": "*",
         "symfony/dom-crawler": "^5.4 || ^6.0",
         "donatello-za/rake-php-plus": "^1.0.15",
