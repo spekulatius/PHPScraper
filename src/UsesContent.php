@@ -62,7 +62,7 @@ trait UsesContent
     /**
      * Get the header collected as an array
      *
-     * @return array<string, array|string|null>
+     * @return array{charset: mixed, contentType: mixed, viewport: mixed, canonical: mixed, csrfToken: mixed}
      */
     public function headers(): array
     {
@@ -102,6 +102,8 @@ trait UsesContent
 
     /**
      * Get the meta collected as an array
+     *
+     * @return array{author: mixed, image: mixed, keywords: mixed, description: mixed}
      */
     public function metaTags(): array
     {
@@ -221,9 +223,7 @@ trait UsesContent
      **/
     public function orderedLists(): array
     {
-        return array_values(array_filter($this->lists(), function ($list) {
-            return $list['type'] === 'ol';
-        }));
+        return array_values(array_filter($this->lists(), fn ($list): bool => $list['type'] === 'ol'));
     }
 
     /**
@@ -231,9 +231,7 @@ trait UsesContent
      **/
     public function unorderedLists(): array
     {
-        return array_values(array_filter($this->lists(), function ($list) {
-            return $list['type'] === 'ul';
-        }));
+        return array_values(array_filter($this->lists(), fn ($list): bool => $list['type'] === 'ul'));
     }
 
     /**
@@ -254,9 +252,7 @@ trait UsesContent
     {
         return array_values(array_filter(
             $this->paragraphs(),
-            function ($paragraph) {
-                return $paragraph !== '';
-            }
+            fn ($paragraph): bool => $paragraph !== ''
         ));
     }
 
@@ -287,7 +283,7 @@ trait UsesContent
 
         foreach ($result as $index => $array) {
             $result[$index] = array_combine(['tag', 'content'], (array) $array);
-            $result[$index]['content'] = trim($result[$index]['content']);
+            $result[$index]['content'] = trim((string) $result[$index]['content']);
         }
 
         return $result;
@@ -451,7 +447,7 @@ trait UsesContent
         // Filter the array
         return array_values(array_filter(
             $this->links(),
-            function ($link) use (&$currentRootDomain) {
+            function ($link) use (&$currentRootDomain): bool {
                 $linkRootDomain = Uri::createFromString($link)->getHost();
 
                 return $currentRootDomain === $linkRootDomain;
@@ -502,18 +498,18 @@ trait UsesContent
             // Prepare the result set.
             $entry = [
                 'url' => $uri,
-                'protocol' => \strpos($uri, ':') !== false ? explode(':', $uri)[0] : null,
+                'protocol' => str_contains($uri, ':') ? explode(':', $uri)[0] : null,
                 'text' => trim($link->nodeValue ?? ''),
                 'title' => $link->getAttribute('title') === '' ? null : $link->getAttribute('title'),
                 'target' => $link->getAttribute('target') === '' ? null : $link->getAttribute('target'),
                 'rel' => ($rel === '') ? null : strtolower($rel),
                 'image' => $image,
-                'isNofollow' => ($rel === '') ? false : (\strpos($rel, 'nofollow') !== false),
-                'isUGC' => ($rel === '') ? false : (\strpos($rel, 'ugc') !== false),
-                'isSponsored' => ($rel === '') ? false : (\strpos($rel, 'sponsored') !== false),
-                'isMe' => ($rel === '') ? false : (\strpos($rel, 'me') !== false),
-                'isNoopener' => ($rel === '') ? false : (\strpos($rel, 'noopener') !== false),
-                'isNoreferrer' => ($rel === '') ? false : (\strpos($rel, 'noreferrer') !== false),
+                'isNofollow' => ($rel === '') ? false : str_contains($rel, 'nofollow'),
+                'isUGC' => ($rel === '') ? false : str_contains($rel, 'ugc'),
+                'isSponsored' => ($rel === '') ? false : str_contains($rel, 'sponsored'),
+                'isMe' => ($rel === '') ? false : str_contains($rel, 'me'),
+                'isNoopener' => ($rel === '') ? false : str_contains($rel, 'noopener'),
+                'isNoreferrer' => ($rel === '') ? false : str_contains($rel, 'noreferrer'),
             ];
 
             $result[] = $entry;
