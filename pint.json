@@ -7,6 +7,7 @@
             "anonymous_class": false,
             "named_class": false
         },
-        "concat_space": false
+        "concat_space": false,
+        "ordered_traits": false
     }
 }
