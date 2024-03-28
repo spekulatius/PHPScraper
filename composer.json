@@ -22,12 +22,12 @@
     "require": {
         "php": "^8.1",
         "ext-intl": "*",
-        "symfony/dom-crawler": "^5.4 || ^6.0",
+        "symfony/dom-crawler": "^5.4 || ^6.0 || ^7.0",
         "donatello-za/rake-php-plus": "^1.0.15",
         "league/uri": "^7.0",
-        "symfony/browser-kit": "^6.0",
-        "symfony/http-client": "^6.0",
-        "symfony/css-selector": "^6.0"
+        "symfony/browser-kit": "^6.0 || ^7.0",
+        "symfony/http-client": "^6.0 || ^7.0",
+        "symfony/css-selector": "^6.0 || ^7.0"
     },
     "require-dev": {
         "symfony/thanks": "^1.0.0",
