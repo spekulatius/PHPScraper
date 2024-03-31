@@ -382,7 +382,7 @@ trait UsesContent
      * @see https://phpscraper.de/examples/extract-keywords.html
      * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
-     * @param  string  $locale (default: 'en_US')
+     * @param  string  $locale  (default: 'en_US')
      */
     public function contentKeywords($locale = 'en_US'): array
     {
@@ -408,7 +408,7 @@ trait UsesContent
      * @see https://phpscraper.de/examples/extract-keywords.html
      * @see https://github.com/spekulatius/phpscraper-keyword-scraping-example
      *
-     * @param  string  $locale (default: 'en_US')
+     * @param  string  $locale  (default: 'en_US')
      */
     public function contentKeywordsWithScores($locale = 'en_US'): array
     {
