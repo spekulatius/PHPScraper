@@ -19,7 +19,7 @@ trait UsesFeeds
      *
      * @return array $sitemap
      */
-    public function sitemapRaw(string $url = null): array
+    public function sitemapRaw(?string $url = null): array
     {
         return $this->parseXml($this->fetchAsset($url ?? $this->sitemapUrl()));
     }
@@ -31,7 +31,7 @@ trait UsesFeeds
      *
      * @return array<FeedEntry> $sitemap
      */
-    public function sitemap(string $url = null): array
+    public function sitemap(?string $url = null): array
     {
         return array_map(
             // Create the generic DTO for each
@@ -59,7 +59,7 @@ trait UsesFeeds
      *
      * @return array $searchIndex
      */
-    public function searchIndexRaw(string $url = null): array
+    public function searchIndexRaw(?string $url = null): array
     {
         return $this->parseJson($this->fetchAsset($url ?? $this->searchIndexUrl()));
     }
@@ -69,7 +69,7 @@ trait UsesFeeds
      *
      * @return array<FeedEntry> $searchIndex
      */
-    public function searchIndex(string $url = null): array
+    public function searchIndex(?string $url = null): array
     {
         return array_map(
             // Create the generic DTO for each

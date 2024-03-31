@@ -52,7 +52,7 @@ trait UsesUrls
      *
      * @return ?string $absoluteUrl
      */
-    public function makeUrlAbsolute(string $url = null, string $baseUrl = null): ?string
+    public function makeUrlAbsolute(?string $url = null, ?string $baseUrl = null): ?string
     {
         // Allow to pass null through
         if ($url === null || $this->currentPage === null) {
