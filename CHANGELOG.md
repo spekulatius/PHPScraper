@@ -6,6 +6,19 @@ Parts regarding the [documentation website](https://phpscraper.de), the [test pa
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0 (2024-04-09)
+
+- [#204](https://github.com/spekulatius/PHPScraper/pull/204): Upgrading Symfony dependencies to allow ^7.0
+- [#201](https://github.com/spekulatius/PHPScraper/pull/201): Pint
+- [#200](https://github.com/spekulatius/PHPScraper/pull/200): Upgrade from league/uri 6.x to league/uri 7.x, replacing deprecated function use with new recommended ones
+- [#199](https://github.com/spekulatius/PHPScraper/pull/199): Add CI job names
+- [#196](https://github.com/spekulatius/PHPScraper/pull/196): Upgrading repo tools
+- [#195](https://github.com/spekulatius/PHPScraper/pull/195): Add Pint
+- [#194](https://github.com/spekulatius/PHPScraper/pull/194): Fix HTTPClient config
+- [#192](https://github.com/spekulatius/PHPScraper/pull/192): Fix few problems reported by PHPStan
+- [#190](https://github.com/spekulatius/PHPScraper/pull/190): Fix typos and a critical error
+- [#188](https://github.com/spekulatius/PHPScraper/pull/188): Move phpstan to local temp path to ensure Windows users can run it
+
 ## 2.0.0 (2023-06-01)
 
 - [#187](https://github.com/spekulatius/PHPScraper/issues/187): Prepare v2: Improve typing, bringing PHPStan to --level=9. For details check the [CHANGELOG](https://github.com/spekulatius/PHPScraper/blob/master/UPGRADING.md#from-1x-to-2x).
