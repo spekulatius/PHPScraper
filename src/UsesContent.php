@@ -529,9 +529,13 @@ trait UsesContent
         $images = $this->filter('//img')->images();
 
         /** @var \Symfony\Component\DomCrawler\Image $image */
-        foreach ($images as $image) {
-            $result[] = $image->getUri();
-        }
+	    foreach ($images as $image) {
+         $node = $image->getNode();
+         if ($node) {
+             $result[] = !empty($node->getAttribute('data-src')) ? $this->makeUrlAbsolute($node->getAttribute('data-src')) : $image->getUri();
+         }
+     }
+
 
         return $result;
     }
@@ -551,7 +555,7 @@ trait UsesContent
             // Collect the URL and commonly interesting attributes
             $result[] = [
                 // Re-generate the proper uri using the Symfony's image class
-                'url' => (new DomCrawlerImage($image, $this->currentBaseHost()))->getUri(),
+                'url' => !empty($image->getAttribute('data-src')) ? $this->makeUrlAbsolute($image->getAttribute('data-src')) : (new DomCrawlerImage($image, $this->currentBaseHost()))->getUri(),
                 'alt' => $image->getAttribute('alt'),
                 'width' => $image->getAttribute('width') === '' ? null : $image->getAttribute('width'),
                 'height' => $image->getAttribute('height') === '' ? null : $image->getAttribute('height'),
