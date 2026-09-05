@@ -220,7 +220,7 @@ trait UsesContent
     }
 
     /**
-     * @return array<string>
+     * @return array<array{type: string, children: \DOMNodeList<\DOMNode>, children_plain: array<string>}>
      **/
     public function orderedLists(): array
     {
@@ -228,7 +228,7 @@ trait UsesContent
     }
 
     /**
-     * @return array<string>
+     * @return array<array{type: string, children: \DOMNodeList<\DOMNode>, children_plain: array<string>}>
      **/
     public function unorderedLists(): array
     {
@@ -260,7 +260,7 @@ trait UsesContent
     /**
      * Parses the content outline of the web-page
      *
-     * @return array<string>
+     * @return array<array{tag: string, content: string}>
      */
     public function outline(): array
     {
@@ -438,7 +438,7 @@ trait UsesContent
     }
 
     /**
-     * Get all internal links (same root or sub-domain) on the page as absolute URLs
+     * Get all internal links (same host) on the page as absolute URLs
      */
     public function internalLinks(): array
     {

@@ -9,5 +9,8 @@
         },
         "concat_space": false,
         "ordered_traits": false
-    }
+    },
+    "notName": [
+        "src/Core.php"
+    ]
 }
