@@ -110,7 +110,7 @@ trait UsesFeeds
     }
 
     /**
-     * Fetches a given set of RSS feeds and returns one array with raw data.
+     * Fetches a given set of RSS feeds and returns one array of FeedEntry DTOs.
      *
      * @return array<FeedEntry> $rss
      */
