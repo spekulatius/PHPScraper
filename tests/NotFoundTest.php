@@ -17,6 +17,6 @@ class NotFoundTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/page-does-not-exist.html');
 
         // The built-in server returns this string.
-        $this->assertSame('Page Not Found', $web->title);
+        $this->assertSame('Page not found', $web->title);
     }
 }
