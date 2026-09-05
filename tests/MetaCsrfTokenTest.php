@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class MetaCsrfTokenTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class MetaCsrfTokenTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingCsrfToken()
+    public function test_missing_csrf_token()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -21,9 +24,9 @@ class MetaCsrfTokenTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testWithCsrfToken()
+    public function test_with_csrf_token()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         // Contains: <meta name="csrf-token" content="token" />

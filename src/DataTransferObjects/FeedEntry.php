@@ -18,8 +18,7 @@ class FeedEntry
         public string $title,
         public string $description,
         public string $link
-    ) {
-    }
+    ) {}
 
     /**
      * @param  array<string, string>  $data

@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class NavigationTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class NavigationTest extends TestCase
 {
     /**
      * @test
      */
-    public function testSurfWithAbsoluteLink()
+    public function test_surf_with_absolute_link()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to test page #1.
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -28,9 +31,9 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testSurfWithRelativeLink()
+    public function test_surf_with_relative_link()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to test page #1.
         $web->go('https://test-pages.phpscraper.de/navigation/1.html');
@@ -51,9 +54,9 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testLeavePageByText()
+    public function test_leave_page_by_text()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -73,9 +76,9 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testLeavePageWithRedirect()
+    public function test_leave_page_with_redirect()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -95,9 +98,9 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testLeavePageByURL()
+    public function test_leave_page_by_url()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to test page #2.
         $web->go('https://test-pages.phpscraper.de/navigation/2.html');
@@ -117,9 +120,9 @@ class NavigationTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testClickLinkChainability()
+    public function test_click_link_chainability()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to a page, click a link by URL and see if we are on the expected `currentUrl`.
         $web

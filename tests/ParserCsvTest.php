@@ -2,19 +2,22 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class ParserCsvTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class ParserCsvTest extends TestCase
 {
     /**
      * @test
      */
-    public function testCsvParsingContext()
+    public function test_csv_parsing_context()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // This tests ensures an exception is thrown, if no context is given.
         // Context means either it's been navigated before (URL context) or get something to (fetch +) parse
         try {
-            $web = new \Spekulatius\PHPScraper\PHPScraper;
+            $web = new PHPScraper;
             $web->parseCsv();
         } catch (\Exception $e) {
             // Did we get the expected exception?
@@ -27,7 +30,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
         // This tests ensures an exception is thrown, if no context is given.
         // Context means either it's been navigated before (URL context) or get something to (fetch +) parse
         try {
-            $web = new \Spekulatius\PHPScraper\PHPScraper;
+            $web = new PHPScraper;
             $web->parseCsvWithHeader();
         } catch (\Exception $e) {
             // Did we get the expected exception?
@@ -41,9 +44,9 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testCsvDecodeRaw()
+    public function test_csv_decode_raw()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Only decoding
         $this->assertSame(
@@ -69,9 +72,9 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testCsvDecode()
+    public function test_csv_decode()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Only decoding
         $this->assertSame(
@@ -99,9 +102,9 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testCsvDecodeAndCustomEncoding()
+    public function test_csv_decode_and_custom_encoding()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         $this->assertSame(
             [
@@ -122,9 +125,9 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testCsvDecodeWithHeaderRaw()
+    public function test_csv_decode_with_header_raw()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Only decoding
         $this->assertSame(
@@ -148,9 +151,9 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testCsvDecodeWithHeaderAndCasting()
+    public function test_csv_decode_with_header_and_casting()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         $this->assertSame(
             [
@@ -166,9 +169,9 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testCsvDecodeWithHeaderAndCustomEncoding()
+    public function test_csv_decode_with_header_and_custom_encoding()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         $this->assertSame(
             [
@@ -190,10 +193,10 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testDifferentCsvCalls()
+    public function test_different_csv_calls()
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // For the reference we are using a simple CSV and parse it. This matches the hosted CSV.
         $csvString = "date,value\n1945-02-06,4.20\n1952-03-11,42";
@@ -205,7 +208,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Parse the $csvString directly.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseCsv($csvString)
         );
 
@@ -215,7 +218,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Chained call using a CSV file as URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/test.csv')
                 ->parseCsv()
         );
@@ -226,7 +229,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Pass the absolutely URL to `parseCsv()`
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseCsv('https://test-pages.phpscraper.de/test.csv')
         );
 
@@ -236,7 +239,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The 'go' sets the base URL for the following relative path.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseCsv('/test.csv')
         );
@@ -247,7 +250,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             'https://test-pages.phpscraper.de/test.csv',
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test.csv')
                 ->currentUrl()
@@ -259,7 +262,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test.csv')
                 ->parseCsv()
@@ -271,7 +274,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test-custom.csv')
                 ->parseCsv(null, '|', '"')
@@ -283,7 +286,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseCsv('/test-custom.csv', '|', '"')
         );
@@ -294,10 +297,10 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testDifferentCsvWithHeaderCalls()
+    public function test_different_csv_with_header_calls()
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // For the reference we are using a simple CSV and parse it. This matches the hosted CSV.
         $csvString = "date,value\n1945-02-06,4.20\n1952-03-11,42";
@@ -312,7 +315,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Parse the $csvString directly.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseCsvWithHeader($csvString)
         );
 
@@ -322,7 +325,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Chained call using a CSV file as URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv')
         );
 
@@ -332,7 +335,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Chained call using a CSV file as URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/test.csv')
                 ->parseCsvWithHeader()
         );
@@ -343,7 +346,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // Pass the absolutely URL to `parseCsvWithHeader()`
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseCsvWithHeader('https://test-pages.phpscraper.de/test.csv')
         );
 
@@ -353,7 +356,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The 'go' sets the base URL for the following relative path.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseCsvWithHeader('/test.csv')
         );
@@ -364,7 +367,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             'https://test-pages.phpscraper.de/test.csv',
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test.csv')
                 ->currentUrl()
@@ -376,7 +379,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test.csv')
                 ->parseCsvWithHeader()
@@ -388,7 +391,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/test-custom.csv')
                 ->parseCsvWithHeader(null, '|', '"')
@@ -400,7 +403,7 @@ class ParserCsvTest extends \PHPUnit\Framework\TestCase
             $csvData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseCsvWithHeader('/test-custom.csv', '|', '"')
         );

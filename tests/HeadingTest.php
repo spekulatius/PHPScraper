@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class HeadingTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class HeadingTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingHeadings()
+    public function test_missing_headings()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/no-meta.html');
@@ -25,9 +28,9 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testWithHTMLEntity()
+    public function test_with_html_entity()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
@@ -62,9 +65,9 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testLoremIpsum()
+    public function test_lorem_ipsum()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -86,9 +89,9 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testGermanUmlaute()
+    public function test_german_umlaute()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
@@ -110,9 +113,9 @@ class HeadingTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testChineseCharacters()
+    public function test_chinese_characters()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');

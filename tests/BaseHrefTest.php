@@ -2,19 +2,22 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
 /**
  * This tests only the `<base href="...">`-extraction.
  *
  * If you are looking for any URL-related tests check `UrlTest.php`.
  */
-class BaseHrefTest extends \PHPUnit\Framework\TestCase
+class BaseHrefTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingBaseHref()
+    public function test_missing_base_href()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -26,9 +29,9 @@ class BaseHrefTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testBaseHref()
+    public function test_base_href()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         // Contains: <base href="https://test-pages-with-base-href.phpscraper.de/">

@@ -2,16 +2,18 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Spekulatius\PHPScraper\DataTransferObjects\FeedEntry;
+use Spekulatius\PHPScraper\PHPScraper;
 
-class FeedSitemapTest extends \PHPUnit\Framework\TestCase
+class FeedSitemapTest extends TestCase
 {
     /**
      * @test
      */
-    public function testSitemapUrl()
+    public function test_sitemap_url()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -28,9 +30,9 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testDefaultSitemapUrl()
+    public function test_default_sitemap_url()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -47,9 +49,9 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testCustomSitemapUrl()
+    public function test_custom_sitemap_url()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -66,9 +68,9 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testDifferentSitemapUrlTypes()
+    public function test_different_sitemap_url_types()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page. As the URL is predefined, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -91,9 +93,9 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testSitemapRaw()
+    public function test_sitemap_raw()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
@@ -120,9 +122,9 @@ class FeedSitemapTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testSitemap()
+    public function test_sitemap()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page. As the URL is guessed, it's only about the base URL.
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');

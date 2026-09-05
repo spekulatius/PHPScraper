@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class TwitterCardTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class TwitterCardTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingTwitterCard()
+    public function test_missing_twitter_card()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Go to the test page
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -22,9 +25,9 @@ class TwitterCardTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testTwitterCard()
+    public function test_twitter_card()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/twittercard/example.html');

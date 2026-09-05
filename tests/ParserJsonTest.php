@@ -2,19 +2,22 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class ParserJsonTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class ParserJsonTest extends TestCase
 {
     /**
      * @test
      */
-    public function testJsonParsingContext()
+    public function test_json_parsing_context()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // This tests ensures an exception is thrown, if no context is given.
         // Context means either it's been navigated before (URL context) or get something to (fetch +) parse
         try {
-            $web = new \Spekulatius\PHPScraper\PHPScraper;
+            $web = new PHPScraper;
             $web->parseJson();
         } catch (\Exception $e) {
             // Did we get the expected exception?
@@ -30,10 +33,10 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testDifferentJsonCalls()
+    public function test_different_json_calls()
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // For the reference we are using a simple JSON and parse it.
         $jsonString = $web->fetchAsset('https://test-pages.phpscraper.de/index.json');
@@ -45,7 +48,7 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             $jsonData,
 
             // Parse the $jsonString directly.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseJson($jsonString)
         );
 
@@ -55,7 +58,7 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             $jsonData,
 
             // Chained call using a JSON file as URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/index.json')
                 ->parseJson()
         );
@@ -66,7 +69,7 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             $jsonData,
 
             // Pass the absolutely URL to `parseJson()`
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->parseJson('https://test-pages.phpscraper.de/index.json')
         );
 
@@ -76,7 +79,7 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             $jsonData,
 
             // The 'go' sets the base URL for the following relative path.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->parseJson('/index.json')
         );
@@ -87,7 +90,7 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             'https://test-pages.phpscraper.de/index.json',
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/index.json')
                 ->currentUrl()
@@ -99,7 +102,7 @@ class ParserJsonTest extends \PHPUnit\Framework\TestCase
             $jsonData,
 
             // The first 'go' sets the base URL for the following `go` with relative URL.
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go('https://test-pages.phpscraper.de/meta/feeds.html')
                 ->go('/index.json')
                 ->parseJson()

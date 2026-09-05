@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class MetaCharsetTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class MetaCharsetTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingCharset()
+    public function test_missing_charset()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -21,9 +24,9 @@ class MetaCharsetTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testWithCharset()
+    public function test_with_charset()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');

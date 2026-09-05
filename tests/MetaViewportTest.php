@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class MetaViewportTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class MetaViewportTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingViewport()
+    public function test_missing_viewport()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Go to the test page
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -25,9 +28,9 @@ class MetaViewportTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testWithViewport()
+    public function test_with_viewport()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');

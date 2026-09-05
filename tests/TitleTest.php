@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class TitleTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class TitleTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingTitle()
+    public function test_missing_title()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -21,9 +24,9 @@ class TitleTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testWithHTMLEntity()
+    public function test_with_html_entity()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/html-entities.html');
@@ -38,9 +41,9 @@ class TitleTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testLoremIpsum()
+    public function test_lorem_ipsum()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -55,9 +58,9 @@ class TitleTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testGermanUmlaute()
+    public function test_german_umlaute()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/german-umlaute.html');
@@ -72,9 +75,9 @@ class TitleTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testChineseCharacters()
+    public function test_chinese_characters()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/chinese-characters.html');
@@ -89,9 +92,9 @@ class TitleTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testLongTitle()
+    public function test_long_title()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/title/long-title.html');
