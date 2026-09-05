@@ -13,8 +13,7 @@ class FeedEntry
         public readonly string $title,
         public readonly string $description,
         public readonly string $link
-    ) {
-    }
+    ) {}
 
     /**
      * @param  array<string, string>  $data
