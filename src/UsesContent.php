@@ -438,7 +438,7 @@ trait UsesContent
     }
 
     /**
-     * Get all internal links (same root or sub-domain) on the page as absolute URLs
+     * Get all internal links (same host) on the page as absolute URLs
      */
     public function internalLinks(): array
     {
