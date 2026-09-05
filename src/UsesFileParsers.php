@@ -17,7 +17,7 @@ trait UsesFileParsers
     ): array {
         try {
             $csv = array_map(
-                fn ($line) => str_getcsv($line, $separator ?? ',', $enclosure ?? '"', $escape ?? '\\'),
+                fn ($line): array => str_getcsv($line, $separator ?? ',', $enclosure ?? '"', $escape ?? '\\'),
                 explode("\n", $csvString)
             );
 

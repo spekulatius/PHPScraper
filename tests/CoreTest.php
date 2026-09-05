@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class CoreTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class CoreTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMethodAndPropertyCallsAreEqual()
+    public function test_method_and_property_calls_are_equal()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to test page
         $web->go('https://phpscraper.de');
@@ -23,9 +26,9 @@ class CoreTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testChangeOfCurrentPage()
+    public function test_change_of_current_page()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // 1. Navigate to test page
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');
@@ -65,13 +68,13 @@ class CoreTest extends \PHPUnit\Framework\TestCase
      *
      * @test
      */
-    public function testBasicChainability()
+    public function test_basic_chainability()
     {
         // Testing env: First h1: "We are testing here & elsewhere!"
         $url = 'https://test-pages.phpscraper.de/meta/html-entities.html';
 
         // Test 1: Create, navigate to the test page.
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
         $web->go($url);
 
         // Check the h1
@@ -85,7 +88,7 @@ class CoreTest extends \PHPUnit\Framework\TestCase
             'We are testing here & elsewhere!',
 
             // Chained
-            (new \Spekulatius\PHPScraper\PHPScraper)
+            (new PHPScraper)
                 ->go($url)
                 ->h1[0]
         );

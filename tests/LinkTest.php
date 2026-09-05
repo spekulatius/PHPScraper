@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class LinkTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class LinkTest extends TestCase
 {
     /**
      * @test
      */
-    public function testNoLinks()
+    public function test_no_links()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/no-links.html');
@@ -22,9 +25,9 @@ class LinkTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testTarget()
+    public function test_target()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/target.html');
@@ -135,9 +138,9 @@ class LinkTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testRel()
+    public function test_rel()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         // This page contains several links with different rel attributes.
@@ -234,9 +237,9 @@ class LinkTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testBaseHref()
+    public function test_base_href()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -302,9 +305,9 @@ class LinkTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testImageUrl()
+    public function test_image_url()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/image-url.html');
@@ -370,9 +373,9 @@ class LinkTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testInternalLinks()
+    public function test_internal_links()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');
@@ -387,9 +390,9 @@ class LinkTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testExternalLinks()
+    public function test_external_links()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/links/base-href.html');

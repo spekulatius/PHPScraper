@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class ParagraphsTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class ParagraphsTest extends TestCase
 {
     /**
      * @test
      */
-    public function paragraphTest()
+    public function paragraph_test()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         /**
          * Navigate to the test page. This page contains:
@@ -48,9 +51,9 @@ class ParagraphsTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function cleanParagraphTest()
+    public function clean_paragraph_test()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         /**
          * Navigate to the test page. This page contains:

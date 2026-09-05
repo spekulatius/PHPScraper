@@ -35,7 +35,7 @@ trait UsesFeeds
     {
         return array_map(
             // Create the generic DTO for each
-            fn ($entry): FeedEntry => FeedEntry::fromArray([
+            fn (array $entry): FeedEntry => FeedEntry::fromArray([
                 'title' => '',
                 'description' => '',
                 'link' => $entry['loc'],
@@ -73,7 +73,7 @@ trait UsesFeeds
     {
         return array_map(
             // Create the generic DTO for each
-            fn ($entry): FeedEntry => FeedEntry::fromArray([
+            fn (array $entry): FeedEntry => FeedEntry::fromArray([
                 'title' => $entry['title'],
                 'description' => $entry['snippet'],
                 'link' => $entry['link'],
@@ -118,7 +118,7 @@ trait UsesFeeds
     {
         return array_map(
             // Create the generic DTO for each
-            fn ($entry): FeedEntry => FeedEntry::fromArray([
+            fn (array $entry): FeedEntry => FeedEntry::fromArray([
                 'title' => $entry['title'],
                 'link' => $entry['link']['@attributes']['href'],
             ]),

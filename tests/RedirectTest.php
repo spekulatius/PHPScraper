@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class RedirectTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class RedirectTest extends TestCase
 {
     /**
      * @test
      */
-    public function testRedirect()
+    public function test_redirect()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page: This redirects to phpscraper.de
         $web->go('https://test-pages.phpscraper.de');
@@ -27,9 +30,9 @@ class RedirectTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testDisabledRedirect()
+    public function test_disabled_redirect()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         $web->setConfig([
             'follow_redirects' => false,

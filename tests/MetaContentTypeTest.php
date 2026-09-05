@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class MetaContentTypeTest extends TestCase
 {
     /**
      * @test
      */
-    public function testMissingContentType()
+    public function test_missing_content_type()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
@@ -21,9 +24,9 @@ class MetaContentTypeTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function testWithContentType()
+    public function test_with_content_type()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         // Navigate to the test page.
         $web->go('https://test-pages.phpscraper.de/meta/lorem-ipsum.html');

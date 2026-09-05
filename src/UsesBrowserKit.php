@@ -11,7 +11,7 @@ trait UsesBrowserKit
     /**
      * Holds the client
      *
-     * @var \Symfony\Component\BrowserKit\HttpBrowser
+     * @var HttpBrowser
      */
     protected $client;
 
@@ -25,7 +25,7 @@ trait UsesBrowserKit
     /**
      * Holds the current page (a Crawler object)
      *
-     * @var \Symfony\Component\DomCrawler\Crawler
+     * @var Crawler
      */
     protected $currentPage;
 
@@ -52,7 +52,7 @@ trait UsesBrowserKit
     /**
      * Retrieve the client
      *
-     * @return \Symfony\Component\BrowserKit\HttpBrowser $client
+     * @return HttpBrowser $client
      */
     public function client(): HttpBrowser
     {

@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class OutlineTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class OutlineTest extends TestCase
 {
     /**
      * @test
      */
-    public function outlineTest()
+    public function outline_test()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         /**
          * Navigate to the test page. This page contains:
@@ -58,9 +61,9 @@ class OutlineTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function outlineWithParagraphsTest()
+    public function outline_with_paragraphs_test()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         /**
          * Navigate to the test page. This page contains:

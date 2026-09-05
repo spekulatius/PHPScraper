@@ -116,10 +116,8 @@ class PHPScraper
 
     /**
      * Catch calls to properties and process them accordingly.
-     *
-     * @return mixed
      */
-    public function __get(string $name)
+    public function __get(string $name): mixed
     {
         // We are assuming that all calls for properties actually method calls...
         return $this->__call($name);

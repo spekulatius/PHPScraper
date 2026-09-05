@@ -2,7 +2,6 @@ vendor
 .idea
 .php_cs.cache
 .phpunit.result.cache
-composer.lock
 yarn-error.log
 websites/.yarn/
 websites/.yarnrc.yml

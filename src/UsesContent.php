@@ -4,6 +4,7 @@ namespace Spekulatius\PHPScraper;
 
 use DonatelloZa\RakePlus\RakePlus;
 use League\Uri\Uri;
+use Symfony\Component\DomCrawler\Image;
 use Symfony\Component\DomCrawler\Image as DomCrawlerImage;
 use Symfony\Component\DomCrawler\Link as DomCrawlerLink;
 
@@ -223,7 +224,7 @@ trait UsesContent
      **/
     public function orderedLists(): array
     {
-        return array_values(array_filter($this->lists(), fn ($list): bool => $list['type'] === 'ol'));
+        return array_values(array_filter($this->lists(), fn (array $list): bool => $list['type'] === 'ol'));
     }
 
     /**
@@ -231,7 +232,7 @@ trait UsesContent
      **/
     public function unorderedLists(): array
     {
-        return array_values(array_filter($this->lists(), fn ($list): bool => $list['type'] === 'ul'));
+        return array_values(array_filter($this->lists(), fn (array $list): bool => $list['type'] === 'ul'));
     }
 
     /**
@@ -528,7 +529,7 @@ trait UsesContent
 
         $images = $this->filter('//img')->images();
 
-        /** @var \Symfony\Component\DomCrawler\Image $image */
+        /** @var Image $image */
         foreach ($images as $image) {
             $result[] = $image->getUri();
         }

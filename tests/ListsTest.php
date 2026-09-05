@@ -2,14 +2,17 @@
 
 namespace Spekulatius\PHPScraper\Tests;
 
-class ListsTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Spekulatius\PHPScraper\PHPScraper;
+
+class ListsTest extends TestCase
 {
     /**
      * @test
      */
-    public function checkCountTest()
+    public function check_count_test()
     {
-        $web = new \Spekulatius\PHPScraper\PHPScraper;
+        $web = new PHPScraper;
 
         /**
          * Navigate to the test page. This page contains:
