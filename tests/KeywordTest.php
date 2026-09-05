@@ -10,7 +10,7 @@ class KeywordTest extends TestCase
     /**
      * @test
      */
-    public function test_keyword_extraction()
+    public function test_keyword_extraction(): void
     {
         $web = new PHPScraper;
 
@@ -52,7 +52,7 @@ class KeywordTest extends TestCase
     /**
      * @test
      */
-    public function test_keyword_extraction_with_scores()
+    public function test_keyword_extraction_with_scores(): void
     {
         $web = new PHPScraper;
 
@@ -61,6 +61,7 @@ class KeywordTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/content/keywords.html');
 
         // Check the keywords on this case...
+        /** @var array<string, float> $keywords */
         $keywords = $web->contentKeywordsWithScores;
 
         // A selected list of keywords to expect

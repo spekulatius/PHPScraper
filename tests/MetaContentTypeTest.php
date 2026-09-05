@@ -10,7 +10,7 @@ class MetaContentTypeTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_content_type()
+    public function test_missing_content_type(): void
     {
         $web = new PHPScraper;
 
@@ -24,7 +24,7 @@ class MetaContentTypeTest extends TestCase
     /**
      * @test
      */
-    public function test_with_content_type()
+    public function test_with_content_type(): void
     {
         $web = new PHPScraper;
 

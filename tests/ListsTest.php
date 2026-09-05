@@ -10,7 +10,7 @@ class ListsTest extends TestCase
     /**
      * @test
      */
-    public function check_count_test()
+    public function check_count_test(): void
     {
         $web = new PHPScraper;
 

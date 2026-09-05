@@ -15,7 +15,7 @@ class BaseHrefTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_base_href()
+    public function test_missing_base_href(): void
     {
         $web = new PHPScraper;
 
@@ -29,7 +29,7 @@ class BaseHrefTest extends TestCase
     /**
      * @test
      */
-    public function test_base_href()
+    public function test_base_href(): void
     {
         $web = new PHPScraper;
 
