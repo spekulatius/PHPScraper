@@ -1,6 +1,6 @@
 # Contribution Guide
 
-This page contains guidelines for contributing to the this project. Please
+This page contains guidelines for contributing to this project. Please
 review these guidelines before submitting any pull requests.
 
 ## Pull Requests
