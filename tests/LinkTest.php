@@ -10,7 +10,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_no_links()
+    public function test_no_links(): void
     {
         $web = new PHPScraper;
 
@@ -25,7 +25,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_target()
+    public function test_target(): void
     {
         $web = new PHPScraper;
 
@@ -138,7 +138,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_rel()
+    public function test_rel(): void
     {
         $web = new PHPScraper;
 
@@ -237,7 +237,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_base_href()
+    public function test_base_href(): void
     {
         $web = new PHPScraper;
 
@@ -305,7 +305,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_image_url()
+    public function test_image_url(): void
     {
         $web = new PHPScraper;
 
@@ -373,7 +373,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_internal_links()
+    public function test_internal_links(): void
     {
         $web = new PHPScraper;
 
@@ -390,7 +390,7 @@ class LinkTest extends TestCase
     /**
      * @test
      */
-    public function test_external_links()
+    public function test_external_links(): void
     {
         $web = new PHPScraper;
 

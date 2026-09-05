@@ -10,7 +10,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_keywords()
+    public function test_missing_keywords(): void
     {
         $web = new PHPScraper;
 
@@ -21,14 +21,13 @@ class MetaKeywordsTest extends TestCase
         $this->assertNull($web->keywordString);
 
         // Empty array if there aren't any keywords set.
-        $this->assertTrue(is_iterable($web->keywords));
-        $this->assertTrue(empty($web->keywords));
+        $this->assertSame([], $web->keywords);
     }
 
     /**
      * @test
      */
-    public function test_no_spaces()
+    public function test_no_spaces(): void
     {
         $web = new PHPScraper;
 
@@ -43,7 +42,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_spaces()
+    public function test_spaces(): void
     {
         $web = new PHPScraper;
 
@@ -58,7 +57,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_irregular_spaces()
+    public function test_irregular_spaces(): void
     {
         $web = new PHPScraper;
 
@@ -73,7 +72,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_with_html_entity()
+    public function test_with_html_entity(): void
     {
         $web = new PHPScraper;
 
@@ -87,7 +86,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_lorem_ipsum()
+    public function test_lorem_ipsum(): void
     {
         $web = new PHPScraper;
 
@@ -101,7 +100,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_german_umlaute()
+    public function test_german_umlaute(): void
     {
         $web = new PHPScraper;
 
@@ -115,7 +114,7 @@ class MetaKeywordsTest extends TestCase
     /**
      * @test
      */
-    public function test_chinese_characters()
+    public function test_chinese_characters(): void
     {
         $web = new PHPScraper;
 

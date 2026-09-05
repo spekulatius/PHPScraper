@@ -10,7 +10,7 @@ class ParserJsonTest extends TestCase
     /**
      * @test
      */
-    public function test_json_parsing_context()
+    public function test_json_parsing_context(): void
     {
         $web = new PHPScraper;
 
@@ -33,7 +33,7 @@ class ParserJsonTest extends TestCase
      *
      * @test
      */
-    public function test_different_json_calls()
+    public function test_different_json_calls(): void
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
         $web = new PHPScraper;

@@ -10,7 +10,7 @@ class MetaCharsetTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_charset()
+    public function test_missing_charset(): void
     {
         $web = new PHPScraper;
 
@@ -24,7 +24,7 @@ class MetaCharsetTest extends TestCase
     /**
      * @test
      */
-    public function test_with_charset()
+    public function test_with_charset(): void
     {
         $web = new PHPScraper;
 

@@ -10,7 +10,7 @@ class OutlineTest extends TestCase
     /**
      * @test
      */
-    public function outline_test()
+    public function outline_test(): void
     {
         $web = new PHPScraper;
 
@@ -61,7 +61,7 @@ class OutlineTest extends TestCase
     /**
      * @test
      */
-    public function outline_with_paragraphs_test()
+    public function outline_with_paragraphs_test(): void
     {
         $web = new PHPScraper;
 

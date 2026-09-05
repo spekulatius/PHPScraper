@@ -10,7 +10,7 @@ class NavigationTest extends TestCase
     /**
      * @test
      */
-    public function test_surf_with_absolute_link()
+    public function test_surf_with_absolute_link(): void
     {
         $web = new PHPScraper;
 
@@ -31,7 +31,7 @@ class NavigationTest extends TestCase
     /**
      * @test
      */
-    public function test_surf_with_relative_link()
+    public function test_surf_with_relative_link(): void
     {
         $web = new PHPScraper;
 
@@ -54,7 +54,7 @@ class NavigationTest extends TestCase
      *
      * @test
      */
-    public function test_leave_page_by_text()
+    public function test_leave_page_by_text(): void
     {
         $web = new PHPScraper;
 
@@ -76,7 +76,7 @@ class NavigationTest extends TestCase
      *
      * @test
      */
-    public function test_leave_page_with_redirect()
+    public function test_leave_page_with_redirect(): void
     {
         $web = new PHPScraper;
 
@@ -98,7 +98,7 @@ class NavigationTest extends TestCase
      *
      * @test
      */
-    public function test_leave_page_by_url()
+    public function test_leave_page_by_url(): void
     {
         $web = new PHPScraper;
 
@@ -120,7 +120,7 @@ class NavigationTest extends TestCase
      *
      * @test
      */
-    public function test_click_link_chainability()
+    public function test_click_link_chainability(): void
     {
         $web = new PHPScraper;
 

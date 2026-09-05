@@ -17,10 +17,8 @@ trait UsesBrowserKit
 
     /**
      * Holds the HttpClient
-     *
-     * @var \Symfony\Contracts\HttpClient\HttpClientInterface;
      */
-    protected $httpClient;
+    protected HttpClientInterface $httpClient;
 
     /**
      * Holds the current page (a Crawler object)

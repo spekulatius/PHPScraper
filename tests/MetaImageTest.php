@@ -10,7 +10,7 @@ class MetaImageTest extends TestCase
     /**
      * @test
      */
-    public function test_call_methods_are_equal()
+    public function test_call_methods_are_equal(): void
     {
         $web = new PHPScraper;
 
@@ -24,7 +24,7 @@ class MetaImageTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_image()
+    public function test_missing_image(): void
     {
         $web = new PHPScraper;
 
@@ -38,7 +38,7 @@ class MetaImageTest extends TestCase
     /**
      * @test
      */
-    public function test_absolute_path()
+    public function test_absolute_path(): void
     {
         $web = new PHPScraper;
 
@@ -52,7 +52,7 @@ class MetaImageTest extends TestCase
     /**
      * @test
      */
-    public function test_relative_path()
+    public function test_relative_path(): void
     {
         $web = new PHPScraper;
 
@@ -69,7 +69,7 @@ class MetaImageTest extends TestCase
     /**
      * @test
      */
-    public function test_absolute_path_with_base_href()
+    public function test_absolute_path_with_base_href(): void
     {
         $web = new PHPScraper;
 
@@ -86,7 +86,7 @@ class MetaImageTest extends TestCase
     /**
      * @test
      */
-    public function test_relative_path_base_href()
+    public function test_relative_path_base_href(): void
     {
         $web = new PHPScraper;
 

@@ -10,7 +10,7 @@ class MetaViewportTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_viewport()
+    public function test_missing_viewport(): void
     {
         $web = new PHPScraper;
 
@@ -21,14 +21,13 @@ class MetaViewportTest extends TestCase
         $this->assertNull($web->viewportString);
 
         // Empty array if there aren't any viewports set.
-        $this->assertTrue(is_iterable($web->viewport));
-        $this->assertTrue(empty($web->viewport));
+        $this->assertSame([], $web->viewport);
     }
 
     /**
      * @test
      */
-    public function test_with_viewport()
+    public function test_with_viewport(): void
     {
         $web = new PHPScraper;
 

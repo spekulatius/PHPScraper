@@ -10,7 +10,7 @@ class CustomSelectorTest extends TestCase
     /**
      * @test
      */
-    public function test_failed_selection_based_on_id()
+    public function test_failed_selection_based_on_id(): void
     {
         // Navigate to test page
         $web = new PHPScraper;
@@ -36,7 +36,7 @@ class CustomSelectorTest extends TestCase
     /**
      * @test
      */
-    public function test_selection_based_on_id()
+    public function test_selection_based_on_id(): void
     {
         // Navigate to test page
         $web = new PHPScraper;
@@ -58,7 +58,7 @@ class CustomSelectorTest extends TestCase
     /**
      * @test
      */
-    public function test_selection_based_on_tag()
+    public function test_selection_based_on_tag(): void
     {
         // Navigate to test page
         $web = new PHPScraper;
@@ -73,7 +73,7 @@ class CustomSelectorTest extends TestCase
         // Select single string using first and chain `->text()`
         $this->assertSame(
             'Selector Tests (h1)',
-            $web->filterFirst('//h1')->text()
+            $web->filterFirst('//h1')?->text()
         );
 
         // Select as array using `filterTexts`:
@@ -86,7 +86,7 @@ class CustomSelectorTest extends TestCase
     /**
      * @test
      */
-    public function test_selection_based_on_class()
+    public function test_selection_based_on_class(): void
     {
         // Navigate to test page
         $web = new PHPScraper;

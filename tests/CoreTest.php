@@ -10,7 +10,7 @@ class CoreTest extends TestCase
     /**
      * @test
      */
-    public function test_method_and_property_calls_are_equal()
+    public function test_method_and_property_calls_are_equal(): void
     {
         $web = new PHPScraper;
 
@@ -26,7 +26,7 @@ class CoreTest extends TestCase
      *
      * @test
      */
-    public function test_change_of_current_page()
+    public function test_change_of_current_page(): void
     {
         $web = new PHPScraper;
 
@@ -68,7 +68,7 @@ class CoreTest extends TestCase
      *
      * @test
      */
-    public function test_basic_chainability()
+    public function test_basic_chainability(): void
     {
         // Testing env: First h1: "We are testing here & elsewhere!"
         $url = 'https://test-pages.phpscraper.de/meta/html-entities.html';

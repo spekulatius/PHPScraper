@@ -11,7 +11,7 @@ class FeedSitemapTest extends TestCase
     /**
      * @test
      */
-    public function test_sitemap_url()
+    public function test_sitemap_url(): void
     {
         $web = new PHPScraper;
 
@@ -30,7 +30,7 @@ class FeedSitemapTest extends TestCase
      *
      * @test
      */
-    public function test_default_sitemap_url()
+    public function test_default_sitemap_url(): void
     {
         $web = new PHPScraper;
 
@@ -49,7 +49,7 @@ class FeedSitemapTest extends TestCase
      *
      * @test
      */
-    public function test_custom_sitemap_url()
+    public function test_custom_sitemap_url(): void
     {
         $web = new PHPScraper;
 
@@ -68,7 +68,7 @@ class FeedSitemapTest extends TestCase
      *
      * @test
      */
-    public function test_different_sitemap_url_types()
+    public function test_different_sitemap_url_types(): void
     {
         $web = new PHPScraper;
 
@@ -93,7 +93,7 @@ class FeedSitemapTest extends TestCase
      *
      * @test
      */
-    public function test_sitemap_raw()
+    public function test_sitemap_raw(): void
     {
         $web = new PHPScraper;
 
@@ -101,6 +101,7 @@ class FeedSitemapTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Get the sitemap and store it.
+        /** @var array{url: array<int, array{loc: string}>} $sitemapRaw */
         $sitemapRaw = $web->sitemapRaw;
 
         // Check the count
@@ -122,7 +123,7 @@ class FeedSitemapTest extends TestCase
      *
      * @test
      */
-    public function test_sitemap()
+    public function test_sitemap(): void
     {
         $web = new PHPScraper;
 
@@ -136,7 +137,7 @@ class FeedSitemapTest extends TestCase
         $this->assertSame(129, count($sitemap));
 
         // Check some samples.
-        $this->assertTrue($sitemap[42] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $sitemap[42]);
         $this->assertSame(
             'https://phpscraper.de/apis/linkedin.html',
             $sitemap[4]->link,

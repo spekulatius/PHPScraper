@@ -10,7 +10,7 @@ class ParserCsvTest extends TestCase
     /**
      * @test
      */
-    public function test_csv_parsing_context()
+    public function test_csv_parsing_context(): void
     {
         $web = new PHPScraper;
 
@@ -44,7 +44,7 @@ class ParserCsvTest extends TestCase
     /**
      * @test
      */
-    public function test_csv_decode_raw()
+    public function test_csv_decode_raw(): void
     {
         $web = new PHPScraper;
 
@@ -72,7 +72,7 @@ class ParserCsvTest extends TestCase
     /**
      * @test
      */
-    public function test_csv_decode()
+    public function test_csv_decode(): void
     {
         $web = new PHPScraper;
 
@@ -102,7 +102,7 @@ class ParserCsvTest extends TestCase
      *
      * @test
      */
-    public function test_csv_decode_and_custom_encoding()
+    public function test_csv_decode_and_custom_encoding(): void
     {
         $web = new PHPScraper;
 
@@ -125,7 +125,7 @@ class ParserCsvTest extends TestCase
     /**
      * @test
      */
-    public function test_csv_decode_with_header_raw()
+    public function test_csv_decode_with_header_raw(): void
     {
         $web = new PHPScraper;
 
@@ -151,7 +151,7 @@ class ParserCsvTest extends TestCase
     /**
      * @test
      */
-    public function test_csv_decode_with_header_and_casting()
+    public function test_csv_decode_with_header_and_casting(): void
     {
         $web = new PHPScraper;
 
@@ -169,7 +169,7 @@ class ParserCsvTest extends TestCase
      *
      * @test
      */
-    public function test_csv_decode_with_header_and_custom_encoding()
+    public function test_csv_decode_with_header_and_custom_encoding(): void
     {
         $web = new PHPScraper;
 
@@ -193,7 +193,7 @@ class ParserCsvTest extends TestCase
      *
      * @test
      */
-    public function test_different_csv_calls()
+    public function test_different_csv_calls(): void
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
         $web = new PHPScraper;
@@ -297,7 +297,7 @@ class ParserCsvTest extends TestCase
      *
      * @test
      */
-    public function test_different_csv_with_header_calls()
+    public function test_different_csv_with_header_calls(): void
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
         $web = new PHPScraper;

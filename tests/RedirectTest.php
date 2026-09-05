@@ -10,7 +10,7 @@ class RedirectTest extends TestCase
     /**
      * @test
      */
-    public function test_redirect()
+    public function test_redirect(): void
     {
         $web = new PHPScraper;
 
@@ -30,7 +30,7 @@ class RedirectTest extends TestCase
     /**
      * @test
      */
-    public function test_disabled_redirect()
+    public function test_disabled_redirect(): void
     {
         $web = new PHPScraper;
 

@@ -11,7 +11,7 @@ class FeedRssTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_rss_urls()
+    public function test_missing_rss_urls(): void
     {
         $web = new PHPScraper;
 
@@ -25,7 +25,7 @@ class FeedRssTest extends TestCase
     /**
      * @test
      */
-    public function test_rss_urls()
+    public function test_rss_urls(): void
     {
         $web = new PHPScraper;
 
@@ -44,7 +44,7 @@ class FeedRssTest extends TestCase
      *
      * @test
      */
-    public function test_custom_rss_url()
+    public function test_custom_rss_url(): void
     {
         $web = new PHPScraper;
 
@@ -65,7 +65,7 @@ class FeedRssTest extends TestCase
      *
      * @test
      */
-    public function test_different_rss_url_types()
+    public function test_different_rss_url_types(): void
     {
         $web = new PHPScraper;
 
@@ -90,7 +90,7 @@ class FeedRssTest extends TestCase
      *
      * @test
      */
-    public function test_rss_raw_content()
+    public function test_rss_raw_content(): void
     {
         $web = new PHPScraper;
 
@@ -98,11 +98,9 @@ class FeedRssTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // The raw RSS is rather unhandy to work with. Let's put it in a var before testing stuff.
-        $rssRaw = $web->rssRaw('https://test-pages.phpscraper.de/custom_rss.xml')[0]['entry'];
-
-        // Ensure the structure is an nested array
-        $this->assertTrue(is_array($rssRaw));
-        $this->assertTrue(is_array($rssRaw[4]));
+        /** @var array<int, array{entry: array<int, array{link: array{'@attributes': array{href: string}}}>}> $rssRawFeeds */
+        $rssRawFeeds = $web->rssRaw('https://test-pages.phpscraper.de/custom_rss.xml');
+        $rssRaw = $rssRawFeeds[0]['entry'];
 
         // Check some entries to ensure the parsing works.
         $this->assertSame(
@@ -124,7 +122,7 @@ class FeedRssTest extends TestCase
      *
      * @test
      */
-    public function test_rss()
+    public function test_rss(): void
     {
         $web = new PHPScraper;
 
@@ -139,7 +137,7 @@ class FeedRssTest extends TestCase
 
         // Check some entries to ensure the parsing works.
         // Set 1
-        $this->assertTrue($rss[4] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $rss[4]);
         $this->assertSame(
             $rss[4]->title,
             'How I Built My First Browser Extension'
@@ -150,7 +148,7 @@ class FeedRssTest extends TestCase
         );
 
         // Set 2
-        $this->assertTrue($rss[2] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $rss[2]);
         $this->assertSame(
             $rss[2]->title,
             'How to Use Pug on Netlify?'
@@ -161,7 +159,7 @@ class FeedRssTest extends TestCase
         );
 
         // Set 3
-        $this->assertTrue($rss[0] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $rss[0]);
         $this->assertSame(
             $rss[0]->title,
             'Startup Name Check: Experiences of the First week'
