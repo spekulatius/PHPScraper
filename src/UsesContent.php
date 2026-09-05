@@ -220,7 +220,7 @@ trait UsesContent
     }
 
     /**
-     * @return array<array{type: string, children: \DOMNodeList, children_plain: array<string>}>
+     * @return array<array{type: string, children: \DOMNodeList<\DOMNode>, children_plain: array<string>}>
      **/
     public function orderedLists(): array
     {
@@ -228,7 +228,7 @@ trait UsesContent
     }
 
     /**
-     * @return array<array{type: string, children: \DOMNodeList, children_plain: array<string>}>
+     * @return array<array{type: string, children: \DOMNodeList<\DOMNode>, children_plain: array<string>}>
      **/
     public function unorderedLists(): array
     {
