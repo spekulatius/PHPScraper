@@ -8,6 +8,7 @@ namespace Spekulatius\PHPScraper;
  * Most calls are passed through to the Core class.
  */
 
+use Spekulatius\PHPScraper\DataTransferObjects\FeedEntry;
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
 
@@ -18,17 +19,21 @@ use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
  * (and the traits it uses). They are documented here purely for IDE/static-analysis support.
  *
  * Url related helpers (see UsesUrls):
+ *
  * @property-read string $currentUrl
  * @property-read string|null $currentHost
  * @property-read string $currentBaseHost
  * @property-read string|null $makeUrlAbsolute
+ *
  * @method string currentUrl()
  * @method string|null currentHost()
  * @method string currentBaseHost()
  * @method string|null makeUrlAbsolute(string|null $url = null, string|null $baseUrl = null)
  *
  * BrowserKit interaction (see UsesBrowserKit):
- * @property-read \Symfony\Component\BrowserKit\HttpBrowser $client
+ *
+ * @property-read HttpBrowser $client
+ *
  * @method self setClient(\Symfony\Component\BrowserKit\HttpBrowser $client)
  * @method self setHttpClient(\Symfony\Contracts\HttpClient\HttpClientInterface $httpClient)
  * @method \Symfony\Component\BrowserKit\HttpBrowser client()
@@ -47,6 +52,7 @@ use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
  * @method string|null filterFirstContent(string $query)
  *
  * Content related selectors (see UsesContent):
+ *
  * @property-read string|null $title
  * @property-read string|null $charset
  * @property-read string|null $contentType
@@ -87,6 +93,7 @@ use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
  * @property-read array<mixed> $linksWithDetails
  * @property-read array<mixed> $images
  * @property-read array<mixed> $imagesWithDetails
+ *
  * @method string|null title()
  * @method string|null charset()
  * @method string|null contentType()
@@ -129,10 +136,12 @@ use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
  * @method array<mixed> imagesWithDetails()
  *
  * Shared simple parsers for XML, JSON and CSV (see UsesFileParsers):
+ *
  * @property-read array<mixed> $parseCsv
  * @property-read array<mixed> $parseCsvWithHeader
  * @property-read array<mixed> $parseJson
  * @property-read array<mixed> $parseXml
+ *
  * @method array<mixed> csvDecodeRaw(string $csvString, string|null $separator = null, string|null $enclosure = null, string|null $escape = null)
  * @method array<mixed> csvDecode(string $csvString, string|null $separator = null, string|null $enclosure = null, string|null $escape = null)
  * @method array<mixed> csvDecodeWithHeaderRaw(string $csvString, string|null $separator = null, string|null $enclosure = null, string|null $escape = null)
@@ -144,24 +153,26 @@ use Symfony\Component\HttpClient\HttpClient as SymfonyHttpClient;
  * @method array<mixed> parseXml(string|null $xmlStringOrUrl = null)
  *
  * Feeds related selectors and parsers: RSS, sitemap, search index, etc. (see UsesFeeds):
+ *
  * @property-read string $sitemapUrl
  * @property-read array<mixed> $sitemapRaw
- * @property-read array<\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry> $sitemap
+ * @property-read array<FeedEntry> $sitemap
  * @property-read string $searchIndexUrl
  * @property-read array<mixed> $searchIndexRaw
- * @property-read array<\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry> $searchIndex
+ * @property-read array<FeedEntry> $searchIndex
  * @property-read array<string> $rssUrls
  * @property-read array<mixed> $rssRaw
- * @property-read array<\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry> $rss
+ * @property-read array<FeedEntry> $rss
+ *
  * @method string sitemapUrl()
  * @method array<mixed> sitemapRaw(string|null $url = null)
- * @method array<\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry> sitemap(string|null $url = null)
+ * @method array<FeedEntry> sitemap(string|null $url = null)
  * @method string searchIndexUrl()
  * @method array<mixed> searchIndexRaw(string|null $url = null)
- * @method array<\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry> searchIndex(string|null $url = null)
+ * @method array<FeedEntry> searchIndex(string|null $url = null)
  * @method array<string> rssUrls()
  * @method array<mixed> rssRaw(string|null ...$urls)
- * @method array<\Spekulatius\PHPScraper\DataTransferObjects\FeedEntry> rss(string|null ...$urls)
+ * @method array<FeedEntry> rss(string|null ...$urls)
  */
 class PHPScraper
 {
