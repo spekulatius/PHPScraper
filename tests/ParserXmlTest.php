@@ -10,7 +10,7 @@ class ParserXmlTest extends TestCase
     /**
      * @test
      */
-    public function test_json_parsing_context(): void
+    public function test_xml_parsing_context(): void
     {
         $web = new PHPScraper;
 
@@ -95,7 +95,7 @@ class ParserXmlTest extends TestCase
                 ->currentUrl()
         );
 
-        // 5.2. Ensure the parsed JSON is correct.
+        // 5.2. Ensure the parsed XML is correct.
         $this->assertSame(
             // Pass the XML Data as reference in.
             $xmlData,

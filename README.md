@@ -278,7 +278,7 @@ While unrecommended, it might be required to disable SSL checks. You can do so u
 $web->setConfig(['disable_ssl' => true]);
 ```
 
-You can call `setConfig` multiple times. It stores the config and merges it with previous settings. This should be kept in mind in the unlikely use-case when unsetting values.
+You can call `setConfig` multiple times. Each call merges the given config with the defaults again, not with the config from a previous call — so any custom values from an earlier call that you don't repeat will be reset to their defaults.
 
 
 :rocket: Installation with Composer

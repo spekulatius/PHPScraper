@@ -15,7 +15,7 @@ class MetaAuthorTest extends TestCase
         $web = new PHPScraper;
 
         // Navigate to the test page.
-        $web->go('https://test-pages.phpscraper.de/meta/meta/missing.html');
+        $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Check the author as not given (null)
         $this->assertNull($web->author);

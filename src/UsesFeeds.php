@@ -79,7 +79,7 @@ trait UsesFeeds
                 'link' => $entry['link'],
             ]),
 
-            // Fetch the sitemap URL, parse it and select the `url` section.
+            // Fetch the search index URL and parse the JSON.
             $this->searchIndexRaw($url)
         );
     }
@@ -123,7 +123,7 @@ trait UsesFeeds
                 'link' => $entry['link']['@attributes']['href'],
             ]),
 
-            // Fetch the rss URLs, parse it and select the `url` section.
+            // Fetch the RSS feed(s), parse them and select the `entry` section of the first feed.
             $this->rssRaw(...$urls)[0]['entry']
         );
     }
