@@ -10,7 +10,7 @@ class MetaCsrfTokenTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_csrf_token()
+    public function test_missing_csrf_token(): void
     {
         $web = new PHPScraper;
 
@@ -24,7 +24,7 @@ class MetaCsrfTokenTest extends TestCase
     /**
      * @test
      */
-    public function test_with_csrf_token()
+    public function test_with_csrf_token(): void
     {
         $web = new PHPScraper;
 

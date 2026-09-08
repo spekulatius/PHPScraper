@@ -473,12 +473,12 @@ trait UsesContent
      */
     public function linksWithDetails(): array
     {
-        /** @var array<\DOMElement> $links */
         $links = $this->filter('//a');
 
         // Generate a list of all image entries
         $result = [];
 
+        /** @var \DOMElement $link */
         foreach ($links as $link) {
             // Check if the anchor is only an image. If so, wrap it into DomCrawler\Image to get the Uri.
             $image = [];
@@ -545,9 +545,9 @@ trait UsesContent
         // Generate a list of all image entries
         $result = [];
 
-        /** @var array<\DOMElement> $images */
         $images = $this->filter('//img');
 
+        /** @var \DOMElement $image */
         foreach ($images as $image) {
             // Collect the URL and commonly interesting attributes
             $result[] = [

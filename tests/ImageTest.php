@@ -10,7 +10,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_no_images()
+    public function test_no_images(): void
     {
         $web = new PHPScraper;
 
@@ -25,7 +25,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_lorem_ipsum()
+    public function test_lorem_ipsum(): void
     {
         $web = new PHPScraper;
 
@@ -61,7 +61,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_german_umlaute()
+    public function test_german_umlaute(): void
     {
         $web = new PHPScraper;
 
@@ -103,7 +103,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_chinese_characters()
+    public function test_chinese_characters(): void
     {
         $web = new PHPScraper;
 
@@ -139,7 +139,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_base_href()
+    public function test_base_href(): void
     {
         $web = new PHPScraper;
 
@@ -175,7 +175,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_width()
+    public function test_width(): void
     {
         $web = new PHPScraper;
 
@@ -211,7 +211,7 @@ class ImageTest extends TestCase
     /**
      * @test
      */
-    public function test_height()
+    public function test_height(): void
     {
         $web = new PHPScraper;
 

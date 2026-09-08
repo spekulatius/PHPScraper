@@ -10,7 +10,7 @@ class OpenGraphTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_open_graph()
+    public function test_missing_open_graph(): void
     {
         $web = new PHPScraper;
 
@@ -18,14 +18,13 @@ class OpenGraphTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Empty array, because there aren't any open graph props set.
-        $this->assertTrue(is_iterable($web->openGraph));
-        $this->assertTrue(empty($web->openGraph));
+        $this->assertSame([], $web->openGraph);
     }
 
     /**
      * @test
      */
-    public function test_open_graph()
+    public function test_open_graph(): void
     {
         $web = new PHPScraper;
 

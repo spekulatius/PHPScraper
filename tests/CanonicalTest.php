@@ -10,7 +10,7 @@ class CanonicalTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_canonical()
+    public function test_missing_canonical(): void
     {
         $web = new PHPScraper;
 
@@ -24,7 +24,7 @@ class CanonicalTest extends TestCase
     /**
      * @test
      */
-    public function test_with_canonical()
+    public function test_with_canonical(): void
     {
         $web = new PHPScraper;
 

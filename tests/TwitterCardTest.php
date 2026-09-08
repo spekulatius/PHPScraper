@@ -10,7 +10,7 @@ class TwitterCardTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_twitter_card()
+    public function test_missing_twitter_card(): void
     {
         $web = new PHPScraper;
 
@@ -18,14 +18,13 @@ class TwitterCardTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/meta/missing.html');
 
         // Empty array, because there aren't any twitter cards props set.
-        $this->assertTrue(is_iterable($web->twitterCard));
-        $this->assertTrue(empty($web->twitterCard));
+        $this->assertSame([], $web->twitterCard);
     }
 
     /**
      * @test
      */
-    public function test_twitter_card()
+    public function test_twitter_card(): void
     {
         $web = new PHPScraper;
 

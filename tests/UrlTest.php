@@ -15,7 +15,7 @@ class UrlTest extends TestCase
      *
      * @test
      */
-    public function test_null_passing_through()
+    public function test_null_passing_through(): void
     {
         $web = new PHPScraper;
 
@@ -25,7 +25,7 @@ class UrlTest extends TestCase
     /**
      * @test
      */
-    public function validate_uri_test()
+    public function validate_uri_test(): void
     {
         $web = new PHPScraper;
 
@@ -54,7 +54,7 @@ class UrlTest extends TestCase
     /**
      * @test
      */
-    public function test_current_base_host_with_base()
+    public function test_current_base_host_with_base(): void
     {
         $web = new PHPScraper;
 
@@ -74,7 +74,7 @@ class UrlTest extends TestCase
      *
      * @test
      */
-    public function test_make_url_absolute()
+    public function test_make_url_absolute(): void
     {
         $web = new PHPScraper;
 
@@ -118,7 +118,7 @@ class UrlTest extends TestCase
      *
      * @test
      */
-    public function test_make_url_absolute_consider_base_href()
+    public function test_make_url_absolute_consider_base_href(): void
     {
         $web = new PHPScraper;
 
@@ -174,7 +174,7 @@ class UrlTest extends TestCase
      *
      * @test
      */
-    public function test_make_url_absolute_with_base_host()
+    public function test_make_url_absolute_with_base_host(): void
     {
         $web = new PHPScraper;
 

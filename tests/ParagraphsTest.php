@@ -10,7 +10,7 @@ class ParagraphsTest extends TestCase
     /**
      * @test
      */
-    public function paragraph_test()
+    public function paragraph_test(): void
     {
         $web = new PHPScraper;
 
@@ -51,7 +51,7 @@ class ParagraphsTest extends TestCase
     /**
      * @test
      */
-    public function clean_paragraph_test()
+    public function clean_paragraph_test(): void
     {
         $web = new PHPScraper;
 

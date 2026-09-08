@@ -10,7 +10,7 @@ class NotFoundTest extends TestCase
     /**
      * @test
      */
-    public function test_page_missing()
+    public function test_page_missing(): void
     {
         $web = new PHPScraper;
 

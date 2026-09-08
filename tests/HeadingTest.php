@@ -10,7 +10,7 @@ class HeadingTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_headings()
+    public function test_missing_headings(): void
     {
         $web = new PHPScraper;
 
@@ -28,7 +28,7 @@ class HeadingTest extends TestCase
     /**
      * @test
      */
-    public function test_with_html_entity()
+    public function test_with_html_entity(): void
     {
         $web = new PHPScraper;
 
@@ -65,7 +65,7 @@ class HeadingTest extends TestCase
     /**
      * @test
      */
-    public function test_lorem_ipsum()
+    public function test_lorem_ipsum(): void
     {
         $web = new PHPScraper;
 
@@ -89,7 +89,7 @@ class HeadingTest extends TestCase
     /**
      * @test
      */
-    public function test_german_umlaute()
+    public function test_german_umlaute(): void
     {
         $web = new PHPScraper;
 
@@ -113,7 +113,7 @@ class HeadingTest extends TestCase
     /**
      * @test
      */
-    public function test_chinese_characters()
+    public function test_chinese_characters(): void
     {
         $web = new PHPScraper;
 

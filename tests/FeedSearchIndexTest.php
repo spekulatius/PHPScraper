@@ -11,7 +11,7 @@ class FeedSearchIndexTest extends TestCase
     /**
      * @test
      */
-    public function test_search_index_url()
+    public function test_search_index_url(): void
     {
         $web = new PHPScraper;
 
@@ -30,7 +30,7 @@ class FeedSearchIndexTest extends TestCase
      *
      * @test
      */
-    public function test_default_search_index_url()
+    public function test_default_search_index_url(): void
     {
         $web = new PHPScraper;
 
@@ -51,7 +51,7 @@ class FeedSearchIndexTest extends TestCase
      *
      * @test
      */
-    public function test_custom_search_index_url()
+    public function test_custom_search_index_url(): void
     {
         $web = new PHPScraper;
 
@@ -70,7 +70,7 @@ class FeedSearchIndexTest extends TestCase
      *
      * @test
      */
-    public function test_different_search_index_url_types()
+    public function test_different_search_index_url_types(): void
     {
         $web = new PHPScraper;
 
@@ -95,7 +95,7 @@ class FeedSearchIndexTest extends TestCase
      *
      * @test
      */
-    public function test_search_index_raw()
+    public function test_search_index_raw(): void
     {
         $web = new PHPScraper;
 
@@ -103,11 +103,8 @@ class FeedSearchIndexTest extends TestCase
         $web->go('https://test-pages.phpscraper.de/meta/feeds.html');
 
         // Get the raw searchIndex and store it.
+        /** @var array<int, array{link: string}> $searchIndexRaw */
         $searchIndexRaw = $web->searchIndexRaw;
-
-        // Ensure the structure is an nested array
-        $this->assertTrue(is_array($searchIndexRaw));
-        $this->assertTrue(is_array($searchIndexRaw[42]));
 
         // Did we get the expected `/index.json`? It should contain 60 entries.
         $this->assertSame(60, count($searchIndexRaw));
@@ -132,7 +129,7 @@ class FeedSearchIndexTest extends TestCase
      *
      * @test
      */
-    public function test_search_index()
+    public function test_search_index(): void
     {
         $web = new PHPScraper;
 
@@ -147,7 +144,7 @@ class FeedSearchIndexTest extends TestCase
 
         // Check some data to ensure the parsing actually worked:
         // Set 1
-        $this->assertTrue($searchIndex[4] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $searchIndex[4]);
         $this->assertSame(
             'List of the Counties of Croatia',
             $searchIndex[4]->title,
@@ -162,7 +159,7 @@ class FeedSearchIndexTest extends TestCase
         );
 
         // Set 2
-        $this->assertTrue($searchIndex[2] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $searchIndex[2]);
         $this->assertSame(
             'List of the Municipalities of Macedonia',
             $searchIndex[2]->title,
@@ -177,7 +174,7 @@ class FeedSearchIndexTest extends TestCase
         );
 
         // Set 3
-        $this->assertTrue($searchIndex[0] instanceof FeedEntry);
+        $this->assertInstanceOf(FeedEntry::class, $searchIndex[0]);
         $this->assertSame(
             'List of the Counties and Municipalities of Lithuania',
             $searchIndex[0]->title,

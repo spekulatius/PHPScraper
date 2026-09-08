@@ -11,7 +11,7 @@ class DownloadTest extends TestCase
     /**
      * @test
      */
-    public function test_missing_download()
+    public function test_missing_download(): void
     {
         $web = new PHPScraper;
 
@@ -24,7 +24,7 @@ class DownloadTest extends TestCase
     /**
      * @test
      */
-    public function test_download()
+    public function test_download(): void
     {
         // Downloads the PHPScraper sitemap and ensures the homepage is included (valid download and output).
         $web = new PHPScraper;
@@ -33,6 +33,8 @@ class DownloadTest extends TestCase
         // Convert XML to array
         // Credit: https://stackoverflow.com/a/20431742
         $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_NOCDATA);
+
+        /** @var array{url: array<int, array{loc: string}>} $array */
         $array = json_decode((string) json_encode($xml), true);
 
         $urls = array_map(
@@ -53,7 +55,7 @@ class DownloadTest extends TestCase
      *
      * @test
      */
-    public function test_different_url_types()
+    public function test_different_url_types(): void
     {
         $web = new PHPScraper;
 
