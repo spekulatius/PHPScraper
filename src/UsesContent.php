@@ -355,11 +355,13 @@ trait UsesContent
             $content += array_values($headings);
         }
 
-        // Add image alt texts in
+        // Add link anchor text and titles in
         foreach ($this->linksWithDetails() as $link) {
             $content[] = $link['text'];
             $content[] = $link['title'];
         }
+
+        // Add image alt texts in
         foreach ($this->imagesWithDetails() as $image) {
             $content[] = $image['alt'];
         }

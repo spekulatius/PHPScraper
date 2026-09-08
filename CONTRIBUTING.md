@@ -25,4 +25,4 @@ will then be reviewed.
 
 ## Coding Guidelines
 
-This project follows the PSR-0, PSR-1, and PSR-2 coding standards.
+This project follows the coding style enforced by [Laravel Pint](https://laravel.com/docs/pint) (see `pint.json`) and uses PSR-4 autoloading.
