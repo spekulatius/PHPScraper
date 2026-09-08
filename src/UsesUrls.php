@@ -2,9 +2,8 @@
 
 namespace Spekulatius\PHPScraper;
 
-use League\Uri\Http;
+use League\Uri\BaseUri;
 use League\Uri\Uri;
-use League\Uri\UriResolver;
 
 trait UsesUrls
 {
@@ -60,9 +59,7 @@ trait UsesUrls
         }
 
         // Resolve the Url using one of the provided/set base href.
-        return (string) UriResolver::resolve(
-            Http::new($url),
-            Http::new($baseUrl ?? $this->baseHref() ?? $this->currentBaseHost()),
-        );
+        return (string) BaseUri::from($baseUrl ?? $this->baseHref() ?? $this->currentBaseHost())
+            ->resolve($url);
     }
 }
